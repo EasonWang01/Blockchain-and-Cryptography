@@ -32,13 +32,15 @@
 
 比特幣每顆價格首次價格超越1美元![](/assets/首次超越1.png)
 
-
-
 #### 2013年10月
 
 世界第一台比特幣櫃員機在加拿大溫哥華問世
 
 #### 2013年同年
+
+一名19歲少年Vitalik Buterin，發表了Etherum 的 white-paper
+
+https://github.com/ethereum/wiki/wiki/White-Paper
 
 
 
@@ -48,13 +50,9 @@
 
 [https://en.bitcoin.it/wiki/Bitcoin\_Firsts](https://en.bitcoin.it/wiki/Bitcoin_Firsts)
 
-
-
-
-
 參考文獻:
 
-https://en.bitcoin.it/wiki/Bitcoin\_Firsts
+[https://en.bitcoin.it/wiki/Bitcoin\_Firsts](https://en.bitcoin.it/wiki/Bitcoin_Firsts)
 
-https://github.com/ethereum/wiki/wiki/White-Paper
+[https://github.com/ethereum/wiki/wiki/White-Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 
