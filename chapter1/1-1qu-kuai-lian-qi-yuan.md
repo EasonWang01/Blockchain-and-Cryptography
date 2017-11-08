@@ -34,7 +34,27 @@
 
 
 
+#### 2013年10月
+
+世界第一台比特幣櫃員機在加拿大溫哥華問世
+
+#### 2013年同年
+
+
+
+
+
 我們也可以在以下連結看到比特幣的歷史大事紀
 
 [https://en.bitcoin.it/wiki/Bitcoin\_Firsts](https://en.bitcoin.it/wiki/Bitcoin_Firsts)
+
+
+
+
+
+參考文獻:
+
+https://en.bitcoin.it/wiki/Bitcoin\_Firsts
+
+https://github.com/ethereum/wiki/wiki/White-Paper
 
