@@ -2,13 +2,9 @@
 
 中本聰發布了白皮書：《Bitcoin：A Peer-to-Peer Electronic Cash System》
 
+![](/assets/比特幣白皮書封面1-1.png)
 
-
-   ![](/assets/比特幣白皮書封面1-1.png)
-
-https://bitcoin.org/bitcoin.pdf
-
-
+[https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)
 
 #### 2009年1月3日18∶15∶05
 
@@ -16,7 +12,19 @@ https://bitcoin.org/bitcoin.pdf
 
 ![](/assets/Jonny1000thetimes.png)
 
-> 《泰晤士報》2009/1/3的頭版標題 https://en.bitcoin.it/wiki/File:Jonny1000thetimes.png
+> 《泰晤士報》2009/1/3的頭版標題 [https://en.bitcoin.it/wiki/File:Jonny1000thetimes.png](https://en.bitcoin.it/wiki/File:Jonny1000thetimes.png)
 
 十六進位表示的Genesis block![](/assets/genesis_block_raw.png)
+
+
+
+現在仍可查到當時創世區塊的資訊
+
+![](/assets/創世區塊資訊.png)
+
+
+
+> https://blockchain.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+
+
 
