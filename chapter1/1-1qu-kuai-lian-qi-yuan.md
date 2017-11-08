@@ -38,13 +38,21 @@
 
 #### 2013年末
 
-一名19歲少年Vitalik Buterin，發表了Etherum 的 white-paper
+一名19歲少年Vitalik Buterin，發表了Ethereum 的 white-paper
 
 [https://github.com/ethereum/wiki/wiki/White-Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 
 #### 2014年1月
 
 Vitalik在美國佛羅裏達州邁阿密舉行的北美比特幣會議上正式宣布了Ethereum這個Project
+
+
+
+#### 2014年4月
+
+與Vitalik 合作的 Gavin Wood發表了以太坊黃皮書，作為Ethereum虛擬機的技術說明
+
+
 
 我們也可以在以下連結看到比特幣的歷史大事紀
 
