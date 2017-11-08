@@ -16,15 +16,15 @@
 
 十六進位表示的Genesis block![](/assets/genesis_block_raw.png)
 
-
-
 現在仍可查到當時創世區塊的資訊
 
 ![](/assets/創世區塊資訊.png)
 
+> [https://blockchain.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f](https://blockchain.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f)
 
+#### 2010年5月22日
 
-> https://blockchain.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+ 一名佛羅里達工程師Laszlo Hanyecz在2010/5/17要求用比特幣購買披薩，並且在5/22成功用10,000 BTC購買了價值25美元的披薩
 
 
 
