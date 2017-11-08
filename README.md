@@ -3,14 +3,14 @@
 1.區塊鏈簡介
 
 ```
- 1-1  區塊鏈核心概念
+ 1-1  區塊鏈起源
 
- 1-2  區塊鏈歷史
+ 1-2  區塊鏈核心概念
 
  1-3  區塊鏈現況
 ```
 
-2.Bitcoin
+2.Bitcoin \(比特幣\)
 
 ```
  2-1  Bitcoin 介紹
@@ -22,30 +22,47 @@
  2-4  Bitcoin 地址
 
  2-5  Bitcoin 區塊
+ 
+ 2-6  Bitcoin 挖礦
 
- 2-6  Bitcoin 簽名與交易
+ 2-7  Bitcoin 簽名與交易
 
- 2-7  Bitcoin 節點
+ 2-8  Bitcoin 節點架設
+
+ 2-9  Bitcoin 共識機制
+
+ 2-10 Bitcoin API與JSON-RPC
  
- 2-8  Bitcoin 共識機制
- 
- 2-9  Bitcoin API與JSON-RPC
- 
+ 2-11 BIP
 ```
 
-2-5Hyperledger Fabric與IBM的其他計畫
+3.Ethereum \(乙太坊\)
 
-3.Bitcoin,Ethereum節點架設與挖礦
+```
+ 3-1  Ethereum 介紹
+ 
+ 3-2  Ethereum 原理
+ 
+ 3-3  Ethereum 錢包
 
-3-1下載Bitcoin節點與使用
+ 3-4  Ethereum 地址
 
-3-2使用Bitcoin core核心API
+ 3-5  Ethereum 區塊
 
-3-3Bitcoin線上錢包
+ 3-6  Ethereum 挖礦
 
-3-4Bitcoin交易所
+ 3-7  Ethereum 節點架設
 
-3-5下載Ethereum節點與使用
+ 3-8  Ethereum 共識機制
+
+ 3-9  Ethereum API與JSON-RPC
+  
+ 3-10 Ethereum 智能合約 
+```
+
+
+
+
 
 3-6使用Ethereum core核心API
 
