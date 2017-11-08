@@ -28,15 +28,13 @@
 
 此交易等值於1比特幣兌換0.0025美元。這些比特幣在今日價值超過2000萬美元
 
-
-
 #### 2011年2月9日
 
-比特幣每顆價格首次價格超越1美元
+比特幣每顆價格首次價格超越1美元![](/assets/首次超越1.png)
 
 
 
 我們也可以在以下連結看到比特幣的歷史大事紀
 
-https://en.bitcoin.it/wiki/Bitcoin\_Firsts
+[https://en.bitcoin.it/wiki/Bitcoin\_Firsts](https://en.bitcoin.it/wiki/Bitcoin_Firsts)
 
