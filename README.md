@@ -2,29 +2,33 @@
 
 1.區塊鏈簡介
 
-     1-1  區塊鏈核心概念
+```
+ 1-1  區塊鏈核心概念
 
-     1-2  區塊鏈歷史
+ 1-2  區塊鏈歷史
 
-     1-3  區塊鏈現況
+ 1-3  區塊鏈現況
+```
 
 2.Bitcoin
 
-     2-1  Bitcoin介紹
+```
+ 2-1  Bitcoin介紹
 
-     2-2  Bitcoin原理
+ 2-2  Bitcoin原理
 
-     2-3  Bitcoin錢包
+ 2-3  Bitcoin錢包
 
-     2-4  Bticoin地址
+ 2-4  Bticoin地址
 
-     2-5  Bitcoin區塊
+ 2-5  Bitcoin區塊
 
-     2-6  Bitcoin交易
+ 2-6  Bitcoin交易
 
-     2-7  Bitcoin節點
+ 2-7  Bitcoin節點
+```
 
-2-4Ethereum應用展望
+      2-4  Bitcoin 共識機制
 
 2-5Hyperledger Fabric與IBM的其他計畫
 
@@ -46,7 +50,7 @@
 
 3-8Ethereum交易所
 
-4. Bitcoin,Ethereum原始碼探討與API操作
+1. Bitcoin,Ethereum原始碼探討與API操作
 
 4-1Bitcoin核心概念
 
@@ -88,51 +92,57 @@
 
 7.使用Node.js與Golang進行區塊鏈錢包與地址加密實作
 
-     7-1 Node.js實作比特幣地址
+```
+ 7-1 Node.js實作比特幣地址
 
-     7-2 Node.js實作挖礦演算法
+ 7-2 Node.js實作挖礦演算法
 
-     7-3 Node.js實作P2P network
+ 7-3 Node.js實作P2P network
 
-     7-1 Golang實作比特幣地址
+ 7-1 Golang實作比特幣地址
 
-     7-2 Golang實作挖礦演算法
+ 7-2 Golang實作挖礦演算法
 
-     7-3 Golang實作P2P network
+ 7-3 Golang實作P2P network
+```
 
 8.Etherum智能合約撰寫教學
 
-     8-1 solidity安裝與教學
+```
+ 8-1 solidity安裝與教學
 
-     8-2  solidity語法介紹1
+ 8-2  solidity語法介紹1
 
-     8-3  solidity語法介紹2
+ 8-3  solidity語法介紹2
 
-     8-4 使用Remix IDE
+ 8-4 使用Remix IDE
 
-     8-5 使用Metamask
+ 8-5 使用Metamask
+```
 
 9.Etherum智能合約部屬與發行ICO
 
-     9-1 白皮書撰寫
+```
+ 9-1 白皮書撰寫
 
-     9-2 Dapp撰寫
+ 9-2 Dapp撰寫
 
-     9-3合約部署
+ 9-3合約部署
+```
 
 10密碼學ECDSA,ECDH,RSA,SHA介紹與程式實作
 
-    10-1密碼學基本原理
+```
+10-1密碼學基本原理
 
-     10-2  ECC ECDH ECDSA
+ 10-2  ECC ECDH ECDSA
 
-     10-3  SHA
+ 10-3  SHA
 
-     10-4  RSA
+ 10-4  RSA
 
-      10-5 AES
+  10-5 AES
+```
 
 11區塊鏈未來展望
-
-
 
