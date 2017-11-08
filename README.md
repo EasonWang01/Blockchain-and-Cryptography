@@ -13,22 +13,25 @@
 2.Bitcoin
 
 ```
- 2-1  Bitcoin介紹
+ 2-1  Bitcoin 介紹
 
- 2-2  Bitcoin原理
+ 2-2  Bitcoin 原理
 
- 2-3  Bitcoin錢包
+ 2-3  Bitcoin 錢包
 
- 2-4  Bticoin地址
+ 2-4  Bitcoin 地址
 
- 2-5  Bitcoin區塊
+ 2-5  Bitcoin 區塊
 
- 2-6  Bitcoin交易
+ 2-6  Bitcoin 簽名與交易
 
- 2-7  Bitcoin節點
+ 2-7  Bitcoin 節點
+ 
+ 2-8  Bitcoin 共識機制
+ 
+ 2-9  Bitcoin API與JSON-RPC
+ 
 ```
-
-      2-4  Bitcoin 共識機制
 
 2-5Hyperledger Fabric與IBM的其他計畫
 
