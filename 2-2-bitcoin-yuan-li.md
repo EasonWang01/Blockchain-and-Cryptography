@@ -100,3 +100,13 @@ OSX, Linux
 ./bitcoin-cli getinfo
 
 ```
+
+
+### 比特幣相關交易訊息與圖表
+可以在以下網站看到目前的相關比特幣交易資訊
+
+https://blockchain.info/zh-cn/
+
+比特幣歷史訊息圖表
+
+https://blockchain.info/charts
