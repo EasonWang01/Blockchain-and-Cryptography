@@ -66,6 +66,8 @@ Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的�
 
 [https://en.bitcoin.it/wiki/Hal\_Finney](https://en.bitcoin.it/wiki/Hal_Finney)
 
+> 我們可在此https://github.com/NakamotoInstitute/RPOW 看到RPOW的原始碼
+
 #### 2008年10月31日
 
 中本聰發布了白皮書：《Bitcoin：A Peer-to-Peer Electronic Cash System》
