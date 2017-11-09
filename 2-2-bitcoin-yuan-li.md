@@ -88,5 +88,18 @@ Linux
 > OSX和Linux 在bin路徑下 
 輸入./bitcoind
 
+3.之後可輸入
+Windows
+```
+start ./bitcoin-cli getinfo
+```
+> Windows會在執行開一個新視窗顯示，但顯示完會隨即關閉視窗，所以如果要用此種方法建議寫一個batch file然後後面加上`pause`
+
+OSX, Linux
+```
+./bitcoin-cli getinfo
+
+```
+
 
 
