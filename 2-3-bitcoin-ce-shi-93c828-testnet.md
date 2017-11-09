@@ -32,3 +32,22 @@ https://www.bitaddress.org/bitaddress.org-v1.9-SHA1-a487b495d710d6f617d688e5f758
 
 
 ### 取得測試用的比特幣
+
+我們可以到https://testnet.manu.backend.hamburg/faucet
+
+這個網站取得免費測試用的比特幣
+
+![](/assets/getfreecoin.png)
+
+成功後會出現交易的TXid
+
+![](/assets/getfreecoin1.png)
+
+之後我們可以點擊下去確認
+
+![](/assets/getfreecoin2.png)
+
+然後我們到blockexplorer這個網站確認我們地址的餘額
+> 在本地端的節點必須要完整同步後才可以得到正確的區塊鏈資訊，所以建議讀者可使用線上的網站服務，他會去存取他們已經完整同步過的Full Node，然後回傳資訊到網站上供瀏覽
+
+![](/assets/getfreecoin3.png)
