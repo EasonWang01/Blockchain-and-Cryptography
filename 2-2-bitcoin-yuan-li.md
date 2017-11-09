@@ -110,3 +110,13 @@ https://blockchain.info/zh-cn/
 比特幣歷史訊息圖表
 
 https://blockchain.info/charts
+
+### 其他Full node Client
+btcd   
+```
+https://github.com/btcsuite/btcd
+```
+libbitcoin-server
+```
+https://en.bitcoin.it/wiki/Libbitcoin
+```
