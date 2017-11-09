@@ -156,3 +156,5 @@ HAB~=SHA256(SHA256(HA + HB))
 
 [http://cryptomaps.org/](http://cryptomaps.org/)![](/assets/bitcoin-market-圖表.png)
 
+
+
