@@ -20,6 +20,12 @@ David Chaum創立了DigiCash Inc.
 
 提供匿名的電子支付服務，但沒有獲得許多的使用者
 
+#### 1992年
+
+Scott Vanstone提出橢圓曲線數位簽章演算法（Elliptic Curve Digital Signature Algorithm，ECDSA）
+
+利用橢圓曲線的離散特性使他的密碼安全性比RSA更加安全，並且被廣泛採用在現今的加密系統中
+
 #### 2008年10月31日
 
 中本聰發布了白皮書：《Bitcoin：A Peer-to-Peer Electronic Cash System》
