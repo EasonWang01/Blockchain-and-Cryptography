@@ -82,8 +82,6 @@
 
 3.由於每個區塊的區塊頭包含`父區塊Hash值`，所以當前區塊的Hash值因此也受到前區塊的Hash值的影響。如果父區塊的Hash不一樣，則子區塊也會有不同的hash，接著這個子區塊的子區塊也會有不同Hash，這種瀑布效應將保證該區塊不會被改變
 
-
-
 # Merkle Tree
 
 我們可以直接把所有交易訊息放在區塊中，並直接針對區塊中的明文交易訊息做驗證，但這樣的缺點是會佔去許多區塊鏈上的空間，所以我們要一種更簡單的驗證方式，把區塊中所含的交易使用Merkle Tree規則算出Merkel Root
@@ -92,7 +90,69 @@
 
 利用這個特性可避免區塊中所含的歷史交易遭任意竄改
 
-> ![](/assets/merkeltree.png)https://en.wikipedia.org/wiki/Merkle\_tree\#/media/File:Hash\_Tree.svg
+> ![](/assets/merkeltree.png)[https://en.wikipedia.org/wiki/Merkle\_tree\#/media/File:Hash\_Tree.svg](https://en.wikipedia.org/wiki/Merkle_tree#/media/File:Hash_Tree.svg)
 
+Merkle樹被用來歸納一個區塊中的所有交易，同時生成整個交易集合的數字指紋，且提供了一種校驗區塊是否存在某交易的高效途徑
 
+為了創建父節點HAB，子節點A和子節點B的兩個32字節的哈希值將被串聯成64字節的字符串。隨後將字符串進行兩次哈希來產生父節點的哈希值:
+
+```
+HAB~=SHA256(SHA256(HA + HB))
+```
+
+# 挖礦
+
+> Mining   = Securing the network = verify computation
+
+當一個新的區塊被`挖掘`出來，每個區塊裡包含著從上一個區塊產生到目前這段時間內發生的所有交易，這些交易被依次添加到區塊鏈中。我們把包含在區塊內且被添加到區塊鏈上的交易稱為`確認交易`，交易經過確認之後，新的擁有者才能夠花費他在交易中得到的比特幣
+
+礦工們在挖礦過程中會得到兩種類型的獎勵：創建新區塊的新幣獎勵，以及區塊中所含交易的交易費
+
+在挖礦過程中成功“挖出”新區塊的礦工可以得到該區塊中包含的所有交易“小費”。目前，這筆費用佔礦工收入的0.5%或更少，大部分收益仍來自挖礦所得的比特幣獎勵
+
+> Finding a nonce input to the algorithm so that the result is below a certain threshold
+
+區塊鏈用難度來控制下一個區塊的產生速度，而礦工利用當前的區塊頭加上一個隨機數nonce，並做hash，如果產生一個低於設定難度的值即可成功挖到礦
+
+藉由改變nonce來產生不同hash，想辦法讓此hash小於目前所設定難度的數值
+
+挖礦困難度解釋
+
+[https://en.bitcoin.it/wiki/Target](https://en.bitcoin.it/wiki/Target)
+
+挖礦時間估計
+
+[http://coinish.com/bitcoin-mining-calculator/\#calc-information](http://coinish.com/bitcoin-mining-calculator/#calc-information)
+
+#### 我們可以使用以下網頁進行挖礦模擬
+
+[https://anders.com/blockchain/block.html](https://anders.com/blockchain/block.html)
+
+> ![](/assets/挖礦難度.png)Nonce為一個隨機值讓我們更改   實際挖礦時即為更改Nonce並想辦法算出結果 因為相同字串經過sha後的數值都一樣
+>
+> 但無法預料哪個字串經過sha可以得到我們想要的數值
+>
+> Data為模擬納入區塊的訊息
+
+#### 看到目前市面上的幣種以及價格
+
+當我們想要對目前市面上的加密貨幣進行投資時，我們必須先到市場上了解其價值
+
+以下網站列出了一些市面上的加密貨幣可供我們參考
+
+[https://coinmarketcap.com/](https://coinmarketcap.com/)
+
+#### 其他相關Bitcoin schema介紹
+
+以下網站列出了比特幣相關schema
+
+[https://webbtc.com/api/schema](https://webbtc.com/api/schema)
+
+#### ![](/assets/bitcoin-data-schema.png)
+
+#### 加密貨幣Market State圖表
+
+一樣列了許多市面上可見的加密貨幣，但採用了另一種方式將之呈現
+
+[http://cryptomaps.org/](http://cryptomaps.org/)![](/assets/bitcoin-market-圖表.png)
 
