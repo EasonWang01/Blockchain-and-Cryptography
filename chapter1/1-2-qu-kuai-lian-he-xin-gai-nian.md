@@ -56,9 +56,13 @@
 
 > _持有比特幣代表的是，於區塊鏈帳本上查詢你的地址還存在著尚未變成輸入交易之紀錄。_
 
-
-
 \(看到下圖，如果在Out後的箭頭沒有連接著其他In的話，則其即為目前帳戶的餘額，也稱為`Unspend Output`\)
 
-![](/assets/交易過程.png)
+> ![](/assets/交易過程.png)https://medium.com/@lopp/the-challenges-of-optimizing-unspent-output-selection-a3e5d05d13ef
+
+
+
+
+
+
 
