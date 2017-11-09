@@ -10,7 +10,7 @@ Leslie Lamport等人提出拜占庭將軍問題（Byzantine Generals Problem）
 
 #### 1983
 
-David Chaum提出Ecash密碼學網路支付系統並基於RSA提出了Blind signature，具有不可追蹤的特性
+David Chaum提出Ecash密碼學網路支付系統並基於RSA與DSA提出了Blind signature，具有不可追蹤的特性
 
 #### 
 
