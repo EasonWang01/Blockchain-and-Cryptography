@@ -100,6 +100,3 @@ OSX, Linux
 ./bitcoin-cli getinfo
 
 ```
-
-
-
