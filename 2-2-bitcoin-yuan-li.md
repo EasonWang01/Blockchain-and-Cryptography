@@ -20,7 +20,17 @@
 (這裡可以讓我們輸入一些指令)
 ![](/assets/bitcoin-qt03.png)
 
-6.這時我們再次點選`說明`然後點選下面的`命令列選項`
-![](/assets/bitcoin-qt04.png)
-之後會開啟一個告訴我們可以輸入那些指令的視窗
-![](/assets/bitcoin-qt05.png)
+6.接著我們在`主控台`中輸入`help`可列出有哪些可用的指令
+> 我們也可以在這個網站看到所有可用指令
+https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list
+
+![](/assets/bitcoin-qt06.png)
+7.我們可輸入`getnewaddress`來在錢包中產生一個比特幣地址
+![](/assets/bitcoin-qt07.png)
+
+8.接著可點擊上方的`檔案`然後點選`收款位置`查看剛產生出的地址
+![](/assets/bitcoin-qt08.png)
+
+並且可以幫他加上標記，方便我們辨識這個地址
+![](/assets/bitcoin-qt09.png)
+
