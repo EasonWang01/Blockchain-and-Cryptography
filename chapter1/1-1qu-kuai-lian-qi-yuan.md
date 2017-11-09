@@ -56,7 +56,15 @@ Wei Dai發表匿名的分散式電子現金系統B-money，引入工作量證明
 
 同年，NickSzabo發表了Bit Gold，參與者可貢獻運算能力來解出加密謎題。
 
-http://nakamotoinstitute.org/bit-gold/
+[http://nakamotoinstitute.org/bit-gold/](http://nakamotoinstitute.org/bit-gold/)
+
+#### **2005年**
+
+Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的工作量證明機制（Reusable Proofs of Work，RPOW），結合B-money與Adam Back提出的Hashcash演算法來創造密碼學貨幣
+
+http://nakamotoinstitute.org/finney/rpow/
+
+https://en.bitcoin.it/wiki/Hal\_Finney
 
 #### 2008年10月31日
 
