@@ -13,7 +13,7 @@
 ```
  2-1  Bitcoin 介紹
 
- 2-2  Bitcoin 原理
+ 2-2  Bitcoin 初探
 
  2-3  Bitcoin 錢包
 

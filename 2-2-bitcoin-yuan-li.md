@@ -1,1 +1,1 @@
-# 2-2 Bitcoin 原理
+# 2-2 Bitcoin 初探
