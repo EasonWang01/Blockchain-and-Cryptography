@@ -38,3 +38,43 @@ getinfo
 ```
 
 ![](/assets/newadd3.png)
+
+
+##有關其他可下載的客戶端錢包
+
+### Full node Client
+Bitcoin-qt
+```
+https://bitcoin.org/en/full-node
+```
+
+btcd
+```
+https://github.com/btcsuite/btcd
+```
+libbitcoin-server
+```
+https://en.bitcoin.it/wiki/Libbitcoin
+```
+
+### Thin client
+比較輕量的客戶端，只會下載區塊頭與部分區塊鏈上的資料
+> As Satoshi writes, "[the thin client] can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it." If we take "X" to be the "number of blocks added after it", then a thin client essentially trusts that a transaction X blocks deep will be costly to forge.
+
+bitcoinj
+
+```
+https://en.bitcoin.it/wiki/Bitcoinj
+```
+
+picocoin
+
+```
+https://github.com/jgarzik/picocoin/
+```
+
+Electrum
+
+```
+https://electrum.org/#home
+```
