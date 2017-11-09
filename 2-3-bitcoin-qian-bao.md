@@ -10,7 +10,8 @@
 1.我們先產生一個地址
 ```
 getnewaddress
-```![](/assets/newadd.png)
+```
+![](/assets/newadd.png)
 
 2.然後取得該地址的私鑰
 ```
