@@ -16,6 +16,8 @@ David Chaum提出Ecash密碼學網路支付系統並基於RSA與DSA提出了Blin
 
 David Chaum創立了DigiCash Inc.
 
+提供匿名的電子支付服務，但沒有獲得許多的使用者
+
 #### 
 
 #### 2008年10月31日
