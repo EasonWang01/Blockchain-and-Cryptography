@@ -7,4 +7,6 @@
 * 2.Bitcoin \(比特幣\)
   * [2-1 Bitcoin 介紹](bitcoin-jie-shao.md)
   * [2-2 Bitcoin 初探](2-2-bitcoin-yuan-li.md)
+  * [2-3 Bitcoin 測試鏈\(Testnet\)](2-3-bitcoin-ce-shi-93c828-testnet.md)
+  * [2-4 Bitcoin 錢包\(Wallet\)](2-3-bitcoin-qian-bao.md)
 
