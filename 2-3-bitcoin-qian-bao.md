@@ -30,3 +30,11 @@ getreceivedbyaddress
 ```
 
 ![](/assets/newadd2.png)
+
+4.取得其他資料
+> 這裡一樣要完整同步後才可得到正確資料
+```
+getinfo
+```
+
+![](/assets/newadd3.png)
