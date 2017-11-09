@@ -60,11 +60,11 @@ Wei Dai發表匿名的分散式電子現金系統B-money，引入工作量證明
 
 #### **2005年**
 
-Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的工作量證明機制（Reusable Proofs of Work，RPOW），結合B-money與Adam Back提出的Hashcash演算法來創造密碼學貨幣
+Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的工作量證明機制（Reusable Proofs of Work，RPOW），結合B-money與Adam Back提出的Hashcash演算法來創造密碼學貨幣，可視為加密貨幣的前輩
 
-http://nakamotoinstitute.org/finney/rpow/
+[http://nakamotoinstitute.org/finney/rpow/](http://nakamotoinstitute.org/finney/rpow/)
 
-https://en.bitcoin.it/wiki/Hal\_Finney
+[https://en.bitcoin.it/wiki/Hal\_Finney](https://en.bitcoin.it/wiki/Hal_Finney)
 
 #### 2008年10月31日
 
