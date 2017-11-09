@@ -20,6 +20,10 @@ David Chaum創立了DigiCash Inc.
 
 提供匿名的電子支付服務，但沒有獲得許多的使用者
 
+1990年
+
+Paxos算法解決的問題是在一個可能發生上述異常的分散式系統中如何就某個值達成一致，保證不論發生以上任何異常，都不會破壞決議的一致性。
+
 #### 1992年
 
 Scott Vanstone提出橢圓曲線數位簽章演算法（Elliptic Curve Digital Signature Algorithm，ECDSA）
@@ -28,9 +32,25 @@ Scott Vanstone提出橢圓曲線數位簽章演算法（Elliptic Curve Digital S
 
 利用橢圓曲線的離散特性使他的密碼安全性比先前產生密鑰的方式更加安全，並且被廣泛採用在現今的加密系統中
 
-> ECC: https://en.wikipedia.org/wiki/Elliptic-curve\_cryptography
+> ECC: [https://en.wikipedia.org/wiki/Elliptic-curve\_cryptography](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography)
 >
-> ECDSA: https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm
+> ECDSA: [https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
+
+#### 1997年
+
+Adam Back發明Hashcash（雜湊現金），為一種工作量證明演算法（Proof of Work，POW），此演算法仰賴成本函數的不可逆特性，達到容易被驗證，但很難被破解的特性， 最早被應用於阻擋垃圾郵件。Hashcash之後成為比特幣區塊鏈所採用的關鍵技術之一。
+
+Adam Back於2002年正式發表Hashcash論文
+
+> http://www.hashcash.org/papers/hashcash.pdf
+
+
+
+#### **1998年**
+
+Wei Dai發表匿名的分散式電子現金系統B-money，引入工作量證明機制，強調點對點交易和不可竄改特性。不過在B-money中，並未採用Adam Back提出的Hashcash演算法。Wei Dai的許多設計之後被比特幣區塊鏈所採用。
+
+https://en.bitcoin.it/wiki/B-money
 
 #### 2008年10月31日
 
