@@ -26,6 +26,8 @@ Leslie Lamport提出具高容错的一致性演算法
 
 Paxos算法解決的問題是在一個可能發生上述異常的分散式系統中如何就某個值達成一致，保證不論發生以上任何異常，都不會破壞決議的一致性。
 
+https://zh.wikipedia.org/wiki/Paxos%E7%AE%97%E6%B3%95
+
 #### 1992年
 
 Scott Vanstone提出橢圓曲線數位簽章演算法（Elliptic Curve Digital Signature Algorithm，ECDSA）
