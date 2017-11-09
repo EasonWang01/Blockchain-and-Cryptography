@@ -58,11 +58,29 @@
 
 \(看到下圖，如果在Out後的箭頭沒有連接著其他In的話，則其即為目前帳戶的餘額，也稱為`Unspend Output`\)
 
-> ![](/assets/交易過程.png)https://medium.com/@lopp/the-challenges-of-optimizing-unspent-output-selection-a3e5d05d13ef
+> ![](/assets/交易過程.png)[https://medium.com/@lopp/the-challenges-of-optimizing-unspent-output-selection-a3e5d05d13ef](https://medium.com/@lopp/the-challenges-of-optimizing-unspent-output-selection-a3e5d05d13ef)
 
 
 
+#### 區塊中的交易
 
+> ![](/assets/交易齒輪.png)https://medium.com/@micheledaliessi/how-does-the-blockchain-work-98c8cd01d2ae
 
+看到上圖,每個產生的交易會先在交易池中等待被節點納入區塊中
 
+每個節點都可以將若干個交易訊息從交易池中選取並打包成區塊發送到網絡上，並建議其為鏈上的最新區塊。
+
+區塊鏈系統使用密碼學方法\(後面章節會提到實作\)設計了一道複雜的數學題，只要有正確答案，就可以成爲鏈上的最新區塊。這個答案是由節點計算後一起被打包進區塊。答案是一個數字，得到答案的唯一方法就是不斷地計算。哪個節點先得到了答案，它就先有權利將它的候選區塊放到鏈上。
+
+每個節點都有一份區塊鏈副本，當節點拿到其他節點丟出來的候選區塊\(已有正確答案的\)，就會把區塊放到副本鏈上，同時系統會要求節點搜尋網路裡有沒有比它的副本鏈更長的鏈，如果有，捨棄原有的鏈，取用更長的鏈。
+
+![](/assets/區塊鏈簡圖.png)
+
+在上圖中，我們可以看到每個方塊中都包含一些數值  這些值即為存放在區塊鏈中的區塊資料
+
+1.區塊鏈是由包含交易訊息的區塊，從後向前有序接起來的數據結構，區塊被從後向前有序地鏈接在這個鏈條裡，每個區塊都指向前一個區塊
+
+2.對每個區塊頭進行SHA256加密Hash，每個區塊頭都包含它的父區塊Hash值。這樣把每個區塊鏈接到各自父區塊的Hash值序列就創建了一條一直可以追溯到第一個區塊（創世區塊）的鏈條
+
+3.由於每個區塊的區塊頭包含`父區塊Hash值`，所以當前區塊的Hash值因此也受到前區塊的Hash值的影響。如果父區塊的Hash不一樣，則子區塊也會有不同的hash，接著這個子區塊的子區塊也會有不同Hash，這種瀑布效應將保證該區塊不會被改變
 
