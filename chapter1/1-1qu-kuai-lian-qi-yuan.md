@@ -24,7 +24,13 @@ David Chaum創立了DigiCash Inc.
 
 Scott Vanstone提出橢圓曲線數位簽章演算法（Elliptic Curve Digital Signature Algorithm，ECDSA）
 
-利用橢圓曲線的離散特性使他的密碼安全性比RSA更加安全，並且被廣泛採用在現今的加密系統中
+> ECDSA為結合ECC曲線和DSA ; ECC 為1985年由Neal Koblitz與 Victor S. Miller提出
+
+利用橢圓曲線的離散特性使他的密碼安全性比先前產生密鑰的方式更加安全，並且被廣泛採用在現今的加密系統中
+
+> ECC: https://en.wikipedia.org/wiki/Elliptic-curve\_cryptography
+>
+> ECDSA: https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm
 
 #### 2008年10月31日
 
