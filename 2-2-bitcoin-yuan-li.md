@@ -41,3 +41,52 @@ https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list
 然後他會產生一個`.dat`檔案
 ![](/assets/bitcoin-qt11.png)
 
+#### 更改區塊鏈與錢包資料的存放資料夾
+預設比特幣資料會存放在
+
+Windows
+```
+C:\Documents and Settings\YourUserName\Application data\Bitcoin (XP)
+
+C:\Users\YourUserName\Appdata\Roaming\Bitcoin (Vista and 7)
+```
+OSX
+```
+~/Library/Application\ Support/Bitcoin/
+```
+Linux 
+```
+~/.bitcoin/
+```
+
+但我們也可以自己設定要存放的資料夾位置
+要這麼做的話，我們必須用命令列來啟動bitcoin程序，並且指令上指定我們要用的資料夾
+
+1.先用系統管理員打開命令列(避免稍後打開資料夾權限不足)
+2.之後輸入`cd` 後面加上我們剛才安裝的資料夾位置
+![](/assets/bitcoin-qt12.png)
+3.之後我們創建一個資料夾來存放我們要自己指定的區塊鏈資料存放位置(這裡我們直接在這個資料夾下創建一個BitcoinData)
+![](/assets/bitcoin-qt13.png)
+4.之後我們輸入如下指令(記得確認路徑正確)
+![](/assets/start-qt-cmd.png)
+之後他就會一樣開啟剛才的Bitcoin程式
+> OSX與Linux不用在指令開頭加`start`
+
+5.這時我們打開BitcoinData這個資料夾，即可看到裡面存放了錢包與區塊鏈的檔案
+
+![](/assets/bitcoin-qt14.png)
+
+#### 從Terminal 或 Cmd 執行bitcoin 指令
+我們也可以從Terminal 或 Cmd 執行bitcoin 指令
+1.一樣開啟terminal然後用進入到`daemon`路徑下
+![](/assets/bitcoin-qt15.png)
+> OSX和Linux 在bin路徑下
+
+2.然後我們要先執行bitcoind(其為Bitcoin server)
+![](/assets/bitcoin-qt16.png)
+
+> OSX和Linux 在bin路徑下 
+輸入./bitcoind
+
+
+
