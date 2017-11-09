@@ -8,17 +8,15 @@ Leslie Lamport等人提出拜占庭將軍問題（Byzantine Generals Problem）
 
 ![](/assets/拜占庭將軍論文封面.png)
 
-#### 1982-1983
+#### 1982-1983年
 
 David Chaum提出Ecash密碼學網路支付系統並基於RSA與DSA提出了Blind signature，具有不可追蹤的特性
 
-#### 1989
+#### 1989年
 
 David Chaum創立了DigiCash Inc.
 
 提供匿名的電子支付服務，但沒有獲得許多的使用者
-
-#### 
 
 #### 2008年10月31日
 
