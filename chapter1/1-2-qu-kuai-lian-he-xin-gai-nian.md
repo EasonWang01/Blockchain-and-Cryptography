@@ -40,9 +40,7 @@
 
 > ![](/assets/交易簽名.png)
 >
-> https://bitcoin.org/en/developer-guide
-
-
+> [https://bitcoin.org/en/developer-guide](https://bitcoin.org/en/developer-guide)
 
 下圖為一個比較概略的介紹圖
 
@@ -59,4 +57,8 @@
 > _持有比特幣代表的是，於區塊鏈帳本上查詢你的地址還存在著尚未變成輸入交易之紀錄。_
 
 
+
+\(看到下圖，如果在Out後的箭頭沒有連接著其他In的話，則其即為目前帳戶的餘額，也稱為`Unspend Output`\)
+
+![](/assets/交易過程.png)
 
