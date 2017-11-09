@@ -60,11 +60,9 @@
 
 > ![](/assets/交易過程.png)[https://medium.com/@lopp/the-challenges-of-optimizing-unspent-output-selection-a3e5d05d13ef](https://medium.com/@lopp/the-challenges-of-optimizing-unspent-output-selection-a3e5d05d13ef)
 
-
-
 #### 區塊中的交易
 
-> ![](/assets/交易齒輪.png)https://medium.com/@micheledaliessi/how-does-the-blockchain-work-98c8cd01d2ae
+> ![](/assets/交易齒輪.png)[https://medium.com/@micheledaliessi/how-does-the-blockchain-work-98c8cd01d2ae](https://medium.com/@micheledaliessi/how-does-the-blockchain-work-98c8cd01d2ae)
 
 看到上圖,每個產生的交易會先在交易池中等待被節點納入區塊中
 
@@ -83,4 +81,18 @@
 2.對每個區塊頭進行SHA256加密Hash，每個區塊頭都包含它的父區塊Hash值。這樣把每個區塊鏈接到各自父區塊的Hash值序列就創建了一條一直可以追溯到第一個區塊（創世區塊）的鏈條
 
 3.由於每個區塊的區塊頭包含`父區塊Hash值`，所以當前區塊的Hash值因此也受到前區塊的Hash值的影響。如果父區塊的Hash不一樣，則子區塊也會有不同的hash，接著這個子區塊的子區塊也會有不同Hash，這種瀑布效應將保證該區塊不會被改變
+
+
+
+# Merkle Tree
+
+我們可以直接把所有交易訊息放在區塊中，並直接針對區塊中的明文交易訊息做驗證，但這樣的缺點是會佔去許多區塊鏈上的空間，所以我們要一種更簡單的驗證方式，把區塊中所含的交易使用Merkle Tree規則算出Merkel Root
+
+如果今天在區塊中的某一筆交易本文被竄改，則計算出來之Merkel Root也一定不同
+
+利用這個特性可避免區塊中所含的歷史交易遭任意竄改
+
+> ![](/assets/merkeltree.png)https://en.wikipedia.org/wiki/Merkle\_tree\#/media/File:Hash\_Tree.svg
+
+
 
