@@ -20,7 +20,9 @@ David Chaum創立了DigiCash Inc.
 
 提供匿名的電子支付服務，但沒有獲得許多的使用者
 
-1990年
+#### 1990年
+
+Leslie Lamport提出具高容错的一致性演算法
 
 Paxos算法解決的問題是在一個可能發生上述異常的分散式系統中如何就某個值達成一致，保證不論發生以上任何異常，都不會破壞決議的一致性。
 
@@ -42,15 +44,13 @@ Adam Back發明Hashcash（雜湊現金），為一種工作量證明演算法（
 
 Adam Back於2002年正式發表Hashcash論文
 
-> http://www.hashcash.org/papers/hashcash.pdf
-
-
+> [http://www.hashcash.org/papers/hashcash.pdf](http://www.hashcash.org/papers/hashcash.pdf)
 
 #### **1998年**
 
 Wei Dai發表匿名的分散式電子現金系統B-money，引入工作量證明機制，強調點對點交易和不可竄改特性。不過在B-money中，並未採用Adam Back提出的Hashcash演算法。Wei Dai的許多設計之後被比特幣區塊鏈所採用。
 
-https://en.bitcoin.it/wiki/B-money
+[https://en.bitcoin.it/wiki/B-money](https://en.bitcoin.it/wiki/B-money)
 
 #### 2008年10月31日
 
