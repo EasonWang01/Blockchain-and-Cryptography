@@ -34,3 +34,10 @@ https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list
 並且可以幫他加上標記，方便我們辨識這個地址
 ![](/assets/bitcoin-qt09.png)
 
+#### 備份錢包
+
+點選`檔案`內的`備份錢包`
+![](/assets/bitcoin-qt10.png)
+然後他會產生一個`.dat`檔案
+![](/assets/bitcoin-qt11.png)
+
