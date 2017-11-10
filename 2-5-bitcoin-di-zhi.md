@@ -7,6 +7,10 @@
 ![](/assets/address1.png)
 > http://en.bitcoinwiki.org/Bitcoin_address
 
+比特幣地址有以下性質
+> 1.由34個英文加數字組成
+2.不會含有大寫`O`大寫`I`小寫`i`和數字`0`
+
 #### 使用Node.js產生比特幣地址
 
 接下來我們要結合密碼學的幾個加密方法來實作並產生比特幣地址，使用的程式語言是Node.js(如尚未安裝請參考附錄)
