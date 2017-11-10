@@ -76,6 +76,9 @@ Linux
 
 ![](/assets/bitcoin-qt14.png)
 
+其他資料夾位置資訊可參考以下網站
+https://en.bitcoin.it/wiki/Data_directory
+
 #### 從Terminal 或 Cmd 執行bitcoin 指令
 我們也可以從Terminal 或 Cmd 執行bitcoin 指令
 1.一樣開啟terminal然後用進入到`daemon`路徑下
