@@ -94,7 +94,7 @@ https://electrum.org/#home
 
 
 
-我們也可以直接到以下網站
+我們也可以直接到以下網站，查看目前可用的第三方錢包並進行安裝。可選擇電腦版、硬體版、手機與網頁版
 
 [https://bitcoin.org/en/wallets/hardware/](https://bitcoin.org/en/wallets/desktop/windows/)
 
