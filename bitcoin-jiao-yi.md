@@ -12,12 +12,12 @@
 ```
 交易手續費 * 比特幣存在尚未確認的交易池之時間 
 ```
-https://github.com/bitcoin/bitcoin/issues/9601
 但後來2017年把coin age取消，單純以手續費為依據
-
 https://github.com/bitcoin/bitcoin/issues/9601
+https://bitcoin.stackexchange.com/questions/54583/why-is-the-transaction-priority-removed
 
-礦工節點收到交易後驗證過程如下
+
+### 礦工節點收到交易後驗證過程如下
 ```
 1.交易的語法和數據結構必須正確。 
 
