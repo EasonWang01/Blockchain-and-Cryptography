@@ -13,6 +13,7 @@
 交易手續費 * 比特幣存在尚未確認的交易池之時間 
 ```
 但後來2017年把coin age取消，單純以手續費為依據
+> Today miners choose which transactions to mine only based on fee-rate
 https://github.com/bitcoin/bitcoin/issues/9601
 https://bitcoin.stackexchange.com/questions/54583/why-is-the-transaction-priority-removed
 
