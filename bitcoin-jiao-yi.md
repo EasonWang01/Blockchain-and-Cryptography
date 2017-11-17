@@ -25,7 +25,7 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 
 
-但後來2017年把coin age取消，區塊預留的priorty block也移除了，單純以手續費為依據
+但後來2017年把coin age取消，區塊預留的priorty block也移除了，目前交易納入區塊的優先級單純以手續費為依據
 > Today miners choose which transactions to mine only based on fee-rate
 https://github.com/bitcoin/bitcoin/issues/9601
 https://bitcoin.stackexchange.com/questions/54583/why-is-the-transaction-priority-removed
