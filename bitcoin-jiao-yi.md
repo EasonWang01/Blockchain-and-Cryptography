@@ -1,0 +1,1 @@
+比特幣交易在經過六個區塊確認之前都會顯示`n/unconfirmed`，為了避免雙重支付(double spending)

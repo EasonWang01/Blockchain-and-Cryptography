@@ -10,6 +10,7 @@
   * [2-3 Bitcoin 測試鏈\(Testnet\)](2-3-bitcoin-ce-shi-93c828-testnet.md)
   * [2-4 Bitcoin 錢包\(Wallet\)](2-3-bitcoin-qian-bao.md)
   * [2-5 Bitcoin 地址](2-5-bitcoin-di-zhi.md)
+  * [Bitcoin 交易](bitcoin-jiao-yi.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)
 
