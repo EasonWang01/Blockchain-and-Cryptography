@@ -22,7 +22,7 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 ```
 (500000000 * 10 + 200000000 * 3) / 500 = 11,200,000
 ```
-並且優先級要大於57,600,000才會被納入區塊
+
 
 
 但後來2017年把coin age取消，單純以手續費為依據
