@@ -17,3 +17,7 @@ https://people.xiph.org/~greg/attack_success.html
 
 以下為寫在白皮書的公式
 ![](/assets/避免雙重支付公式.png)
+
+
+有關其他可能被攻擊的方式
+https://en.bitcoin.it/wiki/Irreversible_Transactions
