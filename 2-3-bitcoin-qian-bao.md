@@ -75,6 +75,11 @@ https://en.bitcoin.it/wiki/Libbitcoin
 
 > As Satoshi writes, "\[the thin client\] can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it." If we take "X" to be the "number of blocks added after it", then a thin client essentially trusts that a transaction X blocks deep will be costly to forge.
 
+bitcoind可以加上指令跑較輕量的client大約只需2GB
+```
+https://bitcoin.stackexchange.com/questions/37496/how-can-i-run-bitcoind-in-pruning-mode
+```
+
 bitcoinj
 
 ```
