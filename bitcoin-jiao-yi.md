@@ -101,4 +101,20 @@ https://people.xiph.org/~greg/attack_success.html
 https://en.bitcoin.it/wiki/Irreversible_Transactions
 
 
+#交易種類
+```
+1.Pay-to-Public-Key-Hash (P2PKH)
+
+2.Pay-to-Public-Key (P2PK) 
+
+3.Multi-Signature (MultiSig，多重簽章交易，需要多個的私鑰才可完成簽發，最多可包含 15 個 keys)
+
+4.Data Output (OP_RETURN，可以填上自己想填的資料到交易上)
+
+5.Pay-to-Script-Hash (P2SH)
+```
+
+---
+
+
 https://en.bitcoin.it/wiki/Timelock
