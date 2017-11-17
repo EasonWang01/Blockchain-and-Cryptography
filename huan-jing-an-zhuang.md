@@ -30,17 +30,23 @@ export NODE_PATH=/usr/local/lib/node_modules
 
 
 #切換Node.js版本
-n
+####1.`n`
+
+```
 n use <version>
-nvm
-(windows可能無法使用n,所以可以用nvm安裝檔)
+```
+
+####2.`nvm`
+
+> (windows可能無法使用n,所以可以用nvm安裝檔)
 下載點:
 https://github.com/coreybutler/nvm-windows/releases
 
-然後
+使用方式:
+```
 nvm install <version>
 nvm use <version>
-
+```
 
 #更新或復原npm版本
 (把數字改為你要的版本即可)
