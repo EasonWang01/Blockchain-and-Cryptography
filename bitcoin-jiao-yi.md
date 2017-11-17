@@ -11,7 +11,20 @@
 計算方式如下:
 ```
 交易手續費 * 比特幣存在尚未確認的交易池之時間 
+
+即為
+
+priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 ```
+假設
+
+一個交易有 2 個輸入, 第一個為 5 btc 擁有 10 個確認(confirmations), 另一個為 2 btc 有 3 個確認(confirmations), 大小為 500bytes, 其優先級計算為
+```
+(500000000 * 10 + 200000000 * 3) / 500 = 11,200,000
+```
+並且優先級要大於57,600,000才會被納入區塊
+
+
 但後來2017年把coin age取消，單純以手續費為依據
 > Today miners choose which transactions to mine only based on fee-rate
 https://github.com/bitcoin/bitcoin/issues/9601
