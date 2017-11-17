@@ -1,3 +1,66 @@
+# 廣播交易
+比特幣交易可以是offline產生的，產生後再用線上的方式廣播給bitcoin網路，只要把交易訊息的payload傳送給其中一個比特幣節點就可以達到廣播的目的
+
+一旦一筆比特幣交易被發送到任意一個連接至比特幣網絡的節點，這筆交易將會被該節點驗證。如果交易被驗證有效，該節點將會將這筆交易傳播到這個節點所連接的其他節點
+
+每個節點在傳播每一筆交易之前均進行獨立驗證。 一個異常交易所能到達的節點不會超過一個
+
+
+礦工會根據每筆交易目前的優先級來決定哪些要先納入下一個區塊中
+
+計算方式如下:
+```
+交易手續費 * 比特幣存在尚未確認的交易池之時間 
+```
+https://github.com/bitcoin/bitcoin/issues/9601
+但後來2017年把coin age取消，單純以手續費為依據
+
+https://github.com/bitcoin/bitcoin/issues/9601
+
+礦工節點收到交易後驗證過程如下
+```
+1.交易的語法和數據結構必須正確。 
+
+2.輸入與輸出列表都不能為空。 
+
+3.交易的bytes大小必須小於MAX_BLOCK_SIZE。 
+
+4.每一個輸出值，以及總量，必須在規定值的範圍內 （大於0且小於2,100萬個比特幣）。
+ 
+5.沒有Hash等於0，N等於-1的輸入（hash=0, n=-1,即為coinbase transaction）。 
+
+6.nLockTime(指定在交易發生前的鎖定時間)是小於或等於INT_MAX(31 bits)，交易大小bytes >= 100，sig opcount <= 2(關於signature的opcode執行不可多於兩個)。 
+
+7.解鎖腳本（scriptSig）只能夠將數字壓入棧中，並且鎖定腳本（scriptPubkey）必須要符合isStandard的格式 （該格式將會拒絕非標準交易）。 
+
+8.假設發出的交易Tx hash已經出現在pool中等待納入區塊或是已經在以前的區塊中則一樣拒絕。
+
+9.對於每一個交易輸入，在區塊鏈和目前等待納入的交易池中尋找引用的輸出交易。如果缺少對應的輸出交易，該交易將成為一個孤立的交易。
+
+10.對於每一個輸入，如果引用的輸出交易是一個coinbase輸出，該輸入必須至少獲得COINBASE_MATURITY (100區塊以上的確認)。 
+
+11.對於每一個輸入，引用的輸出是必須存在的，並且沒有被花費(UTXO)。 
+
+12.使用引用的輸出交易獲得輸入值，並檢查每一個輸入值和總值是否在規定值的範圍內 （大於0且小於2,100萬個比特幣）。 
+
+13.如果輸入值的總和小於輸出值的總和，交易將被中止。 
+
+14.如果交易手續費太低以至於無法進入下一個新區塊，交易將被拒絕。 
+
+15.驗證 scriptPubKey 符合正確格式
+
+16.加入交易池中
+
+17.礦工挖到區塊後剛才驗證的交易都會加入該區塊中
+
+18.礦工把自己算出的區塊廣播給其他節點
+
+19.根據新的區塊把剛才納入孤兒交易(orphan transaction)在跑一次以上過程，讓他們可以加入下一個區塊
+```
+
+https://en.bitcoin.it/wiki/Protocol_rules#.22tx.22_messages
+原始碼:https://github.com/bitcoin/bitcoin/blob/3081fb9a31054224759453c3ca400b9076ab8004/src/main.cpp#L924
+
 # 交易確認(confirmation)
 > 當交易被區塊納入後，其確認數會增加一，之後又在此區塊後產生了一個區塊時此時確認數為二
 Each additional confirmation is a new block being found and added to the end of the blockchain.
@@ -22,3 +85,6 @@ https://people.xiph.org/~greg/attack_success.html
 
 有關其他可能被攻擊的方式
 https://en.bitcoin.it/wiki/Irreversible_Transactions
+
+
+https://en.bitcoin.it/wiki/Timelock
