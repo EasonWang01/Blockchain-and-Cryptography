@@ -71,6 +71,7 @@ https://en.bitcoin.it/wiki/Libbitcoin
 ### Thin client
 
 比較輕量的客戶端，只會下載區塊頭與部分區塊鏈上的資料
+也稱為SPV
 
 > As Satoshi writes, "\[the thin client\] can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it." If we take "X" to be the "number of blocks added after it", then a thin client essentially trusts that a transaction X blocks deep will be costly to forge.
 
@@ -91,7 +92,8 @@ Electrum
 ```
 https://electrum.org/#home
 ```
-
+一篇關於SPV安全性的文章
+https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9
 
 
 我們也可以直接到以下網站，查看目前可用的第三方錢包並進行安裝。可選擇電腦版、硬體版、手機與網頁版
