@@ -92,7 +92,10 @@ Electrum
 ```
 https://electrum.org/#home
 ```
-一篇關於SPV安全性的文章
+https://bitzuma.com/posts/a-beginners-guide-to-the-electrum-bitcoin-wallet/
+
+
+>一篇關於SPV安全性的文章
 https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9
 
 
