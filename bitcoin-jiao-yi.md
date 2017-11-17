@@ -1,3 +1,6 @@
+# 交易確認(confirmation)
+> 當交易被區塊納入後，其確認數會增加一，之後又在此區塊後產生了一個區塊時此時確認數為二
+
 1.原生的比特幣客戶端程式在交易經過六個區塊確認之前都會顯示`n/unconfirmed`，為了避免雙重支付(double spending)
 
 >Freshly-mined coins cannot be spent for 100 blocks
