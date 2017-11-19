@@ -73,7 +73,7 @@ base58說明：[https://zh.wikipedia.org/wiki/Base58](https://zh.wikipedia.org/w
 
 ```js
 var crypto = require('crypto');
-var ecdh = crypto.createECDH('secp256k1');//// 最後使用bas58編碼
+var ecdh = crypto.createECDH('secp256k1');
 var bs58 = require('bs58');
 
 
@@ -182,6 +182,22 @@ console.log('編碼後的多重簽名比特幣地址')
 console.log(address);
 console.log('--------')
 ```
+
+# 3.SegWit Address \(P2WSH\) 
+
+隔離見證地址，開頭為3
+
+> ```
+> Calculate the RIPEMD160 of the SHA256 of a public key (keyhash). 
+> ```
+>
+> ```
+> The P2SH redeemScript is always 22 bytes. 
+> It starts with a OP_0, followed by a canonical push of the keyhash (i.e. 0x0014{20-byte keyhash})
+> Same as any other P2SH, the scriptPubKey is OP_HASH160 hash160(redeemScript) OP_EQUAL, and the address is the corresponding P2SH address with prefix 3.
+> ```
+
+\`\`\`
 
 # 地址不建議重複使用
 
