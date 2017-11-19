@@ -35,17 +35,27 @@
 > 1.由34個英文加數字組成  
 > 2.不會含有大寫`O`大寫`I`小寫`i`和數字`0`
 
-#### 使用Node.js產生比特幣地址
+# 使用Node.js產生比特幣地址
 
 接下來我們要結合密碼學的幾個加密方法來實作並產生比特幣地址，使用的程式語言是Node.js\(如尚未安裝請參考附錄\)
 
+#### 1.最常用的P2PKH單一簽名地址
 
+以下將使用node.js實作，我們先安裝node.js的base58模組
+
+```
+npm install bs58
+```
+
+base58說明：[https://zh.wikipedia.org/wiki/Base58](https://zh.wikipedia.org/wiki/Base58)
+
+```js
+var crypto = require('crypto
+```
 
 
 
 # 地址不建議重複使用
 
-https://en.bitcoin.it/wiki/Address\_reuse
-
-
+[https://en.bitcoin.it/wiki/Address\_reuse](https://en.bitcoin.it/wiki/Address_reuse)
 
