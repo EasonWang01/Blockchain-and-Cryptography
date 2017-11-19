@@ -157,7 +157,7 @@ console.log('redeemScriptHash')
 console.log(hash);
 console.log('--------')
 
-//在publickeyHash前面加上一个05前缀
+//在publickeyHash前面加上一个05前缀 P2SH_BYTE
 var version = new Buffer('05', 'hex');
 var checksum = Buffer.concat([version, hash]);
 //兩次256雙重加密
@@ -258,8 +258,6 @@ console.log('--------')
 ```
 
 > 參考自:[https://github.com/OutCast3k/coinbin/blob/master/js/coin.js\#L175](https://github.com/OutCast3k/coinbin/blob/master/js/coin.js#L175)
-
-
 
 # 4.nlockTime address
 
