@@ -29,7 +29,7 @@
 > 1.由34個英文加數字組成  
 > 2.不會含有大寫`O`大寫`I`小寫`i`和數字`0`
 
-## 1.Single Sig Address \(Pay to Public Key Hash \(P2PKH\)\) 
+## 1.Single Sig Address \(Pay to Public Key Hash \(P2PKH\)\)
 
 單一簽名地址，開頭為1
 
@@ -39,15 +39,23 @@
 
 > [http://en.bitcoinwiki.org/Bitcoin\_address](http://en.bitcoinwiki.org/Bitcoin_address)
 
-## 2.Multi Sig Address （P2SH） 
+## 2.Multi Sig Address （P2SH）
 
 多重簽名地址，開頭為3，產生地址時可以加入一至十五個public key，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名
 
+![](/assets/螢幕快照 2017-11-19 下午3.10.49.png)
+
+> https://www.blocktrail.com/api/docs
+
+#### 產生方式：
 
 
 
+到下面查表
 
+![](/assets/螢幕快照 2017-11-19 下午3.26.17.png)
 
+> https://en.bitcoin.it/wiki/Script
 
 # 
 
