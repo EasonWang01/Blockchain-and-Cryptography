@@ -187,7 +187,7 @@ console.log('--------')
 
 相關spec可參考此:
 
-https://bitcoincore.org/en/segwit\_wallet\_dev/\#creation-of-p2sh-p2wsh-address
+[https://bitcoincore.org/en/segwit\_wallet\_dev/\#creation-of-p2sh-p2wsh-address](https://bitcoincore.org/en/segwit_wallet_dev/#creation-of-p2sh-p2wsh-address)
 
 隔離見證地址，開頭為3
 
@@ -256,6 +256,8 @@ console.log('編碼後segwit的比特幣地址')
 console.log(address);
 console.log('--------')
 ```
+
+> 參考自:https://github.com/OutCast3k/coinbin/blob/master/js/coin.js\#L175
 
 # 地址不建議重複使用
 
