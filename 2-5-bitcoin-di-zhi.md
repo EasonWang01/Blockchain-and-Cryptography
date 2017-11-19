@@ -4,6 +4,14 @@
 
 > 地址為1開頭為一般比特幣地址，為3開頭的為多重簽章地址
 
+可在以下網站線上產生地址
+
+單一簽名：https://coinb.in/\#newAddress
+
+多重簽名：https://coinb.in/multisig/
+
+
+
 下圖為比特幣地址的產生流程
 
 ![](/assets/address1.png)
