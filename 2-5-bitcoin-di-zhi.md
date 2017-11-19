@@ -388,7 +388,7 @@ console.log('--------')
 
 > 前 256 bits 為 master private key，後 256 bits 為 master chain code ，master chain code 代表 entropy\(熵\)，之後再往下產生 child keys 時會用到。
 
-![](/assets/1_ChWUKm31L2WEEpeEB7kzPQ1.png)圖片來源:https://github.com/bitcoinbook/bitcoinbook
+![](/assets/1_ChWUKm31L2WEEpeEB7kzPQ1.png)圖片來源:[https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook)
 
 ## 第二步驟
 
@@ -404,9 +404,9 @@ console.log('--------')
 
 > 之後會產生跟上層一樣的512bits的key，同樣的，前後256bits分別為 child private key 與 child chain code。
 
-![](/assets/1_ni33v4GKL12m2M4m_5GIQQ.png)圖片來源:https://github.com/bitcoinbook/bitcoinbook
+![](/assets/1_ni33v4GKL12m2M4m_5GIQQ.png)圖片來源:[https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook)
 
-
+> 由於HMAC-SHA512是Hash function，過程是不可逆的，所以我們不會知道parent是什麼，以及也不會知道自己鄰近的其他child是什麼
 
 # 地址不建議重複使用
 
