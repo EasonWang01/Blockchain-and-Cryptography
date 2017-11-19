@@ -388,9 +388,23 @@ console.log('--------')
 
 > 前 256 bits 為 master private key，後 256 bits 為 master chain code ，master chain code 代表 entropy\(熵\)，之後再往下產生 child keys 時會用到。
 
-![](/assets/1_ChWUKm31L2WEEpeEB7kzPQ1.png)
+![](/assets/1_ChWUKm31L2WEEpeEB7kzPQ1.png)圖片來源:https://github.com/bitcoinbook/bitcoinbook
 
-## 第二步驟 
+## 第二步驟
+
+往下一層，產生該層各個child private key 的時候，要用到 child key derivation \(CKD\) 這個方法
+
+這個方法一樣是做HMAC-SHA256 加密演算法，但他會需要先輸入三個參數。
+
+```
+1.parent public key：拿上一層的 private key 來產生的 public key即是。
+2.parent chain code：上一層key的 chain code，為一個entropy(熵)。
+3.index：代表著產生下一層的第幾個 key，例如 0 則代表為下一層的第一個key。
+```
+
+> 之後會產生跟上層一樣的512bits的key，同樣的，前後256bits分別為 child private key 與 child chain code。
+
+![](/assets/1_ni33v4GKL12m2M4m_5GIQQ.png)圖片來源:https://github.com/bitcoinbook/bitcoinbook
 
 
 
