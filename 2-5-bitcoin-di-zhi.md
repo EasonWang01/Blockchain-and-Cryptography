@@ -20,6 +20,8 @@
 3.SegWit Address (P2WSH) 隔離見證地址，開頭為3
 
 4.Time Locked Address 運用OP_CHECKLOCKTIMEVERIFY (OP_HODL)來創建的地址，開頭為3
+
+5.HD address (hierarchical deterministic address)產生出xPub和xPrv
 ```
 
 下圖為比特幣地址的產生流程
