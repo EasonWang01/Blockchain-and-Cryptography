@@ -57,11 +57,11 @@
 
 # 
 
-# 使用Node.js產生比特幣地址
+# \#使用Node.js產生比特幣地址
 
 接下來我們要結合密碼學的幾個加密方法來實作並產生比特幣地址，使用的程式語言是Node.js\(如尚未安裝請參考附錄\)
 
-#### 1.最常用的P2PKH單一簽名地址
+# 1.最常用的P2PKH單一簽名地址
 
 以下將使用node.js實作，我們先安裝node.js的base58模組
 
@@ -170,7 +170,7 @@ console.log('checksum')
 console.log(checksum);
 console.log('--------')
 
-//把publickeyHash前面一樣加上00而後面加上剛才算出的checksum
+//把publickeyHash前面一樣加上05而後面加上剛才算出的checksum
 var address = Buffer.concat([version, hash, checksum]);
 console.log('編碼前地址')
 console.log(address);
