@@ -77,6 +77,10 @@
 
 但如果master seed 流出去，他底下的所有 key 跟 address 都暴露在風險之中。
 
+![](/assets/1_ChWUKm31L2WEEpeEB7kzPQ.png)
+
+> http://chimera.labs.oreilly.com/books/1234000001802/ch04.html\#private\_keys
+
 # \#使用Node.js產生比特幣地址
 
 接下來我們要結合密碼學的幾個加密方法來實作並產生比特幣地址，使用的程式語言是Node.js\(如尚未安裝請參考附錄\)
