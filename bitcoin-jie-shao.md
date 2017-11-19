@@ -29,3 +29,19 @@
 
 [https://bitcoincore.org/](https://bitcoincore.org/)
 
+
+
+
+
+# BIP
+
+BIP是對未來需要改進的比特幣特點，所做的提案。
+
+> BIP stands for Bitcoin Improvement Proposal. A BIP is a design document providing information to the Bitcoin community, or describing a new feature for Bitcoin or its processes or environment. The BIP should provide a concise technical specification of the feature and a rationale for the feature.
+
+可在此網站看到詳細:https://github.com/bitcoin/bips
+
+![](/assets/螢幕快照 2017-11-19 下午1.13.48.png)
+
+
+
