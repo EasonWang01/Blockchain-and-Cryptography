@@ -257,7 +257,80 @@ console.log(address);
 console.log('--------')
 ```
 
-> 參考自:https://github.com/OutCast3k/coinbin/blob/master/js/coin.js\#L175
+> 參考自:[https://github.com/OutCast3k/coinbin/blob/master/js/coin.js\#L175](https://github.com/OutCast3k/coinbin/blob/master/js/coin.js#L175)
+
+
+
+# 4.nlockTime address
+
+指定時間後該地址才可進行交易
+
+```
+redeemScript = unixTime + OP_CHECKLOCKTIMEVERIFY + OP_DROP + publickey + OP_CHECKSIG;
+```
+
+```js
+var crypto = require('crypto');
+var ecdh = crypto.createECDH('secp256k1');
+var bs58 = require('bs58');
+
+// 查表
+const OP_2 = "52";
+const OP_3 = "53";
+const OP_CHECKMULTISIG = "ae";
+
+var hash2 = crypto.randomBytes(32)
+console.log('--------')
+console.log('私鑰')
+console.log(hash2); //私鑰，64位十六進制數 //使用hash2.toString('hex')即可看到16進位字串
+console.log('--------')
+
+
+// ECDH和ECDSA產生公私鑰的方式都相同
+var publickey = ecdh.setPrivateKey(hash2,'hex').getPublicKey('hex')
+console.log('公鑰')
+console.log(publickey); //公鑰(通過橢圓曲線算法可以從私鑰計算得到公鑰)
+console.log('--------')
+
+var unixTime = Date.now() + 60*60*24*1000*7; // 時間設定在七天後
+const OP_CHECKLOCKTIMEVERIFY = "b1";
+const OP_DROP = "75";
+const OP_CHECKSIG = "ac";
+
+redeemScript = unixTime + OP_CHECKLOCKTIMEVERIFY + OP_DROP + publickey + OP_CHECKSIG;
+
+//把公鑰以sha256加密後再用ripemd160加密，取得publickeyHash
+var hash = crypto.createHash('sha256').update(redeemScript).digest();
+hash = crypto.createHash('ripemd160').update(hash).digest();
+console.log('redeemScriptHash')
+console.log(hash);
+console.log('--------')
+
+//在publickeyHash前面加上一个05前缀
+var version = new Buffer('05', 'hex');
+var checksum = Buffer.concat([version, hash]);
+//兩次256雙重加密
+checksum = crypto.createHash('sha256').update(checksum).digest();
+checksum = crypto.createHash('sha256').update(checksum).digest();
+
+//取前4位得到效驗碼
+checksum = checksum.slice(0, 4);
+console.log('checksum')
+console.log(checksum);
+console.log('--------')
+
+//把publickeyHash前面一樣加上00而後面加上剛才算出的checksum
+var address = Buffer.concat([version, hash, checksum]);
+console.log('編碼前地址')
+console.log(address);
+console.log('--------')
+
+// 最後使用base58進行編碼
+address = bs58.encode(address);
+console.log('編碼後的nlockTime比特幣地址')
+console.log(address);
+console.log('--------')
+```
 
 # 地址不建議重複使用
 
