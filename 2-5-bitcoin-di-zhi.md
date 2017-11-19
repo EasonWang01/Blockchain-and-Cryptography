@@ -185,6 +185,10 @@ console.log('--------')
 
 # 3.SegWit Address \(P2WSH\)
 
+相關spec可參考此:
+
+https://bitcoincore.org/en/segwit\_wallet\_dev/\#creation-of-p2sh-p2wsh-address
+
 隔離見證地址，開頭為3
 
 > ```
