@@ -55,7 +55,25 @@
 
 > [https://en.bitcoin.it/wiki/Script](https://en.bitcoin.it/wiki/Script)
 
-# 
+# 3.SegWit Address 
+
+\(P2WSH\) 隔離見證地址，開頭為3
+
+# 4.Time Locked Address 
+
+運用OP\_CHECKLOCKTIMEVERIFY \(OP\_HODL\)來創建的地址，開頭為3
+
+可產生經過指定時間後才可用來交易的地址
+
+# 5.HD address \(hierarchical deterministic address\)
+
+參考下圖:
+
+![](/assets/derivation.png)
+
+> [https://bitcoin.stackexchange.com/questions/42559/recovering-a-hd-wallet-from-a-partial-seed-phrase](https://bitcoin.stackexchange.com/questions/42559/recovering-a-hd-wallet-from-a-partial-seed-phrase)
+
+根據[BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) 從12個隨機單字產生了128-bit master seed，之後繼續往下階層式的產生出許多地址
 
 # \#使用Node.js產生比特幣地址
 
