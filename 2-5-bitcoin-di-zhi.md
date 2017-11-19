@@ -330,6 +330,16 @@ console.log(address);
 console.log('--------')
 ```
 
+# 5.HD address \(hierarchical deterministic address\)
+
+參考下圖:
+
+![](/assets/derivation.png)
+
+> https://bitcoin.stackexchange.com/questions/42559/recovering-a-hd-wallet-from-a-partial-seed-phrase
+
+
+
 # 地址不建議重複使用
 
 [https://en.bitcoin.it/wiki/Address\_reuse](https://en.bitcoin.it/wiki/Address_reuse)
