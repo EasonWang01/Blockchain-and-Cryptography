@@ -124,6 +124,18 @@ console.log(address);
 console.log('--------')
 ```
 
+# 2.P2SH 多重簽名地址
+
+跟P2PKH產生方式類似，只要把public key換為redeem script即可，redeem script產生方式為下圖：
+
+\(把多個要結合個public key跟相關execute code串接即可\)
+
+> ![](/assets/螢幕快照 2017-11-19 下午3.56.38.png)http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/
+
+```js
+
+```
+
 # 地址不建議重複使用
 
 [https://en.bitcoin.it/wiki/Address\_reuse](https://en.bitcoin.it/wiki/Address_reuse)
