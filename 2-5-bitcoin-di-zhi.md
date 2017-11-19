@@ -130,10 +130,57 @@ console.log('--------')
 
 \(把多個要結合個public key跟相關execute code串接即可\)
 
-> ![](/assets/螢幕快照 2017-11-19 下午3.56.38.png)http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/
+> ![](/assets/螢幕快照 2017-11-19 下午3.56.38.png)[http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/](http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/)
 
 ```js
+var crypto = require('crypto');
+var bs58 = require('bs58');
 
+// 查表
+const OP_2 = "52";
+const OP_3 = "53";
+const OP_CHECKMULTISIG = "ae";
+
+// Push 65 bytes to stack = parseInt("65").toString(16) 65轉為16進位為41
+const pubkeyBytes = "41"
+//三個隨機產生的公鑰
+const pubkey1 = "045ddb9d95c17d47d0c6d8ab7385cf21cd7d5a411786aeb241f6812d3cf3476200c3f92f6740dd5565ccf249a8e03045931fa5eee736b0bdba94df9db223f809f5";
+const pubkey2 = "04ddb9f9da9e667c71a24e341a34c4cbc34f3cd88170e8b4f989b485779c30a55cbea00a5485759aeceff2745df4af6b4e2a58472ce1c8cc9a8bafa1b35d4be672";
+const pubkey3 = "0499c36019a9cf95076c27052c424cfce71077cebe23ca22d3b98a7ab54b577e731009feb3aab2068a8e15596db557f2235d46c0e895cdd45f1591b37d4c409869";
+
+redeemScript = OP_2 + pubkeyBytes + pubkey1 + pubkeyBytes + pubkey2 + pubkeyBytes + pubkey3  + OP_3 + OP_CHECKMULTISIG;
+
+//把公鑰以sha256加密後再用ripemd160加密，取得publickeyHash
+var hash = crypto.createHash('sha256').update(redeemScript).digest();
+hash = crypto.createHash('ripemd160').update(hash).digest();
+console.log('redeemScriptHash')
+console.log(hash);
+console.log('--------')
+
+//在publickeyHash前面加上一个05前缀
+var version = new Buffer('05', 'hex');
+var checksum = Buffer.concat([version, hash]);
+//兩次256雙重加密
+checksum = crypto.createHash('sha256').update(checksum).digest();
+checksum = crypto.createHash('sha256').update(checksum).digest();
+
+//取前4位得到效驗碼
+checksum = checksum.slice(0, 4);
+console.log('checksum')
+console.log(checksum);
+console.log('--------')
+
+//把publickeyHash前面一樣加上00而後面加上剛才算出的checksum
+var address = Buffer.concat([version, hash, checksum]);
+console.log('編碼前地址')
+console.log(address);
+console.log('--------')
+
+// 最後使用base58進行編碼
+address = bs58.encode(address);
+console.log('編碼後的多重簽名比特幣地址')
+console.log(address);
+console.log('--------')
 ```
 
 # 地址不建議重複使用
