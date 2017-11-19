@@ -77,9 +77,9 @@
 
 但如果master seed 流出去，他底下的所有 key 跟 address 都暴露在風險之中。
 
-## 第一步驟 
+## 第一步驟
 
- 用 seed 產生  master key，而 seed 的長度 要是 128、256 或是 512 bits  ， 然後將 seed  進行
+用 seed 產生  master key，而 seed 的長度 要是 128、256 或是 512 bits  ， 然後將 seed  進行
 
 _HMAC-SHA256  _之後會產生一個長度為 512 bits 的結果， 前 256 bits  為  master private key，後 256 bits 為 master chain code  ， master chain code代表一個 entropy  當 往下產生 child keys 時 會用到 。
 
@@ -88,6 +88,14 @@ _HMAC-SHA256  _之後會產生一個長度為 512 bits 的結果， 前 256 bits
 ![](/assets/1_ChWUKm31L2WEEpeEB7kzPQ.png)
 
 > [http://chimera.labs.oreilly.com/books/1234000001802/ch04.html\#private\_keys](http://chimera.labs.oreilly.com/books/1234000001802/ch04.html#private_keys)
+
+## 第二步驟
+
+在往下一層走產生 key 的時候需要用名為child key derivation \(CKD\)的function，一樣是做
+
+_HMAC-SHA256_
+
+演算法 ，其需要三個參數
 
 # \#使用Node.js產生比特幣地址
 
