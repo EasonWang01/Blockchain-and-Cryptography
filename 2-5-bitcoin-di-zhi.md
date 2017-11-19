@@ -336,9 +336,9 @@ console.log('--------')
 
 ![](/assets/derivation.png)
 
-> https://bitcoin.stackexchange.com/questions/42559/recovering-a-hd-wallet-from-a-partial-seed-phrase
+> [https://bitcoin.stackexchange.com/questions/42559/recovering-a-hd-wallet-from-a-partial-seed-phrase](https://bitcoin.stackexchange.com/questions/42559/recovering-a-hd-wallet-from-a-partial-seed-phrase)
 
-
+根據[BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) 從12個隨機單字產生了128-bit master seed，之後繼續往下階層式的產生出許多地址
 
 # 地址不建議重複使用
 
