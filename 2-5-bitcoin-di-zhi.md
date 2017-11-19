@@ -382,6 +382,16 @@ console.log('--------')
 
 ## 第一步驟
 
+1.先用 seed 產生一個master key，而 seed 的長度需要是 128、256 或 512 bits
+
+2.然後將 seed 去執行 HMAC-SHA256 加密，之後會產生一個長度為 512 bits 的結果
+
+> 前 256 bits 為 master private key，後 256 bits 為 master chain code ，master chain code 代表 entropy\(熵\)，之後再往下產生 child keys 時會用到。
+
+![](/assets/1_ChWUKm31L2WEEpeEB7kzPQ1.png)
+
+## 第二步驟 
+
 
 
 # 地址不建議重複使用
