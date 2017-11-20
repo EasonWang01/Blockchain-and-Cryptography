@@ -10,6 +10,8 @@
 
 多重簽名：[https://coinb.in/multisig/](https://coinb.in/multisig/)
 
+> Private keys are always 32 bytes, and public keys are always 65 bytes \(or 33 bytes for a compressed public key\). Public key hashes are always 20 bytes
+
 # 地址種類
 
 ```
@@ -376,7 +378,7 @@ console.log('--------')
 
 ![](/assets/derivation.png)
 
-> 圖片來源:https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
+> 圖片來源:[https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)
 
 根據[BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) 從12個隨機單字產生了128-bit master seed，之後繼續往下階層式的產生出許多地址
 
