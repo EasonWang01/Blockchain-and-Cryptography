@@ -386,7 +386,7 @@ console.log('--------')
 
 1.先用 seed 產生一個master key，而 seed 的長度需要是 128、256 或 512 bits
 
-2.然後將 seed 去執行 HMAC-SHA256 加密，之後會產生一個長度為 512 bits 的結果
+2.然後將 seed 去執行 HMAC-SHA512 加密，之後會產生一個長度為 512 bits 的結果
 
 > 前 256 bits 為 master private key，後 256 bits 為 master chain code ，master chain code 代表 entropy\(熵\)，之後再往下產生 child keys 時會用到。
 
@@ -396,7 +396,7 @@ console.log('--------')
 
 往下一層，產生該層各個child private key 的時候，要用到 child key derivation \(CKD\) 這個方法
 
-這個方法一樣是做HMAC-SHA256 加密演算法，但他會需要先輸入三個參數。
+這個方法一樣是做HMAC-SHA512 加密演算法，但他會需要先輸入三個參數。
 
 ```
 1.parent public key：拿上一層的 private key 來產生的 public key即是。
