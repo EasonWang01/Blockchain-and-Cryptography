@@ -31,7 +31,9 @@
 > 1.由34個英文加數字組成  
 > 2.因為採用base58編碼，所以不會含有大寫`O`大寫`I`小寫`i`和數字`0`
 
-## 1.Single Sig Address \(Pay to Public Key Hash \(P2PKH\)\)
+##  
+
+# 1.最常用的P2PKH單一簽名地址
 
 單一簽名地址，開頭為1
 
@@ -41,71 +43,9 @@
 
 > [http://en.bitcoinwiki.org/Bitcoin\_address](http://en.bitcoinwiki.org/Bitcoin_address)
 
-## 2.Multi Sig Address （P2SH）
-
-多重簽名地址，開頭為3，產生地址時可以加入一至十五個public key，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名
-
-![](/assets/螢幕快照 2017-11-19 下午3.10.49.png)
-
-> [https://www.blocktrail.com/api/docs](https://www.blocktrail.com/api/docs)
-
-#### 產生方式：
-
-到下面查表
-
-![](/assets/螢幕快照 2017-11-19 下午3.26.17.png)
-
-> [https://en.bitcoin.it/wiki/Script](https://en.bitcoin.it/wiki/Script)
-
-# 3.SegWit Address
-
-\(P2WSH\) 隔離見證地址，開頭為3
-
-# 4.Time Locked Address
-
-運用OP\_CHECKLOCKTIMEVERIFY \(OP\_HODL\)來創建的地址，開頭為3
-
-可產生經過指定時間後才可用來交易的地址
-
-# 5.HD address \(hierarchical deterministic address\)
-
-參考下圖:
-
-![](/assets/derivation.png)
-
-> [https://bitcoin.stackexchange.com/questions/42559/recovering-a-hd-wallet-from-a-partial-seed-phrase](https://bitcoin.stackexchange.com/questions/42559/recovering-a-hd-wallet-from-a-partial-seed-phrase)
-
-根據[BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) 從12個隨機單字產生了128-bit master seed，之後繼續往下階層式的產生出許多地址
-
-但如果master seed 流出去，他底下的所有 key 跟 address 都暴露在風險之中。
-
-## 第一步驟
-
-用 seed 產生  master key，而 seed 的長度 要是 128、256 或是 512 bits  ， 然後將 seed  進行
-
-_HMAC-SHA256  _之後會產生一個長度為 512 bits 的結果， 前 256 bits  為  master private key，後 256 bits 為 master chain code  ， master chain code代表一個 entropy  當 往下產生 child keys 時 會用到 。
-
-流程如下圖
-
-![](/assets/1_ChWUKm31L2WEEpeEB7kzPQ.png)
-
-> [http://chimera.labs.oreilly.com/books/1234000001802/ch04.html\#private\_keys](http://chimera.labs.oreilly.com/books/1234000001802/ch04.html#private_keys)
-
-## 第二步驟
-
-在往下一層走產生 key 的時候需要用名為child key derivation \(CKD\)的function，一樣是做
-
-_HMAC-SHA256_
-
-演算法 ，其需要三個參數
-
-# \#使用Node.js產生比特幣地址
-
 接下來我們要結合密碼學的幾個加密方法來實作並產生比特幣地址，使用的程式語言是Node.js\(如尚未安裝請參考附錄\)
 
-# 1.最常用的P2PKH單一簽名地址
-
-以下將使用node.js實作，我們先安裝node.js的base58模組
+我們先安裝node.js的base58模組
 
 ```
 npm install bs58
@@ -167,6 +107,20 @@ console.log('--------')
 ```
 
 # 2.P2SH 多重簽名地址
+
+多重簽名地址，開頭為3，產生地址時可以加入一至十五個public key，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名
+
+![](/assets/螢幕快照 2017-11-19 下午3.10.49.png)
+
+> [https://www.blocktrail.com/api/docs](https://www.blocktrail.com/api/docs)
+
+#### 產生方式：
+
+到下面查表
+
+![](/assets/螢幕快照 2017-11-19 下午3.26.17.png)
+
+> [https://en.bitcoin.it/wiki/Script](https://en.bitcoin.it/wiki/Script)
 
 跟P2PKH產生方式類似，只要把public key換為redeem script即可，redeem script產生方式為下圖：
 
@@ -409,6 +363,14 @@ console.log('--------')
 ![](/assets/1_ni33v4GKL12m2M4m_5GIQQ.png)圖片來源:[https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook)
 
 > 由於HMAC-SHA512是Hash function，過程是不可逆的，所以我們不會知道parent是什麼，以及也不會知道自己鄰近的其他child是什麼
+
+ 
+
+下面我們會用到十六進位轉二進位，所以需下載『 big-integer-converter 』模組
+
+```
+npm install big-integer-converter
+```
 
 ```js
 var crypto = require('crypto');
