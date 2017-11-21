@@ -31,7 +31,7 @@
 > 1.由34個英文加數字組成  
 > 2.因為採用base58編碼，所以不會含有大寫`O`大寫`I`小寫`i`和數字`0`
 
-##  
+## 
 
 # 1.最常用的P2PKH單一簽名地址
 
@@ -42,6 +42,12 @@
 ![](/assets/address1.png)
 
 > [http://en.bitcoinwiki.org/Bitcoin\_address](http://en.bitcoinwiki.org/Bitcoin_address)
+
+下圖為更詳細的地址產生方式
+
+> 有些第三方套件在使用橢圓曲線產生的256bits的public key時已經把0x04和x,y結合了
+
+![](/assets/735e7c64-699c-431c-9a43-dc899dcd8317.png)
 
 接下來我們要結合密碼學的幾個加密方法來實作並產生比特幣地址，使用的程式語言是Node.js\(如尚未安裝請參考附錄\)
 
@@ -363,8 +369,6 @@ console.log('--------')
 ![](/assets/1_ni33v4GKL12m2M4m_5GIQQ.png)圖片來源:[https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook)
 
 > 由於HMAC-SHA512是Hash function，過程是不可逆的，所以我們不會知道parent是什麼，以及也不會知道自己鄰近的其他child是什麼
-
- 
 
 下面我們會用到十六進位轉二進位，所以需下載『 big-integer-converter 』模組
 
