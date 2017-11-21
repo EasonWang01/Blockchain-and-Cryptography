@@ -46,6 +46,8 @@
 下圖為更詳細的地址產生方式
 
 > 有些第三方套件在使用橢圓曲線產生的256bits的public key時已經把0x04和x,y結合了
+>
+> 但有些須自己拼接，如Golang的原生橢圓曲線套件   https://play.golang.org/p/-8n67Cq2iZ
 
 ![](/assets/735e7c64-699c-431c-9a43-dc899dcd8317.png)
 
