@@ -45,11 +45,18 @@
 
 下圖為更詳細的地址產生方式
 
+![](/assets/735e7c64-699c-431c-9a43-dc899dcd8317.png)
+
 > 有些第三方套件在使用橢圓曲線產生的256bits的public key時已經把0x04和x,y結合了
 >
-> 但有些須自己拼接，如Golang的原生橢圓曲線套件   https://play.golang.org/p/-8n67Cq2iZ
-
-![](/assets/735e7c64-699c-431c-9a43-dc899dcd8317.png)
+> > 但有些須自己拼接，如Golang的原生橢圓曲線套件   [https://play.golang.org/p/-8n67Cq2iZ](https://play.golang.org/p/-8n67Cq2iZ)
+>
+> 以下為使用openssl產生secp256k1的公鑰範例:
+>
+> ```bash
+> openssl ecparam -name secp256k1 -genkey >  priv.pem
+> openssl ec -in priv.pem -pubout -outform DER|tail -c 65|xxd -p -c 65
+> ```
 
 接下來我們要結合密碼學的幾個加密方法來實作並產生比特幣地址，使用的程式語言是Node.js\(如尚未安裝請參考附錄\)
 
