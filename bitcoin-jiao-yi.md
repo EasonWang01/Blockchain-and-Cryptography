@@ -33,6 +33,65 @@ https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb
 並且一筆交易中可以來自多個output並產生多個unspend output
 ![](/assets/789.png)
 
+# 交易的ID (TXid)
+每個比特幣交易都存在一個獨特的id名為TXid
+我們可以從TXid取得那筆交易的相關資訊
+```json
+
+
+{
+   "ver":1,
+   "inputs":[
+      {
+         "sequence":4294967295,
+         "witness":"",
+         "prev_out":{
+            "spent":true,
+            "tx_index":303467595,
+            "type":0,
+            "addr":"1J37CY8hcdUXQ1KfBhMCsUVafa8XjDsdCn",
+            "value":54718417,
+            "n":1,
+            "script":"76a914bae025140c454518b8cba0c25d45a6dc87f4b9ce88ac"
+         },
+         "script":"483045022100dc6db414aa82e684e86c97700e4d0d3c3cd5f971d767f1cc17afc4fbd2ee77190220429d3462ac95d3c42baa82e5f0bfbbfbb998c6aa290a515c702d7b7fe6900af1014104025a1cffe502a80dfa1f543ae14c082aff24d5ecadab160ca904d288eed8e3d8cacef0985f690868df4f416c3890909b4c0c843da153d41382ac20c80170240a"
+      }
+   ],
+   "weight":1024,
+   "block_height":495540,
+   "relayed_by":"0.0.0.0",
+   "out":[
+      {
+         "spent":false,
+         "tx_index":303486321,
+         "type":0,
+         "addr":"3QXeRSWe7gMHHyfQ9VQCpumWBTJkMXcrdG",
+         "value":19200000,
+         "n":0,
+         "script":"a914fa853359ec49580a6b3f1da326060ce76662c46487"
+      },
+      {
+         "spent":false,
+         "tx_index":303486321,
+         "type":0,
+         "addr":"1J37CY8hcdUXQ1KfBhMCsUVafa8XjDsdCn",
+         "value":35337989,
+         "n":1,
+         "script":"76a914bae025140c454518b8cba0c25d45a6dc87f4b9ce88ac"
+      }
+   ],
+   "lock_time":0,
+   "size":256,
+   "double_spend":false,
+   "time":1511325023,
+   "tx_index":303486321,
+   "vin_sz":1,
+   "hash":"50091e48d3d2edc2d5f2797d9ecf695f61c60f58b227741e8426bb1f8fabb646",
+   "vout_sz":2
+}
+
+```
+
 # 交易結構
 | 欄位 | 描述 | 大小 |
 |:----:|------|------|
