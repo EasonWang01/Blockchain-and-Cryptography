@@ -1,4 +1,11 @@
 # 比特幣交易
+
+以下我們用bitcoinjs-lib來建立交易
+> 如還沒安裝需先使用npm安裝
+```
+npm install bitcoinjs-lib
+```
+
 ```js
 var bitcoin = require('bitcoinjs-lib')
 var keyPair = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
@@ -13,122 +20,39 @@ tx.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)
 
 tx.sign(0, keyPair)
 //使用私鑰簽發
-console.log(tx);
+console.log(tx.build());
 ```
-
-
-# UTXO
-比特幣中的餘額指的是還沒有被花費掉的部分(unspend output)
-
-例如我們可以到此網址，查看一個地址的unspend output
-https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb 
-
-如下
+此時會產生如下
 ```json
-{
-    "unspent_outputs":[
-        {
-            "tx_hash":"6e5704b49d75279c7bfe8067db289a69c5364365f27c6eee27a29795e4ecfd54",
-            "tx_hash_big_endian":"54fdece49597a227ee6e7cf2654336c5699a28db6780fe7b9c27759db404576e",
-            "tx_index":303475950,
-            "tx_output_n": 0,
-            "script":"76a914e3ad059f33c82abaa858465b712ff5d874aceb7488ac",
-            "value": 3009040,
-            "value_hex": "2dea10",
-            "confirmations":2
-        }
-    ]
-}
+Transaction {
+  version: 1,
+  locktime: 0,
+  ins:
+   [ { hash: <Buffer 31 3e b6 30 b1 28 10 2b 60 24 1c a8 95 f1 d0 ff ca 21 70 d5 a0 99 0e 09 4f 21 82 c1 02 ab 94 aa>,
+       index: 0,
+       script: <Buffer 48 30 45 02 21 00 ae fb cf 84 79 00 b0 1d d3 e3 de be 05 4d 3b 6d 03 d7 15 d5 0a ea 85 25 f5 ea 33 96 f1 68 a1 fb 02 20 13 d1 81 d0 5b 15 b9 01 11 80 ... >,
+       sequence: 4294967295,
+       witness: [] } ],
+  outs:
+   [ { script: <Buffer 76 a9 14 ad 61 8c f4 33 3b 3b 24 8f 97 44 e8 e8 1d b2 96 4d 0a e3 97 88 ac>,
+       value: 15000 } ] }
 ```
-可以看到其中value欄位即為該地址的餘額，單位為satoshi
 
-> 0.00000001 bitcoin 為一個 satoshi，此也為bitcoin的最小單位 所以此處 0.00000001 * 3009040 即為0.0300904BTC
-![](/assets/交易餘額.png)
-
-#交易的Input一定會對應到一個Output
-比特幣記錄帳戶餘額流向的方式來自於查看目前花費的金額(input)來自於上一筆的output位置
-
-Input一定會對應到一個Output，每個Output都會有一個locking script 以及每個input也會有一個unlocking script
-用來解鎖，解鎖後才可由上個output傳比特幣給下一個地址當為他的unspend output
-
-一筆交易主要包含兩部份，input 和 output，output 有 locking script 去鎖著 UTXO 不被花費，想要花費的人就需要創建一個 input，用裡面的 locking script 去解鎖這個 unlocking script，例如我今天想要花自己的錢就必須自己去創建一個Input然後用我的私鑰簽發
-
-![](/assets/en-transaction-propagation.svg)
-> https://bitcoin.org
-
-並且一筆交易中可以來自多個output並產生多個unspend output
-![](/assets/789.png)
-
-# 交易的ID (TXid)
-每個比特幣交易都存在一個獨特的id名為TXid
-我們可以從TXid取得那筆交易的相關資訊
-
-https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8c6732352925ab9
-```json
-
-
-{
-   "ver":1,
-   "inputs":[
-      {
-         "sequence":4294967295,
-         "witness":"",
-         "prev_out":{
-            "spent":true,
-            "tx_index":303467595,
-            "type":0,
-            "addr":"1J37CY8hcdUXQ1KfBhMCsUVafa8XjDsdCn",
-            "value":54718417,
-            "n":1,
-            "script":"76a914bae025140c454518b8cba0c25d45a6dc87f4b9ce88ac"
-         },
-         "script":"483045022100dc6db414aa82e684e86c97700e4d0d3c3cd5f971d767f1cc17afc4fbd2ee77190220429d3462ac95d3c42baa82e5f0bfbbfbb998c6aa290a515c702d7b7fe6900af1014104025a1cffe502a80dfa1f543ae14c082aff24d5ecadab160ca904d288eed8e3d8cacef0985f690868df4f416c3890909b4c0c843da153d41382ac20c80170240a"
-      }
-   ],
-   "weight":1024,
-   "block_height":495540,
-   "relayed_by":"0.0.0.0",
-   "out":[
-      {
-         "spent":false,
-         "tx_index":303486321,
-         "type":0,
-         "addr":"3QXeRSWe7gMHHyfQ9VQCpumWBTJkMXcrdG",
-         "value":19200000,
-         "n":0,
-         "script":"a914fa853359ec49580a6b3f1da326060ce76662c46487"
-      },
-      {
-         "spent":false,
-         "tx_index":303486321,
-         "type":0,
-         "addr":"1J37CY8hcdUXQ1KfBhMCsUVafa8XjDsdCn",
-         "value":35337989,
-         "n":1,
-         "script":"76a914bae025140c454518b8cba0c25d45a6dc87f4b9ce88ac"
-      }
-   ],
-   "lock_time":0,
-   "size":256,
-   "double_spend":false,
-   "time":1511325023,
-   "tx_index":303486321,
-   "vin_sz":1,
-   "hash":"50091e48d3d2edc2d5f2797d9ecf695f61c60f58b227741e8426bb1f8fabb646",
-   "vout_sz":2
-}
-
-```
+但這時交易還沒有被廣播出去，意思是我們這個簽發動作也可以離線進行，然後把這個json在複製到其他地方廣播給比特幣網路
 
 # 交易結構
 | 欄位 | 描述 | 大小 |
 |:----:|------|------|
-|  版本    |   描述版本號，現在為1   |   4bytes   |  
-|   輸入計數   |   被包含的輸入交易數量   |   1-9bytes   |   
-|   輸入   |   列出輸入的交易   |   不一定   | 
-|   輸出計數   |  被包含的輸出交易數量    |   1-9bytes    |   
-|   輸出   |   列出輸出的交易   |  不一定  |   
-|   鎖定時間   |   在此時間之前此交易不能被加入區塊(註1)   |   4bytes   |   
+| 版本 | 描述版本號，現在為1 | 4bytes |
+| 輸入計數 | 被包含的輸入交易數量 | 1-9bytes |
+| 輸入 | 列出輸入的交易 | 不一定 |
+| 輸出計數 | 被包含的輸出交易數量 | 1-9bytes |
+| 輸出 | 列出輸出的交易 | 不一定 |
+| 鎖定時間 | 在此時間之前此交易不能被加入區塊(註1) | 4bytes |
+
+
+
+
 
 # 廣播交易
 
@@ -234,6 +158,112 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 有關其他可能被攻擊的方式  
 [https://en.bitcoin.it/wiki/Irreversible\_Transactions](https://en.bitcoin.it/wiki/Irreversible_Transactions)
+
+
+# UTXO
+比特幣中的餘額指的是還沒有被花費掉的部分(unspend output)
+
+例如我們可以到此網址，查看一個地址的unspend output
+https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb
+
+如下
+```json
+{
+"unspent_outputs":[
+{
+"tx_hash":"6e5704b49d75279c7bfe8067db289a69c5364365f27c6eee27a29795e4ecfd54",
+"tx_hash_big_endian":"54fdece49597a227ee6e7cf2654336c5699a28db6780fe7b9c27759db404576e",
+"tx_index":303475950,
+"tx_output_n": 0,
+"script":"76a914e3ad059f33c82abaa858465b712ff5d874aceb7488ac",
+"value": 3009040,
+"value_hex": "2dea10",
+"confirmations":2
+}
+]
+}
+```
+可以看到其中value欄位即為該地址的餘額，單位為satoshi
+
+> 0.00000001 bitcoin 為一個 satoshi，此也為bitcoin的最小單位 所以此處 0.00000001 * 3009040 即為0.0300904BTC
+![](/assets/交易餘額.png)
+
+#交易的Input一定會對應到一個Output
+比特幣記錄帳戶餘額流向的方式來自於查看目前花費的金額(input)來自於上一筆的output位置
+
+Input一定會對應到一個Output，每個Output都會有一個locking script 以及每個input也會有一個unlocking script
+用來解鎖，解鎖後才可由上個output傳比特幣給下一個地址當為他的unspend output
+
+一筆交易主要包含兩部份，input 和 output，output 有 locking script 去鎖著 UTXO 不被花費，想要花費的人就需要創建一個 input，用裡面的 locking script 去解鎖這個 unlocking script，例如我今天想要花自己的錢就必須自己去創建一個Input然後用我的私鑰簽發
+
+![](/assets/en-transaction-propagation.svg)
+> https://bitcoin.org
+
+並且一筆交易中可以來自多個output並產生多個unspend output
+![](/assets/789.png)
+
+# 交易的ID (TXid)
+每個比特幣交易都存在一個獨特的id名為TXid
+我們可以從TXid取得那筆交易的相關資訊
+
+https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8c6732352925ab9
+```json
+
+
+{
+"ver":1,
+"inputs":[
+{
+"sequence":4294967295,
+"witness":"",
+"prev_out":{
+"spent":true,
+"tx_index":303467595,
+"type":0,
+"addr":"1J37CY8hcdUXQ1KfBhMCsUVafa8XjDsdCn",
+"value":54718417,
+"n":1,
+"script":"76a914bae025140c454518b8cba0c25d45a6dc87f4b9ce88ac"
+},
+"script":"483045022100dc6db414aa82e684e86c97700e4d0d3c3cd5f971d767f1cc17afc4fbd2ee77190220429d3462ac95d3c42baa82e5f0bfbbfbb998c6aa290a515c702d7b7fe6900af1014104025a1cffe502a80dfa1f543ae14c082aff24d5ecadab160ca904d288eed8e3d8cacef0985f690868df4f416c3890909b4c0c843da153d41382ac20c80170240a"
+}
+],
+"weight":1024,
+"block_height":495540,
+"relayed_by":"0.0.0.0",
+"out":[
+{
+"spent":false,
+"tx_index":303486321,
+"type":0,
+"addr":"3QXeRSWe7gMHHyfQ9VQCpumWBTJkMXcrdG",
+"value":19200000,
+"n":0,
+"script":"a914fa853359ec49580a6b3f1da326060ce76662c46487"
+},
+{
+"spent":false,
+"tx_index":303486321,
+"type":0,
+"addr":"1J37CY8hcdUXQ1KfBhMCsUVafa8XjDsdCn",
+"value":35337989,
+"n":1,
+"script":"76a914bae025140c454518b8cba0c25d45a6dc87f4b9ce88ac"
+}
+],
+"lock_time":0,
+"size":256,
+"double_spend":false,
+"time":1511325023,
+"tx_index":303486321,
+"vin_sz":1,
+"hash":"50091e48d3d2edc2d5f2797d9ecf695f61c60f58b227741e8426bb1f8fabb646",
+"vout_sz":2
+}
+
+```
+
+
 
 # 交易種類
 
