@@ -1,3 +1,16 @@
+# 比特幣交易
+```js
+var bitcoin = require('bitcoinjs-lib')
+var keyPair = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
+var tx = new bitcoin.TransactionBuilder()
+
+tx.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0) //addInput第一個參數為上一個unspend 的來源TXid
+tx.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)// addOutput第一個參數為要轉給哪個地址，第二個參數為金額(satoshis)
+tx.sign(0, keyPair)
+console.log(tx);
+```
+
+
 # UTXO
 比特幣中的餘額指的是還沒有被花費掉的部分(unspend output)
 
