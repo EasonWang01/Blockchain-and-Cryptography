@@ -447,6 +447,22 @@ console.log('-----------------')
 
 https://blockchain.info/rawaddr/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to
 
+```js
+var http = require('http');
+http.get({
+    host: 'blockchain.info',
+    path: '/rawaddr/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to'
+}, function (response) {
+    var body = '';
+    response.on('data', function (d) {
+        body += d;
+    });
+    response.on('end', function () {
+        console.log(body);
+    });
+});
+```
+
 會出現如下訊息
 ```json
 {
