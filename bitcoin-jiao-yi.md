@@ -38,7 +38,68 @@ Transaction {
        value: 15000 } ] }
 ```
 
-但這時交易還沒有被廣播出去，意思是我們這個簽發動作也可以離線進行，然後把這個json在複製到其他地方廣播給比特幣網路
+但這時交易還沒有被廣播出去，意思是我們這個簽發動作也可以離線進行，然後把這個json在複製到其他地方廣播給比特幣網路，稍後下一節將會講解。
+
+
+我們也可以把剛才code最後一行改為以下，即可看到被編碼為16進位的格式，一般在網路上廣播交易均用此種格式
+```js
+console.log(tx.build().toHex());
+```
+
+再來我們也可以從txHex解碼回原本的格式
+```js
+var bitcoin = require('bitcoinjs-lib')
+var keyPair = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
+var tx = new bitcoin.TransactionBuilder()
+
+tx.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0)
+tx.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)
+tx.sign(0, keyPair)
+txHEX = tx.build().toHex()
+console.log(txHEX);
+
+var tx = bitcoin.Transaction.fromHex(txHEX);
+console.log(tx)
+```
+
+### 我們也可以試試看直接解碼其他已經發生過的交易的TxHex
+
+1.我們先到此處https://blockchain.info/tx/9021b49d445c719106c95d561b9c3fac7bcb3650db67684a9226cd7fa1e1c1a0?format=hex
+查詢一個交易的txHex，然後把它貼到下面程式的`txHEX`變數位置
+
+```js
+txHEX = "0100000002d8c8df6a6fdd2addaf589a83d860f18b44872d13ee6ec3526b2b470d42a96d4d000000008b483045022100b31557e47191936cb14e013fb421b1860b5e4fd5d2bc5ec1938f4ffb1651dc8902202661c2920771fd29dd91cd4100cefb971269836da4914d970d333861819265ba014104c54f8ea9507f31a05ae325616e3024bd9878cb0a5dff780444002d731577be4e2e69c663ff2da922902a4454841aa1754c1b6292ad7d317150308d8cce0ad7abffffffff2ab3fa4f68a512266134085d3260b94d3b6cfd351450cff021c045a69ba120b2000000008b4830450220230110bc99ef311f1f8bda9d0d968bfe5dfa4af171adbef9ef71678d658823bf022100f956d4fcfa0995a578d84e7e913f9bb1cf5b5be1440bcede07bce9cd5b38115d014104c6ec27cffce0823c3fecb162dbd576c88dd7cda0b7b32b0961188a392b488c94ca174d833ee6a9b71c0996620ae71e799fc7c77901db147fa7d97732e49c8226ffffffff02c0175302000000001976a914a3d89c53bb956f08917b44d113c6b2bcbe0c29b788acc01c3d09000000001976a91408338e1d5e26db3fce21b011795b1c3c8a5a5d0788ac00000000"
+
+var tx = bitcoin.Transaction.fromHex(txHEX);
+console.log(tx)
+
+```
+即可看到原始交易格式
+```json
+Transaction {
+  version: 1,
+  locktime: 0,
+  ins:
+   [ { hash: <Buffer d8 c8 df 6a 6f dd 2a dd af 58 9a 83 d8 60 f1 8b 44 87 2d 13 ee 6e c3 52 6b 2b 47 0d 42 a9 6d 4d>,
+       index: 0,
+       script: <Buffer 48 30 45 02 21 00 b3 15 57 e4 71 91 93 6c b1 4e 01 3f b4 21 b1 86 0b 5e 4f d5 d2 bc 5e c1 93 8f 4f fb 16 51 dc 89 02 20 26 61 c2 92 07 71 fd 29 dd 91 ... >,
+       sequence: 4294967295,
+       witness: [] },
+     { hash: <Buffer 2a b3 fa 4f 68 a5 12 26 61 34 08 5d 32 60 b9 4d 3b 6c fd 35 14 50 cf f0 21 c0 45 a6 9b a1 20 b2>,
+       index: 0,
+       script: <Buffer 48 30 45 02 20 23 01 10 bc 99 ef 31 1f 1f 8b da 9d 0d 96 8b fe 5d fa 4a f1 71 ad be f9 ef 71 67 8d 65 88 23 bf 02 21 00 f9 56 d4 fc fa 09 95 a5 78 d8 ... >,
+       sequence: 4294967295,
+       witness: [] } ],
+  outs:
+   [ { value: 39000000,
+       script: <Buffer 76 a9 14 a3 d8 9c 53 bb 95 6f 08 91 7b 44 d1 13 c6 b2 bc be 0c 29 b7 88 ac> },
+     { value: 155000000,
+       script: <Buffer 76 a9 14 08 33 8e 1d 5e 26 db 3f ce 21 b0 11 79 5b 1c 3c 8a 5a 5d 07 88 ac> } ] }
+
+
+```
+
+
 
 # 交易結構
 | 欄位 | 描述 | 大小 |
