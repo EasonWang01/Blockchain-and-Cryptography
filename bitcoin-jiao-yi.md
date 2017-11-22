@@ -328,7 +328,7 @@ https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8
 
 ```
 
-
+# 交易手續費
 
 # 交易種類
 
@@ -344,8 +344,11 @@ https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8
 5.Pay-to-Script-Hash (P2SH)
 ```
 
+
 ---
 
 註1:[https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)
-以unix timestamp表示，類似於`1511321691`如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交易加入區塊
+以unix timestamp表示，類似於`1511321691`如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交22易加入區塊
+
+註2:交易手續費，約為1000satoshis每KB.美個交易通常至少含有500 bytes.
 
