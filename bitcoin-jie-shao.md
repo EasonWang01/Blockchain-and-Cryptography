@@ -50,3 +50,12 @@ http://statoshi.info/
 
 ![](/assets/a.png)
 
+# 比特幣單位
+
+```
+1BTC    比特幣（Bitcoins，BTC）
+0.01BTC  比特分（Bitcent，cBTC）
+0.001BTC   毫比特（Milli-Bitcoins，mBTC）
+0.000001BTC   微比特（Micro-Bitcoins，μBTC）
+0.00000001BTC  satoshi 為一個為比特幣最小單位
+```
