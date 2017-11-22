@@ -443,6 +443,48 @@ console.log(derivation1_child10)
 console.log('-----------------')
 ```
 
+# 查看地址的相關資料與交易紀錄
+
+https://blockchain.info/rawaddr/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to
+
+會出現如下訊息
+```json
+{
+    "hash160":"ab0fcc2fb04ee80d29a00a80140b16323bed3d6e",
+    "address":"1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to",
+    "n_tx":3589,
+    "total_received":4629912224989,
+    "total_sent":4577511878052,
+    "final_balance":52400346937,
+    "txs":[
+
+{
+   "ver":1,
+   "inputs":[
+      {
+         "sequence":4294967295,
+         "witness":"01200000000000000000000000000000000000000000000000000000000000000000",
+         "script":"03b58f070004fcfd145a0450e2b80708985d085a00001e06092f426974667572792f"
+      }
+   ],
+   "weight":700,
+   "block_height":495541,
+   "relayed_by":"0.0.0.0",
+   "out":[
+      {
+         "spent":false,
+         "tx_index":303487002,
+         "type":0,
+         "addr":"1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to",
+         "value":1284013028,
+         "n":0,
+         "script":"76a914ab0fcc2fb04ee80d29a00a80140b16323bed3d6e88ac"
+      },
+      
+      .....
+
+```
+
 # 地址不建議重複使用
 
 [https://en.bitcoin.it/wiki/Address\_reuse](https://en.bitcoin.it/wiki/Address_reuse)
