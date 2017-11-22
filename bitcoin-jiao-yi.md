@@ -26,7 +26,7 @@ https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb
 > 0.00000001 bitcoin 為一個 satoshi，此也為bitcoin的最小單位 所以此處 0.00000001 * 3009040 即為0.0300904BTC
 ![](/assets/交易餘額.png)
 
-#下一筆個input來自上一次的output
+#交易的Input一定會對應到一個Output
 比特幣記錄帳戶餘額流向的方式來自於查看目前花費的金額(input)來自於上一筆的output位置
 
 Input一定會對應到一個Output，每個Output都會有一個locking script 以及每個input也會有一個unlocking script
