@@ -28,6 +28,10 @@ https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb
 
 #下一筆個input來自上一次的output
 比特幣記錄帳戶餘額流向的方式來自於查看目前花費的金額(input)來自於上一筆的output位置
+
+Input一定會對應到一個Output，每個Output都會有一個locking script 以及每個input也會有一個unlocking script
+用來解鎖，解鎖後才可由上個output傳比特幣給下一個地址當為他的unspend output
+
 ![](/assets/en-transaction-propagation.svg)
 > https://bitcoin.org
 
