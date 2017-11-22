@@ -3,6 +3,7 @@
 
 例如我們可以到此網址，查看一個地址的unspend output
 https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb 
+
 如下
 ```json
 {
@@ -36,6 +37,8 @@ https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb
 # 交易的ID (TXid)
 每個比特幣交易都存在一個獨特的id名為TXid
 我們可以從TXid取得那筆交易的相關資訊
+
+https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8c6732352925ab9
 ```json
 
 
