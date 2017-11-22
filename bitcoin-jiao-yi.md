@@ -1,3 +1,13 @@
+# 交易結構
+| 欄位 | 描述 | 大小 |
+|:----:|------|------|
+|  版本    |   描述版本號，現在為1   |      |  
+|   輸入計數   |   被包含的輸入交易數量   |      |   
+|   輸入   |   列出輸入的交易   |      | 
+|   輸出計數   |  被包含的輸出交易數量    |      |   
+|   輸出   |   列出輸出的交易   |      |   
+|   鎖定時間   |   在此時間之前此交易不能被加入區塊(註1)   |      |   
+
 # 廣播交易
 
 比特幣交易可以是offline產生的，產生後再用線上的方式廣播給bitcoin網路，只要把交易訊息的payload傳送給其中一個比特幣節點就可以達到廣播的目的
@@ -119,5 +129,6 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 ---
 
-[https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)
+註1:[https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)
+以unix timestamp表示
 
