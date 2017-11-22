@@ -1,7 +1,9 @@
 # UTXO
 比特幣中的餘額指的是還沒有被花費掉的部分(unspend output)
 
-例如我們可以到此網址https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb 查看一個地址的unspend output，如下
+例如我們可以到此網址，查看一個地址的unspend output
+https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb 
+如下
 ```json
 {
     "unspent_outputs":[
