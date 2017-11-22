@@ -5,7 +5,6 @@
 ```json
 {
     "unspent_outputs":[
-    
         {
             "tx_hash":"6e5704b49d75279c7bfe8067db289a69c5364365f27c6eee27a29795e4ecfd54",
             "tx_hash_big_endian":"54fdece49597a227ee6e7cf2654336c5699a28db6780fe7b9c27759db404576e",
@@ -16,7 +15,6 @@
             "value_hex": "2dea10",
             "confirmations":2
         }
-      
     ]
 }
 ```
