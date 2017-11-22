@@ -1,3 +1,32 @@
+# UTXO
+比特幣中的餘額指的是還沒有被花費掉的部分(unspend output)
+
+例如我們可以到此網址https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb 查看一個地址的unspend output，如下
+```json
+{
+    "unspent_outputs":[
+    
+        {
+            "tx_hash":"6e5704b49d75279c7bfe8067db289a69c5364365f27c6eee27a29795e4ecfd54",
+            "tx_hash_big_endian":"54fdece49597a227ee6e7cf2654336c5699a28db6780fe7b9c27759db404576e",
+            "tx_index":303475950,
+            "tx_output_n": 0,
+            "script":"76a914e3ad059f33c82abaa858465b712ff5d874aceb7488ac",
+            "value": 3009040,
+            "value_hex": "2dea10",
+            "confirmations":2
+        }
+      
+    ]
+}
+```
+可以看到其中value欄位即為該地址的餘額，單位為satoshi
+
+> 0.00000001 bitcoin 為一個 satoshi，此也為bitcoin的最小單位 所以此處 0.00000001 * 3009040 即為0.0300904BTC
+![](/assets/交易餘額.png)
+
+
+
 # 交易結構
 | 欄位 | 描述 | 大小 |
 |:----:|------|------|
