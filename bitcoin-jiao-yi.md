@@ -4,9 +4,15 @@ var bitcoin = require('bitcoinjs-lib')
 var keyPair = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
 var tx = new bitcoin.TransactionBuilder()
 
-tx.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0) //addInput第一個參數為上一個unspend 的來源TXid
-tx.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)// addOutput第一個參數為要轉給哪個地址，第二個參數為金額(satoshis)
+tx.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0) 
+//addInput第一個參數為上一個unspend 的來源TXid
+//第二個參數為當次該unspend在TXid的output中之index，假設一筆交易有兩個output則他們index則分別為0和1 從0開始排序
+
+tx.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)
+// addOutput第一個參數為要轉給哪個地址，第二個參數為金額(satoshis)
+
 tx.sign(0, keyPair)
+//使用私鑰簽發
 console.log(tx);
 ```
 
