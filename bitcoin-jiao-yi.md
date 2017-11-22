@@ -350,5 +350,10 @@ https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8
 註1:[https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)
 以unix timestamp表示，類似於`1511321691`如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交22易加入區塊
 
-註2:交易手續費，約為1000satoshis每KB.美個交易通常至少含有500 bytes.
+註2:交易手續費，約為1000satoshis每KB.每個交易通常至少含有500 bytes.
+https://bitcoinfees.earn.com/
+ >  
+https://bitcoinfees.earn.com/
+ (此網站可看到目前推薦的手續費與尚未確認的交易所含的手續費)
+注意:他是以bytes為單位
 
