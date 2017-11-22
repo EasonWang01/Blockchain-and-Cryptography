@@ -32,6 +32,8 @@ https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb
 Input一定會對應到一個Output，每個Output都會有一個locking script 以及每個input也會有一個unlocking script
 用來解鎖，解鎖後才可由上個output傳比特幣給下一個地址當為他的unspend output
 
+一筆交易主要包含兩部份，input 和 output，output 有 locking script 去鎖著 UTXO 不被花費，想要花費的人就需要創建一個 input，用裡面的 locking script 去解鎖這個 unlocking script，例如我今天想要花自己的錢就必須自己去創建一個Input然後用我的私鑰簽發
+
 ![](/assets/en-transaction-propagation.svg)
 > https://bitcoin.org
 
