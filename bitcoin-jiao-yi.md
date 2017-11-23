@@ -395,3 +395,7 @@ https://bitcoinfees.earn.com/
 註3:build transaction在coinb.in的原始碼
 https://github.com/OutCast3k/coinbin/blob/217897285e51cbc33bdba3ec275aa3386ebf70b2/js/coin.js#L793
 
+bitcoinjs之transaction相關原始碼
+https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction.js
+https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction_builder.js
+
