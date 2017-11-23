@@ -119,9 +119,23 @@ Transaction {
 
 比特幣交易可以是offline產生的，產生後再用線上的方式廣播給bitcoin網路，只要把交易訊息的payload傳送給其中一個比特幣節點就可以達到廣播的目的
 
-我們可以把剛才產生出來的交易本文使用如下的線上服務廣播到比特幣網路
+
+```js
+var bitcoin = require("bitcoinjs-lib");
+var key = bitcoin.ECPair.fromWIF("L1Kzcyy88LyckShYdvoLFg1FYpB5ce1JmTYtieHrhkN65GhVoq73");
+var tx = new bitcoin.TransactionBuilder();
+tx.addInput("d18e7106e5492baf8f3929d2d573d27d89277f3825d3836aa86ea1d843b5158b", 1);
+tx.addOutput("12idKQBikRgRuZEbtxXQ4WFYB7Wa3hZzhT", 149000);
+tx.sign(0, key);
+console.log(tx.build().toHex());
+
+```
+我們可以把剛才產生出來HEX的交易本文使用如下的線上服務廣播到比特幣網路
 https://blockchain.info/pushtx
 ![](/assets/adfw.png)
+
+或是使用https://live.blockcypher.com/btc/pushtx/
+(兩個網站功能均類似)
 
 一旦一筆比特幣交易被發送到任意一個連接至比特幣網絡的節點，這筆交易將會被該節點驗證。如果交易被驗證有效，該節點將會將這筆交易傳播到這個節點所連接的其他節點
 
