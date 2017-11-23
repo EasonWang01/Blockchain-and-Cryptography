@@ -392,3 +392,6 @@ https://bitcoinfees.earn.com/
  (此網站可看到目前推薦的手續費與尚未確認的交易所含的手續費)
 注意:他是以bytes為單位
 
+註3:build transaction在coinb.in的原始碼
+https://github.com/OutCast3k/coinbin/blob/217897285e51cbc33bdba3ec275aa3386ebf70b2/js/coin.js#L793
+
