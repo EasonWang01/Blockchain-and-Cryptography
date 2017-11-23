@@ -135,7 +135,7 @@ https://blockchain.info/pushtx
 ![](/assets/adfw.png)
 
 或是使用https://live.blockcypher.com/btc/pushtx/
-(兩個網站功能均類似)
+(兩個網站功能均類似，但blockcypher之回傳訊息較為明確)
 
 一旦一筆比特幣交易被發送到任意一個連接至比特幣網絡的節點，這筆交易將會被該節點驗證。如果交易被驗證有效，該節點將會將這筆交易傳播到這個節點所連接的其他節點
 
