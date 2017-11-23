@@ -4,6 +4,11 @@
 
 > 地址為1開頭為一般比特幣地址，為3開頭的為多重簽章地址
 
+> 測試鏈地址為m或n開頭
+
+其他參考可https://en.bitcoin.it/wiki/List_of_address_prefixes
+
+
 ## 可在以下網站線上產生地址
 
 單一簽名：[https://coinb.in/\#newAddress](https://coinb.in/#newAddress)
