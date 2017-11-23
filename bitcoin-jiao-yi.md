@@ -120,6 +120,28 @@ Transaction {
 
 ```
 
+假設一個編碼過的交易Hex為如下
+```
+01000000018964907116f6245417b9d9aea1d226e46486c5d485d6b947c95c794e032df612010000001976a9140043be27e16b93c275413e9b4411f08f2cd8bef088acffffffff0120082f08000000001976a9140b01599fd09ef602d71827601871e5a1081459f688ac00000000
+```
+其是由以下格式所串接所組成
+```
+version: 01000000
+number of inputs: 01 (1)
+input 0
+     previous txid (little endian): 8964907116f6245417b9d9aea1d226e46486c5d485d6b947c95c794e032df612 (12f62d034e795cc947b9d685d4c58664e426d2a1aed9b9175424f61671906489)
+     previous tx output (little endian): 01000000 (1)
+     input script (scriptSig) length: 19 (25)
+     input script (scriptSig): 76a9140043be27e16b93c275413e9b4411f08f2cd8bef088ac
+     nSequence: ffffffff
+number of outputs: 01 (1)
+output 0
+     Satoshis to be spent (little endian): 20082f0800000000 (137300000)
+     output script (scriptPubKey) length: 19 (25)
+     output script (scriptPubKey): 76a9140b01599fd09ef602d71827601871e5a1081459f688ac
+nLockTime: 00000000
+```
+
 
 
 # 交易結構
