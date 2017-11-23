@@ -38,7 +38,7 @@ Transaction {
        value: 15000 } ] }
 ```
 
-或是也可以產生2 to 2 的交易
+或是也可以產生2 to 2 的交易(兩個輸入的地址與兩個輸出的地址)
 ```js
 var bitcoin = require("bitcoinjs-lib");
 
