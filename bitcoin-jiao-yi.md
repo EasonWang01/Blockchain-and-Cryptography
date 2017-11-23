@@ -389,17 +389,22 @@ https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8
 
 # 交易種類
 
+#### 1.Pay-to-Public-Key-Hash (P2PKH)
+
+此為最常見的交易類型，
+
+其locking script 長如下圖
 ```
-1.Pay-to-Public-Key-Hash (P2PKH)
+OP_DUP OP_HASH160 <Public Key Hash也就是比特幣地址> OP_EQUAL OP_CHECKSIG
+``` 
 
-2.Pay-to-Public-Key (P2PK) 
+#### 2.Pay-to-Public-Key (P2PK) 
 
-3.Multi-Signature (MultiSig，多重簽章交易，需要多個的私鑰才可完成簽發，最多可包含 15 個 keys)
+#### 3.Multi-Signature (MultiSig，多重簽章交易，需要多個的私鑰才可完成簽發，最多可包含 15 個 keys)
 
-4.Data Output (OP_RETURN，可以填上自己想填的資料到交易上)
+#### 4.Data Output (OP_RETURN，可以填上自己想填的資料到交易上)
 
-5.Pay-to-Script-Hash (P2SH)
-```
+#### 5.Pay-to-Script-Hash (P2SH)
 
 
 ---
