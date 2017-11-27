@@ -315,7 +315,9 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 # 交易的Input一定會對應到一個Output
 
-比特幣記錄帳戶餘額流向的方式來自於查看目前花費的金額\(input\)來自於上一筆的output位置
+> 以下用Input From 和Output To叫好理解
+
+比特幣記錄帳戶餘額流向的方式來自於查看目前花費的金額\(Output To\)來自於哪一筆的Input From
 
 Input一定會對應到一個Output，每個Output都會有一個locking script 以及每個input也會有一個unlocking script  
 用來解鎖output，解鎖後才可由上個output傳比特幣給下一個地址變為新地址的unspend output
