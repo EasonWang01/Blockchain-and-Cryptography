@@ -1,10 +1,12 @@
 # 比特幣交易
 
 以下我們用bitcoinjs-lib來建立交易
+
 > 如還沒安裝需先使用npm安裝
-```
-npm install bitcoinjs-lib
-```
+>
+> ```
+> npm install bitcoinjs-lib
+> ```
 
 ```js
 var bitcoin = require('bitcoinjs-lib')
@@ -22,7 +24,9 @@ tx.sign(0, keyPair)
 //使用私鑰簽發
 console.log(tx.build());
 ```
+
 此時會產生如下
+
 ```json
 Transaction {
   version: 1,
@@ -38,7 +42,8 @@ Transaction {
        value: 15000 } ] }
 ```
 
-或是也可以產生2 to 2 的交易(兩個輸入的地址與兩個輸出的地址)
+或是也可以產生2 to 2 的交易\(兩個輸入的地址與兩個輸出的地址\)
+
 ```js
 var bitcoin = require("bitcoinjs-lib");
 
@@ -56,18 +61,18 @@ txb.sign(1, bob) // Bob signs his input, which was the second input (1th)
 txb.sign(0, alice) // Alice signs her input, which was the first input (0th)
 
 console.log(txb.build().toHex())
-
 ```
 
 但這時交易還沒有被廣播出去，意思是我們這個簽發動作也可以離線進行，然後把這個json在複製到其他地方廣播給比特幣網路，稍後下一節將會講解。
 
-
 我們也可以把剛才code最後一行改為以下，即可看到被編碼為16進位的格式，一般在網路上廣播交易均用此種格式
+
 ```js
 console.log(tx.build().toHex());
 ```
 
 再來我們也可以從txHex解碼回原本的格式
+
 ```js
 var bitcoin = require('bitcoinjs-lib')
 var keyPair = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
@@ -85,7 +90,7 @@ console.log(tx)
 
 ### 我們也可以試試看直接解碼其他已經發生過的交易的TxHex
 
-1.我們先到此處https://blockchain.info/tx/9021b49d445c719106c95d561b9c3fac7bcb3650db67684a9226cd7fa1e1c1a0?format=hex
+1.我們先到此處[https://blockchain.info/tx/9021b49d445c719106c95d561b9c3fac7bcb3650db67684a9226cd7fa1e1c1a0?format=hex](https://blockchain.info/tx/9021b49d445c719106c95d561b9c3fac7bcb3650db67684a9226cd7fa1e1c1a0?format=hex)  
 查詢一個交易的txHex，然後把它貼到下面程式的`txHEX`變數位置
 
 ```js
@@ -93,9 +98,10 @@ txHEX = "0100000002d8c8df6a6fdd2addaf589a83d860f18b44872d13ee6ec3526b2b470d42a96
 
 var tx = bitcoin.Transaction.fromHex(txHEX);
 console.log(tx)
-
 ```
+
 即可看到原始交易格式
+
 ```json
 Transaction {
   version: 1,
@@ -116,15 +122,16 @@ Transaction {
        script: <Buffer 76 a9 14 a3 d8 9c 53 bb 95 6f 08 91 7b 44 d1 13 c6 b2 bc be 0c 29 b7 88 ac> },
      { value: 155000000,
        script: <Buffer 76 a9 14 08 33 8e 1d 5e 26 db 3f ce 21 b0 11 79 5b 1c 3c 8a 5a 5d 07 88 ac> } ] }
-
-
 ```
 
 假設一個編碼過的交易Hex為如下
+
 ```
 01000000018964907116f6245417b9d9aea1d226e46486c5d485d6b947c95c794e032df612010000001976a9140043be27e16b93c275413e9b4411f08f2cd8bef088acffffffff0120082f08000000001976a9140b01599fd09ef602d71827601871e5a1081459f688ac00000000
 ```
+
 其是由以下格式所串接所組成
+
 ```
 version: 01000000
 number of inputs: 01 (1)
@@ -142,26 +149,20 @@ output 0
 nLockTime: 00000000
 ```
 
-
-
 # 交易結構
+
 | 欄位 | 描述 | 大小 |
-|:----:|------|------|
+| :---: | --- | --- |
 | 版本 | 描述版本號，現在為1 | 4bytes |
 | 輸入計數 | 被包含的輸入交易數量 | 1-9bytes |
 | 輸入 | 列出輸入的交易 | 不一定 |
 | 輸出計數 | 被包含的輸出交易數量 | 1-9bytes |
 | 輸出 | 列出輸出的交易 | 不一定 |
-| 鎖定時間 | 在此時間之前此交易不能被加入區塊(註1) | 4bytes |
-
-
-
-
+| 鎖定時間 | 在此時間之前此交易不能被加入區塊\(註1\) | 4bytes |
 
 # 廣播交易
 
 比特幣交易可以是offline產生的，產生後再用線上的方式廣播給bitcoin網路，只要把交易訊息的payload傳送給其中一個比特幣節點就可以達到廣播的目的
-
 
 ```js
 var bitcoin = require("bitcoinjs-lib");
@@ -171,14 +172,14 @@ tx.addInput("d18e7106e5492baf8f3929d2d573d27d89277f3825d3836aa86ea1d843b5158b", 
 tx.addOutput("12idKQBikRgRuZEbtxXQ4WFYB7Wa3hZzhT", 149000);
 tx.sign(0, key);
 console.log(tx.build().toHex());
-
 ```
-我們可以把剛才產生出來HEX的交易本文使用如下的線上服務廣播到比特幣網路
-https://blockchain.info/pushtx
+
+我們可以把剛才產生出來HEX的交易本文使用如下的線上服務廣播到比特幣網路  
+[https://blockchain.info/pushtx](https://blockchain.info/pushtx)  
 ![](/assets/adfw.png)
 
-或是使用https://live.blockcypher.com/btc/pushtx/
-(兩個網站功能均類似，但blockcypher之回傳訊息較為明確)
+或是使用[https://live.blockcypher.com/btc/pushtx/](https://live.blockcypher.com/btc/pushtx/)  
+\(兩個網站功能均類似，但blockcypher之回傳訊息較為明確\)
 
 一旦一筆比特幣交易被發送到任意一個連接至比特幣網絡的節點，這筆交易將會被該節點驗證。如果交易被驗證有效，該節點將會將這筆交易傳播到這個節點所連接的其他節點
 
@@ -281,57 +282,61 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 有關其他可能被攻擊的方式  
 [https://en.bitcoin.it/wiki/Irreversible\_Transactions](https://en.bitcoin.it/wiki/Irreversible_Transactions)
 
-
 # UTXO
-比特幣中的餘額指的是還沒有被花費掉的部分(unspend output)
 
-例如我們可以到此網址，查看一個地址的unspend output
-https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb
+比特幣中的餘額指的是還沒有被花費掉的部分\(unspend output\)
+
+例如我們可以到此網址，查看一個地址的unspend output  
+[https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb](https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb)
 
 如下
+
 ```json
 {
-"unspent_outputs":[
-{
-"tx_hash":"6e5704b49d75279c7bfe8067db289a69c5364365f27c6eee27a29795e4ecfd54",
-"tx_hash_big_endian":"54fdece49597a227ee6e7cf2654336c5699a28db6780fe7b9c27759db404576e",
-"tx_index":303475950,
-"tx_output_n": 0,
-"script":"76a914e3ad059f33c82abaa858465b712ff5d874aceb7488ac",
-"value": 3009040,
-"value_hex": "2dea10",
-"confirmations":2
-}
-]
+  "unspent_outputs":[
+    {
+     "tx_hash":"6e5704b49d75279c7bfe8067db289a69c5364365f27c6eee27a29795e4ecfd54",
+     "tx_hash_big_endian":"54fdece49597a227ee6e7cf2654336c5699a28db6780fe7b9c27759db404576e",
+     "tx_index":303475950,
+     "tx_output_n": 0,
+     "script":"76a914e3ad059f33c82abaa858465b712ff5d874aceb7488ac",
+     "value": 3009040,
+     "value_hex": "2dea10",
+     "confirmations":2
+    }
+  ]
 }
 ```
+
 可以看到其中value欄位即為該地址的餘額，單位為satoshi
 
-> 0.00000001 bitcoin 為一個 satoshi，此也為bitcoin的最小單位 所以此處 0.00000001 * 3009040 即為0.0300904BTC
-![](/assets/交易餘額.png)
+> 0.00000001 bitcoin 為一個 satoshi，此也為bitcoin的最小單位 所以此處 0.00000001 \* 3009040 即為0.0300904BTC  
+> ![](/assets/交易餘額.png)
 
-#交易的Input一定會對應到一個Output
-比特幣記錄帳戶餘額流向的方式來自於查看目前花費的金額(input)來自於上一筆的output位置
+# 交易的Input一定會對應到一個Output
 
-Input一定會對應到一個Output，每個Output都會有一個locking script 以及每個input也會有一個unlocking script
-用來解鎖，解鎖後才可由上個output傳比特幣給下一個地址當為他的unspend output
+比特幣記錄帳戶餘額流向的方式來自於查看目前花費的金額\(input\)來自於上一筆的output位置
+
+Input一定會對應到一個Output，每個Output都會有一個locking script 以及每個input也會有一個unlocking script  
+用來解鎖output，解鎖後才可由上個output傳比特幣給下一個地址變為新地址的unspend output
 
 一筆交易主要包含兩部份，input 和 output，output 有 locking script 去鎖著 UTXO 不被花費，想要花費的人就需要創建一個 input，用裡面的 locking script 去解鎖這個 unlocking script，例如我今天想要花自己的錢就必須自己去創建一個Input然後用我的私鑰簽發
 
 ![](/assets/en-transaction-propagation.svg)
-> https://bitcoin.org
 
-並且一筆交易中可以來自多個output並產生多個unspend output
+> [https://bitcoin.org](https://bitcoin.org)
+
+並且一筆交易中可以來自多個output並產生多個unspend output  
 ![](/assets/789.png)
 
-# 交易的ID (TXid)
-每個比特幣交易都存在一個獨特的id名為TXid
+# 交易的ID \(TXid\)
+
+每個比特幣交易都存在一個獨特的id名為TXid  
 我們可以從TXid取得那筆交易的相關資訊
 
-https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8c6732352925ab9
+[https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8c6732352925ab9](https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8c6732352925ab9)
+
 ```json
-
-
 {
 "ver":1,
 "inputs":[
@@ -382,50 +387,48 @@ https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8
 "hash":"50091e48d3d2edc2d5f2797d9ecf695f61c60f58b227741e8426bb1f8fabb646",
 "vout_sz":2
 }
-
 ```
 
 # 交易手續費
 
 # 交易種類
 
-#### 1.Pay-to-Public-Key-Hash (P2PKH)
+#### 1.Pay-to-Public-Key-Hash \(P2PKH\)
 
 此為最常見的交易類型
 
-其locking script 如下圖(後續章節會介紹，有關Bitcoin script)
+其locking script 如下圖\(後續章節會介紹，有關Bitcoin script\)
 
 ```
 OP_DUP OP_HASH160 <Public Key Hash也就是比特幣地址> OP_EQUAL OP_CHECKSIG
-``` 
+```
 
-#### 2.Pay-to-Public-Key (P2PK) 
+#### 2.Pay-to-Public-Key \(P2PK\)
 
 此為更簡單的交易格式，相較 P2PKH 省略了Hash步驟，最常在 coinbase tx 裡面出現，是比較早期的交易型態
 
-#### 3.Multi-Signature (MultiSig，多重簽章交易，需要多個的私鑰才可完成簽發，最多可包含 15 個 keys)
+#### 3.Multi-Signature \(MultiSig，多重簽章交易，需要多個的私鑰才可完成簽發，最多可包含 15 個 keys\)
 
-#### 4.Data Output (OP_RETURN，可以填上自己想填的資料到交易上)
+#### 4.Data Output \(OP\_RETURN，可以填上自己想填的資料到交易上\)
 
-#### 5.Pay-to-Script-Hash (P2SH)
-
+#### 5.Pay-to-Script-Hash \(P2SH\)
 
 ---
 
-註1:[https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)
+註1:[https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)  
 以unix timestamp表示，類似於`1511321691`如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交22易加入區塊
 
-註2:交易手續費，約為1000satoshis每KB.每個交易通常至少含有500 bytes.
-https://bitcoinfees.earn.com/
- >  
-https://bitcoinfees.earn.com/
- (此網站可看到目前推薦的手續費與尚未確認的交易所含的手續費)
-注意:他是以bytes為單位
+註2:交易手續費，約為1000satoshis每KB.每個交易通常至少含有500 bytes.  
+[https://bitcoinfees.earn.com/](https://bitcoinfees.earn.com/)
 
-註3:build transaction在coinb.in的原始碼
-https://github.com/OutCast3k/coinbin/blob/217897285e51cbc33bdba3ec275aa3386ebf70b2/js/coin.js#L793
+> [https://bitcoinfees.earn.com/](https://bitcoinfees.earn.com/)  
+>  \(此網站可看到目前推薦的手續費與尚未確認的交易所含的手續費\)  
+> 注意:他是以bytes為單位
 
-bitcoinjs之transaction相關原始碼
-https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction.js
-https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction_builder.js
+註3:build transaction在coinb.in的原始碼  
+[https://github.com/OutCast3k/coinbin/blob/217897285e51cbc33bdba3ec275aa3386ebf70b2/js/coin.js\#L793](https://github.com/OutCast3k/coinbin/blob/217897285e51cbc33bdba3ec275aa3386ebf70b2/js/coin.js#L793)
+
+bitcoinjs之transaction相關原始碼  
+[https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction.js](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction.js)  
+[https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction\_builder.js](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction_builder.js)
 
