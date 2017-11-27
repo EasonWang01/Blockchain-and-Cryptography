@@ -391,19 +391,15 @@ Input一定會對應到一個Output，每個Output都會有一個locking script 
 
 # 交易手續費
 
+發出交易時需要包含一定量的手續費，用來給予礦工，挖到新區塊的礦工將收到該區塊內所有交易的手續費，通常越高的手續費會越早被加入區塊，也就代表可以越早被驗證交易。
+
 以下為比特幣官方錢包用來估算手續費的程式碼
 
-https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/wallet/fees.cpp
-
-
-
-
+[https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/wallet/fees.cpp](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/wallet/fees.cpp)
 
 # 交易類型
 
 每筆交易在被節點接收到時會先被確認是不是一個standard的交易，原始碼可察看如下連結[https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/policy/policy.h\#L79](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/policy/policy.cpp#L57)
-
-
 
 以下將介紹比特幣的五種交易類型:
 
