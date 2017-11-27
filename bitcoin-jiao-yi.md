@@ -226,7 +226,7 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 6.nLockTime(指定在交易發生前的鎖定時間)是小於或等於INT_MAX(31 bits)，交易大小bytes >= 100，sig opcount <= 2(關於signature的opcode執行不可多於兩個)。 
 
-7.解鎖腳本（scriptSig）只能夠將數字壓入棧中，並且鎖定腳本（scriptPubkey）必須要符合isStandard的格式 （該格式將會拒絕非標準交易）。 
+7.解鎖腳本（scriptSig）只能夠將數字壓入棧中，並且鎖定腳本（scriptPubkey）必須要符合isStandard的格式 （參考下面交易類型部分）。 
 
 8.假設發出的交易Tx hash已經出現在pool中等待納入區塊或是已經在以前的區塊中則一樣拒絕。
 
@@ -391,7 +391,11 @@ Input一定會對應到一個Output，每個Output都會有一個locking script 
 
 # 交易手續費
 
-# 交易種類
+# 交易類型
+
+每筆交易在被節點接收到時會先被確認是不是一個standard的交易，原始碼可察看如下連結[https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/policy/policy.h\#L79](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/policy/policy.cpp#L57)
+
+
 
 #### 1.Pay-to-Public-Key-Hash \(P2PKH\)
 
@@ -411,7 +415,7 @@ OP_DUP OP_HASH160 <Public Key Hash也就是比特幣地址> OP_EQUAL OP_CHECKSIG
 
 > ![](/assets/1_NtgVAsbc112gcNoS1IDjDg.png)
 >
-> https://github.com/bitcoinbook/bitcoinbook
+> [https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook)
 
 #### 
 
