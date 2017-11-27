@@ -403,11 +403,17 @@ Input一定會對應到一個Output，每個Output都會有一個locking script 
 OP_DUP OP_HASH160 <Public Key Hash也就是比特幣地址> OP_EQUAL OP_CHECKSIG
 ```
 
-其Output script如下圖，unlocking scrip通常會出現在交易的Output裡面，所以也稱為Output script。另外也稱scriptSig
+其Output script如下圖，unlocking scrip通常會出現在交易的Output裡面，所以也稱為Output script。另外也稱scriptSig。
 
 ```
 <Signature> <Public Key>
 ```
+
+> ![](/assets/1_NtgVAsbc112gcNoS1IDjDg.png)
+>
+> https://github.com/bitcoinbook/bitcoinbook
+
+#### 
 
 #### 2.Pay-to-Public-Key \(P2PK\)
 
