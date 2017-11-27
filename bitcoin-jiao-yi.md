@@ -397,13 +397,13 @@ Input一定會對應到一個Output，每個Output都會有一個locking script 
 
 此為最常見的交易類型
 
-其Locking script 如下圖\(後續章節會介紹，有關Bitcoin script\)，Locking scrip通常會出現在交易的Input裡面，所以也稱為Input script。
+其Locking script 如下圖\(後續章節會介紹，有關Bitcoin script\)，Locking scrip通常會出現在交易的Input裡面，所以也稱為Input script。另外也稱為scriptPubKey。
 
 ```
 OP_DUP OP_HASH160 <Public Key Hash也就是比特幣地址> OP_EQUAL OP_CHECKSIG
 ```
 
-其Output script如下圖，unlocking scrip通常會出現在交易的Output裡面，所以也稱為Output script
+其Output script如下圖，unlocking scrip通常會出現在交易的Output裡面，所以也稱為Output script。另外也稱scriptSig
 
 ```
 <Signature> <Public Key>
