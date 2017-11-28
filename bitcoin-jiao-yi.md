@@ -429,7 +429,7 @@ OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> 
 
 可參考下圖實際交易之script
 
-> ![](/assets/32.png)https://blockchain.info/tx/17a17d2fe6b201f15151cfb6c1c4d6fce254698c5c8a04ee09f92f808abf3325
+> ![](/assets/32.png)[https://blockchain.info/tx/17a17d2fe6b201f15151cfb6c1c4d6fce254698c5c8a04ee09f92f808abf3325](https://blockchain.info/tx/17a17d2fe6b201f15151cfb6c1c4d6fce254698c5c8a04ee09f92f808abf3325)
 
 #### 2.Pay-to-Public-Key \(P2PK\)
 
@@ -454,6 +454,14 @@ OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> 
 ```
 
 #### 3.Multi-Signature \(MultiSig，多重簽章交易，需要多個的私鑰才可完成簽發，最多可包含 15 個 keys\)
+
+創立時決定最多 N 把 Public Key 被記錄在上面\(N 最大為 15\)，而 unlocking 解鎖時至少要有 M 把 Private Key 產生的 signature 才能執行交易，而 M  會小於或等於 N。 
+
+```
+m-of-n Multi-Signature
+```
+
+假設為 3-of-5 Multi-Signature 意思代表為建立交易時會放入五個public key，而之後要使用該筆金額時會需要至少三個private key簽發才能成功發送交易。
 
 #### 4.Data Output \(OP\_RETURN，可以填上自己想填的資料到交易上\)
 
