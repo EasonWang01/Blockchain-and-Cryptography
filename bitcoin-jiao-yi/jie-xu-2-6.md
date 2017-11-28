@@ -17,11 +17,17 @@ Signature script: OP_0 <A sig> [B sig] [C sig...]
 
 最多可以帶80bytes的資料，OP\_RETURN 沒有 unlocking script，並且在在 isStandard\(\) 會被判斷為 invalid，一個交易的 outputs 只能有一個 OP\_RETURN，通常會與其他四種交易接再一起。
 
-https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/standard.h\#L34
+[https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/standard.h\#L34](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/standard.h#L34)
 
 ```
 OP_RETURN <data>
 ```
+
+實際交易
+
+![](/assets/987.png)
+
+https://blockchain.info/tx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684
 
 #### 5.Pay-to-Script-Hash \(P2SH\)
 
