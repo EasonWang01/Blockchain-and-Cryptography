@@ -427,7 +427,9 @@ OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> 
 >
 > [https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook)
 
-#### 
+可參考下圖實際交易之script
+
+> ![](/assets/32.png)https://blockchain.info/tx/17a17d2fe6b201f15151cfb6c1c4d6fce254698c5c8a04ee09f92f808abf3325
 
 #### 2.Pay-to-Public-Key \(P2PK\)
 
