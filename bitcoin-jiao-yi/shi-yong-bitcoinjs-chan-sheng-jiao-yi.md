@@ -64,8 +64,6 @@ txb.sign(1, bob)
 txb.build().toHex();
 ```
 
-
-
 ### 3.產生一筆交易並且廣播
 
 ```js
@@ -99,7 +97,7 @@ testnetUtils.faucetMany([
   var txb = new bitcoin.TransactionBuilder(testnet)
   txb.addInput(unspents[0].txId, unspents[0].vout) // alice1 unspent
   txb.addInput(unspents[1].txId, unspents[1].vout) // alice2 unspent
-  
+
   //一個為要轉帳的位置，一個為找零的位置，也就是剩餘的錢要找零給自己
   txb.addOutput('mwCwTceJvYV27KXBc3NJZys6CjsgsoeHmf', 8e4) // the actual "spend"
   txb.addOutput(aliceChange.getAddress(), 1e4) // Alice's change
@@ -114,9 +112,22 @@ testnetUtils.faucetMany([
     url: 'https://api.ei8ht.com.au:9443/3/pushtx',
     //也可用          url: 'http://tbtc.blockr.io/api/v1/tx/push',
     body: txb.build().toHex()
-  }, done)
+  }, () => {console.log('success send!')})
 })
 ```
+
+之後會看到如下輸出
+
+```
+funding n2n3vHe6BHUwKybSsSSUXK1CtFTafzmR62 w/ 50000
+funding mvvrViCXRZD1czZduc4xCixmfG7DpZ7Lkb w/ 70000
+```
+
+進入到此網站[https://live.blockcypher.com/btc-testnet](https://live.blockcypher.com/btc-testnet)
+
+然後在右上角輸入地址 即可查看剛才的交易紀錄
+
+
 
 
 
