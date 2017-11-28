@@ -7,7 +7,7 @@
 
 4. cd test\integration
 
-5. 開啟transaction.js
+5. 使用任意編輯器開啟transaction.js
 ```
 
 然後我們先將transaction.js裡面的code都先刪除，以下將介紹如何產生交易
