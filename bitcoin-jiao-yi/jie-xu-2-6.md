@@ -22,10 +22,9 @@ Signature script: OP_0 <A sig> [B sig] [C sig...]
 ```
 1. 複雜的 locking script 變成只有 20 bytes 的 digital fingerprint。
 2. Script Hash 可以 encode 成 address，讓傳送者可以不需要有複雜的軟體才能使用。
-3. P2SH 把創建 script 的負擔從傳送者(客戶)轉移到接收者(Mohammed)。
-4. P2SH 把儲存容量的負擔從 UTXO set 轉移到 Blockchain 上面，因為在 Tx 的 outputs 裡面記錄的 locking sciprt 變短了。
-5. P2SH 把資料儲存的負擔從當下移到未來，只有在再次動錢的時候會需要花比較多時間。
-6. P2SH 把手續費的負擔轉移到接收者身上。
+3. P2SH 把儲存容量的負擔從 UTXO set 轉移到 Blockchain 上面，因為在 Tx 的 outputs 裡面記錄的 locking sciprt 變短了。
+4. P2SH 把資料儲存的負擔從當下移到未來，只有在再次花費該筆金額時。
+5. P2SH 把手續費的負擔轉移到接收者身上。
 ```
 
 ```
