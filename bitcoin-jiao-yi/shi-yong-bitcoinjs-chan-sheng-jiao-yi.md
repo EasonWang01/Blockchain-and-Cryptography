@@ -10,8 +10,6 @@
 
 然後我們先將transaction.js裡面的code都先刪除，以下將介紹如何產生交易
 
-
-
 #### 1.產生一對一之交易\(最基本型態\)
 
 ```js
@@ -39,8 +37,6 @@ txb.sign(0, alice);
 console.log(txb.build().toHex());
 ```
 
-
-
 ### 2.產生二對二之交易
 
 ```js
@@ -66,6 +62,60 @@ txb.sign(0, alice)
 txb.sign(1, bob) 
 
 txb.build().toHex();
+```
+
+
+
+### 3.產生一筆交易並且廣播
+
+```js
+var assert = require('assert')
+var bitcoin = require('../../')
+var dhttp = require('dhttp/200')
+var testnet = bitcoin.networks.testnet
+var testnetUtils = require('./_testnet')
+
+function rng () {// 一個隨機的base64 hash
+  return Buffer.from('YT8dAtK4d16A3P1z+TpwB2jJ4aFH3g9M1EioIBkLEV4=', 'base64')
+}
+
+var alice1 = bitcoin.ECPair.makeRandom({ network: testnet })
+var alice2 = bitcoin.ECPair.makeRandom({ network: testnet })
+var aliceChange = bitcoin.ECPair.makeRandom({ rng: rng, network: testnet })
+
+// 模擬 Alice 有兩個 unspent outputs
+testnetUtils.faucetMany([
+  {
+    address: alice1.getAddress(),
+    value: 5e4
+  },
+  {
+    address: alice2.getAddress(),
+    value: 7e4
+  }
+], function (err, unspents) {
+  if (err) return done(err)
+
+  var txb = new bitcoin.TransactionBuilder(testnet)
+  txb.addInput(unspents[0].txId, unspents[0].vout) // alice1 unspent
+  txb.addInput(unspents[1].txId, unspents[1].vout) // alice2 unspent
+  
+  //一個為要轉帳的位置，一個為找零的位置，也就是剩餘的錢要找零給自己
+  txb.addOutput('mwCwTceJvYV27KXBc3NJZys6CjsgsoeHmf', 8e4) // the actual "spend"
+  txb.addOutput(aliceChange.getAddress(), 1e4) // Alice's change
+
+  // Alice signs each input with the respective private keys
+  txb.sign(0, alice1)
+  txb.sign(1, alice2)
+
+  // 使用以下在現服務廣播到Bitcoin Testnet network
+  dhttp({
+    method: 'POST',
+    url: 'https://api.ei8ht.com.au:9443/3/pushtx',
+    //也可用          url: 'http://tbtc.blockr.io/api/v1/tx/push',
+    body: txb.build().toHex()
+  }, done)
+})
 ```
 
 
