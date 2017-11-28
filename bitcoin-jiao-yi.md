@@ -1,3 +1,9 @@
+# 
+
+# 
+
+# 
+
 # 比特幣交易
 
 以下我們用bitcoinjs-lib來建立交易
@@ -473,13 +479,6 @@ M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
 
 ```
 3 <Public Key A> <Public Key B> <Public Key C> 5 OP_CHECKMULTISI
-
-
-
-
-
-
-
 ```
 
 #### 4.Data Output \(OP\_RETURN，可以填上自己想填的資料到交易上\)
