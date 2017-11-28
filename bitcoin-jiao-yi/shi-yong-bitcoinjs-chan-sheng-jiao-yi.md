@@ -12,7 +12,7 @@
 
 
 
-1. 產生一對一之交易\(最基本型態\)
+#### 1.產生一對一之交易\(最基本型態\)
 
 ```js
 var assert = require('assert')
@@ -37,6 +37,35 @@ txb.addOutput('1cMh228HTCiwS8ZsaakH8A8wze1JR5ZsP', 12000)
 txb.sign(0, alice);
 
 console.log(txb.build().toHex());
+```
+
+
+
+### 2.產生二對二之交易
+
+```js
+var assert = require('assert')
+var bitcoin = require('../../')
+var dhttp = require('dhttp/200')
+var testnet = bitcoin.networks.testnet
+var testnetUtils = require('./_testnet')
+
+//兩個人的私鑰
+var alice = bitcoin.ECPair.fromWIF('L1Knwj9W3qK3qMKdTvmg3VfzUs3ij2LETTFhxza9LfD5dngnoLG1')
+var bob = bitcoin.ECPair.fromWIF('KwcN2pT3wnRAurhy7qMczzbkpY5nXMW2ubh696UBc1bcwctTx26z')
+
+var txb = new bitcoin.TransactionBuilder()
+//加入兩個Input跟Output
+txb.addInput('b5bb9d8014a0f9b1d61e21e796d78dccdf1352f23cd32812f4850b878ae4944c', 6) 
+txb.addInput('7d865e959b2466918c9863afca942d0fb89d7c9ac0c99bafc3749504ded97730', 0)
+txb.addOutput('1CUNEBjYrCn2y1SdiUMohaKUi4wpP326Lb', 180000)
+txb.addOutput('1JtK9CQw1syfWj1WtFMWomrYdV3W2tWBF9', 170000)
+
+//分別簽發，第一個參數為Input在交易的index,第二個參數為私鑰
+txb.sign(0, alice) 
+txb.sign(1, bob) 
+
+txb.build().toHex();
 ```
 
 
