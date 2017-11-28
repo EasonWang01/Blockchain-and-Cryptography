@@ -92,7 +92,7 @@ testnetUtils.faucetMany([
     value: 7e4
   }
 ], function (err, unspents) {
-  if (err) return done(err)
+  if (err) console.log(err)
 
   var txb = new bitcoin.TransactionBuilder(testnet)
   txb.addInput(unspents[0].txId, unspents[0].vout) // alice1 unspent
@@ -126,8 +126,4 @@ funding mvvrViCXRZD1czZduc4xCixmfG7DpZ7Lkb w/ 70000
 進入到此網站[https://live.blockcypher.com/btc-testnet](https://live.blockcypher.com/btc-testnet)
 
 然後在右上角輸入地址 即可查看剛才的交易紀錄
-
-
-
-
 
