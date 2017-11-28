@@ -412,7 +412,7 @@ Input一定會對應到一個Output，每個Output都會有一個locking script 
 其Locking script 如下圖\(後續章節會介紹，有關Bitcoin script\)，Locking scrip通常會出現在交易的Input裡面，所以也稱為Input script。另外也稱為scriptPubKey。
 
 ```
-OP_DUP OP_HASH160 <Public Key Hash也就是比特幣地址> OP_EQUAL OP_CHECKSIG
+OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> OP_EQUAL OP_CHECKSIG
 ```
 
 其Output script如下圖，unlocking scrip通常會出現在交易的Output裡面，所以也稱為Output script。另外也稱scriptSig。
@@ -429,7 +429,25 @@ OP_DUP OP_HASH160 <Public Key Hash也就是比特幣地址> OP_EQUAL OP_CHECKSIG
 
 #### 2.Pay-to-Public-Key \(P2PK\)
 
-此為更簡單的交易格式，相較 P2PKH 省略了Hash步驟，最常在 coinbase tx 裡面出現，是比較早期的交易型態
+此為更簡單的交易格式，相較 P2PKH 省略了Hash步驟，最常在 coinbase tx 裡面出現，是比較早期的交易型態，公鑰已經存在locking script中
+
+鎖定腳本\(Locking script\)類似如下
+
+```
+<Public Key A> OP_CHECKSIG
+```
+
+解鎖腳本如下\(Unlocking script\)
+
+```
+<Signature from Private Key A>
+```
+
+兩者組合後的交易完整腳本如下
+
+```
+<Signature from Private Key A> <Public Key A> OP_CHECKSIG
+```
 
 #### 3.Multi-Signature \(MultiSig，多重簽章交易，需要多個的私鑰才可完成簽發，最多可包含 15 個 keys\)
 
