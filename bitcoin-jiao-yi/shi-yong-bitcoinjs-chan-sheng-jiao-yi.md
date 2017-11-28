@@ -5,7 +5,7 @@
 
 3. npm install
 
-4. cd test\integration
+4. cd test/integration
 
 5. 使用任意編輯器開啟transaction.js
 ```
@@ -66,7 +66,7 @@ txb.sign(1, bob)
 txb.build().toHex();
 ```
 
-### 3.產生一筆交易並且廣播
+### 3.取得免費測試幣並產生一筆交易
 
 ```js
 var assert = require('assert')
@@ -75,7 +75,7 @@ var dhttp = require('dhttp/200')
 var testnet = bitcoin.networks.testnet
 var testnetUtils = require('./_testnet')
 
-function rng () {// 一個隨機的base64 hash
+function rng() {// 一個隨機的base64 hash
   return Buffer.from('YT8dAtK4d16A3P1z+TpwB2jJ4aFH3g9M1EioIBkLEV4=', 'base64')
 }
 
@@ -108,13 +108,7 @@ testnetUtils.faucetMany([
   txb.sign(0, alice1)
   txb.sign(1, alice2)
 
-  // 使用以下在現服務廣播到Bitcoin Testnet network
-  dhttp({
-    method: 'POST',
-    url: 'https://api.ei8ht.com.au:9443/3/pushtx',
-    //也可用          url: 'http://tbtc.blockr.io/api/v1/tx/push',
-    body: txb.build().toHex()
-  }, () => {console.log('success send!')})
+  console.log(txb.build().toHex())
 })
 ```
 
@@ -125,7 +119,57 @@ funding n2n3vHe6BHUwKybSsSSUXK1CtFTafzmR62 w/ 50000
 funding mvvrViCXRZD1czZduc4xCixmfG7DpZ7Lkb w/ 70000
 ```
 
-進入到此網站[https://live.blockcypher.com/btc-testnet](https://live.blockcypher.com/btc-testnet)
+進入到此網站[https://live.blockcypher.com/btc-testnet](https://live.blockcypher.com/btc-testnet)\(需稍等一會\)
 
 然後在右上角輸入地址 即可查看剛才的交易紀錄
+
+
+
+# 4.產生OP\_RETURN的交易
+
+```js
+var assert = require('assert')
+var bitcoin = require('../../')
+var dhttp = require('dhttp/200')
+var testnet = bitcoin.networks.testnet
+var testnetUtils = require('./_testnet')
+
+function rng() {// 一個隨機的base64 hash
+  return Buffer.from('YT8dAtK4d16A3P1z+TpwB2jJ4aFH3g9M1EioIBkLEV4=', 'base64')
+}
+
+var alice1 = bitcoin.ECPair.makeRandom({ network: testnet })
+var alice2 = bitcoin.ECPair.makeRandom({ network: testnet })
+var aliceChange = bitcoin.ECPair.makeRandom({ rng: rng, network: testnet })
+
+// 模擬 Alice 有兩個 unspent outputs
+testnetUtils.faucetMany([
+  {
+    address: alice1.getAddress(),
+    value: 5e4
+  },
+  {
+    address: alice2.getAddress(),
+    value: 7e4
+  }
+], function (err, unspent) {
+  if (err) console.log(err)
+
+  var txb = new bitcoin.TransactionBuilder(testnet)
+  
+  // 加入文字
+  var data = Buffer.from('bitcoinjs-lib', 'utf8')
+  // 加入文字
+  var dataScript = bitcoin.script.nullData.output.encode(data)
+
+  txb.addInput(unspent.txId, unspent.vout)
+  txb.addOutput(dataScript, 1000)
+  txb.addOutput(testnetUtils.RETURN_ADDRESS, 4e4)
+  txb.sign(0, keyPair)
+
+  console.log(txb.build().toHex())
+})
+```
+
+
 
