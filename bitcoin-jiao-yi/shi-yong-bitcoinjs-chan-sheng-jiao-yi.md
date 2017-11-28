@@ -1,11 +1,13 @@
 ```
 1. git clone https://github.com/bitcoinjs/bitcoinjs-lib.git
 
-2. npm install
+2. cd bitcoinjs-lib 
 
-3. cd test\integration
+3. npm install
 
-4. 開啟transaction.js
+4. cd test\integration
+
+5. 開啟transaction.js
 ```
 
 然後我們先將transaction.js裡面的code都先刪除，以下將介紹如何產生交易
