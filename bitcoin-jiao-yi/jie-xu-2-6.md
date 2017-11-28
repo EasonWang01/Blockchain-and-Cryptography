@@ -17,7 +17,7 @@ Signature script: OP_0 <A sig> [B sig] [C sig...]
 
 #### 5.Pay-to-Script-Hash \(P2SH\)
 
-因為以前的multisig產生出的script太長，所以後來發展出此方法，並且附帶以下優點
+因為以前的multisig\(第三點\)產生出的script太長，所以後來發展出此方法，並且附帶以下優點
 
 ```
 1. 複雜的 locking script 變成只有 20 bytes 的 digital fingerprint。
