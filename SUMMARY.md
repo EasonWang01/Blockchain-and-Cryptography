@@ -13,6 +13,7 @@
   * [2-5 Bitcoin 地址](2-5-bitcoin-di-zhi.md)
   * [2-6 Bitcoin 交易](bitcoin-jiao-yi.md)
     * [接續2-6](bitcoin-jiao-yi/jie-xu-2-6.md)
+    * [使用bitcoinjs產生交易](bitcoin-jiao-yi/shi-yong-bitcoinjs-chan-sheng-jiao-yi.md)
   * [2-7 Bitcoin Script 與 OPCODE](2-7-bitcoin-script-yu-opcode.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)

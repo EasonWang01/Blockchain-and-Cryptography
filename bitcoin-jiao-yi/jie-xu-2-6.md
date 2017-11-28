@@ -49,7 +49,9 @@ Signature script: OP_0 <A sig> <C sig> <redeemScript>
 
 ---
 
-#### --------
+#### 
+
+--------
 
 註1:[https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)  
 以unix timestamp表示，類似於`1511321691`如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交22易加入區塊
