@@ -15,6 +15,7 @@
     * [接續2-6](bitcoin-jiao-yi/jie-xu-2-6.md)
     * [使用bitcoinjs產生交易](bitcoin-jiao-yi/shi-yong-bitcoinjs-chan-sheng-jiao-yi.md)
   * [2-7 Bitcoin Script 與 OPCODE](2-7-bitcoin-script-yu-opcode.md)
+  * [2-8 Bitcoin 區塊](2-8-bitcoin-qu-kuai.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)
 
