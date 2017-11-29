@@ -70,3 +70,11 @@ A Signature
 
 所以最後堆棧內只剩下True，代表這筆交易的Script成功執行，所以就可以正常地發出交易了。
 
+
+
+> 有關其他OPCODE的功能可以參考以下著個連結:
+>
+> https://en.bitcoin.it/wiki/Script
+
+
+
