@@ -127,3 +127,42 @@ funding mvvrViCXRZD1czZduc4xCixmfG7DpZ7Lkb w/ 70000
 
 然後在右上角輸入地址 即可查看剛才的交易紀錄
 
+> 廣播的方式即是單純傳一個POST request 過去![](/assets/766.png)
+
+
+
+### 4.產生OP\_RETURN交易
+
+```js
+var assert = require('assert')
+var bitcoin = require('../../')
+var dhttp = require('dhttp/200')
+var testnet = bitcoin.networks.testnet
+var testnetUtils = require('./_testnet')
+
+var keyPair = bitcoin.ECPair.makeRandom({ network: testnet })
+var address = keyPair.getAddress()
+
+testnetUtils.faucet(address, 5e4, function (err, unspent) {
+  if (err)  console.log(err)
+
+  var txb = new bitcoin.TransactionBuilder(testnet)
+  var data = Buffer.from('bitcoinjs-lib', 'utf8')
+  var dataScript = bitcoin.script.nullData.output.encode(data)
+
+  txb.addInput(unspent[0].txId, unspent.vout)
+  txb.addOutput(dataScript, 1000)
+  txb.addOutput(testnetUtils.RETURN_ADDRESS, 4e4)
+  txb.sign(0, keyPair)
+
+  // build and broadcast to the Bitcoin Testnet network
+  dhttp({
+    method: 'POST',
+    url: 'https://api.ei8ht.com.au:9443/3/pushtx',
+    body: txb.build().toHex()
+  }, () => {console.log('success send!')})
+})
+```
+
+
+
