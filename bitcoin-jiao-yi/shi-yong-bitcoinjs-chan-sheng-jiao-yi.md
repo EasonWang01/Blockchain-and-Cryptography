@@ -123,7 +123,9 @@ funding mvvrViCXRZD1czZduc4xCixmfG7DpZ7Lkb w/ 70000
 
 然後在右上角輸入地址 即可查看剛才的交易紀錄
 
-
+> 廣播的方式為單純傳一個POST request過去
+>
+> ![](/assets/766w.png)
 
 # 4.產生OP\_RETURN的交易
 
@@ -156,7 +158,7 @@ testnetUtils.faucetMany([
   if (err) console.log(err)
 
   var txb = new bitcoin.TransactionBuilder(testnet)
-  
+
   // 加入文字
   var data = Buffer.from('bitcoinjs-lib', 'utf8')
   // 加入文字
