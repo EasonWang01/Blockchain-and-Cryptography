@@ -44,15 +44,21 @@ https://blockchain.info/rawblock/輸入block hash
 
 
 
+zz
 
+
+
+ 
+
+ 
 
 ---
 
-##### 註一: 
+##### 註一:
 
 可在原始碼中看到:
 
-https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp\#L115
+[https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp\#L115](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp#L115)
 
-在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考 https://en.wikipedia.org/wiki/Magic\_number\_\(programming\)
+在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考 [https://en.wikipedia.org/wiki/Magic\_number\_\(programming\](https://en.wikipedia.org/wiki/Magic_number_%28programming\)\)
 
