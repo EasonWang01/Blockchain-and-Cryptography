@@ -46,14 +46,12 @@ https://blockchain.info/rawblock/輸入block hash
 
 | 欄位 | 描述 | 更新時間 | 大小 \(Bytes\) |
 | :--- | :--- | :--- | :--- |
-| Version \(版本\) | Block version number | You upgrade the software and it specifies a new version | 4 |
-| hashPrevBlock\(前一個區塊的Hash\) | 256-bit hash of the previous block header | A new block comes in | 32 |
-| hashMerkleRoot\(參考下一章節Merkel tree\) | 256-bit hash based on all of the transactions in the block | A transaction is accepted | 32 |
-| Time | Current timestamp as seconds since 1970-01-01T00:00 UTC | Every few seconds | 4 |
-| Bits | Current[target](https://en.bitcoin.it/wiki/Target)in compact format | The[difficulty](https://en.bitcoin.it/wiki/Difficulty)is adjusted | 4 |
-| Nonce | 32-bit number \(starts at 0\) | A hash is tried \(increments\) | 4 |
-
-
+| Version \(版本\) | 目前版本 | 版本更新時 | 4 |
+| hashPrevBlock\(前一個區塊的Hash\) | 可用來識別他的父區塊 | 新區塊產生時 | 32 |
+| hashMerkleRoot\(參考下一章節Merkel tree\) | 用來快速驗證區塊內的交易 | 新的交易被納入時 | 32 |
+| Time\(時間戳記\) | 從 1970-01-01T00:00 UTC開始計算到現在之時間 | 每秒 | 4 |
+| Bits\(目標難度\) | 挖出下一個區塊的難度目標 | 每個區塊被挖出時更新 | 4 |
+| Nonce\(隨機值\) | 一個32-bit的數字，用於挖礦時納入計算 | 嘗試計算新區塊時，每次會嘗試不同Nonce | 4 |
 
 ---
 
@@ -64,8 +62,6 @@ https://blockchain.info/rawblock/輸入block hash
 [https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp\#L115](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp#L115)
 
 在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考 [https://en.wikipedia.org/wiki/Magic\_number\_\(programming\](https://en.wikipedia.org/wiki/Magic_number_%28programming%29\)
-
-
 
 ##### 
 
