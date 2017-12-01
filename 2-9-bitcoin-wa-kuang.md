@@ -12,8 +12,6 @@
 
 區塊獎勵每隔210000個區塊後會減少一半，所以從2009年一月每個區塊獎勵50比特幣，到2012年11月減半為25個，之後近乎於四年減少一半，而最後20,999,999,980個比特幣都被挖完的時間約為2140年，之後挖礦的獎勵只會剩下交易手續費。
 
-
-
 #### 區塊難度
 
 比特幣中平均每十分鐘會出一個新區塊，而為了控制出塊的時間，比特幣有公式來控制其挖礦難度。
@@ -22,7 +20,7 @@
 
 1.使用Bitcoin API getDifficulty取得現在的難度
 
-> https://blockexplorer.com/api/status?q=getDifficulty
+> [https://blockexplorer.com/api/status?q=getDifficulty](https://blockexplorer.com/api/status?q=getDifficulty)
 
 2.從難度去反推現在要計算的Target \(利用公式\)
 
@@ -49,17 +47,19 @@ target = 0x03a30c * 2^(0x08 * (0x19 - 0x03))
 => target =0x0000000000000003A30C00000000000000000000000000000000000000000000
 ```
 
-
-
-
-
-> 上面意思為difficulty = difficulty\_1\_target / current\_target
+> 發生在比特幣的最大難度為
 >
-> difficulty\_1\_target前32 bits為0後面均為1的二進位數字
-
-
-
-
+> ```
+> 0x00ffff * 2**(8*(0x1d - 3)) = 0x00000000FFFF0000000000000000000000000000000000000000000000000000
+> ```
+>
+> 所以目前難度計算方式為
+>
+> ```
+> difficulty = difficulty_1_target(最大難度) / current_target
+> ```
+>
+> difficulty\_1\_target也稱為挖礦可能的最大難度，其為前32 bits為0後面均為1的二進位數字，但因為比特幣使用較少的浮點數精準度所以變成後幾位都是0
 
 #### 挖礦的競爭方式
 
