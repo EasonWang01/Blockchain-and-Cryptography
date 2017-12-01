@@ -55,5 +55,7 @@ var root = crypto256(crypto256(hash1_hash2 + hash3_hash4));
 console.log('Merkel Root為:' + root);
 ```
 
+> 每一筆交易都會被放在樹的最下層葉子處，如果最後為奇數個葉子，則最後一個交易會被複製一次成為一個葉子，使其樹具有偶數個葉子，方便兩兩做Hash
+
 
 
