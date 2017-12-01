@@ -53,17 +53,32 @@ https://blockchain.info/rawblock/輸入block hash
 | Bits\(目標難度\) | 挖出下一個區塊的難度目標 | 每個區塊被挖出時更新 | 4 |
 | Nonce\(隨機值\) | 一個32-bit的數字，用於挖礦時納入計算 | 嘗試計算新區塊時，每次會嘗試不同Nonce | 4 |
 
----
+
+
+
+
+# 區塊高度
+
+區塊高度在每次挖出新區塊時會加一，也就是如果目前區塊高度為1000的話，代表目前區塊鏈上已經有1000個區塊。
+
+
+
+
+
+
 
 ##### 註一:
 
 可在原始碼中看到:
 
-[https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp\#L115](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp#L115)
+[https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp\#L115](https://www.gitbook.com/book/easonwang01/e/edit#)
 
-在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考 [https://en.wikipedia.org/wiki/Magic\_number\_\(programming\](https://en.wikipedia.org/wiki/Magic_number_%28programming%29\)
+在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考[https://en.wikipedia.org/wiki/Magic\_number\_\(programming\](https://www.gitbook.com/book/easonwang01/e/edit#)
 
-##### 
+#####  
+
+  
+
 
 
 
