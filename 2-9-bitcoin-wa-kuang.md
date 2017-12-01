@@ -78,5 +78,43 @@ Bits: 18029AB9
 Nonce: 一個隨機數
 ```
 
+以下為簡單的挖礦範例:
+
+```js
+var crypto = require('crypto');
+
+const target = "00F00000FFFF0000000000000000000000000000000000000000000000000000";
+const startTime = Date.now();
+function crypto256(input) {
+    return crypto.createHash('sha256')
+        .update(input)
+        .digest('hex')
+}
+
+var hash1 = (header) => crypto256(crypto256(header));
+
+
+var nonce = 0;
+while (1) {
+    nonce += 1;
+    var header = {
+        version: "1",
+        nonce: nonce,
+        previousHash: "dd0e2b79d79be0dfca96b4ad9ac85600097506f06f52bb74f769e02fcc66dec6",
+        merkleRoot: "c91c008c26e50763e9f548bb8b2fc323735f73577effbc55502c51eb4cc7cf2e",
+        bits: "437129626",
+        TimeStamp: Date.now()
+    };
+    console.log(cal)
+    var cal = hash1(JSON.stringify(header));
+    if (cal < target) {
+        console.log("\nSuccess hash: " + cal);
+        console.log("Number of calculations: " + nonce + ' tiems')
+        console.log(`Total Time: ${(Date.now() - startTime) / 1000} second`)
+        break;
+    }
+}
+```
+
 
 
