@@ -1,6 +1,6 @@
 # 2-8 Bitcoin 區塊
 
-區塊鏈是由許多區塊所組成，每個區塊的資料結構都類似
+區塊鏈是由許多區塊所組成，每個區塊的資料結構都類似。
 
 ## 以下表格為比特幣區塊的資料結構
 
@@ -84,9 +84,23 @@ EX:
 https://blockexplorer.com/api/status?q=getBlockCount
 ```
 
-##### 
 
 
+## 創世區塊\(genesis block\)
+
+為區塊鏈在一開始創建時，產生的第一個區塊
+
+比特幣的創世區塊：  
+[https://blockchain.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f](https://blockchain.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f)
+
+
+
+> 可以看到比特幣的創世區塊一開始分配了50BTC，它的高度以及前一個區塊的Hash都是0，並且在2009/1/3產生![](/assets/833.png)
+
+
+
+bitcoin genesis 創建的原始碼  
+[https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp\#L123](https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp#L123)
 
 ##### 
 
