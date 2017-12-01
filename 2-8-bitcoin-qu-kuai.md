@@ -78,7 +78,17 @@ EX:
 
 ![](/assets/39.png)
 
----
+##### 也可使用以下服務，及會回傳目前區塊高度，也代表著目前區塊鏈中包含著多少區塊。
+
+```
+https://blockexplorer.com/api/status?q=getBlockCount
+```
+
+##### 
+
+
+
+##### 
 
 ##### 註一:
 
