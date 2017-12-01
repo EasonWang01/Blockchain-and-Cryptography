@@ -53,19 +53,32 @@ https://blockchain.info/rawblock/輸入block hash
 | Bits\(目標難度\) | 挖出下一個區塊的難度目標 | 每個區塊被挖出時更新 | 4 |
 | Nonce\(隨機值\) | 一個32-bit的數字，用於挖礦時納入計算 | 嘗試計算新區塊時，每次會嘗試不同Nonce | 4 |
 
+\(可從上方取得區塊的資料內看到包含區塊頭資料\)
 
+EX:
 
+```json
+{
+  "ver":1,
+  "prev_block":"00000000000007d0f98d9edca880a6c124e25095712df8952e0439ac7409738a",
+  "mrkl_root":"935aa0ed2e29a4b81e0c995c39e06995ecce7ddbebb26ed32d550a72e8200bf5",
+  "time":1322131230,
+  "bits":437129626,
+  "nonce":2964215930
+}
+```
 
+> 區塊頭會被用於挖礦時進行sha256計算，將於之後挖礦章節講解。
 
 # 區塊高度
 
 區塊高度在每次挖出新區塊時會加一，也就是如果目前區塊高度為1000的話，代表目前區塊鏈上已經有1000個區塊。
 
+> 可以看到下圖，為當時最新的四個區塊
 
+![](/assets/39.png)
 
-
-
-
+---
 
 ##### 註一:
 
@@ -75,10 +88,7 @@ https://blockchain.info/rawblock/輸入block hash
 
 在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考[https://en.wikipedia.org/wiki/Magic\_number\_\(programming\](https://www.gitbook.com/book/easonwang01/e/edit#)
 
-#####  
-
-  
-
+##### 
 
 
 
