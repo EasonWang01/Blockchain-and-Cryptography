@@ -59,3 +59,9 @@ console.log('Merkle Root為:' + root);
 
 
 
+Bitcoin Merkle Tree原始碼:
+
+> https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/consensus/merkle.cpp
+
+
+
