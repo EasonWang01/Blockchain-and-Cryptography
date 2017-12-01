@@ -1,4 +1,4 @@
-# Merkel Tree
+# Merkle Tree
 
 由一位[Ralph Merkle](https://en.wikipedia.org/wiki/Ralph_Merkle) 的外國人在1979發布。
 
@@ -8,7 +8,7 @@
 
 [https://en.wikipedia.org/wiki/Merkle\_signature\_scheme](https://en.wikipedia.org/wiki/Merkle_signature_scheme)
 
-比特幣使用了Merkel Tree的結構，把區塊中的所有交易，兩兩做SHA256的Hash，最後產生一個Merkel Root，類似如下圖
+比特幣使用了Merkle Tree的結構，把區塊中的所有交易，兩兩做SHA256的Hash，最後產生一個Merkle Root，類似如下圖
 
 ![](/assets/Hash_Tree.svg.png)他是把每一筆交易的TXid用兩次sha256做加密
 
@@ -20,7 +20,7 @@ HA =  SHA256(SHA256(交易A))
 HB =  SHA256(SHA256(交易B))
 ```
 
-然後再把兩個字串連結再一起，之後再繼續做一樣的加密，直到出現Merkel根為止
+然後再把兩個字串連結再一起，之後再繼續做一樣的加密，直到出現Merkle根為止
 
 ex:
 
@@ -52,7 +52,7 @@ var hash3_hash4 = crypto256(crypto256(hash3 + hash4));
 
 var root = crypto256(crypto256(hash1_hash2 + hash3_hash4));
 
-console.log('Merkel Root為:' + root);
+console.log('Merkle Root為:' + root);
 ```
 
 > 每一筆交易都會被放在樹的最下層葉子處，如果最後為奇數個葉子，則最後一個交易會被複製一次成為一個葉子，使其樹具有偶數個葉子，方便兩兩做Hash
