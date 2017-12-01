@@ -93,8 +93,9 @@ https://blockexplorer.com/api/status?q=getBlockCount
 
 > 可以看到比特幣的創世區塊一開始分配了50BTC\(但無法被使用\)，它的高度以及前一個區塊的Hash都是0，並且在2009/1/3產生![](/assets/833.png)
 
-bitcoin genesis 創建的原始碼  
-[https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp\#L123](https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp#L123)
+Bitcoin 之 genesis block 創建的原始碼
+
+> ![](/assets/2444.png)[https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp\#L123](https://www.gitbook.com/book/easonwang01/e/edit#)
 
 ##### 
 
