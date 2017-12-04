@@ -86,5 +86,13 @@ A Signature
 
 以及包含要花費這筆錢時要解鎖的unlock script也就是input區塊的ScriptSig![](/assets/23.png)
 
+我們可以看到上圖許多OP開頭之字樣，而其後對應的Hex碼都是查表而來
+
+![](/assets/34.png)
+
+> 可在原始碼中src/script/script.h找到
+>
+> https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/script.h
+
 
 
