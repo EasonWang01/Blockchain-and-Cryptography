@@ -52,3 +52,17 @@ console.log(final)
 
 
 
+###  WIF­ compressed格式
+
+私鑰其實沒有壓縮格式，只有公鑰可以壓縮，而WIF­ compressed的意思為代表其為壓縮格式公鑰的私鑰，只要在一般的公鑰最後面加上0x01之後一樣使用WIF壓縮即可
+
+EX:
+
+```
+const privateKey = "1E99423A4ED27608A15A2616A2B0E9E52CED330AC530EDCC32C8FFC6A526AEDD";
+改為
+const privateKey = "1E99423A4ED27608A15A2616A2B0E9E52CED330AC530EDCC32C8FFC6A526AEDD01";
+```
+
+![](/assets/896.png)
+
