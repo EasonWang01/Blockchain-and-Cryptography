@@ -74,22 +74,17 @@ A Signature
 >
 > [https://en.bitcoin.it/wiki/Script](https://en.bitcoin.it/wiki/Script)
 
-
-
 ### Script對應之Hex碼
 
 交易中有output script \(scriptPubKey\)與input script \(scriptSig\)
 
-類似如下結構
+這邊我們在複習一次交易的內容如下:
 
-```
-OP_DUP	             76
-OP_HASH160	     a9
-PUSHDATA 14	     14
-public key hash     c8 e9 09 96 c7 c6 08 0e e0 62 84 60 0c 68 4e d9 04 d1 4c 5c
-OP_EQUALVERIFY	     88
-OP_CHECKSIG	     ac
-```
+![](/assets/45.png)
 
-其中右側數字\(除了public key hash\)均為查表得來
+其中包含上一筆交易後被鎖住UTXO之output區塊的scriptPubKey![](/assets/24.png)
+
+以及包含要花費這筆錢時要解鎖的unlock script也就是input區塊的ScriptSig![](/assets/23.png)
+
+
 
