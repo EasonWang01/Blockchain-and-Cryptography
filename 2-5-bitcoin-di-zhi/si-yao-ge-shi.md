@@ -4,10 +4,6 @@
 
 可參考以下網站在線轉換[http://gobittest.appspot.com/PrivateKey](http://gobittest.appspot.com/PrivateKey)
 
-
-
-
-
 ## 一般私鑰轉為WIF格式
 
 ```js
@@ -32,7 +28,26 @@ const first4byte = sha256Value2.toString('hex').substring(0,8);
 const concatString = add0x80_front + first4byte;
 WIF_PrivateKey = bs58.encode(new Buffer(concatString, 'hex'));
 console.log(WIF_PrivateKey)
+```
 
+## WIF格式私鑰轉換為原本私鑰格式
+
+```js
+var crypto = require('crypto');
+var bs58 = require('bs58');
+
+// WIF格式之私鑰
+const WIF_privateKey = "5HueCGU8rMjxEXxiPuD5BDku4MkFqeZyd4dZ1jvhTVqvbTLvyTJ";
+
+// base58 decode
+const decodeWIF = bs58.decode(WIF_privateKey);
+
+//把最後四位checksum丟棄
+const dropLast4 = decodeWIF.slice(0,33);
+
+//把第一個byte丟棄
+const final = decodeWIF.slice(1, dropLast4.length);
+console.log(final)
 ```
 
 
