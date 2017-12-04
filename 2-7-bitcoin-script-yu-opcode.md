@@ -70,11 +70,26 @@ A Signature
 
 所以最後堆棧內只剩下True，代表這筆交易的Script成功執行，所以就可以正常地發出交易了。
 
-
-
 > 有關其他OPCODE的功能可以參考以下著個連結:
 >
-> https://en.bitcoin.it/wiki/Script
+> [https://en.bitcoin.it/wiki/Script](https://en.bitcoin.it/wiki/Script)
 
 
+
+### Script對應之Hex碼
+
+交易中有output script \(scriptPubKey\)與input script \(scriptSig\)
+
+類似如下結構
+
+```
+OP_DUP	             76
+OP_HASH160	     a9
+PUSHDATA 14	     14
+public key hash     c8 e9 09 96 c7 c6 08 0e e0 62 84 60 0c 68 4e d9 04 d1 4c 5c
+OP_EQUALVERIFY	     88
+OP_CHECKSIG	     ac
+```
+
+其中右側數字\(除了public key hash\)均為查表得來
 
