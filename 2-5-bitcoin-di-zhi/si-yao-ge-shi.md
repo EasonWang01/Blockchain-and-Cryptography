@@ -42,10 +42,10 @@ const WIF_privateKey = "5HueCGU8rMjxEXxiPuD5BDku4MkFqeZyd4dZ1jvhTVqvbTLvyTJ";
 // base58 decode
 const decodeWIF = bs58.decode(WIF_privateKey);
 
-//把最後四位checksum丟棄
+// 把最後四位checksum丟棄
 const dropLast4 = decodeWIF.slice(0,33);
 
-//把第一個byte丟棄
+// 把第一個byte丟棄
 const final = decodeWIF.slice(1, dropLast4.length);
 console.log(final)
 ```
