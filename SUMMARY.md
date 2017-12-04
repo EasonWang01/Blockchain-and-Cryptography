@@ -11,6 +11,7 @@
   * [2-3 Bitcoin 測試鏈\(Testnet\)](2-3-bitcoin-ce-shi-93c828-testnet.md)
   * [2-4 Bitcoin 錢包\(Wallet\)](2-3-bitcoin-qian-bao.md)
   * [2-5 Bitcoin 地址](2-5-bitcoin-di-zhi.md)
+    * [私鑰格式](2-5-bitcoin-di-zhi/si-yao-ge-shi.md)
   * [2-6 Bitcoin 交易](bitcoin-jiao-yi.md)
     * [接續2-6](bitcoin-jiao-yi/jie-xu-2-6.md)
     * [使用bitcoinjs產生交易](bitcoin-jiao-yi/shi-yong-bitcoinjs-chan-sheng-jiao-yi.md)
