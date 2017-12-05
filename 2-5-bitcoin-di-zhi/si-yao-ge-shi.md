@@ -64,20 +64,16 @@ const privateKey = "1E99423A4ED27608A15A2616A2B0E9E52CED330AC530EDCC32C8FFC6A526
 
 ![](/assets/896.png)
 
-
-
 # Mini Private Key
 
-
-
 > 開頭為S，然後長度為30個字
-
-
+>
+> 產生出來的mini key會在最後加上?號然後進行sha256，確認前兩個byte是否為0，
 
 ```python
 import random
 import hashlib
- 
+
 BASE58 = '23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
 
 
@@ -87,7 +83,7 @@ def Candidate():
     """
     return('%s%s' % ('S', ''.join(
         [BASE58[ random.randrange(0,len(BASE58)) ] for i in range(29)])))
- 
+
 def GenerateKeys(numKeys = 10):
     """
     Generate mini private keys and output the mini key as well as the full
@@ -120,7 +116,7 @@ def GenerateKeys(numKeys = 10):
            'Total Candidates', totalCandidates,
            'Reject Percentage',
            100*(1.0-keysGenerated/float(totalCandidates))))
- 
+
 def GetPrivateKey(shortKey):
     """
     Returns the hexadecimal representation of the private key corresponding
@@ -131,7 +127,7 @@ def GetPrivateKey(shortKey):
     else:
         print('Typo detected in private key!')
         return None
- 
+
 def CheckShortKey(shortKey):
     """
     Checks for typos in the short key.
