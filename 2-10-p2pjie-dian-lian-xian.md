@@ -6,11 +6,13 @@
 
 > 成為DNS Seed Server的要件![](/assets/234.png)[https://github.com/bitcoin/bitcoin/blob/57b34599b2deb179ff1bd97ffeab91ec9f904d85/doc/dnsseed-policy.md](https://github.com/bitcoin/bitcoin/blob/57b34599b2deb179ff1bd97ffeab91ec9f904d85/doc/dnsseed-policy.md)
 
-目前寫在原始碼的DNS Seed![](/assets/9876.png)https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp
+目前寫在原始碼的DNS Seed![](/assets/9876.png)[https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp)
 
 
 
+當節點向DNS Seed 發出請求後，其會返回多個目前可用來同步的節點IP
 
+> 可使用nslookup或dig發出DNS query請求
 
-
+![](/assets/98798.png)
 
