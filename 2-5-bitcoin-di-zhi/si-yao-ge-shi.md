@@ -68,7 +68,7 @@ const privateKey = "1E99423A4ED27608A15A2616A2B0E9E52CED330AC530EDCC32C8FFC6A526
 
 > 開頭為S，然後長度為30個字
 >
-> 產生出來的mini key會在最後加上?號然後進行sha256，確認前兩個byte是否為0，
+> 產生出來的mini key會在最後加上?號然後進行sha256，確認前兩個byte是否為00，如果是才為合法的Mini Key
 
 ```python
 import random
