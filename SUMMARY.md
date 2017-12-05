@@ -20,6 +20,7 @@
   * [2-8 Bitcoin 區塊](2-8-bitcoin-qu-kuai.md)
     * [Merkel Tree](2-8-bitcoin-qu-kuai/merkel-tree.md)
   * [2-9 Bitcoin 挖礦](2-9-bitcoin-wa-kuang.md)
+  * [2-10 Bitcoin P2P節點連線](2-10-p2pjie-dian-lian-xian.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)
 
