@@ -1,8 +1,22 @@
 # Bitcoin P2P節點連線
 
-> https://bitcoin.org/en/developer-guide\#p2p-network
+> [https://bitcoin.org/en/developer-guide\#p2p-network](https://bitcoin.org/en/developer-guide#p2p-network)
 
 比特幣的全節點\([mainnet](https://www.gitbook.com/book/easonwang01/e/edit#)\)預設跑在8333的PORT上，而[testnet](https://www.gitbook.com/book/easonwang01/e/edit#)預設跑在18333上。
+
+
+
+## Bitcoin Protocol
+
+我們可以使用『 Wireshark 』軟體來監聽節點間的封包
+
+![](/assets/螢幕快照 2017-12-06 下午9.19.50.png)
+
+> 比特幣的封包傳遞時是使用ＴＣＰ連線，其protocal部分類似如下
+>
+> ![](/assets/螢幕快照 2017-12-06 下午9.11.20.png)
+>
+> 紅色箭頭部分為每個比特幣節點的網路封包都會包含的段落，而黃色箭頭部分則為根據該封包的Command Name欄位，擁有不同的message欄位
 
 ## 節點搜尋
 
