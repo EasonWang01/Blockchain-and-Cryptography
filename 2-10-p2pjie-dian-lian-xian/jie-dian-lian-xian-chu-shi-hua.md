@@ -6,8 +6,6 @@ If a[`version`message](https://bitcoin.org/en/developer-reference#version)is acc
 
 > version message發送，寫於原始碼，如下圖![](/assets/ˊ啊6876.png)[https://github.com/bitcoin/bitcoin/blob/d3cb2b8acfce36d359262b4afd7e7235eff106b0/src/net.cpp\#L562](https://github.com/bitcoin/bitcoin/blob/d3cb2b8acfce36d359262b4afd7e7235eff106b0/src/net.cpp#L562)
 
-
-
 可用以下程式模擬，發送出version請求
 
 ```js
@@ -27,10 +25,6 @@ client.on('end', () => {
   console.log('disconnected from server');
 });
 ```
-
-
-
-
 
 
 

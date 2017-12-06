@@ -1,5 +1,7 @@
 # Bitcoin P2P節點連線
 
+> https://bitcoin.org/en/developer-guide\#p2p-network
+
 比特幣的全節點\([mainnet](https://www.gitbook.com/book/easonwang01/e/edit#)\)預設跑在8333的PORT上，而[testnet](https://www.gitbook.com/book/easonwang01/e/edit#)預設跑在18333上。
 
 ## 節點搜尋
