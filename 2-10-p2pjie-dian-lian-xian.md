@@ -14,7 +14,7 @@
 >
 > ![](/assets/螢幕快照 2017-12-06 下午9.11.20.png)
 >
-> 紅色箭頭部分為每個比特幣節點的網路封包都會包含的段落，而黃色箭頭部分則為根據該封包的Command Name欄位，擁有不同的message欄位
+> 紅色箭頭部分為每個比特幣節點的網路封包都會包含的段落（Message Headers），而黃色箭頭部分則為根據該封包的Command Name欄位，擁有不同的message欄位
 
 ## 節點搜尋
 
@@ -32,12 +32,9 @@
 
 ![](/assets/98798.png)
 
-
-
 2.使用Dig指令![](/assets/螢幕快照 2017-12-06 下午9.38.59.png)3.使用Node.js來查找
 
 ```js
-
 const dns = require('dns');
 const options = {
   family: 4,
@@ -50,6 +47,14 @@ dns.lookup('seed.bitcoin.sipa.be', options, (err, addresses) => {
  console.log(addresses[0].address); //返回的IP中的第一個
 });
 ```
+
+
+
+## Message Header
+
+https://bitcoin.org/en/developer-reference\#message-headers
+
+為每個比特幣結點間傳送封包時都會帶有的資訊，含有四個欄位。
 
 
 
