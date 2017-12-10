@@ -1,6 +1,6 @@
 # 比特幣網路Protocol
 
-> ![](/assets/螢幕快照 2017-12-06 下午9.59.32.png)https://en.bitcoin.it/wiki/Protocol\_documentation\#Message\_structure
+> ![](/assets/螢幕快照 2017-12-06 下午9.59.32.png)[https://en.bitcoin.it/wiki/Protocol\_documentation\#Message\_structure](https://en.bitcoin.it/wiki/Protocol_documentation#Message_structure)
 
 ---
 
@@ -10,11 +10,11 @@
 
 ### 1. magic
 
+參考下圖，此為比特幣預設定義好的數字
 
+![](/assets/螢幕快照 2017-12-10 下午8.42.29.png)
 
 ### 2. command
-
-
 
 ### 3. length
 
@@ -28,11 +28,7 @@
 7f1101000d0000000000000060ee275a000000000d0000000000000000000000000000000000ffff9294741e208d0d0000000000000000000000000000000000000000000000000038198a1d11f35244102f5361746f7368693a302e31332e322f8000000001
 ```
 
-
-
 ### 4. checksum
-
-
 
 ---
 
