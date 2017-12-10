@@ -16,7 +16,9 @@
 
 ### 2. command
 
-例如version、getaddr、getdata等
+用來區分是執行哪一種類型的message
+
+例如version、getaddr、getdata等 （將於下面payload章節部分講解有關所有message的種類）
 
 會轉為ascii十六進位，然後不滿12個字的話會在後面補0
 
@@ -42,11 +44,11 @@ EX: getdata
 
 > First 4 bytes of sha256\(sha256\(payload\)\)
 
-會把payload 進行Double sha256後，取前四個bytes 
+會把payload 進行Double sha256後，取前四個bytes
 
 ---
 
-# Payload
+# 
 
 
 
