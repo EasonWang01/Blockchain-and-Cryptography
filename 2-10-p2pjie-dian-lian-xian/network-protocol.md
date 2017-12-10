@@ -16,6 +16,16 @@
 
 ### 2. command
 
+例如version、getaddr、getdata等
+
+會轉為ascii十六進位，然後不滿12個字的話會在後面補0
+
+EX: getdata
+
+```
+67 65 74 64 61 74 61 00 00 00 00 00
+```
+
 ### 3. length
 
 代表payload中有多少個bytes
