@@ -40,6 +40,10 @@ EX: getdata
 
 ### 4. checksum
 
+> First 4 bytes of sha256\(sha256\(payload\)\)
+
+會把payload 進行Double sha256後，取前四個bytes 
+
 ---
 
 # Payload
