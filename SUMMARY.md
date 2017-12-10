@@ -23,6 +23,7 @@
   * [2-10 Bitcoin P2P節點連線](2-10-p2pjie-dian-lian-xian.md)
     * [節點連線初始化](2-10-p2pjie-dian-lian-xian/jie-dian-lian-xian-chu-shi-hua.md)
     * [Network protocol](2-10-p2pjie-dian-lian-xian/network-protocol.md)
+      * [Payload](2-10-p2pjie-dian-lian-xian/network-protocol/payload.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)
 
