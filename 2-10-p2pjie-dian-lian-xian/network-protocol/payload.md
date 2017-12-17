@@ -22,6 +22,8 @@
 
 1. version
 
+> 在官方資料上節點分為 『 transmitting node \(發出方\)』 與 『 receiving node（接收方） 』，如果請求從本地發出則本地的節點及擔任transmitting node\(發出方\)角色，反之。
+
 ```
 7f110100 ........................... Protocol version: 70005
 // 4 bytes
@@ -61,11 +63,19 @@
 // 為傳輸方節點PORT
 
 128035cbc97953f8 ................... Nonce
+// 8 bytes
+// 為一個隨機值
 
 0f ................................. Bytes in user agent string: 15
+// 為下面user-agent字串長度的bytes數
+
 2f5361746f7368693a302e392e332f ..... User agent: /Satoshi:0.9.3/
+// 為user-agent版本的值
+// EX: /Satoshi:0.13.2/
 
 cf050500 ........................... Start height: 329167
+// 傳輸方節點目前資料的最高區塊高度
+
 01 ................................. Relay flag: true
 ```
 
