@@ -88,8 +88,6 @@ const dns = require('dns');
 const net = require('net');
 const crypto = require('crypto');
 
-console.log(BigEndian_to_SmallEndian(parseInt(Date.now().toString().substring(0, 10)).toString('16')))
-console.log(parseInt(Date.now().toString().substring(0, 10)).toString('16'))
 const payload = {
   Protocol_version: "7f110100", //70015
   Node_services: "0d00000000000000", // 0x000000000000000d
