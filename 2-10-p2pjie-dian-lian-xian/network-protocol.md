@@ -34,7 +34,7 @@ EX: getdata
 
 > 十六進制hex每個字為4 bits也就是0.5bytes，每個ascii為兩個hex碼組成，所以bytes總數及為 `hex碼之數量 / 2`
 
-假設今天payload message如下，總共204個字，則length為102  
+假設今天payload message如下，總共204個字，則length為102
 
 ```
 7f1101000d0000000000000060ee275a000000000d0000000000000000000000000000000000ffff9294741e208d0d0000000000000000000000000000000000000000000000000038198a1d11f35244102f5361746f7368693a302e31332e322f8000000001
@@ -53,6 +53,8 @@ EX: getdata
 > First 4 bytes of sha256\(sha256\(payload\)\)
 
 會把payload 進行Double sha256後，取前四個bytes
+
+如果沒有payload 的話，checksum預設為0x5df6e0e2
 
 ---
 
