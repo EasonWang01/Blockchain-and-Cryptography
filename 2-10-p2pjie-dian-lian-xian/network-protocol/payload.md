@@ -100,7 +100,128 @@ cf050500 ........................... Start height: 329167
 // 如果為0x01代表節點需要 inv messages 與 tx messages
 ```
 
-.
+以下為完整的傳送Version訊息的範例程式
+
+```js
+
+
+const dns = require('dns');
+const net = require('net');
+const crypto = require('crypto');
+
+console.log(BigEndian_to_SmallEndian(parseInt(Date.now().toString().substring(0, 10)).toString('16')))
+console.log(parseInt(Date.now().toString().substring(0, 10)).toString('16'))
+const payload = {
+  Protocol_version: "7f110100", //70015
+  Node_services: "0d00000000000000", // 0x000000000000000d
+  Timestamp: BigEndian_to_SmallEndian(parseInt(Date.now().toString().substring(0, 10)).toString('16')) + "00000000",
+
+  // Address as receiving node
+  Node_services_rec: "0d00000000000000",// 0x000000000000000d
+  Node_address_rec: "00000000000000000000ffff2e043c24", //::ffff:46.4.60.36
+  Node_port_rec: "208d", //8333 
+
+  // Address as emitting node
+  Node_services_emit: "0d00000000000000",// 0x000000000000000d
+  Node_address_emit: "00000000000000000000000000000000",
+  Node_port_emit: "0000",
+
+  Random_nonce: "75ba7abb00a0f633", //0x33f6a000bb7aba75
+
+  //User agent
+  User_agent_Count: "10", // 16
+  User_agent_String: "2f5361746f7368693a302e31332e322f", ///Satoshi:0.13.2/
+
+  Block_start_height: "a0040000",// 1184
+  Relay_flag: "01" // 1
+}
+
+// 把payload 字串接起來
+let payload_string = "";
+for(let i = 0; i < Object.keys(payload).length ; i++){
+  payload_string += payload[Object.keys(payload)[i]]
+}
+
+/*--- Payload Header --- */
+const magicNum = "f9beb4d9";
+const control_version = "76657273696f6e0000000000"// 英文version字串 轉為 ascii hex;
+const payloadLength = (payload_string.length / 2).toString('16') + "000000" // 以bytes計算後轉為16進位，後面再補0
+const payload_checksum = double_sha256(payload_string); // 計算payload 的 checksum
+/* ----------------------- */
+
+
+// 把 message header 拼接 message payload，此為我們要發送出去的封包內容
+const message_header = magicNum + control_version + payloadLength + payload_checksum;
+const message = message_header + payload_string;
+
+var host;
+var hostList;
+var try_host_No = 0;
+var timeout_ = 2000;
+const options = {
+  family: 4,
+  hints: dns.ADDRCONFIG | dns.V4MAPPED,
+};
+options.all = true;
+dns.lookup('seed.bitcoin.sipa.be', options, (err, addresses) => { //先找到可用節點
+  hostList = addresses; //返回的IP中的第一個
+
+  const buffer1 = new Buffer(message, 'hex');
+  connectPeer(hostList[try_host_No].address, buffer1)
+
+});
+
+function connectPeer(host, buffer1) {
+  const client = net.createConnection({ port: 8333, host }, () => {
+    //'connect' listener
+    console.log(`connected to other peers,host ${try_host_No}`);
+    client.write(buffer1);
+  });
+  client.on('data', (data) => {
+    console.log(data.toString());
+    client.end();
+  });
+  client.on('end', () => {
+    console.log('disconnected from other peers');
+  });
+  client.on('error', (err) => {
+    console.log(err);
+    client.end();
+  });
+
+  //預設timeout 為兩秒
+  client.setTimeout(timeout_);
+  client.on('timeout', () => {
+    console.log(`socket timeout for host ${try_host_No}`);
+    client.end();
+    // 如果連線失敗繼續嘗試下個節點
+    try_host_No += 1;
+    connectPeer(hostList[try_host_No].address, buffer1);
+  });
+}
+
+
+
+function BigEndian_to_SmallEndian(hexNum) {
+  let SmallEndian_array = [];
+  if (hexNum.length % 2 !== 0) {
+    hexNum = '0' + hexNum
+  }
+  for (let i = 0, len = hexNum.length; i < len; i++) {
+    if (i % 2 !== 0) {
+      SmallEndian_array.unshift(hexNum.charAt(i - 1) + hexNum.charAt(i))
+    }
+  }
+  return SmallEndian_array.join('');
+}
+
+function double_sha256(payload) {
+  if(payload === "") return Buffer.from("5df6e0e2", "hex");
+  payload = Buffer.from(payload, "hex")
+  let sha256 = crypto.createHash('sha256').update(payload).digest();
+  return crypto.createHash('sha256').update(sha256).digest().slice(0, 4).toString('hex');
+}
+```
 
 .
 
