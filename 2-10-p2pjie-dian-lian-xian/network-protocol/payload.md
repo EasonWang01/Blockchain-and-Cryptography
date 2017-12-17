@@ -18,25 +18,6 @@
 
 ![](/assets/螢幕快照 2017-12-10 下午9.00.17.png)
 
-> 比特幣封包內容均以 16進位的 Small Endian表示\(注1\)
->
-> BigEndian 轉 SmallEndian可用此程式轉換：
->
-> ```js
-> function BigEndian_to_SmallEndian(hexNum) {
->   let SmallEndian_array = [];
->   if (hexNum.length % 2 !== 0) {
->     hexNum = '0' + hexNum
->   }
->   for (let i = 0, len = hexNum.length; i < len; i++) {
->     if (i % 2 !== 0) {
->       SmallEndian_array.unshift(hexNum.charAt(i - 1) + hexNum.charAt(i))
->     }
->   }
->   return SmallEndian_array.join('');
-> }
-> ```
-
 # 節點訊息傳送
 
 1. version
@@ -103,8 +84,6 @@ cf050500 ........................... Start height: 329167
 以下為完整的傳送Version訊息的範例程式
 
 ```js
-
-
 const dns = require('dns');
 const net = require('net');
 const crypto = require('crypto');
@@ -229,7 +208,7 @@ function double_sha256(payload) {
 
 ---
 
-> 我們看到的Hex 都屬於Little endian
+> 我們看到的Hex 都屬於Little endian 也稱為 Small endian \( 附註1 \)
 >
 > ```
 > 如果有一個數字：70015 轉為16進位後為 1117F
@@ -242,4 +221,25 @@ function double_sha256(payload) {
 > ```
 
 ![](/assets/螢幕快照 2017-12-15 下午4.16.07.png)
+
+比特幣封包內容均以 16進位的 Small Endian表示
+
+> BigEndian 轉 SmallEndian可用此程式轉換：
+>
+> ```js
+> function BigEndian_to_SmallEndian(hexNum) {
+>   let SmallEndian_array = [];
+>   if (hexNum.length % 2 !== 0) {
+>     hexNum = '0' + hexNum
+>   }
+>   for (let i = 0, len = hexNum.length; i < len; i++) {
+>     if (i % 2 !== 0) {
+>       SmallEndian_array.unshift(hexNum.charAt(i - 1) + hexNum.charAt(i))
+>     }
+>   }
+>   return SmallEndian_array.join('');
+> }
+> ```
+
+
 
