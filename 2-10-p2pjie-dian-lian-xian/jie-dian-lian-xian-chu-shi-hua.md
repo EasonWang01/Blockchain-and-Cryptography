@@ -28,3 +28,59 @@ client.on('end', () => {
 
 
 
+但真實情況下我們需要先從DNS server中找到可用的連線節點，並且測試連線，如果連線失敗則繼續嘗試下一個節點，所以可以將程式修改為以下
+
+```js
+const dns = require('dns');
+const net = require('net');
+
+
+var host;
+var hostList;
+var try_host_No = 0;
+var timeout_ = 2000;
+const options = {
+  family: 4,
+  hints: dns.ADDRCONFIG | dns.V4MAPPED,
+};
+options.all = true;
+dns.lookup('seed.bitcoin.sipa.be', options, (err, addresses) => { //先找到可用節點
+  hostList = addresses; //DNS server返回的IP列表
+
+  const buffer1 = new Buffer('f9beb4d976657273696f6e000000000066000000e253144d7f1101000d000000000000005a01365a000000000d0000000000000000000000000000000000ffff2e043c24208d0d0000000000000000000000000000000000000000000000000075ba7abb00a0f633102f5361746f7368693a302e31332e322fa004000001', 'hex');
+  connectPeer(hostList[try_host_No].address, buffer1)
+
+});
+
+function connectPeer(host, buffer1) {
+  const client = net.createConnection({ port: 8333, host }, () => {
+    //'connect' listener
+    console.log(`connected to other peers,host ${try_host_No}`);
+    client.write(buffer1);
+  });
+  client.on('data', (data) => {
+    console.log(data.toString());
+    client.end();
+  });
+  client.on('end', () => {
+    console.log('disconnected from other peers');
+  });
+  client.on('error', (err) => {
+    console.log(err);
+    client.end();
+  });
+
+  //預設timeout 為兩秒
+  client.setTimeout(timeout_);
+  client.on('timeout', () => {
+    console.log(`socket timeout for host ${try_host_No}`);
+    client.end();
+    // 如果連線失敗繼續嘗試下個節點
+    try_host_No += 1;
+    connectPeer(hostList[try_host_No].address, buffer1);
+  });
+}
+```
+
+
+
