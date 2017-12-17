@@ -42,15 +42,23 @@
 
 00000000000000000000ffffc61b6409 ... Receiving node's IPv6 address
 // 16 bytes 
-// 為連線節點IP地址   類似如下 ::ffff:127.0.0.1
+// 為接收方節點IP地址   類似如下 ::ffff:127.0.0.1
 
 208d ............................... Receiving node's port number
 // 2 bytes 
-// 為連線節點PORT
+// 為接收方節點PORT
 
 0100000000000000 ................... Transmitting node's services
+// 8 bytes
+// 和上面Services: NODE_NETWORK相同
+
+
 00000000000000000000ffffcb0071c0 ... Transmitting node's IPv6 address
+// 16 bytes 
+// 為傳輸方節點IP地址   類似如下 ::ffff:127.0.0.1
+
 208d ............................... Transmitting node's port number
+// 為傳輸方節點PORT
 
 128035cbc97953f8 ................... Nonce
 
@@ -60,14 +68,6 @@
 cf050500 ........................... Start height: 329167
 01 ................................. Relay flag: true
 ```
-
-
-
-
-
-
-
-
 
 .
 
