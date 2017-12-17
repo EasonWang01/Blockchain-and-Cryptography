@@ -24,6 +24,7 @@
     * [節點連線初始化](2-10-p2pjie-dian-lian-xian/jie-dian-lian-xian-chu-shi-hua.md)
     * [Network protocol](2-10-p2pjie-dian-lian-xian/network-protocol.md)
       * [Payload](2-10-p2pjie-dian-lian-xian/network-protocol/payload.md)
+    * [附註](2-10-p2pjie-dian-lian-xian/fu-zhu.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)
 

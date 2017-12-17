@@ -18,6 +18,25 @@
 
 ![](/assets/螢幕快照 2017-12-10 下午9.00.17.png)
 
+> 比特幣封包內容均以 16進位的 Small Endian表示\(注1\)
+>
+> BigEndian 轉 SmallEndian可用此程式轉換：
+>
+> ```js
+> function BigEndian_to_SmallEndian(hexNum) {
+>   let SmallEndian_array = [];
+>   if (hexNum.length % 2 !== 0) {
+>     hexNum = '0' + hexNum
+>   }
+>   for (let i = 0, len = hexNum.length; i < len; i++) {
+>     if (i % 2 !== 0) {
+>       SmallEndian_array.unshift(hexNum.charAt(i - 1) + hexNum.charAt(i))
+>     }
+>   }
+>   return SmallEndian_array.join('');
+> }
+> ```
+
 # 節點訊息傳送
 
 1. version
@@ -34,9 +53,9 @@
 // 0x01為full node
 
 5a360e2700000000 ................... Epoch time: 1513492007   
-// 9 bytes
+// 8 bytes
 // 此為unix的timestamp 但只取到秒數 
-// parseInt(Date.now().toString().substring(0, 10)).toString('16')
+// parseInt(Date.now().toString().substring(0, 10)).toString('16') 之後在後面補上0
 
 0100000000000000 ................... Receiving node's services
 // 8 bytes
@@ -78,7 +97,7 @@ cf050500 ........................... Start height: 329167
 
 01 ................................. Relay flag: true
 // 1 bytes
-// 如果為0x01代表節點需要 inv messages 與 tx messages 
+// 如果為0x01代表節點需要 inv messages 與 tx messages
 ```
 
 .
