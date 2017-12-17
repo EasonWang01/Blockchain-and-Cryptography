@@ -22,17 +22,56 @@
 
 1. version
 
+```
+7f110100 ........................... Protocol version: 70005
+// 4 bytes
+// 目前Bitcoin protocol版本 https://bitcoin.org/en/developer-reference#protocol-versions
+
+0100000000000000 ................... Services: NODE_NETWORK
+// 8 bytes
+// 0x01為full node
+
+5a360e2700000000 ................... Epoch time: 1513492007   
+// 9 bytes
+// 此為unix的timestamp 但只取到秒數 
+// parseInt(Date.now().toString().substring(0, 10)).toString('16')
+
+0100000000000000 ................... Receiving node's services
+// 8 bytes
+//通常值會和上面Services: NODE_NETWORK相同
+
+00000000000000000000ffffc61b6409 ... Receiving node's IPv6 address
+// 16 bytes 
+// 為連線節點IP地址   類似如下 ::ffff:127.0.0.1
+
+208d ............................... Receiving node's port number
+// 2 bytes 
+// 為連線節點PORT
+
+0100000000000000 ................... Transmitting node's services
+00000000000000000000ffffcb0071c0 ... Transmitting node's IPv6 address
+208d ............................... Transmitting node's port number
+
+128035cbc97953f8 ................... Nonce
+
+0f ................................. Bytes in user agent string: 15
+2f5361746f7368693a302e392e332f ..... User agent: /Satoshi:0.9.3/
+
+cf050500 ........................... Start height: 329167
+01 ................................. Relay flag: true
+```
+
+
+
+
+
+
+
+
+
 .
 
-
-
-
-
 .
-
-
-
-
 
 .
 
