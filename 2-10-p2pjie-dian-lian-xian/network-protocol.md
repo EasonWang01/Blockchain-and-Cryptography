@@ -56,6 +56,18 @@ EX: getdata
 
 如果沒有payload 的話，checksum預設為0x5df6e0e2
 
+EX:
+
+```js
+function double_sha256(payload) {
+  if(payload === "") return Buffer.from("5df6e0e2", "hex");
+  
+  payload = Buffer.from(payload, "hex")
+  let sha256 = crypto.createHash('sha256').update(payload).digest();
+  return crypto.createHash('sha256').update(sha256).digest().slice(0, 4);
+}
+```
+
 ---
 
 # 
