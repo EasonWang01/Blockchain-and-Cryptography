@@ -106,9 +106,23 @@ getaddr用來發送請求給其他節點，要求返回該節點的地址addr
 
 [https://bitcoin.org/en/developer-reference\#addr](https://bitcoin.org/en/developer-reference#addr)
 
-
-
 ## 3. Ping與Pong
+
+Ping 用來確認另一個節點是否仍處於連線狀態，對方節點會回覆一個pong訊息，告知目前仍在連線。
+
+Pong 回覆中的nonce欄位會和接收到的 ping 請求之nonce相同。
+
+> [protocol version 60000](https://bitcoin.org/en/developer-reference#protocol-versions) 之前 ，ping 請求不帶有payload ，[protocol version 60001](https://bitcoin.org/en/developer-reference#protocol-versions) 後，ping請求帶有一個 nonce有欄位
+
+ 
+
+#### Ping
+
+![](/assets/螢幕快照 2017-12-18 下午11.29.44.png)
+
+#### Pong
+
+![](/assets/螢幕快照 2017-12-18 下午11.30.04.png)
 
 
 
