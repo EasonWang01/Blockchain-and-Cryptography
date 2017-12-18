@@ -1,5 +1,7 @@
 # Bitcoin P2P節點連線
 
+比特幣的網路是 P2P 的，類似於 webtorrent 都是沒有中心化的server，節點之間互相傳遞區塊訊息，並且提供JSON-RPC之API請求查詢服務。
+
 > [https://bitcoin.org/en/developer-guide\#p2p-network](https://bitcoin.org/en/developer-guide#p2p-network)
 
 比特幣的全節點\([mainnet](https://www.gitbook.com/book/easonwang01/e/edit#)\)預設跑在8333的PORT上，而[testnet](https://www.gitbook.com/book/easonwang01/e/edit#)預設跑在18333上。
@@ -48,13 +50,9 @@ dns.lookup('seed.bitcoin.sipa.be', options, (err, addresses) => {
 });
 ```
 
-
-
 ## Message Header
 
-https://bitcoin.org/en/developer-reference\#message-headers
+[https://bitcoin.org/en/developer-reference\#message-headers](https://bitcoin.org/en/developer-reference#message-headers)
 
 為每個比特幣結點間傳送封包時都會帶有的資訊，含有四個欄位。
-
-
 
