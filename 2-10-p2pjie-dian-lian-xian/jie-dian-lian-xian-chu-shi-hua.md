@@ -1,6 +1,6 @@
+# 找到連線節點後會進行如下步驟:
 
-
-找到連線節點後會進行如下步驟:
+# 1. version與 verack
 
 ```
 Step 1: A 節點送出 verison 請求
@@ -10,7 +10,7 @@ Step 3: A 節點送出 verack 請求
 
 ![](/assets/螢幕快照 2017-12-18 下午11.08.24.png)
 
-### 1.節點會先送出一個[`version`message](https://bitcoin.org/en/developer-reference#version) 給目標連線的節點，而該請求被另一個節點接收到並接收後會回覆[`verack`message](https://bitcoin.org/en/developer-reference#verack)
+### 節點會先送出一個[`version`message](https://bitcoin.org/en/developer-reference#version) 給目標連線的節點，而該請求被另一個節點接收到並接收後會回覆[`verack`message](https://bitcoin.org/en/developer-reference#verack)
 
 > version message發送，寫於原始碼，如下圖![](/assets/ˊ啊6876.png)[https://github.com/bitcoin/bitcoin/blob/d3cb2b8acfce36d359262b4afd7e7235eff106b0/src/net.cpp\#L562](https://github.com/bitcoin/bitcoin/blob/d3cb2b8acfce36d359262b4afd7e7235eff106b0/src/net.cpp#L562)
 
@@ -88,5 +88,21 @@ function connectPeer(host, buffer1) {
 }
 ```
 
+> 封包詳細內容解析將於後面章節詳細描述
 
+
+
+# 2. getaddr與addr
+
+getaddr用來發送請求給其他節點，要求返回該節點的地址addr
+
+#### getaddr: \( 不具有payload \)
+
+![](/assets/螢幕快照 2017-12-18 下午11.20.28.png)
+
+#### addr:
+
+![](/assets/螢幕快照 2017-12-18 下午11.20.49.png)
+
+https://bitcoin.org/en/developer-reference\#addr
 
