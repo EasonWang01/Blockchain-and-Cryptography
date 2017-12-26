@@ -63,6 +63,7 @@ function commandCode(command) {
 
 ```js
 const payload_length = (payload.length / 2).toString('16');
+// 之後記得在後面補零
 ```
 
 ### 4. Checksum \[4 bytes\]
