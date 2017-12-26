@@ -24,6 +24,17 @@
 
 EX: getdata
 
+```js
+function commandCode(command) {
+  return (
+    [...`${command}`]
+      .map(char => char.charCodeAt(0).toString('16'))
+      .reduce((current, previous) => current + previous)
+  )
+}
+// 之後記得在後面補零
+```
+
 ```
 67 65 74 64 61 74 61 00 00 00 00 00
 ```
@@ -61,7 +72,7 @@ EX:
 ```js
 function double_sha256(payload) {
   if(payload === "") return Buffer.from("5df6e0e2", "hex");
-  
+
   payload = Buffer.from(payload, "hex")
   let sha256 = crypto.createHash('sha256').update(payload).digest();
   return crypto.createHash('sha256').update(sha256).digest().slice(0, 4);
