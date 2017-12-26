@@ -25,6 +25,7 @@
     * [節點連線初始化](2-10-p2pjie-dian-lian-xian/jie-dian-lian-xian-chu-shi-hua.md)
       * [連線階段2-交換資料](2-10-p2pjie-dian-lian-xian/jie-dian-lian-xian-chu-shi-hua/lian-xian-jie-duan-2-jiao-huan-zi-liao.md)
         * [SPV節點交換訊息](2-10-p2pjie-dian-lian-xian/jie-dian-lian-xian-chu-shi-hua/lian-xian-jie-duan-2-jiao-huan-zi-liao/spvjie-dian-jiao-huan-xun-xi.md)
+          * [Bloom Filters](2-10-p2pjie-dian-lian-xian/jie-dian-lian-xian-chu-shi-hua/lian-xian-jie-duan-2-jiao-huan-zi-liao/spvjie-dian-jiao-huan-xun-xi/bloom-filters.md)
     * [Network protocol](2-10-p2pjie-dian-lian-xian/network-protocol.md)
       * [Payload](2-10-p2pjie-dian-lian-xian/network-protocol/payload.md)
     * [附註](2-10-p2pjie-dian-lian-xian/fu-zhu.md)

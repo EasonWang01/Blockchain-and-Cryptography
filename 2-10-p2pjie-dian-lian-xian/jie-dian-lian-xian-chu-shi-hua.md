@@ -145,3 +145,28 @@ const buffer = new Buffer('f9beb4d9706f6e670000000000000000080000002ddab80398a05
 
 
 
+## Mempool
+
+節點通常在啟動後會隨即發出mempool請求，要求取得目前還沒被確認的交易到自己節點的交易池中
+
+來等待驗證，節點發出mempool之後收到的回覆訊息為Inv。
+
+![](/assets/螢幕快照 2017-12-26 下午7.38.28.png)
+
+mempool的請求不帶有payload
+
+![](/assets/螢幕快照 2017-12-26 下午7.42.45.png)
+
+範例:
+
+```js
+  const magicNum = "f9beb4d9";
+  const command = "6d656d706f6f6c0000000000" // mempool
+  const payload_length = "00000000"
+  const checksum = "5df6e0e2"
+
+  const buffer = new Buffer(magicNum + command + payload_length + checksum, 'hex');
+```
+
+
+
