@@ -27,7 +27,7 @@ EX: getdata
 ```js
 function commandCode(command) {
   return (
-    [...`${command}`]
+    [...`${command}`]  //字串轉Array ["g", "e", "t", "d" ....] 
       .map(char => char.charCodeAt(0).toString('16'))
       .reduce((current, previous) => current + previous)
   )
