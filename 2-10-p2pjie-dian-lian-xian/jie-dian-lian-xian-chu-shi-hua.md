@@ -143,8 +143,6 @@ const buffer = new Buffer('f9beb4d970696e67000000000000000008000000ca8bfa584d318
 const buffer = new Buffer('f9beb4d9706f6e670000000000000000080000002ddab80398a059a304ce08a9', 'hex');
 ```
 
-
-
 ## Mempool
 
 節點通常在啟動後會隨即發出mempool請求，要求取得目前還沒被確認的交易到自己節點的交易池中
