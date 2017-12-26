@@ -8,13 +8,13 @@
 
 # Message Header
 
-### 1. magic \[4 bytes\]
+### 1. Magic Value \[4 bytes\]
 
 參考下圖，此為比特幣預設定義好的數字
 
 ![](/assets/螢幕快照 2017-12-10 下午8.42.29.png)
 
-### 2. command \[12 bytes\]
+### 2. Command \[12 bytes\]
 
 用來區分是執行哪一種類型的message
 
@@ -22,7 +22,7 @@
 
 會轉為ascii十六進位，然後不滿12個字的話會在後面補0
 
-EX: getdata
+範例: getdata
 
 ```js
 function commandCode(command) {
@@ -39,13 +39,13 @@ function commandCode(command) {
 67 65 74 64 61 74 61 00 00 00 00 00
 ```
 
-### 3. length \[4 bytes\]
+### 3. Length \[4 bytes\]
 
 代表payload中有多少個bytes
 
 > 十六進制hex每個字為4 bits也就是0.5bytes，每個ascii為兩個hex碼組成，所以bytes總數及為 `hex碼之數量 / 2`
 
-假設今天payload message如下，總共204個字，則length為102
+假設今天payload message如下，總共204個字，則 length 為102
 
 ```
 7f1101000d0000000000000060ee275a000000000d0000000000000000000000000000000000ffff9294741e208d0d0000000000000000000000000000000000000000000000000038198a1d11f35244102f5361746f7368693a302e31332e322f8000000001
@@ -59,7 +59,13 @@ function commandCode(command) {
 66 00 00 00
 ```
 
-### 4. checksum \[4 bytes\]
+範例:
+
+```js
+const payload_length = (payload.length / 2).toString('16');
+```
+
+### 4. Checksum \[4 bytes\]
 
 > First 4 bytes of sha256\(sha256\(payload\)\)
 
@@ -67,11 +73,14 @@ function commandCode(command) {
 
 如果沒有payload 的話，checksum預設為0x5df6e0e2
 
-EX:
+範例:
 
 ```js
-function double_sha256(payload) {
-  if(payload === "") return Buffer.from("5df6e0e2", "hex");
+const crypto = require('crypto');
+
+function getChecksum(payload) {
+  //  預設值
+  if (payload === "") return Buffer.from("5df6e0e2", "hex");
 
   payload = Buffer.from(payload, "hex")
   let sha256 = crypto.createHash('sha256').update(payload).digest();
