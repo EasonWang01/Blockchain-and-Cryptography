@@ -44,5 +44,18 @@ const payload = "010200000000000000000000000043a63945c421fb5de8c18a5d1e34304d3b1
 
 [`block`message](https://bitcoin.org/en/developer-reference#block) 、[`merkleblock`message](https://bitcoin.org/en/developer-reference#merkleblock) 、[`notfound`message](https://bitcoin.org/en/developer-reference#notfound) 等等。
 
+![](/assets/螢幕快照 2017-12-26 下午1.07.33.png)
+
+範例:
+
+```js
+const magicNum = "f9beb4d9";
+const command = "676574646174610000000000"
+const payload_length = "25000000"
+const checksum = "2b7991bd"
+
+const payload = "010200000000000000000000000043a63945c421fb5de8c18a5d1e34304d3b10f222537f5b";
+```
+
 
 
