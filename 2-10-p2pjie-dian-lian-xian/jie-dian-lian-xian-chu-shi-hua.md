@@ -76,6 +76,8 @@ function connectPeer(host, buffer) {
   });
   client.on('error', (err) => {
     console.log(err);
+    try_host_No += 1;
+    connectPeer(hostList[try_host_No].address, buffer);
     client.end();
   });
 

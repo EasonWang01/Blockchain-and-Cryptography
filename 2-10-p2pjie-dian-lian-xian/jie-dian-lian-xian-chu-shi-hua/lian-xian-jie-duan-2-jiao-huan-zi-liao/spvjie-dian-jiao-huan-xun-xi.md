@@ -6,8 +6,6 @@ SPV節點使用Merkle Root驗證特定交易是否存在於區塊中，不用管
 
 所以在SPV節點中不用像上一章節發出 getdata 來請求資料，而是發出 getheader，另外一個節點接收到後會回覆 header 訊息。
 
-
-
 ![](/assets/螢幕快照 2017-12-26 下午5.16.09.png)
 
 ## getheader
@@ -19,7 +17,7 @@ SPV節點使用Merkle Root驗證特定交易是否存在於區塊中，不用管
   const command = "676574686561646572730000" // getheaders
   const payload_length = "e5030000"
   const checksum = "c03eac5d"
-   
+
   // 7f110100為版本號
   // 1e 為發出的header hash數量
   // 之後30串hash即為header hash
@@ -60,8 +58,6 @@ SPV節點使用Merkle Root驗證特定交易是否存在於區塊中，不用管
 
   const buffer = new Buffer(magicNum + command + payload_length + checksum + payload.replace(/\s/g,''), 'hex');
 ```
-
-
 
 
 
