@@ -95,13 +95,13 @@ function connectPeer(host, buffer) {
 
 # 2. getaddr與addr
 
-getaddr用來發送請求給其他節點，要求返回該節點的地址addr
+getaddr用來發送請求給其他節點，addr為該節點返回其所擁有的鄰居地址
 
 #### getaddr: \( 不具有payload \)
 
 ![](/assets/螢幕快照 2017-12-18 下午11.20.28.png)
 
-將上面程式的 Buffer 部分改為如下再次執行，即可模擬getaddr。 
+將上面程式的 Buffer 部分改為如下再次執行，即可模擬getaddr。
 
 ```js
 const buffer = new Buffer('f9beb4d9676574616464720000000000000000005df6e0e2', 'hex');
@@ -127,9 +127,19 @@ Pong 回覆中的nonce欄位會和接收到的 ping 請求之nonce相同。
 
 #### Ping
 
-![](/assets/螢幕快照 2017-12-18 下午11.29.44.png)
+![](/assets/螢幕快照 2017-12-26 上午11.26.34.png)
+
+```js
+const buffer = new Buffer('f9beb4d970696e67000000000000000008000000ca8bfa584d3181fbb3121e1b', 'hex');
+```
 
 #### Pong
 
-![](/assets/螢幕快照 2017-12-18 下午11.30.04.png)
+![](/assets/螢幕快照 2017-12-26 上午11.30.33.png)
+
+```js
+const buffer = new Buffer('f9beb4d9706f6e670000000000000000080000002ddab80398a059a304ce08a9', 'hex');
+```
+
+
 
