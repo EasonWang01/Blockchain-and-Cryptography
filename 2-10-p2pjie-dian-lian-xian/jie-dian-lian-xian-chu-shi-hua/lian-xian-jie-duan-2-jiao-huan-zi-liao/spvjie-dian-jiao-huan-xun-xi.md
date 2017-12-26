@@ -59,5 +59,37 @@ SPV節點使用Merkle Root驗證特定交易是否存在於區塊中，不用管
   const buffer = new Buffer(magicNum + command + payload_length + checksum + payload.replace(/\s/g,''), 'hex');
 ```
 
+## headers
+
+收到getheader後的節點，將回覆 headers 訊息，與blocks訊息類似，也會將一開始傳過來的訊息比對，將對方沒有的部分傳送給對方。
+
+
+
+![](/assets/螢幕快照 2017-12-26 下午7.17.14.png)
+
+範例:
+
+```js
+
+  const magicNum = "f9beb4d9";
+  const command = "686561646572730000000000" // headers
+  const payload_length = "52000000"
+  const checksum = "ef8dc6fd"
+   
+  const count = '0100' // 包含hash總數
+
+  /* 區塊頭 */
+  const block_version = '000020'
+  const previous_block = '91c7d27b24f9a5a6042adeadb33ccaa1af671b26ccb235000000000000000000'
+  const merkle_root = '67dce235f09410f8bcb0f4b0b894db5a8e66adeb58de59b01978df3a92581682'
+  const block_timestamp = '3e99fb59' // Nov  3, 2017 06:16:30.000000000 +08
+  const bits = '45960018';
+  const nonce = 'c43de516';
+  const transaction_count= '00';
+  const payload = count + block_version + previous_block + merkle_root + block_timestamp + bits + nonce + transaction_count;
+
+  const buffer = new Buffer(magicNum + command + payload_length + checksum + payload, 'hex');
+```
+
 
 
