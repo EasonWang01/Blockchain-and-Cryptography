@@ -38,11 +38,11 @@ const checksum = "2b7991bd"
 const payload = "010200000000000000000000000043a63945c421fb5de8c18a5d1e34304d3b10f222537f5b";
 ```
 
-
-
 ## 3. GetData
 
-在拿到 Inv 清單後，節點會開始向另一個節點請求自己來沒有同步的區塊資料，
+在拿到 Inv 清單後，節點會開始向另一個節點請求自己來沒有同步的區塊資料，而GetData請求的資料可以是[`tx`message](https://bitcoin.org/en/developer-reference#tx) 、
+
+[`block`message](https://bitcoin.org/en/developer-reference#block) 、[`merkleblock`message](https://bitcoin.org/en/developer-reference#merkleblock) 、[`notfound`message](https://bitcoin.org/en/developer-reference#notfound) 等等。
 
 
 
