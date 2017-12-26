@@ -18,7 +18,7 @@
 4.之後我們點選上方的`說明`然後點選`除錯視窗`  
 ![](/assets/bitcoin-qt02.png)
 
-5.接著我們點選`除錯視窗`中的`主控台`   
+5.接著我們點選`除錯視窗`中的`主控台`  
 \(這裡可以讓我們輸入一些指令\)  
 ![](/assets/bitcoin-qt03.png)
 
@@ -88,12 +88,27 @@ Linux
 
 ![](/assets/bitcoin-qt14.png)
 
-其他資料夾位置資訊可參考以下網站  
-[https://en.bitcoin.it/wiki/Data\_directory](https://en.bitcoin.it/wiki/Data_directory)
+其他資料夾位置資訊可參考以下
+
+```
+Windows
+> C:\Users\YourUserName\Appdata\Roaming\Bitcoin
+
+Linux
+> ~/.bitcoin/
+
+OSX
+> ~/Library/Application Support/Bitcoin/
+
+參考:
+https://en.bitcoin.it/wiki/Data_directory
+```
 
 #### 從Terminal 或 Cmd 執行bitcoin 指令
 
-我們也可以從Terminal 或 Cmd 執行bitcoin 指令  
+我們也可以從Terminal 或 Cmd 執行bitcoin 指令
+
+  
 1.一樣開啟terminal然後用進入到`daemon`路徑下  
 ![](/assets/bitcoin-qt15.png)
 
@@ -102,7 +117,7 @@ Linux
 2.然後我們要先執行bitcoind\(其為Bitcoin server\)  
 ![](/assets/bitcoin-qt16.png)
 
-> OSX和Linux 在bin路徑下   
+> OSX和Linux 在bin路徑下  
 > 輸入./bitcoind
 
 3.之後可輸入  
