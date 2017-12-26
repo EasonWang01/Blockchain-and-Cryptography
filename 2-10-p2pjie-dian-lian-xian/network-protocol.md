@@ -62,7 +62,9 @@ function commandCode(command) {
 範例:
 
 ```js
-const payload_length = (payload.length / 2).toString('16');
+function payloadLength(payload) {
+  return (payload.length / 2).toString('16');
+}
 // 之後記得在後面補零
 ```
 

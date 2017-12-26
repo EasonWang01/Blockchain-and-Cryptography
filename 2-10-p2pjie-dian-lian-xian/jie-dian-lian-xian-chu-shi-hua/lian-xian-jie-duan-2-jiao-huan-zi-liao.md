@@ -21,11 +21,9 @@ const buffer = new Buffer(magicNum + command + payload_length + checksum + paylo
 
 接著另外一個節點收到getBlocks後，他會比較 getBlocks 傳過來的這些區塊和自己的區塊鏈上擁有的比較，比較之後，把另外一個節點還缺少的區塊，用Inv message的方式回傳回去，其類似於一份清單，上面告知另外一個節點他還少了哪些區塊還沒同步。
 
-
-
 Inv還可用來回覆其他訊息，下圖為其種類圖
 
-> ![](/assets/螢幕快照 2017-12-26 下午12.39.53.png)https://en.bitcoin.it/wiki/Protocol\_documentation\#Inventory\_Vectors
+> ![](/assets/螢幕快照 2017-12-26 下午12.39.53.png)[https://en.bitcoin.it/wiki/Protocol\_documentation\#Inventory\_Vectors](https://en.bitcoin.it/wiki/Protocol_documentation#Inventory_Vectors)
 
 
 
