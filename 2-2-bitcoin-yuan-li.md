@@ -106,7 +106,7 @@ https://en.bitcoin.it/wiki/Data_directory
 
 # 從 Terminal 或 Cmd 執行 bitcoin 指令
 
-## Windows: 
+## Windows:
 
 我們也可以從Terminal 或 Cmd 執行bitcoin 指令
 
@@ -124,19 +124,21 @@ start ./bitcoin-cli getinfo
 
 > Windows會在執行開一個新視窗顯示，但顯示完會隨即關閉視窗，所以如果要用此種方法建議寫一個batch file然後後面加上`pause`
 
-
-
-
-
 ## Linux, OSX
 
 先到官網
 
-https://bitcoin.org/bin/
+[https://bitcoin.org/bin/](https://bitcoin.org/bin/)
 
 選擇版本後，下載 [tar.gz](https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-osx64.tar.gz) 格式的安裝檔然後解壓縮 ，之後一樣 `cd`
 
 到下載的資料夾目錄下的 /bin 資料夾
+
+執行
+
+```
+./bitcoind
+```
 
 ```
 ./bitcoin-cli getinfo
