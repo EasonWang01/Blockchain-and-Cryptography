@@ -59,7 +59,15 @@ bloom.test("bar");
 bloom.test("blah");
 ```
 
----
+ 
+
+#### 比特幣應用：
+
+比特幣的SPV節點將會建立Bloom filter並且利用filterload訊息將其發送給Full Node，filter中會設定其需要哪些交易資訊，並且可用filteradd訊息添加資料，而不必重新發送整個Bloom filter。
+
+
+
+
 
 #### 註1：False Positive 與 False Nagative
 
