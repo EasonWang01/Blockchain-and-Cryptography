@@ -75,6 +75,8 @@ bloom.test("blah");
 
 而[SPV client](https://bitcoin.org/en/glossary/simplified-payment-verification)不只可以再Bloom filter加入交易，還可以加入[public keys](https://bitcoin.org/en/glossary/public-key)  、  [signature scripts](https://bitcoin.org/en/glossary/signature-script) 與 [pubkey scripts](https://bitcoin.org/en/glossary/pubkey-script) 等等。
 
+在比特幣的SPV client中可以將False Positive的機率提高，來增加更多的隱私，因為將會Full Node會回傳更多不相關的交易資料，更好的隱藏SPV client真實想要的交易資料。
+
 #### 註1：False Positive 與 False Nagative
 
 False Positive:  答案中表示該處是有資料的，但其實該處沒有資料。
