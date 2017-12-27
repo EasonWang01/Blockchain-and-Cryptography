@@ -39,6 +39,8 @@ Bloom Filter 很早之前即開始使用在各種場景，1970年由 『  Burton
 
 假設今天 w 的值要來確認他有沒有在Bloom filter中，他也是一樣經過三個hash function，然後查看產生出的hash對應到array的三個位置的值是否為1，如果為1即可假定w在先前已經加入過這個資料集裡面。
 
+但如果w今天不在Bloom filter裡面，但是剛好三個對應的位置的值均為1，也就是先前剛好這三處剛好被其他的值更改為1，則會產生剛才所說的False Positive。
+
 範例:
 
 可使用此模組：[https://github.com/jasondavies/bloomfilter.js/](https://github.com/jasondavies/bloomfilter.js/)
