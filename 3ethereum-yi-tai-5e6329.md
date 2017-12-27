@@ -75,3 +75,11 @@ haskell語言的實作
 
 [https://github.com/bkirwi/ethereum-haskell](https://github.com/bkirwi/ethereum-haskell)
 
+#### 10.ethereumex
+
+Elixir語言的JSON-RPC client實作 
+
+https://github.com/exthereum/ethereumex
+
+
+
