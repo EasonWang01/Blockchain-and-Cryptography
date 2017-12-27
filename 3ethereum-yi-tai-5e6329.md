@@ -17,6 +17,12 @@ Gas Price: 每單位Gas多少錢( 會變動 )
 Gas Limit: 多少單位個Gas( 通常不會變動 )
 ```
 
+## 改進未來Ethereum之Proposal
+
+The Ethereum Improvement Proposal簡稱為EIP，為以太坊社群為了讓以太坊區塊鏈更完善而提出的改進項目。
+
+https://github.com/ethereum/EIPs
+
 ## 有關以太坊Implementations
 
 以太坊有多個語言的實作
@@ -77,9 +83,7 @@ haskell語言的實作
 
 #### 10.ethereumex
 
-Elixir語言的JSON-RPC client實作 
+Elixir語言的JSON-RPC client實作
 
-https://github.com/exthereum/ethereumex
-
-
+[https://github.com/exthereum/ethereumex](https://github.com/exthereum/ethereumex)
 
