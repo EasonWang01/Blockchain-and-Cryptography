@@ -55,7 +55,25 @@ Rust語言的實作，主打輕量與快速
 
 Java語言的實作
 
-https://github.com/ethereum/ethereumj
+[https://github.com/ethereum/ethereumj](https://github.com/ethereum/ethereumj)
+
+#### 7.ethereum-ruby
+
+Ruby語言的實作
+
+https://github.com/DigixGlobal/ethereum-ruby
+
+#### 8.Nethereum
+
+.NET語言的實作
+
+https://github.com/Nethereum/Nethereum
+
+#### 9.ethereum-haskell
+
+haskell語言的實作
+
+https://github.com/bkirwi/ethereum-haskell
 
 
 
