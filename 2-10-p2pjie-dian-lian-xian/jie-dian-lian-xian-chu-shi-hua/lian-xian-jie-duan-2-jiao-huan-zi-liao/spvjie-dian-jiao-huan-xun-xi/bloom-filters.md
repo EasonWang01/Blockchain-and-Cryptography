@@ -23,7 +23,7 @@ Bloom Filter 很早之前即開始使用在各種場景，1970年由 『  Burton
 
 #### 步驟一：
 
-假設今天有一個元素要加入資料集，我們會先讓他先分別經過k個hash function，之後會產生k個值，把這些hash後的數字對照array上對應的位置，將該位置的值從0改為1。
+假設今天有一個元素要加入Bloom filter，我們會先讓他先分別經過k個hash function，之後會產生k個值，把這些hash後的數字對照array上對應的位置，將該位置的值從0改為1。
 
 以上圖範例為例，x經過hash function後會產生三個值，分別對應到圖中第二，第六和倒數第五的位置，所以將著些位置的值改為1
 
@@ -37,7 +37,29 @@ Bloom Filter 很早之前即開始使用在各種場景，1970年由 『  Burton
 
 #### 步驟三：
 
-假設今天 w 的值要來確認他有沒有在資料集中，他也是一樣經過三個hash function，然後查看產生出的hash對應到array的三個位置的值是否為1，如果為1即可假定w在先前已經加入過這個資料集裡面。
+假設今天 w 的值要來確認他有沒有在Bloom filter中，他也是一樣經過三個hash function，然後查看產生出的hash對應到array的三個位置的值是否為1，如果為1即可假定w在先前已經加入過這個資料集裡面。
+
+
+
+範例:
+
+可使用此模組：https://github.com/jasondavies/bloomfilter.js/
+
+```js
+var bloom = new BloomFilter(
+  32 * 256, // 分配的Array大小
+  16        // 具有多少個hash functions.
+);
+
+// 新增元素到Bloom filter.
+bloom.add("foo");
+bloom.add("bar");
+
+// 測試資料是否在Bloom filter中.
+bloom.test("foo");
+bloom.test("bar");
+bloom.test("blah");
+```
 
 ---
 
