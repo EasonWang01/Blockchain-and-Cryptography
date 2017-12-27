@@ -71,6 +71,8 @@ bloom.test("blah");
 
 比特幣的SPV節點將會建立Bloom filter並且利用filterload訊息將其發送給Full Node，filter中會設定其需要哪些交易資訊，並且可用filteradd訊息添加資料，而不必重新發送整個Bloom filter，而filterclear是用來將Bloom filter機制取消，變回原本的區塊交換訊息的方式。
 
+而[SPV client](https://bitcoin.org/en/glossary/simplified-payment-verification)不只可以再Bloom filter加入交易，還可以加入[public keys](https://bitcoin.org/en/glossary/public-key)  、  [signature scripts](https://bitcoin.org/en/glossary/signature-script) 與 [pubkey scripts](https://bitcoin.org/en/glossary/pubkey-script) 等等。
+
 #### 註1：False Positive 與 False Nagative
 
 False Positive:  答案中表示該處是有資料的，但其實該處沒有資料。
