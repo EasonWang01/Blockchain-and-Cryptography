@@ -17,7 +17,7 @@ Gas Price: 每單位Gas多少錢( 會變動 )
 Gas Limit: 多少單位個Gas( 通常不會變動 )
 ```
 
-## 有關以太坊節點
+## 有關以太坊Implementations
 
 以太坊有多個語言的實作
 
@@ -61,19 +61,17 @@ Java語言的實作
 
 Ruby語言的實作
 
-https://github.com/DigixGlobal/ethereum-ruby
+[https://github.com/DigixGlobal/ethereum-ruby](https://github.com/DigixGlobal/ethereum-ruby)
 
 #### 8.Nethereum
 
 .NET語言的實作
 
-https://github.com/Nethereum/Nethereum
+[https://github.com/Nethereum/Nethereum](https://github.com/Nethereum/Nethereum)
 
 #### 9.ethereum-haskell
 
 haskell語言的實作
 
-https://github.com/bkirwi/ethereum-haskell
-
-
+[https://github.com/bkirwi/ethereum-haskell](https://github.com/bkirwi/ethereum-haskell)
 
