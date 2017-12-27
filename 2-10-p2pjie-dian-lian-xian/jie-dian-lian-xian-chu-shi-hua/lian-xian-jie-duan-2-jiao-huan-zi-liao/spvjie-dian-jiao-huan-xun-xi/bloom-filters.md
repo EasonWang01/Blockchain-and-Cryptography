@@ -15,15 +15,17 @@ Bloom Filter 很早之前即開始使用在各種場景，1970年由 『  Burton
 
 ### Bloom Filter 實現原理
 
-> ![](/assets/螢幕快照 2017-12-27 下午9.16.png)https://en.wikipedia.org/wiki/Bloom\_filter
+> ![](/assets/螢幕快照 2017-12-27 下午9.16.png)[https://en.wikipedia.org/wiki/Bloom\_filter](https://en.wikipedia.org/wiki/Bloom_filter)
 
+看到上圖，一個Bloom filter初始化時是一個固定大小長度的Array，含有m個欄位，每個欄位的值均為0，以及k個hash function
 
+上述的k和m的數量會根據目標的False Positive \(註1\) 機率而改變與調整。
 
 
 
 ---
 
-## False Positive 與 False Nagative
+#### 註1：False Positive 與 False Nagative
 
 False Positive:  答案中表示該處是有資料的，但其實該處沒有資料
 
