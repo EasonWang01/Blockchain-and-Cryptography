@@ -31,6 +31,7 @@
     * [附註](2-10-p2pjie-dian-lian-xian/fu-zhu.md)
 * [3.Ethereum \(以太坊\)](3ethereum-yi-tai-5e6329.md)
   * 以太坊歷史
+  * [測試鏈](3ethereum-yi-tai-5e6329/ce-shi-lian.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)
 
