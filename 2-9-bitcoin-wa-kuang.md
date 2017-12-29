@@ -115,7 +115,7 @@ while (1) {
     var cal = hash1(JSON.stringify(header));
     if (cal < target) {
         console.log("\nSuccess hash: " + cal);
-        console.log("Number of calculations: " + nonce + ' tiems')
+        console.log("Number of calculations: " + nonce + ' times')
         console.log(`Total Time: ${(Date.now() - startTime) / 1000} second`)
         break;
     }
