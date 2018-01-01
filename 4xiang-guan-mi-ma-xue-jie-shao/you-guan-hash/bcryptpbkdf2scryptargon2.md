@@ -74,5 +74,11 @@ crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
 >
 > digest 使用的Hash算法 e.g. SHA-512
 
+# Scrypt
+
+此Hash方法加入了需要大量記憶體運算的設計，避免一些客製化的硬體來快速的計算出Hash，
+
+
+
 
 
