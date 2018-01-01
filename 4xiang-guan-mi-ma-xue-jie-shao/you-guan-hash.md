@@ -104,3 +104,19 @@ Blake2在2012年發表，是Blake的改良版本，列於RFC-7693 [https://tools
 
 其中分為兩種類型，BLAKE2b是針對64bits的平台進行優化而BLAKE2s是針對8到32bits的平台。
 
+接著我們使用https://github.com/dcposch/blakejs模組
+
+```
+npm install blakejs
+```
+
+```js
+var blake = require('blakejs')
+// blake2b
+console.log(blake.blake2bHex('test'))
+// blake2s
+console.log(blake.blake2sHex('test'))
+```
+
+
+
