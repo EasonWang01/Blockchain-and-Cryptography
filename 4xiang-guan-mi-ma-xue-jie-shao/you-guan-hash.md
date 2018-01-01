@@ -6,7 +6,7 @@ Hash function也可稱為**雜湊函式，**主要功能是把一串不定長度
 
 通常是一個單向函式，也就是無法從算出來的值反推回原本的值 \(除了已經被破解的Hash算法例外\)。
 
-比較常見的包含MD5、SHA1、SHA2、SHA3與ripemd系列等等，但目前MD5與SHA1已經被破解。
+比較常見的包含MD5、SHA1、SHA2、SHA3與Ripemd系列等等，但目前MD5與SHA1已經被破解。
 
 而還有一些是專門用來幫密碼做Hash的雜湊函式，例如：
 
@@ -42,8 +42,6 @@ console.log(hash);
 
 Ripemd系列包含128、160、256、320等等，也就是他的hash過後的長度，最常見的是Ripemd-160，也就是產生160bits長度的Hash，而Ripemd主要為了加強與改良原先的MD系列而發明。
 
-
-
 Ripemd-160範例：
 
 > 需要先安裝 ripemd160 第三方模組
@@ -54,7 +52,7 @@ Ripemd-160範例：
 
 ```js
 var RIPEMD160 = require('ripemd160')
- 
+
 console.log(new RIPEMD160().update('test').digest('hex'))
 ```
 
