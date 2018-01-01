@@ -38,6 +38,8 @@ let hash = crypto.createHash('sha256').update('test').digest('hex'); //hex代表
 console.log(hash);
 ```
 
+而在2015年8月5日SHA-3正式發表，而由於原先的Keccak被選為SHA3的最適合算法，所以SHA3也稱為Keccak
+
 #### Ripemd
 
 Ripemd系列包含128、160、256、320等等，也就是他的hash過後的長度，最常見的是Ripemd-160，也就是產生160bits長度的Hash，而Ripemd主要為了加強與改良原先的MD系列而發明。

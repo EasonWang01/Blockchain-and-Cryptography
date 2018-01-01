@@ -76,9 +76,5 @@ crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
 
 # Scrypt
 
-此Hash方法加入了需要大量記憶體運算的設計，避免一些客製化的硬體來快速的計算出Hash，
-
-
-
-
+此Hash方法加入了需要大量記憶體運算的設計，作法為利用大量記憶體，並將運算資料儲存在記憶體內供演算法計算，如此可避免一些客製化的硬體快速的計算出Hash。而其也是Litecoin與Dogecoin所使用的Hash演算法。
 
