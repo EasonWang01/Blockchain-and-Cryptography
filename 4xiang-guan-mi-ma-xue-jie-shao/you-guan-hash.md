@@ -12,11 +12,7 @@ Hash function也可稱為**雜湊函式，**主要功能是把一串不定長度
 
 [bcrypt](https://www.gitbook.com/book/easonwang01/e/edit#)、[PBKDF2](https://www.gitbook.com/book/easonwang01/e/edit#)、[scrypt](https://www.gitbook.com/book/easonwang01/e/edit#)、[Argon2](https://www.gitbook.com/book/easonwang01/e/edit#)等等。
 
-
-
 我們下面一樣使用Node.js來展示一些Hash function讓大家可以快速地了解他們的用法。
-
-
 
 #### MD5
 
@@ -29,6 +25,10 @@ function md5 (text) {
 let hash = md5('test');
 console.log(hash);
 ```
+
+#### SHA
+
+全名為Secure Hash Algorithm，從1995年發佈的SHA1、2001年發佈的SHA2、2015年正式發佈的SHA3，每一代都是上一代的改進版本，而SHA1之hash過後的值長度為160bits，到了SHA2與SHA3他們的長度可以是以下幾種，例如：224、256、384、512等等，所以我們才會常聽到例如SHA-256或是SHA-512等等的名詞。
 
 
 
