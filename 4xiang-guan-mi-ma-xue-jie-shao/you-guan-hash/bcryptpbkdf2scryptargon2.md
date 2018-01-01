@@ -10,3 +10,5 @@ hash的過程會加入一個隨機的salt，然後salt跟password一起hash。�
 
 
 
+我們可用Node.js的Bcrypt模組：https://github.com/kelektiv/node.bcrypt.js
+
