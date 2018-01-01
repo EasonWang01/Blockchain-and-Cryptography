@@ -32,6 +32,8 @@
 * [3.Ethereum \(以太坊\)](3ethereum-yi-tai-5e6329.md)
   * 以太坊歷史
   * [測試鏈](3ethereum-yi-tai-5e6329/ce-shi-lian.md)
+* [4.相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
+  * [有關Hash](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)
 
