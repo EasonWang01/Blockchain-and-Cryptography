@@ -42,3 +42,21 @@ console.log(hash);
 
 Ripemd系列包含128、160、256、320等等，也就是他的hash過後的長度，最常見的是Ripemd-160，也就是產生160bits長度的Hash，而Ripemd主要為了加強與改良原先的MD系列而發明。
 
+
+
+Ripemd-160範例：
+
+> 需要先安裝 ripemd160 第三方模組
+>
+> ```
+> npm install ripemd160
+> ```
+
+```js
+var RIPEMD160 = require('ripemd160')
+ 
+console.log(new RIPEMD160().update('test').digest('hex'))
+```
+
+
+
