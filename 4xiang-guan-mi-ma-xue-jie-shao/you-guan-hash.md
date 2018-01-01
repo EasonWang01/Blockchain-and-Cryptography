@@ -40,7 +40,5 @@ console.log(hash);
 
 #### Ripemd
 
-Ripemd系列包含128、160、256、320等等，也就是他的hash過後的長度，最常見的是Ripemd-160，也就是產生160bits長度的Hash，
-
-
+Ripemd系列包含128、160、256、320等等，也就是他的hash過後的長度，最常見的是Ripemd-160，也就是產生160bits長度的Hash，而Ripemd主要為了加強與改良原先的MD系列而發明。
 
