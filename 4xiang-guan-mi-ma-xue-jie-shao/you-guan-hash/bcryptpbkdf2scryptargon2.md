@@ -80,7 +80,7 @@ crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
 
 其強調他對抗暴力破解程度是PBKDF2的兩萬倍，是Bcrypt的四千倍。
 
-> https://www.tarsnap.com/scrypt.html
+> [https://www.tarsnap.com/scrypt.html](https://www.tarsnap.com/scrypt.html)
 
 其通常包含三個參數N、r、p
 
@@ -97,6 +97,23 @@ crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
 ```
 
 > 而p的參數一般來說都會是1
+
+我們這邊使用第三方模組
+
+```
+npm install scrypt
+```
+
+```js
+var scrypt = require("scrypt");
+
+scrypt.kdf("password", { N: 1, r: 1, p: 1 }, function (err, result) {
+  scrypt.verifyKdf(result, new Buffer("password"), function (err, result) {
+    if (err) console.log(err);
+    console.log(result)
+  });
+});
+```
 
 
 
