@@ -2,6 +2,8 @@
 
 # Bcrypt
 
+基於[Blowfish](https://baike.baidu.com/item/Blowfish/1677776)的一個加密算法，於1999年發表。
+
 hash的過程會加入一個隨機的salt，然後salt跟password一起hash。但每次產生的salt會不一樣，所以同一個密碼每次進行產生的Hash會不同。
 
 而Bcrypt還包含Round，越多Round會需要越多的計算時間。
@@ -46,9 +48,31 @@ bcrypt.compare(myPlaintextPassword, "$2a$10$8QT.28zoo.jyFB2yvDURL.IM6gL4YJHGsr1P
 // compare填入要比對的密碼與剛才產生出的Hash
 ```
 
-
-
 # PBKDF2
+
+全名為Password-Based Key Derivation Function，利用HMAC的方式來加入password和salt然後一樣進行多次的重複計算。
+
+Node.js原生即提供了PBKDF2算法。
+
+```js
+const crypto = require('crypto');
+crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
+  if (err) throw err;
+  console.log(derivedKey.toString('hex'));  // '3745e48...08d59ae'
+});
+```
+
+> 其中參數依序為
+>
+> password 要進行Hash的字串
+>
+> salt 加入的隨機值
+>
+> iterations 計算次數
+>
+> keylen 產生的Hash長度\(bytes\)
+>
+> digest 使用的Hash算法 e.g. SHA-512
 
 
 
