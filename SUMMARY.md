@@ -34,6 +34,7 @@
   * [測試鏈](3ethereum-yi-tai-5e6329/ce-shi-lian.md)
 * [4.相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
   * [有關Hash](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash.md)
+    * [bcrypt、PBKDF2、scrypt、Argon2](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash/bcryptpbkdf2scryptargon2.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)
 
