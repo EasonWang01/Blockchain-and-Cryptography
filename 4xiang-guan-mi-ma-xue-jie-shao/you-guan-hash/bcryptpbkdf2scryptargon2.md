@@ -78,3 +78,25 @@ crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
 
 此Hash方法加入了需要大量記憶體運算的設計，作法為利用大量記憶體，並將運算資料儲存在記憶體內供演算法計算，如此可避免一些客製化的硬體快速的計算出Hash。而其也是Litecoin與Dogecoin所使用的Hash演算法。
 
+其強調他對抗暴力破解程度是PBKDF2的兩萬倍，是Bcrypt的四千倍。
+
+> https://www.tarsnap.com/scrypt.html
+
+其通常包含三個參數N、r、p
+
+> ```
+> N: General work factor, iteration count.(重複計算的次數)
+> r: blocksize in use for underlying hash; fine-tunes the relative memory-cost.(區塊大小)
+> p: parallelization factor; fine-tunes the relative cpu-cost.(平行計算的數量)
+> ```
+
+```
+// 以下為計算Scrypt會需要使用的記憶體大小
+128 bytes × N × r
+128×16384×8 = 16,777,216 bytes = 16 MB
+```
+
+> 而p的參數一般來說都會是1
+
+
+
