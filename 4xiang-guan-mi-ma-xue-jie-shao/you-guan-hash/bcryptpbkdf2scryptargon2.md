@@ -91,6 +91,8 @@ crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
 > N: General work factor, iteration count.(重複計算的次數)
 > r: blocksize in use for underlying hash; fine-tunes the relative memory-cost.(區塊大小)
 > p: parallelization factor; fine-tunes the relative cpu-cost.(平行計算的數量)
+>
+> 參考至https://stackoverflow.com/questions/11126315/what-are-optimal-scrypt-work-factors
 > ```
 
 ```
@@ -117,4 +119,6 @@ scrypt.kdf("password", { N: 1, r: 1, p: 1 }, function (err, result) {
   });
 });
 ```
+
+
 
