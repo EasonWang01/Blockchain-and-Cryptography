@@ -1,12 +1,10 @@
 有一些函式是專門設計用來將密碼做雜湊的函式，這些即為本章我們所要介紹到的。
 
-#### Bcrypt
+# Bcrypt
 
 hash的過程會加入一個隨機的salt，然後salt跟password一起hash。但每次產生的salt會不一樣，所以同一個密碼每次進行產生的Hash會不同。
 
 而Bcrypt還包含Round，越多Round會需要越多的計算時間。
-
-
 
 再來你可能會想既然每次產生的Hash不同，那要怎麼進行訊息驗證呢？
 
@@ -37,7 +35,7 @@ bcrypt.genSalt(saltRounds, function (err, salt) {
 
 3.驗證
 
-```
+```js
 var bcrypt = require('bcrypt');
 const myPlaintextPassword = 'I_am_password';
 
@@ -47,6 +45,10 @@ bcrypt.compare(myPlaintextPassword, "$2a$10$8QT.28zoo.jyFB2yvDURL.IM6gL4YJHGsr1P
 
 // compare填入要比對的密碼與剛才產生出的Hash
 ```
+
+
+
+# PBKDF2
 
 
 
