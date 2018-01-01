@@ -38,8 +38,6 @@ let hash = crypto.createHash('sha256').update('test').digest('hex'); //hex代表
 console.log(hash);
 ```
 
-
-
 #### SHA3
 
 而在2015年8月5日SHA-3正式發表，而由於原先的Keccak被選為SHA3的最適合算法，所以SHA3也稱為Keccak
@@ -91,6 +89,14 @@ const hmac = crypto.createHmac('sha256', 'a secret');
 hmac.update('test');
 console.log(hmac.digest('hex'));
 ```
+
+## Blake2
+
+https://blake2.net/
+
+這是一個強調快速、安全與簡單的Hash算法，並且目前被用來替代MD5和SHA1。
+
+因為它可以在不耗費更多資源的情況下提供更好的安全性，但後來由Keccak獲選為SHA3的原因是NIST認為Keccak更具有抗ASIC的能力以及因為Blake的實作類似於SHA2，所以後來才不選擇Blake為SHA3標準。
 
 
 
