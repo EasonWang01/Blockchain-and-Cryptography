@@ -56,5 +56,17 @@ var RIPEMD160 = require('ripemd160')
 console.log(new RIPEMD160().update('test').digest('hex'))
 ```
 
+#### HMAC
+
+HMAC是在上述的雜湊函式外再加上一個secret，然後一起進行Hash。
+
+```js
+const crypto = require('crypto');
+const hmac = crypto.createHmac('sha256', 'a secret');
+
+hmac.update('test');
+console.log(hmac.digest('hex'));
+```
+
 
 
