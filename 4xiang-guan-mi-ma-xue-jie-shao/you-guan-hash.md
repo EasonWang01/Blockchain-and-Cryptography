@@ -92,11 +92,15 @@ console.log(hmac.digest('hex'));
 
 ## Blake2
 
-https://blake2.net/
+[https://blake2.net/](https://blake2.net/)
 
 這是一個強調快速、安全與簡單的Hash算法，並且目前被用來替代MD5和SHA1。
 
 因為它可以在不耗費更多資源的情況下提供更好的安全性，但後來由Keccak獲選為SHA3的原因是NIST認為Keccak更具有抗ASIC的能力以及因為Blake的實作類似於SHA2，所以後來才不選擇Blake為SHA3標準。
+
+> 參考此:https://crypto.stackexchange.com/questions/31674/what-advantages-does-keccak-sha-3-have-over-blake2
+
+Blake2在2012年發表，是Blake的改良版本，列於RFC-7693 https://tools.ietf.org/html/rfc7693
 
 
 
