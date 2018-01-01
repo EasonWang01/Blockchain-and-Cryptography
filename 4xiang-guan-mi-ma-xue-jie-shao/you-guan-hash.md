@@ -32,3 +32,13 @@ console.log(hash);
 
 
 
+SHA-256範例：
+
+```js
+var crypto = require('crypto');
+let hash = crypto.createHash('sha256').update('test').digest('hex'); //hex代表輸出為16進位，原先為buffer型態
+console.log(hash);
+```
+
+
+
