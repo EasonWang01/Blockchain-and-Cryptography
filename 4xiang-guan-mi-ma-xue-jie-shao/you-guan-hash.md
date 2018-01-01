@@ -30,8 +30,6 @@ console.log(hash);
 
 全名為Secure Hash Algorithm，從1995年發佈的SHA1、2001年發佈的SHA2、2015年正式發佈的SHA3，每一代都是上一代的改進版本，而SHA1之hash過後的值長度為160bits，到了SHA2與SHA3他們的長度可以是以下幾種，例如：224、256、384、512等等，所以我們才會常聽到例如SHA-256或是SHA-512等等的名詞。
 
-
-
 SHA-256範例：
 
 ```js
@@ -39,6 +37,10 @@ var crypto = require('crypto');
 let hash = crypto.createHash('sha256').update('test').digest('hex'); //hex代表輸出為16進位，原先為buffer型態
 console.log(hash);
 ```
+
+#### Ripemd
+
+Ripemd系列包含128、160、256、320等等，也就是他的hash過後的長度，最常見的是Ripemd-160，也就是產生160bits長度的Hash，
 
 
 
