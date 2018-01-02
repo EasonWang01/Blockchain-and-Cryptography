@@ -12,10 +12,6 @@ Hash function也可稱為**雜湊函式，**主要功能是把一串不定長度
 
 [bcrypt](https://www.gitbook.com/book/easonwang01/e/edit#)、[PBKDF2](https://www.gitbook.com/book/easonwang01/e/edit#)、[scrypt](https://www.gitbook.com/book/easonwang01/e/edit#)、[Argon2](https://www.gitbook.com/book/easonwang01/e/edit#)等等。
 
-
-
-
-
 雜湊函式被設計成能夠非常快速，讓整個加密程序不至於被拖慢，但這樣攻擊者可以非常快速的用任意的字串來進行雜湊並比較輸出結果，所以在雜湊中會加入一些方法來解決此問題。
 
 1.Salt
@@ -27,9 +23,17 @@ Salt是指在雜湊函數中或是密碼上加入一串隨機的位元(a random 
 如果每個使用者都有不同的salt，就沒有簡單的方法來辨識出使用者是否使用相同的password字串。
 ```
 
+2.Stretching 
 
+```
+意思就是讓我們雜湊過的數字再次進行雜湊，所以要得到相同的Hash的話對方必須也要進行相同次數的雜湊才可以。
+```
 
+3.Memory 
 
+```
+在計算時將大量數字暫存在記憶體中，如此一來電腦在運算時也必須消耗足夠的記憶體。
+```
 
 我們下面一樣使用Node.js來展示一些Hash function讓大家可以快速地了解他們的用法。
 
