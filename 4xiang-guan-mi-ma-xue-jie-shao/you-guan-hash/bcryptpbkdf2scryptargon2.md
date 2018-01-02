@@ -165,5 +165,21 @@ argon2.hash('password', options).then(hash => {
 });
 ```
 
+驗證
+
+```js
+const argon2 = require('argon2');
+
+argon2.verify('$argon2d$v=19$m=8192,t=4,p=2$Qt1HCzlwg260X7LNpzqtCg$u+zNJnC2s7gs6vJ6rzlR6usRIKJdvqGGKjALr47txg0', 'password').then(match => {
+    if (match) {
+      console.log('match!')
+    } else {
+      console.log('not match.')
+    }
+  }).catch(err => {
+    console.log(err)
+});
+```
+
 
 
