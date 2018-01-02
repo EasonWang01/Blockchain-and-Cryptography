@@ -126,5 +126,23 @@ scrypt.kdf("password", { N: 1, r: 1, p: 1 }, function (err, result) {
 
 ## Argon2
 
-在2015獲選為[Password Hashing Competition](https://en.wikipedia.org/wiki/Password_Hashing_Competition)的冠軍，其有三種類型Argon2i、Argon2d與Argon2id
+在2015獲選為[Password Hashing Competition](https://en.wikipedia.org/wiki/Password_Hashing_Competition)的冠軍，其有三種類型Argon2i、Argon2d與Argon2id。
+
+```
+Argon2d: 
+Faster and uses data-depending memory access, which makes it highly resistant against GPU cracking attacks 
+and suitable for applications with no threats from side-channel timing attacks (eg. cryptocurrencies)
+
+Argon2i: 
+Which is preferred for password hashing and password-based key derivation, 
+but it is slower as it makes more passes over the memory to protect from tradeoff attacks.
+
+Argon2id: 
+Hybrid of Argon2i and Argon2d, using a combination of data-depending and data-independent memory accesses, 
+which gives some of Argon2i's resistance to side-channel cache timing attacks and much of Argon2d's resistance to GPU cracking attacks.
+
+參考至: https://github.com/P-H-C/phc-winner-argon2
+```
+
+
 
