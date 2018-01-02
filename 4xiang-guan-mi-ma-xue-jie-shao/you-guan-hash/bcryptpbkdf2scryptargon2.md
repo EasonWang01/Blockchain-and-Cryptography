@@ -129,11 +129,11 @@ scrypt.kdf("password", { N: 1, r: 1, p: 1 }, function (err, result) {
 在2015獲選為[Password Hashing Competition](https://en.wikipedia.org/wiki/Password_Hashing_Competition)的冠軍，其有三種類型Argon2i、Argon2d與Argon2id。
 
 ```
-Argon2d: 
+Argon2d: (快速，並且可對抗GPU暴力破解攻擊)
 Faster and uses data-depending memory access, which makes it highly resistant against GPU cracking attacks 
 and suitable for applications with no threats from side-channel timing attacks (eg. cryptocurrencies)
 
-Argon2i: 
+Argon2i: (適合用於密碼雜湊與)
 Which is preferred for password hashing and password-based key derivation, 
 but it is slower as it makes more passes over the memory to protect from tradeoff attacks.
 
