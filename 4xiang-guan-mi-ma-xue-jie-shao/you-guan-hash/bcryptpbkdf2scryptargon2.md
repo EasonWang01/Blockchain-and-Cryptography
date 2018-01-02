@@ -146,5 +146,24 @@ which gives some of Argon2i's resistance to side-channel cache timing attacks an
 參考至: https://github.com/P-H-C/phc-winner-argon2
 ```
 
+以下使用Node.js的第三方Argon2模組
+
+```
+npm install argon2
+```
+
+產生Hash
+
+```js
+const argon2 = require('argon2');
+const options = {
+  timeCost: 4, memoryCost: 13, parallelism: 2, type: argon2.argon2d
+};
+
+argon2.hash('password', options).then(hash => {
+  console.log(hash)
+});
+```
+
 
 
