@@ -126,5 +126,5 @@ scrypt.kdf("password", { N: 1, r: 1, p: 1 }, function (err, result) {
 
 ## Argon2
 
-在2015獲選為[Password Hashing Competition](https://en.wikipedia.org/wiki/Password_Hashing_Competition)的冠軍
+在2015獲選為[Password Hashing Competition](https://en.wikipedia.org/wiki/Password_Hashing_Competition)的冠軍，其有三種類型Argon2i、Argon2d與Argon2id
 
