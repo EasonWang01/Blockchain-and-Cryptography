@@ -35,6 +35,7 @@
 * [4.相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
   * [有關Hash](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash.md)
     * [bcrypt、PBKDF2、scrypt、Argon2](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash/bcryptpbkdf2scryptargon2.md)
+  * [對稱式加密](4xiang-guan-mi-ma-xue-jie-shao/dui-cheng-shi-jia-mi.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)
 
