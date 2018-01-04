@@ -1,6 +1,6 @@
 # 對稱式加密\(**Symmetric-key algorithm**\)
 
-在加密和解密時使用相同的密鑰，常見的對稱是加密算法有：AES、Serpent、3DES、IDEA、TwoFish、RC4等等
+在加密和解密時使用相同的密鑰，常見的對稱是加密算法有：AES、Serpent、3DES、IDEA、TwoFish、RC系列等等
 
 而DES與BlowFish目前因安全性已不建議採用。
 
@@ -80,15 +80,11 @@ console.log(encrypted ^ key);
 
 Stream Ciphers\(資料流加密\)並不會將明文切分為區段，而是一次加密資料流的一個位元或是位元組。常見的作法是將 較短的加密鑰匙延展成為無限長、近似亂碼的一長串金鑰串流\(keystream\)，再將金鑰串流和原始資料 （plain text）經過XOR運算後，產生密文資料 （cipher text）。
 
-
-
 #### 2.Block Ciphers
 
- Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區段，並且對每 一個區段資料應用相同的演算法則和鑰匙。
+Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區段，並且對每 一個區段資料應用相同的演算法則和鑰匙。
 
 假設M為明文，其將分割成M1、M2… Mn區段\)  然後K為密鑰，其可表示為: E\(M,K\)=E\(M1,K\)E\(M2,K\)… ..E\(Mn,K\)
-
-
 
 註1: \(兩兩數值相同為否，而數值不同時為真\): 例如1 xor 1為 0 ， 1 xor 0 為 1
 
