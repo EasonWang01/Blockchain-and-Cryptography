@@ -94,7 +94,7 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 > 參考至:[https://security.stackexchange.com/a/345](https://security.stackexchange.com/a/345)
 
-比較早期之ECB，CBC，OFB和CFB
+以下先介紹比較早期發展之ECB，CBC，OFB和CFB
 
 #### ECB
 
