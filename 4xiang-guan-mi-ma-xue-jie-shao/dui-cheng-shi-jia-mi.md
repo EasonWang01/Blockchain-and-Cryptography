@@ -94,7 +94,7 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 > 參考至:[https://security.stackexchange.com/a/345](https://security.stackexchange.com/a/345)
 
-以下先介紹比較早期發展之ECB，CBC，OFB和CFB
+以下先介紹比較早期發展之ECB、CBC、CFB和OFB
 
 #### ECB
 
@@ -109,6 +109,18 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 主要缺點在於加密過程是依序進行的，無法同時進行，所以速度較慢，並且加密訊息必須被填充到區塊大小的整數倍。
 
 > 其加密過程如下圖![](/assets/566.png)[https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
+
+#### CFB
+
+#### 
+
+#### 
+
+#### OFB
+
+全名為（Output feedback, OFB）可以將塊密碼變成同步的串流加密法。它產生[金鑰流](http://www.wikiwand.com/zh-mo/%E5%AF%86%E9%92%A5%E6%B5%81)的塊，然後將其與明文塊進行異或，得到密文。與其它串流加密法一樣，密文中一個位的翻轉會使明文中同樣位置的位也產生翻轉。這種特性使得許多[錯誤校正碼](http://www.wikiwand.com/zh-mo/%E5%89%8D%E5%90%91%E9%8C%AF%E8%AA%A4%E6%9B%B4%E6%AD%A3)，例如[奇偶校驗位](http://www.wikiwand.com/zh-mo/%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E4%BD%8D)，即使在加密前計算，而在加密後進行校驗也可以得出正確結果。
+
+由於XOR操作的對稱性，加密和解密操作是完全相同的：
 
 ---
 
