@@ -126,6 +126,18 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 > [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
+過程大致如下
+
+```txt
+1. IV 與金鑰進行加密(假設結果為 64 bits)
+2. 取 64 bits 結果的前面 8 bits 與 plain text 進行 XOR 的運算
+3. IV 左移 8 個 bits，並將運算後的 8 bits 加到 IV 之後(此時 IV還是 64 bits)
+4. 將第三個步驟所產生的結果作為下一回合的輸入
+5. 重複上面步驟直到所有內容加密完成
+```
+
+
+
 #### OFB
 
 全名為（Output feedback, OFB）可以將塊密碼變成同步的串流加密法。它產生[金鑰流](http://www.wikiwand.com/zh-mo/密钥流)的塊，然後將其與明文塊進行異或，得到密文。與其它串流加密法一樣，密文中一個位的翻轉會使明文中同樣位置的位也產生翻轉。這種特性使得許多[錯誤校正碼](http://www.wikiwand.com/zh-mo/前向錯誤更正)，例如[奇偶校驗位](http://www.wikiwand.com/zh-mo/奇偶校验位)，即使在加密前計算，而在加密後進行校驗也可以得出正確結果。
