@@ -2,7 +2,7 @@
 
 在加密和解密時使用相同的密鑰，常見的對稱是加密算法有：AES、Serpent、3DES、IDEA、TwoFish、RC4等等
 
-而DES與blowFish目前因安全性已不建議採用。
+而DES與BlowFish目前因安全性已不建議採用。
 
 而下面展示一個對稱式加密最基本的原理:
 
@@ -72,7 +72,17 @@ var encrypted = password ^ key;
 console.log(encrypted ^ key);
 ```
 
----
+ 
+
+ 
+
+# Stream Ciphers 與 Block Ciphers
+
+對稱式加密可以使用Stream Ciphers或是Block Ciphers來對明文進行加密。
+
+#### 1.Stream Ciphers
+
+Stream Ciphers\(資料流加密\)並不會將明文切分為區段，而是一次加密資料流的一個位元或是位元組。常見的作法是將 較短的加密鑰匙延展成為無限長、近似亂碼的一長串金鑰串流\(keystream\)，再將金鑰串流和原始資料 （plain text）經過XOR運算後，產生密文資料 （cipher text）。
 
 註1: \(兩兩數值相同為否，而數值不同時為真\): 例如1 xor 1為 0 ， 1 xor 0 為 1
 
