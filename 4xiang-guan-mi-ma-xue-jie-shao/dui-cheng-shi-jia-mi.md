@@ -26,16 +26,26 @@ textToBinary("Test");
 
 ```js
 function XOR(a, b) {
-  let num = (parseInt(a, 2) ^ parseInt(b, 2)).toString(2);
-  if(num.length === 3) { // 因0在開頭會被省略
-    num = "0" + num
+ if(a.length !== b.length) {
+   console.log("要求兩者二進位數字長度相同");
+   return
+ }
+ let num = (parseInt(a, 2) ^ parseInt(b, 2)).toString(2);
+ if(num.length !== a.length) {  // 因前面為0會被省略，所以要手動補0
+    let padLength = a.length - num.length;
+    num = "0".repeat(padLength) + num;
   };
   return num 
 }
 
 let key_ = "11110011"; // 密鑰
 
+// 加密
 (["01010100", "01100101", "01110011", "01110100"]).map(d => XOR(d, key_)); // 使用密鑰對每個元素做XOR
+
+//加密後結果:  ["10100111", "10010110", "10000000", "10000111"]
+
+//解密
 ```
 
 ---
