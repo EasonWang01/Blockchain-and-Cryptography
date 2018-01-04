@@ -100,7 +100,9 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 最簡單的加密模式即為（Electronic codebook，ECB）模式。需要加密的訊息按照塊密碼的大小被分為數個區塊，並對每個區塊進行獨立加密。但缺點在於同樣的明文區塊會被加密成相同的密文區塊，因此並不推薦用於密碼協定中。
 
-> ![](/assets/er.png)[https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
+> ![](/assets/aww.png)
+>
+> [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
 #### CBC
 
@@ -108,17 +110,25 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 主要缺點在於加密過程是依序進行的，無法同時進行，所以速度較慢，並且加密訊息必須被填充到區塊大小的整數倍。
 
-> 其加密過程如下圖![](/assets/566.png)[https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
+> 其加密過程如下圖
+>
+> ![](/assets/b.png)
+>
+> [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
 #### CFB
 
-#### 
+類似於剛才提到的模式類似於CBC，可以將區塊密碼變為可同步進行的串流加密法，且訊息無需進行填充到一定長度。
 
-#### 
+其加密過程如下圖
+
+![](/assets/4545.png)
+
+> [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
 #### OFB
 
-全名為（Output feedback, OFB）可以將塊密碼變成同步的串流加密法。它產生[金鑰流](http://www.wikiwand.com/zh-mo/%E5%AF%86%E9%92%A5%E6%B5%81)的塊，然後將其與明文塊進行異或，得到密文。與其它串流加密法一樣，密文中一個位的翻轉會使明文中同樣位置的位也產生翻轉。這種特性使得許多[錯誤校正碼](http://www.wikiwand.com/zh-mo/%E5%89%8D%E5%90%91%E9%8C%AF%E8%AA%A4%E6%9B%B4%E6%AD%A3)，例如[奇偶校驗位](http://www.wikiwand.com/zh-mo/%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C%E4%BD%8D)，即使在加密前計算，而在加密後進行校驗也可以得出正確結果。
+全名為（Output feedback, OFB）可以將塊密碼變成同步的串流加密法。它產生[金鑰流](http://www.wikiwand.com/zh-mo/密钥流)的塊，然後將其與明文塊進行異或，得到密文。與其它串流加密法一樣，密文中一個位的翻轉會使明文中同樣位置的位也產生翻轉。這種特性使得許多[錯誤校正碼](http://www.wikiwand.com/zh-mo/前向錯誤更正)，例如[奇偶校驗位](http://www.wikiwand.com/zh-mo/奇偶校验位)，即使在加密前計算，而在加密後進行校驗也可以得出正確結果。
 
 由於XOR操作的對稱性，加密和解密操作是完全相同的：
 
