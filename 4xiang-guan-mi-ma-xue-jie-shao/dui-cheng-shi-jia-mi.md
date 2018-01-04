@@ -82,13 +82,31 @@ console.log(encrypted ^ key);
 
 Stream Ciphers\(資料流加密\)並不會將明文切分為區段，而是一次加密資料流的一個位元或是位元組。常見的作法是將 較短的加密鑰匙延展成為無限長、近似亂碼的一長串金鑰串流\(keystream\)，再將金鑰串流和原始資料 （plain text）經過XOR運算後，產生密文資料 （cipher text）。
 
-但Stream Ciphers一般較難被實作，
+但Stream Ciphers一般較難被實作，其較適合用於network streams串流方面。
 
 #### 2.Block Ciphers
 
 Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區段，並且對每 一個區段資料應用相同的演算法則和鑰匙。
 
 假設M為明文，其將分割成M1、M2… Mn區段\)  然後K為密鑰，其可表示為: E\(M,K\)=E\(M1,K\)E\(M2,K\)… ..E\(Mn,K\)
+
+較適合用於已知要加密的檔案內容。
+
+> 參考至:https://security.stackexchange.com/a/345
+
+比較早期之ECB，CBC，OFB和CFB
+
+#### ECB
+
+最簡單的加密模式即為（Electronic codebook，ECB）模式。需要加密的訊息按照塊密碼的大小被分為數個區塊，並對每個區塊進行獨立加密。但缺點在於同樣的明文區塊會被加密成相同的密文區塊，因此並不推薦用於密碼協定中。
+
+> ![](/assets/er.png)https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation
+
+#### CBC
+
+全名為Cipher-block chaining，在CBC模式中，每個明文區塊先與前一個密文區塊進行XOR後，再進行加密。在這種方法中，每個密文塊都依賴於它前面的所有明文區塊。並且，其會要求輸入一個初始向量，該初始向量會加入第一個明文區塊之加密。
+
+
 
 ---
 
