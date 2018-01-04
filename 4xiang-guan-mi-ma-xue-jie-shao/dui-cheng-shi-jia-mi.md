@@ -125,7 +125,7 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 > [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
 ```
-1. IV 與 Plaintext 做 XOR 之後再和金鑰進行加密
+1. IV 與 Plaintext 做 XOR 之後再和金鑰進行演算法加密
 2. 然後第上步驟的結果與下一個區塊的 Plaintext 做 XOR 之後再和金鑰進行加密
 ```
 
