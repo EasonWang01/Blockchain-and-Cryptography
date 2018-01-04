@@ -25,7 +25,17 @@ textToBinary("Test");
 上面每個陣列對應一個英文字母，我們把每個陣列元素與密鑰分別做XOR運算\(註1\):
 
 ```js
+function XOR(a, b) {
+  let num = (parseInt(a, 2) ^ parseInt(b, 2)).toString(2);
+  if(num.length === 3) { // 因0在開頭會被省略
+    num = "0" + num
+  };
+  return num 
+}
 
+let key_ = "11110011"; // 密鑰
+
+(["01010100", "01100101", "01110011", "01110100"]).map(d => XOR(d, key_)); // 使用密鑰對每個元素做XOR
 ```
 
 ---
