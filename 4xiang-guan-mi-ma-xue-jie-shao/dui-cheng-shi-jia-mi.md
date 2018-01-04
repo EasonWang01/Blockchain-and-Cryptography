@@ -1,6 +1,6 @@
 # 對稱式加密\(**Symmetric-key algorithm**\)
 
-在加密和解密時使用相同的密鑰，常見的對稱是加密算法有：DES、AES、Serpent、Blowfish、TwoFish等等
+在加密和解密時使用相同的密鑰，常見的對稱是加密算法有：AES、Serpent、3DES、IDEA、TwoFish等等
 
 而下面展示一個對稱式加密最基本的原理:
 
@@ -59,7 +59,7 @@ let key_ = "11110011"; // 密鑰
 // 得到字串:Test
 ```
 
-# 簡化版為: 
+# 簡化版為:
 
 > 上面程式為展示二進位之XOR，我們也可以直接使用如下直接運算。
 
