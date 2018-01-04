@@ -76,6 +76,8 @@ console.log(encrypted ^ key);
 
 對稱式加密可以使用Stream Ciphers或是Block Ciphers來對明文進行加密。
 
+意思是把明文先拆開成區塊，然後第一個區塊先進行加密演算法後得到密文，之後這個密文再繼續跟第二個區塊做計算。
+
 > 可以在Node.js使用  crypto.getCiphers\(\) 來查看可用之加密方法。
 
 #### 1.Stream Ciphers
@@ -122,6 +124,11 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 >
 > [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
+```
+1. IV 與 Plaintext 做 XOR 之後再和金鑰進行加密
+2. 然後第上步驟的結果與下一個區塊的 Plaintext 做 XOR 之後再和金鑰進行加密
+```
+
 #### CFB
 
 類似於剛才提到的模式類似於CBC，可以將區塊密碼變為可同步進行的串流加密法，且訊息無需進行填充到一定長度。
@@ -148,13 +155,9 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 由於XOR操作的對稱性，加密和解密操作是完全相同的：
 
-
-
-
-
 ## 該選擇哪一種？
 
-可參考：https://stackoverflow.com/a/1220869
+可參考：[https://stackoverflow.com/a/1220869](https://stackoverflow.com/a/1220869)
 
 ---
 
