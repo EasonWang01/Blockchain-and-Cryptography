@@ -49,6 +49,19 @@ let key_ = "11110011"; // 密鑰
 (["10100111", "10010110", "10000000", "10000111"]).map(d => XOR(d, key_));
 ```
 
+ 
+
+ 
+
+簡化版為:
+
+```js
+var key = "test_key";
+var password = "12345";
+var encrypted = password ^ key;  
+console.log(encrypted ^ key);
+```
+
 ---
 
 註1: \(兩兩數值相同為否，而數值不同時為真\): 例如1 xor 1為 0 ， 1 xor 0 為 1
@@ -57,5 +70,5 @@ F\(false\)亦代表0，T\(true\)亦代表1
 
 ![](/assets/2333.png)
 
-至於為何要使用XOR在對稱式加密，不使用AND或OR，可參考:https://stackoverflow.com/a/24731845
+至於為何要使用XOR在對稱式加密，不使用AND或OR，可參考:[https://stackoverflow.com/a/24731845](https://stackoverflow.com/a/24731845)
 
