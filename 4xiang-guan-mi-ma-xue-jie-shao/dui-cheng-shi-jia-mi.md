@@ -104,6 +104,12 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 >
 > [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
+過程主要為
+
+```
+將要加密的 plain text 分為多個 64 bits 的區塊，並用同一支金鑰進行加密的動作
+```
+
 #### CBC
 
 全名為Cipher-block chaining，為區塊加密中最常用的模式，在CBC模式中，每個明文區塊先與前一個密文區塊進行XOR後，再進行加密，也就是將前一個區塊加密後的結果作為加密第二個區塊的輸入。在這種方法中，每個密文塊都依賴於它前面的所有明文區塊。並且，其會要求輸入一個初始向量，該初始向量會加入第一個明文區塊之加密。
@@ -135,8 +141,6 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 4. 將第三個步驟所產生的結果作為下一回合的輸入
 5. 重複上面步驟直到所有內容加密完成
 ```
-
-
 
 #### OFB
 
