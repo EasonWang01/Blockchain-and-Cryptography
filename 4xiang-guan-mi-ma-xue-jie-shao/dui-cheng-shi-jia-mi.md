@@ -191,6 +191,27 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 可參考：[https://stackoverflow.com/a/1220869](https://stackoverflow.com/a/1220869)
 
+
+
+# Node.js中的對稱式加密
+
+
+
+主要包含
+
+```
+crypto.createCipher()
+crypto.createCipheriv()
+```
+
+其中createCipher是輸入密碼，而createCipheriv需輸入key與iv值
+
+> 例如cbc等需要iv的也可以用createCipher並輸入密碼，因為它會自動衍生出iv與key參考下面程式
+>
+> https://gist.github.com/bnoordhuis/2de2766d3d3a47ebe41aaaec7e8b14df
+
+
+
 ---
 
 註1: \(兩兩數值相同為否，而數值不同時為真\): 例如1 xor 1為 0 ， 1 xor 0 為 1
