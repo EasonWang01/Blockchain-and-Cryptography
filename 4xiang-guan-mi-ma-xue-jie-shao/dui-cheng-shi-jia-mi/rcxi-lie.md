@@ -16,11 +16,7 @@ RC6 為 128-bit 區塊加密(block cipher) 由 RC5 衍生而來。
 
 一開始他的演算法是保持保密的，直到1996年RC2 才被匿名的貼到[sci.crypt](https://en.wikipedia.org/wiki/Sci.crypt)論壇上。
 
-1998年 Ron Rivest 才授權給[RFC](https://en.wikipedia.org/wiki/Request_for_Comments)公開。
+1998年 Ron Rivest 才授權給[RFC](https://en.wikipedia.org/wiki/Request_for_Comments)公開\([RFC 2268](https://tools.ietf.org/html/2268)\)。
 
-RC2 is a[64-bit block](https://en.wikipedia.org/wiki/Block_size_%28cryptography%29)cipher with a variable size[key](https://en.wikipedia.org/wiki/Key_%28cryptography%29). Its 18 rounds are arranged as a source-heavy unbalanced[Feistel network](https://en.wikipedia.org/wiki/Feistel_network), with 16 rounds of one type \(MIXING\) punctuated by two rounds of another type \(MASHING\). A MIXING round consists of four applications of the MIX transformation, as shown in the diagram.
-
-RC2 is vulnerable to a[related-key attack](https://en.wikipedia.org/wiki/Related-key_attack)using 234[chosen plaintexts](https://en.wikipedia.org/wiki/Chosen_plaintext)\(Kelsey et al., 1997\).
-
-
+RC2為64-bit 的區塊加密\(block cipher\) ，但其現在已知容易遭受 [related-key attack](https://en.wikipedia.org/wiki/Related-key_attack)之攻擊\(Kelsey et al., 1997\).
 
