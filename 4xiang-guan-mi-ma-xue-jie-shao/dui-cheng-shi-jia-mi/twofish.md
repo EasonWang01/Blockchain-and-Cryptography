@@ -50,5 +50,15 @@ Twofish 需要 128-bit block size 以及 128 到 256 bits 的key。 其對於 32
 
 其程式實作可參考:
 
-https://github.com/wouldgo/twofish/blob/master/src/twofish.js
+[https://github.com/wouldgo/twofish/blob/master/src/twofish.js](https://github.com/wouldgo/twofish/blob/master/src/twofish.js)
+
+
+
+
+
+> 如果對其他類似演算法有興趣可參考:
+>
+> https://crypto.stackexchange.com/questions/42463/what-encryption-should-i-use-blowfish-twofish-or-threefish
+
+
 
