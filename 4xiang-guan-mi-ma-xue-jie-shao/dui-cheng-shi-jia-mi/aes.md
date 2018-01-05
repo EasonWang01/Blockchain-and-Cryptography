@@ -1,6 +1,4 @@
-
-
-> 在cbc、ofb、cfb、ctr等區塊模式IV長度均為16bytes，gcm的IV則沒有一定要16bytes
+> 在cbc、ofb、cfb、ctr等區塊模式IV長度均為16bytes，gcm的IV則沒有一定要16bytes
 
 #### AES-256-CBC範例
 
@@ -15,7 +13,9 @@ const IV_LENGTH = 16;
 
 function encrypt(text) {
     let iv = crypto.randomBytes(IV_LENGTH);
-    // 可直接替換為ofb、cfb、ctr等模式
+    // 可直接替換為ofb、
+cfb、
+ctr等模式
     let cipher = crypto.createCipheriv('aes-256-cbc', new Buffer(key), iv);
     let encrypted = cipher.update(text);
     encrypted = cipher.final();
