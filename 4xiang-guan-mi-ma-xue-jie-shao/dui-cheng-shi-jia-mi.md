@@ -74,7 +74,7 @@ console.log(encrypted ^ key);
 
 # Stream Ciphers 與 Block Ciphers
 
-對稱式加密可以使用Stream Ciphers或是Block Ciphers將明文預先進行分段後再進行演算法加密。
+對稱式加密可以使用Stream Ciphers或是Block Ciphers將明文預先進行分段後再進行演算法加密來提高安全性。
 
 > 可以在Node.js使用  crypto.getCiphers\(\) 來查看可用之加密方法。
 
