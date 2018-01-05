@@ -30,3 +30,25 @@ RC4是常見在WIFI加密中的WEP採用的加密算法，也曾經是TLS可採�
 
 後來在2015年由RFC 7465禁止在所有版本的TLS中使用。 但由於不管是軟體還是硬體，實現RC4十分容易所以成為其廣泛使用的原因。
 
+以下為Node.js範例
+
+```js
+const crypto = require('crypto');
+
+const mode = 'rc4'; //可替換為rc4-40與rc4-hmac-md5
+
+// 加密
+const cipher = crypto.createCipher(mode, 'a password');
+let encrypted = cipher.update('I_am_plaintext', 'utf8', 'hex');
+encrypted += cipher.final('hex');
+console.log(encrypted);
+
+// 解密
+const decipher = crypto.createDecipher(mode, 'a password');
+let decrypted = decipher.update(encrypted, 'hex', 'utf8');
+decrypted += decipher.final('utf8');
+console.log(decrypted);
+```
+
+
+
