@@ -85,5 +85,9 @@ console.log(encrypt("test"));
 console.log(decrypt(encrypt("test")))
 ```
 
+> 其他Node.js的相關範例可參考
+>
+> https://github.com/nodejs/node-v0.x-archive/blob/master/test/simple/test-crypto-authenticated.js\#L44-L64
+
 
 
