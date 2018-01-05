@@ -1,5 +1,9 @@
 # Triple-DES
 
+因為原本的DES安全性不足，而發展出此演算法，其包含3個DES金鑰，K1，K2和K3，均為56位元
+
+使用K1為金鑰進行DES加密，再用K2為金鑰進行DES「解密」，最後以K3進行DES加密。
+
 
 
 
@@ -9,7 +13,7 @@ Node.js範例
 ```js
 const crypto = require('crypto');
 
-const mode = 'des3'; // 也可用des-ede3
+const mode = 'des3'; // 也可用des-ede、des-ede3、des-ecb
 
 // 加密
 const cipher = crypto.createCipher(mode, 'a password');
