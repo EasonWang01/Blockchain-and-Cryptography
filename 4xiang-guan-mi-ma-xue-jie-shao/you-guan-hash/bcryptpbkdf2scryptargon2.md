@@ -73,7 +73,7 @@ crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
 >
 > iterations 計算次數
 >
-> keylen 產生的Hash長度\(bytes\)
+> key\_length 產生的Hash長度\(bytes\)
 >
 > digest 使用的Hash算法 e.g. SHA-512
 
