@@ -44,6 +44,8 @@ console.log(decrypt(encrypt("test")))
 
 > 需要加上cipher.getAuthTag\(\); 與 decipher.setAuthTag\(\);
 
+目前AuthTag與_additional authenticated data_\(AAD\)在node.js只支援GCM模式，cipher.setAAD需要在update\(\)之前使用，而cipher.getAuthTag\(\)必須要在[`cipher.final()`](https://nodejs.org/api/crypto.html#crypto_cipher_final_outputencoding)執行後才能使用。
+
 ```js
 const crypto = require('crypto');
 
@@ -87,7 +89,7 @@ console.log(decrypt(encrypt("test")))
 
 > 其他Node.js的相關範例可參考
 >
-> https://github.com/nodejs/node-v0.x-archive/blob/master/test/simple/test-crypto-authenticated.js\#L44-L64
+> [https://github.com/nodejs/node-v0.x-archive/blob/master/test/simple/test-crypto-authenticated.js\#L44-L64](https://github.com/nodejs/node-v0.x-archive/blob/master/test/simple/test-crypto-authenticated.js#L44-L64)
 
 
 
