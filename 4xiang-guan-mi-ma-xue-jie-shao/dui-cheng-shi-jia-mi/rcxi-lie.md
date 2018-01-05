@@ -12,11 +12,11 @@ RC6 為 128-bit 區塊加密(block cipher) 由 RC5 衍生而來。
 
 #### RC2
 
-RC2  別名為 ARC2** 由 **[Ron Rivest](https://en.wikipedia.org/wiki/Ron_Rivest)在1987年開發。 "RC" 意思為 "Ron's Code" 或是 "Rivest Cipher"
+RC2  別名為 ARC2** 由 **[Ronald Rivest](https://en.wikipedia.org/wiki/Ron_Rivest)在1987年開發。 "RC" 意思為 "Ron's Code" 或是 "Rivest Cipher"
 
 一開始他的演算法是保持保密的，直到1996年RC2 才被匿名的貼到[sci.crypt](https://en.wikipedia.org/wiki/Sci.crypt)論壇上。
 
-1998年 Ron Rivest 才授權給[RFC](https://en.wikipedia.org/wiki/Request_for_Comments)公開\([RFC 2268](https://tools.ietf.org/html/2268)\)。
+1998年 Ronald Rivest 才授權給[RFC](https://en.wikipedia.org/wiki/Request_for_Comments)公開\([RFC 2268](https://tools.ietf.org/html/2268)\)。
 
 RC2為64-bit 的區塊加密\(block cipher\) ，但其現在已知容易遭受 [related-key attack](https://en.wikipedia.org/wiki/Related-key_attack)之攻擊\(Kelsey et al., 1997\)
 
@@ -27,4 +27,6 @@ RC4（來自Rivest Cipher 4的縮寫）是一種流加密算法\(stream cipher\)
 RC4是常見在WIFI加密中的WEP採用的加密算法，也曾經是TLS可採用的算法之一。
 
 在1987年設計，由於RC4算法存在弱點，2015年2月所發布的 RFC 7465 規定禁止在TLS中使用RC4加密算法。
+
+後來在2015年由RFC 7465禁止在所有版本的TLS中使用。 但由於不管是軟體還是硬體，實現RC4十分容易所以成為其廣泛使用的原因。
 
