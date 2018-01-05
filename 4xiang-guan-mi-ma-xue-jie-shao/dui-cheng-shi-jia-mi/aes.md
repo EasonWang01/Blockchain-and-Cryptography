@@ -1,5 +1,25 @@
 > 在cbc、ofb、cfb、ctr等區塊模式IV長度均為16bytes，gcm的IV則沒有一定要16bytes
 
+#### 
+
+#### AES-256 範例
+
+```js
+const crypto = require('crypto');
+
+// 加密
+const cipher = crypto.createCipher('aes256', 'a password');// 可更換為aes-128或aes-192
+let encrypted = cipher.update('I_am_plaintext', 'utf8', 'hex');
+encrypted += cipher.final('hex');
+console.log(encrypted);
+
+// 解密
+const decipher = crypto.createDecipher('aes256', 'a password'); //可更換為aes-128或aes-192
+let decrypted = decipher.update(encrypted, 'hex', 'utf8');
+decrypted += decipher.final('utf8');
+console.log(decrypted);
+```
+
 #### AES-256-CBC範例
 
 ```js
