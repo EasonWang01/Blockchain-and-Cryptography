@@ -41,6 +41,7 @@
     * [IDEA](4xiang-guan-mi-ma-xue-jie-shao/dui-cheng-shi-jia-mi/idea.md)
     * [BlowFIsh、TwoFish](4xiang-guan-mi-ma-xue-jie-shao/dui-cheng-shi-jia-mi/twofish.md)
     * [RC系列](4xiang-guan-mi-ma-xue-jie-shao/dui-cheng-shi-jia-mi/rcxi-lie.md)
+  * [非對稱式加密](4xiang-guan-mi-ma-xue-jie-shao/fei-dui-cheng-shi-jia-mi.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)
 
