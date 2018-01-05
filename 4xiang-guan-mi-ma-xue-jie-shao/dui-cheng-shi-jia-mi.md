@@ -74,7 +74,7 @@ console.log(encrypted ^ key);
 
 # Stream Ciphers 與 Block Ciphers
 
-對稱式加密可以使用Stream Ciphers或是Block Ciphers來對明文進行加密。
+對稱式加密可以使用Stream Ciphers或是Block Ciphers將明文預先進行分段後再進行演算法加密。
 
 > 可以在Node.js使用  crypto.getCiphers\(\) 來查看可用之加密方法。
 
@@ -186,8 +186,6 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 1. GCM: GCM中的G就是指GMAC，C就是指上述的CTR。
 2. CCM: CCM為CMAC認證算法結合CTR。
 ```
-
-
 
 ## 該選擇哪一種？
 
