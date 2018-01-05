@@ -52,15 +52,17 @@ console.log(decrypted);
 
 #### RC5
 
-RC5 的區塊大小可以是32、 64 或是 128 bits 而 key 的大小可以是 \(0 到 2040 bits\) 
+RC5 的區塊大小可以是32、 64 或是 128 bits 而 key 的大小可以是 \(0 到 2040 bits\)
 
-實作方法可參考:http://www.engr.uconn.edu/~zshi/course/cse268f2004/rc5.pdf
+實作方法可參考:[http://www.engr.uconn.edu/~zshi/course/cse268f2004/rc5.pdf](http://www.engr.uconn.edu/~zshi/course/cse268f2004/rc5.pdf)
+
+![](/assets/889.png)
 
 #### RC6
 
 RC6 其區塊大小為 128 bits 而其 key 的大小可為 128, 192, 256 bits 至 2040-bits。
 
-RC6 非常類似於 RC5 
+RC6 非常類似於 RC5
 
-實作方法可參考:https://people.csail.mit.edu/rivest/pubs/RRSY98.pdf
+實作方法可參考:[https://people.csail.mit.edu/rivest/pubs/RRSY98.pdf](https://people.csail.mit.edu/rivest/pubs/RRSY98.pdf)![](/assets/9808.png)
 
