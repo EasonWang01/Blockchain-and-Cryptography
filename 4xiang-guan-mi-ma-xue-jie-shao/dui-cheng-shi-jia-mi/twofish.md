@@ -4,6 +4,12 @@ Blowfish 是一種 block cipher在1993年由 Bruce Schneier發表，此加密演
 
 其具有64-bit 的 block size 而其key長度可為 32 bits 至 448 bits 。
 
+其運算過程如下圖
+
+![](/assets/sds.png)
+
+> https://en.wikipedia.org/wiki/Blowfish\_\(cipher\)
+
 # TwoFish
 
 Twofish 是一種 block cipher 由 Counterpane Labs 在1998發表。是 AES 入圍者之一，不過後面沒當選。
@@ -18,7 +24,7 @@ Twofish 需要 128-bit block size 以及 128 到 256 bits 的key。 其對於 32
 
 ![](/assets/Twofishalgo.svg.png)
 
-> https://en.wikipedia.org/wiki/Twofish
+> [https://en.wikipedia.org/wiki/Twofish](https://en.wikipedia.org/wiki/Twofish)
 
 
 
