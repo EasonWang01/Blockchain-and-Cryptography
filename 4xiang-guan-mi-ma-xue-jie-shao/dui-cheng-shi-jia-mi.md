@@ -76,6 +76,12 @@ console.log(encrypted ^ key);
 
 對稱式加密可以使用Stream Ciphers或是Block Ciphers來對明文進行加密。
 
+```
+1.金鑰長度無法和串流明文一樣長
+2.金鑰產生金鑰串流
+3.金鑰串流不能重複
+```
+
 > 可以在Node.js使用  crypto.getCiphers\(\) 來查看可用之加密方法。
 
 #### 1.Stream Ciphers
