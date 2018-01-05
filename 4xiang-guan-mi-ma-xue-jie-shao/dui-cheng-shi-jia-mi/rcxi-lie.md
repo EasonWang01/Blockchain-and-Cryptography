@@ -1,11 +1,7 @@
 # RC系列
 
 ```
-RC1 從未被發布。
-
 RC2 為64-bit區塊加密(Block cipher)在1987發表。
-
-RC3 未被使用。
 
 RC4 為目前最廣為使用的串流加密(stream cipher)。
 
