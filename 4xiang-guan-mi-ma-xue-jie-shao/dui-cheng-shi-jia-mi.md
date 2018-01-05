@@ -76,15 +76,13 @@ console.log(encrypted ^ key);
 
 對稱式加密可以使用Stream Ciphers或是Block Ciphers來對明文進行加密。
 
-
-
 > 可以在Node.js使用  crypto.getCiphers\(\) 來查看可用之加密方法。
 
 #### 1.Stream Ciphers
 
 Stream Ciphers\(資料流加密\)並不會將明文切分為區段，而是一次加密資料流的一個位元或是位元組。常見的作法是將 較短的加密鑰匙延展成為無限長、近似亂碼的一長串金鑰串流\(keystream\)，再將金鑰串流和原始資料 （plain text）經過XOR運算後，產生密文資料 （cipher text）。
 
-但Stream Ciphers在目前較少被使用。
+但Stream Ciphers在目前較少被使用。使用其之加密演算法e.g. A5/1、RC4
 
 ```
 1.金鑰長度無法和串流明文一樣長
