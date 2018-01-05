@@ -180,7 +180,14 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 > ![](/assets/1202px-CTR_encryption_2.svg.png)[https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
-另外一種區塊加密法GCM中的G就是指GMAC，C就是指上述的CTR。
+另外有兩種區塊加密法與CTR相關
+
+```
+1. GCM: GCM中的G就是指GMAC，C就是指上述的CTR。
+2. CCM: CCM為CMAC認證算法結合CTR。
+```
+
+
 
 ## 該選擇哪一種？
 
