@@ -180,6 +180,8 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 > ![](/assets/1202px-CTR_encryption_2.svg.png)[https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
+另外一種區塊加密法GCM中的G就是指GMAC，C就是指上述的CTR。
+
 ## 該選擇哪一種？
 
 可參考：[https://stackoverflow.com/a/1220869](https://stackoverflow.com/a/1220869)
