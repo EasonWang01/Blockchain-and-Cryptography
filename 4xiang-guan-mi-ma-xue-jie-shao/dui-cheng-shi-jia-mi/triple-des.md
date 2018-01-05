@@ -24,9 +24,9 @@ decrypted += decipher.final('utf8');
 console.log(decrypted);
 ```
 
-
-
 #### 區塊加密
+
+> 每個DES key為8 bytes，所以3-DES 為三把key，需要 24bytes。
 
 ```js
 const crypto = require('crypto');
