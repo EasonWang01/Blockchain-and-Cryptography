@@ -110,7 +110,7 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 最簡單的加密模式即為（Electronic codebook，ECB）模式。需要加密的訊息按照塊密碼的大小被分為數個區塊，並對每個區塊進行獨立加密。但缺點在於同樣的明文區塊會被加密成相同的密文區塊，因此並不推薦用於密碼協定中。
 
-> ![](/assets/aww.png)
+> ![](/assets/1202px-ECB_encryption.svg.png)
 >
 > [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
@@ -128,7 +128,7 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 > 其加密過程如下圖
 >
-> ![](/assets/b.png)
+> ![](/assets/1202px-CBC_encryption.svg.png)
 >
 > [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
@@ -144,7 +144,7 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 其加密過程如下圖
 
-![](/assets/4545.png)
+![](/assets/1202px-CFB_encryption.svg.png)
 
 > [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
@@ -163,7 +163,7 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 由於XOR操作的對稱性，加密和解密操作是完全相同的：
 
-> ![](/assets/1202px-OFB_encryption.svg.png)https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation
+> ![](/assets/1202px-OFB_encryption.svg.png)[https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
 ```
 1. IV 直接加入金鑰並進行演算法加密
