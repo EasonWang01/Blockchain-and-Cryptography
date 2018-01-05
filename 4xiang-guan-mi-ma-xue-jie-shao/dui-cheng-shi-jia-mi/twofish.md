@@ -8,7 +8,29 @@ Blowfish 是一種 block cipher在1993年由 Bruce Schneier發表，此加密演
 
 ![](/assets/sds.png)
 
-> https://en.wikipedia.org/wiki/Blowfish\_\(cipher\)
+> [https://en.wikipedia.org/wiki/Blowfish\_\(cipher\](https://en.wikipedia.org/wiki/Blowfish_%28cipher\)\)
+
+其運算過程敘述可參考:https://en.wikipedia.org/wiki/Blowfish\_\(cipher\)\#The\_algorithm
+
+Node.js範例:
+
+```js
+const crypto = require('crypto');
+
+const mode = 'blowfish';
+
+// 加密
+const cipher = crypto.createCipher(mode, 'a password');
+let encrypted = cipher.update('I_am_plaintext', 'utf8', 'hex');
+encrypted += cipher.final('hex');
+console.log(encrypted);
+
+// 解密
+const decipher = crypto.createDecipher(mode, 'a password');
+let decrypted = decipher.update(encrypted, 'hex', 'utf8');
+decrypted += decipher.final('utf8');
+console.log(decrypted);
+```
 
 # TwoFish
 
