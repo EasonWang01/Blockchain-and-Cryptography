@@ -1,24 +1,38 @@
-> 在cbc、ofb、cfb、ctr等區塊模式IV長度均為16bytes，gcm的IV則沒有一定要16bytes
+# AES簡介
 
-#### 
+進階加密標準（英語：Advanced Encryption Standard，縮寫：AES），又稱Rijndael加密法。這個標準用來替代原先的DES。
+
+AES和Rijndael加密法並不完全一樣（雖然在實際應用中兩者可以互換），因為Rijndael加密法可以支援更大範圍的區塊和金鑰長度：AES的區塊長度固定為128位元，金鑰長度則可以是128，192或256位元；而Rijndael使用的金鑰和區塊長度均可以是128，192或256位元。
+
+
+
+
+
+
 
 #### AES-256 範例
 
 ```js
 const crypto = require('crypto');
 
+const mode = 'aes256' // 可更換為aes-128或aes-192或是aes-128-ecb、aes-192-ecb
+
 // 加密
-const cipher = crypto.createCipher('aes256', 'a password');// 可更換為aes-128或aes-192
+const cipher = crypto.createCipher(mode, 'a password');
 let encrypted = cipher.update('I_am_plaintext', 'utf8', 'hex');
 encrypted += cipher.final('hex');
 console.log(encrypted);
 
 // 解密
-const decipher = crypto.createDecipher('aes256', 'a password'); //可更換為aes-128或aes-192
+const decipher = crypto.createDecipher(mode, 'a password'); //可更換為aes-128或aes-192
 let decrypted = decipher.update(encrypted, 'hex', 'utf8');
 decrypted += decipher.final('utf8');
 console.log(decrypted);
 ```
+
+# AES之區塊加密模式
+
+> 在cbc、ofb、cfb、ctr等區塊模式IV長度均為16bytes，gcm的IV則沒有一定要16bytes
 
 #### AES-256-CBC範例
 
