@@ -8,9 +8,9 @@ Blowfish 是一種 block cipher在1993年由 Bruce Schneier發表，此加密演
 
 ![](/assets/sds.png)
 
-> [https://en.wikipedia.org/wiki/Blowfish\_\(cipher\](https://en.wikipedia.org/wiki/Blowfish_%28cipher\)\)
+> [https://en.wikipedia.org/wiki/Blowfish\_\(cipher\](https://en.wikipedia.org/wiki/Blowfish_%28cipher%29\)
 
-其運算過程敘述可參考:https://en.wikipedia.org/wiki/Blowfish\_\(cipher\)\#The\_algorithm
+其運算過程敘述可參考:[https://en.wikipedia.org/wiki/Blowfish\_\(cipher\)\#The\_algorithm](https://en.wikipedia.org/wiki/Blowfish_%28cipher%29#The_algorithm)
 
 Node.js範例:
 
@@ -48,5 +48,7 @@ Twofish 需要 128-bit block size 以及 128 到 256 bits 的key。 其對於 32
 
 > [https://en.wikipedia.org/wiki/Twofish](https://en.wikipedia.org/wiki/Twofish)
 
+其程式實作可參考:
 
+https://github.com/wouldgo/twofish/blob/master/src/twofish.js
 
