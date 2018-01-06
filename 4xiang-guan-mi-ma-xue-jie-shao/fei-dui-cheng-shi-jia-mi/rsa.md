@@ -60,7 +60,7 @@ function te() {
 >
 > 在一般來說公私鑰會以ASN.1格式呈現。
 
-## 加密
+#### 加密
 
 假設字串是ABC，轉為**ASCII 為65,66,67 **
 
@@ -96,7 +96,7 @@ function te() {
 
 > 有關大數的次方計算可參考：快速取模運算\(fast-modular-exponentiation\)
 
-## 解密
+#### 解密
 
 私鑰匙是\(667, 227\)
 
@@ -116,7 +116,7 @@ function te() {
 
 以下為用JS的big-integer模組，分別計算字母再連接的Function
 
-```
+```js
 var bigInt = require("big-integer");
 let msg = "ABC";
 let final = [];
@@ -132,8 +132,14 @@ let decrypt = final.map(d => {
   return String.fromCharCode(parseInt(d)); // 轉為string
 })
 
-console.log(decrypt)
+console.log(decrypt);
 ```
+
+
+
+
+
+# 實際使用
 
 # OpenSSL之Encrypt與Decrypt
 
