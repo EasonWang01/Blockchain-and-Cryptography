@@ -31,5 +31,5 @@ B收到訊息後用CA的公鑰解開數字證書，就可以拿到A真正的公�
 
 
 
-
+而常見的非對稱式金鑰演算法包含：RSA、DSA、ECDSA、DiffieHellman\(DH\)、ECDH等等
 
