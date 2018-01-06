@@ -43,7 +43,7 @@ RSA密鑰一般是1024bits或2048bits。
 //以上面為例子
 function te() {
   let X = 0
-  while((19*X) % 616 !== 1) {
+  while((19 * X) % 616 !== 1) {
      X++;
    }
    return X
@@ -60,7 +60,7 @@ function te() {
 >
 > 在一般來說公私鑰會以ASN.1格式呈現。
 
-#### \# 加密
+## 加密
 
 假設字串是ABC，轉為**ASCII 為65,66,67 **
 
