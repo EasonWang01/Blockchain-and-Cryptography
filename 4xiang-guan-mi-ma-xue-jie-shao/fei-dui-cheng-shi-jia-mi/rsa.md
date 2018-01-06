@@ -112,8 +112,6 @@ function te() {
 
 最後得到剛才的數字65即為解密完成
 
-
-
 ## 範例：
 
 以下為用JS的big-integer模組，分別計算字母再連接的Function
@@ -156,7 +154,7 @@ openssl rsa -in private.pem -out public.pem -outform PEM -pubout
 3.產生一個稍後用來加密的檔案
 
 ```
-vim test.txt
+echo 'some data' > test.txt
 
 然後檔案內容隨意輸入
 ```
