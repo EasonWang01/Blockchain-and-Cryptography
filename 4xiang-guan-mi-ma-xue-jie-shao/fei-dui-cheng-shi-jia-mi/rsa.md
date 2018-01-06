@@ -94,23 +94,29 @@ function te() {
 
 得到數字451
 
-#### \# 解密
+> 有關大數的次方計算可參考：快速取模運算\(fast-modular-exponentiation\)
+
+## 解密
 
 私鑰匙是\(667, 227\)
 
 現在要把剛才的數字 451 解密
 
 ```
-(451**227) % 667
+(451 ** 227) % 667
 ```
 
 這裡牽涉到BIg integer時常會出現infinity
 
-需要使用Big-integer module或是參考費馬小定理&gt;[https://zh.wikipedia.org/wiki/费马小定理](https://zh.wikipedia.org/wiki/费马小定理)
+> 有關大數的次方計算可參考：快速取模運算\(fast-modular-exponentiation\)
 
-> 最後得到剛才的65即完成
+最後得到剛才的數字65即為解密完成
 
-以下為用js的big-integer模組，分別計算字母再連接的Function
+
+
+## 範例：
+
+以下為用JS的big-integer模組，分別計算字母再連接的Function
 
 ```
 var bigInt = require("big-integer");
