@@ -135,7 +135,7 @@ let decrypt = final.map(d => {
 console.log(decrypt)
 ```
 
-# 使用OpenSSL之RSA加解密
+# OpenSSL之Encrypt與Decrypt
 
 1.產生一個private key
 
@@ -182,6 +182,55 @@ cat decrypt.txt
 即可看到成功還原為原本檔案之檔案內容
 
 ---
+
+# OpenSSL之Sign與Verify
+
+1.產生PEM格式的私鑰
+
+> 預設產生長度為 512 bit  在最後可加數字1024 、2048或 4096 產生不同長度私鑰
+
+```
+ openssl genrsa -out private.pem
+```
+
+1.從剛才的私鑰來產生對應的PEM格式之公鑰
+
+```
+openssl rsa -in private.pem -out public.pem -outform PEM -pubout
+```
+
+2.簽名
+
+```
+echo -n "hello" | openssl dgst -RSA-SHA256 -sign private.pem > signed_message
+```
+
+3.驗證
+
+```
+echo -n "hello" | openssl dgst -RSA-SHA256 -verify public.pem -signature signed_message
+```
+
+成功會回傳
+
+> ```
+> Verified OK
+> ```
+
+Node.js驗證
+
+```js
+var fs = require('fs');
+var crypto = require('crypto');
+
+var verify = crypto.createVerify('RSA-SHA256');
+verify.update('hello');
+var res = verify.verify(fs.readFileSync('./public.pem'),
+                        fs.readFileSync('./signed_message'));
+console.log(res);
+```
+
+
 
 其他知識
 
