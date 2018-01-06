@@ -84,7 +84,7 @@ function te() {
 
 > 這裡因為數字是Big Integer所以算的時候不可直接用...\*\*...% ...，需要用相關Big Integer模組不然會產生計算錯誤
 >
-> 而python內建Big Integer但Javascript沒有
+> 而python內建Big Integer但Javascript沒有，所以直接用Javascript計算出來的數字會錯誤。
 
 ```
 如果已經安裝好python打開Terminal輸入python，進入命令列，然後輸入：
