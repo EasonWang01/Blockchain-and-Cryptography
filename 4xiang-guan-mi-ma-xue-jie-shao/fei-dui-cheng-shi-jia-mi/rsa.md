@@ -83,12 +83,13 @@ function te() {
 ```
 
 > 這裡因為數字是Big Integer所以算的時候不可直接用...\*\*...% ...，需要用相關Big Integer模組不然會產生計算錯誤
-
+>
 > 而python內建Big Integer但Javascript沒有
 
 ```
-打開command輸入python
-然後(65 ** 19 ) % 667
+如果已經安裝好python打開Terminal輸入python，進入命令列，然後輸入：
+
+(65 ** 19 ) % 667
 ```
 
 得到數字451
