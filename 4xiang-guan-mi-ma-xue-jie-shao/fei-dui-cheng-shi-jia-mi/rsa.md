@@ -191,7 +191,7 @@ cat decrypt.txt
 
 # Node.js之Encrypt與Decrypt
 
-這邊我們使用第三方模組『 node-rsa 』https://github.com/rzcoder/node-rsa
+這邊我們使用第三方模組『 node-rsa 』[https://github.com/rzcoder/node-rsa](https://github.com/rzcoder/node-rsa)
 
 安裝：
 
@@ -215,8 +215,6 @@ console.log('encrypted: ', encrypted);
 var decrypted = key.decrypt(encrypted, 'utf8');
 console.log('decrypted: ', decrypted);
 ```
-
-
 
 ---
 
@@ -293,9 +291,22 @@ output = verify.verify(public_key, signature, 'hex');
 console.log(output)
 ```
 
-其他知識
+金鑰格式
 
 ```
+Format string composed of several parts: scheme-[key_type]-[output_type]
+
+Scheme — NodeRSA supports multiple format schemes for import/export keys:
+
+'pkcs1' — public key starts from '-----BEGIN RSA PUBLIC KEY-----' header and private key starts from '-----BEGIN RSA PRIVATE KEY-----' header
+'pkcs8' — public key starts from '-----BEGIN PUBLIC KEY-----' header and private key starts from '-----BEGIN PRIVATE KEY-----' header
+'components' — use it for import/export key from/to raw components (see example below). For private key, importing data should contain all private key components, for public key: only public exponent (e) and modulus (n). All components (except e) should be Buffer, e could be Buffer or just normal Number.
+Key type — can be 'private' or 'public'. Default 'private'
+Output type — can be:
+
+'pem' — Base64 encoded string with header and footer. Used by default.
+'der' — Binary encoded key data.
+
 DER (Distinguished Encoding Rules)：
 二進位內容，屬於 ASN.1 制定的編碼之一
 
