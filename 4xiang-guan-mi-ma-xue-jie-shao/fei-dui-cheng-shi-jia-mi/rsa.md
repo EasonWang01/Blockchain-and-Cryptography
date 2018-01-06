@@ -232,9 +232,7 @@ console.log(res);
 
 > 上面程式為在OpenSSL用私鑰簽名後給Node.js驗證
 
-
-
-
+---
 
 下面程式為全部使用Node.js簽名與驗證
 
