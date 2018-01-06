@@ -110,11 +110,15 @@ function te() {
 
 > 有關大數的次方計算可參考：快速取模運算\(fast-modular-exponentiation\)
 
-最後得到剛才的數字65即為解密完成
+最後得到剛才的數字65即為解密完成。
 
-## 範例：
+#### 簡單完整範例：
 
 以下為用JS的big-integer模組，分別計算字母再連接的Function
+
+```
+npm install big-integer
+```
 
 ```js
 var bigInt = require("big-integer");
@@ -135,7 +139,9 @@ let decrypt = final.map(d => {
 console.log(decrypt);
 ```
 
-# 實際使用
+# 實際使用RSA：
+
+> 上面的範例為概念教學，以下我們會來講實際使用已經寫好的模組來應用到專案中。
 
 # OpenSSL之Encrypt與Decrypt
 
@@ -183,9 +189,32 @@ cat decrypt.txt
 
 即可看到成功還原為原本檔案之檔案內容
 
-
-
 # Node.js之Encrypt與Decrypt
+
+這邊我們使用第三方模組『 node-rsa 』https://github.com/rzcoder/node-rsa
+
+安裝：
+
+```
+npm install node-rsa
+```
+
+使用：
+
+```js
+var NodeRSA = require('node-rsa');
+var key = new NodeRSA({b: 1024}); // 產生1024bits的金鑰
+
+var text = 'Hello!';
+
+// 加密
+var encrypted = key.encrypt(text, 'base64');
+console.log('encrypted: ', encrypted);
+
+// 解密
+var decrypted = key.decrypt(encrypted, 'utf8');
+console.log('decrypted: ', decrypted);
+```
 
 
 
