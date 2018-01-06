@@ -232,7 +232,13 @@ console.log(res);
 
 > 上面程式為在OpenSSL用私鑰簽名後給Node.js驗證
 
+
+
+
+
 下面程式為全部使用Node.js簽名與驗證
+
+> 但pem格式的key記得要先用OpenSSL產生
 
 ```js
 const crypto = require('crypto');
@@ -251,12 +257,6 @@ verify.update('test');
 output = verify.verify(public_key, signature, 'hex');
 console.log(output)
 ```
-
-
-
-
-
-
 
 其他知識
 
