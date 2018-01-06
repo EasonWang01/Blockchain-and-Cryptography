@@ -82,11 +82,9 @@ function te() {
 (65 的 19 次方) % 667
 ```
 
-> 這裡因為數字是Big int所以算的時候不可直接用...\*\*...% ...，需要用相關Big INT模組不然會產生計算錯誤
->
-> 不可用chrome devtool直接計算，結果會不同
->
-> 建議可以用python的command，因其內建Bigint
+> 這裡因為數字是Big Integer所以算的時候不可直接用...\*\*...% ...，需要用相關Big Integer模組不然會產生計算錯誤
+
+> 而python內建Big Integer但Javascript沒有
 
 ```
 打開command輸入python
