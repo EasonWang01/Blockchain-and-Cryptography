@@ -61,3 +61,90 @@ DSA 的安全性是基於整數有限域離散對數之難題。
 
 如果算出之 v = r 則驗證成功。
 
+
+
+# 實際應用
+
+# 簽章過程\(使用OpenSSL\)
+
+> 查看相關指令
+
+```
+openssl gendsa
+```
+
+1. 產生一個1024bits的參數檔案
+
+```
+openssl dsaparam -out dsa_param.pem 1024
+```
+
+![](/assets/dsa01.png)
+
+2.從剛才的參數檔案產生一個private key 並且用AES-128之password protect  也可用aes-192或aes-256
+
+```
+openssl gendsa -out dsa_privatekey.pem -aes128 dsa_param.pem
+```
+
+> 如出現 unable to write ''random state" 之訊息，可參考此
+>
+> [https://stackoverflow.com/questions/94445/using-openssl-what-does-unable-to-write-random-state-mean](https://stackoverflow.com/questions/94445/using-openssl-what-does-unable-to-write-random-state-mean)
+
+3.接著再從私鑰產生一把公鑰
+
+```
+openssl dsa -in dsa_privatekey.pem -pubout -out dsa_publickey.pem
+```
+
+4.之後我們新增一個我們要用來簽章的文件 ，並且在裡面寫一點字
+
+```
+vim document.txt
+```
+
+然後用私鑰對文件簽章產生一個sig
+
+```
+openssl dgst -dss1 -sign dsa_privatekey.pem -out document.sig document.txt
+```
+
+5.最後用公鑰驗證
+
+```
+openssl dgst -dss1 -verify dsa_publickey.pem -signature document.sig document.txt
+```
+
+![](/assets/dsa04.png)
+
+## 使用Node.js
+
+> 完成以上步驟產生pem格式之公私鑰後可執行以下程式。
+
+```js
+var fs = require('fs');
+var crypto = require('crypto');
+var pem = require('pem')
+
+var privateKey = fs.readFileSync('./dsa_privatekey.pem');     
+var publicKey = fs.readFileSync('./dsa_publickey.pem');
+var buffLen = 128;
+
+var sign = crypto.createSign('dsaWithSHA1');
+sign.update('apple');
+
+// 注意 這裡是用私鑰 簽名   如果公鑰會出現錯誤
+var res = sign.sign(privateKey, 'hex');
+
+var verify = crypto.createVerify('dsaWithSHA1');
+verify.update('apple');
+
+var rst = verify.verify(publicKey, res, "hex");
+
+console.log(rst);  // Prints success. means the key pair works.
+```
+
+
+
+
+
