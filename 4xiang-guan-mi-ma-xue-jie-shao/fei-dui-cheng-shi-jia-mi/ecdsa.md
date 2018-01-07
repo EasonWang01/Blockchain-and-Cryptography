@@ -36,7 +36,5 @@ openssl ecparam -list_curves
 
 # ECDSA
 
-為DSA結合ECC橢圓曲線的簽名驗證演算法。
-
-
+為DSA結合ECC橢圓曲線的簽名驗證演算法。ECDSA運作時會先把明文經過Hash，例如SHA
 
