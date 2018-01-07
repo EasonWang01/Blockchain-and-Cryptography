@@ -36,7 +36,20 @@ openssl ecparam -list_curves
 
 #### 安全的參數
 
-美國國家標準技術局\(NIST\)在FIPS 186-3 標準文件裡推薦數組橢圓曲線參數
+有以下八種常用標準。
+
+```
+ANSI X9.62     (1999).
+IEEE P1363     (2000).
+SEC 2          (2000).
+NIST FIPS 186-2(2000).
+ANSI X9.63     (2001).
+Brainpool      (2005).
+NSA Suite B    (2005).
+ANSSI FRP256V1 (2011).
+```
+
+
 
 # ECDSA
 
