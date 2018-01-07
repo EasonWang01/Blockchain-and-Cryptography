@@ -171,12 +171,10 @@ for (var i = 0; i < 80; i += 1) {
 
 #### 
 
-#### \# Full Code
+#### 完整程式碼
 
 ```js
-'use strict'
-
-var util = require('util');
+const util = require('util');
 
 var ARRAY16 = new Array(16)
 
@@ -391,6 +389,8 @@ function fn5 (a, b, c, d, e, m, k, s) {
 
 console.log(new RIPEMD160().update('abc').digest('hex'))
 ```
+
+> 參考至https://www.esat.kuleuven.be/cosic/publications/article-317.pdf
 
 
 
