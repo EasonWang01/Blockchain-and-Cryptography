@@ -4,8 +4,6 @@
 
 AES和Rijndael加密法並不完全一樣（雖然在實際應用中兩者可以互換），因為Rijndael加密法可以支援更大範圍的區塊和金鑰長度：AES的區塊長度固定為128位元，金鑰長度則可以是128，192或256位元；而Rijndael使用的金鑰和區塊長度均可以是128，192或256位元。
 
-
-
 其加密方法主要包含四個步驟
 
 ```
@@ -15,7 +13,7 @@ AES和Rijndael加密法並不完全一樣（雖然在實際應用中兩者可以
 4. MixColumns: 在MixColumns步驟中，每個直行都在modulo {\displaystyle x^{4}+1} x^4+1之下，和一個固定多項式c(x)作乘法。
 ```
 
-> 以上參考至: https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard
+> 以上參考至: [https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 
 #### AES-256 範例
 
@@ -131,6 +129,19 @@ console.log(decrypt(encrypt("test")))
 > 其他Node.js的相關範例可參考
 >
 > [https://github.com/nodejs/node-v0.x-archive/blob/master/test/simple/test-crypto-authenticated.js\#L44-L64](https://github.com/nodejs/node-v0.x-archive/blob/master/test/simple/test-crypto-authenticated.js#L44-L64)
+
+# OpenSSL範例
+
+```
+產生檔案
+echo test > file.txt
+
+加密(執行後會要求輸入密碼)
+openssl enc -aes-256-cbc -salt -in file.txt -out file.txt.enc
+
+解密(執行後會要求輸入剛才加密的密碼)
+openssl enc -aes-256-cbc -d -in file.txt.enc -out result.txt
+```
 
 
 
