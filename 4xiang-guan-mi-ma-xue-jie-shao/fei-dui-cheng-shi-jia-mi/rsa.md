@@ -291,7 +291,15 @@ output = verify.verify(public_key, signature, 'hex');
 console.log(output)
 ```
 
-金鑰格式
+
+
+
+
+# 相關格式
+
+---
+
+公鑰格式
 
 ```
 1. pkcs1 
@@ -300,7 +308,12 @@ console.log(output)
 2. pkcs8
 公鑰開頭為 '-----BEGIN PUBLIC KEY-----' 而私鑰開頭為 '-----BEGIN PRIVATE KEY-----' 
 
+其他的公鑰加密標準可參考：https://en.wikipedia.org/wiki/PKCS
+```
 
+編碼格式
+
+```
 DER (Distinguished Encoding Rules)：
 二進位內容，屬於 ASN.1 制定的編碼之一
 
