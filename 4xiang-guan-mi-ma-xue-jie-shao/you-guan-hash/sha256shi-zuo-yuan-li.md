@@ -26,52 +26,45 @@
 
 ```
 原理: 
-Python:  
-hex(int(math.modf(math.sqrt(2))[0]*(1<<32)))
 
-Javascript: 
-先取Math.sqrt(2)的小數，然後乘上2 ** 32，之後轉為16進位，然後取小數前面部分  
-範例: ((0.4142135623730951 * (2**32)).toString(16)).substring(0,8)
+先取Math.sqrt(n)的小數，然後乘上2 ** 32，之後轉為16進位，然後取小數前面部分
+其中math.sqrt(n) n為最小的八個質數 
+
+範例: (Math.sqrt(2) % 1 * (2**32)).toString(16).substring(0,8)
 
 
 H(0)
 1 = 6a09e667            
-
+(Math.sqrt(2) % 1 * (2**32)).toString(16).substring(0,8)
 
 H(0)
 2 = bb67ae85
-先進入到python命令列，然後輸入import math
-hex(int(math.modf(math.sqrt(3))[0]*(1<<32)))
+(Math.sqrt(3) % 1 * (2**32)).toString(16).substring(0,8)
 
 H(0)
 3 = 3c6ef372
-hex(int(math.modf(math.sqrt(5))[0]*(1<<32)))
+(Math.sqrt(5) % 1 * (2**32)).toString(16).substring(0,8)
 
 H(0)
 4 = a54ff53a
-hex(int(math.modf(math.sqrt(7))[0]*(1<<32)))
+(Math.sqrt(7) % 1 * (2**32)).toString(16).substring(0,8)
 
 H(0)
 5 = 510e527f
-hex(int(math.modf(math.sqrt(11))[0]*(1<<32)))
+(Math.sqrt(11) % 1 * (2**32)).toString(16).substring(0,8)
 
 H(0)
 6 = 9b05688c
-hex(int(math.modf(math.sqrt(13))[0]*(1<<32)))
+(Math.sqrt(13) % 1 * (2**32)).toString(16).substring(0,8)
 
 H(0)
 7 = 1f83d9ab
-hex(int(math.modf(math.sqrt(17))[0]*(1<<32)))
+(Math.sqrt(17) % 1 * (2**32)).toString(16).substring(0,8)
 
 H(0)
 8 = 5be0cd19
-hex(int(math.modf(math.sqrt(19))[0]*(1<<32)))
-
-
-之後可以發現上面八個initial number中math.sqrt(x) x為最小的八個質數
+(Math.sqrt(19) % 1 * (2**32)).toString(16).substring(0,8)
 ```
-
-> 附註:1&lt;&lt;32在Python和Javascript行為會不同，可參考[https://stackoverflow.com/questions/45024682/different-behavior-for-1-32-compare-javascript-to-python](https://stackoverflow.com/questions/45024682/different-behavior-for-1-32-compare-javascript-to-python)
 
 ### 第三步
 
@@ -130,7 +123,7 @@ function gamma1 (x) {
 }
 ```
 
-# \#完整範例
+# 完整範例
 
 ```js
 const util = require('util');
