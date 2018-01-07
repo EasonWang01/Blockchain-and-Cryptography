@@ -38,3 +38,5 @@ openssl ecparam -list_curves
 
 為DSA結合ECC橢圓曲線的簽名驗證演算法。ECDSA運作時會先把明文經過Hash，例如使用SHA系列，先對明文進行Hash。
 
+而該Hash過的明文會再被切成長度與橢圓曲線級數之二進位相同長度字串。
+
