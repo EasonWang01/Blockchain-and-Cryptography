@@ -20,5 +20,21 @@ $$y^2 = x^3 + ax + b$$ 並且 $$4a^3 + 27b^2 $$不為0
 
 > [https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/reals-add.html](https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/reals-add.html![]%28/assets/螢幕快照)
 
-![](/assets/螢幕快照 2018-01-07 下午5.44.12.png)
+![](/assets/螢幕快照 2018-01-07 下午5.44.12.png)可用OpenSSL指令，列出可用ECC曲線
+
+```
+openssl ecparam -list_curves
+```
+
+#### 求曲線上的點
+
+假設，質數體為GF\(5\)且橢圓曲線公式 $$y^2 = x^3 + x +1$$
+
+其上的點 x , y 為滿足$$y^2 $$ % 5 = \( $$ x^3 + x +1$$ \)% 5之值
+
+> 這個橢圓曲線上的點，除無限遠點∞外， 另有8個點： \(0,1\), \(0,4\), \(2,1\), \(2,4\), \(3,1\), \(3,4\), \(4,3\), \(4,2\) 。 因為共有9點，所以此曲線的級數\(order\)為9。
+
+
+
+
 
