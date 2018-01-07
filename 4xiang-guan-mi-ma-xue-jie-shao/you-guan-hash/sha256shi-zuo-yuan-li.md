@@ -338,8 +338,8 @@ console.log(hashString)
 
 ```
 var crypto = require('crypto');
-let a = crypto.createHash('sha256').update('test').digest()
-console.log(a.toString('hex'))
+let result = crypto.createHash('sha256').update('test').digest('hex')
+console.log(result)
 ```
 
 參考資料：
