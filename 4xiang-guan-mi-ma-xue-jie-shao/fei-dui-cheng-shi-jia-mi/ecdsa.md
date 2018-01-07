@@ -49,5 +49,19 @@ openssl ecparam -list_curves
 > n 為橢圓曲線的級數
 ```
 
+2.
+
+```
+計算P = k * G(x,y)
+G(x, y) 為之前挑選的基點(Base point)
+```
+
+3.
+
+```
+計算r，r為P之x座標 mod n. 
+> 如果算出來r為0，則回到第一步重新選一個k
+```
+
 
 
