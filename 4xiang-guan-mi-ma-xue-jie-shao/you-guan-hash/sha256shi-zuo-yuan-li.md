@@ -1,7 +1,5 @@
 # SHA256實作原理
 
-
-
 ### 第一步:
 
 ```
@@ -30,7 +28,7 @@
 原理: 
 Python:  
 hex(int(math.modf(math.sqrt(2))[0]*(1<<32)))
-     
+
 Javascript: 
 先取Math.sqrt(2)的小數，然後乘上2 ** 32，之後轉為16進位，然後取小數前面部分  
 範例: ((0.4142135623730951 * (2**32)).toString(16)).substring(0,8)
@@ -73,32 +71,25 @@ hex(int(math.modf(math.sqrt(19))[0]*(1<<32)))
 之後可以發現上面八個initial number中math.sqrt(x) x為最小的八個質數
 ```
 
-> 附註:1&lt;&lt;32在python和js行為會不同，可參考[https://stackoverflow.com/questions/45024682/different-behavior-for-1-32-compare-javascript-to-python](https://stackoverflow.com/questions/45024682/different-behavior-for-1-32-compare-javascript-to-python)
+> 附註:1&lt;&lt;32在Python和Javascript行為會不同，可參考[https://stackoverflow.com/questions/45024682/different-behavior-for-1-32-compare-javascript-to-python](https://stackoverflow.com/questions/45024682/different-behavior-for-1-32-compare-javascript-to-python)
 
-# \#第三步
+### 第三步
 
 64個固定k值
 
 ![](/assets/4587.png)![](/assets/99a8531e-ec2c-4dd3-969d-5eb3198422b2.png)
 
 ```
-原理: 用math cube root的方法找首64個質數
+原理: 用Math cube root的方法找首64個質數
 
-以下用Python為例:
+(Math.cbrt(2) * (2**32)).toString(16).substring(1,9)
+"428a2f98"
 
-(先定義cube方法，意思即為開三次方根，js可直接用Math.cbrt())
-def cube(x):
-    if 0<=x: return x**(1./3.)
-    return -(-x)**(1./3.)
+(Math.cbrt(3) * (2**32)).toString(16).substring(1,9)
+"71374491"
 
-
--------------------------------------------------------------    
-
- hex(int(math.modf(cube(2))[0]*(1<<32)))       //0x428a2f98
-
- hex(int(math.modf(cube(3))[0]*(1<<32)))       //0x71374491
-
- ...
+(Math.cbrt(5) * (2**32)).toString(16).substring(1,9)
+"b5c0fbcf"
 ```
 
 # \#第四步:
@@ -354,11 +345,9 @@ console.log(a.toString('hex'))
 
 參考資料：
 
-> http://www.iwar.org.uk/comsec/resources/cipher/sha256-384-512.pdf
+> [http://www.iwar.org.uk/comsec/resources/cipher/sha256-384-512.pdf](http://www.iwar.org.uk/comsec/resources/cipher/sha256-384-512.pdf)
 
 # 
-
-
 
 
 
