@@ -1,6 +1,6 @@
 # ECDSA
 
-有三個類似名詞為**ECC、ECDH、ECDSA，第一個是**Elliptic Curve Cryptography的縮寫，而後面兩個都是基於ECC的加密演算法
+有三個類似名詞為**ECC、ECDH、ECDSA，**第一個是Elliptic Curve Cryptography的縮寫，而後面兩個都是基於ECC的加密演算法
 
 ```
 （1）相同密鑰長度下，安全性能更高，如160bits的ECC密鑰已經與1024bits之RSA、DSA有相同的安全強度。
@@ -10,5 +10,7 @@
 
 > ECDSA和ECDH產生公私鑰的方式都相同
 
+在數學上，橢圓曲線被定義為
 
+$$y^2 = x^3 + ax + b$$
 
