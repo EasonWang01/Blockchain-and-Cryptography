@@ -305,7 +305,9 @@ DER (Distinguished Encoding Rules)：
 二進位內容，屬於 ASN.1 制定的編碼之一
 
 PEM (Privacy-enhanced Electronic Mail)：
-為 DER 格式經過 BASE64 編碼後，通常會有 ----- BEGIN XXX ----- / ----- END XXX ----- 之類的東西包夾起來。由於 PEM 格式採用了 BASE64 編碼，文字都被編成常用的英文數字符號，方便於網路上傳送及複製 (如即時通訊、電子郵件等)。OpenSSL 預設產生的檔案都是 PEM 格式
+為 DER 格式經過 BASE64 編碼後，通常會有 ----- BEGIN XXX ----- / ----- END XXX ----- 之類的東西包夾起來。
+由於 PEM 格式採用了 BASE64 編碼，文字都被編成常用的英文數字符號，方便於網路上傳送及複製 (如即時通訊、電子郵件等)。
+OpenSSL 預設產生的檔案都是 PEM 格式。
 ```
 
 
