@@ -12,24 +12,22 @@
 
 ![](/assets/c29ae002-011b-4247-8fd0-c23eea97fd12.png)![](/assets/5.png)
 
-## 步驟二: 
+## 步驟二:
 
 #### 然後加上hash時會用到的constant
 
-#### 1.
+![](/assets/3b07ddde-2e08-480e-8aa5-4aea53c98c9f.png)
 
-![](/assets/258.png)
+#### 將其分為hl與hr
 
 ```js
-var hl = [0x00000000, 0x5a827999, 0x6ed9eba1, 0x8f1bbcdc, 0xa953fd4e]
-var hr = [0x50a28be6, 0x5c4dd124, 0x6d703ef3, 0x7a6d76e9, 0x00000000]
+const hl = [0x00000000, 0x5a827999, 0x6ed9eba1, 0x8f1bbcdc, 0xa953fd4e];
+const hr = [0x50a28be6, 0x5c4dd124, 0x6d703ef3, 0x7a6d76e9, 0x00000000];
 ```
 
-> Ex:  對照上圖最右側公式     \(2\*\*30 \* \(Math.sqrt\(2\)\)\).toString\(16\)       回傳    "5a827999.fcef34"
+> 對照上圖最右側公式     \(2 \*\* 30 \* \(Math.sqrt\(2\)\)\).toString\(16\).substring\(0,8\)   回傳    "5a827999"
 
-#### 2.
-
-![](/assets/9784.png)
+#### 2.![](/assets/9784.png)
 
 寫成JS
 
@@ -389,8 +387,6 @@ function fn5 (a, b, c, d, e, m, k, s) {
 
 console.log(new RIPEMD160().update('abc').digest('hex'))
 ```
-
-
 
 
 
