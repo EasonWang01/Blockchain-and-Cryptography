@@ -294,18 +294,12 @@ console.log(output)
 金鑰格式
 
 ```
-Format string composed of several parts: scheme-[key_type]-[output_type]
+1. pkcs1 
+公鑰開頭為 '-----BEGIN RSA PUBLIC KEY-----' 而私鑰開頭為 '-----BEGIN RSA PRIVATE KEY-----' 
 
-Scheme — NodeRSA supports multiple format schemes for import/export keys:
+2. pkcs8
+公鑰開頭為 '-----BEGIN PUBLIC KEY-----' 而私鑰開頭為 '-----BEGIN PRIVATE KEY-----' 
 
-'pkcs1' — public key starts from '-----BEGIN RSA PUBLIC KEY-----' header and private key starts from '-----BEGIN RSA PRIVATE KEY-----' header
-'pkcs8' — public key starts from '-----BEGIN PUBLIC KEY-----' header and private key starts from '-----BEGIN PRIVATE KEY-----' header
-'components' — use it for import/export key from/to raw components (see example below). For private key, importing data should contain all private key components, for public key: only public exponent (e) and modulus (n). All components (except e) should be Buffer, e could be Buffer or just normal Number.
-Key type — can be 'private' or 'public'. Default 'private'
-Output type — can be:
-
-'pem' — Base64 encoded string with header and footer. Used by default.
-'der' — Binary encoded key data.
 
 DER (Distinguished Encoding Rules)：
 二進位內容，屬於 ASN.1 制定的編碼之一
