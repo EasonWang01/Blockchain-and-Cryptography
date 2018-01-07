@@ -61,11 +61,9 @@ DSA 的安全性是基於整數有限域離散對數之難題。
 
 如果算出之 v = r 則驗證成功。
 
-
-
 # 實際應用
 
-# 簽章過程\(使用OpenSSL\)
+# 使用OpenSSL
 
 > 查看相關指令
 
@@ -73,15 +71,15 @@ DSA 的安全性是基於整數有限域離散對數之難題。
 openssl gendsa
 ```
 
-1. 產生一個1024bits的參數檔案
+1.產生一個1024bits的參數檔案
 
 ```
 openssl dsaparam -out dsa_param.pem 1024
 ```
 
-![](/assets/dsa01.png)
+2.從剛才的參數檔案產生一個private key 並且用AES-128之加密也可用AES-192或AES-256
 
-2.從剛才的參數檔案產生一個private key 並且用AES-128之password protect  也可用aes-192或aes-256
+> 密碼長度至少四位數
 
 ```
 openssl gendsa -out dsa_privatekey.pem -aes128 dsa_param.pem
@@ -100,10 +98,10 @@ openssl dsa -in dsa_privatekey.pem -pubout -out dsa_publickey.pem
 4.之後我們新增一個我們要用來簽章的文件 ，並且在裡面寫一點字
 
 ```
-vim document.txt
+echo test > document.txt
 ```
 
-然後用私鑰對文件簽章產生一個sig
+然後用私鑰對文件簽章產生一個sig檔案
 
 ```
 openssl dgst -dss1 -sign dsa_privatekey.pem -out document.sig document.txt
@@ -143,8 +141,6 @@ var rst = verify.verify(publicKey, res, "hex");
 
 console.log(rst);  // Prints success. means the key pair works.
 ```
-
-
 
 
 
