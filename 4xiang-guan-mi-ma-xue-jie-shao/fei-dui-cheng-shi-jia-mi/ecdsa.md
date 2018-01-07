@@ -49,7 +49,13 @@ NSA Suite B    (2005).
 ANSSI FRP256V1 (2011).
 ```
 
+d
 
+
+
+
+
+> 參考至：https://safecurves.cr.yp.to/
 
 # ECDSA
 
