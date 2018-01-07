@@ -48,7 +48,7 @@ openssl ecparam -list_curves
 其中n - 1 ≥ k ≥ 1 ，n 為橢圓曲線的級數
 ```
 
-2.  計算P
+2. 計算P
 
 ```
 P = k * G(x,y)
@@ -68,12 +68,10 @@ r 為 P 之 x 座標 mod n.
 
 $$s = k^-1 (h(M) + dr) $$ mod n
 
-> h\(M\)為剛才Hash過並切過\(**truncated**\)的訊息之二進位整數  
-> d為私鑰
->
+> 1. h\(M\)為剛才Hash過並切過\(**truncated**\)的訊息之二進位整數 2. d為私鑰
 > 也就是計算： \(k的負一次方 mod n\)  \* \(\(h\(M\) + dr\) mod n\)
 
-而其簽章就是\(r, s\)
+而產生出之簽章為 \(r, s\)
 
 #### 驗證步驟：
 
