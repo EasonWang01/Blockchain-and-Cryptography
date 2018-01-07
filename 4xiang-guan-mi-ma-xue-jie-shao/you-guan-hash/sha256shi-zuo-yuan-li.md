@@ -125,6 +125,12 @@ function gamma1 (x) {
 
 # 完整範例
 
+> 需要先安裝big-integer模組
+
+```
+npm install big-integer
+```
+
 ```js
 const util = require('util');
 var bigInt = require("big-integer");
