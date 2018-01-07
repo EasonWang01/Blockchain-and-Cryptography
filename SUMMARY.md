@@ -35,6 +35,7 @@
 * [4.相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
   * [有關Hash](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash.md)
     * [bcrypt、PBKDF2、scrypt、Argon2](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash/bcryptpbkdf2scryptargon2.md)
+    * [SHA256實作原理](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash/sha256shi-zuo-yuan-li.md)
   * [對稱式加密](4xiang-guan-mi-ma-xue-jie-shao/dui-cheng-shi-jia-mi.md)
     * [AES](4xiang-guan-mi-ma-xue-jie-shao/dui-cheng-shi-jia-mi/aes.md)
     * [Triple-DES](4xiang-guan-mi-ma-xue-jie-shao/dui-cheng-shi-jia-mi/triple-des.md)
