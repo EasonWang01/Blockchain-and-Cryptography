@@ -12,5 +12,21 @@
 
 在數學上，橢圓曲線被定義為
 
-$$y^2 = x^3 + ax + b$$
+$$y^2 = x^3 + ax + b$$ 並且 $$4a^3 + 27b^2 $$不為0
+
+> 第二個條件是為了避免出現 \[singular curves\]\(https://en.wikipedia.org/wiki/Singularity\_\(mathematics\)\)
+
+可利用以下網站來模擬橢圓曲線，並調整參數
+
+> https://cdn.rawgit.com/andreacorbellini/ecc/920b29a/interactive/reals-add.html![](/assets/螢幕快照 2018-01-07 下午5.44.12.png)
+
+![](/assets/螢幕快照 2018-01-07 下午5.44.12.png)
+
+![](/assets/螢幕快照 2018-01-07 下午5.44.12.png)
+
+![](/assets/螢幕快照 2018-01-07 下午5.44.12.png)
+
+
+
+
 
