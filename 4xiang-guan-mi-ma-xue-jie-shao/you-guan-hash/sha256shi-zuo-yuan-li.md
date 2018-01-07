@@ -337,7 +337,7 @@ console.log(hashString)
 使用Node.js的crypto模組進行驗證
 
 ```
-var crypto = require('crypto');
+const crypto = require('crypto');
 let result = crypto.createHash('sha256').update('test').digest('hex')
 console.log(result)
 ```
