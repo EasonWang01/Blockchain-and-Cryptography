@@ -49,13 +49,19 @@ NSA Suite B    (2005).
 ANSSI FRP256V1 (2011).
 ```
 
-d
+> 這些定義出的曲線參數可以確保 **elliptic-curve discrete-logarithm problem**\(ECDLP\) 是維持困難的。
+>
+> ECDLP問題之難度為假定給一個使用者的公開金鑰，要推算出其私密金鑰之難度。
 
+範例:  SEC2 推薦之secp256k1之曲線參數
 
+![](/assets/4534.png)
 
-
-
-> 參考至：https://safecurves.cr.yp.to/
+> 參考至：
+>
+> [https://safecurves.cr.yp.to/](https://safecurves.cr.yp.to/)
+>
+> http://www.secg.org/sec2-v2.pdf
 
 # ECDSA
 
