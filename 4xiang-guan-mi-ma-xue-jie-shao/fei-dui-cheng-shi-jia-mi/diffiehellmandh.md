@@ -66,14 +66,64 @@ console.log(aliceSecret.toString('hex') === bobSecret.toString('hex'));
 1.產生 DH 參數檔案
 
 ```
-openssl genpkey -genparam -algorithm DH -out dhp.pem 
+openssl genpkey -genparam -algorithm DH -out dhp.pem
 ```
 
-2.從參數檔案產生私鑰
+2.
+
+從參數檔案產生私鑰A
 
 ```
-openssl genpkey -paramfile dhp.pem -out private_key.pem
+openssl genpkey -paramfile dhp.pem -out private_keyA.pem
 ```
+
+產生私鑰B
+
+```
+openssl genpkey -paramfile dhp.pem -out private_keyB.pem
+```
+
+3.
+
+產生A 的公鑰
+
+```
+openssl pkey -in private_keyA.pem -pubout -out dhpubA.pem
+```
+
+產生B 的公鑰
+
+```
+openssl pkey -in private_keyB.pem -pubout -out dhpubB.pem
+```
+
+4.
+
+產生共同Secret
+
+A之Secret
+
+```
+openssl pkeyutl -derive -inkey private_keyA.pem -peerkey dhpubB.pem -out secretA.bin
+```
+
+B之Secret
+
+```
+openssl pkeyutl -derive -inkey private_keyB.pem -peerkey dhpubA.pem -out secretB.bin
+```
+
+5.
+
+最後，比較兩個產生出的Secret是否相同
+
+```
+cmp secretA.bin secretB.bin
+```
+
+> cpm指令如果兩檔案相同就不會有輸出。
+
+> 我們可以用 `xxd` 指令來查看二進位檔:![](/assets/93.png)可發現兩者產生之Secret相同
 
 
 
