@@ -50,6 +50,7 @@
     * [ECDSA](4xiang-guan-mi-ma-xue-jie-shao/fei-dui-cheng-shi-jia-mi/ecdsa.md)
       * [ECDSA程式實作](4xiang-guan-mi-ma-xue-jie-shao/fei-dui-cheng-shi-jia-mi/ecdsa/ecdsacheng-shi-shi-zuo.md)
     * [Diffie–Hellman\(DH\)](4xiang-guan-mi-ma-xue-jie-shao/fei-dui-cheng-shi-jia-mi/diffiehellmandh.md)
+    * [ECDH](4xiang-guan-mi-ma-xue-jie-shao/fei-dui-cheng-shi-jia-mi/ecdh.md)
 * 附錄
   * [環境安裝](huan-jing-an-zhuang.md)
 
