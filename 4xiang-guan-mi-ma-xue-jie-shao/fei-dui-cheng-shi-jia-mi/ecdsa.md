@@ -53,7 +53,9 @@ ANSSI FRP256V1 (2011).
 >
 > ECDLP問題之難度為假定給一個使用者的公開金鑰，要推算出其私密金鑰之難度。
 
-範例:  SEC2 推薦之secp256k1之曲線參數
+範例:  
+
+> 以下為SEC2 推薦之secp256k1之曲線參數，亦為比特幣私鑰與公鑰所使用的曲線，算出來後其結構可分為02或04 後面接上 x 在接上 y，其中02開頭為compress\(只有x座標前面接上02因為有了x就可以代數進去方程式求得y，可以減少字串長度\)。
 
 ![](/assets/4534.png)
 
@@ -61,7 +63,7 @@ ANSSI FRP256V1 (2011).
 >
 > [https://safecurves.cr.yp.to/](https://safecurves.cr.yp.to/)
 >
-> http://www.secg.org/sec2-v2.pdf
+> [http://www.secg.org/sec2-v2.pdf](http://www.secg.org/sec2-v2.pdf)
 
 # ECDSA
 
