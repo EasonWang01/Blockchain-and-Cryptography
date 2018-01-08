@@ -8,6 +8,8 @@
 
 ## OpenSSL
 
+https://www.openssl.org/
+
 可使用以下指令來查看OpenSSL版本
 
 ```
@@ -35,6 +37,8 @@ openssl speed
 ---
 
 ## Node.js Crypto模組
+
+https://nodejs.org/api/crypto.html
 
 可使用以下指令來查看Node.js crypto模組
 
