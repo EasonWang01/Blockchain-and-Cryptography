@@ -103,3 +103,38 @@ print
 
 ![](/assets/85.png)
 
+# 使用OpenSSL產生金鑰並用Node.js簽名與驗證
+
+1.首先我們使用以下指令產生私鑰
+
+```
+openssl ecparam -name secp256k1 -genkey -noout -out ec_private_key.pem
+```
+
+2.從私鑰來產生對應的公鑰
+
+```
+openssl ec -in ec_private_key.pem -pubout -out ec_public_key.pem
+```
+
+3.使用Node.js讀取私鑰與公鑰，並進行簽名與驗證
+
+```js
+const crypto = require('crypto');
+
+const fs = require('fs')
+const sign = crypto.createSign('ecdsa-with-SHA1');
+
+sign.update('test');
+const privateKey = fs.readFileSync('./ec_private_key.pem') // 讀取私鑰
+signature = sign.sign(privateKey, 'hex');
+
+const verify = crypto.createVerify('ecdsa-with-SHA1');
+verify.update('test');
+const publicKey = fs.readFileSync('./ec_public_key.pem') // 讀取公鑰
+
+console.log(verify.verify(publicKey, signature, 'hex'));
+```
+
+
+
