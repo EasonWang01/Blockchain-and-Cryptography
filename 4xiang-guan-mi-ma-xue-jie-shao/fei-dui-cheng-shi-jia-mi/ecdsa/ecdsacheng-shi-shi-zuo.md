@@ -148,7 +148,46 @@ console.log(verify.verify(publicKey, signature, 'hex'));
 npm install jsrsasign
 ```
 
-使用
+使用範例
+
+```js
+const r = require('jsrsasign');
+const ec = new r.ECDSA({ 'curve': 'secp256r1' });
+const keypair = ec.generateKeyPairHex(); // 產生公鑰與私鑰
+const prvhex = keypair.ecprvhex; // hexadecimal string of EC private key
+const pubhex = keypair.ecpubhex; // hexadecimal string of EC public key
+
+console.log("----Private Key:----")
+console.log(prvhex, "\n")
+console.log("----Public Key:-----")
+console.log(pubhex, "\n") 
+
+const message = "test";
+
+const sig = new r.Signature({ "alg": 'SHA256withECDSA' });
+sig.init({ d: prvhex, curve: 'secp256r1' });
+sig.updateString(message);
+const sigValueHex = sig.sign();   // 進行簽名
+console.log("----signature:-----")
+console.log(sigValueHex, "\n");
+console.log("-------------------")
+
+const sig_pub = new r.Signature({ "alg": 'SHA256withECDSA' });
+sig_pub.init({ xy: pubhex, curve: 'secp256r1' });
+sig_pub.updateString(message);
+const result = sig_pub.verify(sigValueHex);  // 進行驗證
+if (result) {
+    console.log("valid ECDSA signature");
+} else {
+    console.log("invalid ECDSA signature");
+}
+```
+
+之後可看到如下輸出:
+
+![](/assets/84.png)
+
+
 
 
 
@@ -158,5 +197,5 @@ npm install jsrsasign
 
 OpenSSL 指令列操作Elliptic\_Curve
 
-https://wiki.openssl.org/index.php/Command\_Line\_Elliptic\_Curve\_Operations
+[https://wiki.openssl.org/index.php/Command\_Line\_Elliptic\_Curve\_Operations](https://wiki.openssl.org/index.php/Command_Line_Elliptic_Curve_Operations)
 
