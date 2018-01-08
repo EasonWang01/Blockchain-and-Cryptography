@@ -17,7 +17,7 @@
 #### 數學例子
 
 ```
-小明與阿東 兩人協議好要使用 g = 5 以及 p = 23 
+小明與阿東 兩人協議好要使用 g = 5 以及 p = 23
 ```
 
 ```
@@ -37,4 +37,29 @@ B = (5 ** 15) % 23 = 19.
 ```
 
 ![](/assets/8342.png)
+
+# Node.js範例
+
+```js
+const crypto = require('crypto');
+
+// 產生 Alice 的鑰匙
+const alice = crypto.createDiffieHellman(1024);
+const aliceKey = alice.generateKeys();
+
+// 產生 Bob 的鑰匙
+const bob = crypto.createDiffieHellman(alice.getPrime(), alice.getGenerator());
+const bobKey = bob.generateKeys();
+
+// 計算兩人公同的密鑰
+const aliceSecret = alice.computeSecret(bobKey);
+const bobSecret = bob.computeSecret(aliceKey);
+
+// 驗證兩人之共享金鑰是否相同
+console.log(aliceSecret.toString('hex') === bobSecret.toString('hex'));
+
+// 可參考:https://nodejs.org/api/crypto.html#crypto_class_diffiehellman
+```
+
+
 
