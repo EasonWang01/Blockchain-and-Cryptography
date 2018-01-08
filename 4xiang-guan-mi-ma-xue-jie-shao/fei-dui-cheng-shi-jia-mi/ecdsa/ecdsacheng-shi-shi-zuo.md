@@ -111,11 +111,15 @@ print
 openssl ecparam -name secp256k1 -genkey -noout -out ec_private_key.pem
 ```
 
+> 產生之私鑰檔案內容如下，此檔案一般不可公開。![](/assets/n.png)
+
 2.從私鑰來產生對應的公鑰
 
 ```
 openssl ec -in ec_private_key.pem -pubout -out ec_public_key.pem
 ```
+
+> 產生公鑰檔案內容如下![](/assets/nn.png)
 
 3.使用Node.js讀取私鑰與公鑰，並進行簽名與驗證
 
@@ -138,7 +142,7 @@ console.log(verify.verify(publicKey, signature, 'hex'));
 
 # 使用Node.js第三模組產生公鑰與私鑰並簽名及驗證
 
-我們使用 jsrsasign 模組 https://kjur.github.io/jsrsasign/
+我們使用 jsrsasign 模組 [https://kjur.github.io/jsrsasign/](https://kjur.github.io/jsrsasign/)
 
 ```
 npm install jsrsasign
