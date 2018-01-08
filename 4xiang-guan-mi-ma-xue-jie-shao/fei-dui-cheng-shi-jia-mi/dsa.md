@@ -125,7 +125,6 @@ var crypto = require('crypto');
 
 var privateKey = {key: fs.readFileSync('./dsa_privatekey.pem'), passphrase: "填入剛才輸入的密碼"};     
 var publicKey = fs.readFileSync('./dsa_publickey.pem');
-var buffLen = 128;
 
 var sign = crypto.createSign('dsaWithSHA1');
 sign.update('apple');
