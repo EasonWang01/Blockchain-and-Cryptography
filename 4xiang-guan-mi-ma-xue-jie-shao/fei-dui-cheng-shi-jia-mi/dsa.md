@@ -71,6 +71,8 @@ DSA 的安全性是基於整數有限域離散對數之難題。
 openssl gendsa
 ```
 
+![](/assets/94.png)
+
 1.產生一個1024bits的參數檔案
 
 ```
@@ -113,7 +115,7 @@ openssl dgst -dss1 -sign dsa_privatekey.pem -out document.sig document.txt
 openssl dgst -dss1 -verify dsa_publickey.pem -signature document.sig document.txt
 ```
 
-![](/assets/dsa04.png)
+![](/assets/89a.png)
 
 ## 使用Node.js
 
