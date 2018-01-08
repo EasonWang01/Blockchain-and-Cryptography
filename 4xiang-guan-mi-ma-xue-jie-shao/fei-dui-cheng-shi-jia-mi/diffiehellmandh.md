@@ -61,5 +61,19 @@ console.log(aliceSecret.toString('hex') === bobSecret.toString('hex'));
 // 可參考:https://nodejs.org/api/crypto.html#crypto_class_diffiehellman
 ```
 
+# OpenSSL範例
+
+1.產生 DH 參數檔案
+
+```
+openssl genpkey -genparam -algorithm DH -out dhp.pem 
+```
+
+2.從參數檔案產生私鑰
+
+```
+openssl genpkey -paramfile dhp.pem -out private_key.pem
+```
+
 
 
