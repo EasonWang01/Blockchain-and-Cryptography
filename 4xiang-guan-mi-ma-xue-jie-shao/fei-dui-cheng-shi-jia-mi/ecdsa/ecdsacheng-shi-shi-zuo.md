@@ -136,5 +136,13 @@ const publicKey = fs.readFileSync('./ec_public_key.pem') // 讀取公鑰
 console.log(verify.verify(publicKey, signature, 'hex'));
 ```
 
+# 使用Node.js第三模組產生公鑰與私鑰並簽名及驗證
 
+我們使用 jsrsasign 模組 https://kjur.github.io/jsrsasign/
+
+```
+npm install jsrsasign
+```
+
+使用
 
