@@ -150,3 +150,13 @@ npm install jsrsasign
 
 使用
 
+
+
+
+
+---
+
+OpenSSL 指令列操作Elliptic\_Curve
+
+https://wiki.openssl.org/index.php/Command\_Line\_Elliptic\_Curve\_Operations
+
