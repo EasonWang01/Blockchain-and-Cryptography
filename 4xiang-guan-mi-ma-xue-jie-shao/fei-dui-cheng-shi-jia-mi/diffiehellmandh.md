@@ -12,7 +12,29 @@
 
 ![](/assets/80.png)
 
-> https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman\_key\_exchange
+> [https://en.wikipedia.org/wiki/Diffie–Hellman\_key\_exchange](https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange)
 
+#### 數學例子
 
+```
+小明與阿東 兩人協議好要使用 g = 5 以及 p = 23 
+```
+
+```
+小明選擇一個秘密整數 a = 6, 計算A = (g ** a) % p 然後傳給給阿東。
+A = (5 ** 6) % 23 = 8.
+
+阿東選擇一個秘密整數b=15, 計算B = (g ** b) % p 然後傳給小明。
+B = (5 ** 15) % 23 = 19.
+
+小明計算 K = (B ** a) % p
+(19 ** 6) % 23 = 2.
+
+阿東計算 K = (A ** b) % p
+(8 ** 15) % 23 = 2.
+
+最後兩人得到相同之結果，當作共享的密鑰。
+```
+
+![](/assets/8342.png)
 
