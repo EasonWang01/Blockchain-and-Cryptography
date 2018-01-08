@@ -77,10 +77,11 @@ xPublicKey, yPublicKey = EccMultiply(Gx, Gy, privKey)
 print "the private key (in base 10 format):"
 print privKey
 print
-print "the uncompressed public key (starts with '04' & is not the public address):"
-print "04", xPublicKey, yPublicKey
-
+print "the public key:"
+print  "xPublicKey:", xPublicKey
+print  "yPublicKey:", yPublicKey
 print
+
 print "******* Signature Generation *********"
 xRandSignPoint, yRandSignPoint = EccMultiply(Gx, Gy, RandNum)
 r = xRandSignPoint % N
@@ -100,5 +101,5 @@ print
 
 之後會顯示如下訊息
 
-![](/assets/37.png)
+![](/assets/85.png)
 
