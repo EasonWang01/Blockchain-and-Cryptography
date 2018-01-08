@@ -12,3 +12,7 @@
 
 ![](/assets/80.png)
 
+> https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman\_key\_exchange
+
+
+
