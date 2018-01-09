@@ -8,7 +8,7 @@
 
 ## OpenSSL
 
-https://www.openssl.org/
+[https://www.openssl.org/](https://www.openssl.org/)
 
 可使用以下指令來查看OpenSSL版本
 
@@ -34,11 +34,13 @@ openssl help
 openssl speed
 ```
 
----
+> 其他指令可參考:
+>
+> https://wiki.openssl.org/index.php/Command\_Line\_Utilities
 
 ## Node.js Crypto模組
 
-https://nodejs.org/api/crypto.html
+[https://nodejs.org/api/crypto.html](https://nodejs.org/api/crypto.html)
 
 可使用以下指令來查看Node.js crypto模組
 
