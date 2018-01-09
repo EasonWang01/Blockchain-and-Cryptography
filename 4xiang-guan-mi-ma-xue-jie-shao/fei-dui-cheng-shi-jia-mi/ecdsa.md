@@ -139,8 +139,11 @@ L = (u1 * G) + (u2 * Q) = L(x, y)
 
 ---
 
-```
+# 其他資料:
+
 ECC Cipher Suites for TLS
+
+```
 https://tools.ietf.org/html/rfc4492
 ```
 
