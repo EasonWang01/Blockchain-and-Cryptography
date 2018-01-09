@@ -12,7 +12,7 @@
 
 #### 原理步驟:
 
-1.阿東與小明先約定好，選擇一個共同的橢圓曲線 
+1.阿東與小明先約定好，選擇一個共同的橢圓曲線
 
 $$y^2 = (x^3 + ax + b)$$ mod p 之 a, b, p 之三個參數
 
@@ -21,8 +21,6 @@ $$y^2 = (x^3 + ax + b)$$ mod p 之 a, b, p 之三個參數
 3.阿東把自己的私密數字乘上公鑰後傳給小明，而小明把自己的私密數字乘上公鑰後傳給阿東
 
 4.雙方把各自拿到的對方結果再乘上自己的私密數字即可算出一個共享的密鑰。
-
-
 
 ## Node.js範例
 
@@ -48,5 +46,57 @@ console.log('Secret2: ', secret2.length, secret2);
 console.log(`兩者Secret相同: ${secret1 === secret2}`)
 ```
 
+# OpenSSL範例
 
+先查看可用曲線
+
+```
+openssl ecparam -list_curves
+```
+
+這邊我們使用secp521r1 曲線
+
+1.產生兩把不同的私鑰A與B
+
+```
+openssl ecparam -name secp521r1 -genkey -noout -out ec_private_keyA.pem
+
+openssl ecparam -name secp521r1 -genkey -noout -out ec_private_keyb.pem
+```
+
+2.從兩把私鑰產生兩把對應的公鑰
+
+```
+openssl ec -in ec_private_keyA.pem -pubout -out ec_public_keyA.pem
+
+openssl ec -in ec_private_keyB.pem -pubout -out ec_public_keyB.pem
+```
+
+3.
+
+產生共同Secret
+
+A之Secret
+
+```
+openssl pkeyutl -derive -inkey ec_private_keyA.pem -peerkey ec_public_keyB.pem -out secretA.bin
+```
+
+B之Secret
+
+```
+openssl pkeyutl -derive -inkey ec_private_keyB.pem -peerkey ec_public_keyA.pem -out secretB.bin
+```
+
+5.
+
+最後，比較兩個產生出的Secret是否相同
+
+```
+cmp secretA.bin secretB.bin
+```
+
+使用`xxd`指令查看
+
+![](/assets/832.png)
 

@@ -122,7 +122,7 @@ cmp secretA.bin secretB.bin
 ```
 
 > cpm指令如果兩檔案相同就不會有輸出。
-
+>
 > 我們可以用 `xxd` 指令來查看二進位檔:![](/assets/93.png)可發現兩者產生之Secret相同
 
 
