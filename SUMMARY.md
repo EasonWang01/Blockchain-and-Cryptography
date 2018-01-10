@@ -30,8 +30,9 @@
       * [Payload](2-10-p2pjie-dian-lian-xian/network-protocol/payload.md)
     * [附註](2-10-p2pjie-dian-lian-xian/fu-zhu.md)
 * [Ethereum 以太坊](3ethereum-yi-tai-5e6329.md)
-  * 以太坊歷史
+  * [以太坊歷史](3ethereum-yi-tai-5e6329/yi-tai-fang-li-shi.md)
   * [測試鏈](3ethereum-yi-tai-5e6329/ce-shi-lian.md)
+  * [智能合約1](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1.md)
 * [相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
   * [有關Hash](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash.md)
     * [bcrypt、PBKDF2、scrypt、Argon2](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash/bcryptpbkdf2scryptargon2.md)
