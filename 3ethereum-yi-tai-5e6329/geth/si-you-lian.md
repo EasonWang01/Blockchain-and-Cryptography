@@ -47,10 +47,36 @@ geth --datadir ./ethPrivate init ./ethPrivate/genesis.json
 之後回到Terminal，然後輸入如下指令啟動節點:
 
 ```
-geth --datadir ./ethPrivate --networkid 15 console
+geth --datadir ./ethPrivate --nodiscover --networkid 15 console
 ```
 
 然後輸入以下即可看到預先分配的Ether
 
 ![](/assets/903.png)
+
+## 新增節點
+
+我們接著初始化另外一個節點，我們先在另一個資料夾內創建一個帳戶
+
+```
+geth account new --datadir ./ethPrivate_01
+```
+
+然後把剛才的genesis.json存入該節點，之後一樣初始化區塊鏈
+
+```
+geth --datadir ./ethPrivate_01 init ./ethPrivate_01/genesis.json
+```
+
+啟動該節點
+
+```
+geth --datadir ./ethPrivate_01 --nodiscover --networkid 15 --ipcpath ./.ipc/geth1.ipc --port 30304 console
+```
+
+> 兩個節點要連線的關鍵點是genesis.json創世區塊要相同，以及networkid要相同
+>
+> 節點port以及IPC path或RPC port要不同
+
+
 
