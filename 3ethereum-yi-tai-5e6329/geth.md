@@ -8,7 +8,9 @@
 
 ![](/assets/432.png)或是可參考其他安裝方法，包含使用Docker執行Geth
 
-[https://geth.ethereum.org/install/!\[\]\(/assets/324.png](https://geth.ethereum.org/install/![]%28/assets/324.png)\)
+![](/assets/2.png)
+
+> 如果是自己從原始碼編譯，記得要將bin資料夾加入電腦的環境變數，才能從Terminal之直接執行Geth
 
 # 使用
 
@@ -83,7 +85,7 @@ geth help
 --rpcaddr <value>       設定 HTTP-RPC server 的監聽IP   
 --rpcport <value>       設定 HTTP-RPC server 的監聽PORT 預設為 8545
 --rpcapi <value>        設定可用的 HTTP-RPC interface  e.g. personal, admin
---rpccorsdomain <value> 設定可跨域存取的網址  
+--rpccorsdomain <value> 設定可跨域存取的網址
 ```
 
 -ws
@@ -95,7 +97,7 @@ geth help
 --wsaddr <value>         設定WS-RPC server listening interface (預設為: "localhost")
 --wsport <value>         設定WS-RPC server listening port (預設為: 8546)
 --wsapi <value>          設定可用的 WS-RPC interface  e.g. personal, admin
---wsorigins <value>      設定可跨域存取的網址 
+--wsorigins <value>      設定可跨域存取的網址
 ```
 
 --ipc
