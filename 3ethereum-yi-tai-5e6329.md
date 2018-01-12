@@ -87,19 +87,17 @@ Elixir語言的JSON-RPC client實作
 
 [https://github.com/exthereum/ethereumex](https://github.com/exthereum/ethereumex)
 
-
-
 ## 區塊鏈狀態
 
 可從此網站看到目前區塊鏈狀態
 
-https://ethstats.net/
+[https://ethstats.net/](https://ethstats.net/)
 
 ![](/assets/012.png)
 
 並且可以自行架設
 
-https://github.com/cubedro/eth-netstats
+https://github.com/cubedro/eth-net-intelligence-api
 
-
+[https://github.com/cubedro/eth-netstats](https://github.com/cubedro/eth-netstats)
 
