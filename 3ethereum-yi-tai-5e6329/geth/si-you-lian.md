@@ -122,7 +122,11 @@ miner.start(1)
 
 即可看到兩節點出現訊息
 
-![](/assets/201.png)
+![](/assets/201.png)可使用以下指令結束挖礦
+
+```
+miner.stop()
+```
 
 ## 發送交易
 
@@ -138,5 +142,11 @@ personal.unlockAccount(eth.accounts[0])
 eth.sendTransaction({from:eth.accounts[0], to: "0x0bc1d752dfe1e2595017738b5a944a4e7faa4b74", value: web3.toWei(0.05, "ether")})
 ```
 
+之後要進行挖礦，交易才能被納入區塊
 
+```
+miner.start(1)
+```
+
+![](/assets/9123.png)
 
