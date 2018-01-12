@@ -45,6 +45,24 @@ geth.exe --fast --cache 1024
 // --cache=1024 意思為設定電腦上的RAM保存區塊鏈上的資料最大快取為1024MB
 ```
 
+有關所有指令可參考:
+
+[https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options)
+
+或是輸入
+
+```
+geth help
+```
+
+## --testnet、--rinkeby 、--dev
+
+```
+--testnet      連線到 Ropsten network，為 proof-of-work 測試網路
+--rinkeby      連線到 Rinkeby network，為 proof-of-authority 測試網路
+--dev          連線到私有鏈，方便開發者快速開發，並且預設好一個帳號並擁有一定數量之Ether，為 proof-of-authority 測試網路
+```
+
 # 將metamask的帳號import到Geth
 
 先到metamask將private key取出
