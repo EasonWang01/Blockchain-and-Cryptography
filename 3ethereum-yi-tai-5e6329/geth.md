@@ -63,6 +63,66 @@ geth help
 --dev          連線到私有鏈，方便開發者快速開發，並且預設好一個帳號並擁有一定數量之Ether，為 proof-of-authority 測試網路
 ```
 
+## --syncmode
+
+> 以前的--fast與--light需要改為如下
+
+其影響主要為同步區塊鏈之總大小不同。
+
+```
+--syncmode "fast" 
+//  節點同步選項，可以選擇如 ("fast", "full", 或是 "light")
+```
+
+## --rpc、--ws、--ipc
+
+--rpc
+
+```
+--rpc                   啟用 HTTP-RPC server ，預設只會啟用IPC
+--rpcaddr <value>       設定 HTTP-RPC server 的監聽IP   
+--rpcport <value>       設定 HTTP-RPC server 的監聽PORT 預設為 8545
+--rpcapi <value>        設定可用的 HTTP-RPC interface  e.g. personal, admin
+--rpccorsdomain <value> 設定可跨域存取的網址  
+```
+
+-ws
+
+即為Websocket
+
+```
+--ws                     啟用 WS-RPC server
+--wsaddr <value>         設定WS-RPC server listening interface (預設為: "localhost")
+--wsport <value>         設定WS-RPC server listening port (預設為: 8546)
+--wsapi <value>          設定可用的 WS-RPC interface  e.g. personal, admin
+--wsorigins <value>      設定可跨域存取的網址 
+```
+
+--ipc
+
+```
+--ipcdisable          不啟用 IPC-RPC server ，預設為自動啟用
+--ipcpath             IPC socket/pipe 之檔案名稱
+```
+
+## --datadir、--keystore
+
+```
+--datadir <資料夾路徑>
+--keystore <資料夾路徑>
+--networkid <數字>
+```
+
+--datadir可以指定區塊鏈存放之資料夾位置，如果沒指定的話，預設位置如下
+
+```
+Mac: ~/Library/Ethereum
+Linux: ~/.ethereum
+Windows: %APPDATA%\Ethereum
+```
+
+--keystore指定帳戶之金鑰存放位置，預設在datadir資料夾內
+
 # 將metamask的帳號import到Geth
 
 先到metamask將private key取出
