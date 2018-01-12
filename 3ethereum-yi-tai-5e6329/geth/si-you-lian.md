@@ -104,5 +104,39 @@ admin.addPeer("enode://d86c9070b332da1f35690310f15dd728e1d65f749e61e00f1da412a86
 
 > 即可看到兩節點現在已經互相連線
 
+# 進行挖礦
+
+先設定要挖礦獎勵要到哪一個帳號
+
+```
+miner.setEtherbase(eth.accounts[0])
+```
+
+開始挖礦
+
+```
+miner.start(1)
+```
+
+> 後面數字代表用幾顆CPU核心來挖礦
+
+即可看到兩節點出現訊息
+
+![](/assets/201.png)
+
+## 發送交易
+
+需要先解鎖要發送交易的帳號
+
+```
+personal.unlockAccount(eth.accounts[0])
+```
+
+> to 的值記得要填入要轉帳過去的帳號
+
+```
+eth.sendTransaction({from:eth.accounts[0], to: "0x0bc1d752dfe1e2595017738b5a944a4e7faa4b74", value: web3.toWei(0.05, "ether")})
+```
+
 
 
