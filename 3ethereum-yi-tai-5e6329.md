@@ -21,7 +21,7 @@ Gas Limit: 多少單位個Gas( 通常不會變動 )
 
 The Ethereum Improvement Proposal簡稱為EIP，為以太坊社群為了讓以太坊區塊鏈更完善而提出的改進項目。
 
-https://github.com/ethereum/EIPs
+[https://github.com/ethereum/EIPs](https://github.com/ethereum/EIPs)
 
 ## 有關以太坊Implementations
 
@@ -86,4 +86,20 @@ haskell語言的實作
 Elixir語言的JSON-RPC client實作
 
 [https://github.com/exthereum/ethereumex](https://github.com/exthereum/ethereumex)
+
+
+
+## 區塊鏈狀態
+
+可從此網站看到目前區塊鏈狀態
+
+https://ethstats.net/
+
+![](/assets/012.png)
+
+並且可以自行架設
+
+https://github.com/cubedro/eth-netstats
+
+
 
