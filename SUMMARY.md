@@ -34,7 +34,7 @@
   * [以太坊錢包](3ethereum-yi-tai-5e6329/yi-tai-fang-qian-bao.md)
   * [測試鏈](3ethereum-yi-tai-5e6329/ce-shi-lian.md)
   * [Geth](3ethereum-yi-tai-5e6329/geth.md)
-    * 私有鏈
+    * [私有鏈](3ethereum-yi-tai-5e6329/geth/si-you-lian.md)
     * [測試鏈](3ethereum-yi-tai-5e6329/geth/ce-shi-lian.md)
   * [智能合約1](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1.md)
 * [相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
