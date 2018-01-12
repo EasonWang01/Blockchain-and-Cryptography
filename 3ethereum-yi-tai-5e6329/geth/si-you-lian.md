@@ -74,9 +74,11 @@ geth --datadir ./ethPrivate_01 init ./ethPrivate_01/genesis.json
 geth --datadir ./ethPrivate_01 --nodiscover --networkid 15 --ipcpath ./.ipc/geth1.ipc --port 30304 console
 ```
 
-> 兩個節點要連線的關鍵點是genesis.json創世區塊要相同，以及networkid要相同
+> 1.兩個節點要連線的關鍵點是genesis.json創世區塊要相同，以及networkid要相同。
 >
-> 節點port以及IPC path或RPC port要不同
+> 2.節點port以及IPC path或RPC port要不同。
+>
+> 3.--nodiscover 是避免節點自己尋找其他節點連線
 
 
 
