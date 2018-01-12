@@ -44,3 +44,13 @@ geth --datadir ./ethPrivate init ./ethPrivate/genesis.json
 
 ![](/assets/3453455.png)
 
+之後回到Terminal，然後輸入如下指令啟動節點:
+
+```
+geth --datadir ./ethPrivate --networkid 15 console
+```
+
+然後輸入以下即可看到預先分配的Ether
+
+![](/assets/903.png)
+
