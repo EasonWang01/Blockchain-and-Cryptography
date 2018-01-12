@@ -107,7 +107,7 @@ geth help
 --ipcpath             IPC socket/pipe 之檔案名稱
 ```
 
-> --port 可以改變port
+> --port 可以改變節點監聽之port
 >
 > Ethereum預設有**listener \(TCP\) **與 **discovery \(UDP**\) 監聽在**30303，可使用--port改變預設**
 
