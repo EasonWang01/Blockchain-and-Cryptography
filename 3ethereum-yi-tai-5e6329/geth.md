@@ -32,11 +32,13 @@ geth console
 
 ![](/assets/435345.png)
 
-
-
 # 將metamask的帳號import到Geth
 
-先到metamask將private key取出，然後進入到Geth指令介面後輸入如下：
+先到metamask將private key取出
+
+![](/assets/螢幕快照 2018-01-12 上午9.17.50.png)
+
+然後進入到Geth指令介面後輸入如下：
 
 ```
 personal.importRawKey("<Private Key>","<New Password>")
