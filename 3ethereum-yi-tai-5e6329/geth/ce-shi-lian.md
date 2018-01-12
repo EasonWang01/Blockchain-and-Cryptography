@@ -38,3 +38,5 @@ npm install -g ethereumjs-testrpc
 
 Testrpc提供一個快速的測試環境，啟動時會自動創建十組帳號且裡面都有一定量的Ether可以做測試、每次有交易後會自動挖礦，但是鏈的資料是暫存在記憶體而不是在檔案中，所以Testrpc關掉之後，所有區塊鏈的資料都會消失。
 
+![](/assets/0921.png)
+
