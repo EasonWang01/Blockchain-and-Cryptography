@@ -28,7 +28,19 @@ geth console
 
 之後再這邊可以輸入指令，指令列表可參考
 
-https://github.com/ethereum/go-ethereum/wiki/Management-APIs\#list-of-management-apis
+[https://github.com/ethereum/go-ethereum/wiki/Management-APIs\#list-of-management-apis](https://github.com/ethereum/go-ethereum/wiki/Management-APIs#list-of-management-apis)
 
 ![](/assets/435345.png)
+
+
+
+# 將metamask的帳號import到Geth
+
+先到metamask將private key取出，然後進入到Geth指令介面後輸入如下：
+
+```
+personal.importRawKey("<Private Key>","<New Password>")
+```
+
+
 
