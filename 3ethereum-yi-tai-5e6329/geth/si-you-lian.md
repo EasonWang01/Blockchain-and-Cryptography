@@ -80,5 +80,29 @@ geth --datadir ./ethPrivate_01 --nodiscover --networkid 15 --ipcpath ./.ipc/geth
 >
 > 3.--nodiscover 是避免節點自己尋找其他節點連線
 
+## 讓兩節點連線
+
+先在其中一個節點輸入
+
+```
+admin.nodeInfo
+```
+
+然後把enode部分複製
+
+![](/assets/900.png)在另外一個節點輸入admin.addPeer
+
+> 括號內填入剛才上面複製的enode URL括號內填入
+
+```
+admin.addPeer("enode://d86c9070b332da1f35690310f15dd728e1d65f749e61e00f1da412a86b483c6a536cbb19e64ef3fd43781d5802dbe3d05c83a882c342d2505fb6686514323326@[::]:30304?discport=0")
+```
+
+然後輸入admin.peers確認
+
+![](/assets/9021.png)
+
+> 即可看到兩節點現在已經互相連線
+
 
 
