@@ -24,7 +24,7 @@ genesis.json
         "eip155Block": 0,
         "eip158Block": 0
     },
-    "difficulty": "200000000",
+    "difficulty": "0x40",
     "gasLimit": "2100000",
     "alloc": {
         "4d079eff6af98e4980e7263012a42b08f5b2691b": { "balance": "300000" }
