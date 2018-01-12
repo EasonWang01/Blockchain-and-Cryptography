@@ -32,6 +32,19 @@ geth console
 
 ![](/assets/435345.png)
 
+# Geth啟動參數
+
+Geth再啟動時可以在指令上加上flag參數，讓Geth使用不同的狀態執行。
+
+e.g.
+
+```
+geth.exe --fast --cache 1024
+
+// --fast意思為只下載區塊鏈上的狀態而不下載所有區塊鏈上所有的資料，可以快速地進行同步，但只限於第一次同步時輸入
+// --cache=1024 意思為設定電腦上的RAM保存區塊鏈上的資料最大快取為1024MB
+```
+
 # 將metamask的帳號import到Geth
 
 先到metamask將private key取出
