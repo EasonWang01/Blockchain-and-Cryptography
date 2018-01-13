@@ -40,6 +40,7 @@
   * [智能合約](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1.md)
     * [solidity教學](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue.md)
       * [型別](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue/xing-bie.md)
+      * [內建全局變數](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue/nei-jian-quan-ju-bian-shu.md)
   * Dapp
     * [Web3](3ethereum-yi-tai-5e6329/web3.md)
 * [相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
