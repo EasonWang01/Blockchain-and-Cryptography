@@ -158,11 +158,15 @@ HAB~=SHA256(SHA256(HA + HB))
 
 # 共識機制介紹
 
-POW（Proof of Work，工作證明）是指獲得多少貨幣，取決於你挖礦貢獻的工作量，即為一般的礦機或顯卡挖礦
+POW（Proof of Work）
 
-POS（Proof of Stake，股權證明）根據你持有貨幣的量和時間進行利息分配的制度，在POS模式下，挖礦收益正比於你的幣齡，而與電腦的計算性能無關，幣齡即為持有乙太幣的時間
+是指獲得多少貨幣，取決於你挖礦貢獻的工作量，即為一般的礦機或顯卡挖礦。
+
+POS（Proof of Stake）
+
+根據持有貨幣的量和時間相乘之幣齡來決定下一個區塊由誰挖出，而每次由你挖出區塊後，你的幣齡就會歸零重新計算，而被清空之幣齡達到特定數量後也可獲得獎勵。
 
 PoA \( Proof of Authority\)  
 有別於PoW \(Proof-of-Work\)需要解數學難題來產生block，PoA是依靠預設好的Authority nodes，負責產生block。  
-可設定Authority node數量。可指定產生block的時間等
+可設定Authority node數量以及指定產生block的時間等等。
 
