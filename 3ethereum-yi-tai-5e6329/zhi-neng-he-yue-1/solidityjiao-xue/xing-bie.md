@@ -8,6 +8,12 @@
 
 1.balance、transfer
 
+> balance可以取得地址的餘額
+>
+> transfer可以傳送金額到該地址
+>
+> \(單位均為wei\)
+
 ```
 address myAddress1 = 0xdf6d9ad96b630e06325ceb9f7e23a86695997421;
 address myAddress2 = 0xdf6d9ad96b630e06325ceb9f7e23a86695997422;
@@ -16,7 +22,9 @@ if (myAddress1.balance < 10 && myAddress2.balance >= 10) myAddress1.transfer(10)
 // myAddress1.transfer(10); 意思為從合約傳送金額到myAddress1
 ```
 
+2.msg.sender
 
+預設為執行合約function的人之地址。
 
 #### 2.Key-value對應
 
