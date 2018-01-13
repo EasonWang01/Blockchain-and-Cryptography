@@ -86,6 +86,8 @@ revert():
 用來主動拋出錯誤，並回復狀態。
 ```
 
+> assert\(\)拋錯時會消耗使用的Gas但require\(\)不會消耗Gas
+>
 > 可參考：[http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require\#error-handling-assert-require-revert-and-exceptions](http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require#error-handling-assert-require-revert-and-exceptions)
 
 
