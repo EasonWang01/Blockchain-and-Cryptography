@@ -92,7 +92,7 @@ geth --datadir="./" console
 
 另一個Terminal輸入
 
-geth --datadir="./node1" --port 30304 console 
+geth --datadir="./node1" --port 30304 console
 ```
 
 11.
