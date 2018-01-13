@@ -5,7 +5,7 @@ wei, finney, szabo , ether
 可以直接使用，例如以下：
 
 ```
-if(msg.value != 1 ether) throw; 
+if(msg.value != 1 ether) throw;
 ```
 
 #### 2.時間單位
@@ -60,9 +60,15 @@ msg.sig (bytes4)
 msg.value (uint)
 回傳接收到的金額，單位為wei
 
-now (uint): current block timestamp (alias for block.timestamp)
-tx.gasprice (uint): gas price of the transaction
-tx.origin (address): sender of the transaction (full call chain)
+now (uint)
+回傳當下區塊的 timestamp (類似於block.timestamp)
+
+tx.gasprice (uint)
+回傳交易之 gas price
+
+tx.origin (address)
+回傳原始發送交易的人之地址，不建議使用。假設用户從合約A調用合約B，此時合約A的tx.origin 和 msg.sender 都是用戶。
+但是合約B :tx.origin 是用戶，但msg.sender為合約A.
 ```
 
 
