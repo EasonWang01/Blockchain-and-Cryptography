@@ -1,4 +1,4 @@
-# Puppeth CLI
+# Proof of Authority 與 Puppeth CLI
 
 Geth 在 1.6版本後新增了一個可以用互動式指令創建區塊鏈的工具，名為：Puppeth CLI。
 
@@ -33,7 +33,9 @@ geth --datadir ./eth_clique_test account new
 4. 部署相關服務元件
 ```
 
-1. 我們選擇第二個選項
+3.
+
+我們選擇第二個選項
 
 ![](/assets/螢幕快照 2018-01-13 上午9.17.16.png)
 
@@ -206,9 +208,7 @@ clique.discard("0xdf6d9ad96b630e06325ceb9f7e23a86695997422")
 
 之後他會從proposals列表移除。
 
-
-
 可以參考：
 
-https://github.com/ethereum/go-ethereum/blob/master/consensus/clique/api.go
+[https://github.com/ethereum/go-ethereum/blob/master/consensus/clique/api.go](https://github.com/ethereum/go-ethereum/blob/master/consensus/clique/api.go)
 
