@@ -30,6 +30,13 @@ ether (1000 finney)
 所以一單位Ether = 1000000000000000000 Wei
 ```
 
+> 後面講到web3 API後可用如下轉換
+>
+> ```
+> web3.toWei(1); 
+> web3.fromWei(1000000000000000000);
+> ```
+
 ## 改進未來Ethereum之Proposal
 
 The Ethereum Improvement Proposal簡稱為EIP，為以太坊社群為了讓以太坊區塊鏈更完善而提出的改進項目。
