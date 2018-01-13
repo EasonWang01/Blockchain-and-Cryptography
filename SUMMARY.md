@@ -36,7 +36,7 @@
   * [Geth](3ethereum-yi-tai-5e6329/geth.md)
     * [私有鏈](3ethereum-yi-tai-5e6329/geth/si-you-lian.md)
     * [開發鏈](3ethereum-yi-tai-5e6329/geth/ce-shi-lian.md)
-    * [Puppeth CLI](3ethereum-yi-tai-5e6329/geth/puppeth-cli.md)
+    * [POA與Puppeth CLI](3ethereum-yi-tai-5e6329/geth/puppeth-cli.md)
   * [智能合約](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1.md)
     * [solidity教學](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue.md)
   * Dapp
