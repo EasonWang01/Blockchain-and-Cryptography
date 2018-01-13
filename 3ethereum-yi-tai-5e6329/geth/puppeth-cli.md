@@ -157,5 +157,15 @@ WARN [01-13|10:51:37] Block sealing failed  err=unauthorized
 
 > 如果是認證的授權帳號，但是節點沒有跟任何其他節點連線，則miner.start\(1\)一樣不會有反應。
 
+15.
+
+我們可以把其他帳號一起加入POA認證列表
+
+```
+clique.propose("0xdf6d9ad96b630e06325ceb9f7e23a86695997421", true)
+```
+
+> 必須要在Etherbase本身是認證帳號的情況下才可以使用此指令，授權其他帳號加入認證帳號
+
 
 
