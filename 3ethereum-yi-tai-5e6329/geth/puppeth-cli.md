@@ -173,5 +173,9 @@ clique.propose("0xdf6d9ad96b630e06325ceb9f7e23a86695997421", true)
 
 > 如果輸入miner.start\(1\)後只產生null訊息，然後什麼事也沒發生，這時先輸入miner.stop\(\)，之後再試一次看看。
 
+## Clique相關指令
+
+![](/assets/螢幕快照 2018-01-13 上午11.22.13.png)
+
 
 
