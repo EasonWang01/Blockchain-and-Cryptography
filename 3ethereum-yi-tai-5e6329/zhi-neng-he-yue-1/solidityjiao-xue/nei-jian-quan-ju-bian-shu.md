@@ -71,5 +71,22 @@ tx.origin (address)
 但是合約B :tx.origin 是用戶，但msg.sender為合約A.
 ```
 
+> msg來源可以是合約或是用戶，如果一個合約被另一個合約調用則msg則會指向調用該合約的合約。
+
+#### 錯誤處理
+
+```
+assert(bool condition):
+throws if the condition is not met - to be used for internal errors.
+
+require(bool condition):
+throws if the condition is not met - to be used for errors in inputs or external components.
+
+revert():
+abort execution and revert state changes
+```
+
+> 可參考：http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require\#error-handling-assert-require-revert-and-exceptions
+
 
 
