@@ -2,11 +2,9 @@
 
 本章節將介紹撰寫智能合約的語言：Solidity
 
-http://solidity.readthedocs.io/en/develop/solidity-in-depth.html
+[http://solidity.readthedocs.io/en/develop/solidity-in-depth.html](http://solidity.readthedocs.io/en/develop/solidity-in-depth.html)
 
-我們可以使用Solidity網頁版IDE：https://remix.ethereum.org，進行測試與部屬。
-
-
+我們可以使用Solidity網頁版IDE：[https://remix.ethereum.org，進行測試與部屬。](https://remix.ethereum.org，進行測試與部屬。)
 
 #### 1.版本
 
@@ -37,9 +35,16 @@ import {symbol1 as alias, symbol2} from "filename";
 
 以上四種方式都可以。
 
+#### 4.註解
+
+```
+// ...
+/* ...  */
+```
+
+與Javascript類似，單行註解與多行註解。
+
 # 資料型別
-
-
 
 
 
