@@ -8,7 +8,24 @@ POA \(Proof of Authority\)在Parity的客戶端軟體也有實作，但和 go-et
 
 > go-ethereum版本其為Clique proof-of-authority consensus protocol
 
-![](/assets/螢幕快照 2018-01-13 上午8.49.18.png)
+
+
+1.
+
+進入後先輸入一個名稱![](/assets/螢幕快照 2018-01-13 上午8.49.18.png)2.
+
+然後選擇你要做的事
+
+![](/assets/螢幕快照 2018-01-13 上午9.12.31 1.png)
+
+分別為：
+
+```
+1. 顯示區塊鏈網路狀態
+2. 設定創世區塊
+3. 新增遠端節點
+4. 部署相關服務元件
+```
 
 
 
