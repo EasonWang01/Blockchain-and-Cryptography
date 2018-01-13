@@ -26,6 +26,16 @@ if (myAddress1.balance < 10 && myAddress2.balance >= 10) myAddress1.transfer(10)
 
 預設為執行合約function的人之地址。
 
+3.call
+
+呼叫特定合約的function
+
+```
+address nameReg = 0x72ba7d8e73fe8eb666ea66babc8116a41bfb10e2;
+nameReg.call.gas(1000000).value(1 ether)("register", "MyName");
+// 可以加入要提供的Gas以及Ether
+```
+
 #### 2.Key-value對應
 
 使用mapping 可產生一個類似Key-value對應的結構
