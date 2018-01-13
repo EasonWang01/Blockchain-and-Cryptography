@@ -44,7 +44,22 @@ import {symbol1 as alias, symbol2} from "filename";
 
 與Javascript類似，單行註解與多行註解。
 
-# 資料型別
+# 合約結構
+
+1.
+
+首先我們會把需要用到的全域變數宣告在最上面
+
+```js
+contract TestContract {
+    uint apple_num;
+    uint banana_num;  
+}
+```
+
+
+
+
 
 
 
