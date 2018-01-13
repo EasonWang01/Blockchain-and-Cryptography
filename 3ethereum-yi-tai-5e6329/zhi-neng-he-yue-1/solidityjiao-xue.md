@@ -44,9 +44,9 @@ import {symbol1 as alias, symbol2} from "filename";
 
 與Javascript類似，單行註解與多行註解。
 
-# 合約結構
+# 合約內容
 
-1.
+#### 1.宣告變數
 
 首先我們會把需要用到的全域變數宣告在最上面
 
@@ -57,7 +57,7 @@ contract TestContract {
 }
 ```
 
-2.
+#### 2.Function
 
 function寫法如下
 
@@ -73,9 +73,7 @@ function run(string person) public returns (uint step) {
 >
 > 3.要寫出returns後面為此function會回傳的值以及型別
 
-3.
-
-Function Modifiers
+#### 3.Modifiers
 
 如果有共用的邏輯我們可以把它寫成modifier讓許多function共用
 
@@ -96,7 +94,22 @@ function transferOwnership(address newOwner) onlyOwner {
 
 > \_ ; 的意思為擁有這個modifier的function會先跑完寫在 \_ ; 之前的東西才繼續該function
 
+#### 4.Events
 
+可以用來當特定事件發生時產生log，用來通知外界。
+
+```
+event newOffer(address sender_, uint amount); // Event
+```
+
+使用\(寫在function內\)
+
+```
+function bid() public payable {
+    // ...
+    newOffer(msg.sender, msg.value); // 觸發事件
+}
+```
 
 
 
