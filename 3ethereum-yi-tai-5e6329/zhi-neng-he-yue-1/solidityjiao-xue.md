@@ -57,7 +57,44 @@ contract TestContract {
 }
 ```
 
+2.
 
+function寫法如下
+
+```
+function run(string person) public returns (uint step) { 
+    // ...
+}
+```
+
+> 1.參數要包含型別
+>
+> 2.public為此function可被存取到的範圍，將在後面章節介紹
+>
+> 3.要寫出returns後面為此function會回傳的值以及型別
+
+3.
+
+Function Modifiers
+
+如果有共用的邏輯我們可以把它寫成modifier讓許多function共用
+
+```
+modifier onlyOwner {
+    require(msg.sender == owner);
+    _;
+}
+```
+
+用法
+
+```
+function transferOwnership(address newOwner) onlyOwner { 
+    owner = newOwner;
+}
+```
+
+> \_ ; 的意思為擁有這個modifier的function會先跑完寫在 \_ ; 之前的東西才繼續該function
 
 
 
