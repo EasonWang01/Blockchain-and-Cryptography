@@ -39,6 +39,7 @@
     * [POA與Puppeth CLI](3ethereum-yi-tai-5e6329/geth/puppeth-cli.md)
   * [智能合約](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1.md)
     * [solidity教學](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue.md)
+      * [型別](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue/xing-bie.md)
   * Dapp
     * [Web3](3ethereum-yi-tai-5e6329/web3.md)
 * [相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
