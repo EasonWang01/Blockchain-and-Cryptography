@@ -6,7 +6,7 @@
 
 具有如下方法可以使用
 
-1.balance、transfer、send
+1.balance、transfer
 
 ```
 address myAddress1 = 0xdf6d9ad96b630e06325ceb9f7e23a86695997421;
@@ -16,7 +16,7 @@ if (myAddress1.balance < 10 && myAddress2.balance >= 10) myAddress1.transfer(10)
 // myAddress1.transfer(10); 意思為從合約傳送金額到myAddress1
 ```
 
-> send類似於transfer，但send在執行失敗時會回傳false
+
 
 #### 2.Key-value對應
 
@@ -53,6 +53,19 @@ campaigns[campaignID] = Campaign(<address>, 100, 0, 0); // 使用Campaign(...)�
 
 Campaign storage c = campaigns[campaignID];  // 存取struct
 uint amount = c.amount;
+```
+
+#### 4.Enum
+
+```
+enum fruits{ Apple, Banana, Beef, Chicken}
+```
+
+使用
+
+```
+fruits.Apple //回傳 0
+fruits.Banana //回傳 1
 ```
 
 
