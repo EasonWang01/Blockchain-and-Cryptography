@@ -8,7 +8,7 @@ POA \(Proof of Authority\)在Parity的客戶端軟體也有實作，但和 go-et
 
 > go-ethereum版本其為Clique proof-of-authority consensus protocol
 >
-> 原始碼：https://github.com/ethereum/go-ethereum/blob/master/consensus/clique/clique.go
+> 原始碼：[https://github.com/ethereum/go-ethereum/blob/master/consensus/clique/clique.go](https://github.com/ethereum/go-ethereum/blob/master/consensus/clique/clique.go)
 
 開始前必須先擁有一個以太坊account，如果沒有可以如下新增
 
@@ -186,4 +186,29 @@ clique.propose("0xdf6d9ad96b630e06325ceb9f7e23a86695997421", true)
 2.clique.getSnapshot\(\)
 
 可以回傳目前clique的狀態![](/assets/螢幕快照 2018-01-13 上午11.31.50.png)
+
+3.clique.propose\("&lt;帳號&gt;", true\)
+
+對一個帳號提出提案，提案成功後會將該帳號加入授權列表。
+
+提案中的帳號會列在如下：
+
+![](/assets/螢幕快照 2018-01-13 上午11.43.19.png)
+
+4.clique.discard\("&lt;帳號&gt;"\)
+
+取消對某一個帳號的提案
+
+```
+範例：
+clique.discard("0xdf6d9ad96b630e06325ceb9f7e23a86695997422")
+```
+
+之後他會從proposals列表移除。
+
+
+
+可以參考：
+
+https://github.com/ethereum/go-ethereum/blob/master/consensus/clique/api.go
 
