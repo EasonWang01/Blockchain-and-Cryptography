@@ -77,16 +77,16 @@ tx.origin (address)
 
 ```
 assert(bool condition):
-throws if the condition is not met - to be used for internal errors.
+如果情況錯誤則拋出錯誤，通常用於判斷內部邏輯錯誤。
 
 require(bool condition):
-throws if the condition is not met - to be used for errors in inputs or external components.
+如果情況錯誤則拋出錯誤，通常用於判斷使用者輸入之參數，或是外部合約回傳過來的值。
 
 revert():
-abort execution and revert state changes
+用來主動拋出錯誤，並回復狀態。
 ```
 
-> 可參考：http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require\#error-handling-assert-require-revert-and-exceptions
+> 可參考：[http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require\#error-handling-assert-require-revert-and-exceptions](http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require#error-handling-assert-require-revert-and-exceptions)
 
 
 
