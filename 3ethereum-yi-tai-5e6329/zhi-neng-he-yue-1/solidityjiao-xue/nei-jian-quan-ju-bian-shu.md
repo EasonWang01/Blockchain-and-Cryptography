@@ -120,14 +120,17 @@ ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address):
 
 ```
 this (current contract’s type):
-指向當前合約
+指向當前合約，例如: this.balance
 
 selfdestruct(address recipient):
 把合約永久從區塊鏈上移除，並且把合約上的金額轉移給參數的地址
 
 suicide(address recipient):
-類似於selfdestruct
+類似於selfdestruct，但selfdestruct為新版本才有，至於改名字原因可參考：
+https://github.com/ethereum/EIPs/blob/master/EIPS/eip-6.md
 ```
+
+
 
 
 
