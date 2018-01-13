@@ -90,5 +90,33 @@ revert():
 >
 > 可參考：[http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require\#error-handling-assert-require-revert-and-exceptions](http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require#error-handling-assert-require-revert-and-exceptions)
 
+#### 數學與密碼學相關函式
+
+```
+addmod(uint x, uint y, uint k) returns (uint):
+計算 (x + y) % k 
+
+mulmod(uint x, uint y, uint k) returns (uint):
+計算 (x * y) % k
+
+keccak256(...) returns (bytes32):
+計算 Ethereum-SHA-3 (Keccak-256)之 hash，例如：keccak256(6382179)，keccak256(97, 98, 99)，逗號會自動串接
+
+sha256(...) returns (bytes32):
+計算 SHA-256 hash ，例如：sha256("abc")，sha256(11, 98, 99)，逗號會自動串接
+
+sha3(...) returns (bytes32):
+類似於 keccak256
+
+ripemd160(...) returns (bytes20):
+計算 RIPEMD-160 hash
+
+ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address):
+從簽章復原回adddress
+可參考：https://ethereum.stackexchange.com/questions/1777/workflow-on-signing-a-string-with-private-key-followed-by-signature-verificatio
+```
+
+
+
 
 
