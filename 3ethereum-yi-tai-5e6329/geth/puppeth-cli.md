@@ -7,6 +7,8 @@ Geth 在 1.6版本後新增了一個可以用互動式指令創建區塊鏈的�
 POA \(Proof of Authority\)在Parity的客戶端軟體也有實作，但和 go-ethereum兩者實作的方式稍微不同，有關go-ethereum版本的可參考：[https://github.com/ethereum/EIPs/issues/225](https://github.com/ethereum/EIPs/issues/225)
 
 > go-ethereum版本其為Clique proof-of-authority consensus protocol
+>
+> 原始碼：https://github.com/ethereum/go-ethereum/blob/master/consensus/clique/clique.go
 
 開始前必須先擁有一個以太坊account，如果沒有可以如下新增
 
@@ -177,5 +179,11 @@ clique.propose("0xdf6d9ad96b630e06325ceb9f7e23a86695997421", true)
 
 ![](/assets/螢幕快照 2018-01-13 上午11.22.13.png)
 
+1.clique.getSigners\(\)
 
+可以回傳目前被授權之帳號![](/assets/螢幕快照 2018-01-13 上午11.31.10.png)
+
+2.clique.getSnapshot\(\)
+
+可以回傳目前clique的狀態![](/assets/螢幕快照 2018-01-13 上午11.31.50.png)
 
