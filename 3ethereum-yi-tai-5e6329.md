@@ -17,6 +17,19 @@ Gas Price: 每單位Gas多少錢( 會變動 )
 Gas Limit: 多少單位個Gas( 通常不會變動 )
 ```
 
+以太幣單位
+
+```
+kwei  (1000 Wei)
+mwei  (1000 KWei)
+gwei  (1000 mwei)
+szabo (1000 gwei)
+finney(1000 szabo)
+ether (1000 finney)
+
+所以一單位Ether = 1000000000000000000 Wei
+```
+
 ## 改進未來Ethereum之Proposal
 
 The Ethereum Improvement Proposal簡稱為EIP，為以太坊社群為了讓以太坊區塊鏈更完善而提出的改進項目。
@@ -97,7 +110,7 @@ Elixir語言的JSON-RPC client實作
 
 並且可以自行架設
 
-https://github.com/cubedro/eth-net-intelligence-api
+[https://github.com/cubedro/eth-net-intelligence-api](https://github.com/cubedro/eth-net-intelligence-api)
 
 [https://github.com/cubedro/eth-netstats](https://github.com/cubedro/eth-netstats)
 
