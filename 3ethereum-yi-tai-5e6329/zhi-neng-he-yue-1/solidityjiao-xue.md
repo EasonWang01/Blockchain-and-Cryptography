@@ -69,9 +69,21 @@ function run(string person) public returns (uint step) {
 
 > 1.參數要包含型別
 >
-> 2.public為此function可被存取到的範圍，將在後面章節介紹
+> 2.public為此function可被存取到的範圍
 >
 > 3.要寫出returns後面為此function會回傳的值以及型別
+
+有關存取範圍可以有以下四種external, public, internal, private
+
+```
+external:  只可以給外面的contract使用，不可內部使用。
+
+public:    都可呼叫，為預設。
+
+internal:  跟private類似，但如果是繼承該contract的contract也可以使用。
+
+private:   只有同contract才可使用。
+```
 
 #### 3.Modifiers
 
@@ -99,7 +111,7 @@ function transferOwnership(address newOwner) onlyOwner {
 可以用來當特定事件發生時產生log，用來通知外界。
 
 ```
-event newOffer(address sender_, uint amount); // Event
+event NewOffer(address sender_, uint amount); // Event
 ```
 
 使用\(寫在function內\)
@@ -107,9 +119,13 @@ event newOffer(address sender_, uint amount); // Event
 ```
 function bid() public payable {
     // ...
-    newOffer(msg.sender, msg.value); // 觸發事件
+    NewOffer(msg.sender, msg.value); // 觸發事件
 }
 ```
+
+> 通常用大寫命名
+
+
 
 
 
