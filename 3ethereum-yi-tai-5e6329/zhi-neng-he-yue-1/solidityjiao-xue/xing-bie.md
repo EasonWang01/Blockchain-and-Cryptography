@@ -4,6 +4,17 @@
 
 為 20 byte，通常用來存放讀取之Ethereum address。
 
+具有如下方法可以使用
+
+1.balance、transfer
+
+```
+x = 0xdf6d9ad96b630e06325ceb9f7e23a86695997421;
+address myAddress = 0xdf6d9ad96b630e06325ceb9f7e23a86695997422;
+
+if (x.balance < 10 && myAddress.balance >= 10) x.transfer(10);
+```
+
 #### 2.Key-value對應
 
 使用mapping 可產生一個類似Key-value對應的結構
