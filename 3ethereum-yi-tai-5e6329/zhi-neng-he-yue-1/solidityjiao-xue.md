@@ -9,7 +9,7 @@
 #### 1.版本
 
 ```
-pragma solidity ^0.4.0;
+pragma solidity ^0.4.20;
 ```
 
 一開始在程式最上面會指定使用之版本。
