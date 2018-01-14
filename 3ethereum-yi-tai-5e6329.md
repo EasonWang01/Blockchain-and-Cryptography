@@ -37,6 +37,10 @@ ether (1000 finney)
 > web3.fromWei(1000000000000000000);
 > ```
 
+以太坊的挖礦算法名為：Ethash（Dagger-Hashimoto），會產生DAG（Dagger-part），是一個需求大量記憶體的演算法，可以用來抵抗特定專門挖礦的晶片。
+
+
+
 ## 改進未來Ethereum之Proposal
 
 The Ethereum Improvement Proposal簡稱為EIP，為以太坊社群為了讓以太坊區塊鏈更完善而提出的改進項目。
