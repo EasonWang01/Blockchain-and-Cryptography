@@ -76,9 +76,6 @@ http://populus.readthedocs.io/en/latest/
 Dapple
 http://dapple.readthedocs.io/en/master/
 
-Eris PM
-https://github.com/monax/monax
-
 Embark
 https://github.com/iurimatias/embark-framework
 
