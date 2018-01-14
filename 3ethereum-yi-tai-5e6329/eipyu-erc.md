@@ -11,5 +11,11 @@
 4.ERC
 ```
 
+其提案流程如下圖
+
+![](/assets/process.png)
+
+> https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md
+
 
 
