@@ -60,3 +60,31 @@ function toChecksumAddress (address) {
 
 有關以太坊上註冊域名Ethereum Name Service，類似於DNS。
 
+#### 4.ERC-190 \(Ethereum Smart Contract Packaging Standard\)
+
+有關智能合約的打包與編譯時的安全性與程式碼複用。
+
+目前列出符合此標準的將包含以下Ethereum 相關框架
+
+```
+Truffle
+http://truffleframework.com/
+
+Populus
+http://populus.readthedocs.io/en/latest/
+
+Dapple
+http://dapple.readthedocs.io/en/master/
+
+Eris PM
+https://github.com/monax/monax
+
+Embark
+https://github.com/iurimatias/embark-framework
+
+Browser Solidity
+https://github.com/ethereum/browser-solidity
+```
+
+
+
