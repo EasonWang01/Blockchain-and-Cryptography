@@ -39,7 +39,11 @@ ether (1000 finney)
 
 以太坊的挖礦算法名為：Ethash（Dagger-Hashimoto），會產生DAG（Dagger-part），是一個需求大量記憶體的演算法，可以用來抵抗特定專門挖礦的晶片。
 
+有關Dag可參考如下文章：
 
+> [https://github.com/ethereum/wiki/blob/master/Dagger-Hashimoto.md](https://github.com/ethereum/wiki/blob/master/Dagger-Hashimoto.md)
+>
+> [https://github.com/ethereum/wiki/wiki/Ethash-DAG](https://github.com/ethereum/wiki/wiki/Ethash-DAG)
 
 ## 改進未來Ethereum之Proposal
 
