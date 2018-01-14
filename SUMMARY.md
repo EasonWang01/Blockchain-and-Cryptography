@@ -32,6 +32,7 @@
 * [Ethereum 以太坊](3ethereum-yi-tai-5e6329.md)
   * [以太坊歷史](3ethereum-yi-tai-5e6329/yi-tai-fang-li-shi.md)
   * [以太坊錢包](3ethereum-yi-tai-5e6329/yi-tai-fang-qian-bao.md)
+  * [EIP與ERC](3ethereum-yi-tai-5e6329/eipyu-erc.md)
   * [測試鏈](3ethereum-yi-tai-5e6329/ce-shi-lian.md)
   * [Geth](3ethereum-yi-tai-5e6329/geth.md)
     * [私有鏈](3ethereum-yi-tai-5e6329/geth/si-you-lian.md)
