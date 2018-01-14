@@ -23,13 +23,13 @@
 
 #### 1.ERC-20 Token Standard
 
-https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md
+[https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md)
 
 描述在智能合約上的token該有的interface。
 
 #### 2.ERC-55 Mixed-case checksum address encoding
 
-https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md
+[https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md)
 
 由地址產生出checksum，官方範例如下：
 
@@ -55,6 +55,10 @@ function toChecksumAddress (address) {
 > toChecksumAddress('0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359')
 '0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359'
 ```
+
+#### 3.ERC-162 ENS support for reverse resolution of Ethereum addresses
+
+
 
 
 

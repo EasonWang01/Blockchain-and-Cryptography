@@ -1,3 +1,7 @@
+# 以太坊錢包
+
+本章節列出較常見的以太坊錢包，但使用上之安全性需要讀者自行評估。
+
 # Mist
 
 下載:
@@ -33,4 +37,10 @@ Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌�
 [https://www.myetherwallet.com/](https://www.myetherwallet.com/)
 
 ![](/assets/螢幕快照 2018-01-13 下午11.00.08.png)
+
+# etherwall
+
+[https://www.etherwall.com/](https://www.etherwall.com/)
+
+![](/assets/螢幕快照 2018-01-14 下午2.07.59.png)
 
