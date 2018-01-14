@@ -15,7 +15,46 @@
 
 ![](/assets/process.png)
 
-> https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md
+> [https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md)
+
+# ERC
+
+屬於EIP提案的一種類型，目前已經正式核可的ERC提案如下
+
+#### 1.ERC-20 Token Standard
+
+https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md
+
+描述在智能合約上的token該有的interface。
+
+#### 2.ERC-55 Mixed-case checksum address encoding
+
+https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md
+
+由地址產生出checksum，官方範例如下：
+
+```js
+const createKeccakHash = require('keccak')
+
+function toChecksumAddress (address) {
+  address = address.toLowerCase().replace('0x', '')
+  var hash = createKeccakHash('keccak256').update(address).digest('hex')
+  var ret = '0x'
+
+  for (var i = 0; i < address.length; i++) {
+    if (parseInt(hash[i], 16) >= 8) {
+      ret += address[i].toUpperCase()
+    } else {
+      ret += address[i]
+    }
+  }
+
+  return ret
+}
+
+> toChecksumAddress('0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359')
+'0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359'
+```
 
 
 
