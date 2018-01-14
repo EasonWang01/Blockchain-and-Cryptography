@@ -21,13 +21,13 @@
 
 屬於EIP提案的一種類型，目前已經正式核可的ERC提案如下
 
-#### 1.ERC-20 Token Standard
+#### 1.ERC-20 \(Token Standard\)
 
 [https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md)
 
 描述在智能合約上的token該有的interface。
 
-#### 2.ERC-55 Mixed-case checksum address encoding
+#### 2.ERC-55 \(Mixed-case checksum address encoding\)
 
 [https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md)
 
@@ -56,9 +56,7 @@ function toChecksumAddress (address) {
 '0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359'
 ```
 
-#### 3.ERC-162 ENS support for reverse resolution of Ethereum addresses
+#### 3.ERC-162 與 ERC-181 \(ENS support for reverse resolution of Ethereum addresses\)
 
-
-
-
+有關以太坊上註冊域名Ethereum Name Service，類似於DNS。
 
