@@ -21,10 +21,10 @@ uint8 public constant decimals = 18;  // Token小數點，例如totalSupply = to
 ```js
 contract ERC20Interface {
   function totalSupply() public constant returns (uint);  
-  // 回傳共有多少個Token
+  // 查詢合約共有多少個Token
 
   function balanceOf(address tokenOwner) public constant returns (uint balance); 
-  // 回傳特定address所含的Token數量
+  // 查詢特定address所含的Token數量
 
   function allowance(address tokenOwner, address spender) public constant returns (uint remaining);
   // 查詢某一個地址開放給另一個地址可以提款之Token限額
