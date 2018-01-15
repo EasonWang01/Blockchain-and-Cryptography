@@ -86,5 +86,33 @@ fruits.Apple //回傳 0
 fruits.Banana //回傳 1
 ```
 
+也可以用來當作階段判斷：
+
+```java
+// 階段列表
+enum Stages {
+  AcceptingBlindedBids,
+  RevealBids,
+  AnotherStage,
+  AreWeDoneYet,
+  Finished
+}
+
+// 初始化階段
+Stages public stage = Stages.AcceptingBlindedBids;
+
+// 更改階段
+function nextStage() internal {
+  stage = Stages(uint(stage) + 1);
+}
+
+// 判斷階段為何
+if (stage == Stages.AcceptingBlindedBids){
+  ...
+}
+```
+
+
+
 
 
