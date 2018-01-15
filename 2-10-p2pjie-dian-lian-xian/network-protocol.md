@@ -8,6 +8,10 @@
 
 # Message Header
 
+[https://bitcoin.org/en/developer-reference\#message-headers](https://bitcoin.org/en/developer-reference#message-headers)
+
+為每個比特幣節點間傳送封包時都會帶有的資訊，含有四個欄位。
+
 ### 1. Magic Value \[4 bytes\]
 
 參考下圖，此為比特幣預設定義好的數字
