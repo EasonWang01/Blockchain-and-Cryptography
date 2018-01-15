@@ -69,11 +69,45 @@ contract SimpleStorage {
 
 ![](/assets/0192123.png)
 
+> 也可輸入eth.getCode\("合約地址"\) 如果返回的不是0x，即可確定合約正常部屬。
+
+> 記得合約部屬後要把合約的地址記錄下來。
+
+
+
 之後部屬合約後即可以點擊網頁右下方的function執行
 
 ![](/assets/832111.png)
 
 > 記得字串要加上雙引號
 
+## 從Geth console中執行合約
 
+點選網頁右上方的compile然後點選Detail
+
+![](/assets/0912.png)
+
+然後拉到下方ABI部分，並且點選複製
+
+> ABI全名為Application Binary Interface
+
+![](/assets/921.png)然後在Geth貼上如下
+
+```
+ var SimpleStorage = eth.contract(ABI).at(address)
+```
+
+> 填上剛才複製的ABI以及合約地址
+
+之後輸入`SimpleStorage.get()` 及可執行
+
+![](/assets/1jd.png)
+
+# 使用Geth部屬
+
+> 剛才我們是用Remix 網頁版 IDE部屬合約，然後用Geth讀取合約之ABI來執行合約，但我們也可以用Geth來部屬合約。
+
+點選Detail後將會顯示合約相關資訊，然後拉到WEB3DEPLOY部分，將其複製並填入var x 參數後，貼到Geth console中。
+
+![](/assets/912d.png)
 
