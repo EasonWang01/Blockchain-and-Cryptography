@@ -20,13 +20,22 @@ uint8 public constant decimals = 18;  // Token小數點，例如totalSupply = to
 
 ```js
 contract ERC20Interface {
-  function totalSupply() public constant returns (uint);
-  function balanceOf(address tokenOwner) public constant returns (uint balance);
-  function allowance(address tokenOwner, address spender) public constant returns (uint remaining);
-  function transfer(address to, uint tokens) public returns (bool success);
-  function approve(address spender, uint tokens) public returns (bool success);
-  function transferFrom(address from, address to, uint tokens) public returns (bool success);
+  function totalSupply() public constant returns (uint);  
+  // 回傳共有多少個Token
   
+  function balanceOf(address tokenOwner) public constant returns (uint balance); 
+  // 回傳特定address所含的Token數量
+  
+  function allowance(address tokenOwner, address spender) public constant returns (uint remaining);
+  
+  function transfer(address to, uint tokens) public returns (bool success);   
+  // 給予某個地址指定數量之Token
+  
+  function approve(address spender, uint tokens) public returns (bool success);
+  
+  function transferFrom(address from, address to, uint tokens) public returns (bool success);
+  // 從第一個參數的地址傳送指定數量的Token給第二個參數地址
+
   event Transfer(address indexed from, address indexed to, uint tokens);
   event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 }
