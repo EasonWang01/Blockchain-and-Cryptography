@@ -30,6 +30,12 @@ if (typeof web3 !== 'undefined') {
 
 ## 常用指令
 
+初始化合約
+
+```
+const MyContract = web3.eth.contract(合約ABI).at(合約地址);
+```
+
 顯示金額為Ether
 
 ```
