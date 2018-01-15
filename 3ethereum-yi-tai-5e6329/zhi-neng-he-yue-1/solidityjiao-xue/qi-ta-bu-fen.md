@@ -72,3 +72,23 @@ function() {
 
 [https://github.com/ConsenSys/Ethereum-Development-Best-Practices/wiki/Fallback-functions-and-the-fundamental-limitations-of-using-send\(\)-in-Ethereum-&-Solidity](https://github.com/ConsenSys/Ethereum-Development-Best-Practices/wiki/Fallback-functions-and-the-fundamental-limitations-of-using-send%28%29-in-Ethereum-&-Solidity)
 
+# Getter function
+
+一般讀取資料可以直接把變數寫為public即可
+
+```
+uint[] public a;
+```
+
+如果想寫成function 記得要加上constant關鍵字，告訴節點這是單純讀取固定資料的function，不然只會返回Hash
+
+```js
+function cc() public constant returns(string) {
+   return "test";
+}
+```
+
+
+
+
+
