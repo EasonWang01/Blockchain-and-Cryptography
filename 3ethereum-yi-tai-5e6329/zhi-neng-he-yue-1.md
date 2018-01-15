@@ -111,6 +111,8 @@ web3.eth.defaultAccount = eth.accounts[0];
 
 ![](/assets/812d.png)
 
+> 因為我們現在使用的是--dev的開發用私有鏈，預設為POA\(Proof of Authority\)，並且會自動產生區塊，所以產生交易後不必自行輸入`miner.start(1)`來挖礦。
+
 # 使用Geth部屬
 
 > 剛才我們是用Remix 網頁版 IDE部屬合約，然後用Geth讀取合約之ABI來執行合約，但我們也可以用Geth來部屬合約。
