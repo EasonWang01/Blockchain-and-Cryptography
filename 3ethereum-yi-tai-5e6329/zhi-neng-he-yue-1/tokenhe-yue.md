@@ -22,17 +22,19 @@ uint8 public constant decimals = 18;  // Token小數點，例如totalSupply = to
 contract ERC20Interface {
   function totalSupply() public constant returns (uint);  
   // 回傳共有多少個Token
-  
+
   function balanceOf(address tokenOwner) public constant returns (uint balance); 
   // 回傳特定address所含的Token數量
-  
+
   function allowance(address tokenOwner, address spender) public constant returns (uint remaining);
-  
+  // 查詢某一個地址開放給另一個地址可以提款之Token限額
+
   function transfer(address to, uint tokens) public returns (bool success);   
   // 給予某個地址指定數量之Token
-  
+
   function approve(address spender, uint tokens) public returns (bool success);
-  
+  // 允許第一個參數的地址可以從你的地址轉帳特定限額的Token到他的地址。
+
   function transferFrom(address from, address to, uint tokens) public returns (bool success);
   // 從第一個參數的地址傳送指定數量的Token給第二個參數地址
 
