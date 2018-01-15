@@ -38,8 +38,11 @@ contract ERC20Interface {
   function transferFrom(address from, address to, uint tokens) public returns (bool success);
   // 從第一個參數的地址傳送指定數量的Token給第二個參數地址
 
-  event Transfer(address indexed from, address indexed to, uint tokens);
+  event Transfer(address indexed from, address indexed to, uint tokens); 
+  // 當有觸發transfer function時一定要觸發此事件
+  
   event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
+  // 當有觸發approve function時一定要觸發此事件
 }
 ```
 
