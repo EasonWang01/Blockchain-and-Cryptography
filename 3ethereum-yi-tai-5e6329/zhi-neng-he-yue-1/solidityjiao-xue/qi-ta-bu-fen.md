@@ -80,15 +80,13 @@ function() {
 uint[] public a;
 ```
 
-如果想寫成function 記得要加上constant關鍵字，告訴節點這是單純讀取固定資料的function，不然只會返回Hash
+如果想寫成function 記得要加上constant關鍵字，告訴節點這是單純讀取固定資料的function，不然在例如Remix IDE之類不會直接顯示值出來。
 
 ```js
 function cc() public constant returns(string) {
    return "test";
 }
 ```
-
-
 
 
 
