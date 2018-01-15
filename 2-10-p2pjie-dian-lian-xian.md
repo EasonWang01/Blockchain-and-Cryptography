@@ -50,9 +50,7 @@ dns.lookup('seed.bitcoin.sipa.be', options, (err, addresses) => {
 });
 ```
 
-## Message Header
+## 
 
-[https://bitcoin.org/en/developer-reference\#message-headers](https://bitcoin.org/en/developer-reference#message-headers)
 
-為每個比特幣結點間傳送封包時都會帶有的資訊，含有四個欄位。
 
