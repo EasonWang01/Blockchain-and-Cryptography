@@ -1,3 +1,7 @@
+# 智能合約
+
+智能合約可以被部屬到區塊鏈上並且被執行，每個合約都會有一個地址，而合約的邏輯是用程式寫成，目前主要開發語言為Solidity，智能合約類似於飲料販賣機，當他被部屬後想要執行交易或是執行合約上的function時，只要花費相對應的以太幣或是Gas，並且指定合約的地址以及你想要執行合約的function即可。執行後的結果會如同一般交易一樣被寫入區塊鏈中。
+
 1.
 
 我們先啟動Geth的開發用測試鏈
@@ -29,7 +33,7 @@ pragma solidity ^0.4.19;
 
 contract SimpleStorage {
   string storedData;
-  
+
   // 建構子，部屬合約後即會執行
   function SimpleStorage(string x) public {
     storedData = x;
@@ -48,6 +52,4 @@ contract SimpleStorage {
 > 此為一個簡單設定字串和讀取字串的合約
 
 之後點選右上方的Run，然後下方輸入建構子參數 \( 也就是初始化合約的參數\)，然後點選Create![](/assets/92011.png)
-
-
 
