@@ -119,5 +119,29 @@ web3.eth.defaultAccount = eth.accounts[0];
 
 點選Detail後將會顯示合約相關資訊，然後拉到WEB3DEPLOY部分，將其複製並填入var x 參數後，貼到Geth console中。
 
-![](/assets/912d.png)
+# ![](/assets/912d.png)
+
+# 使用Mist錢包執行合約
+
+下載: [https://github.com/ethereum/mist/releases](https://www.gitbook.com/book/easonwang01/e/edit#)
+
+當我們有私有鏈在執行時，開啟MIst它會自動讀取私有鏈。
+
+![](/assets/dsc09.png)
+
+然後我們點選上方的contract，然後拉到下面點選watch contract
+
+![](/assets/9ja.png)
+
+之後填入contract的ABI與contract的地址
+
+![](/assets/013f.png)
+
+即可看到合約內容
+
+![](/assets/09assc.png)
+
+執行合約function後需要輸入帳號密碼
+
+![](/assets/9123da.png)
 
