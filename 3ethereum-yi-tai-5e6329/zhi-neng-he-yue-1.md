@@ -57,3 +57,11 @@ contract SimpleStorage {
 
 之後點選右上方的Run，然後下方輸入建構子參數 \( 也就是初始化合約的參數\)，然後點選Create![](/assets/92011.png)
 
+之後部屬後即可以點擊右下方的function執行
+
+![](/assets/832111.png)
+
+> 記得字串要加上雙引號
+
+
+
