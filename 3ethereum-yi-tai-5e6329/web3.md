@@ -1,6 +1,6 @@
-## Ｗeb3
+## Web3
 
-https://github.com/ethereum/web3.js/
+[https://github.com/ethereum/web3.js/](https://github.com/ethereum/web3.js/)
 
 為Javascript語言之Ethereum API
 
