@@ -10,12 +10,26 @@ Token與以太幣是沒有直接關係的，因為Token是每個智能合約的�
 
 ## 規範 :
 
-可直接存取常數
+可直接存取常數\(Optional\)
 
 ```
 string public constant name = "Token Name"; // 合約Token的名稱
 string public constant symbol = "AAA";  // 合約符號
 uint8 public constant decimals = 18;  // Token小數點，例如totalSupply = tokensIActuallyWant * (10 ^ decimals)
+```
+
+```js
+contract ERC20Interface {
+  function totalSupply() public constant returns (uint);
+  function balanceOf(address tokenOwner) public constant returns (uint balance);
+  function allowance(address tokenOwner, address spender) public constant returns (uint remaining);
+  function transfer(address to, uint tokens) public returns (bool success);
+  function approve(address spender, uint tokens) public returns (bool success);
+  function transferFrom(address from, address to, uint tokens) public returns (bool success);
+  
+  event Transfer(address indexed from, address indexed to, uint tokens);
+  event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
+}
 ```
 
 
