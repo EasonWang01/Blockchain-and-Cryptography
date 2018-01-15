@@ -70,10 +70,8 @@ contract SimpleStorage {
 ![](/assets/0192123.png)
 
 > 也可輸入eth.getCode\("合約地址"\) 如果返回的不是0x，即可確定合約正常部屬。
-
+>
 > 記得合約部屬後要把合約的地址記錄下來。
-
-
 
 之後部屬合約後即可以點擊網頁右下方的function執行
 
@@ -101,7 +99,17 @@ contract SimpleStorage {
 
 之後輸入`SimpleStorage.get()` 及可執行
 
-![](/assets/1jd.png)
+![](/assets/1jd.png)但剛才get\(\)因為是直接讀取常數出來，不需要寫入資料到區塊鏈，但如果我們要在使用set\(\)，將會需要寫入區塊鏈，並且耗費Gas，所以執行前我要先設定defaultAccount。
+
+> 否則會出現Error: invalid address 錯誤
+
+```
+web3.eth.defaultAccount = eth.accounts[0];
+```
+
+然後即可執行
+
+![](/assets/812d.png)
 
 # 使用Geth部屬
 
