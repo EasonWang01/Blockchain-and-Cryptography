@@ -55,9 +55,15 @@ contract SimpleStorage {
 
 > 此為一個簡單設定字串和讀取字串的合約
 
-之後點選右上方的Run，然後下方輸入建構子參數 \( 也就是初始化合約的參數\)，然後點選Create![](/assets/92011.png)
+之後點選右上方的Run，然後下方輸入建構子參數 \( 也就是初始化合約的參數\)，然後點選Create![](/assets/92011.png)部屬合約後我們可以看到區塊鏈相關訊息:
 
-之後部屬後即可以點擊右下方的function執行
+![](/assets/81122.png)
+
+> 輸入web3.eth.getTransactionReceipt\(\) 查看相關交易訊息
+
+![](/assets/0192123.png)
+
+之後部屬合約後即可以點擊網頁右下方的function執行
 
 ![](/assets/832111.png)
 
