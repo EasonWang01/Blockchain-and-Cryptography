@@ -40,11 +40,11 @@ contract ERC20Interface {
 
   event Transfer(address indexed from, address indexed to, uint tokens); 
   // 當有觸發transfer function時一定要觸發此事件
-  
+
   event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
   // 當有觸發approve function時一定要觸發此事件
 }
 ```
 
-
+https://gist.github.com/anonymous/240119e9d0397412caf68d3d54ae6254
 
