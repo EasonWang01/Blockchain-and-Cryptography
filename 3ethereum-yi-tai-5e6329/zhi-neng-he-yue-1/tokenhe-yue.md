@@ -8,9 +8,15 @@ Token與以太幣是沒有直接關係的，因為Token是每個智能合約的�
 
 下面我們將實際撰寫一個符合ERC-20標準的Token合約，讓讀者可以更好的了解其概念。
 
-## 定義 :
+## 規範 :
 
+可直接存取常數
 
+```
+string public constant name = "Token Name"; // 合約Token的名稱
+string public constant symbol = "AAA";  // 合約符號
+uint8 public constant decimals = 18;  // Token小數點，例如totalSupply = tokensIActuallyWant * (10 ^ decimals)
+```
 
 
 
