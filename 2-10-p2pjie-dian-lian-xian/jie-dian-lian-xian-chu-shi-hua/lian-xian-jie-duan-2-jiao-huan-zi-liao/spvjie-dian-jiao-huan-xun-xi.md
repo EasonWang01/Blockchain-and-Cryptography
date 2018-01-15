@@ -63,19 +63,16 @@ SPV節點使用Merkle Root驗證特定交易是否存在於區塊中，不用管
 
 收到getheader後的節點，將回覆 headers 訊息，與blocks訊息類似，也會將一開始傳過來的訊息比對，將對方沒有的部分傳送給對方。
 
-
-
 ![](/assets/螢幕快照 2017-12-26 下午7.17.14.png)
 
 範例:
 
 ```js
-
   const magicNum = "f9beb4d9";
   const command = "686561646572730000000000" // headers
   const payload_length = "52000000"
   const checksum = "ef8dc6fd"
-   
+
   const count = '0100' // 包含hash總數
 
   /* 區塊頭 */

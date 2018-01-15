@@ -18,9 +18,9 @@
 
 ![](/assets/螢幕快照 2017-12-10 下午9.00.17.png)
 
-# 節點訊息傳送
+# 節點訊息傳送內容
 
-1. version
+以下以Version訊息為範例 :
 
 > 在官方資料上節點分為 『 transmitting node \(發出方\)』 與 『 receiving node（接收方） 』，如果請求從本地發出則本地的節點及擔任transmitting node\(發出方\)角色，反之。
 
@@ -199,10 +199,6 @@ function double_sha256(payload) {
   return crypto.createHash('sha256').update(sha256).digest().slice(0, 4).toString('hex');
 }
 ```
-
-.
-
-.
 
 ---
 
