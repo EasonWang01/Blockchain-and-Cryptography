@@ -70,12 +70,13 @@ https://en.bitcoin.it/wiki/Libbitcoin
 
 ### Thin client
 
-比較輕量的客戶端，只會下載區塊頭與部分區塊鏈上的資料  
-也稱為SPV
+比較輕量的客戶端，只會下載區塊頭與部分區塊鏈上的資料，也稱為SPV。
 
 > As Satoshi writes, "\[the thin client\] can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it." If we take "X" to be the "number of blocks added after it", then a thin client essentially trusts that a transaction X blocks deep will be costly to forge.
 
-bitcoind可以加上指令跑較輕量的client大約只需2GB的儲存空間，啟動節點時加上以下指令，N是分配給raw block 與 undo data的MiB大小。
+1.bitcoind
+
+可以加上指令跑較輕量的client大約只需2GB的儲存空間，啟動節點時加上以下指令，N是分配給raw block 與 undo data的MiB \( 附註1 \) 大小。
 
 ```
 prune=<N>
@@ -83,19 +84,19 @@ prune=<N>
 
 > 可參考 : [https://github.com/bitcoin/bitcoin/blob/v0.12.0/doc/release-notes.md\#wallet-pruning](https://github.com/bitcoin/bitcoin/blob/v0.12.0/doc/release-notes.md#wallet-pruning)
 
-bitcoinj
+2.bitcoinj
 
 ```
-https://en.bitcoin.it/wiki/Bitcoinj
+https://bitcoinj.github.io/
 ```
 
-picocoin
+3.picocoin
 
 ```
 https://github.com/jgarzik/picocoin/
 ```
 
-Electrum
+4.Electrum
 
 ```
 https://electrum.org/#home
@@ -103,7 +104,7 @@ https://electrum.org/#home
 
 [https://bitzuma.com/posts/a-beginners-guide-to-the-electrum-bitcoin-wallet/](https://bitzuma.com/posts/a-beginners-guide-to-the-electrum-bitcoin-wallet/)
 
-> 一篇關於SPV安全性的文章  
+> 以下是一篇關於SPV節點安全性的文章，探討用SPV節點在安全性方面的考量。  
 > [https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9](https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9)
 
 我們也可以直接到以下網站，查看目前可用的第三方錢包並進行安裝。可選擇電腦版、硬體版、手機與網頁版
@@ -118,5 +119,5 @@ https://electrum.org/#home
 
 1.Mib \( Mebibyte \)
 
-https://zh.wikipedia.org/wiki/Mebibyte
+[https://zh.wikipedia.org/wiki/Mebibyte](https://zh.wikipedia.org/wiki/Mebibyte)
 
