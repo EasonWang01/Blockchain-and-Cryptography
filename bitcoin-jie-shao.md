@@ -1,6 +1,6 @@
 # 2-1 Bitcoin 介紹
 
-以下為比特幣白皮書  
+以下連結為比特幣的白皮書，上面寫了比特幣的核心原理與概念  
 [https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)
 
 > The block chain provides Bitcoin’s public ledger, an ordered and timestamped record of transactions. This system is used to protect against double spending and modification of previous transaction records.
@@ -29,24 +29,20 @@
 
 [https://bitcoincore.org/](https://bitcoincore.org/)
 
-
-
-
-
 # BIP
 
 BIP是對未來需要改進的比特幣特點，所做的提案。
 
 > BIP stands for Bitcoin Improvement Proposal. A BIP is a design document providing information to the Bitcoin community, or describing a new feature for Bitcoin or its processes or environment. The BIP should provide a concise technical specification of the feature and a rationale for the feature.
 
-可在此網站看到詳細:https://github.com/bitcoin/bips
+可在此網站看到詳細:[https://github.com/bitcoin/bips](https://github.com/bitcoin/bips)
 
 ![](/assets/螢幕快照 2017-11-19 下午1.13.48.png)
 
-
 # 比特幣相關狀態查詢
-在下面這個網站可以看到比特幣目前的相關狀態
-http://statoshi.info/
+
+在下面這個網站可以看到比特幣目前的相關狀態  
+[http://statoshi.info/](http://statoshi.info/)
 
 ![](/assets/a.png)
 
@@ -59,3 +55,6 @@ http://statoshi.info/
 0.000001BTC   微比特（Micro-Bitcoins，μBTC）
 0.00000001BTC  satoshi 為一個為比特幣最小單位
 ```
+
+
+
