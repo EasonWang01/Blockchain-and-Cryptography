@@ -46,7 +46,5 @@ contract ERC20Interface {
 }
 ```
 
-[https://gist.github.com/anonymous/240119e9d0397412caf68d3d54ae6254](https://gist.github.com/anonymous/240119e9d0397412caf68d3d54ae6254)
 
-https://github.com/ConsenSys/Tokens/tree/master/contracts/eip20
 

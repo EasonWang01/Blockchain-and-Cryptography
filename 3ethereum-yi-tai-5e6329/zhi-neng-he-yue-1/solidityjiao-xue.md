@@ -4,9 +4,9 @@
 
 [http://solidity.readthedocs.io/en/develop/solidity-in-depth.html](http://solidity.readthedocs.io/en/develop/solidity-in-depth.html)
 
-我們可以使用Solidity網頁版IDE：https://remix.ethereum.org ，進行測試與部屬。
+我們可以使用Solidity網頁版IDE：[https://remix.ethereum.org](https://remix.ethereum.org) ，進行測試與部屬。
 
-> 可參考官方style guide來撰寫：http://solidity.readthedocs.io/en/develop/style-guide.html
+> 可參考官方style guide來撰寫：[http://solidity.readthedocs.io/en/develop/style-guide.html](http://solidity.readthedocs.io/en/develop/style-guide.html)
 
 #### 1.版本
 
@@ -44,7 +44,7 @@ import {symbol1 as alias, symbol2} from "filename";
 /* ...  */
 ```
 
-與Javascript類似，單行註解與多行註解。
+與Javascript類似，分別為單行註解與多行註解。
 
 # 合約內容
 

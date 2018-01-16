@@ -1,3 +1,5 @@
+# 實作
+
 #### 啟動本地節點
 
 我們先啟動節點
@@ -13,6 +15,8 @@ personal.newAccount()
 // 輸入兩次
 ```
 
+![](/assets/螢幕快照 2018-01-16 下午8.17.40.png)
+
 > 因為--dev會預先分配Ether給第一個帳號，這時我們轉帳一些Ether給第二個帳號，方便後面執行合約function消耗Gas時使用。
 
 轉帳 \( 從帳號0到帳號1 \)
@@ -26,6 +30,8 @@ eth.sendTransaction({from: eth.accounts[0], to: eth.accounts[1], value: web3.toW
 ```
 web3.fromWei(eth.getBalance(eth.accounts[1]))
 ```
+
+#### ![](/assets/螢幕快照 2018-01-16 下午8.18.45.png)
 
 #### 打開Remix IDE
 
