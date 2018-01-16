@@ -7,7 +7,7 @@ function buyTicket(uint amount) payable {
 
 包含payable的function才可以接受Ether
 
-# View, Pure, Const
+# View, Pure, Constant
 
 View: 可讀取，但不可修改
 
@@ -15,7 +15,7 @@ Pure: 不可讀取，不可修改
 
 constant: 可讀取，但不可修改，不會加在function上，只加在變數上
 
-> http://solidity.readthedocs.io/en/develop/contracts.html\#view-functions
+> [http://solidity.readthedocs.io/en/develop/contracts.html\#view-functions](http://solidity.readthedocs.io/en/develop/contracts.html#view-functions)
 
 # 呼叫其他Contract
 
@@ -82,10 +82,10 @@ function() {
 uint[] public a;
 ```
 
-如果想寫成function 記得要加上constant關鍵字，告訴節點這是單純讀取固定資料的function，不然在例如Remix IDE之類不會直接顯示值出來。
+如果想寫成function 記得要加上view或是pure關鍵字，告訴節點這是單純讀取固定資料的function，不然在例如Remix IDE之類不會直接顯示值出來。
 
 ```js
-function cc() public constant returns(string) {
+function cc() public pure returns(string) {
    return "test";
 }
 ```
