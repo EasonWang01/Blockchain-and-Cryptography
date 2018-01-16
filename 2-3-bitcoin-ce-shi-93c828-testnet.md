@@ -28,8 +28,8 @@
 
 > 記得後面要加上參數 : /?testnet=true  
 > ![](/assets/testonlineaddress.png)  
-> 記得要按Generate New Address 產生新地址  
-> 並且記下address與Private key
+> 進去之後移動滑鼠，等到100%後即會產生地址，之後可以按Generate New Address 產生新地址  
+> 記得記下產生之Address與Private key
 
 \(但還是建議讀者使用本地端產生的方式比較安全\)
 
