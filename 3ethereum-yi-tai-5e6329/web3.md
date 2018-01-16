@@ -4,7 +4,7 @@
 
 為Javascript語言之Ethereum API
 
-> 另一個類似的專案為: https://github.com/ethjs/ethjs
+> 另一個類似的專案為: [https://github.com/ethjs/ethjs](https://github.com/ethjs/ethjs)
 
 # 安裝
 
