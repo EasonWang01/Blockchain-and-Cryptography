@@ -146,7 +146,7 @@ start ./bitcoin-cli getinfo
 
 ### 
 
-### -----
+---
 
 ### 比特幣相關交易訊息與圖表
 
