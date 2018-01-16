@@ -8,7 +8,7 @@ contract ERC20_token is ERC20_interface { // 使用 is 繼承
 }
 ```
 
-2.再來我們會定義會用到的全域變數
+2.再來我們定義會用到的全域變數
 
 ```js
 //避免超過產生overflow
@@ -25,6 +25,77 @@ string public symbol;       // 一個代表合約的符號 e.g. ^_^
 address owner;              // 存放合約擁有者地址
 uint256 public buyPrice;    // 一單位Ether可以換多少token
 uint private weiToEther = 10 ** 18; // 把單位從wei轉為Ether，因為msg.value預設是以wei為單位。
+```
+
+3.接著寫出此合約的建構子 \( 合約部署即會執行一次 \)，以及共用的Modifyer。
+
+> 之後我們要部署合約時會需要輸入四個參數：\_initialSupply、\_buyPrice、\_tokenName、\_tokenSymbol。
+
+```js
+// 建構子，一開始即會執行，需要提供總量、價格、名稱、標誌
+function ERC20_token(
+  uint256 _initialSupply,
+  uint256 _buyPrice,
+  string _tokenName,
+  string _tokenSymbol
+) public {
+  totalSupply = _initialSupply * 10 ** uint256(decimals); // token總量
+  balances[msg.sender] = totalSupply; // 設定合約token擁有者為合約部屬者
+
+  name = _tokenName;     // token名稱
+  symbol = _tokenSymbol; // token 標誌
+  owner = msg.sender;    // 合約擁有人
+  buyPrice = _buyPrice;  // 每單位 ether 之價格
+}
+
+// 限定只有合約部屬人才能執行特定function
+modifier onlyOwner() {
+  require(msg.sender == owner);
+  _;
+}
+```
+
+4.然後寫出ERC-20必要定義的Function
+
+```js
+// 查詢餘額
+function balanceOf(address _owner) public view returns (uint256 balance) {
+  return balances[_owner];
+}
+
+// 從合約擁有人地址轉帳
+function transfer(address _to, uint256 _value) public returns(bool success) {
+  require(balances[msg.sender] >= _value);
+  balances[msg.sender] -= _value;
+  balances[_to] += _value;
+  Transfer(msg.sender, _to, _value);
+  return true;
+}
+
+// 從某一人地址轉給另一人地址，需要其轉帳配額有被同意，可想像為小明(msg.sender)用爸爸的副卡(_from)轉帳給別人(_to)
+function transferFrom(address _from, address _to, uint256 _value) public returns(bool success) {
+  uint256 allowance = allowed[_from][msg.sender];
+  require(balances[_from] >= _value && allowance >= _value);
+  balances[_to] += _value;
+  balances[_from] -= _value;
+  if (allowance < MAX_UINT256) {
+    allowed[_from][msg.sender] -= _value;
+  }
+  Transfer(_from, _to, _value);
+  return true;
+}
+
+// 給予特定帳號轉帳配額 類似小明的爸爸(msg.sender)給小明(_spender)一張信用卡副卡，額度為value
+function approve(address _spender, uint256 _value) public returns(bool success) {
+  allowed[msg.sender][_spender] = _value;
+  Approval(msg.sender, _spender, _value);
+  return true;
+}
+
+// 查詢特定帳號轉給另一帳號之轉帳配額
+function allowance(address _owner, address _spender) public view returns (uint256 remaining) {
+  return allowed[_owner][_spender];
+}
 ```
 
 
