@@ -13,7 +13,9 @@ View: 可讀取，但不可修改
 
 Pure: 不可讀取，不可修改
 
-const: 可讀取，但不可修改，不可加在function上
+constant: 可讀取，但不可修改，不會加在function上，只加在變數上
+
+> http://solidity.readthedocs.io/en/develop/contracts.html\#view-functions
 
 # 呼叫其他Contract
 
