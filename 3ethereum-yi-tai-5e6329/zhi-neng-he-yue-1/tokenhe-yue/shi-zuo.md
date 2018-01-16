@@ -94,7 +94,7 @@ contract ERC20_token is ERC20_interface {   // 使用 is 繼承
     string public symbol;           // e.g. ^_^"
     address owner;
     uint256 public buyPrice;   // 一單位Ether可以換多少token
-    uint private weiToEther = 10 ** 18;
+    uint private weiToEther = 10 ** 18; // 把單位從wei轉為Ether
 
     // 建構子，一開始即會執行，需要提供總量、價格、名稱、標誌
     function ERC20_token(
