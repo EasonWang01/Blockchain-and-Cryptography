@@ -91,7 +91,7 @@ contract ERC20_token is ERC20_interface {   // 使用 is 繼承
 
     string public name;             // 幫合約取名稱
     uint8  public decimals = 18;    // 小數點，官方建議為18
-    string public symbol;           // e.g. ^_^"
+    string public symbol;           // e.g. ^_^
     address owner;
     uint256 public buyPrice;   // 一單位Ether可以換多少token
     uint private weiToEther = 10 ** 18; // 把單位從wei轉為Ether
@@ -130,7 +130,7 @@ contract ERC20_token is ERC20_interface {   // 使用 is 繼承
         return true;
     }
 
-    // 從某一人地址轉給另一人地址，需要其轉帳配額有被同意(小明(msg.sender)用爸爸的副卡(_from)轉帳給別人(_to))
+    // 從某一人地址轉給另一人地址，需要其轉帳配額有被同意，可想像為小明(msg.sender)用爸爸的副卡(_from)轉帳給別人(_to)
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         uint256 allowance = allowed[_from][msg.sender];
         require(balances[_from] >= _value && allowance >= _value);
@@ -143,7 +143,7 @@ contract ERC20_token is ERC20_interface {   // 使用 is 繼承
         return true;
     }
 
-    // 給予特定帳號轉帳配額  類似小明爸爸(msg.sender)給小明(_spender)一張信用卡副卡，額度為value
+    // 給予特定帳號轉帳配額  類似小明的爸爸(msg.sender)給小明(_spender)一張信用卡副卡，額度為value
     function approve(address _spender, uint256 _value) public returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
