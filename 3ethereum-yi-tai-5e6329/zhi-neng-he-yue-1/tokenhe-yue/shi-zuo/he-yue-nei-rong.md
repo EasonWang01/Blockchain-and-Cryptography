@@ -1,3 +1,5 @@
+# 合約說明
+
 1.首先我們會在 ERC20\_token.sol 檔案，引入另一個 ERC20\_interface.sol 檔案。
 
 ```js
@@ -96,6 +98,39 @@ function approve(address _spender, uint256 _value) public returns(bool success) 
 function allowance(address _owner, address _spender) public view returns (uint256 remaining) {
   return allowed[_owner][_spender];
 }
+```
+
+5.讓其他帳號可以通過傳送Ether給此智能合約，來取得Token
+
+```js
+// 設定Token購買價格，只有合約部屬者可以設定
+function setPrice(uint _price) public onlyOwner {
+  buyPrice = _price;
+}
+
+// 購買Token，payable代表此Function可以接受Ether
+function buy() public payable {
+  uint amount;
+  amount = (msg.value / weiToEther) * buyPrice * 10 ** uint256(decimals); // 購買多少token
+  require(balances[owner] >= amount); // 檢查還有沒有足夠token可以賣
+  balances[msg.sender] += amount; // 增加購買者token
+  balances[owner] -= amount; // 減少擁有者token
+  Transfer(owner, msg.sender, amount); // 產生token轉帳log
+}
+
+// 從合約轉出Ether到部屬者帳戶
+function withdraw(uint amount) public onlyOwner {
+  owner.transfer(amount * weiToEther);
+}
+```
+
+6.最後讓此合約可以從區塊鏈上移除，並將合約地址上的Ether轉帳給合約的部屬者。
+
+```js
+// 從區塊鏈上移出合約
+function deleteContract() public onlyOwner {
+    selfdestruct(owner); // 將合約剩餘的Ether轉給owner
+ }
 ```
 
 
