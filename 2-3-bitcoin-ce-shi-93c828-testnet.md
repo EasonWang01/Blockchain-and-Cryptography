@@ -24,9 +24,9 @@
 
 我們也可以用線上網站服務產生測試比特幣地址
 
-https://www.bitaddress.org/?testnet=true
+[https://www.bitaddress.org/?testnet=true](https://www.bitaddress.org/?testnet=true)
 
-> 記得後面要加上?testnet=true  
+> 記得後面要加上參數 : /?testnet=true  
 > ![](/assets/testonlineaddress.png)  
 > 記得要按Generate New Address 產生新地址  
 > 並且記下address與Private key
