@@ -1,4 +1,4 @@
-# 合約說明
+# 合約內容
 
 1.首先我們會在 ERC20\_token.sol 檔案，引入另一個 ERC20\_interface.sol 檔案。
 
