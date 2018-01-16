@@ -88,7 +88,7 @@ function cc() public constant returns(string) {
 }
 ```
 
-> 目前EVM不支援浮點數顯示，小於1大0的數均會顯示0
+> 目前EVM不支援浮點數顯示，小於1且大於0的數均會顯示0
 
 
 
