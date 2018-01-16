@@ -75,13 +75,13 @@ https://en.bitcoin.it/wiki/Libbitcoin
 
 > As Satoshi writes, "\[the thin client\] can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it." If we take "X" to be the "number of blocks added after it", then a thin client essentially trusts that a transaction X blocks deep will be costly to forge.
 
-bitcoind可以加上指令跑較輕量的client大約只需2GB的儲存空間，啟動節點時加上以下指令，N是分配給raw block 與 undo data的MB大小。
+bitcoind可以加上指令跑較輕量的client大約只需2GB的儲存空間，啟動節點時加上以下指令，N是分配給raw block 與 undo data的MiB大小。
 
 ```
 prune=<N>
 ```
 
-> 可參考 : https://github.com/bitcoin/bitcoin/blob/v0.12.0/doc/release-notes.md\#wallet-pruning
+> 可參考 : [https://github.com/bitcoin/bitcoin/blob/v0.12.0/doc/release-notes.md\#wallet-pruning](https://github.com/bitcoin/bitcoin/blob/v0.12.0/doc/release-notes.md#wallet-pruning)
 
 bitcoinj
 
@@ -111,4 +111,12 @@ https://electrum.org/#home
 [https://bitcoin.org/en/wallets/hardware/](https://bitcoin.org/en/wallets/desktop/windows/)
 
 ![](/assets/螢幕快照 2017-11-09 下午10.39.05.png)
+
+---
+
+附註 :
+
+1.Mib \( Mebibyte \)
+
+https://zh.wikipedia.org/wiki/Mebibyte
 
