@@ -78,20 +78,20 @@ contract ERC20_interface {
 然後開啟另一個ERC20\_token.sol檔案，新增如下程式碼 :
 
 ```js
-pragma solidity ^0.4.19;
+pragma solidity ^0.4.19;      // 指定Compiler版本
 
-import "./ERC20_interface.sol"; //引入interface
+import "./ERC20_interface.sol";  //引入interface
 
 
-contract ERC20_token is ERC20_interface {
+contract ERC20_token is ERC20_interface {   // 使用 is 繼承
 
     uint256 constant private MAX_UINT256 = 2**256 - 1; //避免超過產生overflow
-    mapping (address => uint256) public balances;
-    mapping (address => mapping (address => uint256)) public allowed;
+    mapping (address => uint256) public balances;   // 查詢特定地址的餘額
+    mapping (address => mapping (address => uint256)) public allowed;  // 查詢特定地址可以給另一個地址的轉帳配額
 
     string public name;        // 幫合約取名稱
     uint8  public decimals;    // 小數點
-    string public symbol;                 //An identifier: eg SBX
+    string public symbol;      // e.g. CTX
 
     // 建構子，一開始即會執行
     function ERC20_token(
@@ -100,13 +100,14 @@ contract ERC20_token is ERC20_interface {
         uint8 _decimalUnits,
         string _tokenSymbol
     ) public {
-        balances[msg.sender] = _initialAmount;               // Give the creator all initial tokens
-        totalSupply = _initialAmount;                        // Update total supply
-        name = _tokenName;                                   // Set the name for display purposes
-        decimals = _decimalUnits;                            // Amount of decimals for display purposes
-        symbol = _tokenSymbol;                               // Set the symbol for display purposes
+        balances[msg.sender] = _initialAmount;               // token總量
+        totalSupply = _initialAmount;                        // 
+        name = _tokenName;                                   // token名稱
+        decimals = _decimalUnits;                            // 小數點
+        symbol = _tokenSymbol;                               // token 標誌
     }
 
+    // 從合約擁有人地址轉帳
     function transfer(address _to, uint256 _value) public returns (bool success) {
         require(balances[msg.sender] >= _value);
         balances[msg.sender] -= _value;
@@ -114,8 +115,8 @@ contract ERC20_token is ERC20_interface {
         Transfer(msg.sender, _to, _value);
         return true;
     }
-
-
+    
+    // 從某一人地址轉給另一人地址，需要其轉帳配額有被同意
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         uint256 allowance = allowed[_from][msg.sender];
         require(balances[_from] >= _value && allowance >= _value);
@@ -127,17 +128,19 @@ contract ERC20_token is ERC20_interface {
         Transfer(_from, _to, _value);
         return true;
     }
-
+    // 查詢餘額
     function balanceOf(address _owner) public view returns (uint256 balance) {
         return balances[_owner];
     }
-
+    
+    // 給予特定帳號轉帳配額
     function approve(address _spender, uint256 _value) public returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
         return true;
     }
 
+    // 查詢特定帳號轉給另一帳號之轉帳配額
     function allowance(address _owner, address _spender) public view returns (uint256 remaining) {
         return allowed[_owner][_spender];
     }   
