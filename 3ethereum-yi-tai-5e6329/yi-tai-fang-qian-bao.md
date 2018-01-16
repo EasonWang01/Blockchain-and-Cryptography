@@ -12,7 +12,7 @@ Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌�
 
 ![](/assets/螢幕快照 2018-01-13 下午11.36.17.png)
 
-> 移除watch中的合約
+> 移除watch中的所有合約
 >
 > ```js
 > 開啟console: alt+ctrl+i 或是 option+command+i
