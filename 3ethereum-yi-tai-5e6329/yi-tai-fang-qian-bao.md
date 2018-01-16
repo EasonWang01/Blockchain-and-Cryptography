@@ -15,7 +15,7 @@ Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌�
 > 移除watch中的合約
 >
 > ```js
-> 開啟console: alt+ctrl+i
+> 開啟console: alt+ctrl+i 或是 option+command+i
 >
 > 輸入:CustomContracts.find().fetch().forEach(d => CustomContracts.remove(d))
 > ```

@@ -35,11 +35,21 @@ OSX :
 
 > 在Remix IDE右側畫面，如果是constant或是public的常數均可直接點選，查看數值。
 
+#### 
 
+#### 讓Ethereum wallet\(Mist\)讀取合約
 
-#### 讓Ethereum wallet\(Mist\)讀取合約![](/assets/螢幕快照 2018-01-16 下午10.29.47.png)
+我們在Remix IDE點選compiler然後選擇ERC20\_token，最後按下Details按鈕。
 
 #### ![](/assets/螢幕快照 2018-01-16 下午10.29.47.png)
+
+
+
+然後拉到下方，點擊ABI中的複製按鈕。
+
+![](/assets/螢幕快照 2018-01-16 下午10.32.09.png)
+
+再來我們開啟剛才執行的Ethereum wallet\(Mist\)
 
 
 
