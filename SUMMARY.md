@@ -7,7 +7,7 @@
   * [區塊鏈核心概念](chapter1/1-2-qu-kuai-lian-he-xin-gai-nian.md)
 * [Bitcoin 比特幣](2bitcoin-bi-te-5e6329.md)
   * [Bitcoin 介紹](bitcoin-jie-shao.md)
-  * [Bitcoin Core使用](2-2-bitcoin-yuan-li.md)
+  * [Bitcoin Core](2-2-bitcoin-yuan-li.md)
   * [Bitcoin 測試鏈\(Testnet\)](2-3-bitcoin-ce-shi-93c828-testnet.md)
     * [Bitcoin Regtest Mode](2-3-bitcoin-ce-shi-93c828-testnet/bitcoin-regtest-mode.md)
   * [Bitcoin 錢包\(Wallet\)](2-3-bitcoin-qian-bao.md)
