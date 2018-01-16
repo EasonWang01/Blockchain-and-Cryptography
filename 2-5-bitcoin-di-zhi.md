@@ -1,13 +1,10 @@
 # 2-5 Bitcoin 地址
 
-比特幣地址類似銀行帳號，可以公開告訴其他人，並且用其來進行收款動作
+比特幣地址類似於銀行帳號，可以公開告訴其他人，並且用其來進行收款動作。
 
-> 地址為1開頭為一般比特幣地址，為3開頭的為多重簽章地址
+> 地址為1開頭為一般比特幣地址，為3開頭的為多重簽章地址，測試鏈地址為m或n開頭。
 
-> 測試鏈地址為m或n開頭
-
-其他參考可https://en.bitcoin.it/wiki/List_of_address_prefixes
-
+其他可參考 : [https://en.bitcoin.it/wiki/List\_of\_address\_prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
 
 ## 可在以下網站線上產生地址
 
@@ -450,7 +447,7 @@ console.log('-----------------')
 
 # 查看地址的相關資料與交易紀錄
 
-https://blockchain.info/rawaddr/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to
+[https://blockchain.info/rawaddr/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to](https://blockchain.info/rawaddr/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to)
 
 ```js
 var http = require('http');
@@ -469,6 +466,7 @@ http.get({
 ```
 
 會出現如下訊息
+
 ```json
 {
     "hash160":"ab0fcc2fb04ee80d29a00a80140b16323bed3d6e",
@@ -501,9 +499,8 @@ http.get({
          "n":0,
          "script":"76a914ab0fcc2fb04ee80d29a00a80140b16323bed3d6e88ac"
       },
-      
-      .....
 
+      .....
 ```
 
 # 地址不建議重複使用
