@@ -39,7 +39,7 @@
 
 這個網站取得免費測試用的比特幣
 
-![](/assets/getfreecoin.png)
+> ![](/assets/getfreecoin.png)在上方框框填上地址，並且點選reCAPTCHA。
 
 成功後會出現交易的TXid
 
@@ -50,6 +50,8 @@
 ![](/assets/getfreecoin2.png)
 
 然後我們到blockexplorer這個網站確認我們地址的餘額
+
+> https://testnet.blockexplorer.com/
 
 > 在本地端的節點必須要完整同步後才可以得到正確的區塊鏈資訊，所以建議讀者可使用線上的網站服務，他會去存取他們已經完整同步過的Full Node，然後回傳資訊到網站上供瀏覽
 
