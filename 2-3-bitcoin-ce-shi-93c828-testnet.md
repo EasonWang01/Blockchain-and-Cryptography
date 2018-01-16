@@ -20,11 +20,11 @@
 ![](/assets/testnet-address.png)  
 可看到產生`m`開頭的測試鏈地址
 
-#### 線上產生
+#### 線上產生比特幣地址
 
 我們也可以用線上網站服務產生測試比特幣地址
 
-[https://www.bitaddress.org/bitaddress.org-v1.9-SHA1-a487b495d710d6f617d688e5f758e40c8b6c510e.html?testnet=true](https://www.bitaddress.org/bitaddress.org-v1.9-SHA1-a487b495d710d6f617d688e5f758e40c8b6c510e.html?testnet=true)
+https://www.bitaddress.org/?testnet=true
 
 > 記得後面要加上?testnet=true  
 > ![](/assets/testonlineaddress.png)  
