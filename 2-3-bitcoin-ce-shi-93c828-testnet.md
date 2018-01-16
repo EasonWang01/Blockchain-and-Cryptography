@@ -12,11 +12,11 @@
 > Windows 在前面加上start  
 > ![](/assets/testnet-qt.png)
 
-可以看到Bitcoin icon顯示為綠色
+可以看到Bitcoin icon顯示為綠色，及代表目前連線到Testnet
 
 ### 產生Testnet的地址
 
-一樣在說明裡面開啟除錯視窗，然後輸入`getnewaddress`  
+點選視窗上方之說明Tab，然後點選開啟除錯視窗，再來於下方輸入`getnewaddress`  
 ![](/assets/testnet-address.png)  
 可看到產生`m`開頭的測試鏈地址
 
