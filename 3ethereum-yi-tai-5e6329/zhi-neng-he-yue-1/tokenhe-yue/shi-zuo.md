@@ -115,7 +115,7 @@ contract ERC20_token is ERC20_interface {   // 使用 is 繼承
         Transfer(msg.sender, _to, _value);
         return true;
     }
-    
+
     // 從某一人地址轉給另一人地址，需要其轉帳配額有被同意
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         uint256 allowance = allowed[_from][msg.sender];
@@ -132,7 +132,7 @@ contract ERC20_token is ERC20_interface {   // 使用 is 繼承
     function balanceOf(address _owner) public view returns (uint256 balance) {
         return balances[_owner];
     }
-    
+
     // 給予特定帳號轉帳配額
     function approve(address _spender, uint256 _value) public returns (bool success) {
         allowed[msg.sender][_spender] = _value;
