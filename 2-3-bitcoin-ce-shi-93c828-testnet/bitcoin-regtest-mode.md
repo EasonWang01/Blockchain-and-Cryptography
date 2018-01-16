@@ -16,9 +16,9 @@ Bitcoin-qt 執行regtest Mode:![](/assets/螢幕快照 2017-12-26 下午3.53.17.
 
 ## 使用Bitcoin-cli
 
-我們也可以使用Bitcoin-cli 來設定我們想要的環境
+我們也可以使用Bitcoin-cli 來設定我們想要的環境 :
 
-1. 先執行Bitcoin server
+1.先執行Bitcoin server
 
 ```
 ./bitcoind -regtest -daemon
@@ -42,7 +42,7 @@ bitcoin-cli -regtest getbalance
 ./bitcoin-cli -regtest help
 ```
 
-1. 取得節點資訊
+5.取得節點資訊
 
 ```
 ./bitcoin-cli -regtest getblockchaininfo
