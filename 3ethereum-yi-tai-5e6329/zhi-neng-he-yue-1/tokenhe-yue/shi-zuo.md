@@ -112,11 +112,13 @@ contract ERC20_token is ERC20_interface {   // 使用 is 繼承
         buyPrice = _buyPrice;                                // 每單位 ether 之價格
     }
 
+    // 限定只有合約部屬人才能執行特定function
     modifier onlyOwner() {
         require(msg.sender == owner);
         _;
     }
 
+    // 查詢餘額
     function balanceOf(address _owner) public view returns (uint256 balance) {
       return balances[_owner];
     }
@@ -161,7 +163,7 @@ contract ERC20_token is ERC20_interface {   // 使用 is 繼承
     }
 
     // 購買token
-    function buy () public payable {
+    function buy() public payable {
         uint amount;
         amount = (msg.value / weiToEther) * buyPrice * 10 ** uint256(decimals);    // 購買多少token
         require(balances[owner] >= amount);              // 檢查還有沒有足夠token可以賣
