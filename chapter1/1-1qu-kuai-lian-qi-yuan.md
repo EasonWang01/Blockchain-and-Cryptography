@@ -66,7 +66,7 @@ Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的�
 
 [https://en.bitcoin.it/wiki/Hal\_Finney](https://en.bitcoin.it/wiki/Hal_Finney)
 
-> 我們可在此https://github.com/NakamotoInstitute/RPOW 看到RPOW的原始碼
+> 我們可在此[https://github.com/NakamotoInstitute/RPOW](https://github.com/NakamotoInstitute/RPOW) 看到RPOW的原始碼
 
 #### 2008年10月31日
 
@@ -124,15 +124,13 @@ Vitalik在美國佛羅裏達州邁阿密舉行的北美比特幣會議上正式�
 
 Ethereum以42天公開的Ethereum預售活動對第一批以太幣進行了分配，換算後大約收入31,591比特幣，當時價值 18,439,086 美元，售出共60,102,216以太幣
 
-### 後來
+### 近期
 
-隨著比特幣與乙太幣的成功發行，越來越多的加密貨幣也跟著發行
+隨著比特幣與以太幣的成功發行，越來越多的加密貨幣也跟著發行，也衍伸了後來 ICO \(Initial Coin Offering\) 名詞的誕生。
 
-我們也可以在以下連結看到比特幣的歷史大事紀
 
-[https://en.bitcoin.it/wiki/Bitcoin\_Firsts](https://en.bitcoin.it/wiki/Bitcoin_Firsts)
 
-參考文獻:
+參考資料 :
 
 [https://en.bitcoin.it/wiki/Bitcoin\_Firsts](https://en.bitcoin.it/wiki/Bitcoin_Firsts)
 

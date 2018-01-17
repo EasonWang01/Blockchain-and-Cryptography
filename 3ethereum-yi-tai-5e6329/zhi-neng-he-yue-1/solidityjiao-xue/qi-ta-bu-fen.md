@@ -23,9 +23,9 @@ constant: 可讀取，但不可修改，不會加在function上，只加在變�
 
 ```
 contract calculate {
-  function add (int a, int b) returns (int) {
-    return a + b
-  }
+    function add (int a, int b) returns (int) {
+        return a + b
+    }
 }
 ```
 
@@ -33,14 +33,16 @@ contract calculate {
 
 之後呼叫其contract
 
-```
+```go
 contract computer {
-  calculate calc = new calculate(0xfEDDF8DB160Dcb85f793bfEe734352760C4AB96a);
-  function 2Add3() constant returns (int) {} {
-    calc.add(2, 3);
-  }
+    calculate calc = new calculate(0xfEDDF8DB160Dcb85f793bfEe734352760C4AB96a);
+      function 2Add3() constant returns (int) {} {
+        calc.add(2, 3);
+    }
 }
 ```
+
+
 
 # memory、storage、stack
 
@@ -48,7 +50,7 @@ contract computer {
 
 Function參數預設均為memory，使用storage如下用法
 
-```
+```go
 uint[] abc = [1, 2, 3];
 
 function test(uint[] storage _abc) internal {
@@ -57,6 +59,8 @@ function test(uint[] storage _abc) internal {
 
 // abc變為[0, 2, 3]
 ```
+
+
 
 預設選項
 
