@@ -6,13 +6,19 @@
 
 其他可參考 : [https://en.bitcoin.it/wiki/List\_of\_address\_prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
 
-## 可在以下網站線上產生地址
+## 線上產生地址
 
 單一簽名：[https://coinb.in/\#newAddress](https://coinb.in/#newAddress)
 
 多重簽名：[https://coinb.in/multisig/](https://coinb.in/multisig/)
 
-> Private keys are always 32 bytes, and public keys are always 65 bytes \(or 33 bytes for a compressed public key\). Public key hashes are always 20 bytes
+# 地址長度
+
+```
+私鑰(Private key): 32bytes
+公鑰(Public key): 65bytes
+公鑰雜湊(Public key hash): 20bytes
+```
 
 # 地址種類
 
