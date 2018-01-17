@@ -106,6 +106,32 @@ function transferOwnership(address newOwner) public onlyOwner {
 }
 ```
 
+# 型別與Gas關係
+
+一般全域宣告變數uint與uint8耗用相同Gas，但如果是在struct裡面則有差別:
+
+```go
+struct NormalStruct {
+  uint a;
+  uint b;
+  uint c;
+}
+
+struct MiniStruct {
+  uint32 a;
+  uint32 b;
+  uint c;
+}
+
+// `MiniStruct` will cost less gas than `normal` because of struct packing
+NormalStruct normal = NormalStruct(10, 20, 30);
+MiniStruct mini = MiniStruct(10, 20, 30);
+```
+
+
+
+
+
 
 
 
