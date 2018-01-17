@@ -127,5 +127,7 @@ function bid() public payable {
 
 > 通常用大寫命名
 
+http://solidity.readthedocs.io/en/develop/contracts.html\#events
+
 
 
