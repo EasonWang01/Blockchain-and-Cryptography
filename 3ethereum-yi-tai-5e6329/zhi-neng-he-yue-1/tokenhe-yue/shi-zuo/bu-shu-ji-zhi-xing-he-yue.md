@@ -101,8 +101,6 @@ OSX :
 >
 > 如果相關執行條件都有符合但還是無法執行function可以把Mist重新開啟。
 
-
-
 ## 設定購買價格
 
 使用setPrice Function設定每單位Ether可以換多少Token，之後可從Buy Price查看。![](/assets/螢幕快照 2018-01-17 下午8.49.48.png)
@@ -113,7 +111,9 @@ OSX :
 
 ## 移除合約
 
+使用Delete Contract Function可以從區塊鏈永久移除此合約，並且將合約上的Ether全額轉帳到部署合約的帳號。![](/assets/螢幕快照 2018-01-17 下午9.09.21.png)
 
+之後合約點擊進去變成空的。
 
-
+![](/assets/螢幕快照 2018-01-17 下午9.09.45.png)
 
