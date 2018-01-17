@@ -60,6 +60,15 @@ function test(uint[] storage _abc) internal {
 
 > function只能為internal或private
 
+```
+state variables 預設為 storage
+function arguments 預設為 memory 
+local variables 例如 struct, array , mapping type 預設為 storage
+local variables 與 value type (除了 array, struct, mapping) 存在於 stack
+```
+
+http://solidity.readthedocs.io/en/latest/frequently-asked-questions.html\#what-is-the-memory-keyword-what-does-it-do
+
 # Fallback functions
 
 如果呼叫的function不存在於智能合約上，則EVM會自動去執行fallback function
