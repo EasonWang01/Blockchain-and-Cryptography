@@ -85,12 +85,28 @@ uint[] public a;
 如果想寫成function 記得要加上view或是pure關鍵字，告訴節點這是單純讀取固定資料的function，不然在例如Remix IDE之類不會直接顯示值出來。
 
 ```js
-function cc() public pure returns(string) {
+function showString() public pure returns(string) {
    return "test";
 }
 ```
 
 > 目前EVM不支援浮點數顯示，小於1且大於0的數均會顯示0
+
+## 確認地址是否存在
+
+使用address\(0\)或是address\(0x0\)
+
+範例：
+
+```js
+function transferOwnership(address newOwner) public onlyOwner {
+  require(newOwner != address(0));
+  OwnershipTransferred(owner, newOwner);
+  owner = newOwner;
+}
+```
+
+
 
 
 
