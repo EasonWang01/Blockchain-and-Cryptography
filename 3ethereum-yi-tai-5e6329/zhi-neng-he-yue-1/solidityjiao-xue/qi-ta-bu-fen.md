@@ -123,16 +123,10 @@ struct MiniStruct {
   uint c;
 }
 
-// `MiniStruct` will cost less gas than `normal` because of struct packing
+// `MiniStruct` 可使用較少Gas
 NormalStruct normal = NormalStruct(10, 20, 30);
 MiniStruct mini = MiniStruct(10, 20, 30);
 ```
-
-
-
-
-
-
 
 
 
