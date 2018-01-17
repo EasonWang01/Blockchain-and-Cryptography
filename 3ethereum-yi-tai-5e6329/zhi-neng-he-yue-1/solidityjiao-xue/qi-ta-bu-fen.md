@@ -42,11 +42,11 @@ contract computer {
 }
 ```
 
-# memory/storage
+# memory、storage、stack
 
-類似pass by value 與 pass by reference
+> storage耗費最多Gas，memory耗費較少，stack免費。
 
-預設均為memory，使用storage如下用法
+Function參數預設均為memory，使用storage如下用法
 
 ```
 uint[] abc = [1, 2, 3];
@@ -67,7 +67,7 @@ local variables 例如 struct, array , mapping type 預設為 storage
 local variables 與 value type (除了 array, struct, mapping) 存在於 stack
 ```
 
-http://solidity.readthedocs.io/en/latest/frequently-asked-questions.html\#what-is-the-memory-keyword-what-does-it-do
+[http://solidity.readthedocs.io/en/latest/frequently-asked-questions.html\#what-is-the-memory-keyword-what-does-it-do](http://solidity.readthedocs.io/en/latest/frequently-asked-questions.html#what-is-the-memory-keyword-what-does-it-do)
 
 # Fallback functions
 
