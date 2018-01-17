@@ -112,7 +112,21 @@ if (stage == Stages.AcceptingBlindedBids){
 }
 ```
 
+#### 5.Array
 
+```go
+uint[] myArray;
+function Test() constant returns (uint[]) {
+    myArray.push(123); 
+    return myArray;
+}
+```
 
+或是使用memory Array \(宣告長度為3的Array\)
 
+```
+uint[] memory values = new uint[](3);
+```
+
+http://solidity.readthedocs.io/en/develop/types.html\#allocating-memory-arrays
 
