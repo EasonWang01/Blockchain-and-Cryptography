@@ -58,7 +58,7 @@ function test(uint[] storage _abc) internal {
 // abc變為[0, 2, 3]
 ```
 
-> function只能為internal或private
+預設選項
 
 ```
 state variables 預設為 storage
