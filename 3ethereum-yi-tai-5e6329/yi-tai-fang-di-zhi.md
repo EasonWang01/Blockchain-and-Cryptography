@@ -26,8 +26,6 @@ console.log('地址Address: ')
 console.log(`0x${address}`)
 ```
 
-
-
 使用第三方模組 \( ethereumjs-wallet \) 產生地址:
 
 ```js
@@ -46,5 +44,7 @@ console.log('Address: ')
 console.log(`0x${instance.getAddress().toString('hex')}`)
 ```
 
+其他語言可參考:
 
+https://gist.github.com/lgn21st/1bd2db7eb30b55e17d07a8bc637c2f87
 
