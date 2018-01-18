@@ -74,6 +74,15 @@ const privateKey = "1E99423A4ED27608A15A2616A2B0E9E52CED330AC530EDCC32C8FFC6A526
 
 ![](/assets/896.png)
 
+#### 從WIF私鑰轉為比特幣地址
+
+```js
+const bitcoin = require('bitcoinjs-lib')
+const keyPair = bitcoin.ECPair.fromWIF('5JdT9kXDHJi3zzyJfYhvpWDAQrk6y7GPCkQiQfdxk5aV4jrq12A') // 輸入WIF格式私鑰
+const address = keyPair.getAddress()
+console.log(address)
+```
+
 # Mini Private Key
 
 > 開頭為S，然後長度為30個字
