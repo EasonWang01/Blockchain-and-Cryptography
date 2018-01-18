@@ -147,7 +147,9 @@ function hex2ASCII(_hex) {
 
 # 2.多重簽名地址
 
-多重簽名地址，開頭為3，產生地址時可以加入一至十五個public key，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名
+多重簽名地址，開頭為3，產生地址時可以加入一至十五個public key，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名。
+
+
 
 #### 產生方式：
 
@@ -168,6 +170,10 @@ M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
 \(把多個要結合個public key跟相關execute code串接即可\)
 
 > ![](/assets/螢幕快照 2017-11-19 下午3.56.38.png)[http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/](http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/)
+
+## P2SH\(Pay to Script Hash\)
+
+為BIP-11的衍伸，其定義在BIP-16
 
 ```js
 var crypto = require('crypto');
