@@ -41,8 +41,6 @@
 > 1.由34個英文加數字組成  
 > 2.因為採用base58編碼，所以不會含有大寫`O`大寫`I`小寫`i`和數字`0`
 
-
-
 # 1.最常用的P2PKH單一簽名地址
 
 單一簽名地址，開頭為1
@@ -153,15 +151,25 @@ function hex2ASCII(_hex) {
 
 #### 產生方式：
 
-其M to N 之多重簽名 Script類似如下
+其M to N 之多重簽名Locking Script類似如下，M代表需要多少個Public Key來簽章，而N表示需要多少對應的Signature來做驗證。
 
 ```
 M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
 ```
 
+```
+例如 2 to 3 之 multi-signature 類似如下
+
+Locking script:
+2 <Public Key A> <Public Key B> <Public Key C> 3 OP_CHECKMULTISIG
+
+Unlocking script:
+OP_0 <Signature B> <Signature C>
+```
+
 ## P2SH\(Pay to Script Hash\)
 
-為BIP-11的衍伸，其定義在BIP-16
+為BIP-11的衍伸，其定義在BIP-16，因為在傳統的Multi Sig需要放入
 
 跟P2PKH產生方式類似，只要把public key換為redeem script即可，redeem script產生方式為下圖：
 
