@@ -79,6 +79,7 @@ npm install bs58
 範例:
 
 ```js
+
 var crypto = require('crypto');
 var ecdh = crypto.createECDH('secp256k1');
 var bs58 = require('bs58');
@@ -87,21 +88,23 @@ var bs58 = require('bs58');
 var hash2 = crypto.randomBytes(32)
 console.log('--------')
 console.log('私鑰')
-console.log(hash2); //私鑰，64位十六進制數   //使用hash2.toString('hex')即可看到16進位字串
+console.log(hash2.toString('hex')); //私鑰，64位十六進制數 //使用hash2.toString('hex')即可看到16進位字串
 console.log('--------')
 
 
 // ECDH和ECDSA產生公私鑰的方式都相同
 var publickey = ecdh.setPrivateKey(hash2,'hex').getPublicKey('hex')
 console.log('公鑰')
-console.log(publickey); //公鑰(通過橢圓曲線算法可以從私鑰計算得到公鑰)
+console.log(publickey.toString('hex')); //公鑰(通過橢圓曲線算法可以從私鑰計算得到公鑰)
 console.log('--------')
 
 //把公鑰以sha256加密後再用ripemd160加密，取得publickeyHash
-var hash = crypto.createHash('sha256').update(publickey).digest();
+ASCII_text = hex2ASCII(publickey); // 先將publickey轉為ASCII再放入SHA256 這邊可參考: https://bitcoin.stackexchange.com/a/43350
+var hash = crypto.createHash('sha256').update(Buffer.from(ASCII_text, "binary")).digest();
+
 hash = crypto.createHash('ripemd160').update(hash).digest();
 console.log('publickeyHash')
-console.log(hash);
+console.log(hash.toString('hex'));
 console.log('--------')
 
 
@@ -129,6 +132,16 @@ address = bs58.encode(address);
 console.log('編碼後的比特幣地址')
 console.log(address);
 console.log('--------')
+
+
+function hex2ASCII(_hex) {
+  var hex = _hex.toString();//force conversion
+  var str = '';
+  for (var i = 0; i < hex.length; i += 2) {
+      str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+  }
+  return str;
+}
 ```
 
 # 2.P2SH 多重簽名地址
