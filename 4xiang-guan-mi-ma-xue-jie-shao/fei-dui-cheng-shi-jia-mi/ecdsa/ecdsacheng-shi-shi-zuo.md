@@ -237,13 +237,21 @@ if (result) {
 
 ## OpenSSL 指令列操作Elliptic\_Curve
 
-以下我們產生一個secp256k1的private key
+以下我們產生一個secp256k1的Key
 
 ```
-openssl ecparam -name secp256k1 -genkey -out ec-priv.pem
+openssl ecparam -name secp256k1 -genkey -out ec-key.pem
 ```
 
+之後我們可以用以下指令讀取
 
+> 會顯示出Private Key與Public key
+
+```
+openssl ec -in ec-key.pem -text
+```
+
+![](/assets/jas90.png)
 
 [https://wiki.openssl.org/index.php/Command\_Line\_Elliptic\_Curve\_Operations](https://wiki.openssl.org/index.php/Command_Line_Elliptic_Curve_Operations)
 
