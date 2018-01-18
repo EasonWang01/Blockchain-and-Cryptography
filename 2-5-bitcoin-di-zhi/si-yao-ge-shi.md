@@ -1,3 +1,13 @@
+# 私鑰格式
+
+比特幣的私鑰長度為 256 bits\(32 bytes\) 在十六進位為 64 個字。
+
+任何在以下範圍中的私鑰都可以是合法的。
+
+```
+0x1 到 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4140
+```
+
 # WIF\(Wallet import format\)
 
 一般私鑰跟WIF格式私鑰可以互相轉換，其優點在於長度稍微縮短，以及加入了checksum

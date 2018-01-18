@@ -235,7 +235,15 @@ if (result) {
 
 ---
 
-OpenSSL 指令列操作Elliptic\_Curve
+## OpenSSL 指令列操作Elliptic\_Curve
+
+以下我們產生一個secp256k1的private key
+
+```
+openssl ecparam -name secp256k1 -genkey -out ec-priv.pem
+```
+
+
 
 [https://wiki.openssl.org/index.php/Command\_Line\_Elliptic\_Curve\_Operations](https://wiki.openssl.org/index.php/Command_Line_Elliptic_Curve_Operations)
 
