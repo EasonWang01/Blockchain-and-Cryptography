@@ -472,7 +472,7 @@ M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
 3-of-5 Multi-Signature  locking script類似如下
 
 ```
-3 <Public Key A> <Public Key B> <Public Key C> 5 OP_CHECKMULTISI
+3 <Public Key A> <Public Key B> <Public Key C> 5 OP_CHECKMULTISIG
 ```
 
 #### 
