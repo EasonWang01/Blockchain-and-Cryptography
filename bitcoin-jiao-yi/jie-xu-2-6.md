@@ -60,8 +60,14 @@ Unlocking script:
 
 ---
 
-註1: [https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)  
-以unix timestamp表示，類似於`1511321691`如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交22易加入區塊
+註1: lock\_time   [https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)  
+以unix timestamp表示，類似於`1511321691`如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交易加入區塊
+
+![](/assets/09isd.png)
+
+> https://en.bitcoin.it/wiki/Protocol\_documentation\#tx
+
+
 
 註2: 交易手續費，約為1000satoshis每KB.每個交易通常至少含有500 bytes.  
 [https://bitcoinfees.earn.com/](https://bitcoinfees.earn.com/)
