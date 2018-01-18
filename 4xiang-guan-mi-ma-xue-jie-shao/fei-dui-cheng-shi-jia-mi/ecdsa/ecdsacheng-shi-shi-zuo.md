@@ -253,5 +253,17 @@ openssl ec -in ec-key.pem -text
 
 ![](/assets/jas90.png)
 
+接著我們可以把Public Key獨立取出:
+
+```
+openssl ec -in ec-priv.pem -pubout -out ec-pub.pem
+```
+
+顯示Public Key:
+
+```
+openssl ec -in ec-pub.pem -pubin -text
+```
+
 [https://wiki.openssl.org/index.php/Command\_Line\_Elliptic\_Curve\_Operations](https://wiki.openssl.org/index.php/Command_Line_Elliptic_Curve_Operations)
 
