@@ -145,15 +145,19 @@ function hex2ASCII(_hex) {
 }
 ```
 
-# 2.P2SH 多重簽名地址
+# 2.多重簽名地址
 
 多重簽名地址，開頭為3，產生地址時可以加入一至十五個public key，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名
 
-![](/assets/螢幕快照 2017-11-19 下午3.10.49.png)
-
-> [https://www.blocktrail.com/api/docs](https://www.blocktrail.com/api/docs)
-
 #### 產生方式：
+
+其M to N 之多重簽名 Script類似如下
+
+```
+M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
+```
+
+
 
 到下面查表
 
