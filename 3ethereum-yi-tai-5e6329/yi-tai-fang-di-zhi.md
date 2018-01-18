@@ -1,31 +1,49 @@
+使用原生模組搭配SHA3模組產生地址
+
 ```js
-var crypto = require('crypto');
-var ecdh = crypto.createECDH('secp256k1');
+const crypto = require('crypto');
+const ecdh = crypto.createECDH('secp256k1');
 const SHA3 = require('keccakjs')
 
-console.log(sha3.keccak256('123'))
+const random_hash = crypto.randomBytes(32)
+console.log('-------------------------------------')
+console.log('私鑰Private Key: ')
+console.log(random_hash.toString('hex')); //私鑰，32bytes 十六進制數
+console.log('-------------------------------------')
 
-var hash2 = crypto.randomBytes(32)
-console.log('--------')
-console.log('私鑰')
-console.log(hash2.toString('hex')); //私鑰，64位十六進制數 //使用hash2.toString('hex')即可看到16進位字串
-console.log('--------')
-
-
-// ECDH和ECDSA產生公私鑰的方式都相同
-var publickey = ecdh.setPrivateKey(hash2.toString('hex'),'hex').getPublicKey('hex')
-console.log('公鑰')
+// 產生公鑰
+const publickey = ecdh.setPrivateKey(random_hash).getPublicKey('hex')
+console.log('公鑰Public Key: ')
 console.log(publickey); //公鑰(通過橢圓曲線算法可以從私鑰計算得到公鑰)
-console.log('--------')
-
-
+// 產生地址
 let pubKeyBuf = new Buffer(publickey, 'hex')
 let h = new SHA3(256)
-h.update(pubKeyBuf.slice(1)) // 130 => 128
+h.update(pubKeyBuf.slice(1)) // 把Buffer前第一個部分移除 130 => 128
+let address = h.digest('hex').slice(-40) // 取後面四十個字
 
-let address = h.digest('hex').slice(-40)
+console.log('-------------------------------------')
+console.log('地址Address: ')
+console.log(`0x${address}`)
+```
 
-console.log(address)
+
+
+使用第三方模組 \( ethereumjs-wallet \) 產生地址:
+
+```js
+const crypto = require('crypto')
+const eth = require('ethereumjs-wallet')
+const random_hash = crypto.randomBytes(32)
+const instance = eth.fromPrivateKey(random_hash)
+
+console.log('private key: ')
+console.log(instance.getPrivateKey().toString('hex'))
+console.log('-------------------------------------')
+console.log('public key: ')
+console.log(instance.getPublicKey().toString('hex'))
+console.log('-------------------------------------')
+console.log('Address: ')
+console.log(`0x${instance.getAddress().toString('hex')}`)
 ```
 
 
