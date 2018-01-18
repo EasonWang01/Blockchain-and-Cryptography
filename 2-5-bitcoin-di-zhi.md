@@ -41,7 +41,7 @@
 > 1.由34個英文加數字組成  
 > 2.因為採用base58編碼，所以不會含有大寫`O`大寫`I`小寫`i`和數字`0`
 
-## 
+
 
 # 1.最常用的P2PKH單一簽名地址
 
@@ -145,6 +145,8 @@ function hex2ASCII(_hex) {
 }
 ```
 
+> 以下產生之地址不保證正確，僅供讀者參考使用
+
 # 2.多重簽名地址
 
 多重簽名地址，開頭為3，產生地址時可以加入一至十五個public key，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名。
@@ -156,8 +158,6 @@ function hex2ASCII(_hex) {
 ```
 M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
 ```
-
-
 
 ## P2SH\(Pay to Script Hash\)
 
