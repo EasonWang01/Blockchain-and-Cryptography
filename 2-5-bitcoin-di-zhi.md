@@ -158,7 +158,7 @@ M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
 ```
 
 ```
-例如 2 to 3 之 multi-signature 類似如下
+ 2 to 3 之 multi-signature 類似如下
 
 Locking script:
 2 <Public Key A> <Public Key B> <Public Key C> 3 OP_CHECKMULTISIG
@@ -169,9 +169,22 @@ OP_0 <Signature B> <Signature C>
 
 ## P2SH\(Pay to Script Hash\)
 
-https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki
+[https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki)
 
 為一開始發展之多重簽名BIP-11的衍伸，其定義在BIP-16，因為在傳統的Multi Sig需要放入多個Public Key，所以後來決定把具有多個Public Key之script做雜湊，產生一個20-byte 的 Redeem Script。
+
+```
+2 to 5 之 P2SH
+
+Redeem script: 
+2 <Public Key A> <Public Key B> <Public Key C> <Public Key D> <Public Key E> 5 OP_CHECKMULTISIG
+
+Locking script:
+OP_HASH160 <20-bytes Redeem script> OP_EQUAL
+
+Unlocking script:
+<Public Key B> <Public Key C>  <20-bytes Redeem script> 
+```
 
 跟P2PKH產生方式類似，只要把public key換為redeem script即可，redeem script產生方式為下圖：
 
