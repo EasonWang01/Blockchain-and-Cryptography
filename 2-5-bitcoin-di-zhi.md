@@ -74,7 +74,9 @@
 npm install bs58
 ```
 
-base58說明：[https://zh.wikipedia.org/wiki/Base58](https://zh.wikipedia.org/wiki/Base58)
+> base58說明：[https://zh.wikipedia.org/wiki/Base58](https://zh.wikipedia.org/wiki/Base58)
+
+範例:
 
 ```js
 var crypto = require('crypto');
