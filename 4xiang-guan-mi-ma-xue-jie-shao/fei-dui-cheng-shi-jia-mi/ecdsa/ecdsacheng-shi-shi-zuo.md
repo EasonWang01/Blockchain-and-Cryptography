@@ -265,7 +265,7 @@ openssl ec -in ec-priv.pem -pubout -out ec-pub.pem
 openssl ec -in ec-pub.pem -pubin -text
 ```
 
-> 公鑰Public 共包含65 bytes:
+> 公鑰 Public Key 共包含65 bytes:
 >
 > * 04 開頭
 > * 32-byte 之 coordinate.
