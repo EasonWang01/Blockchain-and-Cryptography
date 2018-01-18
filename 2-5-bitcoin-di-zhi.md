@@ -157,8 +157,6 @@ function hex2ASCII(_hex) {
 M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
 ```
 
-
-
 到下面查表
 
 ![](/assets/螢幕快照 2017-11-19 下午3.26.17.png)
@@ -530,6 +528,8 @@ http.get({
 ```
 
 # 地址不建議重複使用
+
+地址如果重複使用容易造成個人隱私上的暴露，所以許多交易所的地址會經常更換，其他相關資訊可參考如下連結:
 
 [https://en.bitcoin.it/wiki/Address\_reuse](https://en.bitcoin.it/wiki/Address_reuse)
 
