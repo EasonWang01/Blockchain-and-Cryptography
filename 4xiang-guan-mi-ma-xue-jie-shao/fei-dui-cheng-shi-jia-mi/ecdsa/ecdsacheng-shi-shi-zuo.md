@@ -265,5 +265,11 @@ openssl ec -in ec-priv.pem -pubout -out ec-pub.pem
 openssl ec -in ec-pub.pem -pubin -text
 ```
 
+> 公鑰Public 共包含65 bytes:
+>
+> * 04 開頭
+> * 32-byte 之 coordinate.
+> * 32-byte 之 y coordinate.
+
 [https://wiki.openssl.org/index.php/Command\_Line\_Elliptic\_Curve\_Operations](https://wiki.openssl.org/index.php/Command_Line_Elliptic_Curve_Operations)
 
