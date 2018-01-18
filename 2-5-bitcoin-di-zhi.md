@@ -170,7 +170,7 @@ Unlocking script:
 <Public Key B> <Public Key C>  <20-bytes Redeem script>
 ```
 
-跟P2PKH產生方式類似，只要把public key換為redeem script即可，redeem script產生方式為下圖：
+把public key結合之script轉為redeem script，redeem script產生方式為下圖：
 
 \(把多個要結合個public key跟相關execute code串接即可\)
 
