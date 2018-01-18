@@ -457,7 +457,7 @@ OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> 
 
 創立時決定最多 N 把 Public Key 被記錄在上面，而 unlocking 解鎖時至少要有 M 把 Private Key 產生的 signature 才能執行交易，而 M  會小於或等於 N。
 
-例如小明出了五元與阿煌出了三元，加起來八元往某一地址發送交易，
+例如小明出了五元與阿煌出了三元，加起來八元往某一地址發送交易。
 
 ```
 m-of-n Multi-Signature
