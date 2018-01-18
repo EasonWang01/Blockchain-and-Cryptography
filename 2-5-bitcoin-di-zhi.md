@@ -147,7 +147,7 @@ function hex2ASCII(_hex) {
 
 # 2.多重簽名地址
 
-多重簽名地址，開頭為3，產生地址時可以加入一至十五個public key，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名。
+多重簽名地址，開頭為3，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名。
 
 #### 產生方式：
 
@@ -171,7 +171,7 @@ OP_0 <Signature B> <Signature C>
 
 [https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki)
 
-官方的錢包產生多重簽名:https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work
+官方的錢包產生多重簽名:[https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work](https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work)
 
 為一開始發展之多重簽名BIP-11的衍伸，其定義在BIP-16，因為在傳統的Multi Sig需要放入多個Public Key，所以後來決定把具有多個Public Key之script做雜湊，產生一個20-byte 的 Redeem Script。
 
