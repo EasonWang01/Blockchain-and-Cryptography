@@ -25,7 +25,9 @@
 ```
 1.Single Sig Address (Pay to Public Key Hash (P2PKH)) 單一簽名地址，開頭為1
 
-2.Multi Sig Address （P2SH） 多重簽名地址，開頭為3
+2.Multi Sig 多重簽名地址，開頭為3,分為如下兩種
+    Raw Multi Sig (BIP-11) 
+    Pay to Script Hash（P2SH） (BIP-16)
 
 3.SegWit Address (P2WSH) 隔離見證地址，開頭為3
 
