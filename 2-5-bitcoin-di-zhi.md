@@ -176,7 +176,7 @@ Unlocking script:
 
 > ![](/assets/螢幕快照 2017-11-19 下午3.56.38.png)[http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/](http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/)
 
-#### 使用Bitcoind產生地址
+### 使用Bitcoind產生地址
 
 [https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work](https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work)
 
