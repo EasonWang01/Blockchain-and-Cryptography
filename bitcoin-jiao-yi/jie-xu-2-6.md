@@ -56,7 +56,7 @@ Unlocking script:
 <Public Key B> <Public Key C>  <20-bytes Redeem script>
 ```
 
-#### 
+可參考: https://bitcoin.stackexchange.com/a/28092
 
 ---
 
@@ -65,9 +65,7 @@ Unlocking script:
 
 ![](/assets/09isd.png)
 
-> https://en.bitcoin.it/wiki/Protocol\_documentation\#tx
-
-
+> [https://en.bitcoin.it/wiki/Protocol\_documentation\#tx](https://en.bitcoin.it/wiki/Protocol_documentation#tx)
 
 註2: 交易手續費，約為1000satoshis每KB.每個交易通常至少含有500 bytes.  
 [https://bitcoinfees.earn.com/](https://bitcoinfees.earn.com/)
