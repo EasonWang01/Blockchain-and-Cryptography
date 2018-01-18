@@ -169,7 +169,9 @@ OP_0 <Signature B> <Signature C>
 
 ## P2SH\(Pay to Script Hash\)
 
-為BIP-11的衍伸，其定義在BIP-16，因為在傳統的Multi Sig需要放入
+為一開始發展之多重簽名BIP-11的衍伸，其定義在BIP-16，因為在傳統的Multi Sig需要放入多個Public Key，所以後來決定把具有多個Public Key之script做雜湊，產生一個20-byte 的 Redeem Script。
+
+
 
 跟P2PKH產生方式類似，只要把public key換為redeem script即可，redeem script產生方式為下圖：
 
