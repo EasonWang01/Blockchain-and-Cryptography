@@ -151,7 +151,7 @@ function hex2ASCII(_hex) {
 
 #### 產生方式：
 
-其M to N 之多重簽名Locking Script類似如下，M代表需要多少個Public Key來簽章，而N表示需要多少對應的Signature來做驗證。
+其M to N 之多重簽名Locking Script類似如下，M代表需要多少個Public Key，而N表示至少需要多少對應的Signature來做驗證。
 
 ```
 M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
@@ -183,7 +183,7 @@ Locking script:
 OP_HASH160 <20-bytes Redeem script> OP_EQUAL
 
 Unlocking script:
-<Public Key B> <Public Key C>  <20-bytes Redeem script> 
+<Public Key B> <Public Key C>  <20-bytes Redeem script>
 ```
 
 跟P2PKH產生方式類似，只要把public key換為redeem script即可，redeem script產生方式為下圖：
