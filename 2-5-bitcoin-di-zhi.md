@@ -178,7 +178,11 @@ Unlocking script:
 
 ## 使用Bitcoind產生地址
 
-https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work
+[https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work](https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work)
+
+
+
+#### 使用Node.js產生P2SH地址
 
 ```js
 var crypto = require('crypto');
@@ -191,15 +195,19 @@ const OP_CHECKMULTISIG = "ae";
 
 // Push 65 bytes to stack = parseInt("65").toString(16) 65轉為16進位為41
 const pubkeyBytes = "41"
+
 //三個隨機產生的公鑰
 const pubkey1 = "045ddb9d95c17d47d0c6d8ab7385cf21cd7d5a411786aeb241f6812d3cf3476200c3f92f6740dd5565ccf249a8e03045931fa5eee736b0bdba94df9db223f809f5";
 const pubkey2 = "04ddb9f9da9e667c71a24e341a34c4cbc34f3cd88170e8b4f989b485779c30a55cbea00a5485759aeceff2745df4af6b4e2a58472ce1c8cc9a8bafa1b35d4be672";
 const pubkey3 = "0499c36019a9cf95076c27052c424cfce71077cebe23ca22d3b98a7ab54b577e731009feb3aab2068a8e15596db557f2235d46c0e895cdd45f1591b37d4c409869";
 
-redeemScript = OP_2 + pubkeyBytes + pubkey1 + pubkeyBytes + pubkey2 + pubkeyBytes + pubkey3  + OP_3 + OP_CHECKMULTISIG;
+redeemScript = OP_2 + pubkeyBytes + pubkey1 + pubkeyBytes + pubkey2 + pubkeyBytes + pubkey3 + OP_3 + OP_CHECKMULTISIG;
+console.log('RedeemScript： ')
+console.log(redeemScript)
+console.log('---------')
 
-//把公鑰以sha256加密後再用ripemd160加密，取得publickeyHash
-var hash = crypto.createHash('sha256').update(redeemScript).digest();
+ASCII_text = hex2ASCII(redeemScript); // 先將redeemScript轉為ASCII再放入SHA256 這邊可參考: https://bitcoin.stackexchange.com/a/43350
+var hash = crypto.createHash('sha256').update(Buffer.from(ASCII_text, "ascii")).digest();
 hash = crypto.createHash('ripemd160').update(hash).digest();
 console.log('redeemScriptHash')
 console.log(hash);
@@ -229,6 +237,16 @@ address = bs58.encode(address);
 console.log('編碼後的多重簽名比特幣地址')
 console.log(address);
 console.log('--------')
+
+
+function hex2ASCII(_hex) {
+  let hex = _hex.toString();//force conversion
+  let str = '';
+  for (let i = 0; i < hex.length; i += 2) {
+    str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+  }
+  return str;
+}
 ```
 
 # 3.SegWit Address \(P2WSH\)
