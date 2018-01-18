@@ -79,7 +79,6 @@ npm install bs58
 範例:
 
 ```js
-
 var crypto = require('crypto');
 var ecdh = crypto.createECDH('secp256k1');
 var bs58 = require('bs58');
@@ -100,7 +99,7 @@ console.log('--------')
 
 //把公鑰以sha256加密後再用ripemd160加密，取得publickeyHash
 ASCII_text = hex2ASCII(publickey); // 先將publickey轉為ASCII再放入SHA256 這邊可參考: https://bitcoin.stackexchange.com/a/43350
-var hash = crypto.createHash('sha256').update(Buffer.from(ASCII_text, "binary")).digest();
+var hash = crypto.createHash('sha256').update(Buffer.from(ASCII_text, "ascii")).digest();
 
 hash = crypto.createHash('ripemd160').update(hash).digest();
 console.log('publickeyHash')
