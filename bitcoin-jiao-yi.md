@@ -455,7 +455,7 @@ OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> 
 
 #### 3.Multi-Signature \(MultiSig，多重簽章交易，需要多個的私鑰才可完成簽發，最多可包含 15 個 keys\)
 
-創立時決定最多 N 把 Public Key 被記錄在上面\(N 最大為 15\)，而 unlocking 解鎖時至少要有 M 把 Private Key 產生的 signature 才能執行交易，而 M  會小於或等於 N。
+創立時決定最多 N 把 Public Key 被記錄在上面，而 unlocking 解鎖時至少要有 M 把 Private Key 產生的 signature 才能執行交易，而 M  會小於或等於 N。
 
 ```
 m-of-n Multi-Signature
@@ -472,10 +472,10 @@ M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
 3-of-5 Multi-Signature  locking script類似如下
 
 ```
-3 <Public Key A> <Public Key B> <Public Key C> 5 OP_CHECKMULTISIG
+3 <Public Key A> <Public Key B> <Public Key C> <Public Key D> <Public Key E> 5 OP_CHECKMULTISIG
 ```
 
-#### 
+> 真實交易可參考: https://www.blocktrail.com/BTC/tx/6e2c5b6b2a926a7da2415ae55c701e83d6e7bc46bad9bc23b5f9c7ef1ae26998
 
 
 
