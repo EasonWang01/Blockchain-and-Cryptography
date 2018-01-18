@@ -157,11 +157,7 @@ function hex2ASCII(_hex) {
 M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
 ```
 
-到下面查表
 
-![](/assets/螢幕快照 2017-11-19 下午3.26.17.png)
-
-> [https://en.bitcoin.it/wiki/Script](https://en.bitcoin.it/wiki/Script)
 
 ## P2SH\(Pay to Script Hash\)
 

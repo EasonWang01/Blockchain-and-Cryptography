@@ -92,7 +92,11 @@ A Signature
 
 > 可在原始碼中src/script/script.h找到
 >
-> https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/script.h
+> [https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/script.h](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/script.h)
 
+或是可從以下網站直接查表:
 
+https://en.bitcoin.it/wiki/Script
+
+![](/assets/kopsd9.png)
 
