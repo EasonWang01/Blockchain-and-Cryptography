@@ -268,8 +268,18 @@ openssl ec -in ec-pub.pem -pubin -text
 > 公鑰 Public Key 共包含65 bytes:
 >
 > * 04 開頭
-> * 32-byte 之 coordinate.
+> * 32-byte 之 x coordinate.
 > * 32-byte 之 y coordinate.
+
+轉為壓縮格式的公鑰
+
+```
+openssl ec -in ec-pub.pem -pubin -text -out compress-pub.pem -conv_form compressed
+```
+
+> 壓縮格式其實就是把 y coordinate丟棄，並且根據y coordinate 的最後一位是基數或偶數，如果是奇數則在開頭加上03，偶數加上02
+
+![](/assets/ksd9.png)
 
 [https://wiki.openssl.org/index.php/Command\_Line\_Elliptic\_Curve\_Operations](https://wiki.openssl.org/index.php/Command_Line_Elliptic_Curve_Operations)
 
