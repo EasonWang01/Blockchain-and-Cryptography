@@ -1,6 +1,6 @@
 # 壓縮的地址
 
-常聽到壓縮的地址意思為，壓縮後的public key產生之地址，因為橢圓曲線公式知道x後即可求得y，所以沒有必要把公鑰的x和y都加上去
+常聽到壓縮的地址意思為，壓縮後的Public Key產生之地址，因為橢圓曲線公式知道x後即可求得y，所以沒有必要把公鑰的x和y都加上去
 
 未壓縮
 
@@ -14,9 +14,17 @@
 02 or 03 + <x座標>
 ```
 
-> Uncompressed [public keys](https://bitcoin.org/en/glossary/public-key) start with 0x04;
+公鑰 Public Key 共包含65 bytes:
+
+> > * 04 開頭
+> > * 32-byte 之 x coordinate.
+> > * 32-byte 之 y coordinate.
 >
-> [Compressed public keys](https://bitcoin.org/en/glossary/compressed-public-key) begin with 0x03 or 0x02 depending on whether they’re greater or less than the midpoint of the curve. These prefix bytes are all used in official [secp256k1](http://www.secg.org/sec2-v2.pdf) documentation.
+> 壓縮格式其實就是把 y coordinate丟棄，並且根據y coordinate 的最後一位是基數或偶數，如果是奇數則在開頭加上03，偶數加上02。
+
+假設公鑰
+
+
 
 
 
