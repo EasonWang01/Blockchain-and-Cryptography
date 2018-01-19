@@ -4,6 +4,22 @@
 
 # ECIES\( Elliptic Curve Integrated Encryption Scheme \)
 
+**Integrated Encryption Scheme**\(**IES**\)是一種結合非對稱式加密與對稱式加密的機制。
+
+當小明要送一個加密訊息給阿煌時他需要知道如下資料 :
+
+```
+1. Key derivation function (e.g., ANSI-X9.63-KDF with SHA-1 option)
+
+2. Message authentication code (e.g., HMAC-SHA-1-160 with 160-bit keys or HMAC-SHA-1-80 with 80-bit keys)
+
+3. Symmetric encryption scheme (e.g., TDEA in CBC mode or XOR encryption scheme) 當作 E;
+
+4. elliptic curve domain parameters: (p,a,b,G,n,h)
+
+5. 阿煌的 Public key: K ，K為阿煌的私鑰與G的乘積。
+```
+
 程式範例:
 
 ```js
