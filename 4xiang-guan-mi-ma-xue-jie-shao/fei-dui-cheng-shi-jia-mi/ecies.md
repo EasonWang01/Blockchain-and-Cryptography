@@ -26,6 +26,7 @@ const secp256k1 = require("secp256k1");
 function sha512(msg) {
   return crypto.createHash("sha512").update(msg).digest();
 }
+
 // AES-256-CBC加密
 function aes256CbcEncrypt(iv, key, plaintext) {
   let cipher = crypto.createCipheriv("aes-256-cbc", key, iv);
@@ -33,6 +34,7 @@ function aes256CbcEncrypt(iv, key, plaintext) {
   let secondChunk = cipher.final();
   return Buffer.concat([firstChunk, secondChunk]);
 }
+
 // AES-256-CBC解密
 function aes256CbcDecrypt(iv, key, ciphertext) {
   let cipher = crypto.createDecipheriv("aes-256-cbc", key, iv);
@@ -40,10 +42,12 @@ function aes256CbcDecrypt(iv, key, ciphertext) {
   let secondChunk = cipher.final();
   return Buffer.concat([firstChunk, secondChunk]);
 }
+
 // SHA256雜湊訊息驗證碼
 function hmacSha256(key, msg) {
   return crypto.createHmac("sha256", key).update(msg).digest();
 }
+
 // 從Private Key產生Public Key
 const getPublic =  function(privateKey) {
   if(privateKey.length !== 32) {
@@ -53,6 +57,7 @@ const getPublic =  function(privateKey) {
   let compressed = secp256k1.publicKeyCreate(privateKey);
   return secp256k1.publicKeyConvert(compressed, false);
 };
+
 //產生Share Secret
 const derive =  function(privateKeyA, publicKeyB) {
   const _derive = crypto.createECDH('secp256k1');
