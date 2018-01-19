@@ -204,7 +204,7 @@ Unlocking script:
 ./bitcoin-cli -datadir="./chaindata"  validateaddress 1j9x23hbbLDfpExMMHBTQ3CfQ52mqLqLU
 ```
 
-#### ![](/assets/螢幕快照 2018-01-19 下午11.18.56.png)
+5.產生出2 to 3 之 multisig address與redeemScript
 
 #### 使用Node.js產生P2SH地址
 
