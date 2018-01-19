@@ -212,6 +212,8 @@ Unlocking script:
 
 #### ![](/assets/螢幕快照 2018-01-19 下午11.34.41.png)
 
+> 參考至：https://bitcoin.stackexchange.com/a/28352
+
 #### 使用Node.js產生P2SH地址
 
 ```js
