@@ -1,3 +1,7 @@
+# 使用BitcoinJS產生相關交易
+
+BitcoinJS為一個MIT授權Open Source的比特幣相關套件。
+
 ## 安裝
 
 ```js
