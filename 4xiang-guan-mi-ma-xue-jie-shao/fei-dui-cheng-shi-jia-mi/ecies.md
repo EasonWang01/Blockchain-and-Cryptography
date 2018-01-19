@@ -9,7 +9,7 @@
 
 2. Message authentication code (e.g., HMAC-SHA-1-160 with 160-bit keys or HMAC-SHA-1-80 with 80-bit keys)
 
-3. Symmetric encryption scheme (e.g., TDEA in CBC mode or XOR encryption scheme) 當作 E;
+3. Symmetric encryption scheme (e.g., TDEA in CBC mode or XOR encryption scheme) 
 
 4. Elliptic curve domain parameters: (p,a,b,G,n,h)
 
