@@ -1,7 +1,3 @@
-
-
-[https://github.com/bitchan/eccrypto/blob/3502124dc79fbe3fd490f0d4e2c0401f64d64f61/index.js](https://github.com/bitchan/eccrypto/blob/3502124dc79fbe3fd490f0d4e2c0401f64d64f61/index.js)
-
 # ECIES\( Elliptic Curve Integrated Encryption Scheme \)
 
 為橢圓曲線\(ECC\)結合IES，其中IES全名為**Integrated Encryption Scheme**是一種結合非對稱式加密與對稱式加密的機制。
@@ -120,11 +116,11 @@ encrypt(publicKey_yicheng, Buffer("I have one banana.")).then(function(encrypted
 })
 ```
 
-> 參考至: 
+> 參考至:
 >
 > [https://en.wikipedia.org/wiki/Integrated\_Encryption\_Scheme](https://www.gitbook.com/book/easonwang01/e/edit#)
 >
-> https://github.com/bitchan/eccrypto
+> [https://github.com/bitchan/eccrypto](https://github.com/bitchan/eccrypto)
 
 
 
