@@ -2,11 +2,7 @@
 
 [https://github.com/bitchan/eccrypto/blob/3502124dc79fbe3fd490f0d4e2c0401f64d64f61/index.js](https://github.com/bitchan/eccrypto/blob/3502124dc79fbe3fd490f0d4e2c0401f64d64f61/index.js)
 
-# ECIES
-
-
-
-
+# ECIES\( Elliptic Curve Integrated Encryption Scheme \)
 
 程式範例:
 
