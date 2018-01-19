@@ -91,9 +91,8 @@ const decrypt = function(privateKey, opts) {
   });
 };
 
-
-var privateKey_yicheng = crypto.randomBytes(32);
-var publicKey_yicheng = getPublic(privateKey_yicheng);
+const privateKey_yicheng = crypto.randomBytes(32);
+const publicKey_yicheng = getPublic(privateKey_yicheng);
 
 encrypt(publicKey_yicheng, Buffer("I have one banana.")).then(function(encrypted) {
   console.log('Encrypted payload')
