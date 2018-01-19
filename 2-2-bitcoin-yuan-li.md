@@ -98,7 +98,7 @@ Linux
 > ~/.bitcoin/
 
 OSX
-> ~/Library/Application Support/Bitcoin/
+> ~/Library/Application\ Support/Bitcoin/
 
 參考:
 https://en.bitcoin.it/wiki/Data_directory
