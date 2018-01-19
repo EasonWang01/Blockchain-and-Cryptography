@@ -68,7 +68,7 @@ console.log(final)
 >
 > 因為橢圓曲線知道X後即可求得Y，所以可以從原本65bytes的prefix+X+Y，壓縮為33bytes，可參考後面ECDSA章節。
 
-![](/assets/896.png)壓縮的WIP私鑰轉為為壓縮的私鑰。
+#### ![](/assets/896.png)壓縮的WIP私鑰轉為為壓縮的私鑰。
 
 ```js
 // Compressed WIF Private Key
