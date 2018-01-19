@@ -51,5 +51,19 @@ console.log(publicKeyUncompressed)
 
 
 
+## 壓縮版本的私鑰
+
+指的是壓縮版本的公鑰對應的私鑰，但為了識別，會在壓縮版本的私鑰最後加上`0x01`
+
+```
+Uncompressed private key:	
+4F63BA6514E7EA4D2F561D96035729D93EDA4678F148A0CF8E8D77724B18E0B9
+
+Compressed private key:	
+4F63BA6514E7EA4D2F561D96035729D93EDA4678F148A0CF8E8D77724B18E0B901
+```
+
+> 可以看到後面多了`01`
+
 
 
