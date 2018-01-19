@@ -196,6 +196,16 @@ Unlocking script:
 
 #### ![](/assets/螢幕快照 2018-01-19 下午11.03.39.png)
 
+4.讀取地址的公鑰
+
+> 把validateaddress後面替換為這三個Address，分別取得公鑰
+
+```
+./bitcoin-cli -datadir="./chaindata"  validateaddress 1j9x23hbbLDfpExMMHBTQ3CfQ52mqLqLU
+```
+
+#### ![](/assets/螢幕快照 2018-01-19 下午11.18.56.png)
+
 #### 使用Node.js產生P2SH地址
 
 ```js
