@@ -146,7 +146,21 @@ start ./bitcoin-cli getblockchaininfo
 ./bitcoin-cli getblockchaininfo
 ```
 
-### 
+3.停止server
+
+```
+./bitcoin-cli stop
+```
+
+4.啟動server但不進行sync
+
+```
+./bitcoind -connect=0 -nolisten
+```
+
+
+
+
 
 > 啟動節點時也可輸入`./bitcoind -h` 查看相關可用標誌。
 >
