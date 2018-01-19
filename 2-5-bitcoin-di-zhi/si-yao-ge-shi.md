@@ -35,7 +35,7 @@ const sha256Value2 = crypto.createHash('sha256').update(sha256Value1, 'hex').dig
 const first4byte = sha256Value2.toString('hex').substring(0,8);
 
 // 串接
-const concatString = add0x80_front + first4byte;
+const concatString = add0x80_front + first4byte; 
 WIF_PrivateKey = bs58.encode(new Buffer(concatString, 'hex'));
 console.log(WIF_PrivateKey)
 ```
@@ -68,9 +68,17 @@ console.log(final)
 >
 > 因為橢圓曲線知道X後即可求得Y，所以可以從原本65bytes的prefix+X+Y，壓縮為33bytes，可參考後面ECDSA章節。
 
-以下範例為壓縮語為壓縮之私鑰格式。
+![](/assets/896.png)壓縮的WIP私鑰轉為為壓縮的私鑰。
 
-![](/assets/896.png)
+```js
+// Compressed WIF Private Key
+const compress_WIF_Pri = 'Kyt2v1qU5rpuD4uC5yWpyat41eb5TDUMrwCoaSeatE2DwVA7MMfG'
+const bytes = bs58.decode(compress_WIF_Pri)
+const Uncompress_Pri = bytes.toString('hex').slice(2, -10) // 拿掉開頭的80與結尾的01加上八位校驗碼。
+
+// Uncompressed private key
+console.log(Uncompress_Pri)
+```
 
 #### 從WIF私鑰轉為比特幣地址
 
