@@ -174,6 +174,20 @@ Unlocking script:
 
 [https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work](https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work)
 
+1.啟動Server
+
+```
+./bitcoind -connect=0 -nolisten -datadir="./chaindata"
+```
+
+2.產生三個Address
+
+> 輸入以下指令三次。
+
+```
+./bitcoin-cli -datadir="./chaindata"  getnewaddress
+```
+
 #### 使用Node.js產生P2SH地址
 
 ```js
@@ -257,8 +271,6 @@ function hex2ASCII(_hex) {
 > It starts with a OP_0, followed by a canonical push of the keyhash (i.e. 0x0014{20-byte keyhash})
 > Same as any other P2SH, the scriptPubKey is OP_HASH160 hash160(redeemScript) OP_EQUAL, and the address is the corresponding P2SH address with prefix 3.
 > ```
-
-
 
 （以下為地址產生的程式碼，跟一般multisig不同處是publickey hash 產生後，會在前面接上0x00與0x14然後再做一次sha256與ripemd160然後繼續計算）
 
