@@ -4,7 +4,7 @@
 
 # ECIES\( Elliptic Curve Integrated Encryption Scheme \)
 
-**Integrated Encryption Scheme**\(**IES**\)是一種結合非對稱式加密與對稱式加密的機制。
+為橢圓曲線\(ECC\)結合IES，其中IES全名為**Integrated Encryption Scheme**是一種結合非對稱式加密與對稱式加密的機制。
 
 當小明要送一個加密訊息給阿煌時他需要知道如下資料 :
 
