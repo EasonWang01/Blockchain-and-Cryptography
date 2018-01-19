@@ -176,9 +176,9 @@ def CheckShortKey(shortKey):
 GenerateKeys()
 ```
 
-> 參考至:https://en.bitcoin.it/wiki/Mini\_private\_key\_format
+> 參考至:[https://en.bitcoin.it/wiki/Mini\_private\_key\_format](https://en.bitcoin.it/wiki/Mini_private_key_format)
 
-
+---
 
 > 可使用此網站驗證地址與私鑰
 >
