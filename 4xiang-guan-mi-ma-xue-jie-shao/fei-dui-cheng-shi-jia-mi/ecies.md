@@ -16,7 +16,35 @@
 5. 阿煌的 Public key: K ，K為阿煌的私鑰與G的乘積。
 ```
 
-程式範例:
+#### 加密步驟:
+
+```
+1.使用Public key 與Private Key 來 derive出 Share Secret
+
+2.把Share Secret做SHA512雜湊
+
+3.產生16 bytes隨機IV
+
+4. 把第二步驟的值取前32位當encryptionKey
+
+5. 把第二步驟的值取後32位當macKey
+
+6. 把iv, encryptionKey, 訊息一起使用AES-256-CBC加密，產生ciphertext。
+```
+
+#### 解密步驟:
+
+```
+1.使用Public key 與Private Key 來 derive出 Share Secret
+
+2.之後跟加密步驟一樣，經過Share secret雜湊後取前32位當作encryptionKey，而後32位當作macKey
+
+3.驗證加密時算出的MAC值是否與解密時算的MAC值符合
+
+4.傳入:iv、encryptionKey、ciphertext，使用AES-256-CBC解密
+```
+
+#### 程式範例:
 
 ```js
 const crypto = require('crypto');
@@ -26,7 +54,6 @@ const secp256k1 = require("secp256k1");
 function sha512(msg) {
   return crypto.createHash("sha512").update(msg).digest();
 }
-
 // AES-256-CBC加密
 function aes256CbcEncrypt(iv, key, plaintext) {
   let cipher = crypto.createCipheriv("aes-256-cbc", key, iv);
@@ -34,7 +61,6 @@ function aes256CbcEncrypt(iv, key, plaintext) {
   let secondChunk = cipher.final();
   return Buffer.concat([firstChunk, secondChunk]);
 }
-
 // AES-256-CBC解密
 function aes256CbcDecrypt(iv, key, ciphertext) {
   let cipher = crypto.createDecipheriv("aes-256-cbc", key, iv);
@@ -42,12 +68,10 @@ function aes256CbcDecrypt(iv, key, ciphertext) {
   let secondChunk = cipher.final();
   return Buffer.concat([firstChunk, secondChunk]);
 }
-
 // SHA256雜湊訊息驗證碼
 function hmacSha256(key, msg) {
   return crypto.createHmac("sha256", key).update(msg).digest();
 }
-
 // 從Private Key產生Public Key
 const getPublic =  function(privateKey) {
   if(privateKey.length !== 32) {
@@ -57,7 +81,6 @@ const getPublic =  function(privateKey) {
   let compressed = secp256k1.publicKeyCreate(privateKey);
   return secp256k1.publicKeyConvert(compressed, false);
 };
-
 //產生Share Secret
 const derive =  function(privateKeyA, publicKeyB) {
   const _derive = crypto.createECDH('secp256k1');
@@ -87,26 +110,35 @@ const encrypt = function(publicKeyTo, msg, opts) {
   return new Promise(function(resolve) {
     let ephemPrivateKey = opts.ephemPrivateKey || crypto.randomBytes(32);
     ephemPublicKey = getPublic(ephemPrivateKey);
+    // 1.使用Public key 與Private Key 來 derive出 Share Secret
     resolve(derive(ephemPrivateKey, publicKeyTo));
   }).then(function(Px) {
+    // 2.把Share Secret做SHA512雜湊
     let hash = sha512(Px);
+    // 3.產生16 bytes隨機IV
     let iv = opts.iv || crypto.randomBytes(16);
+    // 4. 把第二步驟的值取前32位當encryptionKey
     let encryptionKey = hash.slice(0, 32);
+    // 5. 把第二步驟的值取後32位當macKey
     let macKey = hash.slice(32);
+    // 6. 把iv, encryptionKey, 訊息一起使用AES-256-CBC加密。
     let ciphertext = aes256CbcEncrypt(iv, encryptionKey, msg);
     let dataToMac = Buffer.concat([iv, ephemPublicKey, ciphertext]);
     let mac = hmacSha256(macKey, dataToMac);
     return {
-      iv: iv,
-      ephemPublicKey: ephemPublicKey,
-      ciphertext: ciphertext,
-      mac: mac,
+      iv,
+      ephemPublicKey,
+      ciphertext,
+      mac,
     };
   });
 };
 // 解密
 const decrypt = function(privateKey, opts) {
+    // 1.使用Public key 與Private Key 來 derive出 Share Secret
   return derive(privateKey, opts.ephemPublicKey).then(function(Px) {
+    // 2.之後跟加密步驟一樣，經過Share secret雜湊後取前32位當作encryptionKey
+    //   而後32位當作macKey
     let hash = sha512(Px);
     let encryptionKey = hash.slice(0, 32);
     let macKey = hash.slice(32);
@@ -115,11 +147,13 @@ const decrypt = function(privateKey, opts) {
       opts.ephemPublicKey,
       opts.ciphertext
     ]);
+    // 驗證MAC是否符合
     var realMac = hmacSha256(macKey, dataToMac);
     if(!equalConstTime(opts.mac, realMac)) {
       console.log("MAC not match");
       return
     }
+    // 使用AES-256-CBC解密
     return aes256CbcDecrypt(opts.iv, encryptionKey, opts.ciphertext);
   });
 };
