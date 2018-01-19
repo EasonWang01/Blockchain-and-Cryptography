@@ -8,5 +8,3 @@ npm install bitcoinjs-lib
 
 
 
-
-

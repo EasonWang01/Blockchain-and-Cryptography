@@ -87,7 +87,9 @@ console.log(address)
 
 > 開頭為S，然後長度為30個字
 >
-> 產生出來的mini key會在最後加上?號然後進行sha256，確認前兩個byte是否為00，如果是才為合法的Mini Key
+> 產生出來的mini key會在最後加上`?`號然後進行sha256，確認前兩個byte是否為00，如果是才為合法的Mini Key
+
+> 以下使用Python程式為範例
 
 ```python
 import random
