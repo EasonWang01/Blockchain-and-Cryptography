@@ -134,17 +134,17 @@ start ./bitcoin-cli getinfo
 
 到下載的資料夾目錄下的 /bin 資料夾
 
-執行
+1.執行Bitcoin節點Server
 
 ```
 ./bitcoind
 ```
 
+2.執行Command Line相關指令
+
 ```
 ./bitcoin-cli getinfo
 ```
-
-### 
 
 ---
 
