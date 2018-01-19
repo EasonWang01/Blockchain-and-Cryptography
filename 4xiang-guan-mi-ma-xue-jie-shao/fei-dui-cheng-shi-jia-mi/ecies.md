@@ -19,11 +19,11 @@
 #### 加密步驟:
 
 ```
-1.使用Public key 與Private Key 來 derive出 Share Secret
+1. 使用Public key 與Private Key 來 derive出 Share Secret
 
-2.把Share Secret做SHA512雜湊
+2. 把Share Secret做SHA512雜湊
 
-3.產生16 bytes隨機IV
+3. 產生16 bytes隨機IV
 
 4. 把第二步驟的值取前32位當encryptionKey
 
@@ -35,13 +35,13 @@
 #### 解密步驟:
 
 ```
-1.使用Public key 與Private Key 來 derive出 Share Secret
+1. 使用Public key 與Private Key 來 derive出 Share Secret
 
-2.之後跟加密步驟一樣，經過Share secret雜湊後取前32位當作encryptionKey，而後32位當作macKey
+2. 之後跟加密步驟一樣，經過Share secret雜湊後取前32位當作encryptionKey，而後32位當作macKey
 
-3.驗證加密時算出的MAC值是否與解密時算的MAC值符合
+3. 驗證加密時算出的MAC值是否與解密時算的MAC值符合
 
-4.傳入:iv、encryptionKey、ciphertext，使用AES-256-CBC解密
+4. 傳入:iv、encryptionKey、ciphertext，使用AES-256-CBC解密
 ```
 
 #### 程式範例:
