@@ -34,7 +34,7 @@ function hmacSha256(key, msg) {
 }
 
 
-const getPublic =  function(privateKey) {
+const getPublic = function(privateKey) {
   if(privateKey.length !== 32) {
     console.log("Private key length need to be 32");
     return
@@ -43,7 +43,7 @@ const getPublic =  function(privateKey) {
   return secp256k1.publicKeyConvert(compressed, false);
 };
 
-const derive =  function(privateKeyA, publicKeyB) {
+const derive = function(privateKeyA, publicKeyB) {
   const _derive = crypto.createECDH('secp256k1');
   _derive.setPrivateKey(privateKeyA);
   return new Promise(function(resolve) {
