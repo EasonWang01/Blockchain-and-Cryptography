@@ -152,21 +152,17 @@ start ./bitcoin-cli getblockchaininfo
 ./bitcoin-cli stop
 ```
 
-4.啟動server但不進行sync
+4.啟動Server但不進行sync
 
 ```
 ./bitcoind -connect=0 -nolisten
 ```
 
-
-
-
-
 > 啟動節點時也可輸入`./bitcoind -h` 查看相關可用標誌。
 >
 > 例如可以指定存放資料之資料夾：`./bitcoind -datadir="./chaindata"`
 >
-> 但記得之後Bitcoin-cli也要指定相同資料夾：`./bitcoin-cli -datadir="./chaindata" getblockchaininfo`
+> 但記得使用Bitcoin-cli呼叫指令時，也要指定相同資料夾：`./bitcoin-cli -datadir="./chaindata" getblockchaininfo`
 
 ---
 
