@@ -15,7 +15,7 @@
 
 3. Symmetric encryption scheme (e.g., TDEA in CBC mode or XOR encryption scheme) 當作 E;
 
-4. elliptic curve domain parameters: (p,a,b,G,n,h)
+4. Elliptic curve domain parameters: (p,a,b,G,n,h)
 
 5. 阿煌的 Public key: K ，K為阿煌的私鑰與G的乘積。
 ```
