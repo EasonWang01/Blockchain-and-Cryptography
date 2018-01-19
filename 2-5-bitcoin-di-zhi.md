@@ -298,6 +298,12 @@ function hex2ASCII(_hex) {
 > Same as any other P2SH, the scriptPubKey is OP_HASH160 hash160(redeemScript) OP_EQUAL, and the address is the corresponding P2SH address with prefix 3.
 > ```
 
+### 使用Bitcoind產生地址
+
+
+
+
+
 （以下為地址產生的程式碼，跟一般multisig不同處是publickey hash 產生後，會在前面接上0x00與0x14然後再做一次sha256與ripemd160然後繼續計算）
 
 ```js

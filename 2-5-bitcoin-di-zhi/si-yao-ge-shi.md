@@ -76,7 +76,7 @@ console.log(final)
 | Uncompressed WIF | 5JRFUsVCaGpZDhkznzDCKiD28rJEhNrhXLz3rGKwMDU1fhJUHE6 |
 | Compressed WIF | Kyt2v1qU5rpuD4uC5yWpyat41eb5TDUMrwCoaSeatE2DwVA7MMfG |
 
-#### 壓縮的WIP私鑰轉為為壓縮的私鑰。
+#### 壓縮的WIP私鑰轉為未壓縮格式的私鑰。
 
 ```js
 // Compressed WIF Private Key
@@ -137,7 +137,7 @@ const generateAddress = () => {
 generateAddress()
 ```
 
-#### https://bitcoin.stackexchange.com/questions/36994/math-to-make-a-full-private-key-have-a-mini-private-key-equivalent
+#### [https://bitcoin.stackexchange.com/questions/36994/math-to-make-a-full-private-key-have-a-mini-private-key-equivalent](https://bitcoin.stackexchange.com/questions/36994/math-to-make-a-full-private-key-have-a-mini-private-key-equivalent)
 
 #### 驗證:
 
