@@ -119,7 +119,7 @@ https://en.bitcoin.it/wiki/Data_directory
 3.之後可輸入
 
 ```
-start ./bitcoin-cli getinfo
+start ./bitcoin-cli getblockchaininfo
 ```
 
 > Windows會在執行開一個新視窗顯示，但顯示完會隨即關閉視窗，所以如果要用此種方法建議寫一個batch file然後後面加上`pause`
@@ -143,7 +143,7 @@ start ./bitcoin-cli getinfo
 2.執行Command Line相關指令
 
 ```
-./bitcoin-cli getinfo
+./bitcoin-cli getblockchaininfo
 ```
 
 ### 
@@ -152,7 +152,7 @@ start ./bitcoin-cli getinfo
 >
 > 例如可以指定存放資料之資料夾：`./bitcoind -datadir="./chaindata"`
 >
-> 但記得之後Bitcoin-cli也要指定相同資料夾：`./bitcoin-cli -datadir="./chaindata" getinfo`
+> 但記得之後Bitcoin-cli也要指定相同資料夾：`./bitcoin-cli -datadir="./chaindata" getblockchaininfo`
 
 ---
 
