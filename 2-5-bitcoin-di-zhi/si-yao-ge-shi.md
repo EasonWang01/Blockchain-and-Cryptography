@@ -74,7 +74,7 @@ console.log(final)
 | :--- | :--- |
 | Compressed private key | 4F63BA6514E7EA4D2F561D96035729D93EDA4678F148A0CF8E8D77724B18E0B901 |
 | Uncompressed WIF | 5JRFUsVCaGpZDhkznzDCKiD28rJEhNrhXLz3rGKwMDU1fhJUHE6 |
-|  |  |
+| Compressed WIF | Kyt2v1qU5rpuD4uC5yWpyat41eb5TDUMrwCoaSeatE2DwVA7MMfG |
 
 #### 壓縮的WIP私鑰轉為為壓縮的私鑰。
 
