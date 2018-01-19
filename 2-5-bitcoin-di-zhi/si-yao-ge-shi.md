@@ -70,7 +70,11 @@ console.log(final)
 
 以下分別為一般的私鑰、WIF格式的私鑰、WIF壓縮格式的私鑰。
 
-#### ![](/assets/896.png)
+| Uncompressed private key | 4F63BA6514E7EA4D2F561D96035729D93EDA4678F148A0CF8E8D77724B18E0B9 |
+| :--- | :--- |
+| Compressed private key | 4F63BA6514E7EA4D2F561D96035729D93EDA4678F148A0CF8E8D77724B18E0B901 |
+| Uncompressed WIF | 5JRFUsVCaGpZDhkznzDCKiD28rJEhNrhXLz3rGKwMDU1fhJUHE6 |
+|  |  |
 
 #### 壓縮的WIP私鑰轉為為壓縮的私鑰。
 
@@ -95,10 +99,8 @@ console.log(address)
 
 # Mini Private Key
 
-> 開頭為S，然後長度為30個字
->
-> 產生出來的mini key會在最後加上`?`號然後進行sha256，確認前兩個byte是否為00，如果是才為合法的Mini Key
->
+開頭為S，產生出來的mini key會在最後加上`?`號然後進行sha256，確認前兩個byte是否為00，如果是才為合法的Mini Key
+
 > 以下使用Python程式為範例
 
 ```python
