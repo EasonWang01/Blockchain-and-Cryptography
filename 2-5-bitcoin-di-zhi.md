@@ -141,8 +141,6 @@ function hex2ASCII(_hex) {
 }
 ```
 
-> 以下產生之地址不保證正確，僅供讀者參考使用
-
 # 2.多重簽名地址P2SH\(Pay to Script Hash\)
 
 多重簽名地址，開頭為3，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名。
@@ -259,6 +257,8 @@ function hex2ASCII(_hex) {
 > It starts with a OP_0, followed by a canonical push of the keyhash (i.e. 0x0014{20-byte keyhash})
 > Same as any other P2SH, the scriptPubKey is OP_HASH160 hash160(redeemScript) OP_EQUAL, and the address is the corresponding P2SH address with prefix 3.
 > ```
+
+
 
 （以下為地址產生的程式碼，跟一般multisig不同處是publickey hash 產生後，會在前面接上0x00與0x14然後再做一次sha256與ripemd160然後繼續計算）
 

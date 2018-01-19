@@ -1,4 +1,6 @@
-```
+## 安裝
+
+```js
 1. git clone https://github.com/bitcoinjs/bitcoinjs-lib.git
 
 2. cd bitcoinjs-lib 
