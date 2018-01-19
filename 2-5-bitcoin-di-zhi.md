@@ -188,6 +188,14 @@ Unlocking script:
 ./bitcoin-cli -datadir="./chaindata"  getnewaddress
 ```
 
+3.確認目前地址有三個
+
+```
+./bitcoin-cli -datadir="./chaindata"  getaddressesbyaccount ""
+```
+
+#### ![](/assets/螢幕快照 2018-01-19 下午11.03.39.png)
+
 #### 使用Node.js產生P2SH地址
 
 ```js
