@@ -117,11 +117,11 @@ const generateAddress = () => {
   for(let i = 0; i < 29 ; i++) {
     mini_key += base58_alphabet[getRandomInt(0,57)]
   }
-  
+
   mini_key = "S" + mini_key;
-  
+
   let verify_string = crypto.createHash('sha256').update(mini_key + '?').digest();
-  
+
   if(Buffer.from([00]).compare(verify_string.slice(0,1)) === 0) { 
     // 確定雜湊後第一個Bytes為0
     console.log(verify_string.slice(0,1))
@@ -135,11 +135,9 @@ const generateAddress = () => {
 }
 
 generateAddress()
-
-
 ```
 
-
+#### https://bitcoin.stackexchange.com/questions/36994/math-to-make-a-full-private-key-have-a-mini-private-key-equivalent
 
 #### 驗證:
 
