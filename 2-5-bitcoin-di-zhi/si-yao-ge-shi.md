@@ -176,5 +176,9 @@ def CheckShortKey(shortKey):
 GenerateKeys()
 ```
 
+> 可使用此網站驗證地址與私鑰
+>
+> http://gobittest.appspot.com/
+
 
 
