@@ -149,6 +149,8 @@ start ./bitcoin-cli getinfo
 ### 
 
 > 啟動節點時也可輸入`./bitcoind -h` 查看相關可用標誌。
+>
+> 例如可以指定存放資料之資料夾：`./bitcoind -datadir="./chaindata"`
 
 ---
 
