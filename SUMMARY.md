@@ -15,6 +15,7 @@
     * [接續2-6](bitcoin-jiao-yi/jie-xu-2-6.md)
     * [使用Bitcoinjs產生交易](bitcoin-jiao-yi/shi-yong-bitcoinjs-chan-sheng-jiao-yi.md)
   * [Bitcoin 地址](2-5-bitcoin-di-zhi.md)
+    * [其他類型地址](2-5-bitcoin-di-zhi/qi-ta-lei-xing-di-zhi.md)
     * [私鑰格式](2-5-bitcoin-di-zhi/si-yao-ge-shi.md)
     * [壓縮的地址](2-5-bitcoin-di-zhi/ya-suo-de-di-zhi.md)
     * [使用BitcoinJS產生地址](2-5-bitcoin-di-zhi/shi-yong-bitcoinjs-chan-sheng-di-zhi.md)
