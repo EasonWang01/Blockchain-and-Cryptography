@@ -176,9 +176,13 @@ def CheckShortKey(shortKey):
 GenerateKeys()
 ```
 
+> 參考至:https://en.bitcoin.it/wiki/Mini\_private\_key\_format
+
+
+
 > 可使用此網站驗證地址與私鑰
 >
-> http://gobittest.appspot.com/
+> [http://gobittest.appspot.com/](http://gobittest.appspot.com/)
 
 
 
