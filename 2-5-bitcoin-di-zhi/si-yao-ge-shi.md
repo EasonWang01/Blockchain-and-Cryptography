@@ -103,9 +103,43 @@ console.log(address)
 
 #### 產生:
 
-```
+```js
+const crypto = require('crypto');
+const base58_alphabet = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+let mini_key = "";
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min); 
+  // https://gist.github.com/kerimdzhanov/7529623
+}
+
+const generateAddress = () => {
+  for(let i = 0; i < 29 ; i++) {
+    mini_key += base58_alphabet[getRandomInt(0,57)]
+  }
+  
+  mini_key = "S" + mini_key;
+  
+  let verify_string = crypto.createHash('sha256').update(mini_key + '?').digest();
+  
+  if(Buffer.from([00]).compare(verify_string.slice(0,1)) === 0) { 
+    // 確定雜湊後第一個Bytes為0
+    console.log(verify_string.slice(0,1))
+    console.log(mini_key)
+    return mini_key;
+  } else {
+    console.log(verify_string.slice(0,1));
+    mini_key = "";
+    generateAddress();
+  }
+}
+
+generateAddress()
+
 
 ```
+
+
 
 #### 驗證:
 
@@ -114,8 +148,6 @@ console.log(address)
 ```
 
 ```
-
-
 
 > 參考至:[https://en.bitcoin.it/wiki/Mini\_private\_key\_format](https://en.bitcoin.it/wiki/Mini_private_key_format)
 
