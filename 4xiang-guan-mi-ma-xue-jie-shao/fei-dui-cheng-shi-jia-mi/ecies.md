@@ -22,31 +22,30 @@
 const crypto = require('crypto');
 const secp256k1 = require("secp256k1");
 
-
+// sha256雜湊
 function sha512(msg) {
   return crypto.createHash("sha512").update(msg).digest();
 }
-
+// AES-256-CBC加密
 function aes256CbcEncrypt(iv, key, plaintext) {
   let cipher = crypto.createCipheriv("aes-256-cbc", key, iv);
   let firstChunk = cipher.update(plaintext);
   let secondChunk = cipher.final();
   return Buffer.concat([firstChunk, secondChunk]);
 }
-
+// AES-256-CBC解密
 function aes256CbcDecrypt(iv, key, ciphertext) {
   let cipher = crypto.createDecipheriv("aes-256-cbc", key, iv);
   let firstChunk = cipher.update(ciphertext);
   let secondChunk = cipher.final();
   return Buffer.concat([firstChunk, secondChunk]);
 }
-
+// SHA256雜湊訊息驗證碼
 function hmacSha256(key, msg) {
   return crypto.createHmac("sha256", key).update(msg).digest();
 }
-
-
-const getPublic = function(privateKey) {
+// 從Private Key產生Public Key
+const getPublic =  function(privateKey) {
   if(privateKey.length !== 32) {
     console.log("Private key length need to be 32");
     return
@@ -54,8 +53,8 @@ const getPublic = function(privateKey) {
   let compressed = secp256k1.publicKeyCreate(privateKey);
   return secp256k1.publicKeyConvert(compressed, false);
 };
-
-const derive = function(privateKeyA, publicKeyB) {
+//產生Share Secret
+const derive =  function(privateKeyA, publicKeyB) {
   const _derive = crypto.createECDH('secp256k1');
   _derive.setPrivateKey(privateKeyA);
   return new Promise(function(resolve) {
@@ -64,7 +63,19 @@ const derive = function(privateKeyA, publicKeyB) {
   });
 };
 
+// 比較Mac值
+function equalConstTime(b1, b2) {
+  if (b1.length !== b2.length) {
+    return false;
+  }
+  var res = 0;
+  for (var i = 0; i < b1.length; i++) {
+    res |= b1[i] ^ b2[i];  
+  }
+  return res === 0;
+}
 
+// 加密
 const encrypt = function(publicKeyTo, msg, opts) {
   opts = opts || {};
   let ephemPublicKey;
@@ -88,7 +99,7 @@ const encrypt = function(publicKeyTo, msg, opts) {
     };
   });
 };
-
+// 解密
 const decrypt = function(privateKey, opts) {
   return derive(privateKey, opts.ephemPublicKey).then(function(Px) {
     let hash = sha512(Px);
@@ -99,10 +110,16 @@ const decrypt = function(privateKey, opts) {
       opts.ephemPublicKey,
       opts.ciphertext
     ]);
+    var realMac = hmacSha256(macKey, dataToMac);
+    if(!equalConstTime(opts.mac, realMac)) {
+      console.log("MAC not match");
+      return
+    }
     return aes256CbcDecrypt(opts.iv, encryptionKey, opts.ciphertext);
   });
 };
 
+// 產生私鑰與公鑰
 const privateKey_yicheng = crypto.randomBytes(32);
 const publicKey_yicheng = getPublic(privateKey_yicheng);
 
