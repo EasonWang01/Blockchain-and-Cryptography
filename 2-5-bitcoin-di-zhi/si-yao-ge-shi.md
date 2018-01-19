@@ -101,9 +101,19 @@ console.log(address)
 
 通常用在儲存空間較小的地方，例如實體Bitcoin硬幣或是1D barcodes與25x25之QR Code等等。
 
-開頭為S，產生出來的mini key會在最後加上`?`號然後進行sha256，確認前兩個byte是否為00，如果是才為合法的Mini Key
+#### 產生:
 
-> 以下使用Python程式為範例
+```
+
+```
+
+#### 驗證:
+
+在最後加上`?`號然後進行sha256，確認前兩個byte是否為00，如果是才為合法的Mini Key
+
+```
+
+```
 
 
 
