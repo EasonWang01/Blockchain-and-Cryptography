@@ -146,6 +146,10 @@ start ./bitcoin-cli getinfo
 ./bitcoin-cli getinfo
 ```
 
+### 
+
+> 啟動節點時也可輸入`./bitcoind -h` 查看相關可用標誌。
+
 ---
 
 ### 比特幣相關交易訊息與圖表
