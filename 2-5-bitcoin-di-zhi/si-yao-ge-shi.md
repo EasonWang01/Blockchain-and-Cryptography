@@ -64,13 +64,7 @@ console.log(final)
 
 私鑰其實沒有壓縮格式，只有公鑰可以壓縮，而WIF­ compressed的意思為代表其為壓縮格式公鑰的私鑰，只要在一般的公鑰最後面加上0x01之後一樣使用WIF壓縮即可
 
-EX:
-
-```
-const privateKey = "1E99423A4ED27608A15A2616A2B0E9E52CED330AC530EDCC32C8FFC6A526AEDD";
-改為
-const privateKey = "1E99423A4ED27608A15A2616A2B0E9E52CED330AC530EDCC32C8FFC6A526AEDD01";
-```
+> 壓縮格式的WIF開頭為**K或L**
 
 ![](/assets/896.png)
 
@@ -88,7 +82,7 @@ console.log(address)
 > 開頭為S，然後長度為30個字
 >
 > 產生出來的mini key會在最後加上`?`號然後進行sha256，確認前兩個byte是否為00，如果是才為合法的Mini Key
-
+>
 > 以下使用Python程式為範例
 
 ```python
