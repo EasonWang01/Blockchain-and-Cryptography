@@ -72,6 +72,14 @@ wtxid:  [nVersion][marker][flag][txins][txouts][witness][nLockTime]
 ```
 
 > 其中`nVersion、txins、txouts、nLockTime`四個部分是相同的
+>
+> marker目前為`0x00`
+>
+> flag目前為`0x01`
+>
+> witness為交易的input之簽名
+
+之後一群交易的wtxid會另外組成一個Merkle Tree，並且將Merkle Root存在區塊的coinbase transaction。
 
 .
 
