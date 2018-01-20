@@ -71,9 +71,7 @@ txid:   [nVersion][txins][txouts][nLockTime]
 wtxid:  [nVersion][marker][flag][txins][txouts][witness][nLockTime]
 ```
 
-
-
-
+> 其中`nVersion、txins、txouts、nLockTime`四個部分是相同的
 
 .
 
