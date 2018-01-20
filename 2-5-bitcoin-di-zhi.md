@@ -302,6 +302,8 @@ function hex2ASCII(_hex) {
 
 ### 使用Bitcoind產生地址
 
+> 可使用原先的P2PKH 或 P2SH 來產生，將會構建出P2SH-P2WPKH 或 P2SH-P2WSH。
+
 ```
 
 ```
@@ -381,8 +383,4 @@ function hex2ASCII(_hex) {
 ```
 
 ![](/assets/螢幕快照 2018-01-20 上午9.47.33.png)
-
-
-
-
 
