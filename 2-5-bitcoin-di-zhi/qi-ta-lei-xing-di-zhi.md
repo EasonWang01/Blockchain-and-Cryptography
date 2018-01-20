@@ -7,45 +7,39 @@ redeemScript = unixTime + OP_CHECKLOCKTIMEVERIFY + OP_DROP + publickey + OP_CHEC
 ```
 
 ```js
-var crypto = require('crypto');
-var ecdh = crypto.createECDH('secp256k1');
-var bs58 = require('bs58');
+const crypto = require('crypto');
+const ecdh = crypto.createECDH('secp256k1');
+const bs58 = require('bs58');
 
 // 查表
 const OP_2 = "52";
 const OP_3 = "53";
 const OP_CHECKMULTISIG = "ae";
 
-var hash2 = crypto.randomBytes(32)
-console.log('--------')
-console.log('私鑰')
-console.log(hash2); //私鑰，64位十六進制數 //使用hash2.toString('hex')即可看到16進位字串
-console.log('--------')
-
-
-// ECDH和ECDSA產生公私鑰的方式都相同
-var publickey = ecdh.setPrivateKey(hash2,'hex').getPublicKey('hex')
-console.log('公鑰')
-console.log(publickey); //公鑰(通過橢圓曲線算法可以從私鑰計算得到公鑰)
-console.log('--------')
-
-var unixTime = Date.now() + 60*60*24*1000*7; // 時間設定在七天後
+const publickey = "04b3a4408a6a42073864d78be08e1b474de48ee1c8c5b238e121c233d897fed86cb25ed2515b9f6b38ba88b18d4c0f1955aacc292ab4d2da9765b5d295ced5add5"
+console.log('--公鑰--')
+console.log(publickey);
+console.log('-------------')
+const unixTime = 1516985700 //自行設定，例如：Math.floor((Date.now() + 60 * 60 * 24 * 1000 * 7) / 1000) 時間設定在七天後，捨棄毫秒
 const OP_CHECKLOCKTIMEVERIFY = "b1";
 const OP_DROP = "75";
 const OP_CHECKSIG = "ac";
+// Push 65 bytes to stack = parseInt("65").toString(16) 65轉為16進位為41
+const pubkeyBytes = "41"
 
-redeemScript = unixTime + OP_CHECKLOCKTIMEVERIFY + OP_DROP + publickey + OP_CHECKSIG;
+const redeemScript = "04" + numToBuffer(unixTime).join('') + OP_CHECKLOCKTIMEVERIFY + OP_DROP + pubkeyBytes + publickey + OP_CHECKSIG;
+console.log('--RedeemScript--')
+console.log(redeemScript)
+console.log('-------------')
+ASCII_text = hex2ASCII(redeemScript); // 先將redeemScript轉為ASCII再放入SHA256 這邊可參考: https://bitcoin.stackexchange.com/a/43350
 
-//把公鑰以sha256加密後再用ripemd160加密，取得publickeyHash
-var hash = crypto.createHash('sha256').update(redeemScript).digest();
+let hash = crypto.createHash('sha256').update(Buffer.from(ASCII_text, "ascii")).digest();
 hash = crypto.createHash('ripemd160').update(hash).digest();
-console.log('redeemScriptHash')
-console.log(hash);
-console.log('--------')
+
 
 //在publickeyHash前面加上一个05前缀
-var version = new Buffer('05', 'hex');
-var checksum = Buffer.concat([version, hash]);
+let version = new Buffer('05', 'hex');
+let checksum = Buffer.concat([version, hash]);
 //兩次256雙重加密
 checksum = crypto.createHash('sha256').update(checksum).digest();
 checksum = crypto.createHash('sha256').update(checksum).digest();
@@ -57,19 +51,39 @@ console.log(checksum);
 console.log('--------')
 
 //把publickeyHash前面一樣加上00而後面加上剛才算出的checksum
-var address = Buffer.concat([version, hash, checksum]);
-console.log('編碼前地址')
-console.log(address);
-console.log('--------')
+let address = Buffer.concat([version, hash, checksum]);
 
 // 最後使用base58進行編碼
 address = bs58.encode(address);
 console.log('編碼後的nlockTime比特幣地址')
 console.log(address);
 console.log('--------')
+
+function hex2ASCII(_hex) {
+  let hex = _hex.toString();
+  let str = '';
+  for (let i = 0; i < hex.length; i += 2) {
+    str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+  }
+  return str;
+}
+
+function numToBuffer(num) {
+  if (num <= 256) {
+    return [num.toString('16')];
+  } else {
+    let n = (num % 256).toString('16');
+    let c = n.length === 1
+      ? '0' + n // 16進位1~9補0在前面
+      : n
+    return [c].concat(numToBuffer(Math.floor(num / 256)));
+  }
+}
 ```
 
-# 5.HD \(hierarchical deterministic\) wallet address 
+![](/assets/螢幕快照 2018-01-20 下午1.28.24.png)
+
+# 5.HD \(hierarchical deterministic\) wallet address
 
 參考下圖:
 
