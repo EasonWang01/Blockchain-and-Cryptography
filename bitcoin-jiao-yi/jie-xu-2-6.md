@@ -81,7 +81,7 @@ wtxid:  [nVersion][marker][flag][txins][txouts][witness][nLockTime]
 
 之後一群交易的wtxid會另外組成一個Merkle Tree，並且將Merkle Root存在區塊的coinbase transaction。
 
-P2WPKH
+#### P2WPKH
 
 > 版本號為 0 之 pay-to-witness-public-key-hash \(P2WPKH\)
 
@@ -91,7 +91,11 @@ scriptSig:    (empty)
 scriptPubKey: 0 <20-byte-key-hash>
 ```
 
-P2WSH
+交易範例：http://n.bitcoin.ninja/checktx?txid=d869f854e1f8788bcff294cc83b280942a8c728de71eb709a2c29d10bfe21b7c
+
+![](/assets/螢幕快照 2018-01-20 下午10.59.02.png)
+
+#### P2WSH
 
 > 版本號為0 之 1-of-2 multi-signature  pay-to-witness-script-hash \(P2WSH\)
 
@@ -101,7 +105,9 @@ scriptSig:    (empty)
 scriptPubKey: 0 <32-byte-hash>
 ```
 
-.
+.交易範例：http://n.bitcoin.ninja/checktx?txid=78457666f82c28aa37b74b506745a7c7684dc7842a52a457b09f09446721e11c
+
+![](/assets/螢幕快照 2018-01-20 下午11.03.32.png)
 
 其他有關Segwit之BIP可參考：
 

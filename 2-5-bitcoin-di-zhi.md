@@ -299,9 +299,9 @@ function hex2ASCII(_hex) {
 
 ![](/assets/螢幕快照 2018-01-18 下午11.25.11.png)
 
-# 3.SegWit Address \(P2WSH\)
+# 3.SegWit Address 
 
-為Segregated Witness
+全名為Segregated Witness Address，為隔離見證相容之地址格式。
 
 #### 實作：
 
