@@ -287,16 +287,16 @@ function hex2ASCII(_hex) {
 
 相關spec可參考此:
 
+https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki
+
 [https://bitcoincore.org/en/segwit\_wallet\_dev/\#creation-of-p2sh-p2wsh-address](https://bitcoincore.org/en/segwit_wallet_dev/#creation-of-p2sh-p2wsh-address)
 
-隔離見證地址，開頭為3
+分為兩種：
 
-> ```
-> 1.計算 RIPEMD160 of the SHA256 of a public key (keyhash).
-> The P2SH redeemScript is always 22 bytes. 
-> It starts with a OP_0, followed by a canonical push of the keyhash (i.e. 0x0014{20-byte keyhash})
-> Same as any other P2SH, the scriptPubKey is OP_HASH160 hash160(redeemScript) OP_EQUAL, and the address is the corresponding P2SH address with prefix 3.
-> ```
+* ##### P2WPKH
+* ##### P2WSH
+
+隔離見證地址，開頭為3
 
 > 只能接受壓縮版本的公鑰
 
