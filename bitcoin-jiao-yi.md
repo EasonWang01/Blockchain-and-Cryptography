@@ -276,8 +276,11 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 > 此網站之上面的輸入框`Proportion of hash-power`  
 > 1代表100%,0.1為10%
 
-以下為寫在白皮書的公式  
-![](/assets/避免雙重支付公式.png)
+以下為寫在白皮書的公式
+
+> ![](/assets/螢幕快照 2018-01-20 下午11.28.50.png)![](/assets/螢幕快照 2018-01-20 下午11.29.02.png)
+
+
 
 其他可能使比特幣遭受攻擊的方式，可參考如下連結：  
 [https://en.bitcoin.it/wiki/Irreversible\_Transactions](https://en.bitcoin.it/wiki/Irreversible_Transactions)
