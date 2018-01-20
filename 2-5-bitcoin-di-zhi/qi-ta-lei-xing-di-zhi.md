@@ -1,10 +1,16 @@
 # 4.nlockTime address
 
-指定時間後該地址才可進行交易
+指定時間後該地址才可進行交易，可參考以下BIP：
+
+https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki
+
+其RedeemScript類似如下：
 
 ```
 redeemScript = unixTime + OP_CHECKLOCKTIMEVERIFY + OP_DROP + publickey + OP_CHECKSIG;
 ```
+
+程式範例：
 
 ```js
 const crypto = require('crypto');
