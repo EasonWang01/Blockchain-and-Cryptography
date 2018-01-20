@@ -23,7 +23,7 @@
 # 地址種類
 
 ```
-1.Single Sig Address (Pay to Public Key Hash (P2PKH)) 單一簽名地址，開頭為1
+1.Pay to Public Key Hash (P2PKH) 單一簽名地址，開頭為1
 
 2.Pay to Script Hash（P2SH）開頭為3 (BIP-16)
 
