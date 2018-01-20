@@ -93,7 +93,7 @@ scriptPubKey: 0 <20-byte-key-hash>
 
 P2WSH
 
-> 版本號為0 之 1-of-2 multi-signature  pay-to-witness-script-hash \(P2WSH\).
+> 版本號為0 之 1-of-2 multi-signature  pay-to-witness-script-hash \(P2WSH\)
 
 ```
 witness:      0 <signature1> <1 <pubkey1> <pubkey2> 2 CHECKMULTISIG>
