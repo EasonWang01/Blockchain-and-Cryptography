@@ -279,7 +279,7 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 以下為寫在白皮書的公式  
 ![](/assets/避免雙重支付公式.png)
 
-有關其他可能被攻擊的方式  
+其他可能使比特幣遭受攻擊的方式，可參考如下連結：  
 [https://en.bitcoin.it/wiki/Irreversible\_Transactions](https://en.bitcoin.it/wiki/Irreversible_Transactions)
 
 # UTXO
