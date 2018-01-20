@@ -38,6 +38,14 @@ eba3a6951a3b962ce05a5b3a2e562021fcfd7e2110b54250466d79a481b87120
 
 > 開頭03是因為 y coordinate最後一個字是奇數9。
 
+壓縮公鑰
+
+```js
+publickey = publickey.slice(-1) % 2 === 0 
+             ? "02" + publickey.slice(2, 66) 
+             : "03" + publickey.slice(2, 66);
+```
+
 可使用以下程式將壓縮公鑰轉回公鑰：
 
 > npm install elliptic
@@ -49,17 +57,15 @@ const publicKeyUncompressed = ec.keyFromPublic("03eba3a6951a3b962ce05a5b3a2e5620
 console.log(publicKeyUncompressed)
 ```
 
-
-
 ## 壓縮版本的私鑰
 
 指的是壓縮版本的公鑰對應的私鑰，但為了識別，會在壓縮版本的私鑰最後加上`0x01`
 
 ```
-Uncompressed private key:	
+Uncompressed private key:    
 4F63BA6514E7EA4D2F561D96035729D93EDA4678F148A0CF8E8D77724B18E0B9
 
-Compressed private key:	
+Compressed private key:    
 4F63BA6514E7EA4D2F561D96035729D93EDA4678F148A0CF8E8D77724B18E0B901
 ```
 
