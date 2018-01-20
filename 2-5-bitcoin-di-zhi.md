@@ -304,9 +304,23 @@ function hex2ASCII(_hex) {
 
 > 可使用原先的P2PKH 或 P2SH 來產生，將會構建出P2SH-P2WPKH 或 P2SH-P2WSH。
 
-```
+1.啟動節點（記得加上`-walletprematurewitness`）
 
 ```
+./bitcoind -connect=0 -nolisten -walletprematurewitness  -datadir="./chaindata"
+```
+
+2.產生地址
+
+```
+./bitcoin-cli -datadir="./chaindata" addwitnessaddress 1j9x23hbbLDfpExMMHBTQ3CfQ52mqLqLU
+```
+
+> 如果地址不是從自己錢包產生的會產生如下錯誤。
+>
+> Public key or redeemscript not known to wallet, or the key is uncompressed.
+
+#### ![](/assets/螢幕快照 2018-01-20 上午10.08.33.png)
 
 #### 使用Node.js產生地址
 
