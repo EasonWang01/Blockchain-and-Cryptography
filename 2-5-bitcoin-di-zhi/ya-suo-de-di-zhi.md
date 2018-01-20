@@ -41,7 +41,7 @@ eba3a6951a3b962ce05a5b3a2e562021fcfd7e2110b54250466d79a481b87120
 壓縮公鑰
 
 ```js
-publickey = publickey.slice(-1) % 2 === 0 
+Compressed_publickey = publickey.slice(-1) % 2 === 0 
              ? "02" + publickey.slice(2, 66) 
              : "03" + publickey.slice(2, 66);
 ```
