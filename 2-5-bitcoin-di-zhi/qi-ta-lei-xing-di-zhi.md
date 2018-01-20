@@ -69,7 +69,7 @@ console.log(address);
 console.log('--------')
 ```
 
-# 5.HD address \(hierarchical deterministic address\)
+# 5.HD \(hierarchical deterministic\) wallet address 
 
 參考下圖:
 

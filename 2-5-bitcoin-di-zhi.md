@@ -300,10 +300,6 @@ function hex2ASCII(_hex) {
 
 ### 使用Bitcoind產生地址
 
-
-
-
-
 （以下為地址產生的程式碼，跟一般multisig不同處是publickey hash 產生後，會在前面接上0x00與0x14然後再做一次sha256與ripemd160然後繼續計算）
 
 ```js
