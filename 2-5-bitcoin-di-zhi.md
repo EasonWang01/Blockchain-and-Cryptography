@@ -292,11 +292,13 @@ function hex2ASCII(_hex) {
 隔離見證地址，開頭為3
 
 > ```
-> Calculate the RIPEMD160 of the SHA256 of a public key (keyhash).
+> 1.計算 RIPEMD160 of the SHA256 of a public key (keyhash).
 > The P2SH redeemScript is always 22 bytes. 
 > It starts with a OP_0, followed by a canonical push of the keyhash (i.e. 0x0014{20-byte keyhash})
 > Same as any other P2SH, the scriptPubKey is OP_HASH160 hash160(redeemScript) OP_EQUAL, and the address is the corresponding P2SH address with prefix 3.
 > ```
+
+> 只能接受壓縮版本的公鑰
 
 ### 使用Bitcoind產生地址
 
