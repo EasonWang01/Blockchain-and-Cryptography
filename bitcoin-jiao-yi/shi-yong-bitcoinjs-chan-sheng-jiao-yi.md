@@ -16,7 +16,9 @@ BitcoinJS為一個MIT授權Open Source的比特幣相關套件。
 5. 使用任意編輯器開啟transaction.js
 ```
 
-然後我們先將transaction.js裡面的code都先刪除，以下將介紹如何產生交易
+然後我們先將transaction.js裡面的code都先刪除，之後以下範例都直接複製並貼到transaction.js中，並且執行。
+
+以下將介紹如何產生交易
 
 #### 1.產生一對一之交易\(最基本型態\)
 
