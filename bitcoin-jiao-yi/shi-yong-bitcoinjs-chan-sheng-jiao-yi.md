@@ -179,11 +179,9 @@ testnetUtils.faucetMany([
 })
 ```
 
-
-
 ---
 
-如果產生錯誤將integration內的\_testnet.js改為如下
+如果產生錯誤，可將integration內的\_testnet.js改為如下
 
 > 主要為更改Endpoint
 
@@ -289,7 +287,6 @@ blockchain.transactions.propagate = function broadcast(txHex, callback) {
 
 blockchain.RETURN_ADDRESS = kpAddress
 module.exports = blockchain
-
 ```
 
 
