@@ -58,15 +58,24 @@ Unlocking script:
 
 可參考: [https://bitcoin.stackexchange.com/a/28092](https://bitcoin.stackexchange.com/a/28092)
 
+#### 6.Segregated Witness \( Segwit \)
+
+[https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki)
+
+也稱為隔離見證，主要用意是要減少放入區塊內的交易大小，作法為把原本交易簽名（signature）從交易Script中移除。
+
+每個Segwit的交易將會產生兩種ID : txid與wtxid。
+
+```
+txid:   [nVersion][txins][txouts][nLockTime]
+wtxid:  [nVersion][marker][flag][txins][txouts][witness][nLockTime]
+```
 
 
-#### 6.Segregated Witness
-
-https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki
-
-也稱為隔離見證，主要用意是要減少放入區塊內的交易大小，
 
 
+
+.
 
 ---
 
