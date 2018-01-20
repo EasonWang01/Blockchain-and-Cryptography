@@ -31,7 +31,7 @@
 
 4.Time Locked Address 運用OP_CHECKLOCKTIMEVERIFY (OP_HODL)來創建的地址，開頭為3
 
-5.HD address (hierarchical deterministic address)產生出xPub和xPrv
+5.HD (hierarchical deterministic )產生出xPub和xPrv
 ```
 
 比特幣地址有以下性質
