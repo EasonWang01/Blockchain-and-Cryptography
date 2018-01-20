@@ -291,5 +291,125 @@ blockchain.RETURN_ADDRESS = kpAddress
 module.exports = blockchain
 ```
 
+## 5.產生2-of-4 P2SH \( multisig \)交易
+
+```js
+var assert = require('assert')
+var bitcoin = require('../../')
+var dhttp = require('dhttp/200')
+var testnet = bitcoin.networks.testnet
+var testnetUtils = require('./_testnet')
+
+var keyPairs = [
+  '91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgwmaKkrx',
+  '91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgww7vXtT',
+  '91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgx3cTMqe',
+  '91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgx9rcrL7'
+].map(function (wif) { return bitcoin.ECPair.fromWIF(wif, testnet) })
+var pubKeys = keyPairs.map(function (x) { return x.getPublicKeyBuffer() })
+
+var redeemScript = bitcoin.script.multisig.output.encode(2, pubKeys)
+var scriptPubKey = bitcoin.script.scriptHash.output.encode(bitcoin.crypto.hash160(redeemScript))
+var address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
+
+testnetUtils.faucet(address, 2e4, function (err, unspent) {
+  if (err) return console.log(err)
+
+  var txb = new bitcoin.TransactionBuilder(testnet)
+  txb.addInput(unspent.txId, unspent.vout)
+  txb.addOutput(testnetUtils.RETURN_ADDRESS, 1e4)
+
+  txb.sign(0, keyPairs[0], redeemScript)
+  txb.sign(0, keyPairs[2], redeemScript)
+
+  var tx = txb.build()
+
+  // build and broadcast to the Bitcoin Testnet network
+  testnetUtils.transactions.propagate(tx.toHex(), function (err) {
+    if (err) return console.log(err)
+  })
+})
+```
+
+## 6.產生SegWit P2SH-P2WPKH 交易
+
+```js
+var assert = require('assert')
+var bitcoin = require('../../')
+var dhttp = require('dhttp/200')
+var testnet = bitcoin.networks.testnet
+var testnetUtils = require('./_testnet')
+var keyPair = bitcoin.ECPair.fromWIF('cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87JcbXMTcA', testnet)
+var pubKey = keyPair.getPublicKeyBuffer()
+var pubKeyHash = bitcoin.crypto.hash160(pubKey)
+
+var redeemScript = bitcoin.script.witnessPubKeyHash.output.encode(pubKeyHash)
+var redeemScriptHash = bitcoin.crypto.hash160(redeemScript)
+
+var scriptPubKey = bitcoin.script.scriptHash.output.encode(redeemScriptHash)
+var address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
+
+testnetUtils.faucet(address, 5e4, function (err, unspent) {
+  if (err) return console.log(err)
+
+  var txb = new bitcoin.TransactionBuilder(testnet)
+  txb.addInput(unspent.txId, unspent.vout)
+  txb.addOutput(testnetUtils.RETURN_ADDRESS, 4e4)
+  txb.sign(0, keyPair, redeemScript, null, unspent.value)
+
+  var tx = txb.build()
+
+  // build and broadcast to the Bitcoin Testnet network
+  testnetUtils.transactions.propagate(tx.toHex(), function (err) {
+    if (err) return console.log(err)
+  })
+})
+```
+
+## 7.產生SegWit 3-of-4 P2SH-P2WSH交易
+
+```js
+var assert = require('assert')
+var bitcoin = require('../../')
+var dhttp = require('dhttp/200')
+var testnet = bitcoin.networks.testnet
+var testnetUtils = require('./_testnet')
+
+var keyPairs = [
+  'cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87JcbXMTcA',
+  'cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87K7XCyj5v',
+  'cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87KcLPVfXz',
+  'cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87L7FgDCKE'
+].map(function (wif) { return bitcoin.ECPair.fromWIF(wif, testnet) })
+var pubKeys = keyPairs.map(function (x) { return x.getPublicKeyBuffer() })
+
+var witnessScript = bitcoin.script.multisig.output.encode(3, pubKeys)
+var redeemScript = bitcoin.script.witnessScriptHash.output.encode(bitcoin.crypto.sha256(witnessScript))
+var scriptPubKey = bitcoin.script.scriptHash.output.encode(bitcoin.crypto.hash160(redeemScript))
+var address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
+
+testnetUtils.faucet(address, 6e4, function (err, unspent) {
+  if (err) return console.log(err)
+
+  var txb = new bitcoin.TransactionBuilder(testnet)
+  txb.addInput(unspent.txId, unspent.vout)
+  txb.addOutput(testnetUtils.RETURN_ADDRESS, 4e4)
+  txb.sign(0, keyPairs[0], redeemScript, null, unspent.value, witnessScript)
+  txb.sign(0, keyPairs[2], redeemScript, null, unspent.value, witnessScript)
+  txb.sign(0, keyPairs[3], redeemScript, null, unspent.value, witnessScript)
+
+  var tx = txb.build()
+
+  // build and broadcast to the Bitcoin Testnet network
+  testnetUtils.transactions.propagate(tx.toHex(), function (err) {
+    if (err) return console.log(err)
+  })
+})
+```
+
+> 廣播到Testnet的交易都可以到以下網站，輸入 txid 或地址查看
+>
+> https://live.blockcypher.com/btc-testnet/
+
 
 
