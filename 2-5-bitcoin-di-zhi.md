@@ -25,7 +25,7 @@
 ```
 1.Single Sig Address (Pay to Public Key Hash (P2PKH)) 單一簽名地址，開頭為1
 
-2.Multi Sig 多重簽名地址，開頭為3 ，Pay to Script Hash（P2SH） (BIP-16)
+2.Pay to Script Hash（P2SH）開頭為3 (BIP-16)
 
 3.SegWit Address (P2WSH) 隔離見證地址，開頭為3
 
@@ -157,9 +157,9 @@ function hex2ASCII(_hex) {
 }
 ```
 
-# 2.多重簽名地址P2SH\(Pay to Script Hash\)
+# 2.P2SH\(Pay to Script Hash\)
 
-多重簽名地址，開頭為3，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名。
+開頭為3，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名。
 
 因為P2SH交易的locking script包含OP\_HASH160，跟產生地址的過程類似，所以之後發展為可以將其作Base58編碼，即成為一種地址格式，這也是所謂的P2SH地址。
 
