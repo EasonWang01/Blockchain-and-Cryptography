@@ -81,6 +81,22 @@ wtxid:  [nVersion][marker][flag][txins][txouts][witness][nLockTime]
 
 之後一群交易的wtxid會另外組成一個Merkle Tree，並且將Merkle Root存在區塊的coinbase transaction。
 
+P2WPKH
+
+```
+witness:      <signature> <pubkey>
+scriptSig:    (empty)
+scriptPubKey: 0 <20-byte-key-hash>
+```
+
+P2WSH
+
+```
+witness:      0 <signature1> <1 <pubkey1> <pubkey2> 2 CHECKMULTISIG>
+scriptSig:    (empty)
+scriptPubKey: 0 <32-byte-hash>
+```
+
 .
 
 ---
