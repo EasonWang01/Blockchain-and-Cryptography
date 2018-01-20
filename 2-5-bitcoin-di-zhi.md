@@ -170,7 +170,7 @@ Unlocking script:
 
 > ![](/assets/螢幕快照 2017-11-19 下午3.56.38.png)[http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/](http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/)
 
-### 使用Bitcoind產生地址
+#### 使用Bitcoind產生地址
 
 [https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work](https://bitcoin.stackexchange.com/questions/6100/how-will-multisig-addresses-work)
 
@@ -300,7 +300,7 @@ function hex2ASCII(_hex) {
 
 > 只能接受壓縮版本的公鑰
 
-### 使用Bitcoind產生地址
+#### 使用Bitcoind產生地址
 
 > 可使用原先的P2PKH 或 P2SH 來產生，將會構建出P2SH-P2WPKH 或 P2SH-P2WSH。
 
