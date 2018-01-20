@@ -103,12 +103,10 @@ scriptPubKey: 0 <32-byte-hash>
 
 .
 
-
-
 其他有關Segwit之BIP可參考：
 
 ```
-BIP141, BIP143, BIP144, BIP145.
+BIP141, BIP143, BIP144, BIP145
 ```
 
 ---
