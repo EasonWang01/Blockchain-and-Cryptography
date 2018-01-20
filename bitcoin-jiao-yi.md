@@ -417,15 +417,13 @@ Input一定會對應到一個Output，每個Output都會有一個locking script 
 OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> OP_EQUAL OP_CHECKSIG
 ```
 
-其Input script如下圖，unlocking scrip通常會出現在交易的Input裡面，所以也稱為Input script。另外也稱scriptSig。
+其Input script如下圖，Unlocking scrip通常會出現在交易的Input裡面，所以也稱為Input script。另外也稱scriptSig。
 
 ```
 <Signature> <Public Key>
 ```
 
-> ![](/assets/1_NtgVAsbc112gcNoS1IDjDg.png)
->
-> [https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook)
+![](/assets/螢幕快照 2018-01-20 下午11.15.56.png)
 
 可參考下圖實際交易之script
 
