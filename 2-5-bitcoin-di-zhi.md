@@ -301,6 +301,10 @@ function hex2ASCII(_hex) {
 
 # 3.SegWit Address \(P2WSH\)
 
+為Segregated Witness
+
+#### 實作：
+
 相關spec可參考此:
 
 [https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki)
