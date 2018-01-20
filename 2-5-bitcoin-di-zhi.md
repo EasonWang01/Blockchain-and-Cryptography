@@ -272,7 +272,7 @@ console.log('--------')
 
 
 function hex2ASCII(_hex) {
-  let hex = _hex.toString();//force conversion
+  let hex = _hex.toString();
   let str = '';
   for (let i = 0; i < hex.length; i += 2) {
     str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
@@ -287,7 +287,7 @@ function hex2ASCII(_hex) {
 
 相關spec可參考此:
 
-https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki
+[https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki)
 
 [https://bitcoincore.org/en/segwit\_wallet\_dev/\#creation-of-p2sh-p2wsh-address](https://bitcoincore.org/en/segwit_wallet_dev/#creation-of-p2sh-p2wsh-address)
 
@@ -302,42 +302,52 @@ https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki
 
 ### 使用Bitcoind產生地址
 
+```
+
+```
+
+#### 使用Node.js產生地址
+
 （以下為地址產生的程式碼，跟一般multisig不同處是publickey hash 產生後，會在前面接上0x00與0x14然後再做一次sha256與ripemd160然後繼續計算）
 
 ```js
-var crypto = require('crypto');
-var ecdh = crypto.createECDH('secp256k1');
-var bs58 = require('bs58');
+const crypto = require('crypto');
+const ecdh = crypto.createECDH('secp256k1');
+const bs58 = require('bs58');
+
+// 更換其他壓縮版本之私鑰
+Compress_PRI_WIF = "L3jzVjVJ4HJLbbWBKqAfwFD7Sh1wYQxcCTuFhG5mCFqcGVmiHMzi"
 
 
-var hash2 = crypto.randomBytes(32)
-console.log('--------')
-console.log('私鑰')
-console.log(hash2); //私鑰，64位十六進制數 //使用hash2.toString('hex')即可看到16進位字串
-console.log('--------')
+const bytes = bs58.decode(Compress_PRI_WIF)
+const Uncompress_Pri = bytes.toString('hex').slice(2, -10) // 拿掉開頭的80與結尾的01加上八位校驗碼。
 
 
-// ECDH和ECDSA產生公私鑰的方式都相同
-var publickey = ecdh.setPrivateKey(hash2,'hex').getPublicKey('hex')
-console.log('公鑰')
+const publickey = ecdh.setPrivateKey(Uncompress_Pri, 'hex').getPublicKey('hex')
+console.log('--公鑰--')
 console.log(publickey); //公鑰(通過橢圓曲線算法可以從私鑰計算得到公鑰)
-console.log('--------')
 
-//把公鑰以sha256加密後再用ripemd160加密，取得publickeyHash
-var hash = crypto.createHash('sha256').update(publickey).digest();
+
+const compressed_publickey = publickey.slice(-1) % 2 === 0
+  ? "02" + publickey.slice(2, 66)
+  : "03" + publickey.slice(2, 66);
+console.log('--Compressed_publickey--')
+console.log(compressed_publickey)
+console.log('-------------------------')
+
+ASCII_text = hex2ASCII(compressed_publickey);
+
+let hash = crypto.createHash('sha256').update(Buffer.from(ASCII_text, "ascii")).digest();
 hash = crypto.createHash('ripemd160').update(hash).digest();
-console.log('publickeyHash')
-console.log(hash);
-console.log('--------')
+
 
 //前面接上0x00與0x14然後再做一次sha256與ripemd160
 hash = Buffer.concat([new Buffer('00', 'hex'), new Buffer('14', 'hex'), hash]);
 hash = crypto.createHash('sha256').update(hash).digest();
 hash = crypto.createHash('ripemd160').update(hash).digest();
-
-//在publickeyHash前面加上一个00前缀
-var version = new Buffer('05', 'hex');
-var checksum = Buffer.concat([version, hash]);
+//在publickeyHash前面加上一个05前缀
+let version = new Buffer('05', 'hex');
+let checksum = Buffer.concat([version, hash]);
 //兩次256雙重加密
 checksum = crypto.createHash('sha256').update(checksum).digest();
 checksum = crypto.createHash('sha256').update(checksum).digest();
@@ -349,21 +359,30 @@ console.log(checksum);
 console.log('--------')
 
 //把publickeyHash前面一樣加上00而後面加上剛才算出的checksum
-var address = Buffer.concat([version, hash, checksum]);
+let address = Buffer.concat([version, hash, checksum]);
 console.log('編碼前地址')
 console.log(address);
 console.log('--------')
 
 // 最後使用base58進行編碼
 address = bs58.encode(address);
-console.log('編碼後segwit的比特幣地址')
+console.log('編碼後Segwit的比特幣地址')
 console.log(address);
 console.log('--------')
+
+function hex2ASCII(_hex) {
+  let hex = _hex.toString();
+  let str = '';
+  for (let i = 0; i < hex.length; i += 2) {
+    str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+  }
+  return str;
+}
 ```
 
-> 參考自:[https://github.com/OutCast3k/coinbin/blob/master/js/coin.js\#L175](https://github.com/OutCast3k/coinbin/blob/master/js/coin.js#L175)
+![](/assets/螢幕快照 2018-01-20 上午9.47.33.png)
 
-# 
+
 
 
 
