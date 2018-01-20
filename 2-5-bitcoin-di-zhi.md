@@ -64,6 +64,22 @@
 > openssl ec -in priv.pem -pubout -outform DER|tail -c 65|xxd -p -c 65
 > ```
 
+#### 使用Bitcoind產生P2PKH地址
+
+1.啟動Server
+
+```
+./bitcoind -connect=0 -nolisten -datadir="./chaindata"
+```
+
+2.產生地址
+
+```
+./bitcoin-cli -datadir="./chaindata"  getnewaddress
+```
+
+#### 使用Node.js產生P2PKH地址
+
 接下來我們要結合密碼學的幾個加密方法來實作並產生比特幣地址，使用的程式語言是Node.js\(如尚未安裝請參考附錄\)
 
 我們先安裝node.js的base58模組
