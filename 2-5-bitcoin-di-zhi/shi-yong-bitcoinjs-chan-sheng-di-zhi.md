@@ -6,6 +6,8 @@
 npm install bitcoinjs-lib
 ```
 
+> 本書使用之bitcoinjs-lib版本為**3.3.2**
+
 #### 1.從WIF私鑰來產生地址
 
 ```js
@@ -85,8 +87,6 @@ const address = bitcoin.address.fromOutputScript(scriptPubKey)
 
 console.log(address);
 ```
-
-
 
 
 
