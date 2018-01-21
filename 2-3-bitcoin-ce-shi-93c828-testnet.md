@@ -77,11 +77,17 @@ console.log(address);
 
 > 在本地端的節點必須要完整同步後才可以得到正確的區塊鏈資訊，所以建議讀者可使用線上的網站服務，他會去存取他們已經完整同步過的Full Node，然後回傳資訊到網站上供瀏覽。
 
-### ![](/assets/getfreecoin3.png)廣播交易
+### ![](/assets/getfreecoin3.png)
+
+### 廣播交易
 
 可以使用此服務廣播測試鏈的交易
 
-https://live.blockcypher.com/btc-testnet/pushtx/
+[https://live.blockcypher.com/btc-testnet/pushtx/](https://live.blockcypher.com/btc-testnet/pushtx/)
+
+### ![](/assets/螢幕快照 2018-01-21 上午10.12.20.png)查詢交易
+
+https://live.blockcypher.com/btc-testnet/tx/&lt;填入Txid&gt;
 
 
 
