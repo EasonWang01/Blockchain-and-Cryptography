@@ -14,6 +14,10 @@
 
 RSMC（Recoverable Sequence Maturity Contract）定義了雙向小額支付通道的最基本工作方式。
 
+```
+為了鼓勵雙方盡可能久地利用通道進行交易，RSMC之主動終止通道方其資金到帳將比對方晚。
+```
+
 HTLC（Hashed Timelock Contract）進一步利用nLockTime實現了有條件的資金支付，使多人之間的Channel支付變得可行。
 
 ```
