@@ -8,7 +8,7 @@
 
 雙方預存一些資金，並且在一開始會被放到一個multisignature "channel" 地址，雙方開啟一個支付通道後維護一份共同的帳本，每次雙方有小額交易後都更新帳本，並且舊的即失效，每次產生新的帳本餘額時都需要雙方的簽章驗證，
 
-## 標準 \( specification \) 
+## 標準 \( specification \)
 
 Lightning Network specification \(BOLTs\)， BOLT 全名為： Basic of Lightning Technologies。
 
@@ -24,7 +24,7 @@ Lightning Network specification \(BOLTs\)， BOLT 全名為： Basic of Lightnin
 
 這裡我們會使用Docker來快速的啟動相關節點服務。
 
-> Docker安裝可參考：https://docs.docker.com/engine/installation/
+> Docker安裝可參考：[https://docs.docker.com/engine/installation/](https://docs.docker.com/engine/installation/)
 
 我們要先clone該專案，並且進入專案中的Docker資料夾。
 
@@ -36,16 +36,34 @@ cd lnd/docker
 接下來我們會進行如下步驟
 
 ```
-啟動 btcd node 並且執行 private simnet.
-啟動一個節點取名為 Alice
-啟動一個節點取名為 Bob
-挖礦並將資金傳給Alice
-開啟 Alice 與 Bob 的 Channel
-Alice 付款給 Bob.
-關閉 Alice 與 Bob 間的Channel
+1. 啟動一個節點取名為 Alice
 
-查看 Bob 的餘額
+2. 啟動 btcd node 並且執行 private simnet
+
+3. 啟動一個節點取名為 Bob
+
+4. 挖礦並將資金傳給Alice
+
+5. 開啟 Alice 與 Bob 的 Channel
+
+6. Alice 付款給 Bob
+
+7. 關閉 Alice 與 Bob 間的Channel
+
+8. 查看 Bob 的餘額
 ```
 
+1.設定環境變數並且啟動alice節點
 
+> 記得要先啟動安裝好的Docker。
+
+```
+export NETWORK="simnet"
+docker-compose run -d --name alice lnd_btc
+docker exec -i -t alice bash
+```
+
+進入alice的
+
+2.
 
