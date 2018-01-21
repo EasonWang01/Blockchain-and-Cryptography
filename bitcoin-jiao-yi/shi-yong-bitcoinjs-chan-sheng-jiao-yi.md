@@ -25,7 +25,7 @@ BitcoinJS為一個MIT授權Open Source的比特幣相關套件。
 > const testnetUtils = require('./_testnet')
 > ```
 
-
+> 本書使用之bitcoinjs-lib版本為**3.3.2**
 
 以下將介紹如何產生交易
 
@@ -403,13 +403,11 @@ testnetUtils.faucet(address, 6e4, function (err, unspent) {
 > 以上的交易廣播都是廣播到Testnet，廣播到Testnet的交易都可以到以下網站，輸入 txid 或地址查看
 >
 > [https://live.blockcypher.com/btc-testnet/](https://live.blockcypher.com/btc-testnet/)
-
-
-
+>
 > 如果出現如下錯誤代表之前廣播過相同交易，但在還沒有被確認之前又再度廣播：
 >
 > ```json
-> error: { code: 'REQ_ERROR', message: '258: txn-mempool-conflict' } 
+> error: { code: 'REQ_ERROR', message: '258: txn-mempool-conflict' }
 > ```
 
 
