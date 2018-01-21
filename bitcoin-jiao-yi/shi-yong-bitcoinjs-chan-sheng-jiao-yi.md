@@ -7,9 +7,9 @@ BitcoinJS為一個MIT授權Open Source的比特幣相關套件。
 ```js
 1. git clone https://github.com/bitcoinjs/bitcoinjs-lib.git
 
-2. cd bitcoinjs-lib 
+2. cd bitcoinjs-lib 並且輸入 npm install
 
-3. npm install
+3. npm install bitcoinjs-lib  (因為我們在程式裡使用require('bitcoinjs-lib'))
 
 4. cd test/integration
 
@@ -17,6 +17,15 @@ BitcoinJS為一個MIT授權Open Source的比特幣相關套件。
 ```
 
 然後我們先將transaction.js裡面的code都先刪除，之後以下範例都直接複製並貼到transaction.js中，並且執行。
+
+> 由於我們會用到以下有關testnet部分，但因為這兩個BitcoinJS沒有打包成相關模組，所以我們使用在`test/integration/transaction.js` 直接改程式之方法執行程式。
+>
+> ```js
+> const testnet = bitcoin.networks.testnet
+> const testnetUtils = require('./_testnet')
+> ```
+
+
 
 以下將介紹如何產生交易
 
@@ -281,37 +290,36 @@ module.exports = blockchain
 ### 5.產生2-of-4 P2SH \( multisig \)交易
 
 ```js
-var assert = require('assert')
-var bitcoin = require('../../')
-var dhttp = require('dhttp/200')
-var testnet = bitcoin.networks.testnet
-var testnetUtils = require('./_testnet')
+const bitcoin = require('bitcoinjs-lib');
+const testnet = bitcoin.networks.testnet
+const testnetUtils = require('./_testnet')
 
-var keyPairs = [
+// 這邊可改為其他四把WIF key
+const keyPairs = [
   '91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgwmaKkrx',
   '91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgww7vXtT',
   '91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgx3cTMqe',
   '91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgx9rcrL7'
 ].map(function (wif) { return bitcoin.ECPair.fromWIF(wif, testnet) })
-var pubKeys = keyPairs.map(function (x) { return x.getPublicKeyBuffer() })
+const pubKeys = keyPairs.map(function (x) { return x.getPublicKeyBuffer() })
 
-var redeemScript = bitcoin.script.multisig.output.encode(2, pubKeys)
-var scriptPubKey = bitcoin.script.scriptHash.output.encode(bitcoin.crypto.hash160(redeemScript))
-var address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
+const redeemScript = bitcoin.script.multisig.output.encode(2, pubKeys)
+const scriptPubKey = bitcoin.script.scriptHash.output.encode(bitcoin.crypto.hash160(redeemScript))
+const address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
 
 testnetUtils.faucet(address, 2e4, function (err, unspent) {
   if (err) return console.log(err)
 
-  var txb = new bitcoin.TransactionBuilder(testnet)
+  const txb = new bitcoin.TransactionBuilder(testnet)
   txb.addInput(unspent.txId, unspent.vout)
   txb.addOutput(testnetUtils.RETURN_ADDRESS, 1e4)
 
   txb.sign(0, keyPairs[0], redeemScript)
   txb.sign(0, keyPairs[2], redeemScript)
 
-  var tx = txb.build()
+  const tx = txb.build()
 
-  // build and broadcast to the Bitcoin Testnet network
+  // 廣播交易
   testnetUtils.transactions.propagate(tx.toHex(), function (err) {
     if (err) return console.log(err)
   })
@@ -321,32 +329,32 @@ testnetUtils.faucet(address, 2e4, function (err, unspent) {
 ### 6.產生SegWit P2SH-P2WPKH 交易
 
 ```js
-var assert = require('assert')
-var bitcoin = require('../../')
-var dhttp = require('dhttp/200')
-var testnet = bitcoin.networks.testnet
-var testnetUtils = require('./_testnet')
-var keyPair = bitcoin.ECPair.fromWIF('cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87JcbXMTcA', testnet)
-var pubKey = keyPair.getPublicKeyBuffer()
-var pubKeyHash = bitcoin.crypto.hash160(pubKey)
+const bitcoin = require('bitcoinjs-lib');
+const testnet = bitcoin.networks.testnet
+const testnetUtils = require('./_testnet')
 
-var redeemScript = bitcoin.script.witnessPubKeyHash.output.encode(pubKeyHash)
-var redeemScriptHash = bitcoin.crypto.hash160(redeemScript)
+// 可改為其他WIF私鑰
+const keyPair = bitcoin.ECPair.fromWIF('cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87JcbXMTcA', testnet)
+const pubKey = keyPair.getPublicKeyBuffer()
+const pubKeyHash = bitcoin.crypto.hash160(pubKey)
 
-var scriptPubKey = bitcoin.script.scriptHash.output.encode(redeemScriptHash)
-var address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
+const redeemScript = bitcoin.script.witnessPubKeyHash.output.encode(pubKeyHash)
+const redeemScriptHash = bitcoin.crypto.hash160(redeemScript)
+
+const scriptPubKey = bitcoin.script.scriptHash.output.encode(redeemScriptHash)
+const address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
 
 testnetUtils.faucet(address, 5e4, function (err, unspent) {
   if (err) return console.log(err)
 
-  var txb = new bitcoin.TransactionBuilder(testnet)
+  const txb = new bitcoin.TransactionBuilder(testnet)
   txb.addInput(unspent.txId, unspent.vout)
   txb.addOutput(testnetUtils.RETURN_ADDRESS, 4e4)
   txb.sign(0, keyPair, redeemScript, null, unspent.value)
 
-  var tx = txb.build()
+  const tx = txb.build()
 
-  // build and broadcast to the Bitcoin Testnet network
+  // 廣播交易
   testnetUtils.transactions.propagate(tx.toHex(), function (err) {
     if (err) return console.log(err)
   })
@@ -356,38 +364,36 @@ testnetUtils.faucet(address, 5e4, function (err, unspent) {
 ### 7.產生SegWit 3-of-4 P2SH-P2WSH交易
 
 ```js
-var assert = require('assert')
-var bitcoin = require('../../')
-var dhttp = require('dhttp/200')
-var testnet = bitcoin.networks.testnet
-var testnetUtils = require('./_testnet')
+const bitcoin = require('bitcoinjs-lib');
+const testnet = bitcoin.networks.testnet
+const testnetUtils = require('./_testnet')
 
-var keyPairs = [
+const keyPairs = [
   'cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87JcbXMTcA',
   'cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87K7XCyj5v',
   'cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87KcLPVfXz',
   'cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87L7FgDCKE'
 ].map(function (wif) { return bitcoin.ECPair.fromWIF(wif, testnet) })
-var pubKeys = keyPairs.map(function (x) { return x.getPublicKeyBuffer() })
+const pubKeys = keyPairs.map(function (x) { return x.getPublicKeyBuffer() })
 
-var witnessScript = bitcoin.script.multisig.output.encode(3, pubKeys)
-var redeemScript = bitcoin.script.witnessScriptHash.output.encode(bitcoin.crypto.sha256(witnessScript))
-var scriptPubKey = bitcoin.script.scriptHash.output.encode(bitcoin.crypto.hash160(redeemScript))
-var address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
+const witnessScript = bitcoin.script.multisig.output.encode(3, pubKeys)
+const redeemScript = bitcoin.script.witnessScriptHash.output.encode(bitcoin.crypto.sha256(witnessScript))
+const scriptPubKey = bitcoin.script.scriptHash.output.encode(bitcoin.crypto.hash160(redeemScript))
+const address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
 
 testnetUtils.faucet(address, 6e4, function (err, unspent) {
   if (err) return console.log(err)
 
-  var txb = new bitcoin.TransactionBuilder(testnet)
+  const txb = new bitcoin.TransactionBuilder(testnet)
   txb.addInput(unspent.txId, unspent.vout)
   txb.addOutput(testnetUtils.RETURN_ADDRESS, 4e4)
   txb.sign(0, keyPairs[0], redeemScript, null, unspent.value, witnessScript)
   txb.sign(0, keyPairs[2], redeemScript, null, unspent.value, witnessScript)
   txb.sign(0, keyPairs[3], redeemScript, null, unspent.value, witnessScript)
 
-  var tx = txb.build()
+  const tx = txb.build()
 
-  // build and broadcast to the Bitcoin Testnet network
+  // 廣播交易
   testnetUtils.transactions.propagate(tx.toHex(), function (err) {
     if (err) return console.log(err)
   })
@@ -397,6 +403,14 @@ testnetUtils.faucet(address, 6e4, function (err, unspent) {
 > 以上的交易廣播都是廣播到Testnet，廣播到Testnet的交易都可以到以下網站，輸入 txid 或地址查看
 >
 > [https://live.blockcypher.com/btc-testnet/](https://live.blockcypher.com/btc-testnet/)
+
+
+
+> 如果出現如下錯誤代表之前廣播過相同交易，但在還沒有被確認之前又再度廣播：
+>
+> ```json
+> error: { code: 'REQ_ERROR', message: '258: txn-mempool-conflict' } 
+> ```
 
 
 
