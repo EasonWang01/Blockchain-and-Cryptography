@@ -24,9 +24,6 @@ BitcoinJS為一個MIT授權Open Source的比特幣相關套件。
 
 ```js
 const bitcoin = require('bitcoinjs-lib');
-const dhttp = require('dhttp/200')
-const testnet = bitcoin.networks.testnet
-const testnetUtils = require('./_testnet')
 
 // alice的私鑰
 const alice = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
@@ -50,9 +47,6 @@ console.log(txb.build().toHex());
 
 ```js
 const bitcoin = require('bitcoinjs-lib');
-const dhttp = require('dhttp/200')
-const testnet = bitcoin.networks.testnet
-const testnetUtils = require('./_testnet')
 
 //兩個人的私鑰
 const alice = bitcoin.ECPair.fromWIF('L1Knwj9W3qK3qMKdTvmg3VfzUs3ij2LETTFhxza9LfD5dngnoLG1')
@@ -77,8 +71,6 @@ console.log(txb.build().toHex());
 ```js
 const crypto = require('crypto');
 const bitcoin = require('bitcoinjs-lib');
-
-const dhttp = require('dhttp/200')
 const testnet = bitcoin.networks.testnet
 const testnetUtils = require('./_testnet')
 

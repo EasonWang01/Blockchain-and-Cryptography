@@ -85,11 +85,51 @@ console.log(address);
 
 [https://live.blockcypher.com/btc-testnet/pushtx/](https://live.blockcypher.com/btc-testnet/pushtx/)
 
-### ![](/assets/螢幕快照 2018-01-21 上午10.12.20.png)查詢交易
+### ![](/assets/螢幕快照 2018-01-21 上午10.12.20.png)
+
+或是可用以下程式
+
+```js
+// 廣播交易
+const https = require('https');
+
+var postData = JSON.stringify({
+  tx: txb.build().toHex()
+});
+
+var options = {
+  hostname: 'api.blockcypher.com',
+  port: 443,
+  path: '/v1/btc/test3/txs/push',
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Content-Length': postData.length
+  }
+};
+
+var req = https.request(options, (res) => {
+  console.log('statusCode:', res.statusCode);
+  console.log('headers:', res.headers);
+
+  res.on('data', (d) => {
+    process.stdout.write(d);
+  });
+});
+
+req.on('error', (e) => {
+  console.error(e);
+});
+
+req.write(postData);
+req.end();
+```
+
+### 查詢交易
 
 [https://live.blockcypher.com/btc-testnet/tx/填入Txid](https://live.blockcypher.com/btc-testnet/tx/填入Txid)
 
-或是使用其API查詢 \(會返回JSON格式\)：https://api.blockcypher.com/v1/btc/test3/txs/填入Txid
+或是使用其API查詢 \(會返回JSON格式\)：[https://api.blockcypher.com/v1/btc/test3/txs/填入Txid](https://api.blockcypher.com/v1/btc/test3/txs/填入Txid)
 
 > 相關Blockcypher的API 文件可到此查看：
 >
