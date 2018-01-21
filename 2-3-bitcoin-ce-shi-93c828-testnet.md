@@ -87,5 +87,5 @@ console.log(address);
 
 ### ![](/assets/螢幕快照 2018-01-21 上午10.12.20.png)查詢交易
 
-https://live.blockcypher.com/btc-testnet/tx/&lt;填入Txid&gt;
+https://live.blockcypher.com/btc-testnet/tx/填入Txid
 
