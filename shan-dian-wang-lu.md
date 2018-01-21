@@ -16,7 +16,23 @@ RSMC（Recoverable Sequence Maturity Contract）定義了雙向小額支付通�
 
 HTLC（Hashed Timelock Contract）進一步利用nLockTime實現了有條件的資金支付，使多人之間的Channel支付變得可行。
 
-https://youtu.be/8zVzw912wPo
+```
+假設一開始A太太想要付錢給C太太，但A太太只有跟B太太開了Channel，而B太太跟A和C都有開Channel可跟兩人溝通。
+
+
+運作方式一開始C太太會產生一個私密訊息R，並用雜湊函式把R做Hash，然後把Hash值跟Hash function傳送給A太太。
+之後使用 nTimelock 鎖定A太太的錢特定時間，在解鎖時刻到來之前，如果B太太能夠向A太太出示一個適當的R（稱為秘密），使得R的雜湊值等於事先約定的值H(R)，B太太就能獲得這鎖定的錢。但如果直到解鎖時刻過去B太太仍然未能提供一個正確的R，A太太被鎖地的錢將會歸還給A太太，所以B太太為了拿到錢也會開一個nTimelock 鎖定收據給C太太，讓C太太把R給他。
+
+所以流程為：
+C太太給Ａ太太，R被Hash過的值。
+A太太開給B太太nTimelock的收據。
+B太太再開給C太太nTimelock的收據。
+C太太給出R，拿到B太太的錢。
+B太太再把R給A拿到A太太的錢。
+而B太太也可以從中獲得手續費。
+```
+
+官方影片：[https://youtu.be/8zVzw912wPo](https://youtu.be/8zVzw912wPo)
 
 ## 標準 \( specification \)
 
