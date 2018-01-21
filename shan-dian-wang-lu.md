@@ -16,6 +16,8 @@ RSMC（Recoverable Sequence Maturity Contract）定義了雙向小額支付通�
 
 HTLC（Hashed Timelock Contract）進一步利用nLockTime實現了有條件的資金支付，使多人之間的Channel支付變得可行。
 
+https://youtu.be/8zVzw912wPo
+
 ## 標準 \( specification \)
 
 Lightning Network specification \(BOLTs\)， BOLT 全名為： Basic of Lightning Technologies。
