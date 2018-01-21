@@ -6,7 +6,7 @@
 
 可參考此份論文：[https://lightning.network/lightning-network-paper.pdf。](https://lightning.network/lightning-network-paper.pdf。)
 
-雙方預存一些資金，並且在一開始會被放到一個multisignature "channel" 地址，雙方開啟一個支付通道後維護一份共同的帳本，每次雙方有小額交易後都更新帳本，並且舊的即失效，每次產生新的帳本餘額時都需要雙方的簽章驗證。
+雙方預存一些資金，並且在一開始會被放到一個multisignature "channel" 地址，雙方開啟一個支付通道後維護一份共同的帳本，每次雙方有小額交易後都更新帳本，並且讓舊的帳本失效，每次產生新的帳本餘額時都需要雙方的驗證。
 
 其中有兩個名詞分別為RSMC與HTLC。
 
