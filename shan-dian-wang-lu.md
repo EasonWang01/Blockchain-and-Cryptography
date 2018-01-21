@@ -53,7 +53,7 @@ cd lnd/docker
 
 > btcd 是一個用Golang寫的Bitcoin full node
 >
-> https://github.com/btcsuite/btcd
+> [https://github.com/btcsuite/btcd](https://github.com/btcsuite/btcd)
 
 ## 1.設定環境變數並且啟動alice節點
 
@@ -158,5 +158,27 @@ lncli listchannels
 
 ## 5.Alice使用Channel付款給Bob
 
+先在Bob的Terminal輸入以下，產生相關付款單據。
 
+```
+lncli addinvoice --value=10000
+```
+
+![](/assets/螢幕快照 2018-01-21 下午5.32.00.png)
+
+然後在Alice的Terminal輸入以下並填入剛才Bob產生出的`pay_req`，來付款給Bob
+
+```
+lncli sendpayment --pay_req=填入Bob產生的pay_req
+```
+
+![](/assets/螢幕快照 2018-01-21 下午5.34.14.png)
+
+最後可以分別在兩人的Terminal輸入以下指令查看餘額：
+
+```
+lncli channelbalance
+```
+
+![](/assets/螢幕快照 2018-01-21 下午5.34.49.png)
 
