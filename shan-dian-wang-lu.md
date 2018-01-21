@@ -30,6 +30,9 @@ B太太再開給C太太nTimelock的收據。
 C太太給出R，拿到B太太的錢。
 B太太再把R給A拿到A太太的錢。
 而B太太也可以從中獲得手續費。
+
+（注意： 如果A太太跟B太太之間的Channel過期時間比B太太跟C太太之間短，則C太太，太晚給出R，A太太在時間到後拿回錢，但這時C太太又把R給了B太太然後拿到錢，
+  但B太太就沒辦法再把R給A太太拿錢了。）
 ```
 
 官方影片：[https://youtu.be/8zVzw912wPo](https://youtu.be/8zVzw912wPo)
