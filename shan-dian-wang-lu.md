@@ -83,5 +83,23 @@ lncli newaddress np2wkh
 MINING_ADDRESS=填入剛才產生的地址 docker-compose up -d btcd
 ```
 
+接著新增400個區塊
 
+```
+docker-compose run btcctl generate 400
+```
+
+![](/assets/螢幕快照 2018-01-21 下午4.57.36.png)確認segwit為啟動狀態。
+
+```
+docker-compose run btcctl getblockchaininfo | grep -A 1 segwit
+```
+
+![](/assets/螢幕快照 2018-01-21 下午5.00.10.png)最後回到alice的Terminal查看她的餘額：
+
+```
+lncli walletbalance --witness_only=true
+```
+
+![](/assets/螢幕快照 2018-01-21 下午5.00.59.png)
 
