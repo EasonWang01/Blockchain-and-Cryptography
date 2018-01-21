@@ -135,47 +135,7 @@ funding mvvrViCXRZD1czZduc4xCixmfG7DpZ7Lkb w/ 70000
 ### 4.產生OP\_RETURN的交易
 
 ```js
-var assert = require('assert')
-var bitcoin = require('../../')
-var dhttp = require('dhttp/200')
-var testnet = bitcoin.networks.testnet
-var testnetUtils = require('./_testnet')
 
-function rng() {// 一個隨機的base64 hash
-  return Buffer.from('YT8dAtK4d16A3P1z+TpwB2jJ4aFH3g9M1EioIBkLEV4=', 'base64')
-}
-
-var alice1 = bitcoin.ECPair.makeRandom({ network: testnet })
-var alice2 = bitcoin.ECPair.makeRandom({ network: testnet })
-var aliceChange = bitcoin.ECPair.makeRandom({ rng: rng, network: testnet })
-
-// 模擬 Alice 有兩個 unspent outputs
-testnetUtils.faucetMany([
-  {
-    address: alice1.getAddress(),
-    value: 5e4
-  },
-  {
-    address: alice2.getAddress(),
-    value: 7e4
-  }
-], function (err, unspent) {
-  if (err) console.log(err)
-
-  var txb = new bitcoin.TransactionBuilder(testnet)
-
-  // 加入文字
-  var data = Buffer.from('bitcoinjs-lib', 'utf8')
-  // 加入文字
-  var dataScript = bitcoin.script.nullData.output.encode(data)
-
-  txb.addInput(unspent.txId, unspent.vout)
-  txb.addOutput(dataScript, 1000)
-  txb.addOutput(testnetUtils.RETURN_ADDRESS, 4e4)
-  txb.sign(0, keyPair)
-
-  console.log(txb.build().toHex())
-})
 ```
 
 ---

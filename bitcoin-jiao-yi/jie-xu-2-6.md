@@ -25,9 +25,37 @@ OP_RETURN <data>
 
 實際交易
 
-![](/assets/987.png)
+> ![](/assets/987.png)[https://blockchain.info/tx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684](https://blockchain.info/tx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684)
 
-[https://blockchain.info/tx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684](https://blockchain.info/tx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684)
+接著我們使用線上的服務來查看Tx的內容： https://blockchain.info/rawtx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684
+
+進入後可以往下看到：
+
+![](/assets/螢幕快照 2018-01-21 上午9.45.10.png)
+
+之後我們使用此網站來查看 script 內容 :
+
+ https://chainquery.com/bitcoin-api/decodescript
+
+![](/assets/螢幕快照 2018-01-21 上午9.43.57.png)
+
+> 可以看到OP\_RETURN 後面接著一串十六進位字串
+
+最後我們把該字串從Hex轉為ASCII即可看到內容
+
+```js
+function hex_to_ASCII(hexx) {
+    let hex = hexx.toString();
+    let str = '';
+    for (let i = 0; i < hex.length; i += 2)
+        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+    return str;
+}
+
+hex_to_ASCII('636861726c6579206c6f766573206865696469');
+```
+
+
 
 #### 5.Pay-to-Script-Hash \(P2SH\)
 
@@ -91,7 +119,7 @@ scriptSig:    (empty)
 scriptPubKey: 0 <20-byte-key-hash>
 ```
 
-交易範例：http://n.bitcoin.ninja/checktx?txid=d869f854e1f8788bcff294cc83b280942a8c728de71eb709a2c29d10bfe21b7c
+交易範例：[http://n.bitcoin.ninja/checktx?txid=d869f854e1f8788bcff294cc83b280942a8c728de71eb709a2c29d10bfe21b7c](http://n.bitcoin.ninja/checktx?txid=d869f854e1f8788bcff294cc83b280942a8c728de71eb709a2c29d10bfe21b7c)
 
 ![](/assets/螢幕快照 2018-01-20 下午10.59.02.png)
 
@@ -105,7 +133,7 @@ scriptSig:    (empty)
 scriptPubKey: 0 <32-byte-hash>
 ```
 
-.交易範例：http://n.bitcoin.ninja/checktx?txid=78457666f82c28aa37b74b506745a7c7684dc7842a52a457b09f09446721e11c
+.交易範例：[http://n.bitcoin.ninja/checktx?txid=78457666f82c28aa37b74b506745a7c7684dc7842a52a457b09f09446721e11c](http://n.bitcoin.ninja/checktx?txid=78457666f82c28aa37b74b506745a7c7684dc7842a52a457b09f09446721e11c)
 
 ![](/assets/螢幕快照 2018-01-20 下午11.03.32.png)
 
