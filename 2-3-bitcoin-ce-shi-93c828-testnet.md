@@ -89,7 +89,7 @@ console.log(address);
 
 [https://live.blockcypher.com/btc-testnet/tx/填入Txid](https://live.blockcypher.com/btc-testnet/tx/填入Txid)
 
-或是使用其API查詢 \(會返回JSON格式\)：[https://live.blockcypher.com/btc-testnet/tx/填入Txid](https://api.blockcypher.com/v1/btc/test3/txs/[填入Txid]%28https://live.blockcypher.com/btc-testnet/tx/填入Txid)
+或是使用其API查詢 \(會返回JSON格式\)：https://api.blockcypher.com/v1/btc/test3/txs/填入Txid
 
 > 相關Blockcypher的API 文件可到此查看：
 >
