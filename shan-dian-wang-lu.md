@@ -132,5 +132,25 @@ lncli listpeers
 
 ## 4.開啟 Alice 與 Bob 的 Channel
 
+在Alice的Terminal輸入以下：
+
+```
+lncli openchannel --node_key=填入Bob的identity_pubkey --local_amt=1000000
+```
+
+> --local\_amt=1000000 代表alice預先存入該Channel金額1000000 satoshis
+
+之後創建三個區塊，來納入剛才的funding transaction
+
+```
+docker-compose run btcctl generate 3
+```
+
+![](/assets/螢幕快照 2018-01-21 下午5.25.32.png)之後再Alice或Bob的Terminal可以輸入以下，查看目前開啟的Channel
+
+```
+lncli listchannels
+```
+
 
 
