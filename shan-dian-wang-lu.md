@@ -44,7 +44,7 @@ cd lnd/docker
 
 4. 開啟 Alice 與 Bob 的 Channel
 
-5. Alice 付款給 Bob
+5. Alice 使用Channel付款給 Bob
 
 6. 關閉 Alice 與 Bob 間的Channel
 
@@ -151,6 +151,10 @@ docker-compose run btcctl generate 3
 ```
 lncli listchannels
 ```
+
+
+
+## 5.Alice使用Channel付款給Bob
 
 
 
