@@ -6,7 +6,7 @@
 
 可參考此份論文：[https://lightning.network/lightning-network-paper.pdf。](https://lightning.network/lightning-network-paper.pdf。)
 
-雙方預存一些資金，並且在一開始會被放到一個multisignature "channel" 地址，雙方開啟一個支付通道後維護一份共同的帳本，每次雙方有小額交易後都更新帳本，並且讓舊的帳本失效，每次產生新的帳本餘額時都需要雙方的驗證。
+雙方預存一些資金，並且在一開始會被放到一個multisignature "channel" 地址，雙方開啟一個支付通道後維護一份共同的帳本，每次雙方有小額交易後都更新帳本，並且讓舊的帳本失效。
 
 > 可以想像是一個小鎮上有一個大水塔，Ａ太太跟B太太都提了一些水回家，之後兩人放自己的一些水到兩人的共用水盆，之後需要水時，兩人可以不必到大水塔提水，先從共用水盆提水，然後紀錄哪位太太提了多少水即可。
 
