@@ -204,7 +204,13 @@ lncli closechannel --funding_txid=填入funding_txid --output_index=填入output
 
 ## 7. 查看 Bob 的餘額
 
+接著我們一樣產生三個新區塊來納入我們剛才關閉Channel的動作。
 
+```
+docker-compose run btcctl generate 3
+```
 
+然後分別查看Alice和Bob目前的餘額：
 
+![](/assets/螢幕快照 2018-01-21 下午5.47.45.png)
 
