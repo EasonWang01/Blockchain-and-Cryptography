@@ -51,6 +51,10 @@ cd lnd/docker
 7. 查看 Bob 的餘額
 ```
 
+> btcd 是一個用Golang寫的Bitcoin full node
+>
+> https://github.com/btcsuite/btcd
+
 ## 1.設定環境變數並且啟動alice節點
 
 > 記得要先啟動安裝好的Docker。
@@ -151,8 +155,6 @@ docker-compose run btcctl generate 3
 ```
 lncli listchannels
 ```
-
-
 
 ## 5.Alice使用Channel付款給Bob
 
