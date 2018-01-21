@@ -25,11 +25,7 @@ BitcoinJS為一個MIT授權Open Source的比特幣相關套件。
 > const testnetUtils = require('./_testnet')
 > ```
 
-
-
-> 本書使用之bitcoinjs-lib版本為**3.3.2**
-
-以下將介紹如何產生交易
+本書使用之bitcoinjs-lib版本為**3.3.2，**以下將介紹如何產生交易
 
 #### 1.產生一對一之交易\(最基本型態\)
 
