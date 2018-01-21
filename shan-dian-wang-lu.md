@@ -6,7 +6,7 @@
 
 可參考此份論文：[https://lightning.network/lightning-network-paper.pdf。](https://lightning.network/lightning-network-paper.pdf。)
 
-雙方預存一些資金，並且在一開始會被放到一個multisignature "channel" 地址，雙方開啟一個支付通道後維護一份共同的帳本，每次雙方有小額交易後都更新帳本，並且舊的即失效，每次產生新的帳本餘額時都需要雙方的簽章驗證，
+雙方預存一些資金，並且在一開始會被放到一個multisignature "channel" 地址，雙方開啟一個支付通道後維護一份共同的帳本，每次雙方有小額交易後都更新帳本，並且舊的即失效，每次產生新的帳本餘額時都需要雙方的簽章驗證。
 
 ## 標準 \( specification \)
 
@@ -44,7 +44,7 @@ cd lnd/docker
 
 4. 開啟 Alice 與 Bob 的 Channel
 
-5. Alice 使用Channel付款給 Bob
+5. Alice 使用 Channel 付款給 Bob
 
 6. 關閉 Alice 與 Bob 間的Channel
 
@@ -181,4 +181,30 @@ lncli channelbalance
 ```
 
 ![](/assets/螢幕快照 2018-01-21 下午5.34.49.png)
+
+## 6. 關閉 Alice 與 Bob 間的Channel
+
+為了要關閉Channel，Alice需要兩個值，分別為 funding\_txid 以及 output\_index，我們可以先輸入以下指令：
+
+```
+lncli listchannels
+```
+
+之後可以看到在`channel_point`欄位，在分號前的是`funding_txid` 而分號後的是`output_index`
+
+![](/assets/螢幕快照 2018-01-21 下午5.40.41.png)
+
+所以我們在Alice的Terminal輸入以下指令來關閉Channel：
+
+```
+lncli closechannel --funding_txid=填入funding_txid --output_index=填入output_index
+```
+
+![](/assets/螢幕快照 2018-01-21 下午5.45.51.png)
+
+## 7. 查看 Bob 的餘額
+
+
+
+
 
