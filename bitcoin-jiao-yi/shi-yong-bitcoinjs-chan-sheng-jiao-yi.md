@@ -66,7 +66,7 @@ txb.sign(1, bob)
 console.log(txb.build().toHex());
 ```
 
-### 3.取得免費測試幣並產生一筆交易
+### 3.取得免費測試幣來產生一筆交易，並且廣播
 
 ```js
 const crypto = require('crypto');
@@ -133,8 +133,6 @@ funding mvvrViCXRZD1czZduc4xCixmfG7DpZ7Lkb w/ 70000
 可以進入到此網站[https://live.blockcypher.com/btc-testnet](https://live.blockcypher.com/btc-testnet)
 
 然後在右上角輸入剛才的地址或是Txid，即可查看剛才的交易紀錄
-
-
 
 ### 4.產生OP\_RETURN的交易
 
