@@ -31,12 +31,28 @@
 > 進去之後移動滑鼠，等到100%後即會產生地址，之後可以按Generate New Address 產生新地址  
 > 記得記下產生之Address與Private key
 
-> \(但還是建議讀者使用本地端產生的方式比較安全\)
+#### 離線產生比特幣地址
 
-可使用如下程式產生測試鏈地址
+離線產生地址可以減少私鑰被第三者監聽或是竊取的風險。
+
+可使用如下程式產生測試鏈地址，以下會隨機產生一個長度為32的bytes，然後來產生WIF格式的私鑰以及地址。
+
+> 需要使用Node.js並且安裝bitcoinjs-lib模組。
 
 ```js
+const crypto = require('crypto');
+const bitcoin = require('bitcoinjs-lib');
 
+const rng = () => crypto.randomBytes(32);
+const testnet = bitcoin.networks.testnet;
+const keyPair = bitcoin.ECPair.makeRandom({ network: testnet, rng });
+const wif = keyPair.toWIF();
+const address = keyPair.getAddress();
+
+console.log('--私鑰--');
+console.log(wif);
+console.log('--地址--');
+console.log(address);
 ```
 
 ### 取得測試用的比特幣
