@@ -101,5 +101,14 @@ docker-compose run btcctl getblockchaininfo | grep -A 1 segwit
 lncli walletbalance --witness_only=true
 ```
 
-![](/assets/螢幕快照 2018-01-21 下午5.00.59.png)
+![](/assets/螢幕快照 2018-01-21 下午5.00.59.png)3.
+
+啟動Bob節點
+
+```
+docker-compose run -d --name bob lnd_btc
+docker exec -i -t bob bash
+```
+
+
 
