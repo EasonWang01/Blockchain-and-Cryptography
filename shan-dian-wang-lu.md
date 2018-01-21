@@ -116,7 +116,7 @@ lncli getinfo
 docker inspect bob | grep IPAddress
 ```
 
-![](/assets/螢幕快照 2018-01-21 下午5.06.19.png)
+![](/assets/螢幕快照 2018-01-21 下午5.19.38.png)
 
 最後在Alice 的 terminal 輸入如下即可連線。
 
@@ -131,8 +131,6 @@ lncli listpeers
 ```
 
 ## 4.開啟 Alice 與 Bob 的 Channel
-
-
 
 
 
