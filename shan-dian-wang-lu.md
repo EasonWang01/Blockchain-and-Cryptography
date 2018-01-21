@@ -40,7 +40,7 @@ cd lnd/docker
 
 2. 啟動 btcd node 並且執行 private simnet
 
-3. 啟動一個節點取名為 Bob
+3. 啟動一個節點取名為 Bob，並且與Alice連線
 
 4. 挖礦並將資金傳給Alice
 
@@ -110,5 +110,11 @@ docker-compose run -d --name bob lnd_btc
 docker exec -i -t bob bash
 ```
 
+之後為了和Alice連線我們要取得Bob的idenity pubkey
 
+```
+lncli getinfo
+```
+
+![](/assets/螢幕快照 2018-01-21 下午5.04.34.png)
 
