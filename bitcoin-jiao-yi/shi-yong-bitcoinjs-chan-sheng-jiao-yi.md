@@ -71,6 +71,7 @@ console.log(txb.build().toHex());
 ```js
 const crypto = require('crypto');
 const bitcoin = require('bitcoinjs-lib');
+
 const testnet = bitcoin.networks.testnet
 const testnetUtils = require('./_testnet')
 
@@ -106,28 +107,67 @@ testnetUtils.faucetMany([
   txb.sign(1, alice2)
 
   console.log(txb.build().toHex())
+  // 廣播交易
+  testnetUtils.transactions.propagate(txb.build().toHex(), function (err) {
+    if (err) return console.log(err)
+  })
 })
 ```
 
-之後會看到如下輸出
+之後會看到類似如下輸出
 
 ```
 funding n2n3vHe6BHUwKybSsSSUXK1CtFTafzmR62 w/ 50000
 funding mvvrViCXRZD1czZduc4xCixmfG7DpZ7Lkb w/ 70000
 ```
 
-進入到此網站[https://live.blockcypher.com/btc-testnet](https://live.blockcypher.com/btc-testnet)\(需稍等一會\)
+並且產生交易的Txid
 
-然後在右上角輸入地址 即可查看剛才的交易紀錄
+```json
+{ 
+  success: true,
+  txid: '39e72ed626a29435ddf191fd27d1cf9af95fb2c475ed447cf50a748f541f1b0b' 
+}
+```
 
-> 廣播的方式為單純傳一個POST request過去
->
-> ![](/assets/766w.png)
+可以進入到此網站[https://live.blockcypher.com/btc-testnet](https://live.blockcypher.com/btc-testnet)
+
+然後在右上角輸入剛才的地址或是Txid，即可查看剛才的交易紀錄
+
+
 
 ### 4.產生OP\_RETURN的交易
 
 ```js
+const crypto = require('crypto');
+const bitcoin = require('bitcoinjs-lib');
 
+const testnet = bitcoin.networks.testnet
+const testnetUtils = require('./_testnet')
+
+const rng = () => crypto.randomBytes(32);
+
+var keyPair = bitcoin.ECPair.makeRandom({ network: testnet })
+var address = keyPair.getAddress()
+
+testnetUtils.faucet(address, 5e4, function (err, unspent) {
+  if (err) return console.log(err)
+
+  var txb = new bitcoin.TransactionBuilder(testnet)
+  var data = Buffer.from('bitcoinjs-lib', 'utf8')
+  var dataScript = bitcoin.script.nullData.output.encode(data)
+
+  txb.addInput(unspent.txId, unspent.vout)
+  txb.addOutput(dataScript, 1000)
+  txb.addOutput(testnetUtils.RETURN_ADDRESS, 4e4)
+  txb.sign(0, keyPair)
+
+  console.log(txb.build().toHex())
+  // 廣播交易
+  testnetUtils.transactions.propagate(txb.build().toHex(), function (err) {
+    if (err) return console.log(err)
+  })
+})
 ```
 
 ---
