@@ -89,5 +89,3 @@ console.log(address);
 
 https://live.blockcypher.com/btc-testnet/tx/&lt;填入Txid&gt;
 
-
-
