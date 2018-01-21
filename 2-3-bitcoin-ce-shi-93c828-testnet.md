@@ -1,4 +1,4 @@
-# 2-3 Bitcoin 測試鏈\(Testnet\)
+# Bitcoin 測試鏈\(Testnet\)
 
 在區塊鏈有新功能的時候為了要先進行內部測試，所以會先將功能放到測試鏈上進行測試，但測試鏈的比特幣不具任何實際價值。  
 [https://en.bitcoin.it/wiki/Testnet](https://en.bitcoin.it/wiki/Testnet)
