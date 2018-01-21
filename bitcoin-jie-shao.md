@@ -19,11 +19,11 @@
 
 # 官方網站
 
-## 1.bitcoin.org
+#### 1.bitcoin.org
 
-## [https://bitcoin.org](https://www.gitbook.com/book/easonwang01/e/edit#)
+[https://bitcoin.org](https://www.gitbook.com/book/easonwang01/e/edit#)
 
-## 2.bitcoin core
+#### 2.bitcoin core
 
 以下為Bitcoin core官方網站，跟bitcoin.org都屬於bitcoin官方，但其較為面向開發者
 
