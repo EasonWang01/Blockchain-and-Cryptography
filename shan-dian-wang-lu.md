@@ -8,6 +8,12 @@
 
 雙方預存一些資金，並且在一開始會被放到一個multisignature "channel" 地址，雙方開啟一個支付通道後維護一份共同的帳本，每次雙方有小額交易後都更新帳本，並且舊的即失效，每次產生新的帳本餘額時都需要雙方的簽章驗證。
 
+其中有兩個名詞分別為RSMC與HTLC。
+
+RSMC（Recoverable Sequence Maturity Contract）定義了雙向小額支付通道的最基本工作方式。
+
+HTLC（Hashed Timelock Contract）進一步實現了有條件的資金支付，使多人之間的Channel小額支付變得可行。
+
 ## 標準 \( specification \)
 
 Lightning Network specification \(BOLTs\)， BOLT 全名為： Basic of Lightning Technologies。
