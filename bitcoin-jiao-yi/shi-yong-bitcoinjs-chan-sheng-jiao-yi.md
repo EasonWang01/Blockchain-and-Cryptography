@@ -23,17 +23,16 @@ BitcoinJS為一個MIT授權Open Source的比特幣相關套件。
 #### 1.產生一對一之交易\(最基本型態\)
 
 ```js
-var assert = require('assert')
-var bitcoin = require('../../')
-var dhttp = require('dhttp/200')
-var testnet = bitcoin.networks.testnet
-var testnetUtils = require('./_testnet')
+const bitcoin = require('bitcoinjs-lib');
+const dhttp = require('dhttp/200')
+const testnet = bitcoin.networks.testnet
+const testnetUtils = require('./_testnet')
 
 // alice的私鑰
-var alice = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
+const alice = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
 
 //建立交易
-var txb = new bitcoin.TransactionBuilder()
+const txb = new bitcoin.TransactionBuilder()
 
 //addInput 第一個參數為 上一筆unspend的TXid 第二個參數為該unspend在TX中的index位置，假設TX有三個output則index則為0~2
 txb.addInput('61d520ccb74288c96bc1a2b20ea1c0d5a704776dd0164a396efec3ea7040349d', 0)
@@ -50,46 +49,44 @@ console.log(txb.build().toHex());
 ### 2.產生二對二之交易
 
 ```js
-var assert = require('assert')
-var bitcoin = require('../../')
-var dhttp = require('dhttp/200')
-var testnet = bitcoin.networks.testnet
-var testnetUtils = require('./_testnet')
+const bitcoin = require('bitcoinjs-lib');
+const dhttp = require('dhttp/200')
+const testnet = bitcoin.networks.testnet
+const testnetUtils = require('./_testnet')
 
 //兩個人的私鑰
-var alice = bitcoin.ECPair.fromWIF('L1Knwj9W3qK3qMKdTvmg3VfzUs3ij2LETTFhxza9LfD5dngnoLG1')
-var bob = bitcoin.ECPair.fromWIF('KwcN2pT3wnRAurhy7qMczzbkpY5nXMW2ubh696UBc1bcwctTx26z')
+const alice = bitcoin.ECPair.fromWIF('L1Knwj9W3qK3qMKdTvmg3VfzUs3ij2LETTFhxza9LfD5dngnoLG1')
+const bob = bitcoin.ECPair.fromWIF('KwcN2pT3wnRAurhy7qMczzbkpY5nXMW2ubh696UBc1bcwctTx26z')
 
-var txb = new bitcoin.TransactionBuilder()
+const txb = new bitcoin.TransactionBuilder()
 //加入兩個Input跟Output
-txb.addInput('b5bb9d8014a0f9b1d61e21e796d78dccdf1352f23cd32812f4850b878ae4944c', 6) 
+txb.addInput('b5bb9d8014a0f9b1d61e21e796d78dccdf1352f23cd32812f4850b878ae4944c', 6)
 txb.addInput('7d865e959b2466918c9863afca942d0fb89d7c9ac0c99bafc3749504ded97730', 0)
 txb.addOutput('1CUNEBjYrCn2y1SdiUMohaKUi4wpP326Lb', 180000)
 txb.addOutput('1JtK9CQw1syfWj1WtFMWomrYdV3W2tWBF9', 170000)
 
 //分別簽發，第一個參數為Input在交易的index,第二個參數為私鑰
-txb.sign(0, alice) 
-txb.sign(1, bob) 
+txb.sign(0, alice)
+txb.sign(1, bob)
 
-txb.build().toHex();
+console.log(txb.build().toHex());
 ```
 
 ### 3.取得免費測試幣並產生一筆交易
 
 ```js
-var assert = require('assert')
-var bitcoin = require('../../')
-var dhttp = require('dhttp/200')
-var testnet = bitcoin.networks.testnet
-var testnetUtils = require('./_testnet')
+const crypto = require('crypto');
+const bitcoin = require('bitcoinjs-lib');
 
-function rng() {// 一個隨機的base64 hash
-  return Buffer.from('YT8dAtK4d16A3P1z+TpwB2jJ4aFH3g9M1EioIBkLEV4=', 'base64')
-}
+const dhttp = require('dhttp/200')
+const testnet = bitcoin.networks.testnet
+const testnetUtils = require('./_testnet')
 
-var alice1 = bitcoin.ECPair.makeRandom({ network: testnet })
-var alice2 = bitcoin.ECPair.makeRandom({ network: testnet })
-var aliceChange = bitcoin.ECPair.makeRandom({ rng: rng, network: testnet })
+const rng = () => crypto.randomBytes(32);
+
+const alice1 = bitcoin.ECPair.makeRandom({ network: testnet })
+const alice2 = bitcoin.ECPair.makeRandom({ network: testnet })
+const aliceChange = bitcoin.ECPair.makeRandom({ rng, network: testnet })
 
 // 模擬 Alice 有兩個 unspent outputs
 testnetUtils.faucetMany([
@@ -104,7 +101,7 @@ testnetUtils.faucetMany([
 ], function (err, unspents) {
   if (err) console.log(err)
 
-  var txb = new bitcoin.TransactionBuilder(testnet)
+  const txb = new bitcoin.TransactionBuilder(testnet)
   txb.addInput(unspents[0].txId, unspents[0].vout) // alice1 unspent
   txb.addInput(unspents[1].txId, unspents[1].vout) // alice2 unspent
 
@@ -112,7 +109,7 @@ testnetUtils.faucetMany([
   txb.addOutput('mwCwTceJvYV27KXBc3NJZys6CjsgsoeHmf', 8e4) // the actual "spend"
   txb.addOutput(aliceChange.getAddress(), 1e4) // Alice's change
 
-  // Alice signs each input with the respective private keys
+  // Alice 用兩把 private keys 分別簽章
   txb.sign(0, alice1)
   txb.sign(1, alice2)
 
@@ -135,7 +132,7 @@ funding mvvrViCXRZD1czZduc4xCixmfG7DpZ7Lkb w/ 70000
 >
 > ![](/assets/766w.png)
 
-# 4.產生OP\_RETURN的交易
+### 4.產生OP\_RETURN的交易
 
 ```js
 var assert = require('assert')
@@ -291,7 +288,7 @@ blockchain.RETURN_ADDRESS = kpAddress
 module.exports = blockchain
 ```
 
-## 5.產生2-of-4 P2SH \( multisig \)交易
+### 5.產生2-of-4 P2SH \( multisig \)交易
 
 ```js
 var assert = require('assert')
@@ -331,7 +328,7 @@ testnetUtils.faucet(address, 2e4, function (err, unspent) {
 })
 ```
 
-## 6.產生SegWit P2SH-P2WPKH 交易
+### 6.產生SegWit P2SH-P2WPKH 交易
 
 ```js
 var assert = require('assert')
@@ -366,7 +363,7 @@ testnetUtils.faucet(address, 5e4, function (err, unspent) {
 })
 ```
 
-## 7.產生SegWit 3-of-4 P2SH-P2WSH交易
+### 7.產生SegWit 3-of-4 P2SH-P2WSH交易
 
 ```js
 var assert = require('assert')
@@ -407,9 +404,9 @@ testnetUtils.faucet(address, 6e4, function (err, unspent) {
 })
 ```
 
-> 廣播到Testnet的交易都可以到以下網站，輸入 txid 或地址查看
+> 以上的交易廣播都是廣播到Testnet，廣播到Testnet的交易都可以到以下網站，輸入 txid 或地址查看
 >
-> https://live.blockcypher.com/btc-testnet/
+> [https://live.blockcypher.com/btc-testnet/](https://live.blockcypher.com/btc-testnet/)
 
 
 
