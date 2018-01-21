@@ -38,24 +38,20 @@ cd lnd/docker
 ```
 1. 啟動一個節點取名為 Alice
 
-2. 啟動 btcd node 並且執行 private simnet
+2. 啟動 btcd node 並且執行 private simnet，挖礦並將資金傳給Alice
 
 3. 啟動一個節點取名為 Bob，並且與Alice連線
 
-4. 挖礦並將資金傳給Alice
+4. 開啟 Alice 與 Bob 的 Channel
 
-5. 開啟 Alice 與 Bob 的 Channel
+5. Alice 付款給 Bob
 
-6. Alice 付款給 Bob
+6. 關閉 Alice 與 Bob 間的Channel
 
-7. 關閉 Alice 與 Bob 間的Channel
-
-8. 查看 Bob 的餘額
+7. 查看 Bob 的餘額
 ```
 
-1.
-
-設定環境變數並且啟動alice節點
+## 1.設定環境變數並且啟動alice節點
 
 > 記得要先啟動安裝好的Docker。
 
@@ -73,9 +69,7 @@ lncli newaddress np2wkh
 
 ![](/assets/螢幕快照 2018-01-21 下午4.50.11.png)
 
-2.
-
-啟動一個btcd節點，並將Alice地址設為挖礦獎勵地址。
+## 2.啟動一個btcd節點，並將Alice地址設為挖礦獎勵地址。
 
 開啟另外一個Terminal然後一樣進入到相同目錄`cd lnd/docker` 輸入以下：
 
@@ -101,9 +95,9 @@ docker-compose run btcctl getblockchaininfo | grep -A 1 segwit
 lncli walletbalance --witness_only=true
 ```
 
-![](/assets/螢幕快照 2018-01-21 下午5.00.59.png)3.
+## ![](/assets/螢幕快照 2018-01-21 下午5.00.59.png)
 
-啟動Bob節點
+## 3.啟動Bob節點
 
 ```
 docker-compose run -d --name bob lnd_btc
@@ -116,5 +110,29 @@ docker exec -i -t bob bash
 lncli getinfo
 ```
 
-![](/assets/螢幕快照 2018-01-21 下午5.04.34.png)
+![](/assets/螢幕快照 2018-01-21 下午5.04.34.png)然後開一個新的Terminal查看Bob的Docker節點IP
+
+```
+docker inspect bob | grep IPAddress
+```
+
+![](/assets/螢幕快照 2018-01-21 下午5.06.19.png)
+
+最後在Alice 的 terminal 輸入如下即可連線。
+
+```
+lncli connect <bob_pubkey>@<bob_host>
+```
+
+![](/assets/螢幕快照 2018-01-21 下午5.08.23.png)並且可輸入以下指令檢查已連線節點：
+
+```
+lncli listpeers
+```
+
+## 4.開啟 Alice 與 Bob 的 Channel
+
+
+
+
 
