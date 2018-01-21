@@ -87,14 +87,14 @@ console.log(address);
 
 ### ![](/assets/螢幕快照 2018-01-21 上午10.12.20.png)
 
-或是可用以下程式
+或是可用以下程式廣播交易，記得把Tx改為要廣播的Hex碼。
 
 ```js
 // 廣播交易
 const https = require('https');
 
 var postData = JSON.stringify({
-  tx: txb.build().toHex()
+  tx: "填入要廣播的交易Hex碼"
 });
 
 var options = {
