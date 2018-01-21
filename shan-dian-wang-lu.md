@@ -214,3 +214,23 @@ docker-compose run btcctl generate 3
 
 ![](/assets/螢幕快照 2018-01-21 下午5.47.45.png)
 
+---
+
+Docker使用後可以以下指令移除相關Container
+
+#### 停止所有container
+
+```
+docker stop $(docker ps -a -q)
+```
+
+#### 移除所有使用過的container名稱
+
+在kill或stop container後要再把名稱移除才可再次重新使用
+
+```
+docker rm $(docker ps -q -f status=exited)
+```
+
+
+
