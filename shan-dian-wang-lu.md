@@ -53,17 +53,35 @@ cd lnd/docker
 8. 查看 Bob 的餘額
 ```
 
-1.設定環境變數並且啟動alice節點
+1.
+
+設定環境變數並且啟動alice節點
 
 > 記得要先啟動安裝好的Docker。
 
 ```
 export NETWORK="simnet"
 docker-compose run -d --name alice lnd_btc
-docker exec -i -t alice bash
 ```
 
-進入alice的
+進入alice的Terminal，並且產生一個P2SH地址。
+
+```
+docker exec -i -t alice bash
+lncli newaddress np2wkh
+```
+
+![](/assets/螢幕快照 2018-01-21 下午4.50.11.png)
 
 2.
+
+啟動一個btcd節點，並將Alice地址設為挖礦獎勵地址。
+
+開啟另外一個Terminal然後一樣進入到相同目錄`cd lnd/docker` 輸入以下：
+
+```
+MINING_ADDRESS=填入剛才產生的地址 docker-compose up -d btcd
+```
+
+
 
