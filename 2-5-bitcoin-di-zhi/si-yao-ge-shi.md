@@ -99,7 +99,7 @@ console.log(address)
 
 # Mini Private Key
 
-通常用在儲存空間較小的地方，例如實體Bitcoin硬幣或是1D barcodes與25x25之QR Code等等。
+通常用在儲存空間較小的地方，例如實體Bitcoin硬幣或是`1D barcode`與`25 x 25`之QR Code等等。
 
 #### 產生:
 
@@ -119,7 +119,8 @@ const generateAddress = () => {
   }
 
   mini_key = "S" + mini_key;
-
+  
+  // 在最後加上?號然後進行sha256，確認前兩個byte是否為00，如果是才為合法的Mini Key
   let verify_string = crypto.createHash('sha256').update(mini_key + '?').digest();
 
   if(Buffer.from([00]).compare(verify_string.slice(0,1)) === 0) { 
@@ -137,15 +138,7 @@ const generateAddress = () => {
 generateAddress()
 ```
 
-#### [https://bitcoin.stackexchange.com/questions/36994/math-to-make-a-full-private-key-have-a-mini-private-key-equivalent](https://bitcoin.stackexchange.com/questions/36994/math-to-make-a-full-private-key-have-a-mini-private-key-equivalent)
-
-#### 驗證:
-
-在最後加上`?`號然後進行sha256，確認前兩個byte是否為00，如果是才為合法的Mini Key
-
-```
-
-```
+[https://bitcoin.stackexchange.com/questions/36994/math-to-make-a-full-private-key-have-a-mini-private-key-equivalent](https://bitcoin.stackexchange.com/questions/36994/math-to-make-a-full-private-key-have-a-mini-private-key-equivalent)
 
 > 參考至:[https://en.bitcoin.it/wiki/Mini\_private\_key\_format](https://en.bitcoin.it/wiki/Mini_private_key_format)
 
