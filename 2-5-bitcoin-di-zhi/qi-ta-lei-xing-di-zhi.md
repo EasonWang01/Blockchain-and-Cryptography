@@ -132,59 +132,59 @@ npm install big-integer-converter
 ```
 
 ```js
-var crypto = require('crypto');
-var bigInt = require('big-integer-converter');
-var ecdh = crypto.createECDH('secp256k1');
+const crypto = require('crypto');
+const bigInt = require('big-integer-converter');
+const ecdh = crypto.createECDH('secp256k1');
 
-var seed = crypto.randomBytes(64)
+const seed = crypto.randomBytes(64)
 
 HMACseed = crypto.createHmac('sha512', 'secret for HMAC').update(seed).digest('hex');
 // 16進位轉為2進位
 HMACseed_Binary = bigInt.hexToBin(HMACseed);
 
-//切割前後各256bits
-Master_Prvkey = HMACseed_Binary.substring(0,256);
-Master_ChainCode = HMACseed_Binary.substring(256,512);
+// 切割前後各256bits
+Master_Prvkey = HMACseed_Binary.substring(0, 256);
+Master_ChainCode = HMACseed_Binary.substring(256, 512);
 var Master_pubkey = ecdh.setPrivateKey(bigInt.binToHex(Master_Prvkey), 'hex').getPublicKey('hex')
 console.log('---Master公鑰---')
 console.log(Master_pubkey); //公鑰(通過橢圓曲線算法可以從私鑰計算得到公鑰)
 console.log('-----------------')
 
-function CKD(parentPub, parentChainCode, childIdx){
+function CKD(parentPub, parentChainCode, childIdx) {
   let input = parentPub + parentChainCode + childIdx;
   return crypto.createHmac('sha512', 'secret for HMAC').update(input).digest('hex')
 }
 
 // 第一層derivation的第一個child
 let derivation0_child0 = CKD(Master_pubkey, Master_ChainCode, '00000000'); // 第三個參數，因index number規定要32bits，所以填入十六進位的八個數字
-// 第二層derivation的第一個child
+// 第一層derivation的第二個child
 let derivation0_child1 = CKD(Master_pubkey, Master_ChainCode, '00000001');
-console.log('---第0層derivation的第一個child---')
+console.log('---第一層derivation的第一個child---')
 console.log(derivation0_child0) //長度為十六進位的128個字，所以為512bits
-console.log('---第0層derivation的第二個child---')
+console.log('---第一層derivation的第二個child---')
 console.log(derivation0_child1)
 console.log('-----------------')
 
 // 下面我們再示範用第一層的第一個child產生第二層
-
-console.log('---第0層的第一個child的public key （m/1）---')
-derivation0_child0_Prvkey = derivation0_child0.substring(0,64); // 因為十六進位，所以取一半是取到第64個字 相當於256bits
+console.log('---第一層的第一個child的public key （m/0）---')
+derivation0_child0_Prvkey = derivation0_child0.substring(0, 64); // 因為十六進位，所以取一半是取到第64個字 相當於256bits
 var derivation0_child0Pub = ecdh.setPrivateKey(derivation0_child0_Prvkey, 'hex').getPublicKey('hex')
 console.log(derivation0_child0Pub)
 console.log('------')
 
-console.log('---第0層的第一個child的chain code （m/1）---')
-derivation0_child0_ChainCode = derivation0_child0.substring(64,128); //取後面的一半
+console.log('---第一層的第一個child的chain code （m/0）---')
+derivation0_child0_ChainCode = derivation0_child0.substring(64, 128); //取後面的一半
 console.log(derivation0_child0_ChainCode)
 console.log('------')
 
+//第二層
 let derivation1_child1 = CKD(Master_pubkey, Master_ChainCode, '00000001');
 let derivation1_child10 = CKD(Master_pubkey, Master_ChainCode, '00000010');
 
 console.log('-----------------')
-console.log('---第1層derivation的第一個child長出來的第一個child (m/1/1)---')
+console.log('---第一層derivation的第一個child長出來之第二層的第一個child (m/0/0)---')
 console.log(derivation1_child1) //長度為十六進位的128個字，所以為512bits
-console.log('---第1層derivation的第一個child長出來的第十個child (m/1/10)---')
+console.log('---第一層derivation的第一個child長出來之第二層的第十個child (m/0/11)---')
 console.log(derivation1_child10)
 console.log('-----------------')
 ```
