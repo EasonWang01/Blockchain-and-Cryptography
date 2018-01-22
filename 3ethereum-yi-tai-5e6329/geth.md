@@ -67,13 +67,21 @@ geth help
 
 ## --syncmode
 
-> 以前的--fast與--light需要改為如下
-
 其影響主要為同步區塊鏈之總大小不同。
+
+> 以前的--fast與--light需要改為如下
 
 ```
 --syncmode "fast" 
 //  節點同步選項，可以選擇如 ("fast", "full", 或是 "light")
+```
+
+```
+Full Sync: 同步所有 block headers 與 block bodies。
+
+Fast Sync: 同步所有 block headers 與 block bodies。在同步到 current block - 1024 之前不會處理任何交易。
+
+Light Sync: 只取得目前的區塊狀態，要驗證資料時必須傳送資料給其他節點。
 ```
 
 ## --rpc、--ws、--ipc
