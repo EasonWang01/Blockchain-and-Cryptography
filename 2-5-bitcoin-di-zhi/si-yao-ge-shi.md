@@ -119,7 +119,7 @@ const generateAddress = () => {
   }
 
   mini_key = "S" + mini_key;
-  
+
   // 在最後加上?號然後進行sha256，確認前兩個byte是否為00，如果是才為合法的Mini Key
   let verify_string = crypto.createHash('sha256').update(mini_key + '?').digest();
 
@@ -138,9 +138,13 @@ const generateAddress = () => {
 generateAddress()
 ```
 
-[https://bitcoin.stackexchange.com/questions/36994/math-to-make-a-full-private-key-have-a-mini-private-key-equivalent](https://bitcoin.stackexchange.com/questions/36994/math-to-make-a-full-private-key-have-a-mini-private-key-equivalent)
+之後可以使用`https://blockchain.info/wallet` 來引入Mini 格式的私鑰，但並不是所有錢包都支援此種格式。
 
-> 參考至:[https://en.bitcoin.it/wiki/Mini\_private\_key\_format](https://en.bitcoin.it/wiki/Mini_private_key_format)
+> 參考至:
+>
+> [https://en.bitcoin.it/wiki/Mini\_private\_key\_format](https://en.bitcoin.it/wiki/Mini_private_key_format)
+>
+> [https://bitcoin.stackexchange.com/questions/36994/math-to-make-a-full-private-key-have-a-mini-private-key-equivalent](https://www.gitbook.com/book/easonwang01/e/edit#)
 
 ---
 
