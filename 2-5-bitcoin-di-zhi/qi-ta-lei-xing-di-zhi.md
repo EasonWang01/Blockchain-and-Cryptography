@@ -356,9 +356,9 @@ console.log(hdPublicKey.toString())
 
 > child key 可分為 Hardened 與 non-Hardened
 >
-> 用parent private key與 chaincode 雜湊產生child private key稱為Hardened key
+> 用parent private key與 chaincode 雜湊產生 key稱為Hardened key
 >
-> 用parent public key與 chaincode 雜湊產生child public key稱為 non-Hardened key
+> 用parent public key與 chaincode 雜湊產生 key稱為 non-Hardened key
 >
 > 假設我們今天想建立許多地址收款，但不想要給每個地址知道對應私鑰，減少被駭客竊取私鑰的機會，則可以選擇non-Hardened key。
 
