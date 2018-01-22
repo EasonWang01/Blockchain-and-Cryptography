@@ -205,7 +205,7 @@ console.log('-----------------')
 最後再把上面做checksum，然後加在字串最後。
 ```
 
-> https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#serialization-format
+> [https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#serialization-format](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#serialization-format)
 
 從Parent的64 bytes key 算出衍伸下一層之的xPrv與xPub
 
@@ -316,6 +316,41 @@ console.log(xPub)
 > [https://github.com/sarchar/brainwallet.github.com/tree/bip32](https://github.com/sarchar/brainwallet.github.com/tree/bip32)
 >
 > [https://github.com/OutCast3k/coinbin/](https://github.com/OutCast3k/coinbin/)
+
+#### 使用第三方模組
+
+以下我們使用Bitcore模組為範例
+
+```
+npm install bitcore
+```
+
+```js
+var bitcore = require('bitcore');
+var HDPrivateKey = bitcore.HDPrivateKey;
+
+var hdPrivateKey = new HDPrivateKey();
+console.log(hdPrivateKey.toString())
+
+var derived_m_0 = hdPrivateKey.derive("m/0");
+var derivedByNumber_1_2 = hdPrivateKey.derive(1).derive(2);
+var derivedByArgument_1_2 = hdPrivateKey.derive("m/1/2");
+console.log(derivedByNumber_1_2);
+console.log(derivedByArgument_1_2)
+
+// Hardened
+var derivedByNumber_1_2 = hdPrivateKey.derive(1).derive(2, true);
+var derivedByArgument_1_2 = hdPrivateKey.derive("m/1/2'");
+console.log(derivedByNumber_1_2);
+console.log(derivedByArgument_1_2)
+
+var address = derived_m_0.privateKey.toAddress();
+console.log(address)
+
+// obtain HDPublicKey
+var hdPublicKey = hdPrivateKey.hdPublicKey;
+console.log(hdPublicKey.toString())
+```
 
 # 查看地址的相關資料與交易紀錄
 
