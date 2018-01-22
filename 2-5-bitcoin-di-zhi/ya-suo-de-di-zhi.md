@@ -38,15 +38,19 @@ eba3a6951a3b962ce05a5b3a2e562021fcfd7e2110b54250466d79a481b87120
 
 > 開頭03是因為 y coordinate最後一個字是奇數9。
 
-壓縮公鑰
+#### 未壓縮公鑰轉為壓縮公鑰
 
 ```js
-Compressed_publickey = publickey.slice(-1) % 2 === 0 
-  ? "02" + publickey.slice(2, 66) 
-  : "03" + publickey.slice(2, 66);
+function Compress_public(_pubkey) {
+  return (
+    _pubkey.slice(-1) % 2 === 0
+      ? "02" + _pubkey.slice(2, 66)
+      : "03" + _pubkey.slice(2, 66)
+  )
+} 
 ```
 
-可使用以下程式將壓縮公鑰轉回公鑰：
+#### 壓縮公鑰轉回公鑰：
 
 > npm install elliptic
 
