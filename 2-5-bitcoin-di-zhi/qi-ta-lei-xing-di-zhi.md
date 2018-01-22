@@ -189,7 +189,25 @@ console.log(derivation1_child10)
 console.log('-----------------')
 ```
 
-然後從Parent的64 bytes key 算出衍伸下一層之的xPrv與xPub
+#### xPrv與xPub
+
+假設我們要用一個字串表示parent public key 和 parent chain code 可以把他們用一種方法結合起來並且使用Base58進行編碼，之後可以產生出xPrv與xPub，如果對其進行Base58解碼則可以得到這個Key所在的位置以及其相關資訊。
+
+其結合元素包含以下
+
+```
+4 byte: version bytes (mainnet: 0x0488B21E public, 0x0488ADE4 private; testnet: 0x043587CF public, 0x04358394 private)
+1 byte: depth: 0x00 for master nodes, 0x01 for level-1 derived keys, ....
+4 bytes: the fingerprint of the parent's key (0x00000000 if master key)
+4 bytes: child number. This is ser32(i) for i in xi = xpar/i, with xi the key being serialized. (0x00000000 if master key)
+32 bytes: the chain code
+33 bytes: the public key or private key data (serP(K) for public keys, 0x00 || ser256(k) for private keys)
+最後再把上面做checksum，然後加在字串最後。
+```
+
+> https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#serialization-format
+
+從Parent的64 bytes key 算出衍伸下一層之的xPrv與xPub
 
 ```js
 const crypto = require('crypto');
@@ -295,9 +313,9 @@ console.log(xPub)
 
 參考自:
 
-> https://github.com/sarchar/brainwallet.github.com/tree/bip32
+> [https://github.com/sarchar/brainwallet.github.com/tree/bip32](https://github.com/sarchar/brainwallet.github.com/tree/bip32)
 >
-> https://github.com/OutCast3k/coinbin/
+> [https://github.com/OutCast3k/coinbin/](https://github.com/OutCast3k/coinbin/)
 
 # 查看地址的相關資料與交易紀錄
 
