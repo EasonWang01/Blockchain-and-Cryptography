@@ -291,7 +291,13 @@ console.log('--xPub--')
 console.log(xPub)
 ```
 
-# 
+![](/assets/ijosd9.png)
+
+參考自:
+
+> https://github.com/sarchar/brainwallet.github.com/tree/bip32
+>
+> https://github.com/OutCast3k/coinbin/
 
 # 查看地址的相關資料與交易紀錄
 
