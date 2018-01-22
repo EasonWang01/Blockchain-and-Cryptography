@@ -189,6 +189,61 @@ console.log(derivation1_child10)
 console.log('-----------------')
 ```
 
+然後從Parent的64 bytes key 算出衍伸下一層之的xPri
+
+```js
+const crypto = require('crypto');
+const bs58 = require('bs58');
+
+function hexToDecimalArray(s) {
+  if (s[0] + s[1] === '0x') {
+    s = s.replace('0x', '');
+  }
+  let c = [];
+  for (let i = 0; i < s.length - 1; i += 2) {
+    c.push(parseInt(`${s[i] + s[i + 1]}`, 16));
+  }
+  return c;
+}
+
+const mainnet_pri = '0x0488ADE4'; //hexToDecimalArray
+const depth = 0;
+const parent_fingerprint = [0, 0, 0, 0]; // 4 bytes
+const child_index = [0, 0, 0, 0]; // 4 bytes
+let chain_code = ''; // hexToDecimalArray(parent.slice(0, 64))
+let private_key = ''; // hexToDecimalArray(parent.slice(64, 128))
+
+const generate_xpri = (parent) => (
+  [...hexToDecimalArray(mainnet_pri),
+    depth,
+  ...parent_fingerprint,
+  ...child_index,
+  ...hexToDecimalArray(parent.slice(64, 128)), // chain code
+    0,
+  ...hexToDecimalArray(parent.slice(0, 64)), // private key
+  ]
+)
+
+Parent_HASH = "ae88d3f524a94073fef9e3bf0a2ae1cf80ace3e02f7673472c03cdf43e80446193811582d0288cf3a0bfbabf7415af00b8f9c418ac9822446708790e79d55579";
+
+
+checksum = crypto.createHash('sha256').update(Buffer.from(generate_xpri(Parent_HASH))).digest()
+checksum = crypto.createHash('sha256').update(checksum).digest().slice(0, 4)
+checksumArray = []
+checksum.forEach(buf => {
+  checksumArray.push(buf)
+})
+
+let xPri_array = generate_xpri(Parent_HASH).concat(checksumArray)
+
+let xPri = bs58.encode(xPri_array)
+console.log(xPri)
+
+
+```
+
+# 
+
 # 查看地址的相關資料與交易紀錄
 
 [https://blockchain.info/rawaddr/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to](https://blockchain.info/rawaddr/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to)
