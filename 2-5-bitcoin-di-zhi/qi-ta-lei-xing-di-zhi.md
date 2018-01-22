@@ -111,6 +111,8 @@ function numToBuffer(num) {
 
 往下一層，產生該層各個child private key 的時候，要用到 child key derivation \(CKD\) 這個方法
 
+https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#child-key-derivation-ckd-functions
+
 這個方法一樣是做HMAC-SHA512 加密演算法，但他會需要先輸入三個參數。
 
 ```
