@@ -140,6 +140,10 @@ generateAddress()
 
 之後可以使用`https://blockchain.info/wallet` 來引入Mini 格式的私鑰，但並不是所有錢包都支援此種格式。
 
+![](/assets/90if34.png)
+
+
+
 > 參考至:
 >
 > [https://en.bitcoin.it/wiki/Mini\_private\_key\_format](https://en.bitcoin.it/wiki/Mini_private_key_format)
