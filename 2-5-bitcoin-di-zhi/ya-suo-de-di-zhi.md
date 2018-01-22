@@ -47,7 +47,7 @@ function Compress_public(_pubkey) {
       ? "02" + _pubkey.slice(2, 66)
       : "03" + _pubkey.slice(2, 66)
   )
-} 
+}
 ```
 
 #### 壓縮公鑰轉回公鑰：
@@ -57,7 +57,7 @@ function Compress_public(_pubkey) {
 ```js
 const elliptic = require('elliptic');
 const ec = new elliptic.ec('secp256k1');
-const publicKeyUncompressed = ec.keyFromPublic("03eba3a6951a3b962ce05a5b3a2e562021fcfd7e2110b54250466d79a481b87120", 'hex').getPublic(false, 'hex');
+const publicKeyUncompressed = ec.keyFromPublic(填入壓縮公鑰, 'hex').getPublic(false, 'hex');
 console.log(publicKeyUncompressed)
 ```
 
