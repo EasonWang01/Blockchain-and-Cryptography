@@ -189,7 +189,7 @@ console.log(derivation1_child10)
 console.log('-----------------')
 ```
 
-然後從Parent的64 bytes key 算出衍伸下一層之的xPri
+然後從Parent的64 bytes key 算出衍伸下一層之的xPrv與xPub
 
 ```js
 const crypto = require('crypto');
@@ -206,40 +206,89 @@ function hexToDecimalArray(s) {
   return c;
 }
 
-const mainnet_pri = '0x0488ADE4'; //hexToDecimalArray
-const depth = 0;
+// 4 bytes version 
+// 0x0488B21E  mainnet public，
+// 0x0488ADE4  mainnet private，
+// 0x043587CF  testnet public，
+// 0x04358394  testnet private
+const mainnet_pri = '0x0488ADE4'; 
+const mainnet_pub = '0x0488b21e';
+const depth = 0;  // 1 bytes
 const parent_fingerprint = [0, 0, 0, 0]; // 4 bytes
 const child_index = [0, 0, 0, 0]; // 4 bytes
 let chain_code = ''; // hexToDecimalArray(parent.slice(0, 64))
 let private_key = ''; // hexToDecimalArray(parent.slice(64, 128))
 
-const generate_xpri = (parent) => (
-  [...hexToDecimalArray(mainnet_pri),
+const generate_xkey = (parent, _keyType, pubkey) => (
+  [...hexToDecimalArray(_keyType),
     depth,
   ...parent_fingerprint,
   ...child_index,
   ...hexToDecimalArray(parent.slice(64, 128)), // chain code
-    0,
-  ...hexToDecimalArray(parent.slice(0, 64)), // private key
-  ]
+  _keyType === mainnet_pri ? 0 : null, // 如果為xPrv要加上0
+  ...hexToDecimalArray(_keyType === mainnet_pri ? parent.slice(0, 64) : pubkey), // key
+  ].filter(n => n !== null) // 將 null 元素移除
 )
 
-Parent_HASH = "ae88d3f524a94073fef9e3bf0a2ae1cf80ace3e02f7673472c03cdf43e80446193811582d0288cf3a0bfbabf7415af00b8f9c418ac9822446708790e79d55579";
+// 512 bits 的 Parent Hash
+Parent_HASH = "f302ca1da51bc8aa62004bcab75c83d67d578d498a7dd79d884a7f92759b611be41a13d838849258704f0265276fa6655c8961dfc7da1535d5cba7f98c5402ff";
 
 
-checksum = crypto.createHash('sha256').update(Buffer.from(generate_xpri(Parent_HASH))).digest()
+/**
+ * 產生xPrv
+ */
+
+let xPrv_Bytes = generate_xkey(Parent_HASH, mainnet_pri);
+
+checksum = crypto.createHash('sha256').update(Buffer.from(xPrv_Bytes)).digest()
 checksum = crypto.createHash('sha256').update(checksum).digest().slice(0, 4)
 checksumArray = []
 checksum.forEach(buf => {
   checksumArray.push(buf)
 })
 
-let xPri_array = generate_xpri(Parent_HASH).concat(checksumArray)
+let xPrv_array = xPrv_Bytes.concat(checksumArray)
 
-let xPri = bs58.encode(xPri_array)
-console.log(xPri)
+let xPrv = bs58.encode(xPrv_array)
+console.log('--xPrv--')
+console.log(xPrv)
 
 
+/**
+ * 產生xPub
+ */
+
+
+const ecdh = crypto.createECDH('secp256k1');
+// 64個hex，256bits
+pri_key = Parent_HASH.slice(0, 64);
+
+// 從私鑰產生出公鑰
+const Uncompress_publickey = ecdh.setPrivateKey(Buffer.from(hexToDecimalArray(pri_key))).getPublicKey('hex')
+Compressed_publickey = Compress_public(Uncompress_publickey);
+
+// 變為壓縮的公鑰
+function Compress_public(_pubkey) {
+  return (
+    _pubkey.slice(-1) % 2 === 0
+      ? "02" + _pubkey.slice(2, 66)
+      : "03" + _pubkey.slice(2, 66)
+  )
+} 
+
+// 之後轉為xpub
+let xPub_Bytes = generate_xkey(Parent_HASH, mainnet_pub, Compressed_publickey);
+checksum = crypto.createHash('sha256').update(Buffer.from(xPub_Bytes)).digest()
+checksum = crypto.createHash('sha256').update(checksum).digest().slice(0, 4)
+checksumArray = []
+checksum.forEach(buf => {
+  checksumArray.push(buf)
+})
+
+let xPub_array = xPub_Bytes.concat(checksumArray)
+let xPub = bs58.encode(xPub_array)
+console.log('--xPub--')
+console.log(xPub)
 ```
 
 # 
