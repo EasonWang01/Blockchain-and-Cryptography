@@ -111,7 +111,7 @@ function numToBuffer(num) {
 
 往下一層，產生該層各個child private key 的時候，要用到 child key derivation \(CKD\) 這個方法
 
-https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#child-key-derivation-ckd-functions
+[https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#child-key-derivation-ckd-functions](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#child-key-derivation-ckd-functions)
 
 這個方法一樣是做HMAC-SHA512 加密演算法，但他會需要先輸入三個參數。
 
@@ -353,6 +353,14 @@ console.log(address)
 var hdPublicKey = hdPrivateKey.hdPublicKey;
 console.log(hdPublicKey.toString())
 ```
+
+> child key 可分為 Hardened 與 non-Hardened
+>
+> 用parent private key與 chaincode 雜湊產生child private key稱為Hardened key
+>
+> 用parent public key與 chaincode 雜湊產生child public key稱為 non-Hardened key
+>
+> 假設我們今天想建立許多地址收款，但不想要給每個地址知道對應私鑰，減少被駭客竊取私鑰的機會，則可以選擇non-Hardened key。
 
 # 查看地址的相關資料與交易紀錄
 
