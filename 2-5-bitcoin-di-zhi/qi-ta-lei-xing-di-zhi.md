@@ -2,7 +2,7 @@
 
 指定時間後該地址才可進行交易，可參考以下BIP：
 
-https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki
+[https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki)
 
 其RedeemScript類似如下：
 
@@ -106,8 +106,6 @@ function numToBuffer(num) {
 2.然後將 seed 去執行 HMAC-SHA512 加密，之後會產生一個長度為 512 bits 的結果
 
 > 前 256 bits 為 master private key，後 256 bits 為 master chain code ，master chain code 代表 entropy\(熵\)，之後再往下產生 child keys 時會用到。
-
-![](/assets/1_ChWUKm31L2WEEpeEB7kzPQ1.png)圖片來源:[https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook)
 
 ## 第二步驟
 
