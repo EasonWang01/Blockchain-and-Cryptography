@@ -376,6 +376,8 @@ console.log(hdPublicKey.toString())
 > // https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#security
 >
 > 所以non-Hardened 的 parent extended public keys 不可以洩漏出去，而 hardened keys 可以解決此問題。
+>
+> 一般 child keys index 為 0 到 (2 ** 31) - 1 ，而 hardened child keys 的 index為 2 ** 31 到 (2 ** 32) - 1
 > ```
 
 [https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child](https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child)
