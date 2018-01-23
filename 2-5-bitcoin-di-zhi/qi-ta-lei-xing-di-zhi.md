@@ -367,6 +367,8 @@ console.log(hdPublicKey.toString())
 > ```
 > 知道parent extended public key 以及任何一個 child non-hardened private key 
 > 即可推導出 parent extended private key 以及任何 child private key 及 public key  
+> // 可參考: https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/crypto.js#L115
+>
 > 所以 extended public keys 不可以洩漏出去，所以之後發展出 hardened keys
 > ```
 
