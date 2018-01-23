@@ -123,7 +123,7 @@ function numToBuffer(num) {
 
 > 之後會產生跟上層一樣的512bits的key，同樣的，前後256bits分別為 child private key 與 child chain code。
 
-![](/assets/1_ni33v4GKL12m2M4m_5GIQQ.png)圖片來源:[https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook)
+圖片來源:[https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook)
 
 > 由於HMAC-SHA512是Hash function，過程是不可逆的，所以我們不會知道parent是什麼，以及也不會知道自己鄰近的其他child是什麼
 
@@ -361,6 +361,14 @@ console.log(hdPublicKey.toString())
 > 用parent public key與 chaincode 雜湊產生 key稱為 non-Hardened key
 >
 > 假設我們今天想建立許多地址收款，但不想要給每個地址知道對應私鑰，減少被駭客竊取私鑰的機會，則可以選擇non-Hardened key。
+>
+> 但non-Hardened 有缺點如下
+>
+> ```
+> 知道parent extended public key plus 以及任何一個 child non-hardened private key 
+> 即可推導出 parent extended private key 以及任何 child private key 及 public key  
+> 所以 extended public keys 不可以洩漏出去，所以之後發展出 hardened keys
+> ```
 
 # 查看地址的相關資料與交易紀錄
 
