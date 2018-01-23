@@ -180,8 +180,8 @@ console.log(derivation0_child0_ChainCode)
 console.log('------')
 
 //第二層
-let derivation1_child1 = CKD(Master_pubkey, Master_ChainCode, '00000001');
-let derivation1_child10 = CKD(Master_pubkey, Master_ChainCode, '00000010');
+let derivation1_child1 = CKD(derivation0_child0Pub, derivation0_child0_ChainCode, '00000001');
+let derivation1_child10 = CKD(derivation0_child0Pub, derivation0_child0_ChainCode, '00000010');
 
 console.log('-----------------')
 console.log('---第一層derivation的第一個child長出來之第二層的第一個child (m/0/0)---')
@@ -372,6 +372,8 @@ console.log(hdPublicKey.toString())
 >
 > 所以non-Hardened 的 parent extended public keys 不可以洩漏出去，而 hardened keys 可以解決此問題。
 > ```
+
+https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child
 
 # 查看地址的相關資料與交易紀錄
 
