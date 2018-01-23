@@ -252,6 +252,11 @@ const generate_xkey = (parent, _keyType, pubkey) => (
 
 // 512 bits 的 Parent Hash
 Parent_HASH = "f302ca1da51bc8aa62004bcab75c83d67d578d498a7dd79d884a7f92759b611be41a13d838849258704f0265276fa6655c8961dfc7da1535d5cba7f98c5402ff";
+/*
+也可用以下方式產生512bits master seed
+const seed = crypto.randomBytes(64)
+HMACseed = crypto.createHmac('sha512', 'secret for HMAC').update(seed).digest('hex');
+*/
 
 
 /**
