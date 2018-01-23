@@ -324,6 +324,16 @@ console.log(xPub)
 >
 > [https://github.com/OutCast3k/coinbin/](https://github.com/OutCast3k/coinbin/)
 
+#### 從xPrv或xPub往下一層計算child xPrv 與 xPub
+
+可參考:https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#child-key-derivation-ckd-functions
+
+> 注意 : 無法從Public parent key 算出 private child key
+
+#### 
+
+#### 
+
 #### 使用第三方模組
 
 以下我們使用Bitcore模組為範例
