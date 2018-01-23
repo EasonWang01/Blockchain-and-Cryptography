@@ -370,7 +370,7 @@ console.log(hdPublicKey.toString())
 > // 可參考: https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/crypto.js#L115
 > // https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#security
 >
-> 所以 extended public keys 不可以洩漏出去，所以之後發展出 hardened keys
+> 所以non-Hardened 的 parent extended public keys 不可以洩漏出去，而 hardened keys 可以解決此問題。
 > ```
 
 # 查看地址的相關資料與交易紀錄
