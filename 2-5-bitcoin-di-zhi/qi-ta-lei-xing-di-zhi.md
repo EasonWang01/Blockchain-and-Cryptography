@@ -209,7 +209,7 @@ console.log('-----------------')
 
 > [https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#serialization-format](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#serialization-format)
 
-從Parent的64 bytes key 算出衍伸下一層之的xPrv與xPub
+產生Master之xPrv與xPub
 
 ```js
 const crypto = require('crypto');
