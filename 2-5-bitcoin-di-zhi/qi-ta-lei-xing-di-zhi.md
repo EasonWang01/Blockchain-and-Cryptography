@@ -209,7 +209,7 @@ console.log('-----------------')
 
 > [https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#serialization-format](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#serialization-format)
 
-產生Master之xPrv與xPub
+從Master 512 bits seed Hash產生Master之xPrv與xPub
 
 ```js
 const crypto = require('crypto');
@@ -378,7 +378,7 @@ console.log(hdPublicKey.toString())
 > 所以non-Hardened 的 parent extended public keys 不可以洩漏出去，而 hardened keys 可以解決此問題。
 > ```
 
-https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child
+[https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child](https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child)
 
 # 查看地址的相關資料與交易紀錄
 
