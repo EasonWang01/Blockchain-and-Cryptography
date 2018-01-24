@@ -30,7 +30,6 @@ parity --chain ropsten
 
 ```
 geth --rinkeby
-
 ```
 
 3.Kovan testnet 只能使用Parity連線。
@@ -45,11 +44,17 @@ parity --chain kovan
 > --bootnodes enode://YOU_BOOT_NODE_ID_HERE@127.0.0.1:30303
 > ```
 
-#### 區塊鏈狀況
+#### 相關網站
 
-rinkeby
+Rinkeby
 
-https://www.rinkeby.io/\#stats
+查看區塊鏈狀態：[https://www.rinkeby.io/\#stats](https://www.rinkeby.io/#stats)
+
+取得測試幣：https://faucet.rinkeby.io/
+
+
+
+
 
 參考資料：
 
