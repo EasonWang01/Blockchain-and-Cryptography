@@ -10,7 +10,7 @@ limits 上升到 9 billion \(原先為 4.7 million\)。
 
 『 Parity 』客戶端使用。
 
-最後誕生了一個可以給任何客戶端使用的測試鏈，名為『 Rinkeby 』也是使用POA \( Proof-of-Authority \)的共識系統。  
+最後在『 go-ethereum 』團隊誕生了一個新的測試鏈，名為『 Rinkeby 』也是使用POA \( Proof-of-Authority \)的共識系統。  
 有關其POA的protocol可參考：[https://github.com/ethereum/EIPs/issues/225](https://github.com/ethereum/EIPs/issues/225)
 
 ---
@@ -26,13 +26,13 @@ geth --testnet
 parity --chain ropsten
 ```
 
-2.連線到 Rinkeby network
+2.連線到 Rinkeby network 目前只能使用Geth連線
 
 ```
 geth --rinkeby
 ```
 
-3.Kovan testnet 只能使用Parity連線。
+3.連線到 Kovan testnet 目前只能使用Parity連線。
 
 ```
 parity --chain kovan
@@ -50,13 +50,22 @@ Rinkeby
 
 查看區塊鏈狀態：[https://www.rinkeby.io/\#stats](https://www.rinkeby.io/#stats)
 
-取得測試幣：https://faucet.rinkeby.io/
+取得測試幣：[https://faucet.rinkeby.io/](https://faucet.rinkeby.io/)
 
+https://testnet.etherscan.io/
 
+#### 名稱由來
 
-
+```
+Morden:  a subway station in London
+Ropsten: a metro station in Stockholm
+Rinkeby: a metro station in Stockholm
+Kovan:   a subway station in Singapore
+```
 
 參考資料：
 
 [https://www.ethnews.com/ropsten-to-kovan-to-rinkeby-ethereums-testnet-troubles](https://www.ethnews.com/ropsten-to-kovan-to-rinkeby-ethereums-testnet-troubles)
+
+https://ethereum.stackexchange.com/questions/29194/why-are-the-rinkeby-and-ropsten-testnets-named-after-swedish-locations
 
