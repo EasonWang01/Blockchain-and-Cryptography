@@ -15,7 +15,7 @@ limits 上升到 9 billion \(原先為 4.7 million\)。
 
 ---
 
-#### 連線
+## 連線
 
 最常使用的節點軟體為Geth或是Parity，加入以下Flag即可連線到對應的測試鏈。
 
@@ -44,17 +44,35 @@ parity --chain kovan
 > --bootnodes enode://YOU_BOOT_NODE_ID_HERE@127.0.0.1:30303
 > ```
 
-#### 相關網站
+## 相關網站
 
-Rinkeby
+[https://testnet.etherscan.io/](https://www.gitbook.com/book/easonwang01/e/edit#)
+
+#### Ropsten
+
+查看區塊鏈狀態：https://ropsten.etherscan.io/
+
+GIthub頁面：https://github.com/ethereum/ropsten
+
+取得測試幣：http://faucet.ropsten.be:3001/
+
+#### Koven
+
+查看區塊鏈狀態：https://kovan.etherscan.io/
+
+GIthub頁面：https://github.com/kovan-testnet
+
+取得測試幣：https://github.com/kovan-testnet/faucet
+
+#### Rinkeby
 
 查看區塊鏈狀態：[https://www.rinkeby.io/\#stats](https://www.rinkeby.io/#stats)
 
 取得測試幣：[https://faucet.rinkeby.io/](https://faucet.rinkeby.io/)
 
-https://testnet.etherscan.io/
 
-#### 名稱由來
+
+## 名稱由來
 
 ```
 Morden:  a subway station in London
@@ -67,5 +85,7 @@ Kovan:   a subway station in Singapore
 
 [https://www.ethnews.com/ropsten-to-kovan-to-rinkeby-ethereums-testnet-troubles](https://www.ethnews.com/ropsten-to-kovan-to-rinkeby-ethereums-testnet-troubles)
 
-https://ethereum.stackexchange.com/questions/29194/why-are-the-rinkeby-and-ropsten-testnets-named-after-swedish-locations
+[https://ethereum.stackexchange.com/questions/29194/why-are-the-rinkeby-and-ropsten-testnets-named-after-swedish-locations](https://ethereum.stackexchange.com/questions/29194/why-are-the-rinkeby-and-ropsten-testnets-named-after-swedish-locations)
+
+https://ethereum.stackexchange.com/questions/27048/comparison-of-the-different-testnets/30072\#30072
 
