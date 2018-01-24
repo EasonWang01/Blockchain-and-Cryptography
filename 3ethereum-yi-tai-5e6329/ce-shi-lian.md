@@ -50,19 +50,19 @@ parity --chain kovan
 
 #### Ropsten
 
-查看區塊鏈狀態：https://ropsten.etherscan.io/
+查看區塊鏈狀態：[https://ropsten.etherscan.io/](https://ropsten.etherscan.io/)
 
-GIthub頁面：https://github.com/ethereum/ropsten
+GIthub頁面：[https://github.com/ethereum/ropsten](https://github.com/ethereum/ropsten)
 
-取得測試幣：http://faucet.ropsten.be:3001/
+取得測試幣：[http://faucet.ropsten.be:3001/](http://faucet.ropsten.be:3001/)
 
 #### Koven
 
-查看區塊鏈狀態：https://kovan.etherscan.io/
+查看區塊鏈狀態：[https://kovan.etherscan.io/](https://kovan.etherscan.io/)
 
-GIthub頁面：https://github.com/kovan-testnet
+GIthub頁面：[https://github.com/kovan-testnet](https://github.com/kovan-testnet)
 
-取得測試幣：https://github.com/kovan-testnet/faucet
+取得測試幣：[https://github.com/kovan-testnet/faucet](https://github.com/kovan-testnet/faucet)
 
 #### Rinkeby
 
@@ -70,15 +70,20 @@ GIthub頁面：https://github.com/kovan-testnet
 
 取得測試幣：[https://faucet.rinkeby.io/](https://faucet.rinkeby.io/)
 
-
-
 ## 名稱由來
 
 ```
-Morden:  a subway station in London
-Ropsten: a metro station in Stockholm
-Rinkeby: a metro station in Stockholm
-Kovan:   a subway station in Singapore
+Morden:  位於 London 的地鐵站  
+https://tfl.gov.uk/hub/stop/940GZZLUMDN/morden-underground-station
+
+Ropsten: 位於 Stockholm 的地鐵站 
+https://www.google.com.ph/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjNrcnbuO_YAhXMVLwKHYcyC3QQFggmMAA&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FRopsten&usg=AOvVaw2__bO1HERm9pYdtuL1KQuY
+
+Kovan: 位於 Singapore的 地鐵站
+https://en.wikipedia.org/wiki/Kovan_MRT_station
+
+Rinkeby: 位於 Stockholm 的地鐵站
+https://en.wikipedia.org/wiki/Rinkeby_metro_station
 ```
 
 參考資料：
@@ -87,5 +92,5 @@ Kovan:   a subway station in Singapore
 
 [https://ethereum.stackexchange.com/questions/29194/why-are-the-rinkeby-and-ropsten-testnets-named-after-swedish-locations](https://ethereum.stackexchange.com/questions/29194/why-are-the-rinkeby-and-ropsten-testnets-named-after-swedish-locations)
 
-https://ethereum.stackexchange.com/questions/27048/comparison-of-the-different-testnets/30072\#30072
+[https://ethereum.stackexchange.com/questions/27048/comparison-of-the-different-testnets/30072\#30072](https://ethereum.stackexchange.com/questions/27048/comparison-of-the-different-testnets/30072#30072)
 
