@@ -553,15 +553,15 @@ var hdPublicKey = hdPrivateKey.hdPublicKey;
 console.log(hdPublicKey.toString())
 ```
 
-> child key 可分為 Hardened 與 non-Hardened
+#### Hardened 與 non-Hardened
+
+child key 可分為 Hardened 與 non-Hardened
+
+> ```
+> 一般 child keys index 為 0 到 (2 ** 31) - 1 ，而 hardened child keys 的 index為 2 ** 31 到 (2 ** 32) - 1
+> ```
 >
-> 用parent private key與 chaincode 雜湊產生 key稱為Hardened key
->
-> 用parent public key與 chaincode 雜湊產生 key稱為 non-Hardened key
->
-> 假設我們今天想建立許多地址收款，但不想要給每個地址知道對應私鑰，減少被駭客竊取私鑰的機會，則可以選擇non-Hardened key，因為其不會產生私鑰。
->
-> 但non-Hardened 有缺點如下
+> non-Hardened 有缺點如下
 >
 > ```
 > 知道parent extended public key 以及任何一個 child non-hardened private key 
@@ -570,8 +570,6 @@ console.log(hdPublicKey.toString())
 > // https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#security
 >
 > 所以non-Hardened 的 parent extended public keys 不可以洩漏出去，而 hardened keys 可以解決此問題。
->
-> 一般 child keys index 為 0 到 (2 ** 31) - 1 ，而 hardened child keys 的 index為 2 ** 31 到 (2 ** 32) - 1
 > ```
 
 [https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child](https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child)
