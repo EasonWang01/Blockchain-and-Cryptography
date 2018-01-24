@@ -13,9 +13,29 @@ limits 上升到 9 billion \(原先為 4.7 million\)。
 最後誕生了一個可以給任何客戶端使用的測試鏈，名為『 Rinkeby 』也是使用POA \( Proof-of-Authority \)的共識系統。  
 有關其POA的protocol可參考：[https://github.com/ethereum/EIPs/issues/225](https://github.com/ethereum/EIPs/issues/225)
 
-
-
 ---
+
+#### 連線
+
+使用Geth加入以下Flag即可連線到對應的測試鏈。
+
+1.連線到 Ropsten network
+
+```
+geth --testnet   
+```
+
+2.連線到 Rinkeby network
+
+```
+geth --rinkeby   
+```
+
+3.Kovan testnet 只能使用Parity連線。
+
+```
+parity --chain kovan
+```
 
 參考資料：
 
