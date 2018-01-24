@@ -193,9 +193,9 @@ console.log('-----------------')
 
 #### xPrv與xPub
 
-假設我們要用一個字串表示parent public key 和 parent chain code 可以把他們用一種方法結合起來並且使用Base58進行編碼，之後可以產生出xPrv與xPub，如果對其進行Base58解碼則可以得到這個Key所在的位置以及其相關資訊。
+假設我們要用一個字串表示parent public key 和 parent chain code 可以把他們用一種Extended key 82 byte structure方法結合起來並且使用Base58進行編碼，之後可以產生出xPrv與xPub，如果對其進行Base58解碼則可以得到這個Key所在的位置以及其相關資訊。
 
-其結合元素包含以下
+Extended key 之 82 byte structure 其結合元素包含以下
 
 ```
 4 byte: version bytes (mainnet: 0x0488B21E public, 0x0488ADE4 private; testnet: 0x043587CF public, 0x04358394 private)
@@ -204,7 +204,8 @@ console.log('-----------------')
 4 bytes: child number. This is ser32(i) for i in xi = xpar/i, with xi the key being serialized. (0x00000000 if master key)
 32 bytes: the chain code
 33 bytes: the public key or private key data (serP(K) for public keys, 0x00 || ser256(k) for private keys)
-最後再把上面做checksum，然後加在字串最後。
+
+4 bytes: 最後再把上面做checksum，然後加在字串最後。
 ```
 
 > [https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#serialization-format](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#serialization-format)
@@ -326,7 +327,7 @@ console.log(xPub)
 
 #### 從xPrv或xPub往下一層計算child xPrv 與 xPub
 
-可參考:https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#child-key-derivation-ckd-functions
+可參考:[https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#child-key-derivation-ckd-functions](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#child-key-derivation-ckd-functions)
 
 > 注意 : 無法從Public parent key 算出 private child key
 
