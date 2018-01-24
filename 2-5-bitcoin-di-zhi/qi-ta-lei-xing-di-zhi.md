@@ -151,6 +151,7 @@ console.log('---Master公鑰---')
 console.log(Master_pubkey); //公鑰(通過橢圓曲線算法可以從私鑰計算得到公鑰)
 console.log('-----------------')
 
+// 這裡的CKD僅為類似概念，並非bip32 的標準CKD
 function CKD(parentPub, parentChainCode, childIdx) {
   let input = parentPub + parentChainCode + childIdx;
   return crypto.createHmac('sha512', 'secret for HMAC').update(input).digest('hex')
