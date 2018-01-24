@@ -77,7 +77,7 @@ Morden:  位於 London 的地鐵站
 https://tfl.gov.uk/hub/stop/940GZZLUMDN/morden-underground-station
 
 Ropsten: 位於 Stockholm 的地鐵站 
-https://www.google.com.ph/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjNrcnbuO_YAhXMVLwKHYcyC3QQFggmMAA&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FRopsten&usg=AOvVaw2__bO1HERm9pYdtuL1KQuY
+https://en.wikipedia.org/wiki/Ropsten_metro_station
 
 Kovan: 位於 Singapore的 地鐵站
 https://en.wikipedia.org/wiki/Kovan_MRT_station
