@@ -17,18 +17,20 @@ limits 上升到 9 billion \(原先為 4.7 million\)。
 
 #### 連線
 
-使用Geth加入以下Flag即可連線到對應的測試鏈。
+最常使用的節點軟體為Geth或是Parity，加入以下Flag即可連線到對應的測試鏈。
 
 1.連線到 Ropsten network
 
 ```
-geth --testnet   
+geth --testnet
+parity --chain ropsten
 ```
 
 2.連線到 Rinkeby network
 
 ```
-geth --rinkeby   
+geth --rinkeby
+
 ```
 
 3.Kovan testnet 只能使用Parity連線。
@@ -36,6 +38,18 @@ geth --rinkeby
 ```
 parity --chain kovan
 ```
+
+> 如果無法sync，可以指定要sync的bootnode :
+>
+> ```
+> --bootnodes enode://YOU_BOOT_NODE_ID_HERE@127.0.0.1:30303
+> ```
+
+#### 區塊鏈狀況
+
+rinkeby
+
+https://www.rinkeby.io/\#stats
 
 參考資料：
 
