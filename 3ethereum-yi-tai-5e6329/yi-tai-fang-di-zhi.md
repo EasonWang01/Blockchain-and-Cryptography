@@ -64,6 +64,10 @@ d6 + 94 + 部屬人之地址 + index
 
 如果該帳號是第一次部屬合約則index為80，第二次部屬合約index為01之後則繼續往上03, 04...
 
+> 如果是在mainnet則index 從1開始，在官方文件寫為nonce
+>
+> https://github.com/ethereum/EIPs/blob/master/EIPS/eip-161.md\#specification
+
 範例 :
 
 ```js
@@ -89,5 +93,5 @@ getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 1)
 getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 2)
 ```
 
-![](/assets/fefw24.png)
+![](/assets/fefw24.png)對照上圖即可看到右下角之Remix IDE 產生
 
