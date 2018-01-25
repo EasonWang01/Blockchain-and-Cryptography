@@ -44,40 +44,40 @@ geth console
 
 ```
    account     管理帳號，可用包含list, new, update, import
-   
+
    attach      啟動JS的console，會連線到一個節點
-   
+
    bug         會自動開啟go-ethereum Github issue，快速回報Bug
-   
+
    console     啟動節點時，同時啟動JS的console
-   
+
    copydb      從另外一個 chaindata 資料夾引入相關區塊鏈資料
-   
+
    dump        取得特定區塊的相關資料，與console中的debug.dumpBlock(10)類似
-   
+
    dumpconfig  顯示節點基本資料，例如DataDir, NetworkId, SyncMode, GasPrice等等
-   
+
    export      輸出區塊鏈資料到檔案，例如： geth export <filename>
-   
+
    import      引入檔案資料回到區塊鏈，例如： geth import <filename>
-   
+
    init        初始化一個新的 genesis block
-   
+
    js          執行特定 JavaScript 檔案，例如：echo "console.log(123)" >> test.js 然後 geth js ./test.js
-   
+
    license     顯示相關 license 資料
-   
+
    makecache   產生 ethash verification cache (測試使用)
-   
+
    makedag     產生 ethash mining DAG (測試使用)
-   
+
    monitor     顯示與監控相關節點資訊可參考：
                https://github.com/ethereum/go-ethereum/wiki/Metrics-and-Monitoring
-   
+
    removedb    移除節點區塊鏈資料
-   
+
    version     取得Geth目前版本
-   
+
    wallet      管理相關 Ethereum presale wallets，可參考：
                https://ethereum.stackexchange.com/questions/15918/what-does-presale-mean-in-ethereum
 ```
@@ -177,17 +177,19 @@ Windows: %APPDATA%\Ethereum
 
 --keystore指定帳戶之金鑰存放位置，預設在datadir資料夾內
 
-# 將metamask的帳號import到Geth
+# 將Metamask的帳號import到Geth
 
-先到metamask將private key取出
+我們時常會使用到Metamask的服務，但有時我們想再讓帳號在Geth也可以使用，所以可以使用以下方法將之引入到Geth：
+
+1.先到Metamask將Private key取出
 
 ![](/assets/螢幕快照 2018-01-12 上午9.17.50.png)
 
-然後進入到Geth指令介面後輸入如下：
+2.然後進入到Geth指令介面後輸入如下：
 
 ```
 personal.importRawKey("<Private Key>","<New Password>")
 ```
 
-
+3.接著進入Geth 的 console輸入`eth.accounts` 即可看到引入的帳號。
 
