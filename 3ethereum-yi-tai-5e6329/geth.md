@@ -34,7 +34,37 @@ geth console
 
 ![](/assets/435345.png)
 
-# Geth啟動參數
+# Geth可用指令與參數
+
+## 可用指令
+
+輸入`geth help` 可以查看可以使用的指令與參數。
+
+[https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options](https://www.gitbook.com/book/easonwang01/e/edit#)
+
+```
+   account     管理帳號，可用包含list, new, update, import
+   attach      啟動JS的console，會連線到一個節點
+   bug         會自動開啟go-ethereum Github issue，快速回報Bug
+   console     啟動節點時，同時啟動JS的console
+   copydb      從另外一個 chaindata 資料夾引入相關區塊鏈資料
+   dump        取得特定區塊的相關資料，與console中的debug.dumpBlock(10)類似
+   dumpconfig  顯示節點基本資料，例如DataDir, NetworkId, SyncMode, GasPrice等等
+   export      輸出區塊鏈資料到檔案geth export <filename>
+   import      Import a blockchain file
+   init        Bootstrap and initialize a new genesis block
+   js          Execute the specified JavaScript files
+   license     Display license information
+   makecache   Generate ethash verification cache (for testing)
+   makedag     Generate ethash mining DAG (for testing)
+   monitor     Monitor and visualize node metrics
+   removedb    Remove blockchain and state databases
+   version     Print version numbers
+   wallet      Manage Ethereum presale wallets
+   help, h     Shows a list of commands or help for one command
+```
+
+## 相關參數
 
 Geth再啟動時可以在指令上加上flag參數，讓Geth使用不同的狀態執行。
 
@@ -47,17 +77,9 @@ geth.exe --fast --cache 1024
 // --cache=1024 意思為設定電腦上的RAM在同步時的資料最大快取為1024MB
 ```
 
-有關所有指令可參考:
+以下為部分較常用的指令 :
 
-[https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options)
-
-或是輸入
-
-```
-geth help
-```
-
-## --testnet、--rinkeby 、--dev
+#### --testnet、--rinkeby 、--dev
 
 ```
 --testnet      連線到 Ropsten network，為 proof-of-work 測試網路
@@ -65,7 +87,7 @@ geth help
 --dev          連線到私有鏈，方便開發者快速開發，並且預設好一個帳號並擁有一定數量之Ether，為 proof-of-authority 測試網路
 ```
 
-## --syncmode
+#### --syncmode
 
 其影響主要為同步區塊鏈之總大小不同。
 
@@ -84,7 +106,7 @@ Fast Sync: 同步所有 block headers 與 block bodies。在同步到 current bl
 Light Sync: 只取得目前的區塊狀態，要驗證資料時必須傳送資料給其他節點。
 ```
 
-## --rpc、--ws、--ipc
+#### --rpc、--ws、--ipc
 
 --rpc
 
@@ -119,7 +141,7 @@ Light Sync: 只取得目前的區塊狀態，要驗證資料時必須傳送資�
 >
 > Ethereum預設有**listener \(TCP\) **與 **discovery \(UDP**\) 監聽在**30303，可使用--port改變預設**
 
-## --datadir、--keystore
+#### --datadir、--keystore
 
 ```
 --datadir <資料夾路徑>
