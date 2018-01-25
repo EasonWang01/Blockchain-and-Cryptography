@@ -44,24 +44,42 @@ geth console
 
 ```
    account     管理帳號，可用包含list, new, update, import
+   
    attach      啟動JS的console，會連線到一個節點
+   
    bug         會自動開啟go-ethereum Github issue，快速回報Bug
+   
    console     啟動節點時，同時啟動JS的console
+   
    copydb      從另外一個 chaindata 資料夾引入相關區塊鏈資料
+   
    dump        取得特定區塊的相關資料，與console中的debug.dumpBlock(10)類似
+   
    dumpconfig  顯示節點基本資料，例如DataDir, NetworkId, SyncMode, GasPrice等等
-   export      輸出區塊鏈資料到檔案geth export <filename>
-   import      Import a blockchain file
-   init        Bootstrap and initialize a new genesis block
-   js          Execute the specified JavaScript files
-   license     Display license information
-   makecache   Generate ethash verification cache (for testing)
-   makedag     Generate ethash mining DAG (for testing)
-   monitor     Monitor and visualize node metrics
-   removedb    Remove blockchain and state databases
-   version     Print version numbers
-   wallet      Manage Ethereum presale wallets
-   help, h     Shows a list of commands or help for one command
+   
+   export      輸出區塊鏈資料到檔案，例如： geth export <filename>
+   
+   import      引入檔案資料回到區塊鏈，例如： geth import <filename>
+   
+   init        初始化一個新的 genesis block
+   
+   js          執行特定 JavaScript 檔案，例如：echo "console.log(123)" >> test.js 然後 geth js ./test.js
+   
+   license     顯示相關 license 資料
+   
+   makecache   產生 ethash verification cache (測試使用)
+   
+   makedag     產生 ethash mining DAG (測試使用)
+   
+   monitor     顯示與監控相關節點資訊可參考：
+               https://github.com/ethereum/go-ethereum/wiki/Metrics-and-Monitoring
+   
+   removedb    移除節點區塊鏈資料
+   
+   version     取得Geth目前版本
+   
+   wallet      管理相關 Ethereum presale wallets，可參考：
+               https://ethereum.stackexchange.com/questions/15918/what-does-presale-mean-in-ethereum
 ```
 
 ## 相關參數
