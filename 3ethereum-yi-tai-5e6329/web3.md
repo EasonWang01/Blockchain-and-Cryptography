@@ -49,7 +49,70 @@ npm install web3@0.20.4
 npm start
 ```
 
-## 
+接著我們把App.js改為如下
+
+```js
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Web3 from 'web3';
+const web3 = new Web3();
+
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      accounts: '',
+
+    }
+  }
+
+  componentWillMount() {
+    web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545')); //指定為RPC server的位置
+    this.setState({ accounts: web3.eth.accounts });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to My Dapp</h2>
+        </div>
+        <div className="App-intro">
+          {this.state.accounts.map((i, idx) => (
+            <p key={idx}>帳號{idx}: {i}，餘額: {web3.fromWei(web3.eth.getBalance(i)).toString()} </p>
+          ))}
+        </div>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+即可看到網頁上讀取出帳號。
+
+接著我們回到Geth console，輸入如下新增帳號
+
+```
+personal.newAccount
+eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(100, "ether")})
+```
+
+轉帳100 Ether
+
+```
+eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(100, "ether")})
+```
+
+之後查看網頁 :
+
+> 因為我們使用的是 --dev 所以自動設定為Proof of Authority，所以產生交易後不需要手動挖礦即可生效
+
+![](/assets/sdca.png)
 
 ## 常用指令
 
