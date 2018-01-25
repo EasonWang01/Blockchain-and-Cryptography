@@ -145,3 +145,5 @@ web3.eth.defaultAccount = eth.accounts[0];
 
 ![](/assets/9123da.png)
 
+之後再次點選`get` 讀取字串即會看到改變。
+
