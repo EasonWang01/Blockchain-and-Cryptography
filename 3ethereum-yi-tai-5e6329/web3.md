@@ -112,7 +112,106 @@ eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(10
 
 > 因為我們使用的是 --dev 所以自動設定為Proof of Authority，所以產生交易後不需要手動挖礦即可生效
 
-![](/assets/sdca.png)
+![](/assets/sdca.png)asdasd
+
+
+
+```js
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Web3 from 'web3';
+const web3 = new Web3();
+const eth = web3.eth;
+const SHA3 = require('keccakjs')
+
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      accounts: '',
+      blockHeight: '',
+      blocks: [],
+      currentAddress: '',
+      accountTransactions: []
+    }
+  }
+
+
+  componentWillMount() {
+
+    let h = new SHA3(256).update(Buffer.from("d6" + "94" + "d7c86c344ecbd9f166b053a32cd6cd34dda1b8af" + "02", 'hex')).digest('hex'); // 02  06 07 08
+    let address = h.slice(-40) // 取後面四十個字
+
+    console.log('-------------------------------------')
+    console.log('地址Address: ')
+    console.log(`0x${address}`)
+    // https://ethereum.stackexchange.com/a/761
+
+    web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545')); //指定為RPC server的位置
+    this.setState({ accounts: web3.eth.accounts });
+
+    // 目前區塊高度
+    let blockHeight = web3.eth.blockNumber;
+    this.setState({ blockHeight });
+    // 所有區塊資料
+    let blocks = []
+    for (let i = 0; i <= blockHeight; i++) {
+      blocks.push(eth.getBlock(i, true));
+    }
+    this.setState({ blocks });
+    //window.classContract = web3.eth.contract(classContract.ABI).at(contract01.address);
+  }
+  componentDidMount() {
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to My Dapp</h2>
+        </div>
+        <div className="App-intro">
+          {this.state.accounts.map((i, idx) => (
+            <p key={idx}>帳號{idx}: {i}，餘額: {web3.fromWei(web3.eth.getBalance(i)).toString()} </p>
+          ))}
+        </div>
+        查詢帳號交易紀錄:<input onChange={(e) => this.setState({currentAddress: e.target.value.trim()})} />
+        <button onClick={() => this.getTransactions(this.state.currentAddress)}>查詢</button>
+
+
+        <div>
+          {this.state.accountTransactions.map(d => (
+            <div>{JSON.stringify(d)}</div>
+          ))}
+        </div>
+      </div>
+      
+    );
+  }
+
+
+  getTransactions(address) {
+    let accountTransactions = [];
+    this.state.blocks.forEach(block => {
+      block.transactions.forEach(transaction => {
+        if (transaction.from === address) {
+          accountTransactions.push(transaction);
+        }
+      })
+    })
+    // eth.getBlock(4, true)
+    this.setState({ currentAddress: address })
+    this.setState({ accountTransactions })
+    return accountTransactions
+  }
+}
+
+export default App;
+
+```
 
 ## 常用指令
 
