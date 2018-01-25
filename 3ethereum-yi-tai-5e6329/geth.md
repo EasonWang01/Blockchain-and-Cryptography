@@ -179,7 +179,7 @@ Windows: %APPDATA%\Ethereum
 
 # 將Metamask的帳號import到Geth
 
-我們時常會使用到Metamask的服務，但有時我們想再讓帳號在Geth也可以使用，所以可以使用以下方法將之引入到Geth：
+我們時常會使用到Metamask的服務，但有時我們想讓帳號在Geth也可以使用，所以可以使用以下方法將之引入到Geth：
 
 1.先到Metamask將Private key取出
 
