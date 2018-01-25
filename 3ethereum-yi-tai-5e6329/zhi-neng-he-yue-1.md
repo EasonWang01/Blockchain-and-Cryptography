@@ -59,6 +59,8 @@ contract SimpleStorage {
 
 之後點選右上方的Run，然後下方輸入建構子參數 \( 也就是初始化合約的參數\)，然後點選Create![](/assets/92011.png)
 
+> 如果部屬合約的地址不是coinbase\(`eth.accounts[0]`\)  則需要先解鎖帳號 `personal.unlockAccount`
+
 4.
 
 部屬合約後我們可以看到區塊鏈相關訊息:
