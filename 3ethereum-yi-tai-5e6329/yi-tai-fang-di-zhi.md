@@ -50,8 +50,6 @@ console.log(`0x${instance.getAddress().toString('hex')}`)
 
 [https://gist.github.com/lgn21st/1bd2db7eb30b55e17d07a8bc637c2f87](https://gist.github.com/lgn21st/1bd2db7eb30b55e17d07a8bc637c2f87)
 
-
-
 # 合約地址
 
 合約地址會依據部屬合約的地址以及該地址總共部屬第幾個合約而定。
@@ -69,6 +67,8 @@ d6 + 94 + 部屬人之地址 + index
 範例 :
 
 ```js
+const SHA3 = require('keccakjs')
+
 function getContract_Address(address, num) {
   let index;
   if(num === 0) {
@@ -80,14 +80,14 @@ function getContract_Address(address, num) {
   let h = new SHA3(256).update(Buffer.from("d6" + "94" + address + index, 'hex')).digest('hex'); // 02  06 07 08
   let contractAddress = h.slice(-40) // 取後面四十個字
   console.log('-------------------------------------')
-  console.log('地址Address: ')
+  console.log('Contract Address: ')
   console.log(`0x${contractAddress}`)
 }
-getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 0);
-getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 1);
+
+getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 0)
+getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 1)
+getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 2)
 ```
-
-
 
 
 
