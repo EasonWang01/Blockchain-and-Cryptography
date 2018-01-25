@@ -76,8 +76,8 @@ function getContract_Address(address, num) {
   } else if (num < 10) {
     index = `0${num}`;
   }
-   
-  let h = new SHA3(256).update(Buffer.from("d6" + "94" + address + index, 'hex')).digest('hex'); // 02  06 07 08
+
+  let h = new SHA3(256).update(Buffer.from("d6" + "94" + address + index, 'hex')).digest('hex');
   let contractAddress = h.slice(-40) // 取後面四十個字
   console.log('-------------------------------------')
   console.log('Contract Address: ')
