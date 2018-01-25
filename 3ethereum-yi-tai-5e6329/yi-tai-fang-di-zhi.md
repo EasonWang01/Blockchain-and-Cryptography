@@ -1,3 +1,5 @@
+# 一般地址
+
 使用原生模組搭配SHA3模組產生地址
 
 ```js
@@ -46,5 +48,46 @@ console.log(`0x${instance.getAddress().toString('hex')}`)
 
 其他語言可參考:
 
-https://gist.github.com/lgn21st/1bd2db7eb30b55e17d07a8bc637c2f87
+[https://gist.github.com/lgn21st/1bd2db7eb30b55e17d07a8bc637c2f87](https://gist.github.com/lgn21st/1bd2db7eb30b55e17d07a8bc637c2f87)
+
+
+
+# 合約地址
+
+合約地址會依據部屬合約的地址以及該地址總共部屬第幾個合約而定。
+
+規則如下 :
+
+固定格式為
+
+```
+d6 + 94 + 部屬人之地址 + index
+```
+
+如果該帳號是第一次部屬合約則index為80，第二次部屬合約index為01之後則繼續往上03, 04...
+
+範例 :
+
+```js
+function getContract_Address(address, num) {
+  let index;
+  if(num === 0) {
+    index = 80;
+  } else if (num < 10) {
+    index = `0${num}`;
+  }
+   
+  let h = new SHA3(256).update(Buffer.from("d6" + "94" + address + index, 'hex')).digest('hex'); // 02  06 07 08
+  let contractAddress = h.slice(-40) // 取後面四十個字
+  console.log('-------------------------------------')
+  console.log('地址Address: ')
+  console.log(`0x${contractAddress}`)
+}
+getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 0);
+getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 1);
+```
+
+
+
+
 
