@@ -59,14 +59,14 @@ console.log(`0x${instance.getAddress().toString('hex')}`)
 固定格式為
 
 ```
-d6 + 94 + 部屬人之地址 + index
+d6 + 94 + 部屬人之地址 + nonce
 ```
 
-如果該帳號是第一次部屬合約則index為80，第二次部屬合約index為01之後則繼續往上03, 04...
+如果該帳號是第一次部屬合約則 nonce 為80，第二次部屬合約 nonce 為01之後則繼續往上03, 04...
 
-> 如果是在mainnet則index 從1開始，在官方文件寫為nonce
+> 如果是在mainnet則 nonce 從1開始
 >
-> https://github.com/ethereum/EIPs/blob/master/EIPS/eip-161.md\#specification
+> [https://github.com/ethereum/EIPs/blob/master/EIPS/eip-161.md\#specification](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-161.md#specification)
 
 範例 :
 
@@ -74,14 +74,14 @@ d6 + 94 + 部屬人之地址 + index
 const SHA3 = require('keccakjs')
 
 function getContract_Address(address, num) {
-  let index;
+  let nonce;
   if(num === 0) {
-    index = 80;
+    nonce = 80;
   } else if (num < 10) {
-    index = `0${num}`;
+    nonce = `0${num}`;
   }
 
-  let h = new SHA3(256).update(Buffer.from("d6" + "94" + address + index, 'hex')).digest('hex');
+  let h = new SHA3(256).update(Buffer.from("d6" + "94" + address + nonce, 'hex')).digest('hex');
   let contractAddress = h.slice(-40) // 取後面四十個字
   console.log('-------------------------------------')
   console.log('Contract Address: ')
