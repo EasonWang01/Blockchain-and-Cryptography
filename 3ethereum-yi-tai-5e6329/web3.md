@@ -248,7 +248,7 @@ tether
 
 #### 查看帳號餘額
 
-#### 估計可能使用的Gas
+#### 估計可能使用多少單位個Gas
 
 ```js
 web3.eth.estimateGas({
