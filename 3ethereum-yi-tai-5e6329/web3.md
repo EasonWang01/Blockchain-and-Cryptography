@@ -112,9 +112,7 @@ eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(10
 
 > 因為我們使用的是 --dev 所以自動設定為Proof of Authority，所以產生交易後不需要手動挖礦即可生效
 
-![](/assets/sdca.png)asdasd
-
-
+![](/assets/sdca.png)之後我們新增可以讀取區塊上資料，並且可以取得一個帳號的歷史交易紀錄之功能
 
 ```js
 import React, { Component } from 'react';
@@ -161,11 +159,7 @@ class App extends Component {
       blocks.push(eth.getBlock(i, true));
     }
     this.setState({ blocks });
-    //window.classContract = web3.eth.contract(classContract.ABI).at(contract01.address);
   }
-  componentDidMount() {
-  }
-
   render() {
     return (
       <div className="App">
@@ -188,7 +182,7 @@ class App extends Component {
           ))}
         </div>
       </div>
-      
+
     );
   }
 
@@ -210,7 +204,6 @@ class App extends Component {
 }
 
 export default App;
-
 ```
 
 ## 常用指令
