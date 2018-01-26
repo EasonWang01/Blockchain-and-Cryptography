@@ -196,7 +196,6 @@ class App extends Component {
         }
       })
     })
-    // eth.getBlock(4, true)
     this.setState({ currentAddress: address })
     this.setState({ accountTransactions })
     return accountTransactions
