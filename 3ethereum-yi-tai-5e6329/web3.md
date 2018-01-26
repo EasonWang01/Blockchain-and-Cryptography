@@ -283,7 +283,22 @@ if(!web3.isConnected()) {
 }
 ```
 
-#### 
+#### 讀取目前預設帳號
+
+```
+web3.eth.defaultAccount
+```
+
+當我們使用Metamask時選擇不同帳號，`defaultAccount` 也會跟著更改。
+
+會影響以下兩個Function執行時選擇的帳號。
+
+```js
+web3.eth.sendTransaction()
+web3.eth.call()
+```
+
+> 但也可以在Function 設定 `{ from: 帳號 }` 來修改
 
 
 
