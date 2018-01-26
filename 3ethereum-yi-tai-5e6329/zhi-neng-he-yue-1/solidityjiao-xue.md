@@ -127,7 +127,20 @@ function bid() public payable {
 
 > 通常用大寫命名
 
-http://solidity.readthedocs.io/en/develop/contracts.html\#events
+之後在web3可用如下方式取得事件:
+
+```js
+ContractInstance = web3.eth.contract(Contract.ABI).at(.address);
+const eventHandler = ContractInstance.allEvents((error, event) => {
+  if (error) {
+    throw error
+  }
+  console.log('Event:');
+  console.log(event);
+});
+```
 
 
+
+[http://solidity.readthedocs.io/en/develop/contracts.html\#events](http://solidity.readthedocs.io/en/develop/contracts.html#events)
 
