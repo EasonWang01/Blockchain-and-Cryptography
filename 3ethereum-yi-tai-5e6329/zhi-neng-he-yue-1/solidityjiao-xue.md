@@ -138,9 +138,14 @@ const eventHandler = ContractInstance.allEvents((error, event) => {
   console.log('Event:');
   console.log(event);
 });
+
+// 或是
+
+const event = ContractInstance.事件名稱({}, '', function (error, result) {
+  if (!error)
+  console.log(result)
+});
 ```
-
-
 
 [http://solidity.readthedocs.io/en/develop/contracts.html\#events](http://solidity.readthedocs.io/en/develop/contracts.html#events)
 
