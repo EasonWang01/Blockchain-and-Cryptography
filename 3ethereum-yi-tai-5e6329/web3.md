@@ -232,6 +232,8 @@ web3.eth.estimateGas({
 
 > 也可使用Remix IDE的 Detail 按鈕點擊後下拉到 GASESTIMATES 部分查看，但可能會比較不準確。
 
+https://github.com/ethereum/wiki/wiki/JavaScript-API\#web3ethestimategas
+
 #### 執行合約Function
 
 ```js
