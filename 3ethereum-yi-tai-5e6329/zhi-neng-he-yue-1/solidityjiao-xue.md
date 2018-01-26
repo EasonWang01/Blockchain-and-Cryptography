@@ -149,7 +149,23 @@ const event = ContractInstance.事件名稱({}, {fromBlock: 0, toBlock: 'latest'
 // 其中第一個參數 {} 作用類似Filter可參考: https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethfilter
 ```
 
+之後存取時裡面會有一個`args` 的key其value為ASCII hex 碼
+
+可以使用下面網站解碼 : https://www.rapidtables.com/convert/number/hex-to-ascii.html
+
+或是使用以下程式
+
+```js
+function hextoASCII(_hex) {
+  let hex = _hex.toString();
+  let str = '';
+  for (let i = 0; i < hex.length; i += 2)
+      str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+  return str;
+}
+```
+
 [http://solidity.readthedocs.io/en/develop/contracts.html\#events](http://solidity.readthedocs.io/en/develop/contracts.html#events)
 
-https://ethereum.stackexchange.com/questions/16313/how-can-i-view-event-logs-for-an-ethereum-contract
+[https://ethereum.stackexchange.com/questions/16313/how-can-i-view-event-logs-for-an-ethereum-contract](https://ethereum.stackexchange.com/questions/16313/how-can-i-view-event-logs-for-an-ethereum-contract)
 
