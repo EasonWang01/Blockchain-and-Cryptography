@@ -308,5 +308,13 @@ web3.eth.call()
 web3.eth.defaultAccount = "0x76d87e6a4069e4a463ec6a1eb7b73738282906d5"
 ```
 
+改變defaultAccount後 coinbase 帳號也會跟著變，coinbase帳號是指挖礦後的獎勵會分配給哪個帳號。
+
+```
+web3.eth.coinbase
+```
+
+> `web3.eth.coinbase`方法只可讀取，無法在後面加上`=` 進行修改
+
 
 
