@@ -207,21 +207,21 @@ class App extends Component {
 export default App;
 ```
 
-## 常用指令
+# 常用指令
 
-初始化合約
+#### 初始化合約
 
 ```
 const MyContract = web3.eth.contract(合約ABI).at(合約地址);
 ```
 
-顯示金額為Ether
+#### 顯示金額為Ether
 
 ```
 web3.fromWei(web3.eth.getBalance(<帳號>))
 ```
 
-估計可能使用的Gas
+#### 估計可能使用的Gas
 
 ```
 web3.eth.estimateGas({
@@ -231,6 +231,14 @@ web3.eth.estimateGas({
 ```
 
 > 也可使用Remix IDE的 Detail 按鈕點擊後下拉到 GASESTIMATES 部分查看，但可能會比較不準確。
+
+#### 執行合約Function
+
+```js
+Contract.合約Function(參數, {from: web3.eth.accounts[0], gas: 111700})
+```
+
+> 如果合約Function有參數，則記得在最後面加上 `{from: 執行交易人地址, gas: gas使用量} `即可
 
 
 
