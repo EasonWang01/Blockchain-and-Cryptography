@@ -215,11 +215,36 @@ export default App;
 const Contract = web3.eth.contract(合約ABI).at(合約地址);
 ```
 
-#### 顯示金額為Ether
+#### 轉換單位
+
+從Wei轉為其他單位 :
 
 ```js
-web3.fromWei(web3.eth.getBalance(<帳號>))
+web3.fromWei(1000000000000000000, "ether")
 ```
+
+從其他單位轉為Wei :
+
+```
+web3.toWei('1', 'ether');
+```
+
+可用單位包含 :
+
+```
+kwei/ada
+mwei/babbage
+gwei/shannon
+szabo
+finney
+ether
+kether/grand/einstein
+mether
+gether
+tether
+```
+
+#### 查看帳號餘額
 
 #### 估計可能使用的Gas
 
@@ -257,6 +282,8 @@ if(!web3.isConnected()) {
    // 與節點連線中
 }
 ```
+
+#### 
 
 
 
