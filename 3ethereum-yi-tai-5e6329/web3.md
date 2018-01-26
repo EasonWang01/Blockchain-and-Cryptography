@@ -300,5 +300,11 @@ web3.eth.call()
 
 > 但也可以在Function 設定 `{ from: 帳號 }` 來修改
 
+如果要修改default account直接在後面加上 `= <帳號>`  即可
+
+```
+web3.eth.defaultAccount = "0x76d87e6a4069e4a463ec6a1eb7b73738282906d5"
+```
+
 
 
