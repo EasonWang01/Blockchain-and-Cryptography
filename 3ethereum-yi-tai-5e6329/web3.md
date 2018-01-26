@@ -211,19 +211,19 @@ export default App;
 
 #### 初始化合約
 
-```
-const MyContract = web3.eth.contract(合約ABI).at(合約地址);
+```js
+const Contract = web3.eth.contract(合約ABI).at(合約地址);
 ```
 
 #### 顯示金額為Ether
 
-```
+```js
 web3.fromWei(web3.eth.getBalance(<帳號>))
 ```
 
 #### 估計可能使用的Gas
 
-```
+```js
 web3.eth.estimateGas({
     to: <合約>.address, 
     data: <合約>.<合約Function>.getData(<合約Function參數>)
@@ -238,7 +238,7 @@ web3.eth.estimateGas({
 Contract.合約Function(參數, {from: web3.eth.accounts[0], gas: 111700})
 ```
 
-> 如果合約Function有參數，則記得在最後面加上 `{from: 執行交易人地址, gas: gas使用量} `即可
+> 如果合約Function有參數，則記得在最後面加上 `{from: 執行交易人地址, gas: gas使用量}`即可
 
 
 
