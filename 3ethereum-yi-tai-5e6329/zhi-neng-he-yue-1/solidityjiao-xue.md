@@ -151,7 +151,13 @@ const event = ContractInstance.事件名稱({}, {fromBlock: 0, toBlock: 'latest'
 
 之後存取時裡面會有一個`args` 的key其value為ASCII hex 碼
 
-可以使用下面網站解碼 : https://www.rapidtables.com/convert/number/hex-to-ascii.html
+可以使用下面網站解碼 : [https://www.rapidtables.com/convert/number/hex-to-ascii.html](https://www.rapidtables.com/convert/number/hex-to-ascii.html)
+
+在web3環境可以使用以下Function
+
+```
+web3.toAscii(填入Hex碼)
+```
 
 或是使用以下程式
 
