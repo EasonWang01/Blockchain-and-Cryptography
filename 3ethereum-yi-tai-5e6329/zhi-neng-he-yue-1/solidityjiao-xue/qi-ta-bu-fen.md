@@ -1,4 +1,4 @@
-# payable
+#### payable
 
 ```
 function buyTicket(uint amount) payable {
@@ -7,7 +7,7 @@ function buyTicket(uint amount) payable {
 
 包含payable的function才可以接受Ether
 
-# View, Pure, Constant
+#### View, Pure, Constant
 
 View: 可讀取，但不可修改
 
@@ -17,7 +17,7 @@ constant: 可讀取，但不可修改，不會加在function上，只加在變�
 
 > [http://solidity.readthedocs.io/en/develop/contracts.html\#view-functions](http://solidity.readthedocs.io/en/develop/contracts.html#view-functions)
 
-# 呼叫其他Contract
+#### 呼叫其他Contract
 
 先部署Calculate contract 到鏈上
 
@@ -29,7 +29,7 @@ contract calculate {
 }
 ```
 
-假設其地址為0xfEDDF8DB160Dcb85f793bfEe734352760C4AB96a
+假設其地址為 `0xfEDDF8DB160Dcb85f793bfEe734352760C4AB96a`
 
 之後呼叫其contract
 
@@ -42,9 +42,7 @@ contract computer {
 }
 ```
 
-
-
-# memory、storage、stack
+#### memory、storage、stack
 
 > storage耗費最多Gas，memory耗費較少，stack免費。
 
@@ -60,8 +58,6 @@ function test(uint[] storage _abc) internal {
 // abc變為[0, 2, 3]
 ```
 
-
-
 預設選項
 
 ```
@@ -73,7 +69,7 @@ local variables 與 value type (除了 array, struct, mapping) 存在於 stack
 
 [http://solidity.readthedocs.io/en/latest/frequently-asked-questions.html\#what-is-the-memory-keyword-what-does-it-do](http://solidity.readthedocs.io/en/latest/frequently-asked-questions.html#what-is-the-memory-keyword-what-does-it-do)
 
-# Fallback functions
+#### Fallback functions
 
 如果呼叫的function不存在於智能合約上，則EVM會自動去執行fallback function
 
@@ -87,7 +83,7 @@ function() {
 
 [https://github.com/ConsenSys/Ethereum-Development-Best-Practices/wiki/Fallback-functions-and-the-fundamental-limitations-of-using-send\(\)-in-Ethereum-&-Solidity](https://github.com/ConsenSys/Ethereum-Development-Best-Practices/wiki/Fallback-functions-and-the-fundamental-limitations-of-using-send%28%29-in-Ethereum-&-Solidity)
 
-# Getter function
+#### Getter function
 
 一般讀取資料可以直接把變數寫為public即可
 
@@ -105,7 +101,7 @@ function showString() public pure returns(string) {
 
 > 目前EVM不支援浮點數顯示，小於1且大於0的數均會顯示0
 
-## 確認地址是否存在
+#### 確認地址是否存在
 
 使用address\(0\)或是address\(0x0\)
 
@@ -119,7 +115,7 @@ function transferOwnership(address newOwner) public onlyOwner {
 }
 ```
 
-# 型別與Gas關係
+#### 型別與Gas關係
 
 一般全域宣告變數uint與uint8耗用相同Gas，但如果是在struct裡面則有差別:
 
