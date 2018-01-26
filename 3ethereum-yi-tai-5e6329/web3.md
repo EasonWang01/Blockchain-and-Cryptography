@@ -2,7 +2,7 @@
 
 官方Github : [https://github.com/ethereum/web3.js/](https://github.com/ethereum/web3.js/)
 
-官方文件 : https://web3js.readthedocs.io/en/1.0/web3.html
+官方文件 : [https://web3js.readthedocs.io/en/1.0/web3.html](https://web3js.readthedocs.io/en/1.0/web3.html)
 
 在客戶端程式中，例如網頁，為了讀取區塊鏈的資料必須使用一些方法來存取，而在web3.js及為一個可以方便網頁端存取Ethereum區塊鏈資料的第三方函式庫，為Javascript語言寫成。
 
@@ -220,6 +220,17 @@ const MyContract = web3.eth.contract(合約ABI).at(合約地址);
 ```
 web3.fromWei(web3.eth.getBalance(<帳號>))
 ```
+
+估計可能使用的Gas
+
+```
+web3.eth.estimateGas({
+    to: <合約>.address, 
+    data: <合約>.<合約Function>.getData(<合約Function參數>)
+});
+```
+
+> 也可使用Remix IDE的 Detail 按鈕點擊後下拉到 GASESTIMATES 部分查看，但可能會比較不準確。
 
 
 
