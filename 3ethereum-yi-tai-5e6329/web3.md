@@ -271,6 +271,12 @@ Contract.合約Function(參數, {from: web3.eth.accounts[0], gas: 111700})
 >
 > gas 參數指的是 gas Limit
 
+#### 取得目前鏈上的Gas Price
+
+```
+web3.eth.getGasPrice(function(err, result) {console.log(result)})
+```
+
 #### 檢查連線
 
 ```
