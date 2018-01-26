@@ -1,6 +1,8 @@
 ## Web3.js
 
-[https://github.com/ethereum/web3.js/](https://github.com/ethereum/web3.js/)
+官方Github : [https://github.com/ethereum/web3.js/](https://github.com/ethereum/web3.js/)
+
+官方文件 : https://web3js.readthedocs.io/en/1.0/web3.html
 
 在客戶端程式中，例如網頁，為了讀取區塊鏈的資料必須使用一些方法來存取，而在web3.js及為一個可以方便網頁端存取Ethereum區塊鏈資料的第三方函式庫，為Javascript語言寫成。
 
