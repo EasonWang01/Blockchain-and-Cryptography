@@ -141,11 +141,15 @@ const eventHandler = ContractInstance.allEvents((error, event) => {
 
 // 或是
 
-const event = ContractInstance.事件名稱({}, '', function (error, result) {
+const event = ContractInstance.事件名稱({}, {fromBlock: 0, toBlock: 'latest'}, function (error, result) {
   if (!error)
   console.log(result)
 });
+
+// 其中第一個參數 {} 作用類似Filter可參考: https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethfilter
 ```
 
 [http://solidity.readthedocs.io/en/develop/contracts.html\#events](http://solidity.readthedocs.io/en/develop/contracts.html#events)
+
+https://ethereum.stackexchange.com/questions/16313/how-can-i-view-event-logs-for-an-ethereum-contract
 
