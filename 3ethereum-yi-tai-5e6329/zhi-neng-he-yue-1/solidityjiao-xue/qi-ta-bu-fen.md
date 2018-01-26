@@ -137,5 +137,33 @@ NormalStruct normal = NormalStruct(10, 20, 30);
 MiniStruct mini = MiniStruct(10, 20, 30);
 ```
 
+#### byte
+
+[http://solidity.readthedocs.io/en/develop/types.html\#fixed-size-byte-arrays](http://solidity.readthedocs.io/en/develop/types.html#fixed-size-byte-arrays)
+
+其return值通常為ASCII hex 碼，可以使用下面網站解碼 : [https://www.rapidtables.com/convert/number/hex-to-ascii.html](https://www.rapidtables.com/convert/number/hex-to-ascii.html)
+
+在web3環境可以使用以下Function
+
+```
+web3.toAscii(填入Hex碼)
+```
+
+或是使用以下程式
+
+```js
+function hextoASCII(_hex) {
+  let hex = _hex.toString();
+  let str = '';
+  for (let i = 0; i < hex.length; i += 2)
+      str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+  return str;
+}
+```
+
+> 有關要使用string 還是 byte 可參考:
+>
+> [https://ethereum.stackexchange.com/questions/11556/use-string-type-or-bytes32](https://ethereum.stackexchange.com/questions/11556/use-string-type-or-bytes32)
+
 
 
