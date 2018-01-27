@@ -371,6 +371,12 @@ web3.eth.getTransactionReceipt(交易Hash)
 
 > pending 中的 transactions 無法使用 getTransactionReceipt
 
+#### 取得特定地址發送過多少交易
+
+```
+web3.eth.getTransactionCount(地址)
+```
+
 #### 查看節點是否正在進行同步
 
 ```
