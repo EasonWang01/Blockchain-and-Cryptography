@@ -138,7 +138,7 @@ Elixir語言的JSON-RPC client實作
 
 ![](/assets/012.png)
 
-並且可以自行架設
+可以參考以下兩個 Github 專案自行架設 [eth-netstats](https://github.com/cubedro/eth-netstats)
 
 [https://github.com/cubedro/eth-net-intelligence-api](https://github.com/cubedro/eth-net-intelligence-api)
 
