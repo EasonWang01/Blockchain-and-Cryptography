@@ -4,6 +4,10 @@
 
 本章節將帶領讀者實際參與智能合約的開發過程，並且部屬合約以及執行操作。
 
+> 其他可以撰寫智能合約的程式語言還有如下，但本章節將會以Solidity為範例。
+>
+> [https://github.com/ethereum/vyper](https://www.gitbook.com/book/easonwang01/e/edit#)
+
 # 實作
 
 1.
