@@ -116,16 +116,52 @@ eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(10
 
 > 因為我們使用的是 --dev 所以自動設定為Proof of Authority，所以產生交易後不需要手動挖礦即可生效
 
-![](/assets/sdca.png)之後我們新增可以讀取區塊上資料，並且可以取得一個帳號的歷史交易紀錄之功能
+![](/assets/sdca.png)之後我們新增可以讀取區塊上資料之功能。
+
+> 先讀取出目前區塊的高度後，再去讀出每個區塊的內容。
+
+```js
+// 目前區塊高度
+let blockHeight = web3.eth.blockNumber;
+this.setState({ blockHeight });
+// 所有區塊資料
+let blocks = []
+for (let i = 0; i <= blockHeight; i++) {
+  blocks.push(eth.getBlock(i, true));
+}
+this.setState({ blocks });
+```
+
+接著安裝我們使用到的相關UI套件:
+
+```
+npm install material-ui material-ui-icons react-pure-css-modal
+```
+
+之後App.js完整程式如下
 
 ```js
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Web3 from 'web3';
+import { withStyles } from 'material-ui/styles';
+import List, { ListItem, ListItemIcon, ListItemText, ListSubheader } from 'material-ui/List';
+import Collapse from 'material-ui/transitions/Collapse';
+import { ExpandLess, ExpandMore, MoveToInbox as InboxIcon, SwapHoriz } from 'material-ui-icons';
+import { Modal } from 'react-pure-css-modal';
+
+const styles = theme => ({
+  root: {
+    width: '100%',
+    maxWidth: 760,
+    margin: '0 auto',
+  },
+});
+
 const web3 = new Web3();
+window.web3 = web3
 const eth = web3.eth;
-const SHA3 = require('keccakjs')
 
 class App extends Component {
 
@@ -142,15 +178,6 @@ class App extends Component {
 
 
   componentWillMount() {
-
-    let h = new SHA3(256).update(Buffer.from("d6" + "94" + "d7c86c344ecbd9f166b053a32cd6cd34dda1b8af" + "02", 'hex')).digest('hex'); // 02  06 07 08
-    let address = h.slice(-40) // 取後面四十個字
-
-    console.log('-------------------------------------')
-    console.log('地址Address: ')
-    console.log(`0x${address}`)
-    // https://ethereum.stackexchange.com/a/761
-
     web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545')); //指定為RPC server的位置
     this.setState({ accounts: web3.eth.accounts });
 
@@ -164,33 +191,86 @@ class App extends Component {
     }
     this.setState({ blocks });
   }
+
+  searchTransactionBtn() {
+    document.getElementById('modal').click()
+    this.getTransactions(this.state.currentAddress)
+  }
+
   render() {
+    const { classes } = this.props;
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to My Dapp</h2>
         </div>
+
+        <br />查詢帳號交易紀錄 : <input onChange={(e) => this.setState({ currentAddress: e.target.value.trim() })} />
+        <button onClick={() => this.searchTransactionBtn()}>查詢</button>
+
         <div className="App-intro">
-          {this.state.accounts.map((i, idx) => (
-            <p key={idx}>帳號{idx}: {i}，餘額: {web3.fromWei(web3.eth.getBalance(i)).toString()} </p>
-          ))}
+          <br />
+          {this.state.accounts.map((i, idx) => {
+            let balance = web3.fromWei(web3.eth.getBalance(i)).toString();
+            return (
+              <div key={idx}>
+                <br />
+                <span>帳號{idx}: {i}，餘額: {balance.slice(0, 5)}{balance.indexOf('e') !== -1 ? 'e' : ''} </span>
+                <span>( Ether )</span>
+              </div>
+            )
+          }
+          )}
         </div>
-        查詢帳號交易紀錄:<input onChange={(e) => this.setState({currentAddress: e.target.value.trim()})} />
-        <button onClick={() => this.getTransactions(this.state.currentAddress)}>查詢</button>
 
 
-        <div>
-          {this.state.accountTransactions.map(d => (
-            <div>{JSON.stringify(d)}</div>
-          ))}
-        </div>
+        <Modal id="modal" onClose={() => { console.log("Modal close") }}>
+
+          {this.state.accountTransactions.length > 0
+            ? <List className={classes.root}>
+
+              {this.state.accountTransactions.map((d, idx) => (
+                <div>
+                  <ListItem button onClick={() => this.setState({ [`open${idx}`]: !this.state[`open${idx}`] })}>
+                    <ListItemIcon>
+                      <InboxIcon />
+                    </ListItemIcon>
+                    <ListItemText inset primary={d.hash} />
+                    {this.state[`open${idx}`] ? <ExpandLess /> : <ExpandMore />}
+                  </ListItem>
+                  <Collapse component="li" in={this.state[`open${idx}`]} timeout="auto" unmountOnExit>
+                    <List disablePadding>
+                      <ListItem>
+                        <ListItemIcon>
+                          <SwapHoriz />
+                        </ListItemIcon>
+                        <ListItemText inset primary={`From: ${d.from}`} />
+                      </ListItem>
+                      <ListItem>
+                        <ListItemText inset primary={`To: ${d.to}`} />
+                      </ListItem>
+                      <ListItem>
+                        <ListItemText inset primary={`Gas Limit: ${d.gas}`} />
+                        <ListItemText inset primary={`Gas Price: ${d.gasPrice}`} />
+                        <ListItemText inset primary={`At Block: ${d.blockNumber}`} />
+                        <ListItemText inset primary={`Value: ${d.value.toString()}`} />
+                      </ListItem>
+                    </List>
+                  </Collapse>
+                </div>
+              ))}
+            </List>
+            : ''}
+        </Modal>
+
       </div>
 
     );
   }
 
 
+  // 讀出特定地址之所有交易
   getTransactions(address) {
     let accountTransactions = [];
     this.state.blocks.forEach(block => {
@@ -206,8 +286,29 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withStyles(styles)(App);
 ```
+
+更改後可以看到目前畫面如下![](/assets/kopwe9.png)
+
+> 更改App.css中的.App-header即可更換為自己喜好之上方背景圖片。
+>
+> ```css
+> .App-header {
+>   background-image: url(圖片路徑); 
+>   height: 150px;
+>   padding: 20px;
+>   color: white;
+> }
+> ```
+
+接著我們把帳號複製並且貼到輸入框中，然後點選查詢，即可看到其列出所有歷史交易
+
+![](/assets/k;lsd.png)
+
+點擊該筆交易後即可展開，並查看相關交易內容。
+
+![](/assets/kpoasd0.png)
 
 # 常用指令
 
