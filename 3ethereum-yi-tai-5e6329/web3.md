@@ -363,6 +363,14 @@ web3.eth.getBlockTransactionCount(區塊號碼或Hash)
 web3.eth.getTransaction(交易Hash)
 ```
 
+或是
+
+```
+web3.eth.getTransactionReceipt(交易Hash)
+```
+
+> pending 中的 transactions 無法使用 getTransactionReceipt
+
 #### 查看節點是否正在進行同步
 
 ```
