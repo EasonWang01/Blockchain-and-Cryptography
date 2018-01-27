@@ -363,5 +363,11 @@ web3.eth.getSyncing(function(error, result){ console.log(result) })
 web3.eth.syncing
 ```
 
+也可以使用監聽的方式，在每次有新區塊時都會通知
+
+```
+web3.eth.isSyncing(callback);
+```
+
 
 
