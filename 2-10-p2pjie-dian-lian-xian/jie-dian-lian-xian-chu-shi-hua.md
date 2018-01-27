@@ -22,7 +22,7 @@ Step 3: A 節點送出 verack 請求
 const buffer = new Buffer('f9beb4d976657273696f6e000000000066000000c0a049f67f1101000d000000000000003ddc275a000000000d0000000000000000000000000000000000ffff2e043c24208d0d00000000000000000000000000000000000000000000000000659885d88df91a01102f5361746f7368693a302e31332e322f6000000001','hex');
 
 const net = require('net');
-const client = net.createConnection({ port: 8333, host: "46.4.60.36" }, () => {
+const client = net.createConnection({ port: 8333, host: "46.4.60.36" }, () => { // 此處IP可以更改為其他可用之節點IP
   // 成功連線
   console.log('connected to server!');
   client.write(buffer);

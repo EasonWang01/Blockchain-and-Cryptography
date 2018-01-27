@@ -1,4 +1,6 @@
-比特幣之區塊鏈大小非常龐大，如果下載所有資料後需要佔據大約 100GB 左右的硬碟儲存空間，所以後來發展出了一種方法，可以不用下載整個區塊鏈的節點，稱為 SPV節點 \( Simplified Payments Verification nodes \)。
+# SPV節點
+
+比特幣之區塊鏈大小非常龐大，如果下載所有資料後需要佔據大約 100GB 以上的硬碟儲存空間，所以後來發展出了一種方法，可以不用下載整個區塊鏈的節點，稱為 SPV節點 \( Simplified Payments Verification nodes \)。
 
 上一章節的節點資料交換為Full Node \(全節點\) 的資料交換方式，而這章節將講解可以有效節省空間的SPV node，SPV node只會下載 block header 而不像 Full node 會下載每個區塊裡面的所有 transaction。
 
@@ -10,7 +12,7 @@ SPV節點使用Merkle Root驗證特定交易是否存在於區塊中，不用管
 
 ## getheader
 
-範例:
+將先前程式的 Buffer 部分改為如下再次執行，即可模擬 :
 
 ```js
   const magicNum = "f9beb4d9";
@@ -56,7 +58,7 @@ SPV節點使用Merkle Root驗證特定交易是否存在於區塊中，不用管
                     6fe28c0ab6f1b372c1a6a246ae63f74f931e8365e15a089c68d6190000000000
                     0000000000000000000000000000000000000000000000000000000000000000`;
 
-  const buffer = new Buffer(magicNum + command + payload_length + checksum + payload.replace(/\s/g,''), 'hex');
+const buffer = new Buffer(magicNum + command + payload_length + checksum + payload.replace(/\s/g,''), 'hex');
 ```
 
 ## headers
@@ -65,7 +67,7 @@ SPV節點使用Merkle Root驗證特定交易是否存在於區塊中，不用管
 
 ![](/assets/螢幕快照 2017-12-26 下午7.17.14.png)
 
-範例:
+將先前程式的 Buffer 部分改為如下再次執行，即可模擬 :
 
 ```js
   const magicNum = "f9beb4d9";
