@@ -324,5 +324,22 @@ web3.eth.coinbase
 
 > `web3.eth.coinbase`方法只可讀取，無法在後面加上`=` 進行修改
 
+#### 取得特定區塊之資料
+
+```js
+web3.eth.getBlock(區塊號碼, function(error, result){
+    if(!error)
+        console.log(result)
+    else
+        console.error(error);
+})
+```
+
+或是使用
+
+```
+web3.eth.getBlock(區塊號碼)
+```
+
 
 
