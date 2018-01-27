@@ -1,10 +1,10 @@
 # 比特幣網路Protocol
 
+比特幣在節點傳輸間的封包主要分為兩個部分，一個為Message header其包含四個欄位，另一個為Payload。
+
 > ![](/assets/螢幕快照 2017-12-06 下午9.59.32.png)[https://en.bitcoin.it/wiki/Protocol\_documentation\#Message\_structure](https://en.bitcoin.it/wiki/Protocol_documentation#Message_structure)
 
 ---
-
-> 分為兩個部分一個為message header包含四個欄位，另一個為payload
 
 # Message Header
 
