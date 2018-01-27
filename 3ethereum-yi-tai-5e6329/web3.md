@@ -281,6 +281,14 @@ Contract.合約Function(參數, {from: web3.eth.accounts[0], gas: 111700})
 >
 > gas 參數指的是 gas Limit
 
+#### 發送交易
+
+```
+eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(0.05, "ether")})
+```
+
+> 可以設定gas Limit 與 gas Price ： `{gas: ..., gasPrice: ...}`
+
 #### 取得目前鏈上的Gas Price
 
 ```
