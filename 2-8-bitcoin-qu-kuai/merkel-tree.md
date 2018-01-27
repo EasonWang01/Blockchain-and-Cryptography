@@ -1,6 +1,6 @@
 # Merkle Tree
 
-由一位[Ralph Merkle](https://en.wikipedia.org/wiki/Ralph_Merkle) 的外國人在1979發布。
+由一位[Ralph Merkle](https://en.wikipedia.org/wiki/Ralph_Merkle) 的外國人在1979年發佈，主要可以用來做訊息的快速驗證，可以想像是有一棵樹，樹上有許多葉子，每個葉子都有自己的ID，今天如果要驗證這棵樹的所有葉子是否和昨天是相同的，可以把所有葉子的ID都兩兩相加做雜湊，之後再繼續把雜湊跟其隔壁葉子的兩兩雜湊結果繼續做雜湊，直到產生最後一個Root雜湊，再把這兩天的Root雜湊做比較即可。
 
 可參考如下介紹:
 
@@ -57,11 +57,9 @@ console.log('Merkle Root為:' + root);
 
 > 每一筆交易都會被放在樹的最下層葉子處，如果最後為奇數個葉子，則最後一個交易會被複製一次成為一個葉子，使其樹具有偶數個葉子，方便兩兩做Hash
 
-
-
 Bitcoin Merkle Tree原始碼:
 
-> https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/consensus/merkle.cpp
+> [https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/consensus/merkle.cpp](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/consensus/merkle.cpp)
 
 
 
