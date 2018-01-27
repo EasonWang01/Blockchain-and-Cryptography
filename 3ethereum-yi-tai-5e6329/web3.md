@@ -357,6 +357,12 @@ web3.eth.getBlock(區塊號碼)
 web3.eth.getBlockTransactionCount(區塊號碼或Hash)
 ```
 
+#### 取得交易的內容
+
+```
+web3.eth.getTransaction(交易Hash)
+```
+
 #### 查看節點是否正在進行同步
 
 ```
