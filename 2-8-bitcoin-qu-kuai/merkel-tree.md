@@ -10,7 +10,7 @@
 
 比特幣使用了Merkle Tree的結構，把區塊中的所有交易，兩兩做SHA256的Hash，最後產生一個Merkle Root，類似如下圖
 
-![](/assets/Hash_Tree.svg.png)他是把每一筆交易的TXid用兩次sha256做加密
+![](/assets/Hash_Tree.svg.png)在比特幣中，會把區塊中每一筆交易的TXid用兩次sha256做加密
 
 ```
 HA =  SHA256(SHA256(交易A))
@@ -20,9 +20,9 @@ HA =  SHA256(SHA256(交易A))
 HB =  SHA256(SHA256(交易B))
 ```
 
-然後再把兩個字串連結再一起，之後再繼續做一樣的加密，直到出現Merkle根為止
+然後再把兩個交易的雜湊字串連結再一起，之後再繼續做一樣的加密，直到出現Merkle根為止。
 
-ex:
+範例：
 
 ```js
 var crypto = require('crypto');
