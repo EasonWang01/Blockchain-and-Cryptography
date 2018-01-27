@@ -289,6 +289,18 @@ eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(0.
 
 > 可以設定gas Limit 與 gas Price ： `{gas: ..., gasPrice: ...}`
 
+範例：
+
+```js
+web3.eth.sendTransaction({
+  from:web3.eth.coinbase, to:web3.eth.accounts[1], value: web3.toWei(0.0005, "ether"), 
+  gas: 201100, gasPrice: 18000000000}, 
+  function(err, result) {
+    if(err) console.log(err);  
+    console.log(result);
+})
+```
+
 #### 取得目前鏈上的Gas Price
 
 ```
