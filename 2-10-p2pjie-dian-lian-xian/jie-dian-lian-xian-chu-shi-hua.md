@@ -129,7 +129,7 @@ Pong 回覆中的nonce欄位會和接收到的 ping 請求之nonce相同。
 
 #### Ping
 
-![](/assets/螢幕快照 2017-12-26 上午11.26.34.png)
+![](/assets/螢幕快照 2017-12-26 上午11.26.34.png)將上面程式的 Buffer 部分改為如下再次執行，即可模擬
 
 ```js
 const buffer = new Buffer('f9beb4d970696e67000000000000000008000000ca8bfa584d3181fbb3121e1b', 'hex');
@@ -137,7 +137,7 @@ const buffer = new Buffer('f9beb4d970696e67000000000000000008000000ca8bfa584d318
 
 #### Pong
 
-![](/assets/螢幕快照 2017-12-26 上午11.30.33.png)
+![](/assets/螢幕快照 2017-12-26 上午11.30.33.png)將上面程式的 Buffer 部分改為如下再次執行，即可模擬
 
 ```js
 const buffer = new Buffer('f9beb4d9706f6e670000000000000000080000002ddab80398a059a304ce08a9', 'hex');
@@ -153,9 +153,7 @@ const buffer = new Buffer('f9beb4d9706f6e670000000000000000080000002ddab80398a05
 
 mempool的請求不帶有payload
 
-![](/assets/螢幕快照 2017-12-26 下午7.42.45.png)
-
-範例:
+![](/assets/螢幕快照 2017-12-26 下午7.42.45.png)將上面程式的 Buffer 部分改為如下再次執行，即可模擬
 
 ```js
   const magicNum = "f9beb4d9";
