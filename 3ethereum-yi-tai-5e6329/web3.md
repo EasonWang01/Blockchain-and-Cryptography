@@ -134,8 +134,10 @@ this.setState({ blocks });
 
 接著安裝我們使用到的相關UI套件:
 
+> 使用Material UI: https://material-ui-next.com
+
 ```
-npm install material-ui material-ui-icons react-pure-css-modal
+npm install material-ui@1.0.0-beta.30 material-ui-icons@1.0.0-beta.17 react-pure-css-modal
 ```
 
 之後App.js完整程式如下
