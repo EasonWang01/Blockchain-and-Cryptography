@@ -2,9 +2,7 @@
 
 在建立連線後就要開始交換資料了，這時節點會向其他節點發出 getblocks 請求，這個節點會將他目前為止擁有的所有區塊header hash發送出去，告訴其他的節點，自己目前的區塊鏈同步到什麼程度了。
 
-![](/assets/螢幕快照 2017-12-26 下午12.21.31.png)
-
-範例:
+![](/assets/螢幕快照 2017-12-26 下午12.21.31.png)將上面程式的 Buffer 部分改為如下再次執行，即可模擬 :
 
 ```js
 const magicNum = "f9beb4d9";
@@ -25,9 +23,7 @@ Inv還可用來回覆其他訊息，下圖為其種類圖
 
 > ![](/assets/螢幕快照 2017-12-26 下午12.39.53.png)[https://en.bitcoin.it/wiki/Protocol\_documentation\#Inventory\_Vectors](https://en.bitcoin.it/wiki/Protocol_documentation#Inventory_Vectors)
 
-![](/assets/螢幕快照 2017-12-26 下午12.53.22.png)
-
-範例:
+![](/assets/螢幕快照 2017-12-26 下午12.53.22.png)將上面程式的 Buffer 部分改為如下再次執行，即可模擬：
 
 ```js
 const magicNum = "f9beb4d9";
@@ -46,9 +42,7 @@ const buffer = new Buffer(magicNum + command + payload_length + checksum + paylo
 
 [`block`message](https://bitcoin.org/en/developer-reference#block) 、[`merkleblock`message](https://bitcoin.org/en/developer-reference#merkleblock) 、[`notfound`message](https://bitcoin.org/en/developer-reference#notfound) 等等。
 
-![](/assets/螢幕快照 2017-12-26 下午1.07.33.png)
-
-範例:
+![](/assets/螢幕快照 2017-12-26 下午1.07.33.png)將上面程式的 Buffer 部分改為如下再次執行，即可模擬：
 
 ```js
 const magicNum = "f9beb4d9";
@@ -61,17 +55,13 @@ const payload = "010200000000000000000000000043a63945c421fb5de8c18a5d1e34304d3b1
 const buffer = new Buffer(magicNum + command + payload_length + checksum + payload, 'hex');
 ```
 
-
-
 ## 4. Block
 
 收到GetData的請求後，另外一個節點就會回應，將被請求的區塊傳送給請求的節點。
 
 礦工挖到新的區塊後也會以此方式來廣播新區塊。
 
-![](/assets/螢幕快照 2017-12-26 下午3.03.55.png)
-
-範例:
+![](/assets/螢幕快照 2017-12-26 下午3.03.55.png)將上面程式的 Buffer 部分改為如下再次執行，即可模擬 :
 
 ```js
   const magicNum = "f9beb4d9";
@@ -83,8 +73,6 @@ const buffer = new Buffer(magicNum + command + payload_length + checksum + paylo
 
   const buffer = new Buffer(magicNum + command + payload_length + checksum + payload, 'hex');
 ```
-
-
 
 
 
