@@ -66,7 +66,7 @@ The Ethereum Improvement Proposal簡稱為EIP，為以太坊社群為了讓以�
 
 [https://github.com/ethereum/EIPs](https://github.com/ethereum/EIPs)
 
-## 有關以太坊Implementations
+## 有關以太坊 Implementations
 
 以太坊有多個語言的實作
 
