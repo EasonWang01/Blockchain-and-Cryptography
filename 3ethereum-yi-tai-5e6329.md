@@ -22,15 +22,15 @@ Limit字眼可以想像是，一個人最多想要花多少單位個Gas來執行
 
 #### Gas Price
 
-即為每單位個Gas的單價。
+即為每單位Gas的價格。
 
-可以使用如下程式取得目前鏈上預設的Gas Price
+可以使用如下程式取得目前鏈上所設定的Gas Price
 
 ```
 web3.eth.getGasPrice((err, result) => console.log(result))
 ```
 
-可使用以下網站查看目前以太坊上相關 Gas 資訊 :
+可用以下網站查看目前以太坊上相關 Gas 資訊 :
 
 > [https://ethgasstation.info/](https://ethgasstation.info/)
 
