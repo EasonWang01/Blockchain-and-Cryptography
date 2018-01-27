@@ -1,12 +1,12 @@
 # 2-8 Bitcoin 區塊
 
-區塊鏈是由許多區塊所組成，每個區塊的資料結構都類似。
+區塊鏈是由許多區塊所組成，每個區塊的資料結構都類似，而每個區塊會有一個Hash，類似於該區塊的識別ID，而區塊的長度也稱為區塊高度，每個區塊Hash都會是前一個區塊的特定雜湊方式所組成，所以前面區塊如果資料被更改自然會導致後面區塊的雜湊值對不起來，而可以輕易的驗證存在區塊中的資料是否被竄改。
 
 ## 以下表格為比特幣區塊的資料結構
 
 | **欄位名稱** | **描述** | **欄位所占大小** |
 | :--- | :--- | :--- |
-| Magic no \(註1\) | 值通常為 0xD9B4BEF9 | 4 bytes |
+| Magic No. \(註1\) | 值通常為 0xD9B4BEF9 | 4 bytes |
 | Blocksize \(區塊大小\) | 顯示此區塊的大小 | 4 bytes |
 | Blockheader\(區塊頭\) | 區塊頭，包含六個部分 | 80 bytes |
 | Transaction counter\(交易數量\) | 記錄此區塊包含了幾筆交易 | 1 - 9 bytes |
@@ -72,13 +72,13 @@ EX:
 
 # 區塊高度
 
-區塊高度在每次挖出新區塊時會加一，也就是如果目前區塊高度為1000的話，代表目前區塊鏈上已經有1000個區塊。
+區塊高度在每次挖出新區塊時會加一，也就是如果目前區塊高度為1000的話，代表目前區塊鏈上已經有1001個區塊，即為後來產生的一千個區塊加上一開始的創世區塊，位在高度0。
 
 > 可以看到下圖，為當時最新的四個區塊
 
 ![](/assets/39.png)
 
-##### 也可使用以下服務，及會回傳目前區塊高度，也代表著目前區塊鏈中包含著多少區塊。
+##### 也可使用以下服務，及會回傳目前區塊高度。
 
 ```
 https://blockexplorer.com/api/status?q=getBlockCount
@@ -97,17 +97,19 @@ Bitcoin 之 genesis block 創建的原始碼
 
 > ![](/assets/2444.png)[https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp\#L123](https://www.gitbook.com/book/easonwang01/e/edit#)
 
-##### 
+---
 
 ##### 註一:
 
-可在原始碼中看到:
+#### Magic No.
+
+可在原始碼中看到 :
 
 [https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp\#L115](https://www.gitbook.com/book/easonwang01/e/edit#)
 
-在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考[https://en.wikipedia.org/wiki/Magic\_number\_\(programming\](https://www.gitbook.com/book/easonwang01/e/edit#)
+Magic Nunber在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考：
 
-##### 
+https://en.wikipedia.org/wiki/Magic\_number\_\(programming\)
 
 
 
