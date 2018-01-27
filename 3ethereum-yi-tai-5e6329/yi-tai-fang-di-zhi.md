@@ -95,3 +95,58 @@ getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 2)
 
 ![](/assets/fefw24.png)對照上圖即可看到右下角之Remix IDE 產生
 
+
+
+
+
+# 從keyFIle復原出私鑰
+
+當我們用如下方式將私鑰引入到Geth後，他以一個檔案的型態保存，存在keystore資料夾中
+
+```
+personal.importRawKey(私鑰, 密碼)
+```
+
+打開檔案後如下格式
+
+```json
+{"address":"feddf8db160dcb85f793bfee734352760c4ab96e",
+  "crypto":{"cipher":"aes-128-ctr",
+  "ciphertext":"39b03a3ba781ac6df72c6492e69c3c140e73f6a04d94ef31e2d9a72449003d9b",
+  "cipherparams":{"iv":"d2faaaa483443d97c576f8b3b012c617"},
+  "kdf":"scrypt",
+  "kdfparams":{
+    "dklen":32,
+    "n":262144,
+    "p":1,"r":8,
+    "salt":"1e45349ad4c7db93cb75564563d4792973fc6e8d98db0ffff8e0f9a93004ccd5"},
+  "mac":"22411b5dfae71337dfd7b5589758a85f22b33411a227f036e9ab36adfc47ba87"},
+  "id":"2cd506ae-d0f2-48e9-b33b-6c57eadea56e","version":3
+}
+```
+
+我們可以使用以下程式將其還原為私鑰：
+
+需要安裝第三方模組
+
+```
+npm install keythereum
+```
+
+```js
+const keyth = require('keythereum');
+const fs = require('fs');
+
+let password = '';
+// 讀取keyFile檔案
+key = fs.readFileSync('./keyfile.062746081Z--feddf8db160dcb85f793bfee734352760c4ab96e'); 
+parsed_key = JSON.parse(key.toString());
+
+const privateKey = keyth.recover(password, parsed_key);
+
+console.log(privateKey.toString('hex'));
+// 還原出私鑰
+```
+
+
+
