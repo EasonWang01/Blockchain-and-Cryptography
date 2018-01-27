@@ -1,6 +1,6 @@
 # 以太坊錢包
 
-本章節列出較常見的以太坊錢包，但使用上之安全性需要讀者自行評估。
+本章節列出較常見的以太坊錢包，錢包種類包含有網頁版，桌面版，以及手機APP，還有適合開發者使用的Command Line介面錢包，但使用上之安全性需要讀者自行評估。
 
 # Mist
 
@@ -56,11 +56,11 @@ Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌�
 
 ![](/assets/螢幕快照 2018-01-14 下午2.07.59.png)
 
-# Geth 
+# Geth
 
 將會在之後章節詳細介紹，其主要為命令列介面，適合開發者使用，可以單獨跑節點，並且提供JSON-RPC可供呼叫，也可以當作錢包使用。
 
-https://geth.ethereum.org/downloads/
+[https://geth.ethereum.org/downloads/](https://geth.ethereum.org/downloads/)
 
 # Parity
 
