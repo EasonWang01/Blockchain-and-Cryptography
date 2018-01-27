@@ -26,6 +26,12 @@ geth --testnet
 parity --chain ropsten
 ```
 
+> 有時無法sync，輸入eth.syncing時返回false，可以手動指定其他 enode
+>
+> ```
+> enode://94c15d1b9e2fe7ce56e458b9a3b672ef11894ddedd0c6f247e0f1d3487f52b66208fb4aeb8179fce6e3a749ea93ed147c37976d67af557508d199d9594c35f09@192.81.208.223:30303
+> ```
+
 2.連線到 Rinkeby network 目前只能使用Geth連線
 
 ```
