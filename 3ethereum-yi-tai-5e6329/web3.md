@@ -248,6 +248,16 @@ tether
 
 #### 查看帳號餘額
 
+```
+eth.getBalance(帳號)
+```
+
+使用Ether表示：
+
+```
+web3.fromWei(eth.getBalance(帳號), "ether")
+```
+
 #### 估計可能使用多少單位個Gas
 
 ```js
@@ -339,6 +349,18 @@ web3.eth.getBlock(區塊號碼, function(error, result){
 
 ```
 web3.eth.getBlock(區塊號碼)
+```
+
+#### 查看節點是否正在進行同步
+
+```
+web3.eth.getSyncing(function(error, result){ console.log(result) })
+```
+
+或是
+
+```
+web3.eth.syncing
 ```
 
 
