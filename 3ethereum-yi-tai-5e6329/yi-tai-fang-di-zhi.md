@@ -4,7 +4,7 @@
 
 前者是任何擁有私鑰之人即可用私鑰進行地址之發送交易與簽名等動作，而後者合約地址為受到智能合約的程式邏輯所管控。
 
-#### Externally owned account \(EOA\)
+## Externally owned account \(EOA\)
 
 在Ethereum EOA地址產生過程中，一樣使用橢圓曲線產生公鑰與私鑰，採用secp256k1曲線。其中公鑰使用 uncompressed 模式。
 
@@ -60,7 +60,7 @@ console.log(`0x${instance.getAddress().toString('hex')}`)
 
 [https://gist.github.com/lgn21st/1bd2db7eb30b55e17d07a8bc637c2f87](https://gist.github.com/lgn21st/1bd2db7eb30b55e17d07a8bc637c2f87)
 
-# 合約地址
+## Contract address\( 合約地址 \)
 
 當我們部署合約後每個合約會有一個相對應的地址，之後執行合約時都要指定要執行的合約地址。
 
