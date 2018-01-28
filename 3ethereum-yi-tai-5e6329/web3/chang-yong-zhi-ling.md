@@ -90,6 +90,8 @@ web3.eth.sendTransaction({
 })
 ```
 
+> 與交易相關的還有nonce值，每次發送交易後該nonce值都會加一，如果該地址後面發出的交易nonce小於上一筆發出交易的nonce則無法成功發送。
+
 #### 取得目前鏈上的Gas Price
 
 ```
