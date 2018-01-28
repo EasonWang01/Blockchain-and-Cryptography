@@ -1,14 +1,8 @@
 # 以太坊交易
 
-
-
-
-
-
-
 #### 對交易簽名
 
-在Metamask中如果用到 `sendTransaction` 或是 `sign` 時會自動跳出確認視窗，而如果是在Geth console中發出交易則會自動簽名，但我們也可以使用以下程式自行用私鑰對交易進行簽名。
+在Metamask中如果用到 `sendTransaction` 或是 `sign` 時會自動跳出確認視窗，而如果是在Geth console中unlock Account後發出交易則會自動簽名，但我們也可以使用以下程式自行用私鑰對交易進行簽名。
 
 需要先安裝
 
@@ -42,8 +36,6 @@ web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, h
     console.log(hash); // 回傳交易之Tx hash
 });
 ```
-
-
 
 #### 在交易中輸入自訂訊息
 
