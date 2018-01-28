@@ -1,4 +1,6 @@
-有一些函式是專門設計用來將密碼做雜湊的函式，這些即為本章我們所要介紹到的。
+## 密碼雜湊
+
+有一些工具函式是專門設計用來將密碼做雜湊的函式，這些函式的特點都是運算速度不快，並且有些需要耗費較多的運算記憶體，讓破解者無法在短時間內快速算出對應的雜湊，增加了密碼被破解的難度。
 
 # Bcrypt
 
@@ -6,11 +8,15 @@
 
 hash的過程會加入一個隨機的salt，然後salt跟password一起hash。但每次產生的salt會不一樣，所以同一個密碼每次進行產生的Hash會不同。
 
-而Bcrypt還包含Round，越多Round會需要越多的計算時間。
+而Bcrypt包含Round數，也就是要重複進行幾次運算，越多Round會需要越多的計算時間。
+
+以下為在2GHz core上的耗費時間表：
+
+![](/assets/螢幕快照 2018-01-28 下午12.06.21.png)
 
 再來你可能會想既然每次產生的Hash不同，那要怎麼進行訊息驗證呢？
 
-解答是：在要驗證訊息时，會從原先的hash中取出salt \( 通常為Hash前面幾個字 \)，然後把取出來的salt跟輸入的password進行hash，最後將得到的结果跟保存在DB中的hash進行比對。
+解答是：在要驗證訊息時，會從原先的Hash中取出salt \( 通常為Hash前面幾個字 \)，然後把取出來的salt跟輸入的password進行hash，最後將得到的結果跟之前保存在資料庫中的Hash值進行比對。
 
 我們可用Node.js的Bcrypt模組：[https://github.com/kelektiv/node.bcrypt.js](https://github.com/kelektiv/node.bcrypt.js)
 
@@ -45,7 +51,7 @@ bcrypt.compare(myPlaintextPassword, "$2a$10$8QT.28zoo.jyFB2yvDURL.IM6gL4YJHGsr1P
    console.log(res)
 });
 
-// compare填入要比對的密碼與剛才產生出的Hash
+// compare中填入要比對的密碼與剛才產生出的Hash
 ```
 
 # PBKDF2

@@ -57,7 +57,7 @@
       * [常用指令](3ethereum-yi-tai-5e6329/web3/chang-yong-zhi-ling.md)
 * [相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
   * [有關Hash](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash.md)
-    * [bcrypt、PBKDF2、scrypt、Argon2](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash/bcryptpbkdf2scryptargon2.md)
+    * [Bcrypt、PBKDF2、Scrypt、Argon2](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash/bcryptpbkdf2scryptargon2.md)
     * [SHA-256實作原理](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash/sha256shi-zuo-yuan-li.md)
     * [RIPEMD-160實作原理](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash/ripemd-160shi-zuo-yuan-li.md)
   * [對稱式加密](4xiang-guan-mi-ma-xue-jie-shao/dui-cheng-shi-jia-mi.md)
