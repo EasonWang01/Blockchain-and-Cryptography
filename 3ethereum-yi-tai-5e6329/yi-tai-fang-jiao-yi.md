@@ -15,7 +15,7 @@ web3.eth.sendTransaction({
   nonce: 目前交易的nonce，需要是此帳號的上一筆交易nonce加上1，或是使用相同nonce來覆蓋上一筆pending中的交易
 }, function(err, result) {
   if(err) console.log(err);
-  console.log(result);
+  console.log(result); // 回傳交易Hash
 })
 ```
 
