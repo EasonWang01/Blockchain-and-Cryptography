@@ -134,7 +134,7 @@ Elixir語言的JSON-RPC client實作
 
 ## 區塊鏈狀態
 
-可從此網站看到目前區塊鏈狀態
+可從此網站看到目前 Ethereum 區塊鏈狀態
 
 [https://ethstats.net/](https://ethstats.net/)
 
