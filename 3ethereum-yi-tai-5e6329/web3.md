@@ -347,7 +347,7 @@ submitTransaction() {
       return
     }
     // 解鎖發送交易的帳號
-    web3.personal.unlockAccount(this.state.senderAddress); 
+    web3.personal.unlockAccount(this.state.senderAddress); // 如有設帳號密碼須於第二個參數輸入
     // 發送交易
     eth.sendTransaction(transaction, function (err, result) {
       if (err) {
@@ -444,7 +444,7 @@ class App extends Component {
       return
     }
     // 解鎖發送交易的帳號
-    web3.personal.unlockAccount(this.state.senderAddress);
+    web3.personal.unlockAccount(this.state.senderAddress); // 如有設帳號密碼須於第二個參數輸入
     // 發送交易
     eth.sendTransaction(transaction, function (err, result) {
       if (err) {
