@@ -23,17 +23,19 @@ console.log(toHex('I got one banana'));
 
 在下方Gas Limit的部分一開始是預設21000，但因為我們帶有Input Data所以要給他更多的Gas
 
-計算方式如下 :
+**計算方式如下 :**
 
-1. 我們先到以太坊黃皮書 https://ethereum.github.io/yellowpaper/paper.pdf
+1.我們先到以太坊黃皮書 [https://ethereum.github.io/yellowpaper/paper.pdf](https://ethereum.github.io/yellowpaper/paper.pdf)
 
-    2. 找到附錄 Appendix G. Fee Schedule 的部分
+2.找到附錄 Appendix G. Fee Schedule 的部分
 
 ![](/assets/螢幕快照 2018-01-28 上午9.46.49.png)
 
-     可以看到上圖中說明，每加上一個 non-zero的byte需要多給 68Gas。
+```
+ 可以看到上圖中說明，每加上一個 non-zero的byte需要多給 68Gas。
+```
 
-   3. 我們加上的Data included可以看到Metamask下方顯示總共為16 bytes \( 32個hex字 \) ，所以如下計算
+3..我們加上的Data included可以看到Metamask下方顯示總共為16 bytes \( 32個hex字 \) ，所以如下計算
 
 ```
 (16 * 68) + 21000
@@ -43,7 +45,7 @@ console.log(toHex('I got one banana'));
 >
 > 如果Gas 給得不夠會顯示[intrinsic gas too low](https://ethereum.stackexchange.com/questions/1570/mist-what-does-intrinsic-gas-too-low-mean)
 
-   4.之後更改發出交易時的Gas Limit
+4.之後更改發出交易時的Gas Limit
 
 ![](/assets/螢幕快照 2018-01-28 上午9.29.47.png)
 
