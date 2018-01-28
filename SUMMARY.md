@@ -35,6 +35,7 @@
   * [以太坊地址](3ethereum-yi-tai-5e6329/yi-tai-fang-di-zhi.md)
   * [以太坊錢包](3ethereum-yi-tai-5e6329/yi-tai-fang-qian-bao.md)
   * [以太坊交易](3ethereum-yi-tai-5e6329/yi-tai-fang-jiao-yi.md)
+    * [Gas計算方式](3ethereum-yi-tai-5e6329/yi-tai-fang-jiao-yi/gasji-suan-fang-shi.md)
   * [EIP與ERC](3ethereum-yi-tai-5e6329/eipyu-erc.md)
   * [測試鏈](3ethereum-yi-tai-5e6329/ce-shi-lian.md)
   * [Geth](3ethereum-yi-tai-5e6329/geth.md)
