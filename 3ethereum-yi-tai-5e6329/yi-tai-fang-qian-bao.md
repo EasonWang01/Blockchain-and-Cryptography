@@ -44,7 +44,7 @@ Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌�
 
 ## MyEtherWallet
 
-打開瀏覽器網頁就能直接使用，也可以離線產生交易訊息。
+打開瀏覽器網頁就能直接使用，也可以離線產生交易訊息，以及可以引入`.keystore`檔案。
 
 [https://www.myetherwallet.com/](https://www.myetherwallet.com/)
 
