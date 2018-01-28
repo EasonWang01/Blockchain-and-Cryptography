@@ -26,19 +26,7 @@ yarn add web3
 
 ## 使用
 
-初始化，設定要讀取哪一個節點上的資料。
 
-```js
-if (typeof web3 !== 'undefined') {
-  web3 = new Web3(web3.currentProvider); // 如果有安裝Metamask則會是Metamask
-} else {
-  // 假設沒有預設的provider
-  const Web3 = require('web3');
-  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-}
-```
-
-> 如果在程式是寫localhost為provider，但是在有安裝Metamask的瀏覽器打開此Dapp，則Chrome devtool的console輸入web3時會去讀取Metamask之RPC，但寫在程式中的web3.eth.accounts還是會去讀取localhost RPC
 
 為了快速的理解使用方式，我們先輸入以下指令
 

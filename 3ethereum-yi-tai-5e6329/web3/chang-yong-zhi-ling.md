@@ -1,6 +1,24 @@
 # 常用指令
 
-#### 初始化合約
+#### 設定要讀取哪一個節點上的資料。
+
+```js
+if (typeof web3 !== 'undefined') {
+  web3 = new Web3(web3.currentProvider); // 如果有安裝Metamask則會是Metamask
+} else {
+  // 假設沒有預設的provider
+  const Web3 = require('web3');
+  web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+}
+```
+
+> 如果在程式是寫localhost為provider，但是在有安裝Metamask的瀏覽器打開此Dapp，則Chrome devtool的console輸入web3時會去讀取Metamask之RPC，但寫在程式中的web3.eth.accounts還是會去讀取localhost RPC。
+
+也可以使用第三方提供的節點來取得資訊，例如https://infura.io/
+
+![](/assets/螢幕快照 2018-01-28 下午4.01.29.png)
+
+#### 指定合約目標
 
 ```js
 const Contract = web3.eth.contract(合約ABI).at(合約地址);
@@ -232,7 +250,7 @@ web3.version.getNetwork((err, netId) => {
 })
 ```
 
-> https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#construction\_worker-network-check
+> [https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#construction\_worker-network-check](https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md#construction_worker-network-check)
 
 
 
