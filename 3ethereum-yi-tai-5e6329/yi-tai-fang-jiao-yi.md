@@ -1,5 +1,26 @@
 # 以太坊交易
 
+在以太坊中的交易通常有以下幾種類型，一種是傳送給另一個持有私鑰的地址，另一種是執行合約的交易以及傳送以太幣給合約地址。
+
+我們可以用如下的Web3程式來簡單發出一筆交易。
+
+```js
+web3.eth.sendTransaction({
+  from: 傳送人地址,
+  to: 接收者地址,
+  value: 金額（Wei）,
+  gas: 使用的Gas Limit,
+  gasPrice: 使用的Gas Price,
+  data: 額外附加的Data,
+  nonce: 目前交易的nonce，需要是此帳號的上一筆交易nonce加上1
+}, function(err, result) {
+  if(err) console.log(err);
+  console.log(result);
+})
+```
+
+
+
 #### 對交易簽名
 
 在Metamask中如果用到 `sendTransaction` 或是 `sign` 時會自動跳出確認視窗，點擊確認後即可發送出交易。
