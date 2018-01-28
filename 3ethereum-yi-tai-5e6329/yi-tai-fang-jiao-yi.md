@@ -2,7 +2,9 @@
 
 #### 對交易簽名
 
-在Metamask中如果用到 `sendTransaction` 或是 `sign` 時會自動跳出確認視窗，而如果是在Geth console中unlock Account後發出交易則會自動簽名，但我們也可以使用以下程式自行用私鑰對交易進行簽名。
+在Metamask中如果用到 `sendTransaction` 或是 `sign` 時會自動跳出確認視窗，點擊確認後即可發送出交易。
+
+而如果是在Geth console中`unlock Account`後再發出交易則會自動簽名，另外我們也可以使用以下程式自行用私鑰對交易進行簽名。
 
 需要先安裝
 
