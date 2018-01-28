@@ -352,6 +352,7 @@ submitTransaction() {
     eth.sendTransaction(transaction, function (err, result) {
       if (err) {
         alert(err);
+        window.location.reload();
         return
       }
       alert(`交易成功，${result}`);
@@ -447,8 +448,9 @@ class App extends Component {
     // 發送交易
     eth.sendTransaction(transaction, function (err, result) {
       if (err) {
-        alert(err);
-        return
+         alert(err);
+         window.location.reload();
+         return
       }
       alert(`交易成功，${result}`);
       window.location.reload();
