@@ -1,5 +1,50 @@
 # 以太坊交易
 
+
+
+
+
+
+
+#### 對交易簽名
+
+在Metamask中如果用到 `sendTransaction` 或是 `sign` 時會自動跳出確認視窗，而如果是在Geth console中發出交易則會自動簽名，但我們也可以使用以下程式自行用私鑰對交易進行簽名。
+
+需要先安裝
+
+```
+npm install ethereumjs-tx
+```
+
+```js
+const Tx = require('ethereumjs-tx');
+
+// 將以下換為其他私鑰，以下僅為範例私鑰
+let privateKey_hex = 'e331b6d69882b4cb4ea581d88e0b604039a3de5967688d3dcffdd2270c0fd109';
+const privateKey = new Buffer(privateKey_hex, 'hex')
+
+var rawTx = {
+  nonce: '0x00', // 設定nonce
+  gasPrice: '0x09184e72a000',  // 設定gasPrice
+  gasLimit: '0x2710', // 設定gasLimit
+  to: '0x0000000000000000000000000000000000000000',  // 設定收款人
+  value: '0x00',  // 金額
+  data: '0x4920676f74206f6e652062616e616e61' // 額外附加的Data，或是執行合約Function之Data
+}
+
+let tx = new Tx(rawTx);
+tx.sign(privateKey); // 簽名
+
+let serializedTx = tx.serialize();
+
+web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, hash) {
+  if (!err)
+    console.log(hash); // 回傳交易之Tx hash
+});
+```
+
+
+
 #### 在交易中輸入自訂訊息
 
 把要輸入的Data先轉為Hex
