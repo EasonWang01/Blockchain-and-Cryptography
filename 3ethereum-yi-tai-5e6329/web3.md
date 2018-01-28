@@ -121,6 +121,25 @@ for (let i = 0; i <= blockHeight; i++) {
 this.setState({ blocks });
 ```
 
+過濾出特定地址之交易
+
+```js
+// 讀出特定地址之所有交易
+getTransactions(address) {
+  let accountTransactions = [];
+  this.state.blocks.forEach(block => {
+    block.transactions.forEach(transaction => {
+      if (transaction.from === address || transaction.to === address) {
+        accountTransactions.push(transaction);
+      }
+    })
+  })
+  this.setState({ currentAddress: address })
+  this.setState({ accountTransactions })
+  return accountTransactions
+}
+```
+
 接著安裝我們使用到的相關UI套件:
 
 > 使用Material UI: [https://material-ui-next.com](https://material-ui-next.com)
@@ -582,7 +601,15 @@ export default withStyles(styles)(App);
 
 接著可以看到網頁下方有一個發送交易按鈕，我們點擊它
 
-![](/assets/xow.png)
+![](/assets/xow.png)之後會彈出一個可以輸入相關交易資訊的方塊，我們填入相關帳號以及金額
+
+![](/assets/ca9.png)
+
+之後按下發送按鈕![](/assets/kcsd9.png)
+
+
+
+
 
 
 
