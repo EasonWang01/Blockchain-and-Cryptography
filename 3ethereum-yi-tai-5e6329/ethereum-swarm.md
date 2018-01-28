@@ -58,7 +58,7 @@ curl -H "Content-Type: text/plain" --data-binary "every 60 seconds a minute pass
 
 ![](/assets/螢幕快照 2018-01-28 下午11.46.15.png)
 
-## 直接使用Swarm不連結geth
+## 直接使用Swarm不連結Geth
 
 在官方文件中說明Swarm需要Ethereum的原因為
 
