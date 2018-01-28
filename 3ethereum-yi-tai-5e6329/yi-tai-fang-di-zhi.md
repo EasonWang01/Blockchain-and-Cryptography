@@ -1,6 +1,12 @@
 # 以太坊地址
 
-在Ethereum地址產生過程中，一樣使用橢圓曲線產生公鑰與私鑰，採用secp256k1曲線。其中公鑰使用 uncompressed 模式。
+以太坊中有兩種地址，分別為Externally owned account \(EOA\)與Contract address。
+
+前者是任何擁有私鑰之人即可用私鑰進行地址之發送交易與簽名等動作，而後者合約地址為受到智能合約的程式邏輯所管控。
+
+#### Externally owned account \(EOA\)
+
+在Ethereum EOA地址產生過程中，一樣使用橢圓曲線產生公鑰與私鑰，採用secp256k1曲線。其中公鑰使用 uncompressed 模式。
 
 之後把公鑰移除開頭第一個byte，進行SHA3 \( keccak-256 \)雜湊，會得到長度為64的Hex字串，最後取後面40個字，再加上"0x"，即為地址。
 
