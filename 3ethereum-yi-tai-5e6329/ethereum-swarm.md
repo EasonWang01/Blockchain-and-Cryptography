@@ -54,5 +54,7 @@ curl -H "Content-Type: text/plain" --data-binary "every 60 seconds a minute pass
 
 > 如果Hash最後面出現如上圖的`%` 則把它替換為`/`加在路徑最後即可
 
+也可用網頁讀取：
 
+![](/assets/螢幕快照 2018-01-28 下午11.46.15.png)
 
