@@ -53,6 +53,7 @@
         * [部署及執行合約](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/tokenhe-yue/shi-zuo/bu-shu-ji-zhi-xing-he-yue.md)
   * [Dapp](3ethereum-yi-tai-5e6329/dapp.md)
     * [Web3](3ethereum-yi-tai-5e6329/web3.md)
+      * [常用指令](3ethereum-yi-tai-5e6329/web3/chang-yong-zhi-ling.md)
   * [附錄](3ethereum-yi-tai-5e6329/fu-lu.md)
 * [相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
   * [有關Hash](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash.md)
