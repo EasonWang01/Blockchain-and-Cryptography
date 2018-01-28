@@ -8,6 +8,12 @@
 
 > 另一個類似的專案為: [https://github.com/ethjs/ethjs](https://github.com/ethjs/ethjs)
 
+Web3許多Function都可以寫為異步或同步執行，但在Metamask中大部分Function都只允許異步執行。
+
+> https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#dizzy-all-async---think-of-metamask-as-a-light-client
+
+
+
 # 安裝
 
 ```
