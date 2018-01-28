@@ -328,12 +328,13 @@ export default withStyles(styles)(App);
 
 ```js
 submitTransaction() {
+  this.setState({ sending: true });
+  try {
     if (!this.state.senderAddress || !this.state.receiverAddress || !this.state.sendAmount) {
       alert('請輸入完再按確認。');
       window.location.reload();
       return
     }
-    this.setState({ sending: true })
     let transaction = {
       from: this.state.senderAddress,
       to: this.state.receiverAddress,
@@ -358,7 +359,11 @@ submitTransaction() {
       alert(`交易成功，${result}`);
       window.location.reload();
     })
+  } catch (err) {
+    alert(err)
+    window.location.reload();
   }
+}
 ```
 
 在上面我們將使用`eth.sendTransaction` 發送交易，裡面填入相關發送人與接收人之地址以及交易金額，並且給他一個預設值Gas，並且記得在發送交易之前先解鎖帳號。
@@ -425,36 +430,41 @@ class App extends Component {
   }
 
   submitTransaction() {
-    if (!this.state.senderAddress || !this.state.receiverAddress || !this.state.sendAmount) {
-      alert('請輸入完再按確認。');
-      window.location.reload();
-      return
-    }
-    this.setState({ sending: true })
-    let transaction = {
-      from: this.state.senderAddress,
-      to: this.state.receiverAddress,
-      value: web3.toWei(this.state.sendAmount, "ether"),
-      gas: 21000
-    };
-    if (!web3.isAddress(this.state.senderAddress)
-      || !web3.isAddress(this.state.receiverAddress)) {
-      alert("地址格式不正確");
-      window.location.reload();
-      return
-    }
-    // 解鎖發送交易的帳號
-    web3.personal.unlockAccount(this.state.senderAddress); // 如有設帳號密碼須於第二個參數輸入
-    // 發送交易
-    eth.sendTransaction(transaction, function (err, result) {
-      if (err) {
-         alert(err);
-         window.location.reload();
-         return
+    this.setState({ sending: true });
+    try {
+      if (!this.state.senderAddress || !this.state.receiverAddress || !this.state.sendAmount) {
+        alert('請輸入完再按確認。');
+        window.location.reload();
+        return
       }
-      alert(`交易成功，${result}`);
+      let transaction = {
+        from: this.state.senderAddress,
+        to: this.state.receiverAddress,
+        value: web3.toWei(this.state.sendAmount, "ether"),
+        gas: 21000
+      };
+      if (!web3.isAddress(this.state.senderAddress)
+        || !web3.isAddress(this.state.receiverAddress)) {
+        alert("地址格式不正確");
+        window.location.reload();
+        return
+      }
+      // 解鎖發送交易的帳號
+      web3.personal.unlockAccount(this.state.senderAddress); // 如有設帳號密碼須於第二個參數輸入
+      // 發送交易
+      eth.sendTransaction(transaction, function (err, result) {
+        if (err) {
+          alert(err);
+          window.location.reload();
+          return
+        }
+        alert(`交易成功，${result}`);
+        window.location.reload();
+      })
+    } catch (err) {
+      alert(err)
       window.location.reload();
-    })
+    }
   }
 
   // 讀出特定地址之所有交易
@@ -592,6 +602,8 @@ class App extends Component {
 }
 
 export default withStyles(styles)(App);
+
+
 ```
 
 接著可以看到網頁下方有一個發送交易按鈕，我們點擊它
