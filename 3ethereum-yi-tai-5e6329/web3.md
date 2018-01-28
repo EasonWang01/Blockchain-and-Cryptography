@@ -4,15 +4,13 @@
 
 官方文件 : [https://web3js.readthedocs.io/en/1.0/web3.html](https://web3js.readthedocs.io/en/1.0/web3.html)
 
-在客戶端程式中，例如網頁，為了讀取區塊鏈的資料必須使用一些方法來存取，web3為一個可以存取Ethereum區塊鏈資料的第三方函式庫，使用之程式語言為Javascript，在Geth console中也可以直接使用。
+在使用者端的程式中，例如網頁，為了讀取區塊鏈的資料必須使用一些方法來存取，web3為一個可以存取Ethereum區塊鏈資料的第三方函式庫，使用之程式語言為Javascript，在Geth console中也可以直接使用。
 
 > 另一個類似的專案為: [https://github.com/ethjs/ethjs](https://github.com/ethjs/ethjs)
 
 Web3許多Function都可以寫為異步或同步執行，但在Metamask中大部分Function都只允許異步執行。
 
-> https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#dizzy-all-async---think-of-metamask-as-a-light-client
-
-
+> [https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#dizzy-all-async---think-of-metamask-as-a-light-client](https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md#dizzy-all-async---think-of-metamask-as-a-light-client)
 
 # 安裝
 
