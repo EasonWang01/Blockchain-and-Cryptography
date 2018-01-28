@@ -4,11 +4,19 @@
 
 # 安裝
 
+以下提供三種安裝方法。
+
 [https://geth.ethereum.org/downloads/](https://geth.ethereum.org/downloads/)
 
-![](/assets/432.png)或是可參考其他安裝方法，包含使用Docker執行Geth
+#### 下載安裝包
 
-#### ![](/assets/2.png)從原始碼編譯
+#### ![](/assets/432.png)
+
+#### 使用Docker執行Geth
+
+#### ![](/assets/2.png)
+
+#### 從原始碼編譯
 
 ```
 git clone https://github.com/ethereum/go-ethereum
@@ -16,8 +24,8 @@ cd go-ethereum
 make geth
 ```
 
-> 需要先安裝好Golang相關環境才可編譯：https://golang.org/doc/install
-
+> 需要先安裝好Golang相關環境才可編譯：[https://golang.org/doc/install](https://golang.org/doc/install)
+>
 > 如果是自己從原始碼編譯，記得要將bin資料夾加入電腦的環境變數，才能從Terminal之直接執行Geth
 
 # 使用
