@@ -4,13 +4,7 @@
 
 智能合約可以被部屬到區塊鏈上並且被執行，每個合約都會有一個地址，而合約的邏輯是用程式寫成，目前主要開發語言為Solidity，智能合約類似於飲料販賣機，當他被部屬後想要執行交易或是執行合約上的function時，只要花費相對應的以太幣或是Gas，並且指定合約的地址以及你想要執行合約的function即可。執行後的結果會如同一般交易一樣被寫入區塊鏈中。
 
-本章節將帶領讀者實際參與智能合約的開發過程，並且部屬合約以及執行操作。
-
-> 其他可以撰寫智能合約的程式語言還有如下，但本章節將會以Solidity為範例。
->
-> [https://github.com/ethereum/vyper](https://www.gitbook.com/book/easonwang01/e/edit#)
-
-與智能合約開發有關的框架
+#### 與智能合約開發有關的框架
 
 ```
 OpenZeppelin
@@ -28,6 +22,12 @@ http://dapple.readthedocs.io/en/master/
 Embark
 https://github.com/iurimatias/embark-framework
 ```
+
+本章節將帶領讀者實際參與智能合約的開發過程，並且部屬合約以及執行操作。
+
+> 其他可以撰寫智能合約的程式語言還有如下，但本章節將會以Solidity為範例。
+>
+> [https://github.com/ethereum/vyper](https://www.gitbook.com/book/easonwang01/e/edit#)
 
 # 實作
 
