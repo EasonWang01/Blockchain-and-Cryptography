@@ -375,8 +375,12 @@ import { withStyles } from 'material-ui/styles';
 import List, { ListItem, ListItemIcon, ListItemText, ListSubheader } from 'material-ui/List';
 import Collapse from 'material-ui/transitions/Collapse';
 import { ExpandLess, ExpandMore, MoveToInbox as InboxIcon, SwapHoriz, Send } from 'material-ui-icons';
-import { Modal } from 'react-pure-css-modal';
 import { Button, Icon, TextField, Input, InputAdornment } from 'material-ui';
+import { Modal } from 'react-pure-css-modal';
+
+const web3 = new Web3();
+window.web3 = web3
+const eth = web3.eth;
 
 const styles = theme => ({
   root: {
@@ -385,10 +389,6 @@ const styles = theme => ({
     margin: '0 auto',
   },
 });
-
-const web3 = new Web3();
-window.web3 = web3
-const eth = web3.eth;
 
 class App extends Component {
 
@@ -403,11 +403,9 @@ class App extends Component {
     }
   }
 
-
   componentWillMount() {
     web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545')); //指定為RPC server的位置
     this.setState({ accounts: web3.eth.accounts });
-
     // 目前區塊高度
     let blockHeight = web3.eth.blockNumber;
     this.setState({ blockHeight });
@@ -420,7 +418,8 @@ class App extends Component {
   }
 
   searchTransactionBtn() {
-    document.getElementById('modal').click()
+    document.getElementById('searchModal').click();
+    this.setState({ searchModal: true })
     this.getTransactions(this.state.currentAddress)
   }
 
@@ -444,7 +443,7 @@ class App extends Component {
       return
     }
     // 解鎖發送交易的帳號
-    web3.personal.unlockAccount(this.state.senderAddress); 
+    web3.personal.unlockAccount(this.state.senderAddress);
     // 發送交易
     eth.sendTransaction(transaction, function (err, result) {
       if (err) {
@@ -454,6 +453,21 @@ class App extends Component {
       alert(`交易成功，${result}`);
       window.location.reload();
     })
+  }
+
+  // 讀出特定地址之所有交易
+  getTransactions(address) {
+    let accountTransactions = [];
+    this.state.blocks.forEach(block => {
+      block.transactions.forEach(transaction => {
+        if (transaction.from === address || transaction.to === address) {
+          accountTransactions.push(transaction);
+        }
+      })
+    })
+    this.setState({ currentAddress: address })
+    this.setState({ accountTransactions })
+    return accountTransactions
   }
 
   render() {
@@ -483,12 +497,9 @@ class App extends Component {
           )}
         </div>
 
-
-        <Modal id="modal" onClose={() => { console.log("Modal close") }}>
-
+        <Modal id="searchModal" onClose={() => { this.setState({ searchModal: false }) }}>
           {this.state.accountTransactions.length > 0
             ? <List className={classes.root}>
-
               {this.state.accountTransactions.map((d, idx) => (
                 <div>
                   <ListItem button onClick={() => this.setState({ [`open${idx}`]: !this.state[`open${idx}`] })}>
@@ -522,7 +533,6 @@ class App extends Component {
             </List>
             : ''}
         </Modal>
-
 
         <Modal id="send_modal" onClose={() => { this.setState({ sendModal: false }) }}>
           <div>
@@ -561,38 +571,21 @@ class App extends Component {
         </Modal>
 
         {
-          this.state.sendModal
+          this.state.sendModal || this.state.searchModal
             ?
             ''
             :
             <div style={{ marginTop: '50px' }}>
               <Button onClick={() => {
-                document.getElementById('send_modal').click();
                 this.setState({ sendModal: true })
+                document.getElementById('send_modal').click();
               }} raised color="primary">
                 <SwapHoriz />發送交易
              </Button>
             </div>
         }
       </div >
-
     );
-  }
-
-
-  // 讀出特定地址之所有交易
-  getTransactions(address) {
-    let accountTransactions = [];
-    this.state.blocks.forEach(block => {
-      block.transactions.forEach(transaction => {
-        if (transaction.from === address) {
-          accountTransactions.push(transaction);
-        }
-      })
-    })
-    this.setState({ currentAddress: address })
-    this.setState({ accountTransactions })
-    return accountTransactions
   }
 }
 
@@ -605,11 +598,9 @@ export default withStyles(styles)(App);
 
 ![](/assets/ca9.png)
 
-之後按下發送按鈕![](/assets/kcsd9.png)
+之後按下發送按鈕，即可看到上方出現交易成功字樣。![](/assets/kcsd9.png)
 
+我們使用剛才的交易搜尋功能，即可看到剛才我們轉帳的這筆交易內容
 
-
-
-
-
+![](/assets/jljwe99.png)
 
