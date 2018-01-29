@@ -50,9 +50,11 @@ geth console
 
 #### 使用JSON-RPC
 
-[https://github.com/ethereum/wiki/wiki/JSON-RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC)
+規格：http://www.jsonrpc.org/
 
-JSON-RPC為一個會回覆JSON格式的Server，試著啟動Geth之後輸入以下
+Ethereum JSON-RPC 文件： [https://github.com/ethereum/wiki/wiki/JSON-RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC)
+
+JSON-RPC，為一個輕量級無狀態的RPC Protocol，通常為一個會回覆JSON格式的Server，試著啟動Geth之後輸入以下
 
 ```
 curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}' \
@@ -61,8 +63,6 @@ curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
 ```
 
 > 因為指令較長所以分行，shell結尾的分行符號`\`前面要有一個空格，後面不可以有空格。
-
-
 
 # Geth可用指令與參數
 
