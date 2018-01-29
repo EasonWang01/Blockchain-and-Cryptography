@@ -71,6 +71,8 @@ $ node
 
 預設前往[http://127.0.0.1:8180/](http://127.0.0.1:8180/) 即可看到相關UI介面。
 
+> 直接在Parity的網頁UI介面開啟Developer console，也可以使用Web3相關API
+
 #### 改變連線Port
 
 預設UI Port為8180，而節點Port為30303，JSON-RPC Port為8545，我們可以在設定檔內更改，或直接輸入以下指令來指定Port。
