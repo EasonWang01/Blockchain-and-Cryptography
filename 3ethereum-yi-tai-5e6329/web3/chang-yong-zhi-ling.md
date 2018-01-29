@@ -25,9 +25,7 @@ import Web3 from 'web3';
 const web3 = new Web3();
 ```
 
-
-
-#### 指定合約目標
+#### 實例化合約
 
 ```js
 const Contract = web3.eth.contract(合約ABI).at(合約地址);

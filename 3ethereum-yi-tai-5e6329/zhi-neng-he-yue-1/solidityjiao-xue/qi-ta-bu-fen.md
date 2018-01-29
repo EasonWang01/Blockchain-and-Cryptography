@@ -11,7 +11,7 @@ function buyTicket(uint amount) payable {
 
 View: 可讀取，但不可修改
 
-Pure: 不可讀取，不可修改
+Pure: 不可讀取，不可修改，只能對其傳入的參數做動作
 
 constant: 可讀取，但不可修改，不會加在function上，只加在變數上
 
