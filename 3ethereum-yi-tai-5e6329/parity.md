@@ -71,3 +71,17 @@ $ node
 
 預設前往[http://127.0.0.1:8180/](http://127.0.0.1:8180/) 即可看到相關UI介面。
 
+#### 改變連線Port
+
+預設UI Port為8180，而節點Port為30303，JSON-RPC Port為8545，我們可以在設定檔內更改，或直接輸入以下指令來指定Port。
+
+```
+parity --ports-shift 2  --datadir="./parity_dir02"
+```
+
+> 將會把\(RPC, WebSockets, UI, IPFS, SecretStore\)等Port都自動往default的Port號碼往後加2
+>
+> 記得要加上--datadir 自訂資料夾位置，否則會出現`db/LOCK: Resource temporarily unavailable` 錯誤。
+
+
+
