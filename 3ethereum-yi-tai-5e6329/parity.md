@@ -10,29 +10,37 @@
 
 #### 路徑
 
-安裝後會預設安裝在以下路徑：
+安裝的可執行程式通常會再如下路徑
 
 ```
-Windows %UserProfile%\AppData\Roaming\Parity
-macOS  $HOME/Library/Application\ Support/io.parity.ethereum/
-Linux ~/.local/share/io.parity.ethereum/
+Windows: C:\Program Files\Ethcore\Parity
+macOS:  /Applications/Parity\ Ethereum.app/Contents/MacOS:$PATH
+Linux: /usr/bin/parity
+```
+
+> 將以上路徑加入環境變數即可直接在任何Terminal輸入Parity執行。
+
+區塊鏈資料與Key通常會存在以下路徑：
+
+```
+Windows: %UserProfile%\AppData\Roaming\Parity
+macOS: $HOME/Library/Application\ Support/io.parity.ethereum/
+Linux: ~/.local/share/io.parity.ethereum/
 ```
 
 #### 設定
 
-https://github.com/paritytech/parity/wiki/Configuring-Parity
+[https://github.com/paritytech/parity/wiki/Configuring-Parity](https://github.com/paritytech/parity/wiki/Configuring-Parity)
 
-Parity可以使用一個Toml檔案來進行相關設定，也可以使用此網站來線上產生設定檔https://paritytech.github.io/parity-config-generator/。
+Parity可以使用一個Toml檔案來進行相關設定，也可以使用此網站來線上產生設定檔[https://paritytech.github.io/parity-config-generator/。](https://paritytech.github.io/parity-config-generator/。)
 
 預設會讀取以下路徑下的設定檔
 
 ```
 Windows: %UserProfile%\AppData\Roaming\Parity\Ethereum\config.toml
-macOS:  $HOME/Library/Application Support/io.parity.ethereum/config.toml
+macOS:  $HOME/Library/Application\ Support/io.parity.ethereum/config.toml
 Linux: ~/.local/share/io.parity.ethereum/config.toml
 ```
 
-也可以直接在啟動Parity時在CLI上加Flag：https://github.com/paritytech/parity/wiki/Configuring-Parity\#cli-options
-
-
+也可以直接在啟動Parity時在CLI上加Flag：[https://github.com/paritytech/parity/wiki/Configuring-Parity\#cli-options](https://github.com/paritytech/parity/wiki/Configuring-Parity#cli-options)
 
