@@ -38,7 +38,7 @@ Geth提供的API endpoint包含RPC HTTP endpoint、Websocket endpoint、unix soc
 geth console
 ```
 
-即可進入 geth 的指令介面
+即可進入 Geth 的指令介面
 
 > 也可以先在A terminal輸入geth，然後開啟另一個terminal輸入geth attach，開啟console
 
@@ -48,7 +48,11 @@ geth console
 
 [https://github.com/ethereum/go-ethereum/wiki/Management-APIs\#list-of-management-apis](https://github.com/ethereum/go-ethereum/wiki/Management-APIs#list-of-management-apis)
 
-![](/assets/435345.png)
+#### 使用JSON-RPC
+
+https://github.com/ethereum/wiki/wiki/JSON-RPC
+
+JSON-RPC為一個會回覆JSON格式的Server
 
 # Geth可用指令與參數
 
