@@ -1,5 +1,3 @@
-
-
 # Gas 計算方式
 
 在一開始時我們提到過交易手續費是使用Gas來計算。
@@ -24,6 +22,8 @@
 
 ![](/assets/螢幕快照 2018-01-29 下午8.23.00s.png)
 
+## 交易Input
+
 接著我們執行一筆交易，然後在Remix IDE console的地方點選該筆執行的Details按鈕，可以看到如下
 
 ![](/assets/螢幕快照 2018-01-29 下午8.47.39.png)
@@ -41,6 +41,8 @@
 ![](/assets/螢幕快照 2018-01-29 下午8.57.31.png)
 
 接著看到在Input欄位，除了開頭的Hash外後面還多了很多0，那是我們Function的參數，其中uint256會佔有32bytes，所以是64個Hex字。可以看到`c` 即為我們輸入的參數12，`0474657374` 轉為ASCII string 後即為我們所輸入的`test`
+
+## 計算過程
 
 我們如果把Remix IDE切換成用VM執行，則可以看到多出一個名為execution cost欄位
 
@@ -74,7 +76,11 @@
 
 > 在Remix IDE 中顯示的 transaction cost 意思比較類似於 Total cost，也就是我們原本理解的`transaction cost + execution cost`
 
-3.接著我們點選Debug按鈕，然後點選右側上方的Instructions。
+
+
+## Execution cost
+
+接著我們點選Debug按鈕，然後點選右側上方的Instructions。
 
 > 必須要在Javascript VM環境下執行才可使用
 >
@@ -88,9 +94,9 @@
 
 ![](/assets/螢幕快照 2018-01-29 下午9.57.53.png)這樣我們即可算出相關的execution cost。
 
+最後，我們可以點選Step detail，看到我們這筆交易所剩餘的Gas。
 
-
-
+![](/assets/螢幕快照 2018-01-29 下午10.04.13.png)
 
 參考資料：
 
