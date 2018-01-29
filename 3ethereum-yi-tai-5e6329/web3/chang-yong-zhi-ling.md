@@ -18,6 +18,15 @@ if (typeof web3 !== 'undefined') {
 
 ![](/assets/螢幕快照 2018-01-28 下午4.01.29.png)
 
+#### 實例化Web3
+
+```js
+import Web3 from 'web3';
+const web3 = new Web3();
+```
+
+
+
 #### 指定合約目標
 
 ```js

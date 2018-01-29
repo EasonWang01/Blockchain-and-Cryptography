@@ -22,13 +22,15 @@ npm install web3
 yarn add web3
 ```
 
-> 本書使用版本為`0.20.3`
+> 本書使用版本為`0.20.4`
 
 ## 使用
 
 為了快速的理解使用方式，我們先輸入以下指令
 
 > 我們使用的前端框架為React.js，而create-react-app這個模組可以快速地幫我們架構好一個網頁程式
+>
+> https://github.com/facebook/create-react-app
 
 ```
 npm install -g create-react-app
@@ -602,8 +604,6 @@ class App extends Component {
 }
 
 export default withStyles(styles)(App);
-
-
 ```
 
 接著可以看到網頁下方有一個發送交易按鈕，我們點擊它
