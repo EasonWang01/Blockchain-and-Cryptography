@@ -4,7 +4,35 @@
 
 為一個輕量級的節點，可以快速進行節點的同步，並且在啟動後會自動開啟一個前端網頁，可以查看目前節點狀態。
 
-安裝：https://github.com/paritytech/parity/releases
+安裝：[https://github.com/paritytech/parity/releases](https://github.com/paritytech/parity/releases)
 
-文件：https://paritytech.github.io/wiki/
+文件：[https://paritytech.github.io/wiki/](https://paritytech.github.io/wiki/)
+
+#### 路徑
+
+安裝後會預設安裝在以下路徑：
+
+```
+Windows %UserProfile%\AppData\Roaming\Parity
+macOS  $HOME/Library/Application\ Support/io.parity.ethereum/
+Linux ~/.local/share/io.parity.ethereum/
+```
+
+#### 設定
+
+https://github.com/paritytech/parity/wiki/Configuring-Parity
+
+Parity可以使用一個Toml檔案來進行相關設定，也可以使用此網站來線上產生設定檔https://paritytech.github.io/parity-config-generator/。
+
+預設會讀取以下路徑下的設定檔
+
+```
+Windows: %UserProfile%\AppData\Roaming\Parity\Ethereum\config.toml
+macOS:  $HOME/Library/Application Support/io.parity.ethereum/config.toml
+Linux: ~/.local/share/io.parity.ethereum/config.toml
+```
+
+也可以直接在啟動Parity時在CLI上加Flag：https://github.com/paritytech/parity/wiki/Configuring-Parity\#cli-options
+
+
 
