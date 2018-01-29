@@ -2,11 +2,11 @@
 
 [http://swarm-guide.readthedocs.io/en/latest/introduction.html](http://swarm-guide.readthedocs.io/en/latest/introduction.html)
 
-其類似於IPFS，為一個可以把檔案上傳到區塊鏈上的專案。
+其類似於IPFS，為一個可以把檔案上傳到區塊鏈上的專案，目標為分散式的檔案存儲，沒有中心Server。
 
 Web3的bzz模組有其相關API可使用。
 
-https://web3js.readthedocs.io/en/1.0/web3-bzz.html
+[https://web3js.readthedocs.io/en/1.0/web3-bzz.html](https://web3js.readthedocs.io/en/1.0/web3-bzz.html)
 
 #### 安裝
 
