@@ -44,3 +44,7 @@ Linux: ~/.local/share/io.parity.ethereum/config.toml
 
 也可以直接在啟動Parity時在CLI上加Flag：[https://github.com/paritytech/parity/wiki/Configuring-Parity\#cli-options](https://github.com/paritytech/parity/wiki/Configuring-Parity#cli-options)
 
+
+
+
+

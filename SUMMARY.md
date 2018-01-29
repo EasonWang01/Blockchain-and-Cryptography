@@ -58,7 +58,7 @@
     * [Web3](3ethereum-yi-tai-5e6329/web3.md)
       * [常用指令](3ethereum-yi-tai-5e6329/web3/chang-yong-zhi-ling.md)
   * [Ethereum Swarm](3ethereum-yi-tai-5e6329/ethereum-swarm.md)
-  * Parity
+  * [Parity](3ethereum-yi-tai-5e6329/parity.md)
 * [相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
   * [有關Hash](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash.md)
     * [Bcrypt、PBKDF2、Scrypt、Argon2](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash/bcryptpbkdf2scryptargon2.md)
