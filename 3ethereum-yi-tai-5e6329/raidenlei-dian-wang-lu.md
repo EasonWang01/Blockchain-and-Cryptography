@@ -14,11 +14,7 @@ Windows %UserProfile%\AppData\Roaming\Parity
 Linux ~/.local/share/io.parity.ethereum/
 ```
 
-如果我們有安裝Geth也可以使用Geth console連線到Parity
 
-```
-geth attach $HOME/Library/Application\ Support/io.parity.ethereum/jsonrpc.ipc
-```
 
 
 

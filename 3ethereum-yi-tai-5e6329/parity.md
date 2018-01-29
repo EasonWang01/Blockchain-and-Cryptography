@@ -44,7 +44,30 @@ Linux: ~/.local/share/io.parity.ethereum/config.toml
 
 也可以直接在啟動Parity時在CLI上加Flag：[https://github.com/paritytech/parity/wiki/Configuring-Parity\#cli-options](https://github.com/paritytech/parity/wiki/Configuring-Parity#cli-options)
 
+#### 連線
 
+如果我們有安裝Geth也可以使用Geth console連線到Parity
+
+```
+geth attach $HOME/Library/Application\ Support/io.parity.ethereum/jsonrpc.ipc
+```
+
+或是安裝Web3
+
+```
+npm install web3
+```
+
+接著使用Node.js的command line：
+
+```
+$ node
+> Web3 = require("web3")
+> web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+> web3.version
+
+// 回傳相關資料
+```
 
 
 
