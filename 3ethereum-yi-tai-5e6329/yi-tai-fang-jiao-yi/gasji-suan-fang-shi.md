@@ -74,5 +74,11 @@
 
 > 在Remix IDE 中顯示的 transaction cost 意思比較類似於 Total cost，也就是我們原本理解的`transaction cost + execution cost`
 
+3.接著我們點選Debug按鈕，然後點選右側上方的Instructions。
+
+![](/assets/螢幕快照 2018-01-29 下午9.40.44.png)
+
+
+
 
 
