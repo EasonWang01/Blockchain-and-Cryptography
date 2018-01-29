@@ -9,11 +9,11 @@ function buyTicket(uint amount) payable {
 
 #### View, Pure, Constant
 
-View: 可讀取，但不可修改
+View: 可讀取，但不可修改。
 
-Pure: 不可讀取，不可修改，只能對其傳入的參數做動作
+Pure: 不可讀取，不可修改，只能對其傳入的參數做動作，類似於Function Programing 中的Pure Function概念。
 
-constant: 可讀取，但不可修改，不會加在function上，只加在變數上
+Constant: 可讀取，但不可修改，不會加在function上，只加在變數上。
 
 > [http://solidity.readthedocs.io/en/develop/contracts.html\#view-functions](http://solidity.readthedocs.io/en/develop/contracts.html#view-functions)
 
