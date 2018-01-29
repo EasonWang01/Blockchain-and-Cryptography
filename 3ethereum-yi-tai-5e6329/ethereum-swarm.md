@@ -78,7 +78,7 @@ curl -H "Content-Type: text/plain" --data-binary "every 60 seconds a minute pass
 > * Incentivisation \(for example: SWAP\)
 
 ```
-所以啟動沒有 domain 解析的Swarm可以加上 --ens-api=""，並且不加上 --swap-api（預設關閉）。
+啟動沒有 domain 解析的Swarm可以加上 --ens-api=""，並且不加上 --swap-api（預設關閉）。
 ```
 
 先輸入`./geth account list` 查看目前的帳號
