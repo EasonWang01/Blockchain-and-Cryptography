@@ -131,7 +131,7 @@ eth.sendTransaction({from: eth.accounts[0], to: "0xdf6d9ad96b630e06325ceb9f7e23a
 
 14.
 
-接著方別再兩節點輸入挖礦指令，比較結果
+接著分別再兩節點輸入挖礦指令，比較結果
 
 ```
 miner.start(1)

@@ -18,5 +18,9 @@
 
 ![](/assets/螢幕快照 2018-01-29 下午5.18.54.png)
 
-我們以Remix IDE來看
+我們以Remix IDE來看，在執行合約時填入的Gas Limit為允許最多消耗多少Gas，如果執行合約需要比這個更多的Gas則執行不會成功，用來預防執行時耗費太多Gas，如果執行合約的Gas小於Gas Limit則會把多的退還。
+
+下面的Value不是設定Gas Price，指的是要發送多少以太幣到合約，通常用來設定發送到Payable Function的金額。
+
+![](/assets/螢幕快照 2018-01-29 下午8.23.00s.png)
 
