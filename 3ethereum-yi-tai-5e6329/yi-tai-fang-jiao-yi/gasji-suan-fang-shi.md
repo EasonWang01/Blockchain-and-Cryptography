@@ -82,3 +82,9 @@
 
 ![](/assets/螢幕快照 2018-01-29 下午9.40.44.png)我們看到的Instruction為Ethereum Assembly instructions，計算execution cost即從此過程計算。
 
+接著我們比對黃皮書
+
+![](/assets/螢幕快照 2018-01-29 下午9.57.23.png)可以看到每個種類分別的Gas花費
+
+![](/assets/螢幕快照 2018-01-29 下午9.57.53.png)
+
