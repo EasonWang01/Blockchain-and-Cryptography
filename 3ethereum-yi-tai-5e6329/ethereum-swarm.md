@@ -70,6 +70,17 @@ curl -H "Content-Type: text/plain" --data-binary "every 60 seconds a minute pass
 
 ![](/assets/螢幕快照 2018-01-28 下午11.46.15.png)
 
+#### 上傳檔案
+
+可以如下上傳檔案
+
+```
+./swarm up ./file.txt
+// 回傳Hash 8997c8d131f6183a2f61ee86928856ebe5231bd2fcae66a1ddbb30fb79ccf26a
+```
+
+
+
 ## 直接使用Swarm不連結Geth
 
 在官方文件中說明Swarm需要Ethereum的原因為
