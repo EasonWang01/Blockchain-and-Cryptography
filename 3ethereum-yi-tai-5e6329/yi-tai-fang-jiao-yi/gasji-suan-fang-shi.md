@@ -1,4 +1,4 @@
-[https://vomtom.at/what-exactly-is-the-gas-limit-and-the-gas-price-in-ethereum/](https://vomtom.at/what-exactly-is-the-gas-limit-and-the-gas-price-in-ethereum/)
+
 
 # Gas 計算方式
 
@@ -86,5 +86,13 @@
 
 ![](/assets/螢幕快照 2018-01-29 下午9.57.23.png)可以看到每個種類分別的Gas花費
 
-![](/assets/螢幕快照 2018-01-29 下午9.57.53.png)
+![](/assets/螢幕快照 2018-01-29 下午9.57.53.png)這樣我們即可算出相關的execution cost。
+
+
+
+
+
+參考資料：
+
+[https://vomtom.at/what-exactly-is-the-gas-limit-and-the-gas-price-in-ethereum/](https://www.gitbook.com/book/easonwang01/e/edit#)
 
