@@ -75,11 +75,9 @@ curl -H "Content-Type: text/plain" --data-binary "every 60 seconds a minute pass
 可以如下上傳檔案
 
 ```
-./swarm up ./file.txt
+./swarm up 檔案或目錄
 // 回傳Hash 8997c8d131f6183a2f61ee86928856ebe5231bd2fcae66a1ddbb30fb79ccf26a
 ```
-
-
 
 ## 直接使用Swarm不連結Geth
 
