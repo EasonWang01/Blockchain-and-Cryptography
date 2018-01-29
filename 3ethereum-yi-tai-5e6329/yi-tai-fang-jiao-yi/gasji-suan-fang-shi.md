@@ -80,7 +80,5 @@
 >
 > 或是Geth 要開啟debug的RPC `--rpcapi "eth,net,web3,debug"`
 
-![](/assets/螢幕快照 2018-01-29 下午9.40.44.png)
-
-
+![](/assets/螢幕快照 2018-01-29 下午9.40.44.png)我們看到的Instruction為Ethereum Assembly instructions，計算execution cost即從此過程計算。
 
