@@ -6,7 +6,11 @@
 
 在使用者端的程式中，例如網頁，為了讀取區塊鏈的資料必須使用一些方法來存取，web3為一個可以存取Ethereum區塊鏈資料的第三方函式庫，使用之程式語言為Javascript，在Geth console中也可以直接使用。
 
-> 另一個類似的專案為: [https://github.com/ethjs/ethjs](https://github.com/ethjs/ethjs)
+> 類似專案:
+>
+>  [https://github.com/ethjs/ethjs](https://github.com/ethjs/ethjs)
+>
+> https://github.com/ethers-io/ethers.js/
 
 Web3許多Function都可以寫為異步或同步執行，但在Metamask中大部分Function都只允許異步執行。
 
@@ -30,7 +34,7 @@ yarn add web3
 
 > 我們使用的前端框架為React.js，而create-react-app這個模組可以快速地幫我們架構好一個網頁程式
 >
-> https://github.com/facebook/create-react-app
+> [https://github.com/facebook/create-react-app](https://github.com/facebook/create-react-app)
 
 ```
 npm install -g create-react-app
