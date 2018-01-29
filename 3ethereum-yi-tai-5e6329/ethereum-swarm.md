@@ -2,6 +2,14 @@
 
 [http://swarm-guide.readthedocs.io/en/latest/introduction.html](http://swarm-guide.readthedocs.io/en/latest/introduction.html)
 
+其類似於IPFS，為一個可以把檔案上傳到區塊鏈上的專案。
+
+Web3的bzz模組有其相關API可使用。
+
+https://web3js.readthedocs.io/en/1.0/web3-bzz.html
+
+#### 安裝
+
 ```
 git clone https://github.com/ethereum/go-ethereum
 cd go-ethereum
@@ -14,11 +22,15 @@ make all
 
 ![](/assets/螢幕快照 2018-01-28 下午11.21.32.png)
 
+#### 使用
+
 之後我們新增一個帳號
 
 ```
 ./geth account new
 ```
+
+> 如果已經有帳號，可以輸入 `./geth account list` 查看帳號
 
 ![](/assets/螢幕快照 2018-01-28 下午11.28.57.png)
 
