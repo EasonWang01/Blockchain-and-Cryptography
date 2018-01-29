@@ -14,7 +14,9 @@
 
 > 在第24頁，附錄Appendix G. Fee Schedule
 >
-> https://ethereum.github.io/yellowpaper/paper.pdf
+> [https://ethereum.github.io/yellowpaper/paper.pdf](https://ethereum.github.io/yellowpaper/paper.pdf)
 
 ![](/assets/螢幕快照 2018-01-29 下午5.18.54.png)
+
+我們以Remix IDE來看
 
