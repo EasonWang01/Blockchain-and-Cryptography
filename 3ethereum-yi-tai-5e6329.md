@@ -2,9 +2,9 @@
 
 以太坊是一個開源的區塊鏈平台，代幣稱為以太幣\(ETH\)，和比特幣一樣具有挖礦機制，但其更具特色的是具有智能合約系統，開發者可以撰寫智能合約然後給以太坊的虛擬機\(EVM\)進行編譯，然後部署到區塊鏈上，部署後的合約可以被其他人執行，並執行合約上對應的功能，每個被部署到以太坊區塊鏈的智能合約都具有一個地址。
 
-以太坊白皮書：https://github.com/ethereum/wiki/wiki/White-Paper
+以太坊白皮書：[https://github.com/ethereum/wiki/wiki/White-Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 
-以太坊黃皮書：https://ethereum.github.io/yellowpaper/paper.pdf
+以太坊黃皮書：[https://ethereum.github.io/yellowpaper/paper.pdf](https://ethereum.github.io/yellowpaper/paper.pdf)
 
 ## 交易手續費
 
@@ -26,7 +26,7 @@ Limit字眼可以想像是，一個人最多想要花多少單位個Gas來執行
 
 #### Gas Price
 
-即為每單位Gas的價格。
+即為每單位Gas的價格，礦工們會依據此來決定納入交易的先後順序。
 
 可以使用如下程式取得目前鏈上所設定的Gas Price
 
