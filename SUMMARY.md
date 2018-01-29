@@ -38,6 +38,7 @@
     * [Gas計算方式](3ethereum-yi-tai-5e6329/yi-tai-fang-jiao-yi/gasji-suan-fang-shi.md)
   * [EIP與ERC](3ethereum-yi-tai-5e6329/eipyu-erc.md)
   * [測試鏈](3ethereum-yi-tai-5e6329/ce-shi-lian.md)
+  * [Parity](3ethereum-yi-tai-5e6329/parity.md)
   * [Geth](3ethereum-yi-tai-5e6329/geth.md)
     * [私有鏈](3ethereum-yi-tai-5e6329/geth/si-you-lian.md)
     * [開發鏈](3ethereum-yi-tai-5e6329/geth/ce-shi-lian.md)
@@ -57,7 +58,7 @@
     * [Web3](3ethereum-yi-tai-5e6329/web3.md)
       * [常用指令](3ethereum-yi-tai-5e6329/web3/chang-yong-zhi-ling.md)
   * [Ethereum Swarm](3ethereum-yi-tai-5e6329/ethereum-swarm.md)
-  * [Raiden雷電網路](3ethereum-yi-tai-5e6329/raidenlei-dian-wang-lu.md)
+  * Parity
 * [相關密碼學介紹](4xiang-guan-mi-ma-xue-jie-shao.md)
   * [有關Hash](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash.md)
     * [Bcrypt、PBKDF2、Scrypt、Argon2](4xiang-guan-mi-ma-xue-jie-shao/you-guan-hash/bcryptpbkdf2scryptargon2.md)
