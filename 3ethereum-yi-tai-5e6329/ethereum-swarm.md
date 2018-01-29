@@ -2,7 +2,7 @@
 
 [http://swarm-guide.readthedocs.io/en/latest/introduction.html](http://swarm-guide.readthedocs.io/en/latest/introduction.html)
 
-https://github.com/ethersphere/swarm-guide/blob/master/contents/usage.rst
+[https://github.com/ethersphere/swarm-guide/blob/master/contents/usage.rst](https://github.com/ethersphere/swarm-guide/blob/master/contents/usage.rst)
 
 其類似於IPFS，為一個可以把檔案上傳到區塊鏈上的專案，目標為分散式的檔案存儲，沒有中心Server。
 
@@ -77,9 +77,29 @@ curl -H "Content-Type: text/plain" --data-binary "every 60 seconds a minute pass
 可以如下上傳檔案
 
 ```
-./swarm up 檔案或目錄
-// 回傳Hash 8997c8d131f6183a2f61ee86928856ebe5231bd2fcae66a1ddbb30fb79ccf26a
+./swarm up 檔案路徑
 ```
+
+#### 上傳目錄
+
+> 先如下創建資料夾及檔案
+>
+> ```
+> mkdir testdir
+> echo "test" >> ./testdir/test.txt
+> ```
+
+```
+./swarm --recursive up ./testdir
+```
+
+之後到以下連結即可看檔案
+
+```
+http://localhost:8500/bzz:/回傳之Hash/test.txt
+```
+
+> 如果沒有加入檔案名稱在Hash後則會顯示找不到檔案
 
 ## 直接使用Swarm不連結Geth
 
