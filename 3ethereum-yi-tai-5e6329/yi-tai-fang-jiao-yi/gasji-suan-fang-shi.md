@@ -76,9 +76,11 @@
 
 3.接著我們點選Debug按鈕，然後點選右側上方的Instructions。
 
+> 必須要在Javascript VM環境下執行才可使用
+>
+> 或是Geth 要開啟debug的RPC `--rpcapi "eth,net,web3,debug"`
+
 ![](/assets/螢幕快照 2018-01-29 下午9.40.44.png)
-
-
 
 
 
