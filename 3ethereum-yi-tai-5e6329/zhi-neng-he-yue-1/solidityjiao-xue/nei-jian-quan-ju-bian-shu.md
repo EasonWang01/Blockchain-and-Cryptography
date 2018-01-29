@@ -75,6 +75,8 @@ tx.origin (address)
 
 #### 錯誤處理
 
+為了避免EVM在執行時發生錯誤後直接消耗掉所有提供的Gas，以及一些不可預料的情況導致合約產生Bug，我們會使用以下來是來處理條件內容。
+
 ```
 assert(bool condition):
 如果情況錯誤則拋出錯誤，通常用於判斷內部邏輯錯誤。
@@ -129,8 +131,6 @@ suicide(address recipient):
 類似於selfdestruct，但selfdestruct為新版本才有，至於改名字原因可參考：
 https://github.com/ethereum/EIPs/blob/master/EIPS/eip-6.md
 ```
-
-
 
 
 
