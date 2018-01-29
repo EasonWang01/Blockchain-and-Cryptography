@@ -42,3 +42,37 @@
 
 接著看到在Input欄位，除了開頭的Hash外後面還多了很多0，那是我們Function的參數，其中uint256會佔有32bytes，所以是64個Hex字。可以看到`c` 即為我們輸入的參數12，`0474657374` 轉為ASCII string 後即為我們所輸入的`test`
 
+我們如果把Remix IDE切換成用VM執行，則可以看到多出一個名為execution cost欄位
+
+![](/assets/螢幕快照 2018-01-29 下午9.23.39.png)我們先將兩個值相減
+
+```
+124948 - 102332 = 22616
+```
+
+然後計算Input的花費：
+
+1.我們先計算Input共多少個bytes
+
+![](/assets/螢幕快照 2018-01-29 下午9.33.04.png)
+
+> 共392個字，每個Hex為0.5 bytes，所以總共為196 bytes。
+
+2.計算幾個zero byte與non-zero bytes
+
+兩個兩個一組來看，總共出有13個non-zero bytes，所以我們196 - 13 = 183。
+
+> 每個zero byte 需要花費 4 gas
+>
+> 每個non-zero bytes 需要花費 68 gas
+
+```
+(13 * 68) + ( 183 * 4) + 21000 = 22616
+```
+
+可以發現與上面得到相同答案`transaction cost - execution cost`。
+
+> 在Remix IDE 中顯示的 transaction cost 意思比較類似於 Total cost，也就是我們原本理解的`transaction cost + execution cost`
+
+
+
