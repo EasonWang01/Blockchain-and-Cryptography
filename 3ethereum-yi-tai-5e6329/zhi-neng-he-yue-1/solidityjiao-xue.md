@@ -8,6 +8,23 @@
 
 > 可參考官方style guide來撰寫：[http://solidity.readthedocs.io/en/develop/style-guide.html](http://solidity.readthedocs.io/en/develop/style-guide.html)
 
+#### 安裝Solidity Compiler:
+
+如果使用Remix IDE網頁則不需要安裝。
+
+http://solidity.readthedocs.io/en/latest/installing-solidity.html
+
+使用Node.js套件：https://github.com/ethereum/solc-js
+
+```
+npm install solc -g
+solcjs
+```
+
+
+
+# 合約撰寫
+
 #### 1.版本
 
 ```
