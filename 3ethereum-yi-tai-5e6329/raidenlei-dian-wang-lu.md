@@ -93,7 +93,21 @@ Linux: ~/.local/share/io.parity.ethereum/keys/test
 
 Raiden 有一系列的 RESTful API 可以供使用者對其Channel進行相關操作。
 
-https://raiden-network.readthedocs.io/en/stable/rest\_api.html
+[https://raiden-network.readthedocs.io/en/stable/rest\_api.html](https://raiden-network.readthedocs.io/en/stable/rest_api.html)
+
+我們首先輸入以下，如果回傳與我們剛才輸入相同的地址，及代表Raiden正確運行：
+
+```
+curl -s http://127.0.0.1:5001/api/1/address
+```
+
+> Raiden收到後也會產生Log
+
+![](/assets/螢幕快照 2018-01-30 下午11.25.19.png)
+
+
+
+
 
 ---
 
