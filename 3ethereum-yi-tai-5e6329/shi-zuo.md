@@ -10,3 +10,9 @@ geth --dev --rpc --rpcport 8545 --datadir ./eth_Dapp --rpccorsdomain="*"  consol
 
 
 
+```
+npm install semantic-ui-react@0.77.2 semantic-ui-css@2.2.14 react-pure-css-modal
+```
+
+
+
