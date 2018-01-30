@@ -1,4 +1,4 @@
-# 2-5 Bitcoin 地址
+# Bitcoin 地址
 
 比特幣地址類似於銀行帳號，可以公開告訴其他人，並且用其來進行收款動作。
 
@@ -24,7 +24,7 @@
 
 ![](/assets/螢幕快照 2018-01-21 上午11.03.45.png)
 
-> 可參考：https://en.bitcoin.it/wiki/List\_of\_address\_prefixes
+> 可參考：[https://en.bitcoin.it/wiki/List\_of\_address\_prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
 
 # 地址種類
 
