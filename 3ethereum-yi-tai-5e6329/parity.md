@@ -8,6 +8,8 @@
 
 文件：[https://paritytech.github.io/wiki/](https://paritytech.github.io/wiki/)
 
+![](/assets/螢幕快照 2018-01-30 下午10.26.00.png)
+
 #### 路徑
 
 安裝的可執行程式通常會再如下路徑
