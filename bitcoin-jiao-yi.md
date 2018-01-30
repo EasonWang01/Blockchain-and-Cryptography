@@ -2,7 +2,7 @@
 
 比特幣主要用途為支付，所以交易為其重要的一環，在本章節中我們會示範比特幣交易，並且講解其交易過程與原理。
 
-以下我們用bitcoinjs-lib來建立交易
+以下我們將使用bitcoinjs-lib第三方模組來建立交易。
 
 > 如還沒安裝需先使用npm安裝
 >
@@ -11,56 +11,60 @@
 > ```
 
 ```js
-var bitcoin = require('bitcoinjs-lib')
-var keyPair = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
-var tx = new bitcoin.TransactionBuilder()
+const bitcoin = require('bitcoinjs-lib')
 
-tx.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0) 
+// 可輸入其他私鑰
+const privateKey = "L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy";
+const keyPair = bitcoin.ECPair.fromWIF(privateKey);
+const tx = new bitcoin.TransactionBuilder()
+
+tx.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0)
 //addInput第一個參數為上一個unspend 的來源TXid
-//第二個參數為當次該unspend在TXid的output中之index，假設一筆交易有兩個output則他們index則分別為0和1 從0開始排序
+// 第二個參數為當次該unspend在TXid的output中之index，假設一筆交易有兩個output則他們index則分別為0和1，從0開始往上加1。
 
 tx.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)
 // addOutput第一個參數為要轉給哪個地址，第二個參數為金額(satoshi)
 
 tx.sign(0, keyPair)
-//使用私鑰簽發
+// 使用私鑰簽發
+
+// 產生交易訊息
 console.log(tx.build());
+
+// hex格式的交易訊息
+console.log(tx.build().toHex());
 ```
 
-此時會產生如下
+執行程式後會產生如下
 
-```json
-Transaction {
-  version: 1,
-  locktime: 0,
-  ins:
-   [ { hash: <Buffer 31 3e b6 30 b1 28 10 2b 60 24 1c a8 95 f1 d0 ff ca 21 70 d5 a0 99 0e 09 4f 21 82 c1 02 ab 94 aa>,
-       index: 0,
-       script: <Buffer 48 30 45 02 21 00 ae fb cf 84 79 00 b0 1d d3 e3 de be 05 4d 3b 6d 03 d7 15 d5 0a ea 85 25 f5 ea 33 96 f1 68 a1 fb 02 20 13 d1 81 d0 5b 15 b9 01 11 80 ... >,
-       sequence: 4294967295,
-       witness: [] } ],
-  outs:
-   [ { script: <Buffer 76 a9 14 ad 61 8c f4 33 3b 3b 24 8f 97 44 e8 e8 1d b2 96 4d 0a e3 97 88 ac>,
-       value: 15000 } ] }
-```
+![](/assets/螢幕快照 2018-01-30 上午11.43.32.png)
+
+> 此時交易尚未被廣播，下方Hex字串即為可以用來廣播的交易訊息。
+
+
 
 或是也可以產生2 to 2 的交易\(兩個輸入的地址與兩個輸出的地址\)
 
 ```js
-var bitcoin = require("bitcoinjs-lib");
+const bitcoin = require("bitcoinjs-lib");
 
-var alice = bitcoin.ECPair.fromWIF('L1Knwj9W3qK3qMKdTvmg3VfzUs3ij2LETTFhxza9LfD5dngnoLG1')
-var bob = bitcoin.ECPair.fromWIF('KwcN2pT3wnRAurhy7qMczzbkpY5nXMW2ubh696UBc1bcwctTx26z')
+// 兩個人的私鑰
+const alice = bitcoin.ECPair.fromWIF('L1Knwj9W3qK3qMKdTvmg3VfzUs3ij2LETTFhxza9LfD5dngnoLG1')
+const bob = bitcoin.ECPair.fromWIF('KwcN2pT3wnRAurhy7qMczzbkpY5nXMW2ubh696UBc1bcwctTx26z')
 
-var txb = new bitcoin.TransactionBuilder()
-txb.addInput('b5bb9d8014a0f9b1d61e21e796d78dccdf1352f23cd32812f4850b878ae4944c', 6) // Alice's previous transaction output, has 200000 satoshis
-txb.addInput('7d865e959b2466918c9863afca942d0fb89d7c9ac0c99bafc3749504ded97730', 0) // Bob's previous transaction output, has 300000 satoshis
+const txb = new bitcoin.TransactionBuilder()
+// Alice 餘額中前一筆交易的 output，含有 200000 satoshis
+txb.addInput('b5bb9d8014a0f9b1d61e21e796d78dccdf1352f23cd32812f4850b878ae4944c', 6) 
+// Bob 餘額中前一筆交易的 output，含有 300000 satoshis
+txb.addInput('7d865e959b2466918c9863afca942d0fb89d7c9ac0c99bafc3749504ded97730', 0) 
+
+// 發送給另外兩個地址
 txb.addOutput('1CUNEBjYrCn2y1SdiUMohaKUi4wpP326Lb', 180000)
 txb.addOutput('1JtK9CQw1syfWj1WtFMWomrYdV3W2tWBF9', 170000)
-// (in)(200000 + 300000) - (out)(180000 + 150000) = (fee)170000, this is the miner fee
+// (in)(200000 + 300000) - (out)(180000 + 170000) = 礦工手續費為：150000
 
-txb.sign(1, bob) // Bob signs his input, which was the second input (1th)
-txb.sign(0, alice) // Alice signs her input, which was the first input (0th)
+txb.sign(1, bob) // Bob 簽發他第二個input
+txb.sign(0, alice) // Alice 簽發他第一次input
 
 console.log(txb.build().toHex())
 ```
