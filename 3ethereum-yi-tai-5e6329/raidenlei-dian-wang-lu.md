@@ -10,15 +10,30 @@
 
 需要裝好：
 
+1.python3
+
+https://www.python.org/downloads/
+
+2.solc
+
 [http://solidity.readthedocs.io/en/latest/installing-solidity.html](http://solidity.readthedocs.io/en/latest/installing-solidity.html)
+
+> solc不能安裝npm版本，因為其command名稱為solcjs，之後會無法作用，必須安裝其他版本。
+
+3.pyethapp
 
 [https://github.com/ethereum/pyethapp/\#installation-on-ubuntudebian](https://github.com/ethereum/pyethapp/#installation-on-ubuntudebian)
 
 然後
 
 ```
-
+git clone https://github.com/raiden-network/raiden.git
+cd raiden
+pip install --upgrade -r requirements.txt
+python setup.py develop
 ```
+
+#### 同步節點
 
 目前只能使用完全同步後的Ropsten測試網路來進行Raiden雷電網路的執行，輸入以下指令來進行節點同步。
 
@@ -66,7 +81,13 @@ Linux: ~/.local/share/io.parity.ethereum/keys/test
 
 ![](/assets/螢幕快照 2018-01-30 下午10.36.54.png)
 
-#### 
+之後選擇帳號，如果測試鏈還沒同步完成會出現如下畫面：
+
+![](/assets/螢幕快照 2018-01-30 下午11.08.48.png)
+
+同步好後會出現：
+
+![](/assets/螢幕快照 2018-01-30 下午11.09.27.png)
 
 ---
 
