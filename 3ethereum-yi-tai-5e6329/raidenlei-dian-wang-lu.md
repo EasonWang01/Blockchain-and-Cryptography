@@ -93,6 +93,8 @@ Linux: ~/.local/share/io.parity.ethereum/keys/test
 
 Raiden 有一系列的 RESTful API 可以供使用者對其Channel進行相關操作。
 
+https://raiden-network.readthedocs.io/en/stable/rest\_api.html
+
 ---
 
 #### 安裝時可能產生的Issue：
