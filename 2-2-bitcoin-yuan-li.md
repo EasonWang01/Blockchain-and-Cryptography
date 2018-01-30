@@ -164,5 +164,13 @@ start ./bitcoin-cli getblockchaininfo
 >
 > 但記得使用Bitcoin-cli呼叫指令時，也要指定相同資料夾：`./bitcoin-cli -datadir="./chaindata" getblockchaininfo`
 
+## 啟動節點時可加上的Flag
 
+可以參考此處：https://en.bitcoin.it/wiki/Running\_Bitcoin
+
+![](/assets/螢幕快照 2018-01-30 上午11.27.55.png)
+
+也可以寫為Bitcoin.conf檔案來設定啟動節點時的相關屬性。
+
+![](/assets/螢幕快照 2018-01-30 上午11.27.30.png)
 
