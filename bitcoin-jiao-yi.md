@@ -41,8 +41,6 @@ console.log(tx.build().toHex());
 
 > 此時交易尚未被廣播，下方Hex字串即為可以用來廣播的交易訊息。
 
-
-
 或是也可以產生2 to 2 的交易\(兩個輸入的地址與兩個輸出的地址\)
 
 ```js
@@ -69,20 +67,14 @@ txb.sign(0, alice) // Alice 簽發他第一次input
 console.log(txb.build().toHex())
 ```
 
-但這時交易還沒有被廣播出去，意思是我們這個簽發動作也可以離線進行，然後把這個json在複製到其他地方廣播給比特幣網路，稍後下一節將會講解。
-
-我們也可以把剛才code最後一行改為以下，即可看到被編碼為16進位的格式，一般在網路上廣播交易均用此種格式
-
-```js
-console.log(tx.build().toHex());
-```
+但這時交易還沒有被廣播出去，意思是我們這個簽發動作也可以離線進行，然後把剛才產生的交易訊息複製到其他地方廣播給比特幣網路，稍後下一節將會講解。
 
 再來我們也可以從txHex解碼回原本的格式
 
 ```js
-var bitcoin = require('bitcoinjs-lib')
-var keyPair = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
-var tx = new bitcoin.TransactionBuilder()
+const bitcoin = require('bitcoinjs-lib')
+const keyPair = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
+const tx = new bitcoin.TransactionBuilder()
 
 tx.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0)
 tx.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)
@@ -90,8 +82,8 @@ tx.sign(0, keyPair)
 txHEX = tx.build().toHex()
 console.log(txHEX);
 
-var tx = bitcoin.Transaction.fromHex(txHEX);
-console.log(tx)
+const DecodeTx = bitcoin.Transaction.fromHex(txHEX);
+console.log(DecodeTx)
 ```
 
 ### 我們也可以試試看直接解碼其他已經發生過的交易的TxHex
