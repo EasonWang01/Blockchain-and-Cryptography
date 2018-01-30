@@ -1,10 +1,10 @@
-# 2-2 Bitcoin Core
+# Bitcoin Core
 
-在這一個章節，我們會開始實際使用比特幣相關的軟體
+在這一個章節，我們會開始實際使用比特幣相關的軟體，以下介紹比特幣官方所推出的錢包軟體：Bitcoin Core。
 
-#### 安裝Bitcoin core
+#### 安裝
 
-我們先到此比特幣官方下載網址[https://bitcoin.org/en/download](https://bitcoin.org/en/download)
+我們先到官方下載網址[https://bitcoin.org/en/download](https://bitcoin.org/en/download)
 
 1.選擇自己對應的平台安裝\(此安裝檔大小約為13.7MB\)  
 ![](/assets/bitcoin-core-download.png)
@@ -12,7 +12,7 @@
 2.之後選擇一個擁有較大容量的硬碟安裝\(因為之後如果要成為Full Node 必須要足夠容量\)  
 ![](/assets/bitcoin-install01.png)
 
-3.之後安裝好後執行，即可看到他開始在與其他節點同步區塊鏈資料  
+3.安裝好後執行程式，即可看到它開始在與其他節點同步區塊鏈資料  
 ![](/assets/bitcoin-qt01.png)
 
 4.之後我們點選上方的`說明`然後點選`除錯視窗`  
@@ -24,14 +24,14 @@
 
 6.接著我們在`主控台`中輸入`help`可列出有哪些可用的指令
 
-> 我們也可以在這個網站看到所有可用指令  
+> 在以下這個網站可以看到所有可用指令  
 > [https://en.bitcoin.it/wiki/Original\_Bitcoin\_client/API\_calls\_list](https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list)
 
 ![](/assets/bitcoin-qt06.png)  
-7.我們可輸入`getnewaddress`來在錢包中產生一個比特幣地址  
+7.接著輸入`getnewaddress`在錢包中產生一個比特幣地址  
 ![](/assets/bitcoin-qt07.png)
 
-8.接著可點擊上方的`檔案`然後點選`收款位置`查看剛產生出的地址  
+8.點擊上方的`檔案`然後點選`收款位置`查看剛產生出的地址  
 ![](/assets/bitcoin-qt08.png)
 
 並且可以幫他加上標記，方便我們辨識這個地址  
@@ -56,7 +56,7 @@ C:\Documents and Settings\YourUserName\Application data\Bitcoin (XP)
 C:\Users\YourUserName\Appdata\Roaming\Bitcoin (Vista and 7)
 ```
 
-OSX
+macOS
 
 ```
 ~/Library/Application\ Support/Bitcoin/
@@ -69,7 +69,7 @@ Linux
 ```
 
 但我們也可以自己設定要存放的資料夾位置  
-要這麼做的話，我們必須用命令列來啟動bitcoin程式，並且在指令上輸入我們要用的資料夾
+要這麼做的話，我們必須用命令列來啟動Bitcoin Core程式，並且在指令上輸入我們要用的資料夾
 
 步驟如下:
 
@@ -80,15 +80,15 @@ Linux
 ![](/assets/bitcoin-qt13.png)  
 4.之後我們輸入如下指令\(記得確認路徑正確\)  
 ![](/assets/start-qt-cmd.png)  
-之後他就會一樣開啟剛才的Bitcoin程式
+之後他就會一樣開啟剛才的Bitcoin Core程式
 
-> OSX與Linux不用在指令開頭加`start`
+> macOS與Linux不用在指令開頭加`start`
 
 5.這時我們打開BitcoinData這個資料夾，即可看到裡面存放了錢包與區塊鏈的檔案
 
 ![](/assets/bitcoin-qt14.png)
 
-其他資料夾位置資訊可參考以下
+不同作業系統存放區塊鏈資料的資料夾路徑可參考以下：
 
 ```
 Windows
@@ -97,20 +97,20 @@ Windows
 Linux
 > ~/.bitcoin/
 
-OSX
+macOS
 > ~/Library/Application\ Support/Bitcoin/
 
 參考:
 https://en.bitcoin.it/wiki/Data_directory
 ```
 
-# 從 Terminal 或 Cmd 執行 bitcoin 指令
+# 從 終端機 Terminal  執行 bitcoin 相關指令
 
 ## Windows:
 
-我們也可以從Terminal 或 Cmd 執行bitcoin 指令
+我們也可以從Terminal 執行bitcoin 指令
 
-1.一樣開啟terminal然後用進入到`daemon`路徑下  
+1.開啟terminal然後用進入到`daemon`路徑下  
 ![](/assets/bitcoin-qt15.png)
 
 2.然後我們要先執行bitcoind\(其為Bitcoin server\)  
@@ -132,7 +132,7 @@ start ./bitcoin-cli getblockchaininfo
 
 選擇版本後，下載 [tar.gz](https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-osx64.tar.gz) 格式的安裝檔然後解壓縮 ，之後一樣 `cd`
 
-到下載的資料夾目錄下的 /bin 資料夾
+到下載的資料夾目錄下的 `bin` 資料夾
 
 1.執行Bitcoin節點Server
 
@@ -164,15 +164,5 @@ start ./bitcoin-cli getblockchaininfo
 >
 > 但記得使用Bitcoin-cli呼叫指令時，也要指定相同資料夾：`./bitcoin-cli -datadir="./chaindata" getblockchaininfo`
 
----
 
-### 比特幣相關交易訊息與圖表
-
-可以在以下網站看到目前的相關比特幣交易資訊
-
-[https://blockchain.info/zh-cn/](https://blockchain.info/zh-cn/)
-
-比特幣歷史訊息圖表
-
-[https://blockchain.info/charts](https://blockchain.info/charts)
 

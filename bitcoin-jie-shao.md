@@ -48,9 +48,19 @@ BIP是對未來需要改進的比特幣特點，所做的提案。
 
 ![](/assets/a.png)
 
+## 比特幣交易訊息與圖表
+
+可以在以下網站看到目前的相關比特幣交易資訊
+
+[https://blockchain.info/zh-cn/](https://blockchain.info/zh-cn/)
+
+比特幣歷史訊息圖表
+
+[https://blockchain.info/charts](https://blockchain.info/charts)
+
 # 比特幣單位
 
-比特幣分位以下幾種單位，其中最小單位為satoshi。
+比特幣分為以下幾種單位，其中最小單位為satoshi。
 
 ```
 1BTC    比特幣（Bitcoins，BTC）
