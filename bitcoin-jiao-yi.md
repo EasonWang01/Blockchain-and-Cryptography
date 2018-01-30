@@ -16,23 +16,23 @@ const bitcoin = require('bitcoinjs-lib')
 // 可輸入其他私鑰
 const privateKey = "L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy";
 const keyPair = bitcoin.ECPair.fromWIF(privateKey);
-const tx = new bitcoin.TransactionBuilder()
+const txb = new bitcoin.TransactionBuilder()
 
-tx.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0)
+txb.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0)
 //addInput第一個參數為上一個unspend 的來源TXid
 // 第二個參數為當次該unspend在TXid的output中之index，假設一筆交易有兩個output則他們index則分別為0和1，從0開始往上加1。
 
-tx.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)
+txb.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)
 // addOutput第一個參數為要轉給哪個地址，第二個參數為金額(satoshi)
 
-tx.sign(0, keyPair)
+txb.sign(0, keyPair)
 // 使用私鑰簽發
 
 // 產生交易訊息
-console.log(tx.build());
+console.log(txb.build());
 
 // hex格式的交易訊息
-console.log(tx.build().toHex());
+console.log(txb.build().toHex());
 ```
 
 執行程式後會產生如下
@@ -74,24 +74,23 @@ console.log(txb.build().toHex())
 ```js
 const bitcoin = require('bitcoinjs-lib')
 const keyPair = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
-const tx = new bitcoin.TransactionBuilder()
+const Txb = new bitcoin.TransactionBuilder()
 
-tx.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0)
-tx.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)
-tx.sign(0, keyPair)
-txHEX = tx.build().toHex()
-console.log(txHEX);
+Txb.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0)
+Txb.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)
+Txb.sign(0, keyPair)
+TxbHEX = Txb.build().toHex()
+console.log(TxbHEX);
 
-const DecodeTx = bitcoin.Transaction.fromHex(txHEX);
-console.log(DecodeTx)
+const DecodeTxb = bitcoin.Transaction.fromHex(TxbHEX);
+console.log(DecodeTxb)
 ```
 
 ### 我們也可以試試看直接解碼其他已經發生過的交易的TxHex
 
 1.我們先到以下URL，查看一筆交易的交易Hex內容：
 
-[https://blockchain.info/tx/9021b49d445c719106c95d561b9c3fac7bcb3650db67684a9226cd7fa1e1c1a0?format=hex](https://blockchain.info/tx/9021b49d445c719106c95d561b9c3fac7bcb3650db67684a9226cd7fa1e1c1a0?format=hex)  
-
+[https://blockchain.info/tx/9021b49d445c719106c95d561b9c3fac7bcb3650db67684a9226cd7fa1e1c1a0?format=hex](https://blockchain.info/tx/9021b49d445c719106c95d561b9c3fac7bcb3650db67684a9226cd7fa1e1c1a0?format=hex)
 
 然後把它貼到下面程式的`txHEX`變數位置
 
@@ -157,26 +156,26 @@ nLockTime: 00000000
 # 交易結構
 
 | 欄位 | 描述 | 大小 |
-| :---: | --- | --- |
+| :---: | :--- | :--- |
 | 版本 | 描述版本號，現在為1 | 4bytes |
 | 輸入計數 | 被包含的輸入交易數量 | 1-9 bytes |
 | 輸入 | 列出輸入的交易 | 不一定 |
 | 輸出計數 | 被包含的輸出交易數量 | 1-9 bytes |
 | 輸出 | 列出輸出的交易 | 不一定 |
-| 鎖定時間 | 在此時間之前此交易不能被加入區塊\(註1\) | 4 bytes |
+| 鎖定時間 | 此時間之前交易不能被加入區塊\(註1\) | 4 bytes |
 
 # 廣播交易
 
 比特幣交易可以是offline產生的，產生後再用線上的方式廣播給bitcoin網路，只要把交易訊息的payload傳送給其中一個比特幣節點就可以達到廣播的目的
 
 ```js
-var bitcoin = require("bitcoinjs-lib");
-var key = bitcoin.ECPair.fromWIF("L1Kzcyy88LyckShYdvoLFg1FYpB5ce1JmTYtieHrhkN65GhVoq73");
-var tx = new bitcoin.TransactionBuilder();
-tx.addInput("d18e7106e5492baf8f3929d2d573d27d89277f3825d3836aa86ea1d843b5158b", 1);
-tx.addOutput("12idKQBikRgRuZEbtxXQ4WFYB7Wa3hZzhT", 149000);
-tx.sign(0, key);
-console.log(tx.build().toHex());
+const bitcoin = require("bitcoinjs-lib");
+const key = bitcoin.ECPair.fromWIF("L1Kzcyy88LyckShYdvoLFg1FYpB5ce1JmTYtieHrhkN65GhVoq73");
+const txb = new bitcoin.TransactionBuilder();
+txb.addInput("d18e7106e5492baf8f3929d2d573d27d89277f3825d3836aa86ea1d843b5158b", 1);
+txb.addOutput("12idKQBikRgRuZEbtxXQ4WFYB7Wa3hZzhT", 149000);
+txb.sign(0, key);
+console.log(txb.build().toHex());
 ```
 
 我們可以把剛才產生出來HEX的交易本文使用如下的線上服務廣播到比特幣網路  
