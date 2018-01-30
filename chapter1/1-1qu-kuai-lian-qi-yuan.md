@@ -12,17 +12,17 @@ Leslie Lamport等人提出拜占庭將軍問題（Byzantine Generals Problem）
 
 #### 1982-1983年
 
-David Chaum提出Ecash密碼學網路支付系統並基於RSA與DSA提出了Blind signature，具有不可追蹤的特性
+David Chaum提出Ecash密碼學網路支付系統並基於RSA與DSA提出了Blind signature，具有不可追蹤的特性。
 
 #### 1989年
 
 David Chaum創立了DigiCash Inc.
 
-提供匿名的電子支付服務，但沒有獲得許多的使用者
+提供匿名的電子支付服務，但沒有獲得許多的使用者。
 
 #### 1990年
 
-Leslie Lamport提出具高容错的一致性演算法
+Leslie Lamport提出具高容錯的一致性演算法：Paxos。
 
 Paxos算法解決的問題是在一個可能發生上述異常的分散式系統中如何就某個值達成一致，保證不論發生以上任何異常，都不會破壞決議的一致性。
 
@@ -42,7 +42,7 @@ Scott Vanstone提出橢圓曲線數位簽章演算法（Elliptic Curve Digital S
 
 #### 1997年
 
-Adam Back發明Hashcash（雜湊現金），為一種工作量證明演算法（Proof of Work，POW），此演算法仰賴成本函數的不可逆特性，達到容易被驗證，但很難被破解的特性， 最早被應用於阻擋垃圾郵件。Hashcash之後成為比特幣區塊鏈所採用的關鍵技術之一。
+Adam Back發明Hashcash（雜湊現金），為一種工作量證明演算法（Proof of Work，POW），由於相關雜湊演算法的不可逆特性，達到容易被驗證，但很難被破解的特性， 最早被應用於阻擋垃圾郵件。Hashcash之後成為比特幣區塊鏈所採用的關鍵技術之一。
 
 Adam Back於2002年正式發表Hashcash論文
 
@@ -60,7 +60,7 @@ Wei Dai發表匿名的分散式電子現金系統B-money，引入工作量證明
 
 #### **2005年**
 
-Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的工作量證明機制（Reusable Proofs of Work，RPOW），結合B-money與Adam Back提出的Hashcash演算法來創造密碼學貨幣，可視為加密貨幣的前輩
+Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的工作量證明機制（Reusable Proofs of Work，RPOW），結合B-money與Adam Back提出的Hashcash演算法來創造密碼學貨幣，可視為加密貨幣的前輩。
 
 [http://nakamotoinstitute.org/finney/rpow/](http://nakamotoinstitute.org/finney/rpow/)
 
@@ -94,9 +94,9 @@ Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的�
 
 #### 2010年5月22日
 
-一名佛羅里達工程師Laszlo Hanyecz在2010/5/17要求用比特幣購買披薩，並且在5/22成功用10,000 BTC購買了價值25美元的披薩。
+一名佛羅里達工程師Laszlo Hanyecz在2010/5/17刊登出想要用比特幣購買披薩，之後，在同年5/22號，成功用10,000 BTC購買了價值25美元的披薩。
 
-此交易等值於1比特幣兌換0.0025美元。這些比特幣在今日價值超過2000萬美元
+
 
 #### 2011年2月9日
 
@@ -104,11 +104,11 @@ Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的�
 
 #### 2013年10月
 
-世界第一台比特幣櫃員機在加拿大溫哥華問世
+世界第一台比特幣櫃員機出現在加拿大的溫哥華。
 
 #### 2013年末
 
-一名19歲少年Vitalik Buterin，發表了Ethereum 的 white-paper
+一名19歲少年Vitalik Buterin，發表了Ethereum 的 white-paper。
 
 [https://github.com/ethereum/wiki/wiki/White-Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
 
