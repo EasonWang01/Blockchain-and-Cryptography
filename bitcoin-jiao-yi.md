@@ -254,7 +254,6 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 如果以上都驗證成功後即可進入納入交易至區塊中的步驟：
 
 ```
-
 16.加入交易池中
 
 17.礦工挖到區塊後剛才驗證的交易都會加入該區塊中
@@ -269,7 +268,7 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 # 交易確認\(confirmation\)
 
-> 當交易被區塊納入後，其確認數會增加一，之後又在此區塊後產生了一個區塊時此時確認數為二  
+> 當交易被納入區塊後，其確認數會增加一，而下一個區塊產生後此交易的確認數變為二，之後每有新的區塊產生，交易確認數都會增加一。  
 > Each additional confirmation is a new block being found and added to the end of the blockchain.
 
 1.原生的比特幣客戶端程式在交易經過六個區塊確認之前都會顯示`n/unconfirmed`，為了避免雙重支付\(double spending\)，但根據每個錢包或是交易所定義，可以有不同可確認樹，例如\`bitfinex\`有三個確認後即可確認到帳
