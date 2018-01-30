@@ -8,16 +8,22 @@
 
 ## 線上產生地址
 
+我們可以用此網站來進行線上產生地址。
+
 單一簽名：[https://coinb.in/\#newAddress](https://coinb.in/#newAddress)
 
 多重簽名：[https://coinb.in/multisig/](https://coinb.in/multisig/)
 
+> 還有許多網站也提供類似服務，但建議尋找具有離線產生地址的工具較為安全。
+
 # 地址長度
 
+> 每個十六進位字元具有0.5 bytes
+
 ```
-私鑰(Private key): 32bytes
-公鑰(Public key): 65bytes
-公鑰雜湊(Public key hash): 20bytes
+私鑰(Private key): 32 bytes
+公鑰(Public key): 65 bytes
+公鑰雜湊(Public key hash): 20 bytes
 ```
 
 # 地址開頭字母
