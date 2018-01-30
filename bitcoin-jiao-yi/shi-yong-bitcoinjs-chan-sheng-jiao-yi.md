@@ -1,15 +1,19 @@
 # 使用BitcoinJS產生相關交易
 
-BitcoinJS為一個MIT授權Open Source的比特幣相關套件。
+BitcoinJS為一個MIT License之開放原始碼比特幣相關第三方套件。
 
-## 安裝
+## 使用
+
+這裡我們會直接進入其測試資料夾進行修改，並執行。
+
+> 為了避免未來版本更動造成程式無法執行，所以以下連結為筆者fork原專案之程式供讀者具有與本書之相同版本。
 
 ```js
-1. git clone https://github.com/bitcoinjs/bitcoinjs-lib.git
+1. git clone https://github.com/blockchain-tutorial-by-yicheng/bitcoinjs-lib.git
 
 2. cd bitcoinjs-lib 並且輸入 npm install
 
-3. npm install bitcoinjs-lib  (因為我們在程式裡使用require('bitcoinjs-lib'))
+3. npm install bitcoinjs-lib  (因為我們在程式裡使用require('bitcoinjs-lib'))，本書版本為3.3.2
 
 4. cd test/integration
 
