@@ -54,19 +54,19 @@ getinfo
 
 ### Full node Client
 
-Bitcoin-Core
+1.Bitcoin-Core
 
 ```
 https://github.com/bitcoin/bitcoin
 ```
 
-btcd
+2.btcd
 
 ```
 https://github.com/btcsuite/btcd
 ```
 
-libbitcoin-server
+3.libbitcoin-server
 
 ```
 https://github.com/libbitcoin/libbitcoin-server
@@ -78,7 +78,7 @@ https://github.com/libbitcoin/libbitcoin-server
 
 > As Satoshi writes, "\[the thin client\] can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it." If we take "X" to be the "number of blocks added after it", then a thin client essentially trusts that a transaction X blocks deep will be costly to forge.
 
-Bitcoin-Core
+1.Bitcoin-Core
 
 Bitcoin-Core也可以當作輕量級用戶端，加上以下指令跑較輕量的client大約只需2GB的儲存空間，啟動節點時加上以下指令。
 
@@ -108,11 +108,13 @@ https://github.com/jgarzik/picocoin/
 
 4.Electrum
 
+[https://bitzuma.com/posts/a-beginners-guide-to-the-electrum-bitcoin-wallet/](https://www.gitbook.com/book/easonwang01/e/edit#)
+
 ```
 https://electrum.org/#home
 ```
 
-[https://bitzuma.com/posts/a-beginners-guide-to-the-electrum-bitcoin-wallet/](https://bitzuma.com/posts/a-beginners-guide-to-the-electrum-bitcoin-wallet/)
+但是SPV節點由於不是自行下載所有區塊鏈上的資料來進行交易驗證，會產生一些安全性議題。
 
 > 以下是一篇關於SPV節點安全性的文章，探討用SPV節點在安全性方面的考量。  
 > [https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9](https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9)
