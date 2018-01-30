@@ -182,36 +182,37 @@ console.log(txb.build().toHex());
 [https://blockchain.info/pushtx](https://blockchain.info/pushtx)  
 ![](/assets/adfw.png)
 
-或是使用[https://live.blockcypher.com/btc/pushtx/](https://live.blockcypher.com/btc/pushtx/)  
-\(兩個網站功能均類似，但blockcypher之回傳訊息較為明確\)
+或是使用此網站也可以廣播交易：[https://live.blockcypher.com/btc/pushtx/](https://live.blockcypher.com/btc/pushtx/)
 
-一旦一筆比特幣交易被發送到任意一個連接至比特幣網絡的節點，這筆交易將會被該節點驗證。如果交易被驗證有效，該節點將會將這筆交易傳播到這個節點所連接的其他節點
+> 兩個網站功能均類似，但blockcypher之回傳訊息較為明確。
 
-每個節點在傳播每一筆交易之前均進行獨立驗證。 一個異常交易所能到達的節點不會超過一個
+一旦一筆比特幣交易被發送到任意一個連接至比特幣網路的節點，這筆交易將會被該節點驗證。如果交易被驗證有效，該節點將會將這筆交易傳播到這個節點所連接的其他節點。
 
-礦工會根據每筆交易目前的優先級來決定哪些要先納入下一個區塊中
+每個節點在傳播每一筆交易之前均進行獨立驗證， 一個異常交易所能到達的節點不會超過一個，礦工會根據每筆交易目前的優先級來決定哪些要先納入下一個區塊中。
 
 計算方式如下:
 
 ```
-交易手續費 * 比特幣存在尚未確認的交易池之時間 
+(交易金額 * 比特幣存在尚未確認的交易池之時間) / 交易大小
 
 即為
 
 priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 ```
 
-假設
+> 交易池為交易在被節點接收到並且成功驗證，但還沒被納入區塊中的交易所存放的地方。
 
-一個交易有 2 個輸入, 第一個為 5 btc 擁有 10 個確認\(confirmations\), 另一個為 2 btc 有 3 個確認\(confirmations\), 大小為 500bytes, 其優先級計算為
+假設一個交易有兩個輸入， 第一個為 5 btc 擁有 10 個確認\(confirmations\)，另一個為 2 btc 有 3 個確認\(confirmations\), 大小為 500 bytes，其優先級計算為。
 
 ```
 (500000000 * 10 + 200000000 * 3) / 500 = 11,200,000
 ```
 
-但後來2017年把coin age取消，區塊預留的priorty block也移除了，目前交易納入區塊的優先級單純以手續費為依據
+但後來2017年把Coin Age取消，區塊預留的Priorty Block也移除了，目前交易納入區塊的優先級單純以手續費為依據
 
-> Today miners choose which transactions to mine only based on fee-rate  
+> Today miners choose which transactions to mine only based on fee-rate
+>
+> 可參考如下連結：  
 > [https://github.com/bitcoin/bitcoin/pull/9602/files\#diff-cd7b305fd4b4280f22ae88960e60398eL298](https://github.com/bitcoin/bitcoin/pull/9602/files#diff-cd7b305fd4b4280f22ae88960e60398eL298)  
 > [https://bitcoin.stackexchange.com/questions/54583/why-is-the-transaction-priority-removed](https://bitcoin.stackexchange.com/questions/54583/why-is-the-transaction-priority-removed)
 
