@@ -268,23 +268,26 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 # 交易確認\(confirmation\)
 
-> 當交易被納入區塊後，其確認數會增加一，而下一個區塊產生後此交易的確認數變為二，之後每有新的區塊產生，交易確認數都會增加一。  
 > Each additional confirmation is a new block being found and added to the end of the blockchain.
+>
+> 當交易被納入區塊後，交易的確認數會增加一，而下一個區塊產生後此交易的確認數變為二，之後每有新的區塊產生，交易確認數都會增加一。
 
-1.原生的比特幣客戶端程式在交易經過六個區塊確認之前都會顯示`n/unconfirmed`，為了避免雙重支付\(double spending\)，但根據每個錢包或是交易所定義，可以有不同可確認樹，例如\`bitfinex\`有三個確認後即可確認到帳
-
-> Freshly-mined coins cannot be spent for 100 blocks
+1.官方的比特幣用戶端程式在交易經過六個區塊確認之前都會顯示`n/unconfirmed`，用意是為了避免雙重支付\(double spending\)，但根據每個錢包或是交易所定義，可以有不同可確認數，例如`bitfinex交易所`有三個確認後即可確認到帳。
 
 2.礦工挖礦獲得的比特幣收入必須在100個區塊確認後才可交易
 
-> 寫在如下原始碼[https://github.com/bitcoin/bitcoin/blob/1d9d314573ee48f6f51107265f1cf1fa9e36c998/src/consensus/consensus.h\#L14](https://github.com/bitcoin/bitcoin/blob/1d9d314573ee48f6f51107265f1cf1fa9e36c998/src/consensus/consensus.h#L14)
+> Freshly-mined coins cannot be spent for 100 blocks.
 
-3.在以下網站可用來計算在特定的hashrate運算比例與確認數下可能被成功hack\(double spend\)的機率
+> 寫在如下原始碼中[https://github.com/bitcoin/bitcoin/blob/1d9d314573ee48f6f51107265f1cf1fa9e36c998/src/consensus/consensus.h\#L14](https://github.com/bitcoin/bitcoin/blob/1d9d314573ee48f6f51107265f1cf1fa9e36c998/src/consensus/consensus.h#L14)
+
+3.以下網站可用來計算在特定的hashrate運算比例與確認數下可能被成功 hack \( double spend \) 的機率
 
 [https://people.xiph.org/~greg/attack\_success.html](https://people.xiph.org/~greg/attack_success.html)
 
+![](/assets/螢幕快照 2018-01-30 下午2.03.43.png)
+
 > 此網站之上面的輸入框`Proportion of hash-power`  
-> 1代表100%,0.1為10%
+> 1代表100%，0.1為10%
 
 以下為寫在白皮書的公式
 
@@ -295,12 +298,12 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 # UTXO
 
-比特幣中的餘額指的是還沒有被花費掉的部分\(unspend output\)
+比特幣中的餘額指的是還沒有被花費掉的部分 \( Unspend output \)
 
-例如我們可以到此網址，查看一個地址的unspend output  
-[https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb](https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb)
+我們可以到以下網址，查看一個地址的Unspend output，記得在網址最後輸入要查詢的比特幣地址  
+[https://blockchain.info/unspent?active=輸入地址](https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb)
 
-如下
+如果該地址還有`Unspend output`則會顯示類似如下：
 
 ```json
 {
@@ -319,33 +322,33 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 }
 ```
 
-可以看到其中value欄位即為該地址的餘額，單位為satoshi
+可以看到其中 value 欄位即為該地址的餘額，單位為satoshi
 
 > 0.00000001 bitcoin 為一個 satoshi，此也為bitcoin的最小單位 所以此處 0.00000001 \* 3009040 即為0.0300904BTC  
 > ![](/assets/交易餘額.png)
 
 # 交易的Input一定會對應到一個Output
 
-> 以下用Input From 和Output To叫好理解
+> 以下用Input From 和 Output To 叫好理解
 
-比特幣記錄帳戶餘額流向的方式來自於查看目前花費的金額\(Output To\)來自於哪一筆的Input From
+比特幣記錄帳戶餘額流向的方式來自於查看目前尚未花費的金額\( Unspend output \)來自於哪一筆交易的Input
 
-Input一定會對應到一個Output，每個Output都會有一個locking script 以及每個input也會有一個unlocking script  
-用來解鎖output，解鎖後才可由上個output傳比特幣給下一個地址變為新地址的unspend output
+Input一定會對應到一個Output，每個Output都會有一個locking script 以及每個Input也會有一個Unlocking script  
+用來解鎖Unspend output，解鎖後才可由 Unspend output 傳比特幣給下一個地址變為新地址的 Unspend output
 
-一筆交易主要包含兩部份，input 和 output，output 有 locking script 去鎖著 UTXO 不被花費，想要花費的人就需要創建一個 input，用裡面的 locking script 去解鎖這個 unlocking script，例如我今天想要花自己的錢就必須自己去創建一個Input然後用我的私鑰簽發
+一筆交易主要包含兩部份，Input 和 Output，Output 有 Locking script 去鎖著 UTXO 不被花費，想要花費的人就需要創建一個 Input，用裡面的 Locking script 去解鎖 Unlocking script，例如今天想要花自己的錢就必須自己去創建一個Input然後用自己的私鑰簽發交易。
 
 ![](/assets/en-transaction-propagation.svg)
 
-> [https://bitcoin.org](https://bitcoin.org)
+> 圖片來源：[https://bitcoin.org](https://bitcoin.org)
 
 並且一筆交易中可以來自多個output並產生多個unspend output  
 ![](/assets/789.png)
 
-# 交易的ID \(TXid\)
+# 交易的ID \(TXID\)
 
-每個比特幣交易都存在一個獨特的id名為TXid  
-我們可以從TXid取得那筆交易的相關資訊
+每個比特幣交易都存在一個獨特的id名為TXID  
+我們可以從TXID取得那筆交易的相關資訊
 
 [https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8c6732352925ab9](https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8c6732352925ab9)
 
@@ -412,7 +415,7 @@ Input一定會對應到一個Output，每個Output都會有一個locking script 
 
 # 交易類型
 
-每筆交易在被節點接收到時會先被確認是不是一個standard的交易，原始碼可察看如下連結[https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/policy/policy.h\#L79](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/policy/policy.cpp#L57)
+每筆交易在被節點接收到時會先被確認是不是一個standard的交易，原始碼可查看如下連結[ https://github.com/bitcoin/bitcoin/blob/5961b23898ee7c0af2626c46d5d70e80136578d3/src/policy/policy.cpp\#L82](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/policy/policy.cpp#L57)
 
 以下將介紹比特幣的五種交易類型:
 
