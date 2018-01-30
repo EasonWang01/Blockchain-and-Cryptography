@@ -9,32 +9,30 @@ BitcoinJS為一個MIT License之開放原始碼比特幣相關第三方套件。
 > 為了避免未來版本更動造成程式無法執行，所以以下連結為筆者fork原專案之程式供讀者具有與本書之相同版本。
 
 ```js
-1. git clone https://github.com/blockchain-tutorial-by-yicheng/bitcoinjs-lib.git
+1. git clone https://github.com/blockchain-tutorial-by-yicheng/bitcoinjs-lib.git bitcoin_practice
 
-2. cd bitcoinjs-lib 並且輸入 npm install
+2. cd bitcoin_practice  然後輸入 npm install
 
-3. npm install bitcoinjs-lib  (因為我們在程式裡使用require('bitcoinjs-lib'))，本書版本為3.3.2
+3. cd test/integration
 
-4. cd test/integration
-
-5. 使用任意編輯器開啟transaction.js
+4. 使用任意編輯器開啟transaction.js
 ```
 
 然後我們先將transaction.js裡面的code都先刪除，之後以下範例都直接複製並貼到transaction.js中，並且執行。
 
-> 由於我們會用到以下有關testnet部分，但因為這兩個BitcoinJS沒有打包成相關模組，所以我們使用在`test/integration/transaction.js` 直接改程式之方法執行程式。
+> 由於我們會用到以下有關testnet部分，但因為這兩個BitcoinJS沒有打包成相關模組，所以我們在`test/integration/transaction.js` 直接改程式來執行程式，而不是使用require模組的方法。
 >
 > ```js
 > const testnet = bitcoin.networks.testnet
 > const testnetUtils = require('./_testnet')
 > ```
 
-本書使用之bitcoinjs-lib版本為**3.3.2，**以下將介紹如何產生交易
+以下將介紹如何產生交易
 
 #### 1.產生一對一之交易\(最基本型態\)
 
 ```js
-const bitcoin = require('bitcoinjs-lib');
+const bitcoin = require('../../'); // 因為在/test/integration/transaction.js中
 
 // alice的私鑰
 const alice = bitcoin.ECPair.fromWIF('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy')
