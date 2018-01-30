@@ -91,7 +91,7 @@ Linux: ~/.local/share/io.parity.ethereum/keys/test
 
 ## 開始使用
 
-
+Raiden 有一系列的 RESTful API 可以供使用者對其Channel進行相關操作。
 
 ---
 
