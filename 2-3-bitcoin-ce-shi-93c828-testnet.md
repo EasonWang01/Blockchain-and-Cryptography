@@ -1,6 +1,6 @@
 # Bitcoin 測試鏈\(Testnet\)
 
-在區塊鏈有新功能的時候為了要先進行內部測試，所以會先將功能放到測試鏈上進行測試，但測試鏈的比特幣不具任何實際價值。  
+比特幣在加入新功能之前，必須要先進行內部測試，所以會先將功能放到測試鏈上進行測試，但測試鏈的比特幣不具任何實際價值。  
 [https://en.bitcoin.it/wiki/Testnet](https://en.bitcoin.it/wiki/Testnet)
 
 剛才我們所開啟的Bitcoin-QT錢包也可以與Testnet做連線
@@ -22,7 +22,7 @@
 
 #### 線上產生比特幣地址
 
-我們也可以用線上網站服務產生測試比特幣地址
+我們也可以用線上網站服務產生測試鏈的比特幣地址
 
 [https://www.bitaddress.org/?testnet=true](https://www.bitaddress.org/?testnet=true)
 
@@ -35,9 +35,13 @@
 
 離線產生地址可以減少私鑰被第三者監聽或是竊取的風險。
 
-可使用如下程式產生測試鏈地址，以下會隨機產生一個長度為32的bytes，然後來產生WIF格式的私鑰以及地址。
+可使用如下程式產生測試鏈地址，以下會隨機產生一個長度為32的bytes，然後用其產生WIF格式的私鑰以及地址。
 
 > 需要使用Node.js並且安裝bitcoinjs-lib模組。
+>
+> ```
+> npm install bitcoinjs-lib
+> ```
 
 ```js
 const crypto = require('crypto');
@@ -81,7 +85,9 @@ console.log(address);
 
 ### 廣播交易
 
-可以使用此服務廣播測試鏈的交易
+當我們將交易簽名後，需要將其廣播到其他節點做驗證，才算正式的發送出交易，將會在後續交易章節詳細敘述。
+
+可以使用此服務廣播測試鏈的交易：
 
 [https://live.blockcypher.com/btc-testnet/pushtx/](https://live.blockcypher.com/btc-testnet/pushtx/)
 

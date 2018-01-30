@@ -1,6 +1,6 @@
 # Regtest Mode
 
-有時開發者需要進行比特幣區塊鏈測試，這時Regtest Mode可以提供一個從零開始的區塊鏈環境，其為一個不需和比特幣網路其他節點互動的私有鏈。
+有時開發者需要進行比特幣區塊鏈測試，這時Regtest Mode可以提供一個從零開始的區塊鏈環境，其不需要和比特幣網路其他節點互動，所以減少了同步的過程，為一個私有鏈。
 
 ### 使用Bitcoin-QT執行Regtest Mode
 
@@ -14,9 +14,9 @@
 
 Bitcoin-qt 執行regtest Mode:![](/assets/螢幕快照 2017-12-26 下午3.53.17.png)
 
-## 使用Bitcoin-cli
+## 使用Bitcoin-CLI
 
-我們也可以使用Bitcoin-cli 來設定我們想要的環境 :
+我們也可以使用Bitcoin-CLI 來設定我們想要的環境 :
 
 1.先執行Bitcoin server
 
@@ -56,9 +56,7 @@ bitcoin-cli -regtest getbalance
 ./bitcoin-cli -regtest stop
 ```
 
----
-
 ### 重置Regtest chain
 
-將先前章節所提到的Bitcoin資料夾路徑下的 regtest 資料夾刪除即可
+當我們想要重置 Regtest 區塊鏈時，將先前章節所提到的Bitcoin資料夾路徑下的 regtest 資料夾刪除即可。
 

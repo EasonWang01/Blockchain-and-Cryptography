@@ -1,4 +1,4 @@
-# 2-4 Bitcoin 錢包
+# Bitcoin 錢包
 
 比特幣錢包種類包含有網頁版、桌面版、手機APP，還有適合開發者使用的Command Line介面錢包，紙本錢包、USB硬體錢包以及各個交易所保管的錢包等等，但使用上之安全性需要讀者自行評估。
 
@@ -21,24 +21,24 @@ getnewaddress
 2.然後取得該地址的私鑰
 
 ```
-dumpprivkey
+dumpprivkey 填入地址
 ```
 
 ![](/assets/newadd1.png)
 
-> 大家可能會想：地址應該是由私鑰所產生，但怎麼這裡是輸入地址取得私鑰呢？原因是在我們產生地址時他已經他私鑰存在電腦裡了，所以`dumpprivkey`僅僅是把對應地址的私鑰讀取出來而已。
+> 大家可能會想：地址應該是由私鑰所產生，但怎麼這裡是輸入地址取得私鑰呢？原因是在我們產生地址時他同時已經將對應的私鑰存在電腦裡了，所以`dumpprivkey`僅僅是把對應地址的私鑰讀取出來而已。
 
 3.獲取地址內餘額
 
 > 記得要將電腦本地的區塊鏈資料完整同步，之後才能得到正確的餘額。
 
 ```
-getreceivedbyaddress
+getreceivedbyaddress 填入地址
 ```
 
 ![](/assets/newadd2.png)
 
-4.取得其他資料
+4.取得節點相關資料
 
 > 這裡一樣要完整同步後才可得到正確資料。
 
@@ -48,14 +48,16 @@ getinfo
 
 ![](/assets/newadd3.png)
 
-## 有關其他可下載的客戶端錢包
+## 有關其他可下載的用戶端錢包
+
+除了官方的錢包之外，還有其他第三方所製作的錢包程式可以使用。
 
 ### Full node Client
 
-Bitcoin-qt
+Bitcoin-Core
 
 ```
-https://bitcoin.org/en/full-node
+https://github.com/bitcoin/bitcoin
 ```
 
 btcd
@@ -67,7 +69,7 @@ https://github.com/btcsuite/btcd
 libbitcoin-server
 
 ```
-https://en.bitcoin.it/wiki/Libbitcoin
+https://github.com/libbitcoin/libbitcoin-server
 ```
 
 ### Thin client
