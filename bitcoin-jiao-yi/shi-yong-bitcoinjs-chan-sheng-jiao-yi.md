@@ -52,10 +52,12 @@ txb.sign(0, alice);
 console.log(txb.build().toHex());
 ```
 
+之後輸入`node transaction.js` 及可執行程式，記得執行路徑在`/test/integration`
+
 ### 2.產生二對二之交易
 
 ```js
-const bitcoin = require('bitcoinjs-lib');
+const bitcoin = require('../../');
 
 //兩個人的私鑰
 const alice = bitcoin.ECPair.fromWIF('L1Knwj9W3qK3qMKdTvmg3VfzUs3ij2LETTFhxza9LfD5dngnoLG1')
@@ -79,7 +81,7 @@ console.log(txb.build().toHex());
 
 ```js
 const crypto = require('crypto');
-const bitcoin = require('bitcoinjs-lib');
+const bitcoin = require('../../');
 
 const testnet = bitcoin.networks.testnet
 const testnetUtils = require('./_testnet')
@@ -117,8 +119,9 @@ testnetUtils.faucetMany([
 
   console.log(txb.build().toHex())
   // 廣播交易
-  testnetUtils.transactions.propagate(txb.build().toHex(), function (err) {
+  testnetUtils.transactions.propagate(txb.build().toHex(), function (err, result) {
     if (err) return console.log(err)
+    console.log(result.body)
   })
 })
 ```
@@ -141,13 +144,15 @@ funding mvvrViCXRZD1czZduc4xCixmfG7DpZ7Lkb w/ 70000
 
 可以進入到此網站[https://live.blockcypher.com/btc-testnet](https://live.blockcypher.com/btc-testnet)
 
-然後在右上角輸入剛才的地址或是Txid，即可查看剛才的交易紀錄
+然後在右上角輸入剛才的地址或是TxID，即可查看剛才的交易紀錄
+
+![](/assets/螢幕快照 2018-01-30 下午3.13.00.png)
 
 ### 4.產生OP\_RETURN的交易
 
 ```js
 const crypto = require('crypto');
-const bitcoin = require('bitcoinjs-lib');
+const bitcoin = require('../../');
 
 const testnet = bitcoin.networks.testnet
 const testnetUtils = require('./_testnet')
@@ -177,120 +182,10 @@ testnetUtils.faucet(address, 5e4, function (err, unspent) {
 })
 ```
 
----
-
-如果產生錯誤，可將integration內的\_testnet.js改為如下
-
-> 主要為更改Endpoint
-
-```js
-var async = require('async')
-var bitcoin = require('../../')
-var Blockchain = require('cb-http-client')
-var coinSelect = require('coinselect')
-var dhttp = require('dhttp')
-var typeforce = require('typeforce')
-var types = require('../../src/types')
-
-var BLOCKTRAIL_API_KEY = process.env.BLOCKTRAIL_API_KEY || 'c0bd8155c66e3fb148bb1664adc1e4dacd872548'
-var blockchain = new Blockchain('https://api.blocktrail.com/cb/v0.2.1/tBTC', { api_key: BLOCKTRAIL_API_KEY })
-var kpNetwork = bitcoin.networks.testnet
-var keyPair = bitcoin.ECPair.fromWIF('cQqjeq2rxqwnqwMewJhkNtJDixtX8ctA4bYoWHdxY4xRPVvAEjmk', kpNetwork)
-var kpAddress = keyPair.getAddress()
-var conflicts = {}
-
-function fundAddress(unspents, outputs, callback) {
-  // avoid too-long-mempool-chain
-  unspents = unspents.filter(function (x) {
-    return x.confirmations > 0 && !conflicts[x.txId + x.vout]
-  })
-
-  var result = coinSelect(unspents, outputs, 10)
-  if (!result.inputs) return callback(new Error('Faucet empty'))
-
-  var txb = new bitcoin.TransactionBuilder(kpNetwork)
-  result.inputs.forEach(function (x) {
-    conflicts[x.txId + x.vout] = true
-    txb.addInput(x.txId, x.vout)
-  })
-
-  result.outputs.forEach(function (x) {
-    if (x.address) console.warn('funding ' + x.address + ' w/ ' + x.value)
-    txb.addOutput(x.address || kpAddress, x.value)
-  })
-
-  result.inputs.forEach(function (_, i) {
-    txb.sign(i, keyPair)
-  })
-
-  var tx = txb.build()
-
-  blockchain.transactions.propagate(tx.toHex(), function (err) {
-    if (err) return callback(err)
-
-    var txId = tx.getId()
-    callback(null, outputs.map(function (x, i) {
-      return { txId: txId, vout: i, value: x.value }
-    }))
-  })
-}
-
-blockchain.faucetMany = function faucetMany(outputs, callback) {
-  blockchain.addresses.unspents(kpAddress, function (err, unspents) {
-    if (err) return callback(err)
-
-    typeforce([{
-      txId: types.Hex,
-      vout: types.UInt32,
-      value: types.Satoshi
-    }], unspents)
-
-    fundAddress(unspents, outputs, callback)
-  })
-}
-
-blockchain.faucet = function faucet(address, value, callback) {
-  blockchain.faucetMany([{ address: address, value: value }], function (err, unspents) {
-    callback(err, unspents && unspents[0])
-  })
-}
-
-// verify TX was accepted
-blockchain.verify = function verify(address, txId, value, done) {
-  async.retry(5, function (callback) {
-    setTimeout(function () {
-      // check that the above transaction included the intended address
-      dhttp({
-        method: 'get',
-        url: 'https://testnet-api.smartbit.com.au/v1/blockchain/tx/' + txId
-      }, function (err, result) {
-        if (result.body.success === false) return callback(new Error(result.body.error.message))
-        if (result.body.transaction.txid !== txId) return callback(new Error('Could not find ' + txId))
-        callback()
-      })
-    }, 400)
-  }, done)
-}
-
-blockchain.transactions.propagate = function broadcast(txHex, callback) {
-  dhttp({
-    method: 'POST',
-    url: 'https://testnet-api.smartbit.com.au/v1/blockchain/pushtx',
-    body: JSON.stringify({ hex: txHex })
-  }, function (err, response) {
-    if (response.body.success === false) err = new Error(response.body.error.message)
-    callback(err, response)
-  })
-}
-
-blockchain.RETURN_ADDRESS = kpAddress
-module.exports = blockchain
-```
-
 ### 5.產生2-of-4 P2SH \( multisig \)交易
 
 ```js
-const bitcoin = require('bitcoinjs-lib');
+const bitcoin = require('../../');
 const testnet = bitcoin.networks.testnet
 const testnetUtils = require('./_testnet')
 
@@ -329,7 +224,7 @@ testnetUtils.faucet(address, 2e4, function (err, unspent) {
 ### 6.產生SegWit P2SH-P2WPKH 交易
 
 ```js
-const bitcoin = require('bitcoinjs-lib');
+const bitcoin = require('../../');
 const testnet = bitcoin.networks.testnet
 const testnetUtils = require('./_testnet')
 
@@ -364,7 +259,7 @@ testnetUtils.faucet(address, 5e4, function (err, unspent) {
 ### 7.產生SegWit 3-of-4 P2SH-P2WSH交易
 
 ```js
-const bitcoin = require('bitcoinjs-lib');
+const bitcoin = require('../../');
 const testnet = bitcoin.networks.testnet
 const testnetUtils = require('./_testnet')
 
