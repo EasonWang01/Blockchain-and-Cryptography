@@ -523,7 +523,7 @@ function hexToDecimalArray(s) {
 
 以下我們使用BIP39 （Mnemonic code）產生 BIP32地址
 
-> https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
+> [https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
 
 ```
 npm install bip39
@@ -550,7 +550,7 @@ console.log(root.derivePath("m/0'/0/1").getAddress())
 
 child key 可分為 Hardened 與 non-Hardened
 
-通常在數字後面加有 `' `即為 Hardened key，例如`m/0'`
+通常在數字後面加有 `'`即為 Hardened key，例如`m/0'`
 
 > ```
 > 一般 child keys index 為 0 到 (2 ** 31) - 1 ，而 hardened child keys 的 index為 2 ** 31 到 (2 ** 32) - 1
@@ -561,10 +561,13 @@ child key 可分為 Hardened 與 non-Hardened
 > ```
 > 知道parent extended public key 以及任何一個 child non-hardened private key 
 > 即可推導出 parent extended private key 以及任何 child private key 及 public key  
-> // 可參考: https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/crypto.js#L115
-> // https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#security
->
 > ```
+
+可參考 :
+
+https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/crypto.js\#L115
+
+https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#security
 
 [https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child](https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child)
 
