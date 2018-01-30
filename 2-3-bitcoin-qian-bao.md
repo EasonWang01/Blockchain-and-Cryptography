@@ -50,7 +50,7 @@ getinfo
 
 ## 有關其他可下載的用戶端錢包
 
-除了官方的錢包之外，還有其他第三方所製作的錢包程式可以使用。
+除了官方的節點錢包之外，還有其他第三方所製作的節點錢包程式可以使用。
 
 ### Full node Client
 
@@ -74,16 +74,22 @@ https://github.com/libbitcoin/libbitcoin-server
 
 ### Thin client
 
-比較輕量的客戶端，只會下載區塊頭與部分區塊鏈上的資料，也稱為SPV。
+比較輕量的用戶端，只會下載區塊頭與部分區塊鏈上的資料，也稱為SPV節點。
 
 > As Satoshi writes, "\[the thin client\] can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it." If we take "X" to be the "number of blocks added after it", then a thin client essentially trusts that a transaction X blocks deep will be costly to forge.
 
-1.bitcoind
+Bitcoin-Core
 
-可以加上指令跑較輕量的client大約只需2GB的儲存空間，啟動節點時加上以下指令，N是分配給raw block 與 undo data的MiB \( 附註1 \) 大小。
+Bitcoin-Core也可以當作輕量級用戶端，加上以下指令跑較輕量的client大約只需2GB的儲存空間，啟動節點時加上以下指令。
+
+> N是分配給raw block 與 undo data的MiB 大小\( 附註1 \)。
+>
+> 記得只有在節點上未進行任何同步時才可輸入，如果先前執行時沒有輸入`prune=<N>`，則之後無法用此方法同步。
 
 ```
 prune=<N>
+
+例如：./bitcoind -prune=560
 ```
 
 > 可參考 : [https://github.com/bitcoin/bitcoin/blob/v0.12.0/doc/release-notes.md\#wallet-pruning](https://github.com/bitcoin/bitcoin/blob/v0.12.0/doc/release-notes.md#wallet-pruning)
