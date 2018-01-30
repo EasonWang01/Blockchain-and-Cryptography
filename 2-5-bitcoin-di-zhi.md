@@ -78,6 +78,8 @@
 
 #### 使用Bitcoind產生P2PKH地址
 
+> 安裝方式於先前章節有介紹。
+
 1.啟動Server
 
 ```
@@ -105,37 +107,34 @@ npm install bs58
 範例:
 
 ```js
-var crypto = require('crypto');
-var ecdh = crypto.createECDH('secp256k1');
-var bs58 = require('bs58');
+const crypto = require('crypto');
+const ecdh = crypto.createECDH('secp256k1');
+const bs58 = require('bs58');
 
-
-var hash2 = crypto.randomBytes(32)
+const privateKey = crypto.randomBytes(32)
 console.log('--------')
 console.log('私鑰')
-console.log(hash2.toString('hex')); //私鑰，64位十六進制數 //使用hash2.toString('hex')即可看到16進位字串
+console.log(privateKey.toString('hex')); //私鑰，64位十六進制數 //使用privateKey.toString('hex')即可看到16進位字串
 console.log('--------')
 
-
 // ECDH和ECDSA產生公私鑰的方式都相同
-var publickey = ecdh.setPrivateKey(hash2).getPublicKey('hex')
+const publickey = ecdh.setPrivateKey(privateKey).getPublicKey('hex')
 console.log('公鑰')
 console.log(publickey.toString('hex')); //公鑰(通過橢圓曲線算法可以從私鑰計算得到公鑰)
 console.log('--------')
 
 //把公鑰以sha256加密後再用ripemd160加密，取得publickeyHash
 ASCII_text = hex2ASCII(publickey); // 先將publickey轉為ASCII再放入SHA256 這邊可參考: https://bitcoin.stackexchange.com/a/43350
-var hash = crypto.createHash('sha256').update(Buffer.from(ASCII_text, "ascii")).digest();
+let hash = crypto.createHash('sha256').update(Buffer.from(ASCII_text, "ascii")).digest();
 
 hash = crypto.createHash('ripemd160').update(hash).digest();
 console.log('publickeyHash')
 console.log(hash.toString('hex'));
 console.log('--------')
 
-
 //在publickeyHash前面加上一个00前缀
-var version = new Buffer('00', 'hex');
-var checksum = Buffer.concat([version, hash]);
+let version = new Buffer('00', 'hex');
+let checksum = Buffer.concat([version, hash]);
 //兩次256雙重加密
 checksum = crypto.createHash('sha256').update(checksum).digest();
 checksum = crypto.createHash('sha256').update(checksum).digest();
@@ -147,7 +146,7 @@ console.log(checksum);
 console.log('--------')
 
 //把publickeyHash前面一樣加上00而後面加上剛才算出的checksum
-var address = Buffer.concat([version, hash, checksum]);
+let address = Buffer.concat([version, hash, checksum]);
 console.log('編碼前地址')
 console.log(address);
 console.log('--------')
@@ -158,12 +157,12 @@ console.log('編碼後的比特幣地址')
 console.log(address);
 console.log('--------')
 
-
+// hex 轉為 ASCII 字串
 function hex2ASCII(_hex) {
-  var hex = _hex.toString();//force conversion
+  var hex = _hex.toString();
   var str = '';
   for (var i = 0; i < hex.length; i += 2) {
-      str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+    str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
   }
   return str;
 }
