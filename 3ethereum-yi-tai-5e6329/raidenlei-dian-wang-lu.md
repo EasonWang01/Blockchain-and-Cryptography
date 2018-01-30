@@ -123,7 +123,13 @@ curl -X PUT  http://127.0.0.1:5001/api/1/tokens/0xC73cE6eA79CC86CC720303ECf2fa5a
 
 ![](/assets/螢幕快照 2018-01-31 上午12.10.59.png)
 
-#### 
+#### 開啟Channel
+
+
+
+
+
+
 
 #### 安裝時可能產生的Issue：
 
