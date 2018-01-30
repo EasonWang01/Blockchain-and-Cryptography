@@ -152,7 +152,6 @@ export default [{
 ```js
 import React, { Component } from 'react';
 import './App.css';
-import Web3 from 'web3';
 import { Button, Checkbox, Icon, Table, Label, Menu, Rating, Input } from 'semantic-ui-react'
 import { Modal } from 'react-pure-css-modal';
 import 'semantic-ui-css/semantic.min.css';
@@ -166,7 +165,7 @@ class App extends Component {
       mockData
     }
   }
-  
+
   handlePageClick = (e, { page }) => {
     this.setState({ activePage: page })
   }
@@ -259,5 +258,11 @@ export default App;
 
 目前可看到如下畫面：
 
-![](/assets/螢幕快照 2018-01-30 下午9.53.16.png)
+## ![](/assets/螢幕快照 2018-01-30 下午9.53.16.png)部署合約
+
+在一開始我們已經啟動了Geth的節點以及寫好了合約的程式在Remix IDE上，接下來我們要將合約從Remix IDE部署到本地Geth節點上。
+
+
+
+
 
