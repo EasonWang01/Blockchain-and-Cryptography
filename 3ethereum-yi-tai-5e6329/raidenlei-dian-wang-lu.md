@@ -105,11 +105,21 @@ curl -s http://127.0.0.1:5001/api/1/address
 
 ![](/assets/螢幕快照 2018-01-30 下午11.25.19.png)
 
+#### 註冊Token
 
+假設我們在鏈上有一個ERC20 Token，地址為：0xC73cE6eA79CC86CC720303ECf2fa5aF8df99fe87
 
+我們使用以下指令發出PUT請求，來註冊此地址的Token
 
+```
+curl -X PUT  http://127.0.0.1:5001/api/1/tokens/0xC73cE6eA79CC86CC720303ECf2fa5aF8df99fe87
+```
 
----
+註冊後查看Token list
+
+![](/assets/螢幕快照 2018-01-31 上午12.10.59.png)
+
+#### 
 
 #### 安裝時可能產生的Issue：
 
