@@ -225,15 +225,16 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 3.交易的bytes大小必須小於MAX_BLOCK_SIZE。 
 
-4.每一個輸出值，以及總量，必須在規定值的範圍內 （大於0且小於2,100萬個比特幣）。
+4.每一個輸出值，以及總量，必須在規定值的範圍內 （大於0且小於2100萬個比特幣）。
 
-5.沒有Hash等於0，N等於-1的輸入（hash=0, n=-1,即為coinbase transaction）。 
+5.沒有Hash等於0，N等於-1的輸入（hash=0,n=-1,為coinbase transaction，只會發生在挖到區塊時獎勵給礦工的那筆交易）。 
 
-6.nLockTime(指定在交易發生前的鎖定時間)是小於或等於INT_MAX(31 bits)，交易大小bytes >= 100，sig opcount <= 2(關於signature的opcode執行不可多於兩個)。 
+6.nLockTime(指定在交易發生前的鎖定時間)是小於或等於INT_MAX(31 bits)，
+  交易大小bytes >= 100，sig opcount <= 2(關於signature的opcode執行不可多於兩個)。 
 
 7.解鎖腳本（scriptSig）只能夠將數字壓入棧中，並且鎖定腳本（scriptPubkey）必須要符合isStandard的格式 （參考下面交易類型部分）。 
 
-8.假設發出的交易Tx hash已經出現在pool中等待納入區塊或是已經在以前的區塊中則一樣拒絕。
+8.假設發出的交易Tx hash已經出現在pool中等待納入區塊，或是已經出現在以前的區塊中則一樣拒絕。
 
 9.對於每一個交易輸入，在區塊鏈和目前等待納入的交易池中尋找引用的輸出交易。如果缺少對應的輸出交易，該交易將成為一個孤立的交易。
 
@@ -241,13 +242,18 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 11.對於每一個輸入，引用的輸出是必須存在的，並且沒有被花費(UTXO)。 
 
-12.使用引用的輸出交易獲得輸入值，並檢查每一個輸入值和總值是否在規定值的範圍內 （大於0且小於2,100萬個比特幣）。 
+12.使用引用的輸出交易獲得輸入值，並檢查每一個輸入值和總值是否在規定值的範圍內 （大於0且小於2100萬個比特幣）。 
 
-13.如果輸入值的總和小於輸出值的總和，交易將被中止。 
+13.如果交易輸入值的總和小於輸出值的總和，也就是餘額小於要花費的金額，交易將被中止。 
 
 14.如果交易手續費太低以至於無法進入下一個新區塊，交易將被拒絕。 
 
 15.驗證 scriptPubKey 符合正確格式
+```
+
+如果以上都驗證成功後即可進入納入交易至區塊中的步驟：
+
+```
 
 16.加入交易池中
 
@@ -258,8 +264,8 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 19.根據新的區塊把剛才納入孤兒交易(orphan transaction)在跑一次以上過程，讓他們可以加入下一個區塊
 ```
 
-[https://en.bitcoin.it/wiki/Protocol\_rules\#.22tx.22\_messages](https://en.bitcoin.it/wiki/Protocol_rules#.22tx.22_messages)  
-原始碼:[https://github.com/bitcoin/bitcoin/blob/3081fb9a31054224759453c3ca400b9076ab8004/src/main.cpp\#L924](https://github.com/bitcoin/bitcoin/blob/3081fb9a31054224759453c3ca400b9076ab8004/src/main.cpp#L924)
+相關文件：[https://en.bitcoin.it/wiki/Protocol\_rules\#.22tx.22\_messages](https://en.bitcoin.it/wiki/Protocol_rules#.22tx.22_messages)  
+原始碼 : [https://github.com/bitcoin/bitcoin/blob/3081fb9a31054224759453c3ca400b9076ab8004/src/main.cpp\#L924](https://github.com/bitcoin/bitcoin/blob/3081fb9a31054224759453c3ca400b9076ab8004/src/main.cpp#L924)
 
 # 交易確認\(confirmation\)
 
