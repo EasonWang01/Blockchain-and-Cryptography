@@ -20,7 +20,7 @@
 
 ```
 
-目前只能使用完全同步後的Ropsten測試網路來進行Raiden雷電網路的執行。
+目前只能使用完全同步後的Ropsten測試網路來進行Raiden雷電網路的執行，輸入以下指令來進行節點同步。
 
 ```
 parity --chain ropsten --bootnodes \
@@ -37,6 +37,16 @@ a349691242576d552a2a56aaeae426c5303ded677ce455ba1acd9d@13.84.180.240:30303"
 ![](/assets/螢幕快照 2018-01-29 上午12.15.43.png)
 
 s
+
+
+
+Parity的Ropsten鏈Key 通常會存在以下路徑：
+
+```
+Windows: %UserProfile%\AppData\Roaming\Parity\keys\test
+macOS: $HOME/Library/Application\ Support/io.parity.ethereum/keys/test
+Linux: ~/.local/share/io.parity.ethereum/keys/test
+```
 
 ---
 
