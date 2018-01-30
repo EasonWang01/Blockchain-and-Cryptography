@@ -115,6 +115,10 @@ curl -s http://127.0.0.1:5001/api/1/address
 curl -X PUT  http://127.0.0.1:5001/api/1/tokens/0xC73cE6eA79CC86CC720303ECf2fa5aF8df99fe87
 ```
 
+![](/assets/螢幕快照 2018-01-31 上午12.10.25.png)
+
+> 註冊後會回傳`{"channel_manager_address": "0x2ee7e1e036f5090387feddc87b39367356a690c0"}`
+
 註冊後查看Token list
 
 ![](/assets/螢幕快照 2018-01-31 上午12.10.59.png)
