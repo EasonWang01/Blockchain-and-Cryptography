@@ -8,11 +8,11 @@
 
 #### 自行編譯：
 
-需要裝好：
+需要安裝好以下程式：
 
 1.python3
 
-https://www.python.org/downloads/
+[https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 2.solc
 
@@ -88,6 +88,10 @@ Linux: ~/.local/share/io.parity.ethereum/keys/test
 同步好後會出現：
 
 ![](/assets/螢幕快照 2018-01-30 下午11.09.27.png)
+
+## 開始使用
+
+
 
 ---
 
