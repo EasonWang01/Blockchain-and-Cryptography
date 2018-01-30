@@ -172,7 +172,7 @@ function hex2ASCII(_hex) {
 
 開頭為3，並且可以選擇發送交易簽名時需要幾個對應的私鑰來做簽名。
 
-因為P2SH交易的locking script包含OP\_HASH160，跟產生地址的過程類似，所以之後發展為可以將其作Base58編碼，即成為一種地址格式，這也是所謂的P2SH地址。
+因為P2SH交易的Locking script包含OP\_HASH160，跟產生地址的過程類似，所以之後發展為可以將其作Base58編碼，即成為一種地址格式，這也是所謂的P2SH地址。
 
 [https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki)
 
@@ -244,8 +244,8 @@ Unlocking script:
 #### 使用Node.js產生P2SH地址
 
 ```js
-var crypto = require('crypto');
-var bs58 = require('bs58');
+const crypto = require('crypto');
+const bs58 = require('bs58');
 
 // 查表
 const OP_2 = "52";
@@ -266,15 +266,15 @@ console.log(redeemScript)
 console.log('---------')
 
 ASCII_text = hex2ASCII(redeemScript); // 先將redeemScript轉為ASCII再放入SHA256 這邊可參考: https://bitcoin.stackexchange.com/a/43350
-var hash = crypto.createHash('sha256').update(Buffer.from(ASCII_text, "ascii")).digest();
+let hash = crypto.createHash('sha256').update(Buffer.from(ASCII_text, "ascii")).digest();
 hash = crypto.createHash('ripemd160').update(hash).digest();
 console.log('redeemScriptHash')
 console.log(hash);
 console.log('--------')
 
 //在publickeyHash前面加上一个05前缀 P2SH_BYTE
-var version = new Buffer('05', 'hex');
-var checksum = Buffer.concat([version, hash]);
+let version = new Buffer('05', 'hex');
+let checksum = Buffer.concat([version, hash]);
 //兩次256雙重加密
 checksum = crypto.createHash('sha256').update(checksum).digest();
 checksum = crypto.createHash('sha256').update(checksum).digest();
@@ -286,7 +286,7 @@ console.log(checksum);
 console.log('--------')
 
 //把publickeyHash前面一樣加上05而後面加上剛才算出的checksum
-var address = Buffer.concat([version, hash, checksum]);
+let address = Buffer.concat([version, hash, checksum]);
 console.log('編碼前地址')
 console.log(address);
 console.log('--------')
@@ -296,7 +296,6 @@ address = bs58.encode(address);
 console.log('編碼後的多重簽名比特幣地址')
 console.log(address);
 console.log('--------')
-
 
 function hex2ASCII(_hex) {
   let hex = _hex.toString();
