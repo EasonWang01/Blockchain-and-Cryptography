@@ -85,7 +85,7 @@ Linux: ~/.local/share/io.parity.ethereum/keys/test
 
 ![](/assets/螢幕快照 2018-01-30 下午11.08.48.png)
 
-同步好後會出現：
+同步好後會出現以下訊息，並且啟動RPC Server在5001 PORT：
 
 ![](/assets/螢幕快照 2018-01-30 下午11.09.27.png)
 
