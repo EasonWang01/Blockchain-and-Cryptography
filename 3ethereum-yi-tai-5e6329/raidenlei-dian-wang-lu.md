@@ -36,9 +36,11 @@ a349691242576d552a2a56aaeae426c5303ded677ce455ba1acd9d@13.84.180.240:30303"
 
 ![](/assets/螢幕快照 2018-01-29 上午12.15.43.png)
 
-s
+接著我們啟動Raiden
 
-
+```
+raiden --keystore-path $HOME/Library/Application\ Support/io.parity.ethereum/keys/test
+```
 
 Parity的Ropsten鏈Key 通常會存在以下路徑：
 
@@ -47,6 +49,22 @@ Windows: %UserProfile%\AppData\Roaming\Parity\keys\test
 macOS: $HOME/Library/Application\ Support/io.parity.ethereum/keys/test
 Linux: ~/.local/share/io.parity.ethereum/keys/test
 ```
+
+之後會進入如下畫面
+
+![](/assets/螢幕快照 2018-01-30 下午10.32.19.png)
+
+然後我們選擇一個在Parity創建的帳號：
+
+![](/assets/螢幕快照 2018-01-30 下午10.32.48.png)
+
+這時因為帳號裡面沒有餘額，我們必須要向測試鏈Ropsten 的 faucet 水龍頭拿取測試幣。
+
+可到這個網站：http://faucet.ropsten.be:3001/，然後填入地址
+
+![](/assets/螢幕快照 2018-01-30 下午10.35.40.png)
+
+#### 
 
 ---
 
