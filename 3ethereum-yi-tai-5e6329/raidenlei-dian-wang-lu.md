@@ -1,8 +1,24 @@
 # Raiden雷電網路
 
-下載：
+我們可以選擇直接下載，或自行編譯。
 
-https://github.com/raiden-network/raiden/releases
+#### 下載：
+
+[https://github.com/raiden-network/raiden/releases](https://github.com/raiden-network/raiden/releases)
+
+#### 自行編譯：
+
+需要裝好：
+
+http://solidity.readthedocs.io/en/latest/installing-solidity.html
+
+https://github.com/ethereum/pyethapp/\#installation-on-ubuntudebian
+
+然後
+
+```
+
+```
 
 目前只能使用完全同步後的Ropsten測試網路來進行Raiden雷電網路的執行。
 
