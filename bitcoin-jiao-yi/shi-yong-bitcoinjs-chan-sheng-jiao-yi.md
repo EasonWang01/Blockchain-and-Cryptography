@@ -206,14 +206,15 @@ const pubKeys = keyPairs.map(function (x) { return x.getPublicKeyBuffer() })
 const redeemScript = bitcoin.script.multisig.output.encode(2, pubKeys)
 const scriptPubKey = bitcoin.script.scriptHash.output.encode(bitcoin.crypto.hash160(redeemScript))
 const address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
-
+// 取得測試幣
 testnetUtils.faucet(address, 2e4, function (err, unspent) {
   if (err) return console.log(err)
 
   const txb = new bitcoin.TransactionBuilder(testnet)
+  // 加入Input與Output
   txb.addInput(unspent.txId, unspent.vout)
   txb.addOutput(testnetUtils.RETURN_ADDRESS, 1e4)
-
+  // 簽名
   txb.sign(0, keyPairs[0], redeemScript)
   txb.sign(0, keyPairs[2], redeemScript)
 
@@ -244,7 +245,7 @@ const redeemScriptHash = bitcoin.crypto.hash160(redeemScript)
 
 const scriptPubKey = bitcoin.script.scriptHash.output.encode(redeemScriptHash)
 const address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
-
+// 取得測試幣
 testnetUtils.faucet(address, 5e4, function (err, unspent) {
   if (err) return console.log(err)
 
@@ -269,7 +270,7 @@ testnetUtils.faucet(address, 5e4, function (err, unspent) {
 const bitcoin = require('../../');
 const testnet = bitcoin.networks.testnet
 const testnetUtils = require('./_testnet')
-
+// 四把私鑰
 const keyPairs = [
   'cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87JcbXMTcA',
   'cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87K7XCyj5v',
@@ -282,7 +283,7 @@ const witnessScript = bitcoin.script.multisig.output.encode(3, pubKeys)
 const redeemScript = bitcoin.script.witnessScriptHash.output.encode(bitcoin.crypto.sha256(witnessScript))
 const scriptPubKey = bitcoin.script.scriptHash.output.encode(bitcoin.crypto.hash160(redeemScript))
 const address = bitcoin.address.fromOutputScript(scriptPubKey, testnet)
-
+// 取得測試幣
 testnetUtils.faucet(address, 6e4, function (err, unspent) {
   if (err) return console.log(err)
 
@@ -303,7 +304,7 @@ testnetUtils.faucet(address, 6e4, function (err, unspent) {
 })
 ```
 
-> 以上的交易廣播都是廣播到Testnet，廣播到Testnet的交易都可以到以下網站，輸入 txid 或地址查看
+> 以上的交易廣播都是廣播到Testnet，廣播到Testnet的交易都可以到以下網站，輸入 TxID 或地址查看
 >
 > [https://live.blockcypher.com/btc-testnet/](https://live.blockcypher.com/btc-testnet/)
 >
