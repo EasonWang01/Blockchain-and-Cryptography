@@ -164,9 +164,9 @@ start ./bitcoin-cli getblockchaininfo
 >
 > 但記得使用Bitcoin-cli呼叫指令時，也要指定相同資料夾：`./bitcoin-cli -datadir="./chaindata" getblockchaininfo`
 
-## 啟動節點時可加上的Flag
+## 啟動節點相關設定
 
-可以參考此處：https://en.bitcoin.it/wiki/Running\_Bitcoin
+可以參考此處：[https://en.bitcoin.it/wiki/Running\_Bitcoin](https://en.bitcoin.it/wiki/Running_Bitcoin)
 
 ![](/assets/螢幕快照 2018-01-30 上午11.27.55.png)
 
