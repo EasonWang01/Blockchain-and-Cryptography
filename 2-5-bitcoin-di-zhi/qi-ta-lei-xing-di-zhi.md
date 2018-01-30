@@ -410,8 +410,8 @@ let ir = HMAC_SHA512.slice(64, 128);
 
 // 相關橢圓曲線參數使用secp256k1
 EllipticCurve = ec;
-var ecparams = ec.getSECCurveByName("secp256k1");
-var curve = ecparams.getCurve();
+const ecparams = ec.getSECCurveByName("secp256k1");
+const curve = ecparams.getCurve();
 
 if (parent_xkey.slice(0, 4) === 'xprv') {
     // 使用父 private_key 計算derive 出的 下一層 child private key 與 child public key
@@ -447,7 +447,7 @@ if (parent_xkey.slice(0, 4) === 'xprv') {
 
 
 // 用 parent 的 public key 算出 finger_print
-var RIPEMD160 = require('ripemd160')
+const RIPEMD160 = require('ripemd160')
 let sha256 = crypto.createHash('sha256').update(Buffer.from(public_key, 'hex')).digest('hex')
 let fingerprint = hexToDecimalArray(new RIPEMD160().update(Buffer.from(sha256, 'hex')).digest('hex')).slice(0, 4);
 
@@ -521,42 +521,36 @@ function hexToDecimalArray(s) {
 
 #### 使用第三方模組
 
-以下我們使用Bitcore模組為範例
+以下我們使用BIP39 （Mnemonic code）產生 BIP32地址
+
+> https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
 
 ```
-npm install bitcore
+npm install bip39
 ```
 
 ```js
-var bitcore = require('bitcore');
-var HDPrivateKey = bitcore.HDPrivateKey;
+const bitcoin = require('bitcoinjs-lib')
+const bip39 = require('bip39');
 
-var hdPrivateKey = new HDPrivateKey();
-console.log(hdPrivateKey.toString())
+const mnemonic = bip39.generateMnemonic(); 
+console.log('--隨機產生字串--');
+console.log(mnemonic);
 
-var derived_m_0 = hdPrivateKey.derive("m/0");
-var derivedByNumber_1_2 = hdPrivateKey.derive(1).derive(2);
-var derivedByArgument_1_2 = hdPrivateKey.derive("m/1/2");
-console.log(derivedByNumber_1_2);
-console.log(derivedByArgument_1_2)
+const seed = bip39.mnemonicToSeed(mnemonic)
+const root = bitcoin.HDNode.fromSeedBuffer(seed)
 
-// Hardened
-var derivedByNumber_1_2 = hdPrivateKey.derive(1).derive(2, true);
-var derivedByArgument_1_2 = hdPrivateKey.derive("m/1/2'");
-console.log(derivedByNumber_1_2);
-console.log(derivedByArgument_1_2)
-
-var address = derived_m_0.privateKey.toAddress();
-console.log(address)
-
-// obtain HDPublicKey
-var hdPublicKey = hdPrivateKey.hdPublicKey;
-console.log(hdPublicKey.toString())
+console.log(root.derivePath("m/0'/0/0").getAddress())
+console.log(root.derivePath("m/0'/0/1").getAddress())
 ```
+
+#### ![](/assets/螢幕快照 2018-01-30 下午4.34.09.png)
 
 #### Hardened 與 non-Hardened
 
 child key 可分為 Hardened 與 non-Hardened
+
+通常在數字後面加有 `' `即為 Hardened key，例如`m/0'`
 
 > ```
 > 一般 child keys index 為 0 到 (2 ** 31) - 1 ，而 hardened child keys 的 index為 2 ** 31 到 (2 ** 32) - 1
@@ -570,7 +564,6 @@ child key 可分為 Hardened 與 non-Hardened
 > // 可參考: https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/crypto.js#L115
 > // https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#security
 >
-> 所以non-Hardened 的 parent extended public keys 不可以洩漏出去，而 hardened keys 可以解決此問題。
 > ```
 
 [https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child](https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child)
