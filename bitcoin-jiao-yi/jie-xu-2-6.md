@@ -1,6 +1,6 @@
 #### 
 
-其解鎖unlocking如下
+其解鎖Unlocking script如下
 
 ```
 OP_0 <Signature B> <Signature C>
@@ -15,7 +15,7 @@ Signature script: OP_0 <A sig> [B sig] [C sig...]
 
 #### 4.Data Output \(OP\_RETURN，可以填上自己想填的資料到交易上\)
 
-有些人會想要在區塊鏈上加上客製化的資料，所以後來發展出此種做法，最多可以帶83bytes的資料\(Bitcoin Core 0.12.0\)，OP\_RETURN 沒有 unlocking script，並且在在 isStandard\(\) 會被判斷為 invalid，一個交易的 outputs 只能有一個 OP\_RETURN，而OP\_RETURN 花費進去的比特幣是無法轉出的。
+有些人會想要在區塊鏈上加上客製化的資料，所以後來發展出此種做法，最多可以帶83bytes的資料\(Bitcoin Core 0.12.0\)，OP\_RETURN 沒有 Unlocking script，並且在 isStandard\(\) 會被判斷為 invalid，一個交易的 Outputs 只能有一個 OP\_RETURN，而OP\_RETURN 花費進去的比特幣是無法轉出的。
 
 [https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/standard.h\#L34](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/standard.h#L34)
 
@@ -27,15 +27,15 @@ OP_RETURN <data>
 
 > ![](/assets/987.png)[https://blockchain.info/tx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684](https://blockchain.info/tx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684)
 
-接著我們使用線上的服務來查看Tx的內容： https://blockchain.info/rawtx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684
+接著我們使用線上的服務來查看OP\_RETURN 的TX內容： [https://blockchain.info/rawtx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684](https://blockchain.info/rawtx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684)
 
 進入後可以往下看到：
 
 ![](/assets/螢幕快照 2018-01-21 上午9.45.10.png)
 
-之後我們使用此網站來查看 script 內容 :
+之後我們使用此網站來解碼 script 內容 :
 
- https://chainquery.com/bitcoin-api/decodescript
+[https://chainquery.com/bitcoin-api/decodescript](https://chainquery.com/bitcoin-api/decodescript)
 
 ![](/assets/螢幕快照 2018-01-21 上午9.43.57.png)
 
@@ -54,8 +54,6 @@ function hex_to_ASCII(hexx) {
 
 hex_to_ASCII('636861726c6579206c6f766573206865696469');
 ```
-
-
 
 #### 5.Pay-to-Script-Hash \(P2SH\)
 
@@ -90,7 +88,7 @@ Unlocking script:
 
 [https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki)
 
-也稱為隔離見證，主要用意是要減少放入區塊內的交易大小，作法為把原本交易簽名（signature）從交易Script中移除。
+中文為隔離見證，主要用意是要減少放入區塊內的交易大小，作法為把原本交易簽名（signature）從交易Script中移除。
 
 每個Segwit的交易將會產生兩種ID : txid與wtxid。
 

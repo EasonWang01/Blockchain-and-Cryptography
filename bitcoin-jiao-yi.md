@@ -277,7 +277,7 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 2.礦工挖礦獲得的比特幣收入必須在100個區塊確認後才可交易
 
 > Freshly-mined coins cannot be spent for 100 blocks.
-
+>
 > 寫在如下原始碼中[https://github.com/bitcoin/bitcoin/blob/1d9d314573ee48f6f51107265f1cf1fa9e36c998/src/consensus/consensus.h\#L14](https://github.com/bitcoin/bitcoin/blob/1d9d314573ee48f6f51107265f1cf1fa9e36c998/src/consensus/consensus.h#L14)
 
 3.以下網站可用來計算在特定的hashrate運算比例與確認數下可能被成功 hack \( double spend \) 的機率
@@ -423,9 +423,9 @@ Input一定會對應到一個Output，每個Output都會有一個locking script 
 
 此為最常見的交易類型
 
-其Locking script 如下圖\(後續章節會介紹，有關Bitcoin script\)，Locking scrip通常會出現在交易的Output裡面，所以也稱為Output script。另外也稱為scriptPubKey。
+其Locking script 如下圖\(有關Bitcoin script後續章節會介紹\)，Locking scrip通常會出現在交易的Output裡面，所以也稱為Output script。另外也稱為scriptPubKey。
 
-> 因為交易是產生一筆input去解鎖上一個還沒花費的output，而上output會被locking script鎖住
+> 因為交易是產生一筆Input去解鎖上一個還沒花費的Output，而Output會被Locking script鎖住
 
 ```
 OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> OP_EQUAL OP_CHECKSIG
@@ -445,9 +445,9 @@ OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> 
 
 #### 2.Pay-to-Public-Key \(P2PK\)
 
-此為更簡單的交易格式，相較 P2PKH 省略了Hash步驟，最常在 coinbase tx 裡面出現，是比較早期的交易型態，公鑰已經存在locking script中
+此為更簡單的交易格式，相較 P2PKH 省略了Hash步驟，最常在 Coinbase TX 裡面出現，是比較早期的交易型態，公鑰已經存在Locking script中。
 
-鎖定腳本\(Locking script\)類似如下
+鎖定腳本\(Locking script\)如下
 
 ```
 <Public Key A> OP_CHECKSIG
