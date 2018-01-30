@@ -159,15 +159,15 @@ const testnetUtils = require('./_testnet')
 
 const rng = () => crypto.randomBytes(32);
 
-var keyPair = bitcoin.ECPair.makeRandom({ network: testnet })
-var address = keyPair.getAddress()
+let keyPair = bitcoin.ECPair.makeRandom({ network: testnet })
+let address = keyPair.getAddress()
 
 testnetUtils.faucet(address, 5e4, function (err, unspent) {
   if (err) return console.log(err)
 
-  var txb = new bitcoin.TransactionBuilder(testnet)
-  var data = Buffer.from('bitcoinjs-lib', 'utf8')
-  var dataScript = bitcoin.script.nullData.output.encode(data)
+  let txb = new bitcoin.TransactionBuilder(testnet)
+  let data = Buffer.from('Doing is better than saying', 'utf8')
+  let dataScript = bitcoin.script.nullData.output.encode(data)
 
   txb.addInput(unspent.txId, unspent.vout)
   txb.addOutput(dataScript, 1000)
@@ -176,11 +176,16 @@ testnetUtils.faucet(address, 5e4, function (err, unspent) {
 
   console.log(txb.build().toHex())
   // 廣播交易
-  testnetUtils.transactions.propagate(txb.build().toHex(), function (err) {
+  testnetUtils.transactions.propagate(txb.build().toHex(), function (err, result) {
     if (err) return console.log(err)
+    console.log(result)
   })
 })
 ```
+
+接著一樣到網站輸入交易TxID，可以看到剛才輸入的自訂訊息。
+
+![](/assets/螢幕快照 2018-01-30 下午3.26.47.png)
 
 ### 5.產生2-of-4 P2SH \( multisig \)交易
 
@@ -215,8 +220,9 @@ testnetUtils.faucet(address, 2e4, function (err, unspent) {
   const tx = txb.build()
 
   // 廣播交易
-  testnetUtils.transactions.propagate(tx.toHex(), function (err) {
+  testnetUtils.transactions.propagate(tx.toHex(), function (err, result) {
     if (err) return console.log(err)
+    console.log(result.body)
   })
 })
 ```
@@ -250,8 +256,9 @@ testnetUtils.faucet(address, 5e4, function (err, unspent) {
   const tx = txb.build()
 
   // 廣播交易
-  testnetUtils.transactions.propagate(tx.toHex(), function (err) {
+  testnetUtils.transactions.propagate(tx.toHex(), function (err, result) {
     if (err) return console.log(err)
+    console.log(result.body)
   })
 })
 ```
@@ -289,8 +296,9 @@ testnetUtils.faucet(address, 6e4, function (err, unspent) {
   const tx = txb.build()
 
   // 廣播交易
-  testnetUtils.transactions.propagate(tx.toHex(), function (err) {
+  testnetUtils.transactions.propagate(tx.toHex(), function (err, result) {
     if (err) return console.log(err)
+    console.log(result.body)
   })
 })
 ```
