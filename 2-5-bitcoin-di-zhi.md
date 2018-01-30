@@ -53,19 +53,19 @@
 
 # 1.最常用的P2PKH單一簽名地址
 
-單一簽名地址，開頭為1
+單一簽名地址，開頭為1。
 
 下圖為P2PKH比特幣地址的產生流程
 
-![](/assets/address1.png)
+![](/assets/螢幕快照 2018-01-30 下午3.33.479s.png)
 
 > [http://en.bitcoinwiki.org/Bitcoin\_address](http://en.bitcoinwiki.org/Bitcoin_address)
 
 下圖為更詳細的地址產生方式
 
-![](/assets/735e7c64-699c-431c-9a43-dc899dcd8317.png)
+![](/assets/0_--6A6E5CY2IT4fmc.png)
 
-> 有些第三方套件在使用橢圓曲線產生的256bits的public key時已經把0x04和x,y結合了
+> 有些第三方套件在使用橢圓曲線產生的 256 bits 的 public key 時已經把 0x04 和 x, y 結合了
 >
 > > 但有些須自己拼接，如Golang的原生橢圓曲線套件   [https://play.golang.org/p/-8n67Cq2iZ](https://play.golang.org/p/-8n67Cq2iZ)
 >
