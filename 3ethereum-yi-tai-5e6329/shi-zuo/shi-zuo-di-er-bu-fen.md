@@ -131,5 +131,19 @@ resetSignIn() {
 }
 ```
 
+幫頁籤加上功能
+
+> 每頁最多顯示十個會員，第一頁預設ID為: 0 ~ 9
+
+```js
+handlePageClick = (e, { page }) => {
+  this.setState({ activePage: page });
+  let pageMember = this.state.members.slice((page - 1) * 10, page * 10) 
+  this.setState({ pageMember });
+}
+```
+
+
+
 
 
