@@ -150,6 +150,14 @@ PUT /api/1/channels
 }
 ```
 
+我們可用Postman發出請求，類似如下：
+
+![](/assets/螢幕快照 2018-01-31 上午10.30.28.png)
+
+
+
+
+
 #### 安裝時可能產生的Issue：
 
 [https://github.com/raiden-network/raiden/issues/1235](https://github.com/raiden-network/raiden/issues/1235)
