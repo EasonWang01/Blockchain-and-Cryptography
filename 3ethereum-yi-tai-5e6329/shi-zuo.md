@@ -171,10 +171,6 @@ class App extends Component {
     this.state = {
       activePage: '',
       mockData,
-      addUser_name: '',
-      addUser_email: '',
-      upgradeUser_ID: '',
-      upgradeUser_level: ''
     }
   }
   componentWillMount() {
@@ -276,7 +272,6 @@ class App extends Component {
 }
 
 export default App;
-
 ```
 
 目前可看到如下畫面：

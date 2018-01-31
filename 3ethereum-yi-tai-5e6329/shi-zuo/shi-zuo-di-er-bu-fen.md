@@ -107,5 +107,29 @@ for (let i = 0; i < memberNum; i++) {
 }
 ```
 
+設置簽到以及重置簽到
+
+```js
+signIn(id) {
+  Contract.signIn(id, { from: web3.eth.accounts[0], gas: 132700 }
+    , function (err, result) {
+      if (err) console.log(err);
+      console.log(result);
+      alert(`登記簽到成功 ID: ${id}`);
+      window.location.reload();
+    });
+}
+
+resetSignIn() {
+  Contract.reset_signIn({ from: web3.eth.accounts[0], gas: 132700 }
+    , function (err, result) {
+      if (err) console.log(err);
+      console.log(result);
+      alert('重置簽到成功');
+      window.location.reload();
+    });
+}
+```
+
 
 
