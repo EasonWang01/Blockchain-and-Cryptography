@@ -46,11 +46,11 @@
 
 > 引入新的錢包檔案的作法為把舊的wallet.dat檔案取代，然後輸入：`bitcoin-qt.exe -rescan`
 >
-> 可參考：https://bitcoin.stackexchange.com/questions/10974/import-wallet-dat-into-a-new-bitcoin-qt-client
+> 可參考：[https://bitcoin.stackexchange.com/questions/10974/import-wallet-dat-into-a-new-bitcoin-qt-client](https://bitcoin.stackexchange.com/questions/10974/import-wallet-dat-into-a-new-bitcoin-qt-client)
 
 #### 更改區塊鏈與錢包資料的存放資料夾
 
-預設比特幣資料會存放在
+預設比特幣資料會存放在如下路徑 :
 
 Windows
 
@@ -72,19 +72,20 @@ Linux
 ~/.bitcoin/
 ```
 
-但我們也可以自己設定要存放的資料夾位置  
-要這麼做的話，我們必須用命令列來啟動Bitcoin Core程式，並且在指令上輸入我們要用的資料夾
+而我們也可以自己設定要存放的資料夾位置，要這麼做的話，我們必須用命令列來啟動Bitcoin Core程式，並且在指令上輸入我們要用的資料夾。
 
-步驟如下:
+步驟如下 :
 
-1.先用系統管理員打開命令列\(避免稍後打開資料夾權限不足\)  
+1.先用系統管理員打開命令列 \( 避免稍後打開資料夾時權限不足 \)。  
 2.之後輸入`cd` 後面加上我們剛才安裝的資料夾位置  
 ![](/assets/bitcoin-qt12.png)  
-3.之後我們創建一個資料夾來存放我們要自己指定的區塊鏈資料存放位置\(這裡我們直接在這個資料夾下創建一個BitcoinData\)  
+3.之後我們創建一個資料夾來存放我們要自己指定的區塊鏈資料儲存位置 
+
+\( 這裡我們直接在這個資料夾路徑下創建一個名為BitcoinData的資料夾  \)  
 ![](/assets/bitcoin-qt13.png)  
-4.之後我們輸入如下指令\(記得確認路徑正確\)  
+4.再來我們輸入如下指令 \( 記得確認路徑正確 \)  
 ![](/assets/start-qt-cmd.png)  
-之後他就會一樣開啟剛才的Bitcoin Core程式
+輸入後他就會和剛才一樣，開啟Bitcoin Core程式。
 
 > macOS與Linux不用在指令開頭加`start`
 
@@ -95,17 +96,16 @@ Linux
 不同作業系統存放區塊鏈資料的資料夾路徑可參考以下：
 
 ```
-Windows
-> C:\Users\YourUserName\Appdata\Roaming\Bitcoin
+Windows：
+C:\Users\YourUserName\Appdata\Roaming\Bitcoin
 
-Linux
-> ~/.bitcoin/
+Linux：
+~/.bitcoin/
 
-macOS
-> ~/Library/Application\ Support/Bitcoin/
+macOS：
+~/Library/Application\ Support/Bitcoin/
 
-參考:
-https://en.bitcoin.it/wiki/Data_directory
+參考:https://en.bitcoin.it/wiki/Data_directory
 ```
 
 # 從 終端機 Terminal  執行 bitcoin 相關指令
@@ -117,26 +117,24 @@ https://en.bitcoin.it/wiki/Data_directory
 1.開啟terminal然後用進入到`daemon`路徑下  
 ![](/assets/bitcoin-qt15.png)
 
-2.然後我們要先執行bitcoind\(其為Bitcoin server\)  
+2.然後我們要先執行bitcoind \( 即為Bitcoin 的節點 Server \)  
 ![](/assets/bitcoin-qt16.png)
 
-3.之後可輸入
+3.之後可輸入以下指令測試：
 
 ```
 start ./bitcoin-cli getblockchaininfo
 ```
 
-> Windows會在執行開一個新視窗顯示，但顯示完會隨即關閉視窗，所以如果要用此種方法建議寫一個batch file然後後面加上`pause`
+> 在Windows上，通常會在執行後跳出視窗顯示結果，但顯示完隨即自動關閉視窗，所以如果要用此種方法執行，建議寫一個batch file然後於後面加上`pause`
 
-## Linux, OSX
+## Linux, macOS
 
-先到官網
+先到以下官網：
 
 [https://bitcoin.org/bin/](https://bitcoin.org/bin/)
 
-選擇版本後，下載 [tar.gz](https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-osx64.tar.gz) 格式的安裝檔然後解壓縮 ，之後一樣 `cd`
-
-到下載的資料夾目錄下的 `bin` 資料夾
+選擇版本後，下載 [tar.gz](https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-osx64.tar.gz) 格式的安裝檔然後解壓縮 ，之後一樣 `cd`到下載的資料夾目錄下的 `bin` 資料夾。
 
 1.執行Bitcoin節點Server
 
