@@ -68,13 +68,19 @@ npm install npm@4.6.1
 >
 > yarn add &lt;package&gt;
 
-
-
 # 2.cURL
 
 功能為用來簡單發出request，除了macOS與Linix外Windows沒有此指令，Windows可以到以下網站下載，之後解壓縮後加入到環境變數中。
 
-https://curl.haxx.se/download.html
+[https://curl.haxx.se/download.html](https://curl.haxx.se/download.html)
+
+
+
+# 3.Git
+
+為目前常見的版本控制工具，在本書中許多從Github clone專案時會使用到。
+
+https://git-scm.com/
 
 
 
