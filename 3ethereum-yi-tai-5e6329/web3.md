@@ -8,9 +8,9 @@
 
 > 類似專案:
 >
->  [https://github.com/ethjs/ethjs](https://github.com/ethjs/ethjs)
+> [https://github.com/ethjs/ethjs](https://github.com/ethjs/ethjs)
 >
-> https://github.com/ethers-io/ethers.js/
+> [https://github.com/ethers-io/ethers.js/](https://github.com/ethers-io/ethers.js/)
 
 Web3許多Function都可以寫為異步或同步執行，但在Metamask中大部分Function都只允許異步執行。
 
@@ -621,4 +621,8 @@ export default withStyles(styles)(App);
 我們使用剛才的交易搜尋功能，即可看到剛才我們轉帳的這筆交易內容
 
 ![](/assets/jljwe99.png)
+
+完整程式可參考：
+
+https://github.com/EasonWang01/Transaction-Dapp.git
 
