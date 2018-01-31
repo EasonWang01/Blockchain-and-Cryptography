@@ -2,6 +2,8 @@
 
 雷電網路的作用類似於閃電網路，都是用來作為小額支付在區塊鏈上的解決方案。
 
+目前[Sharding](https://github.com/ethereum/sharding)與[Plasma](https://plasma.io/)等區塊鏈相關架構之解決方案都有提出，但目前只有雷電網路較為完整。
+
 我們可以選擇直接下載，或自行編譯。
 
 #### 下載：
@@ -184,7 +186,6 @@ PUT /api/1/connections/填上Token合約地址
 
 ```
 DELETE /api/v1/connections/填上Token合約地址
-
 ```
 
 #### 轉帳
