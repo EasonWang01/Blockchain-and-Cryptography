@@ -78,7 +78,7 @@ Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的�
 
 #### 2009年1月3日18∶15∶05
 
-中本聰在位於芬蘭赫爾辛基（Helsinki）的一個電腦上挖出了比特幣第一個區塊（Genesis Block），並在區塊訊息寫下當天《泰晤士報》的頭版標題：`The Times 03/Jan/2009 Chancellor on brink of second bailout for banks`。
+中本聰在位於芬蘭赫爾辛基（Helsinki）的一臺電腦上產生了比特幣第一個區塊（Genesis Block），並在區塊訊息寫下當天《泰晤士報》的頭版標題：`The Times 03/Jan/2009 Chancellor on brink of second bailout for banks`。
 
 ![](/assets/Jonny1000thetimes.png)
 
@@ -112,15 +112,15 @@ Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的�
 
 #### 2014年1月
 
-Vitalik在美國佛羅裏達州邁阿密舉行的北美比特幣會議上正式宣布了Ethereum這個Project
+Vitalik在美國佛羅裏達州邁阿密舉行的北美比特幣會議上正式宣布了Ethereum這個Project。
 
 #### 2014年4月
 
-與Vitalik 合作的 Gavin Wood發表了以太坊黃皮書，作為Ethereum虛擬機的技術說明
+與Vitalik 合作的 Gavin Wood發表了以太坊黃皮書，作為Ethereum虛擬機的技術說明。
 
 #### 2014年6月
 
-Ethereum以42天公開的Ethereum預售活動對第一批以太幣進行了分配，換算後大約收入31,591比特幣，當時價值 18,439,086 美元，售出共60,102,216以太幣
+Ethereum以42天公開的Ethereum預售活動對第一批以太幣進行了分配，換算後大約收入31,591比特幣，當時價值 18,439,086 美元，售出共60,102,216以太幣。
 
 ### 近期
 
