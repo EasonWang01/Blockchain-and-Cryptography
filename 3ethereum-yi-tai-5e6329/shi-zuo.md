@@ -159,6 +159,7 @@ export default [{
 ```js
 import React, { Component } from 'react';
 import './App.css';
+import Web3 from 'web3';
 import { Button, Checkbox, Icon, Table, Label, Menu, Rating, Input } from 'semantic-ui-react'
 import { Modal } from 'react-pure-css-modal';
 import 'semantic-ui-css/semantic.min.css';
@@ -169,12 +170,24 @@ class App extends Component {
     super();
     this.state = {
       activePage: '',
-      mockData
+      mockData,
+      addUser_name: '',
+      addUser_email: '',
+      upgradeUser_ID: '',
+      upgradeUser_level: ''
     }
+  }
+  componentWillMount() {
   }
 
   handlePageClick = (e, { page }) => {
     this.setState({ activePage: page })
+  }
+
+  addMember() {
+  }
+
+  upgradeMember() {
   }
 
   render() {
@@ -186,6 +199,7 @@ class App extends Component {
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>簽到</Table.HeaderCell>
+                <Table.HeaderCell>ID</Table.HeaderCell>
                 <Table.HeaderCell>名稱</Table.HeaderCell>
                 <Table.HeaderCell>註冊日期</Table.HeaderCell>
                 <Table.HeaderCell>E-mail</Table.HeaderCell>
@@ -195,13 +209,14 @@ class App extends Component {
 
             <Table.Body>
               {
-                this.state.mockData.map(member => (
+                this.state.mockData.map((member, idx) => (
                   <Table.Row>
                     <Table.Cell collapsing>
                       <Checkbox onChange={() => console.log('changed')} slider defaultChecked={member.signIn} />
                     </Table.Cell>
-                    <Table.Cell>{ member.name }</Table.Cell>
-                    <Table.Cell>{ new Date(member.registerTimestamp).toString() }</Table.Cell>
+                    <Table.Cell>{idx}</Table.Cell>
+                    <Table.Cell>{member.name}</Table.Cell>
+                    <Table.Cell>{new Date(member.registerTimestamp).toString()}</Table.Cell>
                     <Table.Cell>{member.email}</Table.Cell>
                     <Table.Cell> <Rating disabled icon='star' defaultRating={member.level} maxRating={5} /></Table.Cell>
                   </Table.Row>
@@ -212,7 +227,7 @@ class App extends Component {
             <Table.Footer fullWidth>
               <Table.Row>
                 <Table.HeaderCell />
-                <Table.HeaderCell colSpan='4'>
+                <Table.HeaderCell colSpan='6'>
                   <Button onClick={() => document.getElementById('upgradeMember').click()} color="yellow" floated='right' icon labelPosition='left' size='small'>
                     <Icon name='user' /> 升級會員
                   </Button>
@@ -242,17 +257,17 @@ class App extends Component {
         <Modal id="addMember">
           <h2 style={{ marginTop: '25px' }}>新增會員</h2>
           <div style={{ marginTop: '50px' }}>
-            <Input placeholder='姓名' /><br /><br />
-            <Input placeholder='Email' /><br /><br />
-            <Button color='teal'>新增</Button>
+            <Input onChange={(e) => this.setState({ addUser_name: e.target.value })} placeholder='姓名' /><br /><br />
+            <Input onChange={(e) => this.setState({ addUser_email: e.target.value })} placeholder='Email' /><br /><br />
+            <Button onClick={() => this.addMember()} color='teal'>新增</Button>
           </div>
         </Modal>
         <Modal id="upgradeMember" onClose={() => { console.log("upgradeMember Modal close") }} >
           <h2 style={{ marginTop: '25px' }}>升級會員</h2>
           <div style={{ marginTop: '50px' }}>
-            <Input placeholder='ID' /><br /><br />
-            <Input placeholder='等級' /><br /><br />
-            <Button color='yellow'>升級</Button>
+            <Input onChange={(e) => this.setState({ upgradeUser_ID: e.target.value })} placeholder='ID' /><br /><br />
+            <Input onChange={(e) => this.setState({ upgradeUser_level: e.target.value })} placeholder='等級' /><br /><br />
+            <Button onClick={() => this.upgradeMember()} color='yellow'>升級</Button>
           </div>
         </Modal>
       </div>
@@ -261,11 +276,12 @@ class App extends Component {
 }
 
 export default App;
+
 ```
 
 目前可看到如下畫面：
 
-## ![](/assets/螢幕快照 2018-01-30 下午9.53.16.png)
+## ![](/assets/螢幕快照 2018-01-31 下午12.45.43.png)
 
 
 
