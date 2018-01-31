@@ -40,6 +40,8 @@ componentWillMount() {
 }
 ```
 
+## 新增Web3相關Function
+
 新增會員
 
 ```js
@@ -84,6 +86,17 @@ componentWillMount() {
         })
       });
   }
+```
+
+讀取會員資料
+
+```js
+let memberNum = Contract.how_many_members().toNumber();
+let members = [];
+for(let i = 0; i < memberNum; i++) {
+  members.push(Contract.members(i));
+  this.setState({ members }) 
+}
 ```
 
 
