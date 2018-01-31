@@ -1,13 +1,11 @@
 # Bitcoin 介紹
 
 以下連結為比特幣的白皮書，上面寫了比特幣的核心原理與概念  
-[https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)
+[https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)![](/assets/螢幕快照 2018-01-31 下午11.22.23.png)以下引言自：h[ttps://bitcoin.org/en/developer-guide\#block-chain-overview](https://bitcoin.org/en/developer-guide#block-chain-overview)
 
 > The block chain provides Bitcoin’s public ledger, an ordered and timestamped record of transactions. This system is used to protect against double spending and modification of previous transaction records.
 >
 > Each full node in the Bitcoin network independently stores a block chain containing only blocks validated by that node. When several nodes all have the same blocks in their block chain, they are considered to be in consensus. The validation rules these nodes follow to maintain consensus are called consensus rules.
-
-[https://bitcoin.org/en/developer-guide\#block-chain-overview](https://bitcoin.org/en/developer-guide#block-chain-overview)
 
 區塊鏈提供了比特幣一個公開帳本，可以記錄所有發生的交易內容以及交易時間，採用區塊鏈的目的為避免交易的雙重花費以及交易紀錄被修改，每個全節點都保存著完整的區塊鏈資料，而許多節點均保存著相同資料的話，即為節點間達成共識。
 
@@ -60,7 +58,7 @@ BIP是對未來需要改進的比特幣特點，所做的提案。
 
 最富有之比特幣地址
 
-https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html
+[https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html](https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html)
 
 ![](/assets/螢幕快照 2018-01-31 下午5.28.58.png)
 

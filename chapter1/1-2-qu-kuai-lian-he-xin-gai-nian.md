@@ -122,11 +122,11 @@ H（AB）~= SHA256(SHA256(HA + HB))
 
 [https://coinmarketcap.com/](https://coinmarketcap.com/)
 
-https://www.coingecko.com/zh-tw
+[https://www.coingecko.com/zh-tw](https://www.coingecko.com/zh-tw)
 
 #### 其他相關Bitcoin schema介紹
 
-以下網站列出了比特幣相關schema
+以下網站列出了比特幣相關Database Schema
 
 [https://webbtc.com/api/schema](https://webbtc.com/api/schema)
 
@@ -134,7 +134,7 @@ https://www.coingecko.com/zh-tw
 
 #### 加密貨幣Market State圖表
 
-一樣列了許多市面上可見的加密貨幣，但採用了另一種方式將之呈現
+列了許多市面上可見的加密貨幣，但採用了另一種方式將之呈現
 
 [http://cryptomaps.org/](http://cryptomaps.org/)![](/assets/bitcoin-market-圖表.png)
 
