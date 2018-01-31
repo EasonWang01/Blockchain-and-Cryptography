@@ -65,7 +65,7 @@
 
 > [http://en.bitcoinwiki.org/Bitcoin\_address](http://en.bitcoinwiki.org/Bitcoin_address)
 
-下圖為更詳細的地址產生方式
+下圖為更詳細的地址產生方式，我們將在後續用程式來實作。
 
 ![](/assets/0_--6A6E5CY2IT4fmc.png)
 
