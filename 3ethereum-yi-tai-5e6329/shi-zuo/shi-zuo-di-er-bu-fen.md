@@ -98,7 +98,7 @@ for (let i = 0; i < memberNum; i++) {
   let member = { // 轉換格式
     signIn: _member[2],
     name: _member[0],
-    registerTimestamp: _member[4].toNumber() * 10 ** 3,
+    registerTimestamp: _member[4].toNumber() * 10 ** 3, //solidity時間後面沒有毫秒的三個零
     email: _member[1],
     level: _member[3].toNumber()
   }
