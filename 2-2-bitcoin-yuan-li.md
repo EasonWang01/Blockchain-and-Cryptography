@@ -44,6 +44,10 @@
 然後他會產生一個`.dat`檔案，之後可以引入該檔案來復原錢包。  
 ![](/assets/bitcoin-qt11.png)
 
+> 引入新的錢包檔案的作法為把舊的wallet.dat檔案取代，然後輸入：`bitcoin-qt.exe -rescan`
+>
+> 可參考：https://bitcoin.stackexchange.com/questions/10974/import-wallet-dat-into-a-new-bitcoin-qt-client
+
 #### 更改區塊鏈與錢包資料的存放資料夾
 
 預設比特幣資料會存放在
