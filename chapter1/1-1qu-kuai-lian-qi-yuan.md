@@ -12,7 +12,7 @@ Leslie Lamport等人提出拜占庭將軍問題（Byzantine Generals Problem）
 
 #### 1982-1983年
 
-David Chaum提出Ecash密碼學網路支付系統並基於RSA與DSA提出了Blind signature，具有不可追蹤的特性。
+David Chaum提出Ecash密碼學網路支付系統並基於非對稱式加密法 RSA 與 DSA 提出了 Blind signature，具有不可追蹤的特性。
 
 #### 1989年
 
@@ -24,7 +24,7 @@ David Chaum創立了DigiCash Inc.
 
 Leslie Lamport提出具高容錯的一致性演算法：Paxos。
 
-Paxos算法解決的問題是在一個可能發生上述異常的分散式系統中如何就某個值達成一致，保證不論發生以上任何異常，都不會破壞決議的一致性。
+Paxos算法用來解決分散式系統中，各個節點如何就某個特定值達成一致，保證不論發生任何異常，都不會破壞決議的一致性。
 
 [https://zh.wikipedia.org/wiki/Paxos算法](https://zh.wikipedia.org/wiki/Paxos算法)
 
@@ -95,8 +95,6 @@ Hal Finney依據Nick Szabo 的 `theory of collectibles`提出可重複使用的�
 #### 2010年5月22日
 
 一名佛羅里達工程師Laszlo Hanyecz在2010/5/17刊登出想要用比特幣購買披薩，之後，在同年5/22號，成功用10,000 BTC購買了價值25美元的披薩。
-
-
 
 #### 2011年2月9日
 
