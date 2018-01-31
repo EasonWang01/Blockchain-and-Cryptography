@@ -1,7 +1,7 @@
 # Bitcoin 介紹
 
 以下連結為比特幣的白皮書，上面寫了比特幣的核心原理與概念  
-[https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)![](/assets/螢幕快照 2018-01-31 下午11.22.23.png)以下引言自：h[ttps://bitcoin.org/en/developer-guide\#block-chain-overview](https://bitcoin.org/en/developer-guide#block-chain-overview)
+[https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)![](/assets/螢幕快照 2018-01-31 下午11.22.23.png)以下引言自：https://bitcoin.org/en/developer-guide\#block-chain
 
 > The block chain provides Bitcoin’s public ledger, an ordered and timestamped record of transactions. This system is used to protect against double spending and modification of previous transaction records.
 >
