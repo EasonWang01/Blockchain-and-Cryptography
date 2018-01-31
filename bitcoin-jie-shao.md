@@ -50,13 +50,21 @@ BIP是對未來需要改進的比特幣特點，所做的提案。
 
 ## 比特幣交易訊息與圖表
 
-可以在以下網站看到目前的相關比特幣交易資訊
+比特幣交易資訊
 
 [https://blockchain.info/zh-cn/](https://blockchain.info/zh-cn/)
 
 比特幣歷史訊息圖表
 
 [https://blockchain.info/charts](https://blockchain.info/charts)
+
+最富有之比特幣地址
+
+https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html
+
+![](/assets/螢幕快照 2018-01-31 下午5.28.58.png)
+
+> 上圖擷取時間為2018/01/31
 
 # 比特幣單位
 
