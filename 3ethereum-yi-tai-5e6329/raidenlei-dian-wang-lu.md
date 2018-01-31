@@ -206,7 +206,18 @@ PATCH /api/1/channels/填上Channel地址
 }
 ```
 
----
+#### 呼叫Settle
+
+在關閉Channel後，經過一個timeout時間，可以呼要以下指令，將雙方最後的餘額發回雙方地址中。
+
+```
+PATCH /api/1/channels/填入channel地址
+{
+    "state":"settled"
+}
+```
+
+#### 
 
 #### 安裝時可能產生的Issue：
 
