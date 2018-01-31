@@ -28,11 +28,15 @@
 
 # 地址開頭字母
 
+下表為各個種類的比特幣地址的開頭。
+
 ![](/assets/螢幕快照 2018-01-21 上午11.03.45.png)
 
 > 可參考：[https://en.bitcoin.it/wiki/List\_of\_address\_prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
 
 # 地址種類
+
+比特幣主鏈上常見的地址具有以下種類：
 
 ```
 1.Pay to Public Key Hash (P2PKH) 單一簽名地址，開頭為1
@@ -43,7 +47,7 @@
 
 4.Time Locked Address 運用OP_CHECKLOCKTIMEVERIFY (OP_HODL)來創建的地址，開頭為3
 
-5.HD (hierarchical deterministic )產生出xPub和xPrv
+5.HD (hierarchical deterministic )產生出xPub和xPrv，之後再產生地址
 ```
 
 比特幣地址有以下性質
