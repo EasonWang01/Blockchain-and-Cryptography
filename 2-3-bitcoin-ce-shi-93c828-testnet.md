@@ -92,7 +92,7 @@ console.log(address);
 
 ### ![](/assets/螢幕快照 2018-01-21 上午10.12.20.png)
 
-或是可用以下程式廣播交易，記得把Tx改為要廣播的Hex碼。
+或是可用以下程式廣播交易，記得在tx內填入要廣播的交易Hex碼。
 
 ```js
 // 廣播交易
@@ -134,7 +134,7 @@ req.end();
 
 在以下網站的最後面輸入交易的TxID，來查詢該筆交易：
 
-> https://live.blockcypher.com/btc-testnet/tx/填入Txid
+> [https://live.blockcypher.com/btc-testnet/tx/填入Txid](https://live.blockcypher.com/btc-testnet/tx/填入Txid)
 
 也可以使用其 API 進行查詢 \( 會返回JSON格式資料 \)：[https://api.blockcypher.com/v1/btc/test3/txs/填入Txid](https://api.blockcypher.com/v1/btc/test3/txs/填入Txid)
 
