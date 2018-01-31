@@ -1,5 +1,7 @@
 # Raiden雷電網路
 
+雷電網路的作用類似於閃電網路，都是用來作為小額支付在區塊鏈上的解決方案。
+
 我們可以選擇直接下載，或自行編譯。
 
 #### 下載：
@@ -179,6 +181,31 @@ PUT /api/1/connections/填上Token合約地址
 > 這會自動開啟Channel並且隨機連線到三個相關節點，給每個節點存各20%的前，然後剩下40%為待分配。
 
 #### 離開Token network
+
+```
+DELETE /api/v1/connections/填上Token合約地址
+
+```
+
+#### 轉帳
+
+```
+POST /api/1/transfers/填上Token合約地址/填上另一個節點地址
+{
+    "amount": 42
+}
+```
+
+#### 關閉Channel
+
+```
+PATCH /api/1/channels/填上Channel地址
+{
+    "state":"closed"
+}
+```
+
+---
 
 #### 安裝時可能產生的Issue：
 
