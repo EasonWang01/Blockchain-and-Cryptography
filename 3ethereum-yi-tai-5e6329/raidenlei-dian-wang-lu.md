@@ -125,9 +125,15 @@ curl -X PUT  http://127.0.0.1:5001/api/1/tokens/0xC73cE6eA79CC86CC720303ECf2fa5a
 
 #### 開啟Channel
 
+要跟其他Raiden節點開啟Channel需要以下四件事情：
 
+1.Token 合約的地址 
 
+2.另一個Raiden節點的地址 
 
+3.選擇要預存入Channel的金額
+
+4.選擇Timeout時間
 
 
 
