@@ -32,9 +32,34 @@ const Contract = web3.eth.contract(clubContract.ABI).at(clubContract.address);
 window.Contract = Contract;
 ```
 
+再來指定RPC server位置
 
+```js
+componentWillMount() {
+  web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545')); //指定為RPC server的位置
+}
+```
 
+新增會員
 
+```js
+addMember() {
+    if(!this.state.addUser_name || !this.state.addUser_email) {
+      alert('請先輸入會員名稱與Email');
+      return
+    }
+    Contract.add_member(this.state.addUser_name, this.state.addUser_email,
+      { from: web3.eth.accounts[0], gas: 132700 }
+    ,function(err, result){
+      if(err) console.log(err);
+      console.log(result);
+      this.setState({
+        addUser_name: '',
+        addUser_email: ''
+      })
+    });
+}
+```
 
 
 
