@@ -154,9 +154,31 @@ PUT /api/1/channels
 
 ![](/assets/螢幕快照 2018-01-31 上午10.30.28.png)
 
+#### 存錢到Channel
 
+```
+PATCH /api/1/channels/填上channel地址
 
+{
+    "balance": 10
+}
+```
 
+#### 直接連線到Token network並存錢
+
+```
+PUT /api/1/connections/填上Token合約地址
+
+{
+    "funds": 2000
+}
+```
+
+> This will automatically connect to and open channels with three random peers in the token network, with 20% of the funds deposited to each channel. Furthermore it will leave 40% of the funds initially unassigned
+>
+> 這會自動開啟Channel並且隨機連線到三個相關節點，給每個節點存各20%的前，然後剩下40%為待分配。
+
+#### 離開Token network
 
 #### 安裝時可能產生的Issue：
 
