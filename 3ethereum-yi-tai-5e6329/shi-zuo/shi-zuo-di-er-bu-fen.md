@@ -45,57 +45,65 @@ componentWillMount() {
 新增會員
 
 ```js
- addMember() {
-    const context = this;
-    if (!this.state.addUser_name || !this.state.addUser_email) {
-      alert('請先輸入會員名稱與Email');
-      return
-    }
-    Contract.add_member(this.state.addUser_name, this.state.addUser_email,
-      { from: web3.eth.accounts[0], gas: 132700 }
-      , function (err, result) {
-        if (err) console.log(err);
-        console.log(result);
-        context.setState({
-          addUser_name: '',
-          addUser_email: ''
-        })
-      });
+addMember() {
+  const context = this;
+  if (!this.state.addUser_name || !this.state.addUser_email) {
+    alert('請先輸入會員名稱與Email');
+    return
   }
+  Contract.add_member(this.state.addUser_name, this.state.addUser_email,
+    { from: web3.eth.accounts[0], gas: 132700 }
+    , function (err, result) {
+      if (err) console.log(err);
+      console.log(result);
+      context.setState({
+        addUser_name: '',
+        addUser_email: ''
+      })
+    });
+}
 ```
 
 升級會員
 
 ```js
-  upgradeMember() {
-    const context = this;
-    console.log(this.state.upgradeUser_ID)
-    console.log(this.state.upgradeUser_level)
-    if (!this.state.upgradeUser_ID || !this.state.upgradeUser_level) {
-      alert('請先輸入會員ID與升級之等級');
-      return
-    }
-    Contract.upgrade_member(this.state.upgradeUser_ID, this.state.upgradeUser_level,
-      { from: web3.eth.accounts[0], gas: 132700 }
-      , function (err, result) {
-        if (err) console.log(err);
-        console.log(result);
-        context.setState({
-          upgradeUser_ID: '',
-          upgradeUser_level: ''
-        })
-      });
+upgradeMember() {
+  const context = this;
+  console.log(this.state.upgradeUser_ID)
+  console.log(this.state.upgradeUser_level)
+  if (!this.state.upgradeUser_ID || !this.state.upgradeUser_level) {
+    alert('請先輸入會員ID與升級之等級');
+    return
   }
+  Contract.upgrade_member(this.state.upgradeUser_ID, this.state.upgradeUser_level,
+    { from: web3.eth.accounts[0], gas: 132700 }
+    , function (err, result) {
+      if (err) console.log(err);
+      console.log(result);
+      context.setState({
+        upgradeUser_ID: '',
+        upgradeUser_level: ''
+      })
+    });
+}
 ```
 
-讀取會員資料
+讀取會員資料並轉換格式
 
 ```js
 let memberNum = Contract.how_many_members().toNumber();
 let members = [];
-for(let i = 0; i < memberNum; i++) {
-  members.push(Contract.members(i));
-  this.setState({ members }) 
+for (let i = 0; i < memberNum; i++) {
+  let _member = Contract.members(i);
+  let member = { // 轉換格式
+    signIn: _member[2],
+    name: _member[0],
+    registerTimestamp: _member[4].toNumber() * 10 ** 3,
+    email: _member[1],
+    level: _member[3].toNumber()
+  }
+  members.push(member);
+  this.setState({ members })
 }
 ```
 
