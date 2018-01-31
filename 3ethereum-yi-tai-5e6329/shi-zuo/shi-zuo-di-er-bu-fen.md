@@ -371,3 +371,7 @@ export default App;
 
 ![](/assets/螢幕快照 2018-01-31 下午2.16.38.png)
 
+完整程式可參考：
+
+https://github.com/EasonWang01/Members-Dapp
+
