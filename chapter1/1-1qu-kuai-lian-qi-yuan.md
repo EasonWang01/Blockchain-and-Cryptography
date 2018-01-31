@@ -24,7 +24,7 @@ David Chaum創立了DigiCash Inc.
 
 Leslie Lamport提出具高容錯的一致性演算法：Paxos。
 
-Paxos算法用來解決分散式系統中，各個節點如何就某個特定值達成一致，保證不論發生任何異常，都不會破壞決議的一致性。
+Paxos算法用來解決分散式系統中，各個節點如何就某個特定值達成一致，保證不論發生任何異常，都不會破壞決議的一致性，主要做法是進行提案與表決。
 
 [https://zh.wikipedia.org/wiki/Paxos算法](https://zh.wikipedia.org/wiki/Paxos算法)
 
