@@ -1,4 +1,4 @@
-# Node.js與npm安裝
+# 1.Node.js與NPM安裝
 
 在本書範例中許多範例使用Node.js來執行，可至Node.js官方網站選擇自己的作業系統版本然後下載並安裝  
 [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
@@ -33,7 +33,7 @@ export NODE_PATH=/usr/local/lib/node_modules
 
 ![](/assets/環境變數.png)
 
-# 切換Node.js版本
+#### 切換Node.js版本
 
 #### 1.`n`
 
@@ -54,16 +54,27 @@ nvm install <version>
 nvm use <version>
 ```
 
-# 更新或復原npm版本
+#### 更新或復原npm版本
 
-\(把數字改為你要的版本即可\)  
+\(把數字改為你要的版本即可\)
+
+```
 npm install npm@4.6.1
+```
 
-> 另外建議可以使用yarn來安裝套件: npm install yarn -g
+> 另外建議可以使用 yarn 來安裝套件: npm install yarn -g
 >
 > 之後使用
 >
 > yarn add &lt;package&gt;
+
+
+
+# 2.cURL
+
+功能為用來簡單發出request，除了macOS與Linix外Windows沒有此指令，Windows可以到以下網站下載，之後解壓縮後加入到環境變數中。
+
+https://curl.haxx.se/download.html
 
 
 
