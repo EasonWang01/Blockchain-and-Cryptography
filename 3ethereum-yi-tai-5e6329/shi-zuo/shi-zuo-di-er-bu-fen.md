@@ -49,14 +49,14 @@ addMember() {
       return
     }
     Contract.add_member(this.state.addUser_name, this.state.addUser_email,
-      { from: web3.eth.accounts[0], gas: 132700 }
-    ,function(err, result){
-      if(err) console.log(err);
-      console.log(result);
-      this.setState({
-        addUser_name: '',
-        addUser_email: ''
-      })
+      { from: web3.eth.accounts[0], gas: 132700 } // 可先用Remix IDE傳送交易後估計Gas用量
+      ,function(err, result){
+        if(err) console.log(err);
+        console.log(result);
+        this.setState({  // 清空相關state
+          addUser_name: '',
+          addUser_email: ''
+        })
     });
 }
 ```
