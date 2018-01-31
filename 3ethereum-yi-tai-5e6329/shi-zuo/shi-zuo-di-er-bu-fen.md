@@ -43,22 +43,47 @@ componentWillMount() {
 新增會員
 
 ```js
-addMember() {
-    if(!this.state.addUser_name || !this.state.addUser_email) {
+ addMember() {
+    const context = this;
+    if (!this.state.addUser_name || !this.state.addUser_email) {
       alert('請先輸入會員名稱與Email');
       return
     }
     Contract.add_member(this.state.addUser_name, this.state.addUser_email,
-      { from: web3.eth.accounts[0], gas: 132700 } // 可先用Remix IDE傳送交易後估計Gas用量
-      ,function(err, result){
-        if(err) console.log(err);
+      { from: web3.eth.accounts[0], gas: 132700 }
+      , function (err, result) {
+        if (err) console.log(err);
         console.log(result);
-        this.setState({  // 清空相關state
+        context.setState({
           addUser_name: '',
           addUser_email: ''
         })
-    });
-}
+      });
+  }
+```
+
+升級會員
+
+```js
+  upgradeMember() {
+    const context = this;
+    console.log(this.state.upgradeUser_ID)
+    console.log(this.state.upgradeUser_level)
+    if (!this.state.upgradeUser_ID || !this.state.upgradeUser_level) {
+      alert('請先輸入會員ID與升級之等級');
+      return
+    }
+    Contract.upgrade_member(this.state.upgradeUser_ID, this.state.upgradeUser_level,
+      { from: web3.eth.accounts[0], gas: 132700 }
+      , function (err, result) {
+        if (err) console.log(err);
+        console.log(result);
+        context.setState({
+          upgradeUser_ID: '',
+          upgradeUser_level: ''
+        })
+      });
+  }
 ```
 
 

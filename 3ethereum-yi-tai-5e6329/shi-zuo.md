@@ -21,7 +21,7 @@ contract HonestClub {
 
     address public clubMaster;
     Member[] public members;
-    
+
     struct Member {
         string name;
         string email; 
@@ -77,15 +77,15 @@ contract HonestClub {
             id++;
         }
     }
-    
+
 }
 ```
 
-> 上面使用到了now關鍵字，但不建議在關鍵地方使用，因為其可能被修改，可參考以下連結之下方：
+> 1.上面使用到了now關鍵字，但不建議在關鍵地方使用，因為其可能被修改，可參考以下連結之下方：
 >
-> http://solidity.readthedocs.io/en/develop/units-and-global-variables.html\#block-and-transaction-properties
-
-> 我們使用while來遍歷陣列來修改會員，但如果陣列長度過長會很耗費Gas，而目前因為還沒開放將Memory Array直接賦予運算後的值給Storage陣列，所以要注意陣列長度避免耗費過多Gas。
+> [http://solidity.readthedocs.io/en/develop/units-and-global-variables.html\#block-and-transaction-properties](http://solidity.readthedocs.io/en/develop/units-and-global-variables.html#block-and-transaction-properties)
+>
+> 2.我們使用while來遍歷陣列來修改會員，但如果陣列長度過長會很耗費Gas，而目前因為還沒開放將Memory Array直接賦予運算後的值給Storage陣列，所以要注意陣列長度避免耗費過多Gas。
 
 我們一樣使用`create-react-app` 快速建立一個Web模板。
 
