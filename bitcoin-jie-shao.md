@@ -1,7 +1,7 @@
 # Bitcoin 介紹
 
-以下連結為比特幣的白皮書，上面寫了比特幣的核心原理與概念  
-[https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)![](/assets/螢幕快照 2018-01-31 下午11.22.23.png)以下引言自：https://bitcoin.org/en/developer-guide\#block-chain
+以下連結為比特幣的白皮書，寫了比特幣的核心原理與概念  
+[https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)![](/assets/螢幕快照 2018-01-31 下午11.22.23.png)以下引言自：[https://bitcoin.org/en/developer-guide\#block-chain](https://bitcoin.org/en/developer-guide#block-chain)
 
 > The block chain provides Bitcoin’s public ledger, an ordered and timestamped record of transactions. This system is used to protect against double spending and modification of previous transaction records.
 >
@@ -69,11 +69,11 @@ BIP是對未來需要改進的比特幣特點，所做的提案。
 比特幣分為以下幾種單位，其中最小單位為satoshi。
 
 ```
-1BTC    比特幣（Bitcoins，BTC）
-0.01BTC  比特分（Bitcent，cBTC）
-0.001BTC   毫比特（Milli-Bitcoins，mBTC）
-0.000001BTC   微比特（Micro-Bitcoins，μBTC）
-0.00000001BTC  satoshi 為一個為比特幣最小單位
+1          BTC   比特幣（Bitcoins，BTC）
+0.01       BTC   比特分（Bitcent，cBTC）
+0.001      BTC   毫比特（Milli-Bitcoins，mBTC）
+0.000001   BTC   微比特（Micro-Bitcoins，μBTC）
+0.00000001 BTC   satoshi 為一個為比特幣最小單位
 ```
 
 
