@@ -2,7 +2,7 @@
 
 ## 概念
 
-為了解決比特幣網路的高手續費以及交易確認時間過長的問題，決定把部分交易放在區塊鏈外執行，並於未來結算時才加入區塊鏈中。
+為了解決比特幣交易的高手續費以及交易確認時間過長的問題，決定把部分交易放在區塊鏈外執行，並於未來結算時才加入區塊鏈中。
 
 可參考此份論文：[https://lightning.network/lightning-network-paper.pdf。](https://lightning.network/lightning-network-paper.pdf。)
 
