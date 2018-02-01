@@ -15,7 +15,9 @@ Bloom Filter 很早之前即開始使用在各種場景，1970年由 『  Burton
 
 ### Bloom Filter 實現原理
 
-> ![](/assets/螢幕快照 2017-12-27 下午9.16.png)[https://en.wikipedia.org/wiki/Bloom\_filter](https://en.wikipedia.org/wiki/Bloom_filter)
+
+
+> [https://en.wikipedia.org/wiki/Bloom\_filter](https://en.wikipedia.org/wiki/Bloom_filter)
 
 看到上圖，一個Bloom filter初始化時是一個固定大小長度的Array，含有m個欄位，每個欄位的值均為0，以及k個hash function
 
@@ -45,20 +47,26 @@ Bloom Filter 很早之前即開始使用在各種場景，1970年由 『  Burton
 
 可使用此模組：[https://github.com/jasondavies/bloomfilter.js/](https://github.com/jasondavies/bloomfilter.js/)
 
+```
+npm install bloomfilter
+```
+
 ```js
+const BloomFilter = require('bloomfilter').BloomFilter;
+
 var bloom = new BloomFilter(
-  32 * 256, // 分配的Array大小
-  16        // 具有多少個hash functions.
+  32 * 256, // number of bits to allocate.
+  16        // number of hash functions.
 );
 
-// 新增元素到Bloom filter.
+// Add some elements to the filter.
 bloom.add("foo");
 bloom.add("bar");
 
-// 測試資料是否在Bloom filter中.
-bloom.test("foo");
-bloom.test("bar");
-bloom.test("blah");
+// 測試是否在 Filter 中
+console.log(bloom.test("foo"));
+console.log(bloom.test("bar"));
+console.log(bloom.test("blah"));
 ```
 
 #### 比特幣應用：
