@@ -29,7 +29,7 @@
 * **Protocol version: 70005 \( 7f110100 \)**
 
   ```
-  4 bytes，表達當前使用之 Bitcoin protocol版本，可參考： [https://bitcoin.org/en/developer-reference\#protocol-versions](https://bitcoin.org/en/developer-reference#protocol-versions)
+  4 bytes，表達當前使用之 Bitcoin protocol版本，可參考： https://bitcoin.org/en/developer-reference#protocol-versions
   ```
 
 * **Services: NODE\_NETWORK （ 0100000000000000 ）**
@@ -40,7 +40,12 @@
 
 * Epoch Time: 1513492007
 
-* > 8 bytes， 此為unix的timestamp 但只取到秒數  `parseInt(Date.now().toString().substring(0, 10)).toString('16')` 之後在後面補上0
+
+
+
+
+         8 bytes， 此為unix的timestamp 但只取到秒數  parseInt\(Date.now\(\).toString\(\).substring\(0, 10\)\).toString\('16'\) 之後在後面補上0
+
 * Receiving node's services: 0100000000000000
 
   > 8 bytes， 通常值會和上面Services: NODE\_NETWORK相同
