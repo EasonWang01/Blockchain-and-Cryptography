@@ -8,25 +8,29 @@
 
 ## Bitcoin Protocol
 
-我們可以使用『 Wireshark 』軟體來監聽節點間的封包
+我們可以使用『 Wireshark 』軟體來監聽節點間的封包，其為一個免費的開源軟體，常用來分析網路封包。
+
+https://www.wireshark.org/download.html
+
+開啟程式後，我們在上方的綠色欄位輸入『 Bitcoin 』，讓他只過濾出Bitcoin Protocol的封包。
 
 ![](/assets/螢幕快照 2017-12-06 下午9.19.50.png)
 
-> 比特幣的封包傳遞時是使用ＴＣＰ連線，其protocal部分類似如下
->
+比特幣的封包傳遞時是使用 TCP 連線，其 Protocol 內容如下
+
 > ![](/assets/螢幕快照 2017-12-06 下午9.11.20.png)
 >
-> 紅色箭頭部分為每個比特幣節點的網路封包都會包含的段落（Message Headers），而黃色箭頭部分則為根據該封包的Command Name欄位，擁有不同的message欄位
+> 紅色箭頭部分為每個比特幣節點的網路封包都會包含的訊息頭（Message Headers），而黃色箭頭部分則為根據該封包的Command Name欄位，擁有不同的Message Body。
 
 ## 節點搜尋
 
-在第一次與其他節點連接之前，會先去搜尋寫在原始碼裡面的[DNS seeds](https://bitcoin.org/en/glossary/dns-seed)，之後節點啟動後會預設先去找DNS seed server尋求目前可用的節點來同步資料。
+在第一次與其他節點連接之前，會先去搜尋寫在原始碼裡面的[DNS seeds](https://bitcoin.org/en/glossary/dns-seed)，之後節點啟動後會預設先去找DNS seed Server尋求目前可用的節點來同步資料。
 
-> 成為DNS Seed Server的要件![](/assets/234.png)[https://github.com/bitcoin/bitcoin/blob/57b34599b2deb179ff1bd97ffeab91ec9f904d85/doc/dnsseed-policy.md](https://github.com/bitcoin/bitcoin/blob/57b34599b2deb179ff1bd97ffeab91ec9f904d85/doc/dnsseed-policy.md)
+> Bitcoin 訂立成為 DNS Seed Server 的需求要件：![](/assets/234.png)[https://github.com/bitcoin/bitcoin/blob/57b34599b2deb179ff1bd97ffeab91ec9f904d85/doc/dnsseed-policy.md](https://github.com/bitcoin/bitcoin/blob/57b34599b2deb179ff1bd97ffeab91ec9f904d85/doc/dnsseed-policy.md)
 
 目前寫在原始碼的DNS Seed![](/assets/9876.png)[https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp)
 
-當節點向DNS Seed 發出請求後，其會返回多個目前可用來同步的節點IP，之後會把可用節點記錄在本地料庫中，避免每次啟動都發送DNS請求。
+當節點向DNS Seed 發出請求後，會返回多個目前可用來同步的節點IP，之後會把可用節點記錄在本地資料庫中，避免每次啟動都發送DNS請求。
 
 > 可使用nslookup或dig發出DNS query請求
 
@@ -34,7 +38,7 @@
 
 ![](/assets/98798.png)
 
-2.使用Dig指令![](/assets/螢幕快照 2017-12-06 下午9.38.59.png)3.使用Node.js來查找
+2.使用Dig指令![](/assets/螢幕快照 2017-12-06 下午9.38.59.png)3.使用 Node.js 程式來發出 DNS 請求
 
 ```js
 const dns = require('dns');
