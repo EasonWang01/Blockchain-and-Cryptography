@@ -1,17 +1,6 @@
 #### 
 
-其解鎖Unlocking script如下
 
-```
-OP_0 <Signature B> <Signature C>
-```
-
-兩者結合
-
-```
-Pubkey script: <m> <A pubkey> [B pubkey] [C pubkey...] <n> OP_CHECKMULTISIG
-Signature script: OP_0 <A sig> [B sig] [C sig...]
-```
 
 #### 4.Data Output \(OP\_RETURN，可以填上自己想填的資料到交易上\)
 

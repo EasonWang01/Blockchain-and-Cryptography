@@ -341,13 +341,12 @@ Input一定會對應到一個Output，每個Output都會有一個Locking script 
 
 > 圖片來源：[https://bitcoin.org](https://bitcoin.org)
 
-並且一筆交易中可以來自多個output並產生多個unspend output  
+一筆交易中可以有多個輸入和輸出。  
 ![](/assets/789.png)
 
 # 交易的ID \(TXID\)
 
-每個比特幣交易都存在一個獨特的id名為TXID  
-我們可以從TXID取得那筆交易的相關資訊
+每個比特幣交易都存在一個獨特的 ID 名為 TXID，我們可以從TXID取得那筆交易的相關資訊。
 
 [https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8c6732352925ab9](https://blockchain.info/rawtx/f60363a12461608b693f2ef89c2bd2bd4821bbdb86b41fa6e8c6732352925ab9)
 
@@ -408,21 +407,21 @@ Input一定會對應到一個Output，每個Output都會有一個Locking script 
 
 發出交易時需要包含一定量的手續費，用來給予礦工，挖到新區塊的礦工將收到該區塊內所有交易的手續費，通常越高的手續費會越早被加入區塊，也就代表可以越早被驗證交易。
 
-以下為比特幣官方錢包用來估算手續費的程式碼
+以下為比特幣官方錢包用來估算手續費的程式碼：
 
 [https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/wallet/fees.cpp](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/wallet/fees.cpp)
 
 # 交易類型
 
-每筆交易在被節點接收到時會先被確認是不是一個standard的交易，原始碼可查看如下連結[ https://github.com/bitcoin/bitcoin/blob/5961b23898ee7c0af2626c46d5d70e80136578d3/src/policy/policy.cpp\#L82](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/policy/policy.cpp#L57)
+每筆交易在被節點接收到時會先被確認是不是一個『 standard 』的標準交易，原始碼可查看如下連結：[ https://github.com/bitcoin/bitcoin/blob/5961b23898ee7c0af2626c46d5d70e80136578d3/src/policy/policy.cpp\#L82](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/policy/policy.cpp#L57)
 
 以下將介紹比特幣的五種交易類型:
 
 #### 1.Pay-to-Public-Key-Hash \(P2PKH\)
 
-此為最常見的交易類型
+此為最常見的交易類型。
 
-其Locking script 如下圖\(有關Bitcoin script後續章節會介紹\)，Locking scrip通常會出現在交易的Output裡面，所以也稱為Output script。另外也稱為scriptPubKey。
+其Locking script 如下圖 \( 有關Locking script 將於後續 Bitcoin script 章節介紹\)，Locking scrip通常會出現在交易的Output裡面，所以也稱為Output script。另外也稱為scriptPubKey。
 
 > 因為交易是產生一筆Input去解鎖上一個還沒花費的Output，而Output會被Locking script鎖住
 
@@ -444,21 +443,21 @@ OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> 
 
 #### 2.Pay-to-Public-Key \(P2PK\)
 
-此為更簡單的交易格式，相較 P2PKH 省略了Hash步驟，最常在 Coinbase TX 裡面出現，是比較早期的交易型態，公鑰已經存在Locking script中。
+此為較簡單的交易格式，是比較早期的交易型態，相較 P2PKH 省略了Hash步驟，最常在 Coinbase TX 裡面出現，公鑰已經存在Locking script中。
 
-鎖定腳本\(Locking script\)如下
+鎖定腳本 \( Locking script \)
 
 ```
 <Public Key A> OP_CHECKSIG
 ```
 
-解鎖腳本如下\(Unlocking script\)
+解鎖腳本\( Unlocking script \)
 
 ```
 <Signature from Private Key A>
 ```
 
-兩者組合後的交易完整腳本如下
+兩者組合後的交易完整腳本如下：
 
 ```
 <Signature from Private Key A> <Public Key A> OP_CHECKSIG
@@ -466,29 +465,40 @@ OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> 
 
 #### 3.Multi-Signature \(MultiSig，多重簽章交易，需要多個私鑰簽名才可完成簽發\)
 
-創立時決定最多 N 把 Public Key 被記錄在上面，而 unlocking 解鎖時至少要有 M 把 Private Key 產生的 signature 才能執行交易，而 M  會小於或等於 N。
-
-例如小明出了五元與阿煌出了三元，加起來八元往某一地址發送交易。
+可以有 N 把 Public Key 被記錄在上面，而 Unlocking script 解鎖時至少要有 M 把 Private Key 產生的 Signature 才能執行交易，而 M  會小於或等於 N。
 
 ```
-m-of-n Multi-Signature
+Ｍ-of-N Multi-Signature
 ```
 
-其locking script類似如下
+其 Locking script 類似如下
 
 ```
 M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
 ```
 
-假設為 3-of-5 Multi-Signature 意思代表為建立交易時會放入五個public key，而之後要使用該筆金額時會需要至少三個private key簽發才能成功發送交易。
+假設為 3-of-5 Multi-Signature 意思代表為建立交易時會放入五個 Public key，而之後要使用該筆金額時會需要至少三個 Private key簽名才能成功發送交易。
 
-3-of-5 Multi-Signature  locking script類似如下
+3-of-5 Multi-Signature 的 Locking script類似如下
 
 ```
 3 <Public Key A> <Public Key B> <Public Key C> <Public Key D> <Public Key E> 5 OP_CHECKMULTISIG
 ```
 
 > 真實交易可參考: [https://www.blocktrail.com/BTC/tx/6e2c5b6b2a926a7da2415ae55c701e83d6e7bc46bad9bc23b5f9c7ef1ae26998](https://www.blocktrail.com/BTC/tx/6e2c5b6b2a926a7da2415ae55c701e83d6e7bc46bad9bc23b5f9c7ef1ae26998)
+
+多重簽章交易的Unlocking script如下：
+
+```
+OP_0 <Signature B> <Signature C>
+```
+
+兩者組合後的交易完整腳本如下：
+
+```
+Pubkey script: <m> <A pubkey> <B pubkey> <C pubkey> ... <n> OP_CHECKMULTISIG
+Signature script: OP_0 <A sig> <B sig> <C sig>...
+```
 
 
 

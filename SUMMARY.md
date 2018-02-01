@@ -11,7 +11,7 @@
     * [Bitcoin Regtest Mode](2-3-bitcoin-ce-shi-93c828-testnet/bitcoin-regtest-mode.md)
   * [Bitcoin 錢包](2-3-bitcoin-qian-bao.md)
   * [Bitcoin 交易](bitcoin-jiao-yi.md)
-    * [接續2-6](bitcoin-jiao-yi/jie-xu-2-6.md)
+    * [Bitcoin交易-1](bitcoin-jiao-yi/jie-xu-2-6.md)
     * [使用BitcoinJS產生交易](bitcoin-jiao-yi/shi-yong-bitcoinjs-chan-sheng-jiao-yi.md)
   * [Bitcoin 地址](2-5-bitcoin-di-zhi.md)
     * [其他類型地址](2-5-bitcoin-di-zhi/qi-ta-lei-xing-di-zhi.md)
