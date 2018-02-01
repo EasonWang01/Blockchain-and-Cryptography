@@ -1,12 +1,12 @@
 # SPV節點
 
-比特幣之區塊鏈大小非常龐大，如果下載所有資料後需要佔據大約 100GB 以上的硬碟儲存空間，所以後來發展出了一種方法，可以不用下載整個區塊鏈的節點，稱為 SPV節點 \( Simplified Payments Verification nodes \)。
+比特幣之區塊鏈大小較為龐大，如果下載所有資料後需要佔據大約 100GB 以上的硬碟儲存空間，所以後來發展出了一種方法，可以不用下載整個區塊鏈的節點，稱為 SPV節點 \( Simplified Payments Verification nodes \)。
 
-上一章節的節點資料交換為Full Node \(全節點\) 的資料交換方式，而這章節將講解可以有效節省空間的SPV node，SPV node只會下載 block header 而不像 Full node 會下載每個區塊裡面的所有 transaction。
+上一章節的節點資料交換為Full Node \(全節點\) 的資料交換方式，而這章節將講解可以有效節省空間的SPV Node，SPV Node只會下載區塊頭（ Block Header） 不需要像 Full node 一樣去下載每個區塊裡面的所有 transactions。
 
 SPV節點使用Merkle Root驗證特定交易是否存在於區塊中，不用管其他不相關的交易，而在安全性考量下，SPV節點通常會有許多個連線的Full Node來確保傳過來的資料是正確的。
 
-所以在SPV節點中不用像上一章節發出 getdata 來請求資料，而是發出 getheader，另外一個節點接收到後會回覆 header 訊息。
+在SPV節點中不用像上一章節發出 getdata 來請求資料，而是發出 getheader 請求，之後當另外一個節點接收到後會回覆 header 訊息。
 
 ![](/assets/螢幕快照 2017-12-26 下午5.16.09.png)
 
@@ -15,16 +15,16 @@ SPV節點使用Merkle Root驗證特定交易是否存在於區塊中，不用管
 將先前程式的 Buffer 部分改為如下再次執行，即可模擬 :
 
 ```js
-  const magicNum = "f9beb4d9";
-  const command = "676574686561646572730000" // getheaders
-  const payload_length = "e5030000"
-  const checksum = "c03eac5d"
+ const magicNum = "f9beb4d9";
+ const command = "676574686561646572730000" // getheaders
+ const payload_length = "e5030000"
+ const checksum = "c03eac5d"
 
   // 7f110100為版本號
   // 1e 為發出的header hash數量
-  // 之後30串hash即為header hash
+  // 之後 30 行的 hash 為 Block Header hash
   // 最後面的00....為End結束的意思
-  const payload = `7f110100  
+ const payload = `7f110100  
                     1e
                     a5e9078c58ff2b934450022350ede0cec6ef111aca9014000000000000000000
                     fae4a61a5d5ba145db9187c9b3fc931f1e91153dbc6e07000000000000000000
@@ -70,24 +70,24 @@ const buffer = new Buffer(magicNum + command + payload_length + checksum + paylo
 將先前程式的 Buffer 部分改為如下再次執行，即可模擬 :
 
 ```js
-  const magicNum = "f9beb4d9";
-  const command = "686561646572730000000000" // headers
-  const payload_length = "52000000"
-  const checksum = "ef8dc6fd"
+const magicNum = "f9beb4d9";
+const command = "686561646572730000000000" // headers
+const payload_length = "52000000"
+const checksum = "ef8dc6fd"
 
-  const count = '0100' // 包含hash總數
+const count = '0100' // 包含hash總數
 
-  /* 區塊頭 */
-  const block_version = '000020'
-  const previous_block = '91c7d27b24f9a5a6042adeadb33ccaa1af671b26ccb235000000000000000000'
-  const merkle_root = '67dce235f09410f8bcb0f4b0b894db5a8e66adeb58de59b01978df3a92581682'
-  const block_timestamp = '3e99fb59' // Nov  3, 2017 06:16:30.000000000 +08
-  const bits = '45960018';
-  const nonce = 'c43de516';
-  const transaction_count= '00';
-  const payload = count + block_version + previous_block + merkle_root + block_timestamp + bits + nonce + transaction_count;
+/* 區塊頭 */
+const block_version = '000020'
+const previous_block = '91c7d27b24f9a5a6042adeadb33ccaa1af671b26ccb235000000000000000000'
+const merkle_root = '67dce235f09410f8bcb0f4b0b894db5a8e66adeb58de59b01978df3a92581682'
+const block_timestamp = '3e99fb59' // Nov  3, 2017 06:16:30.000000000 +08
+const bits = '45960018';
+const nonce = 'c43de516';
+const transaction_count= '00';
+const payload = count + block_version + previous_block + merkle_root + block_timestamp + bits + nonce + transaction_count;
 
-  const buffer = new Buffer(magicNum + command + payload_length + checksum + payload, 'hex');
+const buffer = new Buffer(magicNum + command + payload_length + checksum + payload, 'hex');
 ```
 
 
