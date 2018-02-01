@@ -4,13 +4,13 @@
 
 > [https://bitcoin.org/en/developer-guide\#p2p-network](https://bitcoin.org/en/developer-guide#p2p-network)
 
-比特幣的全節點\([mainnet](https://www.gitbook.com/book/easonwang01/e/edit#)\)預設跑在8333的PORT上，而[testnet](https://www.gitbook.com/book/easonwang01/e/edit#)預設跑在18333 PORT上。
+比特幣的全節點\( [mainnet](https://www.gitbook.com/book/easonwang01/e/edit#) \)預設跑在8333的PORT上，而測試鏈 \( [testnet](https://www.gitbook.com/book/easonwang01/e/edit#) \) 預設跑在18333 PORT上。
 
 ## Bitcoin Protocol
 
 我們可以使用『 Wireshark 』軟體來監聽節點間的封包，其為一個免費的開源軟體，常用來分析網路封包。
 
-https://www.wireshark.org/download.html
+[https://www.wireshark.org/download.html](https://www.wireshark.org/download.html)
 
 開啟程式後，我們在上方的綠色欄位輸入『 Bitcoin 』，讓他只過濾出Bitcoin Protocol的封包。
 
@@ -20,7 +20,7 @@ https://www.wireshark.org/download.html
 
 > ![](/assets/螢幕快照 2017-12-06 下午9.11.20.png)
 >
-> 紅色箭頭部分為每個比特幣節點的網路封包都會包含的訊息頭（Message Headers），而黃色箭頭部分則為根據該封包的Command Name欄位，擁有不同的Message Body。
+> 紅色箭頭部分為每個比特幣節點的網路封包都會包含的訊息頭（Message Headers），而黃色箭頭部分則為根據該封包的Command Name欄位，擁有不同的Payload。
 
 ## 節點搜尋
 
