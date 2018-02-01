@@ -16,13 +16,13 @@
 
 \(以ABC為例子\)
 
-![](/assets/52542.png)![](/assets/981a7fcf-8be1-44d0-966d-f66bf0c8ab18.png)
+![](/assets/981a7fcf-8be1-44d0-966d-f66bf0c8ab18.png)
 
 ### 第二步:
 
 寫出八個initial hash value\(此為被定義好之固定值\)
 
-![](/assets/755.png)![](/assets/844c13d2-4afc-4201-9367-7521aea3cdab.png)
+![](/assets/844c13d2-4afc-4201-9367-7521aea3cdab.png)
 
 ```
 原理: 
@@ -70,7 +70,7 @@ H(0)
 
 64個固定k值
 
-![](/assets/4587.png)![](/assets/99a8531e-ec2c-4dd3-969d-5eb3198422b2.png)
+![](/assets/99a8531e-ec2c-4dd3-969d-5eb3198422b2.png)
 
 ```
 原理: 用Math cube root的方法找首64個質數
@@ -89,11 +89,11 @@ H(0)
 
 使用sha256定義的六個hash function
 
-![](/assets/74.png)![](/assets/7a78355a-4918-4eca-bfe3-b1d69e5a4420.png)
+![](/assets/7a78355a-4918-4eca-bfe3-b1d69e5a4420.png)
 
 其中符號定義如下
 
-![](/assets/7857.png)![](/assets/29de9148-4747-4151-9e99-b84cbf5603d6 %281%29.png)
+![](/assets/29de9148-4747-4151-9e99-b84cbf5603d6 %281%29.png)
 
 寫成程式為:
 
