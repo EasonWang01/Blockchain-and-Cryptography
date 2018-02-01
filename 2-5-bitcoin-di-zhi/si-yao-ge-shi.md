@@ -10,9 +10,9 @@
 
 # WIF\(Wallet import format\)
 
-一般私鑰跟WIF格式私鑰可以互相轉換，其優點在於長度稍微縮短，以及加入了checksum
+一般私鑰跟WIF格式私鑰可以互相轉換，其優點在於WIF格式的私鑰長度較短，並且加入了checksum機制。
 
-可參考以下網站在線轉換[http://gobittest.appspot.com/PrivateKey](http://gobittest.appspot.com/PrivateKey)
+可參考此網站在線轉換私鑰格式：[http://gobittest.appspot.com/PrivateKey](http://gobittest.appspot.com/PrivateKey)
 
 ## 一般私鑰轉為WIF格式
 
@@ -66,15 +66,15 @@ console.log(final)
 
 > 壓縮格式的WIF開頭為**K或L，沒壓縮WIF私鑰為5開頭。**
 >
-> 因為橢圓曲線知道X後即可求得Y，所以可以從原本65bytes的prefix+X+Y，壓縮為33bytes，可參考後面ECDSA章節。
+> 因為橢圓曲線的公鑰知道 X 後即可求得 Y，所以可以從原本65bytes的 prefix + X + Y，壓縮為33bytes，可參考後面ECDSA章節。
 
 以下分別為一般的私鑰、WIF格式的私鑰、WIF壓縮格式的私鑰。
 
-| Uncompressed private key | 4F63BA6514E7EA4D2F561D96035729D93EDA4678F148A0CF8E8D77724B18E0B9 |
+| **Uncompressed private key** | **4F63BA6514E7EA4D2F561D96035729D93EDA4678F148A0CF8E8D77724B18E0B9** |
 | :--- | :--- |
-| Compressed private key | 4F63BA6514E7EA4D2F561D96035729D93EDA4678F148A0CF8E8D77724B18E0B901 |
-| Uncompressed WIF | 5JRFUsVCaGpZDhkznzDCKiD28rJEhNrhXLz3rGKwMDU1fhJUHE6 |
-| Compressed WIF | Kyt2v1qU5rpuD4uC5yWpyat41eb5TDUMrwCoaSeatE2DwVA7MMfG |
+| **Compressed private key** | **4F63BA6514E7EA4D2F561D96035729D93EDA4678F148A0CF8E8D77724B18E0B901** |
+| **Uncompressed WIF** | **5JRFUsVCaGpZDhkznzDCKiD28rJEhNrhXLz3rGKwMDU1fhJUHE6** |
+| **Compressed WIF** | **Kyt2v1qU5rpuD4uC5yWpyat41eb5TDUMrwCoaSeatE2DwVA7MMfG** |
 
 #### 壓縮的WIP私鑰轉為未壓縮格式的私鑰。
 
@@ -141,8 +141,6 @@ generateAddress()
 之後可以使用`https://blockchain.info/wallet` 來引入Mini 格式的私鑰，但並不是所有錢包都支援此種格式。
 
 ![](/assets/90if34.png)
-
-
 
 > 參考至:
 >
