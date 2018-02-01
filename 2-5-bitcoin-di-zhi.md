@@ -224,7 +224,7 @@ OP_m <Public Key A> <Public Key B> <Public Key C> <Public Key D> <Public Key E> 
 ./bitcoin-cli -datadir="./chaindata"  validateaddress 1j9x23hbbLDfpExMMHBTQ3CfQ52mqLqLU
 ```
 
-5.產生出2 to 3 之 multisig address與redeemScript
+5.產生出 2 to 3 之 multisig address與redeemScript
 
 ```
 ./bitcoin-cli -datadir="./chaindata"  createmultisig 2 '["039f5d6b7b1c5ca0cffab0fa2b94090591acb01143e0654e2cea14becb6e49d560", "03bdcda873f9399178e8ed6187de1fa34b127b7740299e0d9a9035f8ac480e1994", "03af8b6dc943f593dc7b8690e32ae014257a6dfba5d27e7f433d4d846fde1859e8"]'

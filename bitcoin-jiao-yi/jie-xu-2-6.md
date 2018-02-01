@@ -46,8 +46,6 @@ hex_to_ASCII('4120636f6e74656e746564206d696e64206973206120636f6e74696e75616c2066
 
 為一開始發展之多重簽名BIP-11的衍伸，其定義在BIP-16，因為在傳統的MultiSig需要放入多個Public Key，會造成 Script 過長，所以後來決定把具有多個Public Key之 Locking Script 做雜湊，產生一個20-byte 的 Redeem Script。
 
-
-
 ```
 2 to 5 之 P2SH
 
@@ -76,7 +74,7 @@ txid:   [nVersion][txins][txouts][nLockTime]
 wtxid:  [nVersion][marker][flag][txins][txouts][witness][nLockTime]
 ```
 
-> 其中`nVersion、txins、txouts、nLockTime`四個部分是相同的
+> 其中`nVersion、txins、txouts、nLockTime`四個部分類似於其他類型的交易
 >
 > marker目前為`0x00`
 >
@@ -85,6 +83,8 @@ wtxid:  [nVersion][marker][flag][txins][txouts][witness][nLockTime]
 > witness為交易的txins之簽名
 
 之後一群交易的wtxid會另外組成一個Merkle Tree，並且將Merkle Root存在區塊的coinbase transaction。
+
+分為以下兩種：Pay-to-Witness-Public-Key-Hash \(P2WPKH\) 與 Pay-to-Witness-Script-Hash \(P2WSH\)
 
 #### P2WPKH
 
@@ -122,24 +122,22 @@ BIP141, BIP143, BIP144, BIP145
 
 ---
 
-註1: lock\_time   [https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)  
+註1 : lock\_time   [https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)  
 以unix timestamp表示，類似於`1511321691`如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交易加入區塊
 
 ![](/assets/09isd.png)
 
 > [https://en.bitcoin.it/wiki/Protocol\_documentation\#tx](https://en.bitcoin.it/wiki/Protocol_documentation#tx)
 
-註2: 交易手續費，約為1000satoshis每KB.每個交易通常至少含有500 bytes.  
+註2 : 交易手續費，約為1000 satoshis每 KB，每個交易通常至少含有500 bytes。  
 [https://bitcoinfees.earn.com/](https://bitcoinfees.earn.com/)
 
 > [https://bitcoinfees.earn.com/](https://bitcoinfees.earn.com/)  
 >  \(此網站可看到目前推薦的手續費與尚未確認的交易所含的手續費\)  
-> 注意:他是以bytes為單位
+>  注意 : 網站上是以 bytes 為單位
 
-註3: build transaction在coinb.in的原始碼  
-[https://github.com/OutCast3k/coinbin/blob/217897285e51cbc33bdba3ec275aa3386ebf70b2/js/coin.js\#L793](https://github.com/OutCast3k/coinbin/blob/217897285e51cbc33bdba3ec275aa3386ebf70b2/js/coin.js#L793)
-
-註4: bitcoinjs之transaction相關原始碼  
+其他參考資料：  
+[https://github.com/OutCast3k/coinbin/blob/217897285e51cbc33bdba3ec275aa3386ebf70b2/js/coin.js\#L793](https://github.com/OutCast3k/coinbin/blob/217897285e51cbc33bdba3ec275aa3386ebf70b2/js/coin.js#L793)  
 [https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction.js](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction.js)  
 [https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction\_builder.js](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction_builder.js)
 
