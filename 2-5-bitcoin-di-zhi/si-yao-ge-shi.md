@@ -99,7 +99,7 @@ console.log(address)
 
 # Mini Private Key
 
-通常用在儲存空間較小的地方，例如實體Bitcoin硬幣或是`1D barcode`與`25 x 25`之QR Code等等。
+通常用在儲存空間較小的地方，例如實體 Bitcoin 硬幣或是`1D barcode`與`25 x 25 QR Code`等等。
 
 #### 產生:
 
