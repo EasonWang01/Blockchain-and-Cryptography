@@ -24,7 +24,28 @@
 
 以下以Version訊息為範例 :
 
-> 在官方資料上節點分為 『 transmitting node \(發出方\)』 與 『 receiving node（接收方） 』，如果請求從本地發出則本地的節點及擔任transmitting node\(發出方\)角色，反之。
+> 在官方資料上節點分為 『 transmitting node \(發出方\) 』 與 『 receiving node（接收方）』，如果請求從本地發出則本地的節點即為transmitting node\(發出方\)角色，反之。
+
+* Protocol version: 70005 \( 7f110100 \)
+
+* > 4 bytes，表達當前使用之 Bitcoin protocol版本，可參考： https://bitcoin.org/en/developer-reference\#protocol-versions
+
+* Services: NODE\_NETWORK （ 0100000000000000 ）
+
+* > 8 bytes ，0x01 為 Full node
+
+* Epoch Time: 1513492007
+
+* > 8 bytes， 此為unix的timestamp 但只取到秒數
+  >  `parseInt(Date.now().toString().substring(0, 10)).toString('16')` 之後在後面補上0
+
+* Receiving node's services: 0100000000000000
+
+  > 8 bytes， 通常值會和上面Services: NODE\_NETWORK相同
+
+* Receiving node's IPv6 address：00000000000000000000ffffc61b6409
+
+  > 16 bytes， 為接收方節點IP地址 類似如下 ::ffff:127.0.0.1
 
 ```
 7f110100 ........................... Protocol version: 70005
@@ -36,21 +57,19 @@
 // 0x01為full node
 
 5a360e2700000000 ................... Epoch time: 1513492007   
-// 8 bytes
-// 此為unix的timestamp 但只取到秒數 
-// parseInt(Date.now().toString().substring(0, 10)).toString('16') 之後在後面補上0
+( 8 bytes 此為unix的timestamp 但只取到秒數 )
+( parseInt(Date.now().toString().substring(0, 10)).toString('16') 之後在後面補上0 )
 
 0100000000000000 ................... Receiving node's services
-// 8 bytes
-//通常值會和上面Services: NODE_NETWORK相同
+(8 bytes 通常值會和上面Services: NODE_NETWORK相同)
 
-00000000000000000000ffffc61b6409 ... Receiving node's IPv6 address
-// 16 bytes 
-// 為接收方節點IP地址   類似如下 ::ffff:127.0.0.1
 
-208d ............................... Receiving node's port number
-// 2 bytes 
-// 為接收方節點PORT
+
+Receiving node's IPv6 address：00000000000000000000ffffc61b6409
+( 16 bytes 為接收方節點IP地址   類似如下 ::ffff:127.0.0.1 )
+
+Receiving node's port number : 208d
+( 2 bytes 為接收方節點PORT)
 
 0100000000000000 ................... Transmitting node's services
 // 8 bytes
