@@ -119,7 +119,7 @@ const payload = {
   // Address as receiving node
   Node_services_rec: "0d00000000000000",// 0x000000000000000d
   Node_address_rec: "00000000000000000000ffff2e043c24", //::ffff:46.4.60.36
-  Node_port_rec: "208d", //8333 
+  Node_port_rec: "208d", //8333
 
   // Address as emitting node
   Node_services_emit: "0d00000000000000",// 0x000000000000000d
@@ -138,26 +138,25 @@ const payload = {
 
 // 把payload 字串接起來
 let payload_string = "";
-for(let i = 0; i < Object.keys(payload).length ; i++){
+for (let i = 0; i < Object.keys(payload).length; i++) {
   payload_string += payload[Object.keys(payload)[i]]
 }
 
 /*--- Payload Header --- */
 const magicNum = "f9beb4d9";
-const control_version = "76657273696f6e0000000000"// 英文version字串 轉為 ascii hex;
-const payloadLength = (payload_string.length / 2).toString('16') + "000000" // 以bytes計算後轉為16進位，後面再補0
+const control_version = "76657273696f6e0000000000"// 英文version字串 轉為 ASCII hex;
+const payloadLength = (payload_string.length / 2).toString('16') + "000000" // 以bytes 計算後轉為16進位，後面再補0
 const payload_checksum = double_sha256(payload_string); // 計算payload 的 checksum
 /* ----------------------- */
-
 
 // 把 message header 拼接 message payload，此為我們要發送出去的封包內容
 const message_header = magicNum + control_version + payloadLength + payload_checksum;
 const message = message_header + payload_string;
 
-var host;
-var hostList;
-var try_host_No = 0;
-var timeout_ = 2000;
+let host;
+let hostList;
+let try_host_No = 0;
+const timeout_ = 2000;
 const options = {
   family: 4,
   hints: dns.ADDRCONFIG | dns.V4MAPPED,
@@ -191,13 +190,17 @@ function connectPeer(host, buffer1) {
 
   //預設timeout 為兩秒
   client.setTimeout(timeout_);
-  client.on('timeout', () => {
+  client.on('timeout', () => { // 產生Timeout時
     console.log(`socket timeout for host ${try_host_No}`);
     client.end();
     // 如果連線失敗繼續嘗試下個節點
     try_host_No += 1;
     connectPeer(hostList[try_host_No].address, buffer1);
   });
+  client.on('error', () => { // 產生ECONNREFUSED時
+    try_host_No += 1;
+    connectPeer(hostList[try_host_No].address, buffer1);
+  })
 }
 
 
@@ -216,7 +219,7 @@ function BigEndian_to_SmallEndian(hexNum) {
 }
 
 function double_sha256(payload) {
-  if(payload === "") return Buffer.from("5df6e0e2", "hex");
+  if (payload === "") return Buffer.from("5df6e0e2", "hex");
   payload = Buffer.from(payload, "hex")
   let sha256 = crypto.createHash('sha256').update(payload).digest();
   return crypto.createHash('sha256').update(sha256).digest().slice(0, 4).toString('hex');
