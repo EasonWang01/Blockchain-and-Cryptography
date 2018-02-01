@@ -8,9 +8,9 @@
 
 ![](/assets/920f8fe2-0bb9-40cb-8310-cd583df36b26.png)
 
-符號意思分別為![](/assets/5.png)
+符號意思分別為
 
-![](/assets/c29ae002-011b-4247-8fd0-c23eea97fd12.png)![](/assets/5.png)
+![](/assets/c29ae002-011b-4247-8fd0-c23eea97fd12.png)
 
 ## 步驟二:
 
@@ -390,7 +390,7 @@ function fn5 (a, b, c, d, e, m, k, s) {
 console.log(new RIPEMD160().update('abc').digest('hex'))
 ```
 
-> 參考至https://www.esat.kuleuven.be/cosic/publications/article-317.pdf
+> 參考至[https://www.esat.kuleuven.be/cosic/publications/article-317.pdf](https://www.esat.kuleuven.be/cosic/publications/article-317.pdf)
 
 
 

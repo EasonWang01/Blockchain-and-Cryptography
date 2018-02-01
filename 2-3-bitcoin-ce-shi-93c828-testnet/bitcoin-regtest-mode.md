@@ -4,7 +4,7 @@
 
 ### 使用Bitcoin-QT執行Regtest Mode
 
-我們可以輸入以下指令，讓Bitcoin-qt執行Regtest Mode
+我們可以輸入以下指令，讓Bitcoin-qt在Regtest Mode下執行。
 
 ```
 ./bitcoin-qt -regtest
@@ -16,7 +16,7 @@ Bitcoin-qt 執行regtest Mode:![](/assets/螢幕快照 2017-12-26 下午3.53.17.
 
 ## 使用Bitcoin-CLI
 
-我們也可以使用Bitcoin-CLI 來設定我們想要的環境 :
+我們也可以使用Bitcoin-CLI 來與`-regtest`模式下的節點互動 :
 
 1.先執行Bitcoin server
 
