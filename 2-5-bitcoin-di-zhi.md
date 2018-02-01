@@ -4,11 +4,7 @@
 
 > 地址為1開頭為一般比特幣地址，為3開頭的為多重簽章地址，測試鏈地址為m或n開頭。
 
-![](/assets/螢幕快照 2018-02-01 下午5.05.31.png)
-
-[https://en.bitcoin.it/wiki/List\_of\_address\_prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
-
-## 線上產生地址
+### 線上產生地址
 
 我們可以用以下網站來進行線上產生地址。
 
@@ -18,7 +14,7 @@
 
 > 還有許多網站也提供類似服務，但建議尋找具有離線產生地址的工具較為安全。
 
-# 地址長度
+### 地址長度
 
 > 每個十六進位字元具有 0.5 bytes
 
@@ -28,7 +24,7 @@
 公鑰雜湊(Public key hash):  20 bytes
 ```
 
-# 地址開頭字母
+### 地址開頭字母
 
 下表為各個種類的比特幣地址的開頭。
 
@@ -36,7 +32,7 @@
 
 > 可參考：[https://en.bitcoin.it/wiki/List\_of\_address\_prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
 
-# 地址種類
+### 地址種類
 
 比特幣主鏈上常見的地址具有以下種類：
 
@@ -57,13 +53,11 @@
 > 1.由34個英文加數字組成  
 > 2.因為採用base58編碼，所以不會含有大寫`O`大寫`I`小寫`i`和數字`0`
 
-# 1.最常用的P2PKH單一簽名地址
+### 1.最常用的P2PKH單一簽名地址
 
 單一簽名地址，開頭為1。
 
-下圖為P2PKH比特幣地址的產生流程
-
-![](/assets/螢幕快照 2018-01-30 下午3.33.479s.png)
+下圖為P2PKH比特幣地址的產生流程，利用橢圓曲線來產生相關的公鑰與私鑰，將公鑰進行雜湊，之後進行Base58編碼。![](/assets/螢幕快照 2018-01-30 下午3.33.479s.png)
 
 > [http://en.bitcoinwiki.org/Bitcoin\_address](http://en.bitcoinwiki.org/Bitcoin_address)
 
@@ -71,12 +65,10 @@
 
 ![](/assets/0_--6A6E5CY2IT4fmc.png)
 
-> 有些第三方套件在使用橢圓曲線產生的 256 bits 的 public key 時已經把 0x04 和 x, y 結合了
+> 有些第三方套件在使用橢圓曲線產生的 256 bits 的 public key 時已經在開頭加上了 `0x04` 但有些不會加。
 >
-> > 但有些須自己拼接，如Golang的原生橢圓曲線套件   [https://play.golang.org/p/-8n67Cq2iZ](https://play.golang.org/p/-8n67Cq2iZ)
->
-> 以下為使用openssl產生secp256k1的公鑰範例:
->
+> 以下為使用openssl產生secp256k1公鑰的範例 :
+
 > ```bash
 > openssl ecparam -name secp256k1 -genkey >  priv.pem
 > openssl ec -in priv.pem -pubout -outform DER|tail -c 65|xxd -p -c 65
