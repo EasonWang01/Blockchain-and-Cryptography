@@ -29,7 +29,7 @@ const hr = [0x50a28be6, 0x5c4dd124, 0x6d703ef3, 0x7a6d76e9, 0x00000000];
 
 > 對照上圖最右側公式   "5a827999" =  \(2 \*\* 30 \* \(Math.sqrt\(2\)\)\).toString\(16\).substring\(0,8\)
 
-#### 2.![](/assets/9784.png)selection of message word
+#### 2.selection of message word
 
 #### ![](/assets/a2.png)
 
@@ -53,7 +53,7 @@ const zr = [
 
 #### 3.amount for rotate left \(rol\)
 
-![](/assets/9444.png)![](/assets/螢幕快照 2018-01-07 下午5.05.55.png)
+![](/assets/螢幕快照 2018-01-07 下午5.05.55.png)
 
 ```js
 const sl = [
@@ -77,15 +77,15 @@ var sr = [
 
 ![](/assets/螢幕快照 2018-01-07 下午5.09.16.png)
 
-![](/assets/asdf.png)
+
 
 ### 
 
-### \# 看完上面這些constant可能會有點模糊，不知道他們是用來做什麼的
+### 看完上面這些constant可能會有點模糊，不知道他們是用來做什麼的
 
-### 所以我們直接來看整個hash過程的pseudo-code
+所以我們直接來看整個hash過程的pseudo-code
 
-![](/assets/548.png)![](/assets/螢幕快照 2018-01-07 下午5.10.24.png)
+![](/assets/螢幕快照 2018-01-07 下午5.10.24.png)
 
 然後寫成JS
 
