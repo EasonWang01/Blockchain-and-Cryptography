@@ -28,7 +28,7 @@
 
 * Protocol version: 70005 \( 7f110100 \)
 
-* > 4 bytes，表達當前使用之 Bitcoin protocol版本，可參考： [https://bitcoin.org/en/developer-reference\#protocol-versions](https://bitcoin.org/en/developer-reference#protocol-versions)
+* > * 4 bytes，表達當前使用之 Bitcoin protocol版本，可參考： [https://bitcoin.org/en/developer-reference\#protocol-versions](https://bitcoin.org/en/developer-reference#protocol-versions)
 * Services: NODE\_NETWORK （ 0100000000000000 ）
 
 * > 8 bytes ，0x01 為 Full node
