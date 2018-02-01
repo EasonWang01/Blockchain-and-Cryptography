@@ -4,13 +4,13 @@
 
 ### 使用Bitcoin-QT執行Regtest Mode
 
-我們可以輸入以下指令，讓Bitcoin-qt在Regtest Mode下執行。
+我們可以輸入以下指令，讓`Bitcoin-QT`在`Regtest Mode`下執行。
 
 ```
 ./bitcoin-qt -regtest
 ```
 
-> 如果是Windows作業系統，請改為: `start ./bitcoin-qt.exe -regtest`
+> 如果是Windows作業系統，請將前面`./`省略，改為: `bitcoin-qt.exe -regtest`
 
 Bitcoin-qt 執行regtest Mode:![](/assets/螢幕快照 2017-12-26 下午3.53.17.png)
 
@@ -33,7 +33,7 @@ Bitcoin-qt 執行regtest Mode:![](/assets/螢幕快照 2017-12-26 下午3.53.17.
 ![](/assets/螢幕快照 2017-12-26 下午4.16.37.png)3.查看餘額
 
 ```
-bitcoin-cli -regtest getbalance
+./bitcoin-cli -regtest getbalance
 ```
 
 4.查看可用指令
@@ -58,5 +58,13 @@ bitcoin-cli -regtest getbalance
 
 ### 重置Regtest chain
 
-當我們想要重置 Regtest 區塊鏈時，將先前章節所提到的Bitcoin資料夾路徑下的 regtest 資料夾刪除即可。
+當我們想要重置 Regtest 區塊鏈時，將先前章節所提到的Bitcoin資料夾路徑下的 `regtest` 資料夾刪除即可。
+
+e.g.
+
+```
+sudo rm -rf <Regtest資料夾路徑>
+```
+
+
 

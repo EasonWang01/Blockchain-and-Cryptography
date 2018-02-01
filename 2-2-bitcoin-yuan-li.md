@@ -79,15 +79,17 @@ Linux
 1.先用系統管理員打開命令列 \( 避免稍後打開資料夾時權限不足 \)。  
 2.之後輸入`cd` 後面加上我們剛才安裝的資料夾位置  
 ![](/assets/bitcoin-qt12.png)  
-3.之後我們創建一個資料夾來存放我們要自己指定的區塊鏈資料儲存位置 
+3.之後我們創建一個資料夾來存放我們要自己指定的區塊鏈資料儲存位置
 
 \( 這裡我們直接在這個資料夾路徑下創建一個名為BitcoinData的資料夾  \)  
 ![](/assets/bitcoin-qt13.png)  
-4.再來我們輸入如下指令 \( 記得確認路徑正確 \)  
-![](/assets/start-qt-cmd.png)  
-輸入後他就會和剛才一樣，開啟Bitcoin Core程式。
+4.再來我們輸入如下指令 \( 記得確認路徑正確 \)
 
-> macOS與Linux不用在指令開頭加`start`
+```
+bitcoin-qt -datadir=./BitcoinData
+```
+
+輸入後就會和剛才一樣，開啟Bitcoin Core程式。
 
 5.這時我們打開BitcoinData這個資料夾，即可看到裡面存放了錢包與區塊鏈的檔案
 
@@ -117,16 +119,23 @@ macOS：
 1.開啟terminal然後用進入到`daemon`路徑下  
 ![](/assets/bitcoin-qt15.png)
 
-2.然後我們要先執行bitcoind \( 即為Bitcoin 的節點 Server \)  
-![](/assets/bitcoin-qt16.png)
+2.然後我們要先執行bitcoind \( 即為Bitcoin 的節點 Server \)
+
+```
+bitcoind
+```
 
 3.之後可輸入以下指令測試：
 
 ```
-start ./bitcoin-cli getblockchaininfo
+bitcoin-cli getblockchaininfo
 ```
 
-> 在Windows上，通常會在執行後跳出視窗顯示結果，但顯示完隨即自動關閉視窗，所以如果要用此種方法執行，建議寫一個batch file然後於後面加上`pause`
+> Linux與macOS需要加上執行路徑
+>
+> ```
+> ./bitcoin-cli getblockchaininfo
+> ```
 
 ## Linux, macOS
 
@@ -134,7 +143,29 @@ start ./bitcoin-cli getblockchaininfo
 
 [https://bitcoin.org/bin/](https://bitcoin.org/bin/)
 
-選擇版本後，下載 [tar.gz](https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-osx64.tar.gz) 格式的安裝檔然後解壓縮 ，之後一樣 `cd`到下載的資料夾目錄下的 `bin` 資料夾。
+選擇版本後，下載 [tar.gz](https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-osx64.tar.gz) 格式的安裝檔，有分兩種，一種是要自己編譯的，另一種是編譯好的，裡面包含`bin`資料夾，以下範例為編譯好的連結：
+
+Linux
+
+```
+curl https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-x86_64-linux-gnu.tar.gz \
+--output bitcoin-0.15.1.tar.gz
+```
+
+macOS
+
+```
+curl https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-osx64.tar.gz \
+--output bitcoin-0.15.1.tar.gz
+```
+
+然後解壓縮 
+
+```
+tar -xzf ./bitcoin-0.15.1.tar.gz
+```
+
+之後一樣 `cd`到下載的資料夾目錄下的 `bin` 資料夾。
 
 1.執行Bitcoin節點Server
 
