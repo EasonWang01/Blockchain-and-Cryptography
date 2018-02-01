@@ -178,28 +178,17 @@ function hex2ASCII(_hex) {
 
 因為P2SH交易的Locking script包含OP\_HASH160，跟產生地址的過程類似，所以之後發展為可以將其作Base58編碼，即成為一種地址格式，這也是所謂的P2SH地址。
 
-[https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki)
+為一開始發展之多重簽名BIP-11的衍伸，其定義在BIP-16，因為在傳統的Multi Sig需要放入多個Public Key，所以後來決定把具有多個Public Key之script做雜湊，產生一個20-byte 的 Redeem Script Hash。
 
-為一開始發展之多重簽名BIP-11的衍伸，其定義在BIP-16，因為在傳統的Multi Sig需要放入多個Public Key，所以後來決定把具有多個Public Key之script做雜湊，產生一個20-byte 的 Redeem Script。
+[https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki](https://www.gitbook.com/book/easonwang01/e/edit#)
+
+把多個要結合個Public key跟相關Execute code 串接後的字串進行查表 \( [https://en.bitcoin.it/wiki/Script](https://en.bitcoin.it/wiki/Script) \)，轉為Redeem script，之後此Redeem script會進行雜湊，即可算出Redeem Script Hash。
 
 ```
-2 to 5 之 P2SH
+m-of-n 多重簽名 之 Redeem script: 
 
-Redeem script: 
-2 <Public Key A> <Public Key B> <Public Key C> <Public Key D> <Public Key E> 5 OP_CHECKMULTISIG
-
-Locking script:
-OP_HASH160 <20-bytes Redeem script> OP_EQUAL
-
-Unlocking script:
-<Public Key B> <Public Key C>  <20-bytes Redeem script>
+OP_m <Public Key A> <Public Key B> <Public Key C> <Public Key D> <Public Key E> OP_n OP_CHECKMULTISIG
 ```
-
-把public key結合之script轉為redeem script，redeem script產生方式為下圖：
-
-\(把多個要結合個public key跟相關execute code串接即可\)
-
-> ![](/assets/螢幕快照 2017-11-19 下午3.56.38.png)[http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/](http://www.soroushjp.com/2014/12/20/bitcoin-multisig-the-hard-way-understanding-raw-multisignature-bitcoin-transactions/)
 
 #### 使用Bitcoind產生地址
 
@@ -256,7 +245,7 @@ const OP_2 = "52";
 const OP_3 = "53";
 const OP_CHECKMULTISIG = "ae";
 
-// Push 65 bytes to stack = parseInt("65").toString(16) 65轉為16進位為41
+// 把 65 bytes 推入 stack 如此計算： parseInt("65").toString(16) 即為65轉為16進位 = 41
 const pubkeyBytes = "41"
 
 //三個隨機產生的公鑰
