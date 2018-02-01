@@ -1,10 +1,10 @@
 # Bitcoin 交易
 
-比特幣主要用途為支付，所以交易為其重要的一環，在本章節中我們會示範比特幣交易，並且講解其交易過程與原理。
+比特幣主要用途為支付，所以交易是其重要的一環，在本章節中將介紹比特幣交易，並講解交易過程與原理。
 
-以下我們將使用bitcoinjs-lib第三方模組來建立交易。
+以下我們將使用第三方模組`bitcoinjs-lib`來建立交易。
 
-> 如還沒安裝需先使用npm安裝
+> 如果還沒安裝，需要先使用npm安裝此模組。
 >
 > ```
 > npm install bitcoinjs-lib
@@ -35,11 +35,11 @@ console.log(txb.build());
 console.log(txb.build().toHex());
 ```
 
-執行程式後會產生如下
+執行程式後會產生如下：包含了版本訊息、交易鎖定時間、交易輸入與輸出。
 
 ![](/assets/螢幕快照 2018-01-30 上午11.43.32.png)
 
-> 此時交易尚未被廣播，下方Hex字串即為可以用來廣播的交易訊息。
+> 此時交易尚未被廣播，在上圖中的最下方Hex字串即為可以用來廣播的交易訊息。
 
 或是也可以產生2 to 2 的交易\(兩個輸入的地址與兩個輸出的地址\)
 
@@ -69,7 +69,7 @@ console.log(txb.build().toHex())
 
 但這時交易還沒有被廣播出去，意思是我們這個簽發動作也可以離線進行，然後把剛才產生的交易訊息複製到其他地方廣播給比特幣網路，稍後下一節將會講解。
 
-再來我們也可以從txHex解碼回原本的格式
+再來我們也可以從產生出的交易Hex解碼回原本的格式：
 
 ```js
 const bitcoin = require('bitcoinjs-lib')
@@ -86,13 +86,13 @@ const DecodeTxb = bitcoin.Transaction.fromHex(TxbHEX);
 console.log(DecodeTxb)
 ```
 
-### 我們也可以試試看直接解碼其他已經發生過的交易的TxHex
+### 試試看直接解碼其他已經發生過的交易Hex
 
 1.我們先到以下URL，查看一筆交易的交易Hex內容：
 
 [https://blockchain.info/tx/9021b49d445c719106c95d561b9c3fac7bcb3650db67684a9226cd7fa1e1c1a0?format=hex](https://blockchain.info/tx/9021b49d445c719106c95d561b9c3fac7bcb3650db67684a9226cd7fa1e1c1a0?format=hex)
 
-然後把它貼到下面程式的`txHEX`變數位置
+然後把它貼到下面程式的`transactionHex`變數位置
 
 ```js
 const bitcoin = require('bitcoinjs-lib')
@@ -126,7 +126,7 @@ Transaction {
        script: <Buffer 76 a9 14 08 33 8e 1d 5e 26 db 3f ce 21 b0 11 79 5b 1c 3c 8a 5a 5d 07 88 ac> } ] }
 ```
 
-假設一個編碼過的交易Hex為如下
+一個編碼過的交易Hex類似如下
 
 ```
 01000000018964907116f6245417b9d9aea1d226e46486c5d485d6b947c95c794e032df6120100
@@ -134,7 +134,7 @@ Transaction {
 00001976a9140b01599fd09ef602d71827601871e5a1081459f688ac00000000
 ```
 
-其是由以下格式所串接所組成\(以下括號內為10進位數字\)
+其是由以下格式所串接所組成\( 括號內之數字，代表其為10進位格式 \)
 
 ```
 version: 01000000
@@ -166,7 +166,7 @@ nLockTime: 00000000
 
 # 廣播交易
 
-比特幣交易可以是offline產生的，產生後再用線上的方式廣播給bitcoin網路，只要把交易訊息的payload傳送給其中一個比特幣節點就可以達到廣播的目的
+比特幣交易可以 Offline 離線產生，產生後再用線上的方式廣播給 Bitcoin 網路，只要把交易訊息的Payload傳送給其它比特幣節點就可以達到廣播的目的。
 
 ```js
 const bitcoin = require("bitcoinjs-lib");
@@ -178,13 +178,13 @@ txb.sign(0, key);
 console.log(txb.build().toHex());
 ```
 
-我們可以把剛才產生出來HEX的交易本文使用如下的線上服務廣播到比特幣網路  
+接著將以上程式產生出來的Hex交易本文，使用如下網站的線上服務廣播到比特幣網路  
 [https://blockchain.info/pushtx](https://blockchain.info/pushtx)  
 ![](/assets/adfw.png)
 
 或是使用此網站也可以廣播交易：[https://live.blockcypher.com/btc/pushtx/](https://live.blockcypher.com/btc/pushtx/)
 
-> 兩個網站功能均類似，但blockcypher之回傳訊息較為明確。
+> 兩個網站功能均類似，但blockcypher之回傳訊息較為明確，讀者也可以尋找其他可以廣播交易的工具。
 
 一旦一筆比特幣交易被發送到任意一個連接至比特幣網路的節點，這筆交易將會被該節點驗證。如果交易被驗證有效，該節點將會將這筆交易傳播到這個節點所連接的其他節點。
 

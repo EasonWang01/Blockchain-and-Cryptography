@@ -1,6 +1,8 @@
 # 使用BitcoinJS產生相關交易
 
-BitcoinJS為一個MIT License之開放原始碼比特幣相關第三方套件。
+BitcoinJS為一個MIT License之開放原始碼比特幣相關第三方套件，實作了許多關於比特幣地址以及交易等等相關內容。
+
+https://github.com/bitcoinjs/bitcoinjs-lib
 
 ## 使用
 

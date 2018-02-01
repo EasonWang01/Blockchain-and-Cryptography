@@ -118,10 +118,12 @@ https://electrum.org/#home
 
 > As Satoshi writes, the thin client can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirm the network has accepted it." If we take "X" to be the "number of blocks added after it", then a thin client essentially trusts that a transaction X blocks deep will be costly to forge.
 
-https://en.bitcoin.it/wiki/Thin\_Client\_Security
+[https://en.bitcoin.it/wiki/Thin\_Client\_Security](https://en.bitcoin.it/wiki/Thin_Client_Security)
 
-> 以下是一篇關於SPV節點安全性的文章，探討用SPV節點在安全性方面的考量。  
+> 以下是幾篇關於SPV節點安全性的文章，探討用SPV節點在安全性方面的考量。  
 > [https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9](https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9)
+>
+> https://jonasnick.github.io/blog/2015/02/12/privacy-in-bitcoinj/
 
 ### 錢包列表：
 
