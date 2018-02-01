@@ -4,11 +4,13 @@
 
 > 地址為1開頭為一般比特幣地址，為3開頭的為多重簽章地址，測試鏈地址為m或n開頭。
 
-![](/assets/螢幕快照 2018-02-01 下午5.04.24.png)https://en.bitcoin.it/wiki/List\_of\_address\_prefixes
+![](/assets/螢幕快照 2018-02-01 下午5.05.31.png)
+
+[https://en.bitcoin.it/wiki/List\_of\_address\_prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
 
 ## 線上產生地址
 
-我們可以用此網站來進行線上產生地址。
+我們可以用以下網站來進行線上產生地址。
 
 單一簽名：[https://coinb.in/\#newAddress](https://coinb.in/#newAddress)
 
@@ -18,12 +20,12 @@
 
 # 地址長度
 
-> 每個十六進位字元具有0.5 bytes
+> 每個十六進位字元具有 0.5 bytes
 
 ```
-私鑰(Private key): 32 bytes
-公鑰(Public key): 65 bytes
-公鑰雜湊(Public key hash): 20 bytes
+私鑰(Private key):   32 bytes
+公鑰(Public key):    65 bytes
+公鑰雜湊(Public key hash):  20 bytes
 ```
 
 # 地址開頭字母
