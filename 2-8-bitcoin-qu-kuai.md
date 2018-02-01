@@ -44,7 +44,7 @@ https://blockchain.info/rawblock/輸入block hash
 
 ## 區塊頭
 
-上面我們看到在區塊的資料結構裡麵包盒了一個區塊頭的欄位，以下為區塊頭的資料結構
+我們可以發現，在區塊的資料結構裡包含了一個區塊頭的欄位，以下為區塊頭的資料結構：
 
 | 欄位 | 描述 | 更新時間 | 大小 \(Bytes\) |
 | :--- | :--- | :--- | :--- |
@@ -55,9 +55,7 @@ https://blockchain.info/rawblock/輸入block hash
 | Bits\(目標難度\) | 挖出下一個區塊的難度目標 | 每個區塊被挖出時更新 | 4 |
 | Nonce\(隨機值\) | 一個32-bit的數字，用於挖礦時納入計算 | 嘗試計算新區塊時，每次會嘗試不同Nonce | 4 |
 
-\(可從上方取得區塊的資料內看到包含區塊頭資料\)
-
-EX:
+類似如下：
 
 ```json
 {
@@ -70,17 +68,17 @@ EX:
 }
 ```
 
-> 區塊頭會被用於挖礦時進行sha256計算，將於之後挖礦章節講解。
+> 區塊頭會被用於挖礦時進行SHA-256雜湊，將於後續的挖礦章節講解。
 
 # 區塊高度
 
-區塊高度在每次挖出新區塊時會加一，也就是如果目前區塊高度為1000的話，代表目前區塊鏈上已經有1001個區塊，即為後來產生的一千個區塊加上一開始的創世區塊，位在高度0。
+區塊高度在每次挖出新區塊時會加一，也就是如果目前區塊高度為1000的話，代表目前區塊鏈上已經有1001個區塊，即為後來產生的一千個區塊加上一開始的創世區塊，創世區塊位在高度0。
 
 > 可以看到下圖，為當時最新的四個區塊
 
-![](/assets/39.png)
+![](/assets/螢幕快照 2018-02-01 下午5.53.08.png)https://blockchain.info/
 
-##### 也可使用以下服務，及會回傳目前區塊高度。
+##### 也可使用以下服務，會回傳目前區塊高度。
 
 ```
 https://blockexplorer.com/api/status?q=getBlockCount
@@ -111,5 +109,5 @@ Bitcoin 之 genesis block 創建的原始碼
 
 Magic Nunber在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考：
 
-[https://en.wikipedia.org/wiki/Magic\_number\_\(programming\](https://en.wikipedia.org/wiki/Magic_number_%28programming\)\)
+[https://en.wikipedia.org/wiki/Magic\_number\_\(programming\](https://en.wikipedia.org/wiki/Magic_number_%28programming%29\)
 
