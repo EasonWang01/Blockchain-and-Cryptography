@@ -14,15 +14,15 @@
 
 因為不足64bit於是在前面補0使其成為：00....11000
 
-\(以ABC為例子\)
+\(以下為 8-bit 之 ASCII 字母：a b c 之例子\)
 
-![](/assets/981a7fcf-8be1-44d0-966d-f66bf0c8ab18.png)
+![](/assets/螢幕快照 2018-02-01 上午9.01.01.png)
 
 ### 第二步:
 
-寫出八個initial hash value\(此為被定義好之固定值\)
+寫出八個initial hash value\( 此為被預先定義之固定值 \)
 
-![](/assets/844c13d2-4afc-4201-9367-7521aea3cdab.png)
+![](/assets/螢幕快照 2018-02-01 上午9.05.43.png)
 
 ```
 原理: 
