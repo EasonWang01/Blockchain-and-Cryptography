@@ -58,9 +58,37 @@
   2 bytes 為接收方節點PORT
   ```
 
-* Transmitting node's IPv6 address: 00000000000000000000ffffcb0071c0 
+* Transmitting node's IPv6 address: 00000000000000000000ffffcb0071c0
 
-         16 bytes，為傳輸方節點IP地址 類似如下 ::ffff:127.0.0.1
+  ```
+     16 bytes，為傳輸方節點IP地址 類似如下 ::ffff:127.0.0.1
+  ```
+
+* Transmitting node's port number：208d
+
+          為傳輸方節點PORT
+
+* Nonce：128035 \( cbc97953f8 \)
+
+         8 bytes，為一個隨機值
+
+* Bytes in user agent string: 15 \( 0f \)
+
+          為下面user-agent字串長度的bytes數
+
+* User agent: /Satoshi:0.9.3/  \( 2f5361746f7368693a302e392e332f \)
+
+            為user-agent版本的值 e.g.  /Satoshi:0.13.2/
+
+* Start height: 329167 \( cf050500 \)
+
+         傳輸方節點目前資料的最高區塊高度
+
+* Relay flag: true \( 01 \)
+
+           1 bytes，如果為0x01代表節點需要 inv messages 與 tx messages
+
+
 
 以下為完整的傳送Version訊息的範例程式
 
