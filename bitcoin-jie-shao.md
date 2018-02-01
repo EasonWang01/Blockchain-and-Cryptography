@@ -37,7 +37,7 @@ BIP是對未來需要改進的比特幣特點，所做的提案。
 
 可在此網站看到詳細內容：[https://github.com/bitcoin/bips](https://github.com/bitcoin/bips)
 
-![](/assets/螢幕快照 2017-11-19 下午1.13.48.png)其中又可分為Standard BIP、Informational BIP 以及 Process BIP，Standard 描述主要比特幣的核心標準相關的內容，而Informational 通常為一些指南與資訊，Process BIP 為一些正在進行或是提案中的改進建議。
+![](/assets/螢幕快照 2017-11-19 下午1.13.48.png)其中又可分為Standard BIP、Informational BIP 以及 Process BIP，Standard BIP描述主要比特幣的核心標準相關的內容，而Informational BIP通常為一些指南與資訊，Process BIP 為一些正在進行或是提案中的改進建議。
 
 # 比特幣相關狀態查詢
 

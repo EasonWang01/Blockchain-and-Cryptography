@@ -1,8 +1,10 @@
-# 4.nlockTime address
+# 4.nlockTime Address
 
-指定時間後該地址才可進行交易，可參考以下BIP：
+在指定的時間後該地址才可進行交易，可參考以下BIP：
 
 [https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki)
+
+使用此OP\_CODE : `OP_CHECKLOCKTIMEVERIFY`
 
 其RedeemScript類似如下：
 
@@ -560,14 +562,14 @@ child key 可分為 Hardened 與 non-Hardened
 >
 > ```
 > 知道parent extended public key 以及任何一個 child non-hardened private key 
-> 即可推導出 parent extended private key 以及任何 child private key 及 public key  
+> 即可推導出 parent extended private key 以及任何 child private key 及 public key
 > ```
 
 可參考 :
 
-https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/crypto.js\#L115
+[https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/crypto.js\#L115](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/crypto.js#L115)
 
-https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#security
+[https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#security](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#security)
 
 [https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child](https://bitcoin.stackexchange.com/questions/56916/derivation-of-parent-private-key-from-non-hardened-child)
 
