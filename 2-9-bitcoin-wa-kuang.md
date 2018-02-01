@@ -88,46 +88,48 @@ Previous Hash: b6ff0b1b1680a2862a30ca44d346d9e8910d334beb48ca0c00000000000000009
 Merkle root:   70dda20810decd12bc9b048aaab31471
 Unix time:     24d95a54
 Target:        30c31b18
-Nonce:         fe9f0864 
+Nonce:         fe9f0864
 ```
 
-以下為簡單的挖礦範例:
+以下為挖礦的概念範例 :
 
 ```js
-var crypto = require('crypto');
+const crypto = require('crypto');
 
-const target = "00F00000FFFF0000000000000000000000000000000000000000000000000000";
+const target = "00010000a2230000000000000000000000000000000000000000000000000";
 const startTime = Date.now();
 function crypto256(input) {
-    return crypto.createHash('sha256')
-        .update(input)
-        .digest('hex')
+  return crypto.createHash('sha256')
+    .update(input)
+    .digest('hex')
 }
 
-var hash1 = (header) => crypto256(crypto256(header));
+const double_sha256 = (header) => crypto256(crypto256(header));
 
 
-var nonce = 0;
+let nonce = 0;
 while (1) {
-    nonce += 1;
-    var header = {
-        version: "1",
-        nonce: nonce,
-        previousHash: "dd0e2b79d79be0dfca96b4ad9ac85600097506f06f52bb74f769e02fcc66dec6",
-        merkleRoot: "c91c008c26e50763e9f548bb8b2fc323735f73577effbc55502c51eb4cc7cf2e",
-        bits: "437129626",
-        TimeStamp: Date.now()
-    };
-    console.log(cal)
-    var cal = hash1(JSON.stringify(header));
-    if (cal < target) {
-        console.log("\nSuccess hash: " + cal);
-        console.log("Number of calculations: " + nonce + ' times')
-        console.log(`Total Time: ${(Date.now() - startTime) / 1000} second`)
-        break;
-    }
+  nonce += 1;
+  const header = {
+    version: Buffer.from("0x02000000", 'hex'),
+    nonce,
+    previousHash: Buffer.from("dd0e2b79d79be0dfca96b4ad9ac85600097506f06f52bb74f769e02fcc66dec6", 'hex'),
+    merkleRoot: Buffer.from("c91c008c26e50763e9f548bb8b2fc323735f73577effbc55502c51eb4cc7cf2e", 'hex'),
+    bits: Buffer.from("437129626", 'hex'),
+    TimeStamp: Date.now()
+  };
+  let cal = double_sha256(JSON.stringify(header));
+  console.log(cal)
+  if (cal < target) {
+    console.log("\nSuccess Hash: " + cal);
+    console.log("Number of calculations: " + nonce + ' times')
+    console.log(`Time consumed: ${(Date.now() - startTime) / 1000} second`)
+    break;
+  }
 }
 ```
 
+執行後會進行運算，成功後會產生如下訊息：
 
+![](/assets/螢幕快照 2018-02-01 下午8.55.32.png)
 
