@@ -2,7 +2,11 @@
 
 #### 4.Data Output \(OP\_RETURN，可以填上自己想填的資料到交易上\)
 
-為了可以在比特幣交易中加上額外的自訂訊息，後來發展出此種做法，最多可以帶83bytes的資料\(Bitcoin Core 0.12.0\)，OP\_RETURN 沒有 Unlocking script，並且在 isStandard\(\) 會被判斷為 invalid，一個交易的 Outputs 只能有一個 OP\_RETURN，而OP\_RETURN 花費進去的比特幣是無法轉出的。
+為了可以在比特幣交易中加上額外的自訂訊息，後來發展出此種做法，最多可以帶 83 bytes 的資料 \( Bitcoin Core 0.12.0\)。
+
+![](/assets/螢幕快照 2018-02-01 下午3.04.42.png)[https://bitcoin.org/en/developer-guide\#standard-transactions](https://bitcoin.org/en/developer-guide#standard-transactions)
+
+OP\_RETURN 沒有 Unlocking script，並且在 isStandard\(\) 會被判斷為 invalid，一個交易的 Outputs 只能有一個 OP\_RETURN，而OP\_RETURN 花費進去的比特幣是無法轉出的。
 
 [https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/standard.h\#L34](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/standard.h#L34)
 
@@ -12,34 +16,30 @@ OP_RETURN <data>
 
 實際交易
 
-> ![](/assets/987.png)[https://blockchain.info/tx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684](https://blockchain.info/tx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684)
+> ![](/assets/螢幕快照 2018-02-01 下午3.17.04.png)
+>
+> https://live.blockcypher.com/btc-testnet/tx/25cc262f03ba87f3241894438837f3e805e8954538e3fa45d31f2f82fd3119a3/
 
-接著我們使用線上的服務來查看OP\_RETURN 的TX內容： [https://blockchain.info/rawtx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684](https://blockchain.info/rawtx/8bae12b5f4c088d940733dcd1455efc6a3a69cf9340e17a981286d3778615684)
+接著我們使用線上的服務來查看OP\_RETURN 的交易內容： 
+
+> https://api.blockcypher.com/v1/btc/test3/txs/25cc262f03ba87f3241894438837f3e805e8954538e3fa45d31f2f82fd3119a3?limit=50&includeHex=true
 
 進入後可以往下看到：
 
-![](/assets/螢幕快照 2018-01-21 上午9.45.10.png)
+![](/assets/kasd423423.png)
 
-之後我們使用此網站來解碼 script 內容 :
-
-[https://chainquery.com/bitcoin-api/decodescript](https://chainquery.com/bitcoin-api/decodescript)
-
-![](/assets/螢幕快照 2018-01-21 上午9.43.57.png)
-
-> 可以看到OP\_RETURN 後面接著一串十六進位字串
-
-最後我們把該字串從Hex轉為ASCII即可看到內容
+最後我們用以下程式，把該字串從Hex轉為ASCII即可看到原始內容：
 
 ```js
 function hex_to_ASCII(hexx) {
-    let hex = hexx.toString();
-    let str = '';
-    for (let i = 0; i < hex.length; i += 2)
-        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
-    return str;
+  let hex = hexx.toString();
+  let str = '';
+  for (let i = 0; i < hex.length; i += 2)
+    str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+  return str;
 }
 
-hex_to_ASCII('636861726c6579206c6f766573206865696469');
+hex_to_ASCII('4120636f6e74656e746564206d696e64206973206120636f6e74696e75616c2066656173742e');
 ```
 
 #### 5.Pay-to-Script-Hash \(P2SH\)
