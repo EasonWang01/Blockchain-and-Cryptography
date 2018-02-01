@@ -40,11 +40,7 @@
 
 * Epoch Time: 1513492007
 
-
-
-
-
-         8 bytes， 此為unix的timestamp 但只取到秒數  parseInt\(Date.now\(\).toString\(\).substring\(0, 10\)\).toString\('16'\) 之後在後面補上0
+        8 bytes， 此為unix的timestamp 但只取到秒數  parseInt\\(Date.now\\(\\).toString\\(\\).substring\\(0, 10\\)\\).toString\\('16'\\) 之後在後面補上0
 
 * Receiving node's services: 0100000000000000
 
