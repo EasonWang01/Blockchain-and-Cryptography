@@ -1,6 +1,8 @@
 # 2-8 Bitcoin 區塊
 
-區塊鏈是由許多區塊所組成，每個區塊的資料結構都類似，而每個區塊會有一個Hash，類似於該區塊的識別ID，而區塊的長度也稱為區塊高度，每個區塊Hash都會是前一個區塊的特定雜湊方式所組成，所以前面區塊如果資料被更改自然會導致後面區塊的雜湊值對不起來，而可以輕易的驗證存在區塊中的資料是否被竄改。
+區塊鏈是由許多區塊所組成，每個區塊的資料結構都類似，而每個區塊會有一個Hash，類似於該區塊的識別ID。
+
+產生出的區塊數量可以用區塊長度來表示，也稱為區塊高度，每個區塊Hash都會是前一個區塊頭的特定雜湊值，所以前面區塊如果資料被更改自然會導致後面區塊的雜湊值不同，而可以輕易的驗證存在於區塊中的資料是否被竄改。
 
 ## 以下表格為比特幣區塊的資料結構
 
@@ -10,9 +12,9 @@
 | Blocksize \(區塊大小\) | 顯示此區塊的大小 | 4 bytes |
 | Blockheader\(區塊頭\) | 區塊頭，包含六個部分 | 80 bytes |
 | Transaction counter\(交易數量\) | 記錄此區塊包含了幾筆交易 | 1 - 9 bytes |
-| transactions | 以Txid表示的交易紀錄列表 | 不一定 |
+| Transactions | 以Txid表示的交易紀錄列表 | 不一定 |
 
-我們可以使用
+我們可以使用以下網站查詢區塊內容：
 
 ```
 https://blockchain.info/rawblock/輸入block hash
@@ -109,7 +111,5 @@ Bitcoin 之 genesis block 創建的原始碼
 
 Magic Nunber在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考：
 
-https://en.wikipedia.org/wiki/Magic\_number\_\(programming\)
-
-
+[https://en.wikipedia.org/wiki/Magic\_number\_\(programming\](https://en.wikipedia.org/wiki/Magic_number_%28programming\)\)
 
