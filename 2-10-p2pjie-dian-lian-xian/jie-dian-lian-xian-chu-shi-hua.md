@@ -19,7 +19,7 @@ Step 3: A 節點送出 verack 請求
 可用以下程式模擬，發送出version請求
 
 ```js
-const buffer = new Buffer('f9beb4d976657273696f6e000000000066000000c0a049f67f1101000d000000000000003ddc275a000000000d0000000000000000000000000000000000ffff2e043c24208d0d00000000000000000000000000000000000000000000000000659885d88df91a01102f5361746f7368693a302e31332e322f6000000001','hex');
+const buffer = new Buffer('f9beb4d976657273696f6e000000000066000000c0a049f67f1101000d000000000000003ddc275a000000000d0000000000000000000000000000000000ffff2e043c24208d0d00000000000000000000000000000000000000000000000000659885d88df91a01102f5361746f7368693a302e31332e322f6000000001', 'hex');
 
 const net = require('net');
 const client = net.createConnection({ port: 8333, host: "46.4.60.36" }, () => { // 此處IP可以更改為其他可用之節點IP
@@ -43,29 +43,30 @@ client.on('end', () => {
 ```js
 const dns = require('dns');
 const net = require('net');
+const crypto = require('crypto');
 
-var host;
-var hostList;
-var try_host_No = 0;
-var timeout_ = 2000;
+let host;
+let hostList;
+let try_host_No = 0;
+const timeout_ = 2000;
 const options = {
   family: 4,
   hints: dns.ADDRCONFIG | dns.V4MAPPED,
 };
 options.all = true;
 dns.lookup('seed.bitcoin.sipa.be', options, (err, addresses) => { //先找到可用節點
-  hostList = addresses; //DNS server返回的IP列表
+  hostList = addresses; //返回的IP中的第一個
 
+  // 要傳送的訊息
   const buffer = new Buffer('f9beb4d976657273696f6e000000000066000000e253144d7f1101000d000000000000005a01365a000000000d0000000000000000000000000000000000ffff2e043c24208d0d0000000000000000000000000000000000000000000000000075ba7abb00a0f633102f5361746f7368693a302e31332e322fa004000001', 'hex');
   connectPeer(hostList[try_host_No].address, buffer)
-
 });
 
-function connectPeer(host, buffer) {
+function connectPeer(host, buffer1) {
   const client = net.createConnection({ port: 8333, host }, () => {
-    // 成功連線
+    //'connect' listener
     console.log(`connected to other peers,host ${try_host_No}`);
-    client.write(buffer);
+    client.write(buffer1);
   });
   client.on('data', (data) => {
     console.log(data.toString());
@@ -76,20 +77,22 @@ function connectPeer(host, buffer) {
   });
   client.on('error', (err) => {
     console.log(err);
-    try_host_No += 1;
-    connectPeer(hostList[try_host_No].address, buffer);
     client.end();
   });
 
   //預設timeout 為兩秒
   client.setTimeout(timeout_);
-  client.on('timeout', () => {
+  client.on('timeout', () => { // 產生Timeout時
     console.log(`socket timeout for host ${try_host_No}`);
     client.end();
     // 如果連線失敗繼續嘗試下個節點
     try_host_No += 1;
-    connectPeer(hostList[try_host_No].address, buffer);
+    connectPeer(hostList[try_host_No].address, buffer1);
   });
+  client.on('error', () => { // 產生ECONNREFUSED時
+    try_host_No += 1;
+    connectPeer(hostList[try_host_No].address, buffer1);
+  })
 }
 ```
 
@@ -97,7 +100,7 @@ function connectPeer(host, buffer) {
 
 # 2. getaddr與addr
 
-getaddr用來發送請求給其他節點，addr為該節點返回其所擁有的鄰居地址
+getaddr用來發送請求給其他節點，addr為該節點返回其所擁有的鄰居地址。
 
 #### getaddr: \( 不具有payload \)
 
@@ -111,7 +114,7 @@ const buffer = new Buffer('f9beb4d9676574616464720000000000000000005df6e0e2', 'h
 
 #### addr:
 
-![](/assets/螢幕快照 2017-12-18 下午11.20.49.png)
+![](/assets/螢幕快照 2017-12-18 下午11.20.49.png)將上面程式的 Buffer 部分改為如下再次執行，即可模擬
 
 ```js
 const buffer = new Buffer('f9beb4d96164647200000000000000001f0000005b2b59ce0154bf415a8d0000000000000000000000000000000000ffff3438b5fb208d', 'hex');
@@ -156,12 +159,12 @@ mempool的請求不帶有payload
 ![](/assets/螢幕快照 2017-12-26 下午7.42.45.png)將上面程式的 Buffer 部分改為如下再次執行，即可模擬
 
 ```js
-  const magicNum = "f9beb4d9";
-  const command = "6d656d706f6f6c0000000000" // mempool
-  const payload_length = "00000000"
-  const checksum = "5df6e0e2"
+const magicNum = "f9beb4d9";
+const command = "6d656d706f6f6c0000000000" // mempool
+const payload_length = "00000000"
+const checksum = "5df6e0e2"
 
-  const buffer = new Buffer(magicNum + command + payload_length + checksum, 'hex');
+const buffer = new Buffer(magicNum + command + payload_length + checksum, 'hex');
 ```
 
 
