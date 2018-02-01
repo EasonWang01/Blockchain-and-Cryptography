@@ -46,11 +46,13 @@
 
 * Receiving node's services: 0100000000000000
 
-      8 bytes， 通常值會和上面Services: NODE\_NETWORK相同
+  ```
+  8 bytes， 通常值會和上面Services: NODE\_NETWORK相同
+  ```
 
 * Receiving node's IPv6 address：00000000000000000000ffffc61b6409
 
-     16 bytes， 為接收方節點IP地址 類似如下 ::ffff:127.0.0.1
+        16 bytes， 為接收方節點IP地址 類似如下 ::ffff:127.0.0.1
 
 * Receiving node's port number : 208d
 
