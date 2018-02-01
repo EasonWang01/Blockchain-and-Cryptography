@@ -298,7 +298,7 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 # UTXO
 
-比特幣中的餘額指的是還沒有被花費掉的部分 \( Unspend output \)
+比特幣地址中的餘額指的是上一筆轉入該地址的交易金額，還沒有被花費掉的部分 \( Unspend output \)。
 
 我們可以到以下網址，查看一個地址的Unspend output，記得在網址最後輸入要查詢的比特幣地址  
 [https://blockchain.info/unspent?active=輸入地址](https://blockchain.info/unspent?active=1MkqfKgTp1NZ5eSkTD8aUVZi1VS9myJZHb)
@@ -331,10 +331,9 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 > 以下用Input From 和 Output To 叫好理解
 
-比特幣記錄帳戶餘額流向的方式來自於查看目前尚未花費的金額\( Unspend output \)來自於哪一筆交易的Input
+比特幣記錄帳戶餘額流向的方式來自於查看目前尚未花費的金額\( Unspend output \)來自於哪一筆交易的Input，Unspend output 也稱作UTXO （ Unspent Transaction Output）。
 
-Input一定會對應到一個Output，每個Output都會有一個locking script 以及每個Input也會有一個Unlocking script  
-用來解鎖Unspend output，解鎖後才可由 Unspend output 傳比特幣給下一個地址變為新地址的 Unspend output
+Input一定會對應到一個Output，每個Output都會有一個Locking script \( 鎖定腳本 ） 以及每個Input也會有一個 Unlocking script \( 解鎖腳本 \) 用來解鎖Unspend output，解鎖後才可由 Unspend output 傳比特幣給下一個地址變為新地址的 Unspend output。
 
 一筆交易主要包含兩部份，Input 和 Output，Output 有 Locking script 去鎖著 UTXO 不被花費，想要花費的人就需要創建一個 Input，用裡面的 Locking script 去解鎖 Unlocking script，例如今天想要花自己的錢就必須自己去創建一個Input然後用自己的私鑰簽發交易。
 
