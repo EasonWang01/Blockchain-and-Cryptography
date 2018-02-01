@@ -487,6 +487,8 @@ M <Public Key 1> <Public Key 2> ... <Public Key N> N OP_CHECKMULTISIG
 
 > 真實交易可參考: [https://www.blocktrail.com/BTC/tx/6e2c5b6b2a926a7da2415ae55c701e83d6e7bc46bad9bc23b5f9c7ef1ae26998](https://www.blocktrail.com/BTC/tx/6e2c5b6b2a926a7da2415ae55c701e83d6e7bc46bad9bc23b5f9c7ef1ae26998)
 
+![](/assets/螢幕快照 2018-02-01 下午2.59.54.png)
+
 多重簽章交易的Unlocking script如下：
 
 ```
