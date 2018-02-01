@@ -178,19 +178,17 @@ txb.sign(0, key);
 console.log(txb.build().toHex());
 ```
 
-接著將以上程式產生出來的Hex交易本文，使用如下網站的線上服務廣播到比特幣網路  
+接著將以上程式產生出來的Hex格式交易本文，使用如下網站的線上服務廣播到比特幣網路  
 [https://blockchain.info/pushtx](https://blockchain.info/pushtx)  
-![](/assets/adfw.png)
-
-或是使用此網站也可以廣播交易：[https://live.blockcypher.com/btc/pushtx/](https://live.blockcypher.com/btc/pushtx/)
+![](/assets/adfw.png)或是使用此網站也可以廣播交易：[https://live.blockcypher.com/btc/pushtx/](https://live.blockcypher.com/btc/pushtx/)
 
 > 兩個網站功能均類似，但blockcypher之回傳訊息較為明確，讀者也可以尋找其他可以廣播交易的工具。
 
-一旦一筆比特幣交易被發送到任意一個連接至比特幣網路的節點，這筆交易將會被該節點驗證。如果交易被驗證有效，該節點將會將這筆交易傳播到這個節點所連接的其他節點。
+一旦一筆比特幣交易被發送到任意一個連接至比特幣網路的節點，這筆交易將會被該節點驗證。如果交易被驗證為有效，該節點將會將這筆交易傳播到這個節點所連接的其他節點。
 
-每個節點在傳播每一筆交易之前均進行獨立驗證， 一個異常交易所能到達的節點不會超過一個，礦工會根據每筆交易目前的優先級來決定哪些要先納入下一個區塊中。
+每個節點在傳播每一筆交易之前均進行驗證， 如果該節點驗證交易不成功，則不會繼續傳播該交易，礦工會根據每筆交易目前的優先級來決定哪些要先納入下一個區塊中。
 
-計算方式如下:
+優先級的計算方式如下 :
 
 ```
 (交易金額 * 比特幣存在尚未確認的交易池之時間) / 交易大小
@@ -208,7 +206,7 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 (500000000 * 10 + 200000000 * 3) / 500 = 11,200,000
 ```
 
-但後來2017年把Coin Age取消，區塊預留的Priorty Block也移除了，目前交易納入區塊的優先級單純以手續費為依據
+但後來2017年把上面的優先級機制取消，目前交易納入區塊的優先級單純以手續費為依據。
 
 > Today miners choose which transactions to mine only based on fee-rate
 >
@@ -274,7 +272,7 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 1.官方的比特幣用戶端程式在交易經過六個區塊確認之前都會顯示`n/unconfirmed`，用意是為了避免雙重支付\(double spending\)，但根據每個錢包或是交易所定義，可以有不同可確認數，例如`bitfinex交易所`有三個確認後即可確認到帳。
 
-2.礦工挖礦獲得的比特幣收入必須在100個區塊確認後才可交易
+2.礦工挖礦獲得的比特幣收入`coinbase transaction`必須在100個區塊確認後才可用來交易。
 
 > Freshly-mined coins cannot be spent for 100 blocks.
 >
@@ -295,7 +293,7 @@ priority = sum(input_value_in_base_units * input_age)/size_in_bytes
 
 寫為公式：![](/assets/螢幕快照 2018-01-20 下午11.29.02.png)
 
-其他可能使比特幣遭受攻擊的方式，可參考如下連結：  
+其他可能使比特幣交易受到竄改的原因，可參考如下連結：  
 [https://en.bitcoin.it/wiki/Irreversible\_Transactions](https://en.bitcoin.it/wiki/Irreversible_Transactions)
 
 # UTXO
