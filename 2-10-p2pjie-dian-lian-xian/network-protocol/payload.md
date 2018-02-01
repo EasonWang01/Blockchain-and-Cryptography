@@ -1,22 +1,24 @@
 # Payload
 
-此為訊息的主體部分
+此為訊息的主體部分，大部分的節點訊息交換資料都會在這。
 
 > 可參考比特幣開發者官網
 >
 > [https://bitcoin.org/en/developer-reference\#message-headers](https://bitcoin.org/en/developer-reference#data-messages)
 
-訊息分為兩種類型：Data Messages 與 Control Messages
+其中 Payload 訊息分為兩種類型：Data Messages 與 Control Messages
 
 # 1.Data Messages
 
-包含了所有與交易跟區塊有關的網路請求。
+包含了所有與交易跟區塊有關的請求：
 
-![](/assets/螢幕快照 2017-12-10 下午9.00.10.png)
+![](/assets/螢幕快照 2018-02-01 下午9.33.33.png)
 
 # 2.Control Messages
 
-![](/assets/螢幕快照 2017-12-10 下午9.00.17.png)
+包含了節點之間連線相關的請求：
+
+![](/assets/螢幕快照 2018-02-01 下午9.33.51.png)
 
 # 節點訊息傳送內容
 

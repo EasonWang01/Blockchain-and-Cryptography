@@ -22,7 +22,7 @@
 
 例如version、getaddr、getdata等 （將於下面payload章節部分講解有關所有message的種類）
 
-會轉為ascii十六進位，然後不滿12個字的話會在後面補0
+執行時會轉為ASCII 十六進位，然後不滿12個字的話會在後面補0
 
 範例: getdata
 
@@ -34,6 +34,7 @@ function commandCode(command) {
       .reduce((current, previous) => current + previous)
   )
 }
+commandCode('getdata');
 // 之後記得在後面補零
 ```
 
@@ -45,9 +46,9 @@ function commandCode(command) {
 
 代表payload中有多少個bytes
 
-> 十六進制hex每個字為4 bits也就是0.5bytes，每個ascii為兩個hex碼組成，所以bytes總數及為 `hex碼之數量 / 2`
+> 十六進制hex每個字為4 bits也就是0.5bytes，每個ASCII為兩個hex碼組成，所以 bytes 總數為 `hex碼之數量 / 2`
 
-假設今天payload message如下，總共204個字，則 length 為102
+假設今天 Payload Message如下，總共204個字，則 length 為102
 
 ```
 7f1101000d0000000000000060ee275a000000000d0000000000000000000000000000000000ffff9294741e208d0d0000000000000000000000000000000000000000000000000038198a1d11f35244102f5361746f7368693a302e31332e322f8000000001
@@ -67,6 +68,7 @@ function commandCode(command) {
 function payloadLength(payload) {
   return (payload.length / 2).toString('16');
 }
+payloadLength('填入Payload Message')
 // 之後記得在後面補零
 ```
 
@@ -74,9 +76,9 @@ function payloadLength(payload) {
 
 > First 4 bytes of sha256\(sha256\(payload\)\)
 
-會把payload 進行Double sha256後，取前四個bytes
+會把payload 進行Double SHA-256 後，取前四個bytes
 
-如果沒有payload 的話，checksum預設為0x5df6e0e2
+如果沒有 Payload Message 的話，checksum預設為0x5df6e0e2
 
 範例:
 
@@ -84,7 +86,7 @@ function payloadLength(payload) {
 const crypto = require('crypto');
 
 function getChecksum(payload) {
-  //  預設值
+  //  如果沒有Payload Message
   if (payload === "") return Buffer.from("5df6e0e2", "hex");
 
   payload = Buffer.from(payload, "hex")
