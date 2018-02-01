@@ -1,10 +1,8 @@
 #### 
 
-
-
 #### 4.Data Output \(OP\_RETURN，可以填上自己想填的資料到交易上\)
 
-有些人會想要在區塊鏈上加上客製化的資料，所以後來發展出此種做法，最多可以帶83bytes的資料\(Bitcoin Core 0.12.0\)，OP\_RETURN 沒有 Unlocking script，並且在 isStandard\(\) 會被判斷為 invalid，一個交易的 Outputs 只能有一個 OP\_RETURN，而OP\_RETURN 花費進去的比特幣是無法轉出的。
+為了可以在比特幣交易中加上額外的自訂訊息，後來發展出此種做法，最多可以帶83bytes的資料\(Bitcoin Core 0.12.0\)，OP\_RETURN 沒有 Unlocking script，並且在 isStandard\(\) 會被判斷為 invalid，一個交易的 Outputs 只能有一個 OP\_RETURN，而OP\_RETURN 花費進去的比特幣是無法轉出的。
 
 [https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/standard.h\#L34](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/script/standard.h#L34)
 
