@@ -4,7 +4,7 @@
 
 > 地址為1開頭為一般比特幣地址，為3開頭的為多重簽章地址，測試鏈地址為m或n開頭。
 
-其他可參考 : [https://en.bitcoin.it/wiki/List\_of\_address\_prefixes](https://en.bitcoin.it/wiki/List_of_address_prefixes)
+![](/assets/螢幕快照 2018-02-01 下午5.04.24.png)https://en.bitcoin.it/wiki/List\_of\_address\_prefixes
 
 ## 線上產生地址
 
