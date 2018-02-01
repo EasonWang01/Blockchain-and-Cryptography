@@ -40,7 +40,9 @@
 
 * Epoch Time: 1513492007
 
-        8 bytes， 此為unix的timestamp 但只取到秒數  parseInt\\(Date.now\\(\\).toString\\(\\).substring\\(0, 10\\)\\).toString\\('16'\\) 之後在後面補上0
+  ```
+  8 bytes， 此為unix的timestamp 但只取到秒數  parseInt\\(Date.now\\(\\).toString\\(\\).substring\\(0, 10\\)\\).toString\\('16'\\) 之後在後面補上0
+  ```
 
 * Receiving node's services: 0100000000000000
 
@@ -50,60 +52,15 @@
 
   > 16 bytes， 為接收方節點IP地址 類似如下 ::ffff:127.0.0.1
 
-```
-7f110100 ........................... Protocol version: 70005
-// 4 bytes
-// 目前Bitcoin protocol版本 https://bitcoin.org/en/developer-reference#protocol-versions
+* Receiving node's port number : 208d
 
-0100000000000000 ................... Services: NODE_NETWORK
-// 8 bytes
-// 0x01為full node
+  ```
+  2 bytes 為接收方節點PORT
+  ```
 
-5a360e2700000000 ................... Epoch time: 1513492007   
-( 8 bytes 此為unix的timestamp 但只取到秒數 )
-( parseInt(Date.now().toString().substring(0, 10)).toString('16') 之後在後面補上0 )
+* Transmitting node's IPv6 address: 00000000000000000000ffffcb0071c0 
 
-0100000000000000 ................... Receiving node's services
-(8 bytes 通常值會和上面Services: NODE_NETWORK相同)
-
-
-
-Receiving node's IPv6 address：00000000000000000000ffffc61b6409
-( 16 bytes 為接收方節點IP地址   類似如下 ::ffff:127.0.0.1 )
-
-Receiving node's port number : 208d
-( 2 bytes 為接收方節點PORT)
-
-0100000000000000 ................... Transmitting node's services
-// 8 bytes
-// 和上面Services: NODE_NETWORK相同
-
-
-00000000000000000000ffffcb0071c0 ... Transmitting node's IPv6 address
-// 16 bytes 
-// 為傳輸方節點IP地址   類似如下 ::ffff:127.0.0.1
-
-208d ............................... Transmitting node's port number
-// 為傳輸方節點PORT
-
-128035cbc97953f8 ................... Nonce
-// 8 bytes
-// 為一個隨機值
-
-0f ................................. Bytes in user agent string: 15
-// 為下面user-agent字串長度的bytes數
-
-2f5361746f7368693a302e392e332f ..... User agent: /Satoshi:0.9.3/
-// 為user-agent版本的值
-// EX: /Satoshi:0.13.2/
-
-cf050500 ........................... Start height: 329167
-// 傳輸方節點目前資料的最高區塊高度
-
-01 ................................. Relay flag: true
-// 1 bytes
-// 如果為0x01代表節點需要 inv messages 與 tx messages
-```
+         16 bytes，為傳輸方節點IP地址 類似如下 ::ffff:127.0.0.1
 
 以下為完整的傳送Version訊息的範例程式
 
