@@ -1,10 +1,10 @@
 # Bitcoin P2P節點連線
 
-比特幣的網路是 P2P 的，類似於 webtorrent 都是沒有中心化的server，節點之間互相傳遞區塊訊息，並且提供JSON-RPC之API請求查詢服務。
+比特幣的節點之間互相傳遞區塊訊息，使用TCP協定，並遵循一套相同的協定互相交換資料，共同維護一份公開的分散式帳本。
 
 > [https://bitcoin.org/en/developer-guide\#p2p-network](https://bitcoin.org/en/developer-guide#p2p-network)
 
-比特幣的全節點\([mainnet](https://www.gitbook.com/book/easonwang01/e/edit#)\)預設跑在8333的PORT上，而[testnet](https://www.gitbook.com/book/easonwang01/e/edit#)預設跑在18333上。
+比特幣的全節點\([mainnet](https://www.gitbook.com/book/easonwang01/e/edit#)\)預設跑在8333的PORT上，而[testnet](https://www.gitbook.com/book/easonwang01/e/edit#)預設跑在18333 PORT上。
 
 ## Bitcoin Protocol
 
