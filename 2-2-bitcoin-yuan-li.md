@@ -159,7 +159,7 @@ curl https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-osx64.tar.gz \
 --output bitcoin-0.15.1.tar.gz
 ```
 
-然後解壓縮 
+然後解壓縮
 
 ```
 tar -xzf ./bitcoin-0.15.1.tar.gz
@@ -203,7 +203,7 @@ tar -xzf ./bitcoin-0.15.1.tar.gz
 
 ![](/assets/螢幕快照 2018-01-30 上午11.27.55.png)
 
-也可以寫為Bitcoin.conf檔案來設定啟動節點時的相關屬性。
+也可以寫為`Bitcoin.conf`檔案來設定啟動節點時的相關屬性。
 
 ![](/assets/螢幕快照 2018-01-30 上午11.27.30.png)
 
