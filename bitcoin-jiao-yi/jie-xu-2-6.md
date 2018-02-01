@@ -18,11 +18,11 @@ OP_RETURN <data>
 
 > ![](/assets/螢幕快照 2018-02-01 下午3.17.04.png)
 >
-> https://live.blockcypher.com/btc-testnet/tx/25cc262f03ba87f3241894438837f3e805e8954538e3fa45d31f2f82fd3119a3/
+> [https://live.blockcypher.com/btc-testnet/tx/25cc262f03ba87f3241894438837f3e805e8954538e3fa45d31f2f82fd3119a3/](https://live.blockcypher.com/btc-testnet/tx/25cc262f03ba87f3241894438837f3e805e8954538e3fa45d31f2f82fd3119a3/)
 
-接著我們使用線上的服務來查看OP\_RETURN 的交易內容： 
+接著我們使用線上的服務來查看OP\_RETURN 的交易內容：
 
-> https://api.blockcypher.com/v1/btc/test3/txs/25cc262f03ba87f3241894438837f3e805e8954538e3fa45d31f2f82fd3119a3?limit=50&includeHex=true
+> [https://api.blockcypher.com/v1/btc/test3/txs/25cc262f03ba87f3241894438837f3e805e8954538e3fa45d31f2f82fd3119a3?limit=50&includeHex=true](https://api.blockcypher.com/v1/btc/test3/txs/25cc262f03ba87f3241894438837f3e805e8954538e3fa45d31f2f82fd3119a3?limit=50&includeHex=true)
 
 進入後可以往下看到：
 
@@ -44,17 +44,9 @@ hex_to_ASCII('4120636f6e74656e746564206d696e64206973206120636f6e74696e75616c2066
 
 #### 5.Pay-to-Script-Hash \(P2SH\)
 
-為一開始發展之多重簽名BIP-11的衍伸，其定義在BIP-16，因為在傳統的Multi Sig需要放入多個Public Key，所以後來決定把具有多個Public Key之script做雜湊，產生一個20-byte 的 Redeem Script。
+為一開始發展之多重簽名BIP-11的衍伸，其定義在BIP-16，因為在傳統的MultiSig需要放入多個Public Key，會造成 Script 過長，所以後來決定把具有多個Public Key之 Locking Script 做雜湊，產生一個20-byte 的 Redeem Script。
 
-附帶以下優點
 
-```
-1. 複雜的 locking script 變成只有 20 bytes 的 digital fingerprint。
-2. Script Hash 可以 encode 成 address，讓傳送者可以不需要有複雜的軟體才能使用。
-3. P2SH 把儲存容量的負擔從 UTXO set 轉移到 Blockchain 上面，因為在 Tx 的 outputs 裡面記錄的 locking script 變短了。
-4. P2SH 把資料儲存的負擔從當下移到未來，只有在再次花費該筆金額時。
-5. P2SH 把手續費的負擔轉移到接收者身上。
-```
 
 ```
 2 to 5 之 P2SH
