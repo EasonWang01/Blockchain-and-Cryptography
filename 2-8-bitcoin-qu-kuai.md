@@ -76,7 +76,7 @@ https://blockchain.info/rawblock/輸入block hash
 
 > 可以看到下圖，為當時最新的四個區塊
 
-![](/assets/螢幕快照 2018-02-01 下午5.53.08.png)https://blockchain.info/
+![](/assets/螢幕快照 2018-02-01 下午5.53.08.png)[https://blockchain.info/](https://blockchain.info/)
 
 ##### 也可使用以下服務，會回傳目前區塊高度。
 
@@ -84,16 +84,16 @@ https://blockchain.info/rawblock/輸入block hash
 https://blockexplorer.com/api/status?q=getBlockCount
 ```
 
-## 創世區塊\(genesis block\)
+## 創世區塊\(Genesis Block\)
 
-為區塊鏈在一開始創建時，產生的第一個區塊
+區塊鏈在一開始創建時，所產生的第一個區塊。
 
 比特幣的創世區塊：  
 [https://blockchain.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f](https://blockchain.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f)
 
-> 可以看到比特幣的創世區塊一開始分配了50BTC\(但無法被使用\)，它的高度以及前一個區塊的Hash都是0，並且在2009/1/3產生![](/assets/833.png)
+> 可以看到比特幣的創世區塊一開始分配了 50BTC \( 但無法被使用 \)，它的高度以及前一個區塊的Hash都是0，於2009/1/3產生。![](/assets/833.png)
 
-Bitcoin 之 genesis block 創建的原始碼
+Bitcoin 之 Genesis Block 創建原始碼
 
 > ![](/assets/2444.png)[https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp\#L123](https://www.gitbook.com/book/easonwang01/e/edit#)
 
