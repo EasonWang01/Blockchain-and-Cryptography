@@ -206,9 +206,15 @@ Institution identifier, 4-character alphanumeric (< 21-bit);
 Institution client identifier, 9-character alphanumeric (< 47-bit);
 ```
 
+#### 實作：
 
+接著我們可以使用此模組來產生ICAP地址：
 
+https://github.com/ethereumjs/ethereumjs-icap
 
+```
+npm install ethereumjs-icap
+```
 
 註1:
 
