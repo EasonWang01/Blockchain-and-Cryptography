@@ -6,11 +6,11 @@
 
 > 根據 j 的值不同，函式計算方式也不同
 
-![](/assets/920f8fe2-0bb9-40cb-8310-cd583df36b26.png)
+![](/assets/螢幕快照 2018-02-02 下午12.27.35.png)
 
 符號意思分別為
 
-![](/assets/c29ae002-011b-4247-8fd0-c23eea97fd12.png)
+![](/assets/螢幕快照 2018-02-01 上午9.09.22.png)
 
 ## 步驟二:
 
@@ -18,9 +18,9 @@
 
 #### 1.
 
-![](/assets/3b07ddde-2e08-480e-8aa5-4aea53c98c9f.png)
+![](/assets/螢幕快照 2018-02-02 下午12.29.58.png)
 
-#### 將其分為hl與hr
+##### 將其分為hl與hr
 
 ```js
 const hl = [0x00000000, 0x5a827999, 0x6ed9eba1, 0x8f1bbcdc, 0xa953fd4e];
@@ -31,7 +31,7 @@ const hr = [0x50a28be6, 0x5c4dd124, 0x6d703ef3, 0x7a6d76e9, 0x00000000];
 
 #### 2.selection of message word
 
-#### ![](/assets/a2.png)
+##### ![](/assets/螢幕快照 2018-02-02 下午12.30.39.png)寫為如下：
 
 ```js
 const zl = [
@@ -51,7 +51,7 @@ const zr = [
 ]
 ```
 
-#### 3.amount for rotate left \(rol\)
+#### 3.Amount for rotate left \(rol\)
 
 ![](/assets/螢幕快照 2018-01-07 下午5.05.55.png)
 
@@ -73,15 +73,13 @@ var sr = [
 ]
 ```
 
-### 最後一個
+##### 最後寫上initial value
 
-![](/assets/螢幕快照 2018-01-07 下午5.09.16.png)
+![](/assets/螢幕快照 2018-02-02 下午12.32.41.png)
 
 
 
-### 
-
-### 看完上面這些constant可能會有點模糊，不知道他們是用來做什麼的
+### 看完上面定義的這些數字可能會有點模糊，不知道他們是用來做什麼的
 
 所以我們直接來看整個hash過程的pseudo-code
 

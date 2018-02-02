@@ -29,7 +29,7 @@ npm install bcrypt
 2.生成Hash
 
 ```js
-var bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const myPlaintextPassword = 'I_am_password';
 
@@ -44,7 +44,7 @@ bcrypt.genSalt(saltRounds, function (err, salt) {
 3.驗證
 
 ```js
-var bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 const myPlaintextPassword = 'I_am_password';
 
 bcrypt.compare(myPlaintextPassword, "$2a$10$8QT.28zoo.jyFB2yvDURL.IM6gL4YJHGsr1PUysnFuGeqeDeooxuK", function(err, res) {
@@ -68,7 +68,7 @@ crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
 });
 ```
 
-> 其中參數依序為
+> 其中參數依序為：
 >
 > password 要進行Hash的字串
 >
@@ -117,7 +117,7 @@ npm install scrypt
 ```
 
 ```js
-var scrypt = require("scrypt");
+const scrypt = require("scrypt");
 
 scrypt.kdf("password", { N: 1, r: 1, p: 1 }, function (err, result) {
   scrypt.verifyKdf(result, new Buffer("password"), function (err, result) {
