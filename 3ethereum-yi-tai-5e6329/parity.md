@@ -34,7 +34,7 @@ Linux: ~/.local/share/io.parity.ethereum/
 
 [https://github.com/paritytech/parity/wiki/Configuring-Parity](https://github.com/paritytech/parity/wiki/Configuring-Parity)
 
-Parity可以使用一個Toml檔案來進行相關設定，也可以使用此網站來線上產生設定檔[https://paritytech.github.io/parity-config-generator/。](https://paritytech.github.io/parity-config-generator/。)
+Parity可以使用一個`config.toml`檔案來寫入相關設定，也可以使用此網站來線上產生設定檔 [https://paritytech.github.io/parity-config-generator/](https://paritytech.github.io/parity-config-generator/。)
 
 預設會讀取以下路徑下的設定檔
 

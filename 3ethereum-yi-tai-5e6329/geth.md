@@ -1,6 +1,6 @@
 # Geth
 
-為Golang寫成的Ethereum客戶端指令介面。
+為 Golang 寫成的 Ethereum 用戶端指令介面。
 
 # 安裝
 
@@ -50,7 +50,7 @@ geth console
 
 #### 使用JSON-RPC
 
-規格：http://www.jsonrpc.org/
+規格：[http://www.jsonrpc.org/](http://www.jsonrpc.org/)
 
 Ethereum JSON-RPC 文件： [https://github.com/ethereum/wiki/wiki/JSON-RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC)
 
