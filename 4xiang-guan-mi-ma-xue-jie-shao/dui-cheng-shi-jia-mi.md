@@ -61,16 +61,7 @@ let key_ = "11110011"; // 密鑰
 // 得到字串:Test
 ```
 
-# 簡化版為:
 
-> 上面程式為展示二進位之XOR，我們也可以直接使用如下直接運算。
-
-```js
-var key = "test_key";
-var password = "12345";
-var encrypted = password ^ key;  
-console.log(encrypted ^ key);
-```
 
 # Stream Ciphers 與 Block Ciphers
 
