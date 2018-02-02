@@ -1,6 +1,6 @@
 # Gas 計算方式
 
-在一開始時我們提到過交易手續費是使用Gas來計算。
+在一開始時我們提到過交易手續費是使用Gas來計算：
 
 ```
 交易手續費 Tx Fees = Gas Limit * Gas Price
@@ -16,9 +16,9 @@
 
 ![](/assets/螢幕快照 2018-01-29 下午5.18.54.png)
 
-我們以Remix IDE來看，在執行合約時填入的Gas Limit為允許最多消耗多少Gas，如果執行合約需要比這個更多的Gas則執行不會成功，用來預防執行時耗費太多Gas，如果執行合約的Gas小於Gas Limit則會把多的退還。
+我們以Remix IDE來看，在執行合約時填入的 Gas Limit 為允許最多消耗多少Gas，如果執行合約需要比這個更多的Gas則執行不會成功，用來預防執行時耗費太多Gas，如果執行合約的 Gas 小於 Gas Limit 則會把多的退還。
 
-下面的Value不是設定Gas Price，指的是要發送多少以太幣到合約，通常用來設定發送到Payable Function的金額。
+下面的Value不是設定Gas Price，而是代表要發送多少以太幣到合約，通常用來設定發送到合約中 Payable Function 的金額。
 
 ![](/assets/螢幕快照 2018-01-29 下午8.23.00s.png)
 
@@ -32,7 +32,7 @@
 
 ![](/assets/螢幕快照 2018-01-29 下午8.49.04.png)
 
-再來我們看到如果是多個參數的話
+再來我們看到如果是Function具有多個參數的情況：
 
 ![](/assets/螢幕快照 2018-01-29 下午8.56.28.png)
 
@@ -40,7 +40,7 @@
 
 ![](/assets/螢幕快照 2018-01-29 下午8.57.31.png)
 
-接著看到在Input欄位，除了開頭的Hash外後面還多了很多0，那是我們Function的參數，其中uint256會佔有32bytes，所以是64個Hex字。可以看到`c` 即為我們輸入的參數12，`0474657374` 轉為ASCII string 後即為我們所輸入的`test`
+接著看到在Input欄位，除了開頭的Hash外後面還多了很多0，那是我們Function的參數，其中參數型態為 uint256 會佔有 32bytes，所以是 64 個 Hex 字。可以看到上面表格中的Input欄位中，可以看到在許多0後面接著一個`c` ，而`c`即為我們輸入的參數12的十六進位表示，在Input的倒數第二行所看到的`0474657374` 轉為ASCII string 後即為我們所輸入的`test`
 
 ## 計算過程
 
@@ -75,8 +75,6 @@
 可以發現與上面得到相同答案`transaction cost - execution cost`。
 
 > 在Remix IDE 中顯示的 transaction cost 意思比較類似於 Total cost，也就是我們原本理解的`transaction cost + execution cost`
-
-
 
 ## Execution cost
 
