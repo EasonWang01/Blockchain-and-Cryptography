@@ -134,14 +134,21 @@ console.log(decrypt(encrypt("test")))
 
 # OpenSSL範例
 
+產生範例檔案
+
 ```
-產生檔案
 echo test > file.txt
+```
 
-加密(執行後會要求輸入密碼)
+加密\(執行後會要求輸入密碼\)
+
+```
 openssl enc -aes-256-cbc -salt -in file.txt -out file.txt.enc
+```
 
-解密(執行後會要求輸入剛才加密的密碼)
+解密\(執行後會要求輸入剛才加密的密碼\)
+
+```
 openssl enc -aes-256-cbc -d -in file.txt.enc -out result.txt
 ```
 
