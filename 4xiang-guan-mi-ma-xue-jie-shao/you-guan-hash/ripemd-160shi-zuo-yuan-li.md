@@ -77,8 +77,6 @@ var sr = [
 
 ![](/assets/螢幕快照 2018-02-02 下午12.32.41.png)
 
-
-
 ### 看完上面定義的這些數字可能會有點模糊，不知道他們是用來做什麼的
 
 所以我們直接來看整個hash過程的pseudo-code
@@ -174,9 +172,7 @@ for (var i = 0; i < 80; i += 1) {
 ```js
 const util = require('util');
 
-var ARRAY16 = new Array(16)
-
-function HashBase (blockSize) {
+function HashBase(blockSize) {
   this._block = Buffer.allocUnsafe(blockSize)
   this._blockSize = blockSize
   this._blockOffset = 0
@@ -265,7 +261,7 @@ var sr = [
 var hl = [0x00000000, 0x5a827999, 0x6ed9eba1, 0x8f1bbcdc, 0xa953fd4e]
 var hr = [0x50a28be6, 0x5c4dd124, 0x6d703ef3, 0x7a6d76e9, 0x00000000]
 
-function RIPEMD160 () {
+function RIPEMD160() {
   HashBase.call(this, 64)
 
   // state
@@ -279,7 +275,7 @@ function RIPEMD160 () {
 util.inherits(RIPEMD160, HashBase)
 
 RIPEMD160.prototype._update = function () {
-  var words = ARRAY16
+  const words = new Array(16)
   for (var j = 0; j < 16; ++j) words[j] = this._block.readInt32LE(j * 4)
 
   var al = this._a | 0
@@ -310,7 +306,7 @@ RIPEMD160.prototype._update = function () {
     } else if (i < 64) {
       tl = fn4(al, bl, cl, dl, el, words[zl[i]], hl[3], sl[i])
       tr = fn2(ar, br, cr, dr, er, words[zr[i]], hr[3], sr[i])
-    } else { // if (i<80) {
+    } else { // i < 80
       tl = fn5(al, bl, cl, dl, el, words[zl[i]], hl[4], sl[i])
       tr = fn1(ar, br, cr, dr, er, words[zr[i]], hr[4], sr[i])
     }
@@ -361,27 +357,27 @@ RIPEMD160.prototype._digest = function () {
   return buffer
 }
 
-function rotl (x, n) {
+function rotl(x, n) {
   return (x << n) | (x >>> (32 - n))
 }
 
-function fn1 (a, b, c, d, e, m, k, s) {
+function fn1(a, b, c, d, e, m, k, s) {
   return (rotl((a + (b ^ c ^ d) + m + k) | 0, s) + e) | 0
 }
 
-function fn2 (a, b, c, d, e, m, k, s) {
+function fn2(a, b, c, d, e, m, k, s) {
   return (rotl((a + ((b & c) | ((~b) & d)) + m + k) | 0, s) + e) | 0
 }
 
-function fn3 (a, b, c, d, e, m, k, s) {
+function fn3(a, b, c, d, e, m, k, s) {
   return (rotl((a + ((b | (~c)) ^ d) + m + k) | 0, s) + e) | 0
 }
 
-function fn4 (a, b, c, d, e, m, k, s) {
+function fn4(a, b, c, d, e, m, k, s) {
   return (rotl((a + ((b & d) | (c & (~d))) + m + k) | 0, s) + e) | 0
 }
 
-function fn5 (a, b, c, d, e, m, k, s) {
+function fn5(a, b, c, d, e, m, k, s) {
   return (rotl((a + (b ^ (c | (~d))) + m + k) | 0, s) + e) | 0
 }
 
