@@ -4,9 +4,11 @@
 
 目前[Sharding](https://github.com/ethereum/sharding)與[Plasma](https://plasma.io/)等區塊鏈相關架構之解決方案都有提出，但目前只有雷電網路較為完整。
 
-我們可以選擇直接下載，或自行編譯。
+目前雷電網路只能在Ropsten測試鏈測試。
 
 #### 下載：
+
+我們可以選擇直接下載，或自行編譯。
 
 [https://github.com/raiden-network/raiden/releases](https://github.com/raiden-network/raiden/releases)
 

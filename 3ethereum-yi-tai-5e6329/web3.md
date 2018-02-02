@@ -4,7 +4,7 @@
 
 官方文件 : [https://web3js.readthedocs.io/en/1.0/web3.html](https://web3js.readthedocs.io/en/1.0/web3.html)
 
-在使用者端的程式中，例如網頁，為了讀取區塊鏈的資料必須使用一些方法來存取，web3為一個可以存取Ethereum區塊鏈資料的第三方函式庫，使用之程式語言為Javascript，在Geth console中也可以直接使用。
+在使用者端的程式中，例如網頁，為了讀取區塊鏈的資料必須使用一些方法來存取，Web3為一個可以存取Ethereum區塊鏈資料的第三方函式庫，使用之程式語言為Javascript，在Geth console中也可以直接使用。
 
 > 類似專案:
 >
@@ -624,5 +624,5 @@ export default withStyles(styles)(App);
 
 完整程式可參考：
 
-https://github.com/EasonWang01/Transaction-Dapp.git
+[https://github.com/EasonWang01/Transaction-Dapp.git](https://github.com/EasonWang01/Transaction-Dapp.git)
 
