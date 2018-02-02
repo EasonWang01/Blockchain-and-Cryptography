@@ -1,8 +1,8 @@
 # 以太坊地址
 
-以太坊中有兩種地址，分別為Externally owned account \(EOA\)與Contract address。
+以太坊中有兩種地址，分別為Externally owned account \( EOA \) 與 Contract address\( 合約地址 \)。
 
-前者是任何擁有私鑰之人即可用私鑰進行地址之發送交易與簽名等動作，而後者合約地址為受到智能合約的程式邏輯所管控。
+Externally owned account \( EOA \) 地址為任何擁有私鑰之人即可用私鑰進行地址來進行發送交易與簽名等動作，而後者 Contract address \( 合約地址 \) 受到智能合約的程式邏輯所管控，也就是該合約的地址。
 
 ## Externally owned account \(EOA\)
 
@@ -76,7 +76,7 @@ d6 + 94 + 部屬人之地址 + nonce
 
 如果該帳號是第一次部屬合約則 nonce 為80，第二次部屬合約 nonce 為01之後則繼續往上03, 04...
 
-> 如果是在mainnet則 nonce 從1開始
+> 如果是在mainnet則 nonce 從01開始
 >
 > [https://github.com/ethereum/EIPs/blob/master/EIPS/eip-161.md\#specification](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-161.md#specification)
 
@@ -109,7 +109,7 @@ getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 2)
 
 # 從keyFIle復原出私鑰
 
-當我們用如下方式將私鑰引入到Geth後，他以一個檔案的型態保存，存在keystore資料夾中
+當我們用如下方式將私鑰引入到Geth後，他會以一個檔案的型態保存，存在keystore資料夾中
 
 ```
 personal.importRawKey(私鑰, 密碼)

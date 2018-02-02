@@ -118,7 +118,7 @@ Homestead版本開始提供了圖形化的乙太坊錢包，並且也表示乙�
 
 * Proof of Stake實作
 
-* Account abstraction\(意思為一般人也可以使用Etheruem利用Dapp而不必知道其他技術層面\)
+* Account abstraction \( 意思為希望使大眾也可以使用Etheruem與利用Dapp來執行區塊鏈操作，而不必知道其技術層面細節 \)
 
 * 加入returndata opcode
 

@@ -1,6 +1,6 @@
 # 以太坊交易
 
-在以太坊中的交易通常有以下幾種類型，一種是傳送給另一個持有私鑰的地址，另一種是執行合約的交易以及傳送以太幣給合約地址。
+在以太坊中的交易通常有以下幾種類型，一種是傳送給另一個持有私鑰的地址，另一種是執行合約的交易與傳送以太幣給合約地址的交易。
 
 我們可以用如下的Web3程式來簡單發出一筆交易。
 
@@ -77,9 +77,15 @@ console.log(toHex('I got one banana'));
 
 > 或是可用線上工具：[http://string-functions.com/string-hex.aspx](http://string-functions.com/string-hex.aspx)
 
-然後我們使用Metamask進行轉帳 \( 也可自行選擇其他錢包轉帳 \)
+然後我們使用Metamask進行轉帳 \( 也可自行選擇其他錢包轉帳 \)，在下圖中填上對方的地址與交易金額，並附上額外的文字。
 
-在下方Gas Limit的部分一開始是預設21000，但因為我們帶有Input Data所以要給他更多的Gas
+![](/assets/螢幕快照 2018-02-02 上午10.27.32.png)
+
+之後會需要確認交易，可以看到下圖最下方有Data included 欄位，即為我們剛才自訂的附加資料。
+
+![](/assets/螢幕快照 2018-01-28 上午9.29.47.png)
+
+在上圖中可以設定Gas Limit，其一開始是預設21000，但因為我們帶有Input Data所以要給他更多的Gas
 
 **計算方式如下 :**
 
@@ -90,7 +96,7 @@ console.log(toHex('I got one banana'));
 ![](/assets/螢幕快照 2018-01-28 上午9.46.49.png)
 
 ```
- 可以看到上圖中說明，每加上一個 non-zero的byte需要多給 68Gas。
+ 可以看到上圖中說明，每加上一個 non-zero 的 byte 需要多給 68 Gas。
 ```
 
 3..我們加上的Data included可以看到Metamask下方顯示總共為16 bytes \( 32個hex字 \) ，所以如下計算
@@ -105,7 +111,7 @@ console.log(toHex('I got one banana'));
 
 4.之後更改發出交易時的Gas Limit
 
-![](/assets/螢幕快照 2018-01-28 上午9.29.47.png)
+#### 查看交易
 
 成功交易後到Etherscan.io查看帶有Input Data的交易，即可看到下方Input Data出現剛才輸入的訊息。
 
