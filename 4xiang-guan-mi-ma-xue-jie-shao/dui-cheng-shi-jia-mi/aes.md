@@ -22,7 +22,7 @@ AES加密過程是在一個4×4的位元組矩陣上運作，其初值即為一�
 ```js
 const crypto = require('crypto');
 
-const mode = 'aes256' // 可更換為aes-128或aes-192或是aes-128-ecb、aes-192-ecb
+const mode = 'aes256' // 可更換為aes128或aes192等等
 
 // 加密
 const cipher = crypto.createCipher(mode, 'a password');
@@ -31,7 +31,7 @@ encrypted += cipher.final('hex');
 console.log(encrypted);
 
 // 解密
-const decipher = crypto.createDecipher(mode, 'a password'); //可更換為aes-128或aes-192
+const decipher = crypto.createDecipher(mode, 'a password');
 let decrypted = decipher.update(encrypted, 'hex', 'utf8');
 decrypted += decipher.final('utf8');
 console.log(decrypted);
@@ -54,9 +54,7 @@ const IV_LENGTH = 16;
 
 function encrypt(text) {
     let iv = crypto.randomBytes(IV_LENGTH);
-    // 可直接替換為ofb、
-cfb、
-ctr等模式
+    // 可直接替換為ofb、cfb、ctr等模式
     let cipher = crypto.createCipheriv('aes-256-cbc', new Buffer(key), iv);
     let encrypted = cipher.update(text);
     encrypted = cipher.final();
