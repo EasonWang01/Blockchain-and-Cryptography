@@ -1,8 +1,10 @@
 # AES 簡介
 
-Advanced Encryption Standard，縮寫：AES，又稱Rijndael加密法。這個標準用來替代原先的DES。
+Advanced Encryption Standard，縮寫：AES，又稱Rijndael加密法，但嚴格來說AES和Rijndael加密法並不完全一樣，因為Rijndael加密法可以支援更大範圍的區塊長度，AES的區塊長度固定為128位元而Rijndael使用的區塊長度可以是128，192或256位元。AES用來替代原先的DES。
 
-AES和Rijndael加密法並不完全一樣（雖然在實際應用中兩者可以互換），因為Rijndael加密法可以支援更大範圍的區塊和金鑰長度：AES的區塊長度固定為128位元，金鑰長度則可以是128，192或256位元；而Rijndael使用的金鑰和區塊長度均可以是128，192或256位元。
+AES的區塊長度固定為128位元，金鑰長度則可以是128，192或256位元；而Rijndael使用的金鑰和區塊長度均可以是128，192或256位元。
+
+AES加密過程是在一個4×4的位元組矩陣上運作，其初值即為一個明文區塊，矩陣中一個元素大小就是明文區塊中的一個Byte。
 
 其加密方法主要包含四個步驟
 
@@ -10,7 +12,7 @@ AES和Rijndael加密法並不完全一樣（雖然在實際應用中兩者可以
 1. AddRoundKey: 在AddRoundKey步驟中，將每個狀態中的位元組與該回合金鑰做異或（⊕）。
 2. SubBytes: 在SubBytes步驟中，矩陣中各位元組被固定的8位元尋找表中對應的特定位元組所替換。
 3. ShiftRows: ShiftRows步驟中，矩陣中每一行的各個位元組循環向左方位移。位移量則隨著行數遞增而遞增。
-4. MixColumns: 在MixColumns步驟中，每個直行 % ( x ** 4+1 ) * c(x)
+4. MixColumns: 在MixColumns步驟中，每個直行 % ( (x ** 4) + 1 ) * c(x)
 ```
 
 > 以上參考至: [https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
