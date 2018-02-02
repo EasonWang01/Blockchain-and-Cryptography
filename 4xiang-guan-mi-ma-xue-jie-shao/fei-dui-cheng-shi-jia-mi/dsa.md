@@ -122,22 +122,22 @@ openssl dgst -dss1 -verify dsa_publickey.pem -signature document.sig document.tx
 > 完成以上步驟產生pem格式之公私鑰後可執行以下程式。
 
 ```js
-var fs = require('fs');
-var crypto = require('crypto');
+const fs = require('fs');
+const crypto = require('crypto');
 
-var privateKey = {key: fs.readFileSync('./dsa_privatekey.pem'), passphrase: "填入剛才輸入的密碼"};     
-var publicKey = fs.readFileSync('./dsa_publickey.pem');
+const privateKey = {key: fs.readFileSync('./dsa_privatekey.pem'), passphrase: "填入剛才輸入的密碼"};     
+const publicKey = fs.readFileSync('./dsa_publickey.pem');
 
-var sign = crypto.createSign('dsaWithSHA1');
+let sign = crypto.createSign('dsaWithSHA1');
 sign.update('apple');
 
 // 注意 這裡是用私鑰 簽名，如果用公鑰會出現錯誤
-var res = sign.sign(privateKey, 'hex');
+let res = sign.sign(privateKey, 'hex');
 
-var verify = crypto.createVerify('dsaWithSHA1');
+let verify = crypto.createVerify('dsaWithSHA1');
 verify.update('apple');
 
-var result = verify.verify(publicKey, res, "hex");
+let result = verify.verify(publicKey, res, "hex");
 
 console.log(result);  // Prints success. means the key pair works.
 ```
