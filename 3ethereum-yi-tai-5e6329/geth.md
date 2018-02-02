@@ -26,7 +26,7 @@ make geth
 
 > 需要先安裝好Golang相關環境才可編譯：[https://golang.org/doc/install](https://golang.org/doc/install)
 >
-> 如果是自己從原始碼編譯，記得要將bin資料夾加入電腦的環境變數，才能從Terminal之直接執行Geth
+> 如果是自己從原始碼編譯，記得要將編譯好後產生的 `bin` 資料夾加入電腦的環境變數，才能從Terminal之直接執行Geth
 
 # 使用
 
@@ -38,13 +38,13 @@ Geth提供的API endpoint包含RPC HTTP endpoint、Websocket endpoint、unix soc
 geth console
 ```
 
-即可進入 Geth 的指令介面
+即可進入 Geth 的Javascript console
 
 > 也可以先在A terminal輸入geth，然後開啟另一個terminal輸入geth attach，開啟console
 
 ![](/assets/234324234.png)
 
-之後再這邊可以輸入指令，指令列表可參考
+之後在這邊可以輸入相關指令，指令列表可參考
 
 [https://github.com/ethereum/go-ethereum/wiki/Management-APIs\#list-of-management-apis](https://github.com/ethereum/go-ethereum/wiki/Management-APIs#list-of-management-apis)
 
@@ -83,7 +83,7 @@ curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
 
    copydb      從另外一個 chaindata 資料夾引入相關區塊鏈資料
 
-   dump        取得特定區塊的相關資料，與console中的debug.dumpBlock(10)類似
+   dump        取得特定區塊的相關資料，與console中的debug.dumpBlock()類似
 
    dumpconfig  顯示節點基本資料，例如DataDir, NetworkId, SyncMode, GasPrice等等
 
@@ -114,7 +114,7 @@ curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
 
 ## 相關參數
 
-Geth再啟動時可以在指令上加上flag參數，讓Geth使用不同的狀態執行。
+Geth於啟動時可以在指令上加上 flag 參數，讓Geth使用不同的狀態執行。
 
 e.g.
 
@@ -187,7 +187,7 @@ Light Sync: 只取得目前的區塊狀態，要驗證資料時必須傳送資�
 
 > --port 可以改變節點監聽之port
 >
-> Ethereum預設有**listener \(TCP\) **與 **discovery \(UDP**\) 監聽在**30303，可使用--port改變預設**
+> Ethereum預設有**listener \(TCP\) **與 **discovery \(UDP**\) 監聽在**30303，可使用--port改變預設阜號**
 
 #### --datadir、--keystore
 
