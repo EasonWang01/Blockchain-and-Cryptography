@@ -48,9 +48,11 @@ Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌�
 
 打開瀏覽器網頁就能直接使用，也可以離線產生交易訊息，以及可以引入`.keystore`檔案。
 
-並且可以利用其註冊ENS : https://www.myetherwallet.com/\#ens
+並且可以利用其註冊ENS : [https://www.myetherwallet.com/\#ens](https://www.myetherwallet.com/#ens)
 
 > ENS類似於以太坊的域名系統，可以把地址用域名表示。
+>
+> https://ens.domains/
 
 ![](/assets/螢幕快照 2018-02-02 上午10.16.25.png)
 
