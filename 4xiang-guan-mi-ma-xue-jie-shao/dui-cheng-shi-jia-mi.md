@@ -135,7 +135,7 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 
 ![](/assets/1202px-CFB_encryption.svg.png)
 
-> https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation\#Cipher\_Feedback\_\(CFB\)
+> [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Feedback_%28CFB\)
 
 過程大致如下
 
