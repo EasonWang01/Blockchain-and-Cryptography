@@ -44,7 +44,7 @@
 
 ## 計算過程
 
-我們如果把Remix IDE切換成用VM執行，則可以看到多出一個名為execution cost欄位
+我們如果把Remix IDE切換成用VM模式執行，則可以看到多出一個名為execution cost欄位
 
 ![](/assets/螢幕快照 2018-01-29 下午9.23.39.png)我們先將兩個值相減
 
