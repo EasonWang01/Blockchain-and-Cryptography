@@ -170,8 +170,6 @@ The basic bank account number (BBAN): 包含 institution, branch and client acco
 
 另一個名詞為BBAN，即為IBAN中的第三個部分，因為沒有統一格式，所以後來才進行擴充，誕生了IBAN。
 
-
-
 Ethereum的ICAP地址由以下三個部分所組合：
 
 ```
@@ -180,11 +178,11 @@ Ethereum的ICAP地址由以下三個部分所組合：
 3.三種可能類型的 account identifier
 ```
 
-有關最後一部分三種可能類型的 account identifier包含以下Direct、Basic、inDirect：
+有關最後一部分三種可能類型的 account identifier包含以下Direct、Basic、Indirect：
 
 #### 1.Direct
 
-由於編碼後必須小於 155 bits，所以通常會轉成此種類型地址的原始以太幣地址都會是0x00開頭，此種類型可以完全與其他IBAN格式相容。
+由於編碼後必須小於 155 bits，所以通常會轉成此種類型地址的原始以太幣地址都會是0x00開頭，此種類型可以完全與其他IBAN格式相容，共30個字母。
 
 e.g.
 
@@ -196,7 +194,21 @@ XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS
 
 #### 2.Basic
 
-編碼後必須小於 161 bits ，所以如果開頭不是0x00的原始地址，都只能使用此種格式，其無法與其他類型IBAN相容。
+編碼後必須小於 161 bits ，所以如果開頭不是0x00的原始地址，都只能使用此種格式，共31個字母，其無法與其他類型IBAN相容。
+
+#### 3.Indirect
+
+包含16個字母，由以下三個欄位組成。
+
+```
+Asset identifier, 3-character alphanumeric (< 16-bit);
+Institution identifier, 4-character alphanumeric (< 21-bit);
+Institution client identifier, 9-character alphanumeric (< 47-bit);
+```
+
+
+
+
 
 註1:
 
