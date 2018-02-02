@@ -1,6 +1,6 @@
-# AES簡介
+# AES 簡介
 
-進階加密標準（英語：Advanced Encryption Standard，縮寫：AES），又稱Rijndael加密法。這個標準用來替代原先的DES。
+Advanced Encryption Standard，縮寫：AES，又稱Rijndael加密法。這個標準用來替代原先的DES。
 
 AES和Rijndael加密法並不完全一樣（雖然在實際應用中兩者可以互換），因為Rijndael加密法可以支援更大範圍的區塊和金鑰長度：AES的區塊長度固定為128位元，金鑰長度則可以是128，192或256位元；而Rijndael使用的金鑰和區塊長度均可以是128，192或256位元。
 
