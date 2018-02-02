@@ -218,7 +218,7 @@ Windows: %APPDATA%\Ethereum
 2.然後進入到Geth指令介面後輸入如下：
 
 ```
-personal.importRawKey("<Private Key>","<New Password>")
+personal.importRawKey("剛才輸出的私鑰","設定一個密碼")
 ```
 
 3.接著進入Geth 的 console輸入`eth.accounts` 即可看到引入的帳號。
