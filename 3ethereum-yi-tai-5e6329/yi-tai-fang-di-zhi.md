@@ -156,8 +156,6 @@ console.log(privateKey.toString('hex'));
 // 還原出私鑰
 ```
 
-
-
 # ICAP \( Inter exchange Client Address Protocol \)
 
 以太坊還有另一種格式的地址與國際間銀行常用的IBAN格式相容，在Ethereum中的iban的country code為
@@ -174,15 +172,35 @@ The basic bank account number (BBAN): 包含 institution, branch and client acco
 
 
 
+Ethereum的ICAP地址由以下三個部分所組合：
 
+```
+1.XE 
+2.兩字母的 checksum
+3.三種可能類型的 account identifier
+```
 
+有關最後一部分三種可能類型的 account identifier包含以下Direct、Basic、inDirect：
 
+#### 1.Direct
 
-註1: 
+由於編碼後必須小於 155 bits，所以通常會轉成此種類型地址的原始以太幣地址都會是0x00開頭，此種類型可以完全與其他IBAN格式相容。
+
+e.g.
+
+```
+00c5496aee77c1ba1f0854206a26dda82a81d6d8 
+對應到
+XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS
+```
+
+#### 2.Basic
+
+編碼後必須小於 161 bits ，所以如果開頭不是0x00的原始地址，都只能使用此種格式，其無法與其他類型IBAN相容。
+
+註1:
 
 IBAN \( **International Bank Account Number** \)：
 
-https://www.iban.com/whatis.html
-
-
+[https://www.iban.com/whatis.html](https://www.iban.com/whatis.html)
 
