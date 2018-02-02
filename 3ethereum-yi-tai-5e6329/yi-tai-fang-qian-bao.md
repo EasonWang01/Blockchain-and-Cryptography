@@ -44,11 +44,15 @@ Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌�
 
 ## MyEtherWallet
 
+[https://www.myetherwallet.com/](https://www.gitbook.com/book/easonwang01/e/edit#)
+
 打開瀏覽器網頁就能直接使用，也可以離線產生交易訊息，以及可以引入`.keystore`檔案。
 
-[https://www.myetherwallet.com/](https://www.myetherwallet.com/)
+並且可以利用其註冊ENS : https://www.myetherwallet.com/\#ens
 
-![](/assets/螢幕快照 2018-01-13 下午11.00.08.png)
+> ENS類似於以太坊的域名系統，可以把地址用域名表示。
+
+![](/assets/螢幕快照 2018-02-02 上午10.16.25.png)
 
 # EtherWall
 
