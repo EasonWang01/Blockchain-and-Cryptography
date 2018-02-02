@@ -2,7 +2,7 @@
 
 以太坊一開始的測試鏈名為 『 Morden testnet 』 從 2015年7月一直到 2016年11月，但因為在此鏈上很長的同步時間，以及一些節點共識問題的不穩定，後來誕生了『 Ropsten testnet 』。
 
-『 Ropsten testnet 』成功的執行到了2017年2月，但後來還是因為節點的算力不足以及被濫用導致gas
+『 Ropsten testnet 』成功的執行到了2017年2月，但後來還是因為節點的算力不足以及被濫用導致區塊的 Gas
 
 limits 上升到 9 billion \(原先為 4.7 million\)。
 
