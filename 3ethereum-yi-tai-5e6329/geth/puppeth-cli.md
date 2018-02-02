@@ -1,10 +1,10 @@
 # Proof of Authority 與 Puppeth CLI
 
-Geth 在 1.6版本後新增了一個可以用互動式指令創建區塊鏈的工具，名為：Puppeth CLI。
+Geth 在 1.6 版本後新增了一個可以用互動式指令創建區塊鏈的工具，名為：Puppeth CLI。
 
-以下我們會用Puppeth CLI建立一個POA版本的私有鏈。
+以下我們會用Puppeth CLI建立一個PoA版本的私有鏈。
 
-POA \(Proof of Authority\)在Parity的客戶端軟體也有實作，但和 go-ethereum兩者實作的方式稍微不同，有關go-ethereum版本的可參考：[https://github.com/ethereum/EIPs/issues/225](https://github.com/ethereum/EIPs/issues/225)
+PoA \(Proof of Authority\)在Parity的客戶端軟體也有實作，但和 go-ethereum兩者實作的方式稍微不同，有關go-ethereum版本的可參考：[https://github.com/ethereum/EIPs/issues/225](https://github.com/ethereum/EIPs/issues/225)
 
 > go-ethereum版本其為Clique proof-of-authority consensus protocol
 >
@@ -35,11 +35,11 @@ geth --datadir ./eth_clique_test account new
 
 3.
 
-我們選擇第二個選項
+接著選擇共識系統，我們選擇第二個選項 \( Clique \)
 
 ![](/assets/螢幕快照 2018-01-13 上午9.17.16.png)
 
-> 預設即為clique ，上面第一個選項為挖礦共識系統
+> 預設即為Clique ，上面第一個選項為工作量證明的挖礦共識系統
 
 4.
 
@@ -63,19 +63,19 @@ geth --datadir ./eth_clique_test account new
 
 7.
 
-再來的最後兩個問題分別是要給chain/network 一個ID，以及要納入創世區塊的訊息，這邊我們兩個問題都直接按Enter
+最後兩個問題分別是要給 chain/network 一個ID，以及要納入創世區塊的訊息，這邊我們兩個問題都直接按Enter
 
 ![](/assets/螢幕快照 2018-01-13 上午9.27.29.png)
 
 8.
 
-最後點選2，即可儲存剛才設定的創世區塊，並且輸入我們要將它存放的檔案路徑即可。
+再來點選2，即可儲存剛才設定的創世區塊，並且輸入我們要將它存放的檔案路徑即可。
 
 ![](/assets/螢幕快照 2018-01-13 上午9.30.22.png)
 
 9.
 
-再來我們進到剛才存放genesis.json創世區塊的資料夾，輸入：
+我們進到剛才存放genesis.json創世區塊的資料夾，輸入：
 
 ```
 geth  --datadir="./" init genesis.json
@@ -101,11 +101,11 @@ geth --datadir="./node1" --port 30304 console
 
 11.
 
-接著使用admin.nodeInfo與admin.addPeer讓兩節點連線
+接著使用`admin.nodeInfo`與`admin.addPeer`讓兩節點連線
 
 ![](/assets/螢幕快照 2018-01-13 上午10.39.07.png)12.
 
-在第二個節點\(node1\)新增一個帳號
+在第二個節點 \( node1 \) 新增一個帳號
 
 ```
 personal.newAccount()
@@ -139,9 +139,9 @@ miner.start(1)
 
 ![](/assets/123.png)
 
-> 可以看到左側之節點1的Etherbase account，在一開始創世區塊已經設定為POA授權帳號，所以可以成功打包區塊，而右側節點帳號不是認證的，所以打包失敗。
+> 可以看到左側之節點1的Etherbase account，在一開始創世區塊已經設定為PoA授權帳號，所以可以成功打包區塊，而右側節點帳號不是認證的，所以打包失敗。
 
-如果節點1把Etherbase更換為一個不是POA授權帳號，則也一樣不可以打包區塊，因為授權是判斷帳號不是判斷節點。
+如果節點1把Etherbase更換為一個不是PoA授權帳號，則也一樣不可以打包區塊，因為授權是判斷帳號不是判斷節點。
 
 例如在節點1輸入如下：
 
@@ -163,7 +163,7 @@ WARN [01-13|10:51:37] Block sealing failed  err=unauthorized
 
 15.
 
-我們可以把其他帳號一起加入POA認證列表
+我們可以把其他帳號一起加入PoA認證列表
 
 ```
 clique.propose("0xdf6d9ad96b630e06325ceb9f7e23a86695997421", true)
