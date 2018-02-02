@@ -15,9 +15,9 @@
 
 ```js
 function textToBinary(string) {
-    return string.split('').map(function (char) {
-        return '0' + char.charCodeAt(0).toString(2);
-    })
+  return string.split('').map(function (char) {
+    return '0' + char.charCodeAt(0).toString(2);
+  })
 }
 
 textToBinary("Test");
