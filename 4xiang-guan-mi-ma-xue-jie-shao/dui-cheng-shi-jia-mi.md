@@ -1,4 +1,4 @@
-# 對稱式加密\(**Symmetric-key algorithm**\)
+# 對稱式加密\(**Symmetric-Key Algorithm**\)
 
 在加密和解密時使用相同的密鑰，常見的對稱式加密算法有：AES、3DES、IDEA、TwoFish、RC系列等等
 
@@ -60,8 +60,6 @@ let key_ = "11110011"; // 密鑰
 (["01010100", "01100101", "01110011", "01110100"]).map(d => String.fromCharCode(parseInt(d, 2))).join('');
 // 得到字串:Test
 ```
-
-
 
 # Stream Ciphers 與 Block Ciphers
 
