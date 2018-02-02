@@ -10,7 +10,7 @@ AES和Rijndael加密法並不完全一樣（雖然在實際應用中兩者可以
 1. AddRoundKey: 在AddRoundKey步驟中，將每個狀態中的位元組與該回合金鑰做異或（⊕）。
 2. SubBytes: 在SubBytes步驟中，矩陣中各位元組被固定的8位元尋找表中對應的特定位元組所替換。
 3. ShiftRows: ShiftRows步驟中，矩陣中每一行的各個位元組循環向左方位移。位移量則隨著行數遞增而遞增。
-4. MixColumns: 在MixColumns步驟中，每個直行都在modulo {\displaystyle x^{4}+1} x^4+1之下，和一個固定多項式c(x)作乘法。
+4. MixColumns: 在MixColumns步驟中，每個直行 % ( x ** 4+1 ) * c(x)
 ```
 
 > 以上參考至: [https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
