@@ -69,9 +69,9 @@ let key_ = "11110011"; // 密鑰
 
 #### 1.Stream Ciphers
 
-Stream Ciphers\(資料流加密\)並不會將明文切分為區段，而是一次加密一個資料流的位元或是位元組。常見的作法是將 較短的加密鑰匙延展成為無限長、近似亂碼的一長串金鑰串流\(keystream\)，再將金鑰串流和原始資料 （plain text）經過XOR運算後，產生密文資料 （cipher text）。
+Stream Ciphers\( 資料流加密 \)並不會將明文切分為區段，而是一次加密一個資料流的位元或是位元組。常見的作法是將 較短的加密鑰匙延展成為無限長、近似亂碼的一長串金鑰串流\(keystream\)，再將金鑰串流和原始資料 （plain text）經過XOR運算後，產生密文資料 （cipher text）。
 
-但Stream Ciphers在目前較少被使用。使用其之加密演算法e.g. A5/1、RC4
+但Stream Ciphers在目前較少被使用。使用Stream Cipher 之加密演算法例如： A5/1、RC4
 
 由於它可以用硬體來實作，在以前CPU運作速度不夠快的時代比較流行。
 
@@ -83,17 +83,17 @@ Stream Ciphers\(資料流加密\)並不會將明文切分為區段，而是一�
 
 #### 2.Block Ciphers
 
-Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區段，並且對每 一個區段資料應用相同的演算法則和鑰匙。
+Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區段，並且對每一個區段資料使用相同的演算法和密鑰加密。
 
-意思是在一開始就會把明文先拆開成區塊，然後第一個區塊先進行加密演算法後得到密文，之後這個密文再繼續跟後續區塊做計算。
+一開始會把明文先拆開成區塊，然後第一個區塊先進行加密演算法後得到密文，之後這個密文再繼續跟後續區塊做計算。
 
-假設M為明文，其將分割成M1、M2… Mn區段\)  然後K為密鑰，其可表示為: E\(M,K\)=E\(M1,K\)E\(M2,K\)… ..E\(Mn,K\)
+假設M為明文，其將分割成M1、M2… Mn區段， 然後K為密鑰，其可表示為: E\(M,K\)=E\(M1,K\).E\(M2,K\)…..E\(Mn,K\)
 
-較適合用於已知要加密的檔案內容。
+較適合對已知加密檔案內容的檔案進行加密。
 
 > 參考至:[https://security.stackexchange.com/a/345](https://security.stackexchange.com/a/345)
 
-以下先介紹比較早期發展之ECB、CBC、CFB和OFB
+以下先介紹比較早期發展的四種區塊加密方式：ECB、CBC、CFB和OFB
 
 #### ECB
 
@@ -122,7 +122,7 @@ Block Ciphers\(區段加密\) 會將明文分成數個n個字元或位元的區�
 > [https://en.wikipedia.org/wiki/Block\_cipher\_mode\_of\_operation](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
 
 ```
-1. IV 與 Plaintext 做 XOR 之後再和金鑰進行演算法加密
+1. 初始向量 IV (註2) 與 Plaintext 做 XOR 之後再和金鑰進行演算法加密
 2. 然後第上一步驟的結果與下一個區塊的 Plaintext 做 XOR 之後再和金鑰進行演算法加密
 3. 重複上一步驟直到所有內容加密完成
 ```
@@ -197,7 +197,7 @@ crypto.createCipheriv()
 
 ---
 
-註1: XOR 
+#### 註1: XOR
 
 \( 兩兩數值相同為否，而數值不同時為真 \): 例如1 xor 1為 0 ， 1 xor 0 為 1
 
@@ -206,4 +206,10 @@ F\(false\)亦代表0，T\(true\)亦代表1
 ![](/assets/2333.png)
 
 至於為何要使用XOR在對稱式加密，不使用AND或OR，可參考:[https://stackoverflow.com/a/24731845](https://stackoverflow.com/a/24731845)
+
+#### 註2: IV 初始向量
+
+通常是一個亂數，讓攻擊者難以對同一把金鑰產生的密文進行破解，會加入區塊加密中一起進行加密運算。
+
+https://zh.wikipedia.org/wiki/%E5%88%9D%E5%A7%8B%E5%90%91%E9%87%8F
 
