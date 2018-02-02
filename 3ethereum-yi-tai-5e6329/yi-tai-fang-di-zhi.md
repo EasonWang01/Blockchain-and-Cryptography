@@ -158,3 +158,31 @@ console.log(privateKey.toString('hex'));
 
 
 
+# ICAP \( Inter exchange Client Address Protocol \)
+
+以太坊還有另一種格式的地址與國際間銀行常用的IBAN格式相容，在Ethereum中的iban的country code為
+
+`XE` 來源為 Ethereum 開頭的字母 E 與 "extended" 意思的 X，有關IBAN的詳細說明可參考 \( 註1 \) 的網址，簡言之IBAN是轉帳時用來辨識銀行的號碼，其中包含以下資訊：帳號、銀行與分行名稱、所在國家號碼IBAN一般來說不能超過34個字
+
+```
+Country code: 國家號碼 (ISO 3166-1 alpha-2);
+Error-detection code: 產生Checksum (ISO/IEC 7064:2003);
+The basic bank account number (BBAN): 包含 institution, branch and client account等資訊。
+```
+
+另一個名詞為BBAN，即為IBAN中的第三個部分，因為沒有統一格式，所以後來才進行擴充，誕生了IBAN。
+
+
+
+
+
+
+
+註1: 
+
+IBAN \( **International Bank Account Number** \)：
+
+https://www.iban.com/whatis.html
+
+
+
