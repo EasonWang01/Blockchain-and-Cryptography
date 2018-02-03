@@ -238,9 +238,11 @@ console.log(ICAP.toAddress('XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS'));
 
 [https://github.com/Ethereum/EIPs/blob/master/EIPS/eip-55.md](https://github.com/Ethereum/EIPs/blob/master/EIPS/eip-55.md)
 
-定義在EIP55中，名為Mixed-case checksum address encoding
+定義在EIP55中，名為Mixed-case checksum address encoding。
 
-我們可以發現在把私鑰引入類似Metamask錢包後，其地址會包含大寫與小寫英文，但與全部小寫英文的地址都是對應到同一把私鑰，混合大寫與小寫在地址的好處是可以做到checksum，因為Ethereum的地址是不區分大小寫的 （case-insensitive），
+我們可以發現在把私鑰引入類似Metamask錢包後，其地址會包含大寫與小寫英文，但與全部小寫英文的地址都是對應到同一把私鑰，Mixed-case地址在地址的好處是可以做到checksum，因為Ethereum的地址是不區分大小寫的 （case-insensitive）。
+
+如果有了Mixed-case的地址與原本全部是小寫的地址，之後在輸入轉帳地址時可以把Mixed-case的地址先轉為小寫然後做SHA3 Checksum並跟原本全部是小寫的地址之SHA3 Checksum比較，即可知道有沒有哪些字母拼錯或輸入錯誤。
 
 可以用一下程式轉換：
 
