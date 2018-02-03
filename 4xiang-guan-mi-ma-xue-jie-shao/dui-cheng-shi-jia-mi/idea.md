@@ -11,11 +11,11 @@ IDEA有八個加密回合，以及最後的0.5回合 \( output transformation \)
 > 下圖的圖案分別代表：
 >
 > ```
-> ⊕ ： Bitwise eXclusive OR 
+> ⊕ ： Bitwise exclusive OR 
 >
 > ⊞ ： Addition modulo 2 ** 16
 >
-> ⊙ ： Multiplication modulo ( 2 ** 16 ) + 1
+> ⊙ ： Multiplication modulo ( 2 ** 16 ) + 1，如果為 0x0000 則為 2 ** 16
 > ```
 
 ![](/assets/螢幕快照 2018-02-03 上午11.57.55.png)
