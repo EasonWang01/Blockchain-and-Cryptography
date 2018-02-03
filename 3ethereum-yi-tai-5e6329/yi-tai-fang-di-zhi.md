@@ -158,6 +158,8 @@ console.log(privateKey.toString('hex'));
 
 # ICAP \( Inter exchange Client Address Protocol \)
 
+https://github.com/ethereum/wiki/wiki/ICAP:-Inter-exchange-Client-Address-Protocol
+
 以太坊地址的另一種格式名為ICAP，與國際間銀行常用的IBAN格式相容，但目前支援此種地址的錢包較少。
 
 在Ethereum中的iban的country code為`XE` 來源為 Ethereum 開頭的字母 E 與 "extended" 意思的 X，有關IBAN的詳細說明可參考 \( 註1 \) 的網址，簡言之IBAN是轉帳時用來辨識銀行的號碼，其中包含以下資訊：帳號、銀行與分行名稱、所在國家號碼IBAN一般來說不能超過34個字。
