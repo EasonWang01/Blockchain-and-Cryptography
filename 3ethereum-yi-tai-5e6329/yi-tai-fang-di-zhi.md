@@ -158,7 +158,7 @@ console.log(privateKey.toString('hex'));
 
 # ICAP \( Inter exchange Client Address Protocol \)
 
-https://github.com/ethereum/wiki/wiki/ICAP:-Inter-exchange-Client-Address-Protocol
+[https://github.com/ethereum/wiki/wiki/ICAP:-Inter-exchange-Client-Address-Protocol](https://github.com/ethereum/wiki/wiki/ICAP:-Inter-exchange-Client-Address-Protocol)
 
 以太坊地址的另一種格式名為ICAP，與國際間銀行常用的IBAN格式相容，但目前支援此種地址的錢包較少。
 
@@ -233,6 +233,45 @@ console.log(ICAP.fromAddress('0x00c5496aee77c1ba1f0854206a26dda82a81d6d8'));
 console.log(ICAP.toAddress('XE363JAAEP6QZKWEDX2VC4A4L4ZLIB396MF'));
 console.log(ICAP.toAddress('XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS'));
 ```
+
+
+
+
+
+# Mixed-case checksum address encoding
+
+https://github.com/Ethereum/EIPs/blob/master/EIPS/eip-55.md
+
+定義在EIP55中，名為Mixed-case checksum address encoding
+
+我們可以發現再把私鑰引入類似Metamask錢包後，其地址會包含大寫與小寫英文，但與全部小寫英文的地址都是對應到同一把私鑰，其可以用一下程式轉換：
+
+
+
+```js
+const SHA3 = require('keccakjs')
+
+function toChecksumAddress (address) {
+  address = address.toLowerCase().replace('0x', '')
+  let h = new SHA3(256);
+  var hash = h.update(address).digest('hex')
+  var ret = '0x'
+
+  for (var i = 0; i < address.length; i++) {
+    if (parseInt(hash[i], 16) >= 8) {
+      ret += address[i].toUpperCase()
+    } else {
+      ret += address[i]
+    }
+  }
+
+  return ret
+}
+
+console.log(toChecksumAddress('0xa4db45dd29fcc0a01937f2230eb189ba12e23abd'))
+```
+
+
 
 註1:
 
