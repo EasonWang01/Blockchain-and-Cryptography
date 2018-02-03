@@ -250,11 +250,11 @@ const SHA3 = require('keccakjs')
 function toChecksumAddress (address) {
   address = address.toLowerCase().replace('0x', '')
   let h = new SHA3(256);
-  var hash = h.update(address).digest('hex')
-  var ret = '0x'
+  let hash = h.update(address).digest('hex')
+  let ret = '0x'
 
   for (var i = 0; i < address.length; i++) {
-    if (parseInt(hash[i], 16) >= 8) { // >= 8 就轉為大寫
+    if (parseInt(hash[i], 16) >= 8) { // Hash後的字母 >= 8 就轉為大寫
       ret += address[i].toUpperCase()
     } else {
       ret += address[i]
