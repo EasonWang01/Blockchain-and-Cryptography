@@ -272,6 +272,8 @@ console.log(toChecksumAddress('0xa4db45dd29fcc0a01937f2230eb189ba12e23abd'))
 // 回傳：0xa4Db45dd29fCc0A01937f2230Eb189ba12E23AbD
 ```
 
+---
+
 註1:
 
 IBAN \( **International Bank Account Number** \)：
