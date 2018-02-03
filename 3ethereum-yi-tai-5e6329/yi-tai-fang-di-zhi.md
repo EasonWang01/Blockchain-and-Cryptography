@@ -234,19 +234,15 @@ console.log(ICAP.toAddress('XE363JAAEP6QZKWEDX2VC4A4L4ZLIB396MF'));
 console.log(ICAP.toAddress('XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS'));
 ```
 
-
-
-
-
 # Mixed-case checksum address encoding
 
-https://github.com/Ethereum/EIPs/blob/master/EIPS/eip-55.md
+[https://github.com/Ethereum/EIPs/blob/master/EIPS/eip-55.md](https://github.com/Ethereum/EIPs/blob/master/EIPS/eip-55.md)
 
 定義在EIP55中，名為Mixed-case checksum address encoding
 
-我們可以發現再把私鑰引入類似Metamask錢包後，其地址會包含大寫與小寫英文，但與全部小寫英文的地址都是對應到同一把私鑰，其可以用一下程式轉換：
+我們可以發現在把私鑰引入類似Metamask錢包後，其地址會包含大寫與小寫英文，但與全部小寫英文的地址都是對應到同一把私鑰，混合大寫與小寫在地址的好處是可以做到checksum，因為Ethereum的地址是不區分大小寫的 （case-insensitive），
 
-
+可以用一下程式轉換：
 
 ```js
 const SHA3 = require('keccakjs')
@@ -258,7 +254,7 @@ function toChecksumAddress (address) {
   var ret = '0x'
 
   for (var i = 0; i < address.length; i++) {
-    if (parseInt(hash[i], 16) >= 8) {
+    if (parseInt(hash[i], 16) >= 8) { // >= 8 就轉為大寫
       ret += address[i].toUpperCase()
     } else {
       ret += address[i]
@@ -268,10 +264,11 @@ function toChecksumAddress (address) {
   return ret
 }
 
+// 轉換一個全部都小寫的地址
 console.log(toChecksumAddress('0xa4db45dd29fcc0a01937f2230eb189ba12e23abd'))
+
+// 回傳：0xa4Db45dd29fCc0A01937f2230Eb189ba12E23AbD
 ```
-
-
 
 註1:
 
