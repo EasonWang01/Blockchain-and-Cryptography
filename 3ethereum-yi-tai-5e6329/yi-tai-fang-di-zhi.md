@@ -158,9 +158,9 @@ console.log(privateKey.toString('hex'));
 
 # ICAP \( Inter exchange Client Address Protocol \)
 
-以太坊還有另一種格式的地址與國際間銀行常用的IBAN格式相容，在Ethereum中的iban的country code為
+以太坊地址的另一種格式名為ICAP，與國際間銀行常用的IBAN格式相容，但目前支援此種地址的錢包較少。
 
-`XE` 來源為 Ethereum 開頭的字母 E 與 "extended" 意思的 X，有關IBAN的詳細說明可參考 \( 註1 \) 的網址，簡言之IBAN是轉帳時用來辨識銀行的號碼，其中包含以下資訊：帳號、銀行與分行名稱、所在國家號碼IBAN一般來說不能超過34個字
+在Ethereum中的iban的country code為`XE` 來源為 Ethereum 開頭的字母 E 與 "extended" 意思的 X，有關IBAN的詳細說明可參考 \( 註1 \) 的網址，簡言之IBAN是轉帳時用來辨識銀行的號碼，其中包含以下資訊：帳號、銀行與分行名稱、所在國家號碼IBAN一般來說不能超過34個字。
 
 ```
 Country code: 國家號碼 (ISO 3166-1 alpha-2);
@@ -180,9 +180,11 @@ Ethereum的ICAP地址由以下三個部分所組合：
 
 有關最後一部分三種可能類型的 account identifier包含以下Direct、Basic、Indirect：
 
+> 將會以base-36進行編碼
+
 #### 1.Direct
 
-由於編碼後必須小於 155 bits，所以通常會轉成此種類型地址的原始以太幣地址都會是0x00開頭，此種類型可以完全與其他IBAN格式相容，共30個字母。
+由於編碼前地址必須小於 155 bits，所以通常會轉成此種類型地址的原始以太幣地址都會是0x00開頭，此種類型可以完全與其他IBAN格式相容，編碼後共30個字母 \( 扣除開頭兩位XE與兩位Checksum\)。
 
 e.g.
 
@@ -194,23 +196,23 @@ XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS
 
 #### 2.Basic
 
-編碼後必須小於 161 bits ，所以如果開頭不是0x00的原始地址，都只能使用此種格式，共31個字母，其無法與其他類型IBAN相容。
+由於編碼前地址必須小於 161 bits ，所以如果開頭不是0x00的原始地址，都只能使用此種格式，編碼後共31個字母 \( 扣除開頭兩位XE與兩位Checksum\)，其無法與其他類型IBAN相容。
 
 #### 3.Indirect
 
 包含16個字母，由以下三個欄位組成。
 
 ```
-Asset identifier, 3-character alphanumeric (< 16-bit);
-Institution identifier, 4-character alphanumeric (< 21-bit);
-Institution client identifier, 9-character alphanumeric (< 47-bit);
+Asset identifier， 3個字
+Institution identifier， 4個字
+Institution client identifier， 9個字
 ```
 
 #### 實作：
 
 接著我們可以使用此模組來產生ICAP地址：
 
-https://github.com/ethereumjs/ethereumjs-icap
+[https://github.com/ethereumjs/ethereumjs-icap](https://github.com/ethereumjs/ethereumjs-icap)
 
 ```
 npm install ethereumjs-icap
