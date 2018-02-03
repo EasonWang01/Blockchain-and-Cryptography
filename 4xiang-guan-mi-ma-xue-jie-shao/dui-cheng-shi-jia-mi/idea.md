@@ -13,7 +13,7 @@ IDEA有八個加密回合，以及最後的0.5回合 \( output transformation \)
 > ```
 > ⊕ ： Bitwise exclusive OR  ( XOR )
 >
-> ⊞ ： Addition modulo 2 ** 16
+> ⊞ ： Addition modulo  2 ** 16 
 >
 > ⊙ ： Multiplication modulo ( 2 ** 16 ) + 1，如果為 0x0000 則為 2 ** 16
 > ```
