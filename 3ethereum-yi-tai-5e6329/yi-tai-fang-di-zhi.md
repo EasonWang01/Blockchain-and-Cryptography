@@ -253,7 +253,7 @@ function toChecksumAddress (address) {
   let hash = h.update(address).digest('hex')
   let ret = '0x'
 
-  for (var i = 0; i < address.length; i++) {
+  for (let i = 0; i < address.length; i++) {
     if (parseInt(hash[i], 16) >= 8) { // Hash後的字母 >= 8 就轉為大寫
       ret += address[i].toUpperCase()
     } else {
