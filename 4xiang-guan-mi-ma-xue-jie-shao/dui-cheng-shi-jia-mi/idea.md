@@ -13,9 +13,9 @@ IDEA有八個加密回合，以及最後的0.5回合 \( output transformation \)
 > ```
 > ⊕ ： Bitwise eXclusive OR 
 >
-> ⊞ ： Addition modulo 216
+> ⊞ ： Addition modulo 2 ** 16
 >
-> ⊙ ： Multiplication modulo 216+1
+> ⊙ ： Multiplication modulo ( 2 ** 16 ) + 1
 > ```
 
 ![](/assets/螢幕快照 2018-02-03 上午11.57.55.png)
