@@ -6,11 +6,17 @@
 
 IDEA有八個加密回合，以及最後的0.5回合 \( output transformation \)。
 
-
-
-
-
 一開始 64 bits，會分成四個16 bits明文，然後進入如下加密過程：
+
+> 下圖的圖案分別代表：
+>
+> ```
+> ⊕ ： Bitwise eXclusive OR 
+>
+> ⊞ ： Addition modulo 216
+>
+> ⊙ ： Multiplication modulo 216+1
+> ```
 
 ![](/assets/螢幕快照 2018-02-03 上午11.57.55.png)
 
@@ -18,9 +24,7 @@ IDEA有八個加密回合，以及最後的0.5回合 \( output transformation \)
 
 ![](/assets/螢幕快照 2018-02-03 上午11.58.34.png)
 
-https://crypto.stackexchange.com/questions/5076/how-can-i-implement-the-multiplication-modulo-and-addition-modulo-operations
-
-
+[https://crypto.stackexchange.com/questions/5076/how-can-i-implement-the-multiplication-modulo-and-addition-modulo-operations](https://crypto.stackexchange.com/questions/5076/how-can-i-implement-the-multiplication-modulo-and-addition-modulo-operations)
 
 範例:
 
