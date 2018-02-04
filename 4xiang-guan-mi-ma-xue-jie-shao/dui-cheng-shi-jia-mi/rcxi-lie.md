@@ -89,5 +89,25 @@ RC6 其區塊大小為 128 bits 而其 key 的大小可為 128, 192, 256 bits �
 
 RC6 非常類似於 RC5
 
-實作方法可參考:[https://people.csail.mit.edu/rivest/pubs/RRSY98.pdf](https://people.csail.mit.edu/rivest/pubs/RRSY98.pdf)![](/assets/9808.png)
+實作方法可參考:[https://people.csail.mit.edu/rivest/pubs/RRSY98.pdf](https://people.csail.mit.edu/rivest/pubs/RRSY98.pdf)
+
+其中與RC類似，使用w/r/b表示
+
+> The user supplies a key of b bytes, where 0  b  255. From this key, 2r + 4 words \(w bits each\) are derived and stored in the array S\[0;:::; 2r + 3\]. This array is used in both encryption and decryption.
+
+```
+RC6-32/16/16 :
+
+區塊大小64位元
+16回合數
+金鑰長度為128位元
+```
+
+加密：
+
+![](/assets/螢幕快照 2018-02-04 下午12.57.52.png)
+
+解密：
+
+![](/assets/螢幕快照 2018-02-04 下午12.58.01.png)
 
