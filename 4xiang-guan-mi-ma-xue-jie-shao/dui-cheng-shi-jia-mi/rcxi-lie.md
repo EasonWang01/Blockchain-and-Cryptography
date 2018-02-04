@@ -89,7 +89,7 @@ RC6 其區塊大小為 128 bits 而其 key 的大小可為 128, 192, 256 bits �
 
 RC6 非常類似於 RC5
 
-實作方法可參考:[https://people.csail.mit.edu/rivest/pubs/RRSY98.pdf](https://people.csail.mit.edu/rivest/pubs/RRSY98.pdf)
+實作方法可參考 : [https://people.csail.mit.edu/rivest/pubs/RRSY98.pdf](https://people.csail.mit.edu/rivest/pubs/RRSY98.pdf)
 
 其中與RC類似，使用w/r/b表示
 

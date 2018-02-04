@@ -101,24 +101,5 @@ http://localhost:8500/bzz:/回傳之Hash/test.txt
 
 > 如果沒有加入檔案名稱在Hash後則會顯示找不到檔案
 
-## 直接使用Swarm不連結Geth
-
-在官方文件中說明Swarm需要Ethereum的原因為
-
-> * Domain name resolution using the Ethereum Name Service \(ENS\) contract.
-> * Incentivisation \(for example: SWAP\)
-
-```
-啟動沒有 domain 解析的Swarm可以加上 --ens-api=""，並且不加上 --swap-api（預設關閉）。
-```
-
-先輸入`./geth account list` 查看目前的帳號
-
-然後啟動Swarm，填入一個帳號
-
-```
-./swarm --bzzaccount "a535f401d23284e977dd63b6fd853313dbd43149"  --ens-api ''
-```
-
 
 
