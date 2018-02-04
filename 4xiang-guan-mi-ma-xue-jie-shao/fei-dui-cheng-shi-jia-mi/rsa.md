@@ -291,10 +291,6 @@ output = verify.verify(public_key, signature, 'hex');
 console.log(output)
 ```
 
-
-
-
-
 # 相關格式
 
 ---
