@@ -64,9 +64,7 @@ void decrypt (uint32_t & L, uint32_t & R) {
 }
 ```
 
-> [https://en.wikipedia.org/wiki/Blowfish\_\(cipher\)](https://en.wikipedia.org/wiki/Blowfish_%28cipher%29#/)/\#
-
-其運算過程敘述可參考:[https://en.wikipedia.org/wiki/Blowfish\_\(cipher\)\#The\_algorithm](https://en.wikipedia.org/wiki/Blowfish_%28cipher%29#The_algorithm)
+> [https://en.wikipedia.org/wiki/Blowfish\_\(cipher\)\#The\_algorithm](https://en.wikipedia.org/wiki/Blowfish_%28cipher%29#The_algorithm)
 
 Node.js範例:
 
