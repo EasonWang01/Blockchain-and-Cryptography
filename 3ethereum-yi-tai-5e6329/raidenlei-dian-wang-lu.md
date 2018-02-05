@@ -81,13 +81,15 @@ Linux: ~/.local/share/io.parity.ethereum/keys/test
 
 這時因為帳號裡面沒有餘額，我們必須要向測試鏈Ropsten 的 faucet 水龍頭拿取測試幣。
 
-可到這個網站：[http://faucet.ropsten.be:3001/，然後填入地址](http://faucet.ropsten.be:3001/，然後填入地址)
+可到這個網站：[http://faucet.ropsten.be:3001/  ](http://faucet.ropsten.be:3001/，然後填入地址)
 
-![](/assets/螢幕快照 2018-01-30 下午10.35.40.png)之後確認我們的帳戶拿到測試後即可繼續進行
+然後在下方填入地址
+
+![](/assets/螢幕快照 2018-01-30 下午10.35.40.png)之後確認我們的帳戶拿到測試幣後即可繼續進行
 
 ![](/assets/螢幕快照 2018-01-30 下午10.36.54.png)
 
-之後選擇帳號，如果測試鏈還沒同步完成會出現如下畫面：
+接著回到Terminal選擇帳號，如果測試鏈還沒同步完成會出現如下畫面：
 
 ![](/assets/螢幕快照 2018-01-30 下午11.08.48.png)
 
