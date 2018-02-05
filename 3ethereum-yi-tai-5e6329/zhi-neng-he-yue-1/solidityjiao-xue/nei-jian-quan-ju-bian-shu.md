@@ -1,20 +1,20 @@
 #### 1.幣別單位
 
-wei, finney, szabo , ether
+wei, finney, szabo, ether
 
 可以直接使用，例如以下：
 
-```
+```js
 if(msg.value != 1 ether) throw;
 ```
 
 #### 2.時間單位
 
-seconds, minutes, hours, days, weeks , years
+seconds, minutes, hours, days, weeks, years
 
 範例：
 
-```
+```js
 function f(uint start, uint daysAfter) public {
     if (now >= start + daysAfter * 1 days) {
       // ...
