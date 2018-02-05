@@ -162,6 +162,7 @@ const decrypt = function(privateKey, opts) {
 const privateKey_yicheng = crypto.randomBytes(32);
 const publicKey_yicheng = getPublic(privateKey_yicheng);
 
+// 執行加密與解密
 encrypt(publicKey_yicheng, Buffer("I have one banana.")).then(function(encrypted) {
   console.log('Encrypted payload')
   console.log(encrypted)
