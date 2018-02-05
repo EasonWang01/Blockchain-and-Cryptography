@@ -1,6 +1,8 @@
 # Ethereum私有鏈
 
-這邊我們會自行建立一個genesis block創世區塊，然後啟動幾個私有鏈節點並互相連線，讓其區塊鏈資料進行同步。
+以太坊中可以建立私有鏈，私有鏈的資料與主鏈不相關，鏈上的資料都是獨立於主鏈的。
+
+這邊我們會自行建立一個創世區塊 \( Genesis block \)，並啟動幾個私有鏈節點互相連線，讓其區塊鏈資料進行同步。
 
 1.新增帳號
 
@@ -34,7 +36,7 @@ genesis.json
 
 > alloc欄位填上剛才新增的帳戶，可以預先分配Ether進去
 
-在來把檔案存到 ./ethPrivate 裡面，然後在Terminal輸入如下 :
+再來把`genesis.json`檔案存到 ./ethPrivate 裡面，然後在Terminal輸入如下指令來初始化 :
 
 ```
 geth --datadir ./ethPrivate init ./ethPrivate/genesis.json
@@ -44,25 +46,27 @@ geth --datadir ./ethPrivate init ./ethPrivate/genesis.json
 
 ![](/assets/3453455.png)
 
-之後回到Terminal，然後輸入如下指令啟動節點:
+回到Terminal，輸入如下指令啟動節點:
 
 ```
 geth --datadir ./ethPrivate --nodiscover --networkid 15 console
 ```
 
-然後輸入以下即可看到預先分配的Ether
+啟動後輸入以下指令，即可看到預先分配的Ether在 帳戶0 的餘額中。
 
 ![](/assets/903.png)
 
 ## 新增節點
 
-我們接著初始化另外一個節點，我們先在另一個資料夾內創建一個帳戶
+我們接著初始化另外一個節點，先在另一個資料夾內創建一個帳戶
 
 ```
 geth account new --datadir ./ethPrivate_01
 ```
 
 然後把剛才的genesis.json存入該節點，之後一樣初始化區塊鏈
+
+> 記得兩個genesis.json要相同。
 
 ```
 geth --datadir ./ethPrivate_01 init ./ethPrivate_01/genesis.json
@@ -76,9 +80,11 @@ geth --datadir ./ethPrivate_01 --nodiscover --networkid 15 --ipcpath ./.ipc/geth
 
 > 1.兩個節點要連線的關鍵點是genesis.json創世區塊要相同，以及networkid要相同。
 >
-> 2.節點port以及IPC path或RPC port要不同。
+> 2.每個節點監聽的 Port 要不同。
 >
-> 3.--nodiscover 是避免節點自己尋找其他節點連線
+> 3.每個節點的IPC path或RPC port要不同。
+>
+> 4.--nodiscover 是避免節點自己尋找其他節點連線。
 
 ## 讓兩節點連線
 
@@ -90,7 +96,7 @@ admin.nodeInfo
 
 然後把enode部分複製
 
-![](/assets/900.png)在另外一個節點輸入admin.addPeer
+![](/assets/900.png)在另外一個節點輸入`admin.addPeer` 指令，如下：
 
 > 括號內填入剛才上面複製的enode URL括號內填入
 
@@ -98,7 +104,7 @@ admin.nodeInfo
 admin.addPeer("enode://d86c9070b332da1f35690310f15dd728e1d65f749e61e00f1da412a86b483c6a536cbb19e64ef3fd43781d5802dbe3d05c83a882c342d2505fb6686514323326@[::]:30304?discport=0")
 ```
 
-然後輸入admin.peers確認
+然後輸入`admin.peers`確認目前已加入的節點：
 
 ![](/assets/9021.png)
 
@@ -106,7 +112,7 @@ admin.addPeer("enode://d86c9070b332da1f35690310f15dd728e1d65f749e61e00f1da412a86
 
 # 進行挖礦
 
-先設定要挖礦獎勵要到哪一個帳號
+先設定挖礦後的獎勵要到哪一個帳號
 
 ```
 miner.setEtherbase(eth.accounts[0])
@@ -118,9 +124,9 @@ miner.setEtherbase(eth.accounts[0])
 miner.start(1)
 ```
 
-> 後面數字代表用幾顆CPU核心來挖礦
+> 括號內數字代表用幾顆CPU核心來挖礦
 
-即可看到兩節點出現訊息
+執行後即可看到兩節點出現訊息，而挖到區塊後帳號內的餘額會增加。
 
 ![](/assets/201.png)可使用以下指令結束挖礦
 
@@ -148,5 +154,13 @@ eth.sendTransaction({from:eth.accounts[0], to: "0x0bc1d752dfe1e2595017738b5a944a
 miner.start(1)
 ```
 
+交易納入區塊後可以輸入以下指令即可看到目前帳戶餘額。
+
+```
+eth.getBalance(eth.account[0])
+```
+
 ![](/assets/9123.png)
+
+
 
