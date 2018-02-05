@@ -22,7 +22,7 @@ contract superman is man {
 
 #### 2.虛擬合約（Abstract Contracts）
 
-類似於繼承contract，不過在被繼承的contract不會實作邏輯內容
+類似於繼承，不過在被繼承的contract 中不會實作邏輯內容，到了繼承其合約的主合約才會實作。
 
 ```js
 contract bird {
@@ -34,11 +34,9 @@ contract Flybird is bird {
 }
 ```
 
-
-
 #### 3.介面（Interfaces）
 
-類似於虛擬合約，但其強制不可以於被繼承合約實作任何邏輯。
+類似於虛擬合約，但其強制不可以於被繼承合約實作任何邏輯，到了繼承其合約的主合約才可實作。
 
 ```js
 interface runningMan {
@@ -51,10 +49,6 @@ contract superman is swim {
   }
 }
 ```
-
-
-
-
 
 
 
