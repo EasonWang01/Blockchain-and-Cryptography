@@ -6,7 +6,7 @@
 
 ![](/assets/螢幕快照 2018-01-31 上午11.26.54.png)
 
-再來點擊Remix IDE上方的的Compile Tab然後按下Detail，並且複製下ABI，並且到Terminal中複製剛才合約部署的地址。
+再來點擊Remix IDE上方的的Compile Tab然後按下Detail，並且複製下ABI，以及到Terminal中複製剛才合約部署的地址。
 
 ![](/assets/螢幕快照 2018-01-31 上午11.28.45.png)
 
@@ -14,11 +14,11 @@
 
 我們回到剛才網頁程式中，開一個資料夾名為Contract，放在src路徑下，裡面新增index.js。
 
-/src/Contract/index.js內容：
+/src/Contract/index.js 內容：
 
 ```js
 export default {
-  ABI: 填上剛複製的ABI
+  ABI: "填上剛複製的ABI",
   address: "填上合約地址"
 }
 ```
