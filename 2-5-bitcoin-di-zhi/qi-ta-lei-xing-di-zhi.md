@@ -102,7 +102,7 @@ function numToBuffer(num) {
 
 > 圖片來源:[https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)
 
-先產生一個128 bits 的隨機Entropy，然後把他與預先定義的字典表對應產生12個對應單字，根據[BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) 從12個隨機單字產生了128-bit master seed，之後繼續往下階層式的產生出許多地址
+先產生一個128 bits 的隨機Entropy，然後把他與預先定義的字典表對應產生12個對應單字，根據[BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) 從12個隨機單字產生了512 bit 的 Master seed，之後繼續往下階層式的產生出許多地址。
 
 ## 第一步驟
 
