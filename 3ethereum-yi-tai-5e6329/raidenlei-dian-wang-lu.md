@@ -2,7 +2,7 @@
 
 雷電網路的作用類似於閃電網路，都是用來作為小額支付在區塊鏈上的解決方案。
 
-目前[Sharding](https://github.com/ethereum/sharding)與[Plasma](https://plasma.io/)等區塊鏈相關架構之解決方案都是為了解決區塊鏈上交易認證速度緩慢以及交易堵塞等問題，但目前只有雷電網路較為完整。
+目前[Sharding](https://github.com/ethereum/sharding)與[Plasma](https://plasma.io/)等區塊鏈相關架構之解決方案都是為了解決區塊鏈上交易認證速度緩慢以及交易堵塞等問題，而目前雷電網路為一個較為完整方案。
 
 雷電網路現階段只能在Ropsten測試鏈測試。
 
