@@ -26,7 +26,7 @@ make all
 
 #### 使用
 
-之後我們新增一個帳號
+我們先新增一個帳號
 
 ```
 ./geth account new
@@ -52,7 +52,7 @@ geth --datadir="./swarm_test" --ipcpath="~/Library/Ethereum/geth.ipc"
 
 ![](/assets/螢幕快照 2018-01-28 下午11.32.06.png)
 
-接著我們試著存入一筆文字，開啟另一個Terminal然後輸入以下
+接著我們來試著存入一筆文字，開啟另一個Terminal然後輸入以下
 
 ```
 curl -H "Content-Type: text/plain" --data-binary "every 60 seconds a minute passes" http://localhost:8500/bzz:/
