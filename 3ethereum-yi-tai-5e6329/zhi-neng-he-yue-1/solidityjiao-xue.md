@@ -86,9 +86,9 @@ function run(string person) public returns (uint step) {
 
 > 1.參數要包含型別
 >
-> 2.public為此function可被存取到的範圍
+> 2.public 為此 function 可被存取到的範圍
 >
-> 3.要寫出returns後面為此function會回傳的值以及型別
+> 3.如果Function 有 return值的話，要寫出 returns 後面接上 function 回傳值的型別
 
 有關存取範圍可以有以下四種external, public, internal, private
 
@@ -97,9 +97,9 @@ external:  只可以給外面的contract使用，不可內部使用。
 
 public:    都可呼叫，為預設。
 
-internal:  跟private類似，但如果是繼承該contract的contract也可以使用。
-
 private:   只有同contract才可使用。
+
+internal:  跟private類似，但如果是繼承該contract的contract也可以使用。
 ```
 
 #### 3.Modifiers
@@ -113,15 +113,15 @@ modifier onlyOwner {
 }
 ```
 
-用法
+> \_ ; 的意思為擁有這個modifier的function會先執行完寫在 modifier  \_ ; 之前的東西，之後才會繼續其本身Function的執行。
+
+用法：在 Function 最後面加上 modifier 的名稱
 
 ```
 function transferOwnership(address newOwner) onlyOwner { 
     owner = newOwner;
 }
 ```
-
-> \_ ; 的意思為擁有這個modifier的function會先跑完寫在 \_ ; 之前的東西才繼續該function
 
 #### 4.Events
 
