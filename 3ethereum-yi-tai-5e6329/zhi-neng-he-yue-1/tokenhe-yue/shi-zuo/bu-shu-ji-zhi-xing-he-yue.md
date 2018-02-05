@@ -9,9 +9,9 @@ Mist     (https://github.com/ethereum/mist)
 
 Remix IDE先前已經介紹過，這邊我們要來下載Mist，Mist是一個可以部署與執行智能合約的以太坊錢包。
 
-Mist下載頁面：[https://github.com/ethereum/mist/releases](https://github.com/ethereum/mist/releases)
+> Mist下載頁面：[https://github.com/ethereum/mist/releases](https://github.com/ethereum/mist/releases)
 
-我們剛才已經啟動一個私有鏈節點，這時我們可以直接開啟Mist，會自動連線到該節點，如果沒有的話可以用如下方式啟動，幫他指定要連線的RPC server位置。
+我們剛才已經啟動一個私有鏈節點，這時我們可以直接開啟Mist，會自動連線到該私有鏈節點，如果沒有連線到私有鏈的話可以用如下方式啟動，幫他指定要連線的RPC server位置。
 
 OSX :
 
@@ -33,13 +33,13 @@ OSX :
 
 部署後即可看到如下畫面：![](/assets/螢幕快照 2018-01-16 下午10.21.28.png)
 
-> 在Remix IDE右側畫面，如果是constant或是public的常數均可直接點選，查看數值。
+> 在Remix IDE右側畫面，如果是constant, view 或是 public的變數均可直接點選，查看數值。
 
 #### 
 
 ## 讓Ethereum wallet\(Mist\)讀取合約
 
-我們在Remix IDE點選compiler然後選擇ERC20\_token，最後按下Details按鈕。
+我們在Remix IDE點選compiler然後選擇ERC20\_token \( 剛才合約檔案名稱 \)，最後按下Details按鈕。
 
 #### ![](/assets/螢幕快照 2018-01-16 下午10.29.47.png)
 
@@ -47,7 +47,7 @@ OSX :
 
 ![](/assets/螢幕快照 2018-01-16 下午10.32.09.png)
 
-再來我們開啟剛才執行的Ethereum wallet\(Mist\)
+再來我們開啟剛才執行的Ethereum wallet \( Mist \)
 
 ![](/assets/螢幕快照 2018-01-16 下午10.35.31.png)
 
