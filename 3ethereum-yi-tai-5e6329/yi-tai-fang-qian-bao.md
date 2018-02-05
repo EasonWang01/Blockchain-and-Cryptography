@@ -10,13 +10,13 @@
 
 [https://github.com/ethereum/mist/releases](https://github.com/ethereum/mist/releases)
 
-Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌面應用程式。
+Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌面應用程式，可用其部署與執行合約。
 
 ![](/assets/螢幕快照 2018-01-13 下午11.36.17.png)
 
-其可以部署以及加入合約。
 
-> 移除加入的所有合約
+
+> 執行合約前會需要先加入合約，但目前介面上沒有移除按鈕，可以使用以下方法移除加入的所有合約：
 >
 > ```js
 > 開啟console: alt+ctrl+i 或是 option+command+i
@@ -26,7 +26,7 @@ Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌�
 
 ## MetaMask
 
-為一個Chrome瀏覽器的Plugin，可以用來產生地址、接送與發送交易。
+為一個Chrome瀏覽器的Plugin，可以用來產生地址、接送與發送交易，為目前廣為使用的Ethereum 瀏覽器 Plugin，因為可用其直接簽發Dapp的相關交易。
 
 [https://metamask.io/](https://metamask.io/)
 
@@ -36,7 +36,7 @@ Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌�
 
 [https://wallet.ethereum.org/](https://wallet.ethereum.org/)
 
-其會讀取MetaMask上的資料，並顯示在網頁上，可用來發送交易與部屬合約。
+其會讀取MetaMask上的資料，並顯示在此網頁上，可用來發送交易與部屬合約。
 
 > 與Mist介面相同
 
@@ -52,7 +52,7 @@ Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌�
 
 > ENS類似於以太坊的域名系統，可以把地址用域名表示。
 >
-> https://ens.domains/
+> [https://ens.domains/](https://ens.domains/)
 
 ![](/assets/螢幕快照 2018-02-02 上午10.16.25.png)
 
@@ -66,7 +66,7 @@ Mist是一個用[electron](https://github.com/atom/electron)框架寫成之桌�
 
 # Geth
 
-將會在之後章節詳細介紹，其主要為命令列介面，適合開發者使用，可以單獨跑節點，並且提供JSON-RPC可供呼叫，也可以當作錢包使用。
+將會在之後章節詳細介紹，為命令列介面，適合開發者使用，可以執行節點，並且提供JSON-RPC，也可以當作錢包使用。
 
 [https://geth.ethereum.org/downloads/](https://geth.ethereum.org/downloads/)
 
