@@ -120,7 +120,7 @@ personal.importRawKey(私鑰, 密碼)
 ```json
 {"address":"feddf8db160dcb85f793bfee734352760c4ab96e",
   "crypto":{"cipher":"aes-128-ctr",
-  "ciphertext":"39b03a3ba781ac6df72c6492e69c3c140e73f6a04d94ef31e2d9a72449003d9b",
+  "ciphertext":"19b03a3ba781ac6df72c6492e69c3c140e73f6a04d94ef31e2d9a72449003d9b",
   "cipherparams":{"iv":"d2faaaa483443d97c576f8b3b012c617"},
   "kdf":"scrypt",
   "kdfparams":{
