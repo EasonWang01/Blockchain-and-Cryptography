@@ -49,7 +49,6 @@
       * [內建全局變數](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue/nei-jian-quan-ju-bian-shu.md)
       * [繼承、虛擬合約、介面](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue/ji-cheng-3001-xu-ni-he-yue-3001-jie-mian.md)
       * [其他部分](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue/qi-ta-bu-fen.md)
-    * [合約練習](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/he-yue-lian-xi.md)
     * [ERC-20 token 合約](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/tokenhe-yue.md)
       * [實作](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/tokenhe-yue/shi-zuo.md)
         * [合約內容](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/tokenhe-yue/shi-zuo/he-yue-nei-rong.md)

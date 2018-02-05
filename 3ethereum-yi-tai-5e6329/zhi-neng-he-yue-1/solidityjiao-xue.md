@@ -12,16 +12,14 @@
 
 如果使用Remix IDE網頁則不需要安裝。
 
-http://solidity.readthedocs.io/en/latest/installing-solidity.html
+[http://solidity.readthedocs.io/en/latest/installing-solidity.html](http://solidity.readthedocs.io/en/latest/installing-solidity.html)
 
-使用Node.js套件：https://github.com/ethereum/solc-js
+使用Node.js套件：[https://github.com/ethereum/solc-js](https://github.com/ethereum/solc-js)
 
 ```
 npm install solc -g
 solcjs
 ```
-
-
 
 # 合約撰寫
 
