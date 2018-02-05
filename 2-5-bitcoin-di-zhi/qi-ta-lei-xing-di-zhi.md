@@ -102,8 +102,6 @@ function numToBuffer(num) {
 
 > 圖片來源:[https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)
 
-
-
 ## 第一步驟
 
 先產生一個128 bits 的隨機Entropy，然後把他與預先定義的字典表對應產生12個對應單字，根據[BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) 從12個隨機單字產生了512 bit 的 Master seed，之後繼續往下階層式的產生出許多地址。
@@ -638,7 +636,7 @@ http.get({
 
 # 地址不建議重複使用
 
-地址如果重複使用容易造成個人隱私上的暴露，所以許多交易所的地址會經常更換，其他相關資訊可參考如下連結:
+地址如果重複使用容易造成個人隱私上的暴露，所以許多交易所的地址會經常更換，其他相關資訊可參考如下連結 :
 
 [https://en.bitcoin.it/wiki/Address\_reuse](https://en.bitcoin.it/wiki/Address_reuse)
 
