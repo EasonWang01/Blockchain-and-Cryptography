@@ -2,9 +2,11 @@
 
 在一開始我們已經啟動了Geth的節點以及寫好了合約的程式在Remix IDE上，接下來我們要將合約從Remix IDE部署到本地Geth節點上。
 
-接著點擊Remix IDE上的Web3 Provider，然後點選Create。
+確認左方程式已經輸入後，點擊Remix IDE上的選項，選擇Web3 Provider，設定好部署環境，最後即可點選Create按鈕來部署合約。
 
-![](/assets/螢幕快照 2018-01-31 上午11.26.54.png)再來點擊上方的Compile Tab然後按下Detail，並且複製下ABI與剛才合約部署的地址。
+![](/assets/螢幕快照 2018-01-31 上午11.26.54.png)
+
+再來點擊Remix IDE上方的的Compile Tab然後按下Detail，並且複製下ABI，並且到Terminal中複製剛才合約部署的地址。
 
 ![](/assets/螢幕快照 2018-01-31 上午11.28.45.png)
 
@@ -373,5 +375,5 @@ export default App;
 
 完整程式可參考：
 
-https://github.com/EasonWang01/Members-Dapp
+[https://github.com/EasonWang01/Members-Dapp](https://github.com/EasonWang01/Members-Dapp)
 
