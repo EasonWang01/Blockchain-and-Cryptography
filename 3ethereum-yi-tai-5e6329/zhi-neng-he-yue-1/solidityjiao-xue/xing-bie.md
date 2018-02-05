@@ -128,5 +128,23 @@ function Test() constant returns (uint[]) {
 uint[] memory values = new uint[](3);
 ```
 
-http://solidity.readthedocs.io/en/develop/types.html\#allocating-memory-arrays
+[http://solidity.readthedocs.io/en/develop/types.html\#allocating-memory-arrays](http://solidity.readthedocs.io/en/develop/types.html#allocating-memory-arrays)
+
+#### 6.Boolean 
+
+與其他程式語言用法相同
+
+```
+!  (logical negation)
+&& (logical conjunction, “and”)
+|| (logical disjunction, “or”)
+== (equality)
+!= (inequality)
+```
+
+#### 7.Integer
+
+與其他程式語言用法相同，包含sign和unsign \( int / uint \)，範圍從8到256， e.g. `uint8, uint16, uint 32 ... uint256`
+
+
 
