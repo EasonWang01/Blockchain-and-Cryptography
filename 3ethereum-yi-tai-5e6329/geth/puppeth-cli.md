@@ -18,9 +18,9 @@ geth --datadir ./eth_clique_test account new
 
 1.
 
-進入後先輸入一個network 名稱 \(隨意輸入\)![](/assets/螢幕快照 2018-01-13 上午8.49.18.png)2.
+進入後先輸入一個network 名稱 ![](/assets/螢幕快照 2018-01-13 上午8.49.18.png)2.
 
-然後選擇你要做的事
+然後選擇要進行的動作
 
 ![](/assets/螢幕快照 2018-01-13 上午9.12.31 1.png)
 
