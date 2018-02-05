@@ -102,20 +102,16 @@ function numToBuffer(num) {
 
 > 圖片來源:[https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)
 
+
+
+## 第一步驟
+
 先產生一個128 bits 的隨機Entropy，然後把他與預先定義的字典表對應產生12個對應單字，根據[BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) 從12個隨機單字產生了512 bit 的 Master seed，之後繼續往下階層式的產生出許多地址。
 
 > ```
 > Mnemonic code for generating deterministic keys :
 > https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
 > ```
-
-## 第一步驟
-
-1.先用 seed 產生一個master key，而 seed 的長度需要是 128、256 或 512 bits
-
-2.然後將 seed 去執行 HMAC-SHA512 加密，之後會產生一個長度為 512 bits 的結果
-
-> 前 256 bits 為 master private key，後 256 bits 為 master chain code ，master chain code 代表 entropy\(熵\)，之後再往下產生 child keys 時會用到。
 
 ## 第二步驟
 
