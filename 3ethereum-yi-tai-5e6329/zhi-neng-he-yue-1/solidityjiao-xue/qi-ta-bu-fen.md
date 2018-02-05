@@ -103,7 +103,7 @@ function showString() public pure returns(string) {
 
 #### 確認地址是否存在
 
-使用address\(0\)或是address\(0x0\)
+使用`address(0)`或是`address(0x0)`
 
 範例：
 
