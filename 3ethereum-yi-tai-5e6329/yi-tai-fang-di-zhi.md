@@ -170,8 +170,6 @@ Error-detection code: 產生Checksum (ISO/IEC 7064:2003);
 The basic bank account number (BBAN): 包含 機構、分行、客戶帳號等資訊。
 ```
 
-另一個名詞為BBAN，即為IBAN中的第三個部分，因為沒有統一格式，所以後來才進行擴充，誕生了IBAN。
-
 Ethereum的ICAP地址由以下三個部分所組合：
 
 ```
@@ -180,9 +178,13 @@ Ethereum的ICAP地址由以下三個部分所組合：
 3.三種可能類型的 account identifier
 ```
 
-有關最後一部分三種可能類型的 account identifier包含以下Direct、Basic、Indirect：
+## BBAN
 
-> 將會以base-36進行編碼
+另一個名詞為BBAN，即為IBAN中的第三個部分，因為沒有統一格式，所以後來才進行擴充，誕生了IBAN。
+
+有關三種可能類型的 account identifier 包含以下 Direct、Basic、Indirect：
+
+> 均會以base-36進行編碼
 
 #### 1.Direct
 
