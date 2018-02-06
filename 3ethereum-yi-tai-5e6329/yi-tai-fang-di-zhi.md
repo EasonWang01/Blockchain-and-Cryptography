@@ -8,7 +8,7 @@ Externally owned account \( EOA \) 地址為任何擁有私鑰之人即可用私
 
 在Ethereum EOA地址產生過程中，一樣使用橢圓曲線產生公鑰與私鑰，採用secp256k1曲線。其中公鑰使用 uncompressed 模式。
 
-之後把公鑰移除開頭第一個byte，進行SHA3 \( keccak-256 \)雜湊，會得到長度為64的Hex字串，最後取後面40個字，再加上"0x"，即為地址。
+之後把公鑰移除開頭第一個byte，進行SHA3 \( keccak-256 \)雜湊，會得到長度為64的Hex字串，最後取後面40個字，再加上`0x`，即為地址。
 
 使用原生模組搭配SHA3模組產生地址
 
@@ -62,7 +62,7 @@ console.log(`0x${instance.getAddress().toString('hex')}`)
 
 ## Contract address\( 合約地址 \)
 
-當我們部署合約後每個合約會有一個相對應的地址，之後執行合約時都要指定要執行的合約地址。
+當我們部署智能合約後，每個合約會有一個相對應的地址，之後執行合約時都要指定要執行的合約地址。
 
 合約地址的產生方式具有一定邏輯，合約地址會依據部屬合約人的地址以及該部署人之地址總共部屬了幾個合約而定。
 
@@ -105,7 +105,7 @@ getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 1)
 getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 2)
 ```
 
-![](/assets/fefw24.png)對照上圖即可看到右下角之Remix IDE 產生
+![](/assets/fefw24.png)看從上圖看到右下角之Remix IDE 部署後的合約地址與我們用程式計算出的地址相同。
 
 # 從keyFIle復原出私鑰
 
@@ -162,12 +162,12 @@ console.log(privateKey.toString('hex'));
 
 以太坊地址的另一種格式名為ICAP，與國際間銀行常用的IBAN格式相容，但目前支援此種地址的錢包較少。
 
-在Ethereum中的iban的country code為`XE` 來源為 Ethereum 開頭的字母 E 與 "extended" 意思的 X，有關IBAN的詳細說明可參考 \( 註1 \) 的網址，簡言之IBAN是轉帳時用來辨識銀行的號碼，其中包含以下資訊：帳號、銀行與分行名稱、所在國家號碼IBAN一般來說不能超過34個字。
+在Ethereum中， IBAN 的country code為`XE` 來源為 Ethereum 開頭的字母 `E` ，而 `X`  意思為 `extended`  ，有關IBAN的詳細說明可參考 \( 註1 \) 的網址，簡言之，IBAN是轉帳時用來辨識銀行的號碼，其中包含以下資訊：帳號、銀行與分行名稱、所在國家號碼。IBAN一般來說不能超過34個字。
 
 ```
 Country code: 國家號碼 (ISO 3166-1 alpha-2);
 Error-detection code: 產生Checksum (ISO/IEC 7064:2003);
-The basic bank account number (BBAN): 包含 institution, branch and client account等資訊。
+The basic bank account number (BBAN): 包含 機構、分行、客戶帳號等資訊。
 ```
 
 另一個名詞為BBAN，即為IBAN中的第三個部分，因為沒有統一格式，所以後來才進行擴充，誕生了IBAN。
