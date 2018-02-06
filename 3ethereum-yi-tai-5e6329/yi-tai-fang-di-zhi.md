@@ -2,7 +2,7 @@
 
 以太坊中有兩種地址，分別為Externally owned account \( EOA \) 與 Contract address\( 合約地址 \)。
 
-Externally owned account \( EOA \) 地址為任何擁有私鑰之人即可用私鑰進行地址來進行發送交易與簽名等動作，而後者 Contract address \( 合約地址 \) 受到智能合約的程式邏輯所管控，也就是該合約的地址。
+Externally owned account \( EOA \) 地址為任何擁有私鑰之人即可用私鑰進行地址來進行發送交易與簽名等動作，而後者 Contract address \( 合約地址 \) 受到智能合約的程式邏輯所管控，也就是該合約部署後的地址。
 
 ## Externally owned account \(EOA\)
 
