@@ -10,7 +10,7 @@ geth --dev --rpc --rpcport 8545 --datadir ./Ethtest_ERC20 --rpccorsdomain="*" --
 
 > 因為之後使用的Mist錢包需要具有相關RPC API權限，所以加上：--rpcapi="eth,net,web3,personal"
 
-這時裡面會有一個預設account，我們再新增兩個帳號
+這時裡面會有一個預設account，而我們再新增兩個帳號
 
 ```
 personal.newAccount()
@@ -39,7 +39,7 @@ web3.fromWei(eth.getBalance(eth.accounts[1]))
 
 [http://remix.ethereum.org](http://remix.ethereum.org)
 
-> 一樣使用http protocol，才能連線到本地節點
+> 一樣於網址輸入http開頭 \( 不使用https \) 的Remix IDE 網址，之後才能連線到本地節點
 
 接著跟先前章節一樣，與本地節點連線。
 
@@ -47,7 +47,7 @@ web3.fromWei(eth.getBalance(eth.accounts[1]))
 
 #### 新增合約
 
-此時我們新增兩個檔案
+此時我們點選如下圖的加號按鈕，新增兩個檔案
 
 ```
 ERC20_interface.sol
@@ -84,6 +84,8 @@ contract ERC20_interface {
 > 此即為在ERC20所定義之需要實作的介面。
 
 然後開啟另一個ERC20\_token.sol檔案，新增如下程式碼 :
+
+> 合約說明均寫在註解內
 
 ```js
 pragma solidity ^0.4.19;      // 指定Compiler版本

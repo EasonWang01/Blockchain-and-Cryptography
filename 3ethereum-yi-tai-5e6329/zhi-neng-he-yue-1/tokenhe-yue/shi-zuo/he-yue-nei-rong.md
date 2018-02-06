@@ -1,6 +1,6 @@
 # 合約內容
 
-我們接下來講解ERC20\_token.sol的合約內容：
+我們接下來講解 ERC20\_token.sol 的合約內容：
 
 1.首先我們會在 ERC20\_token.sol 檔案，引入另一個 ERC20\_interface.sol 檔案。
 
@@ -28,7 +28,7 @@ uint8 public decimals = 18; // 小數點，官方建議為18。因為EVM目前�
 string public symbol;       // 一個代表合約的符號 e.g. ^_^
 address owner;              // 存放合約擁有者地址
 uint256 public buyPrice;    // 一單位Ether可以換多少token
-uint private weiToEther = 10 ** 18; // 把單位從wei轉為Ether，因為msg.value預設是以wei為單位。
+uint private weiToEther = 10 ** 18; // 把單位從wei轉為Ether，因為msg.value預設是以wei為單位，轉為Ether比較方便我們去看。
 ```
 
 3.接著寫出此合約的建構子 \( 合約部署即會執行一次 \)，以及共用的Modifyer。
@@ -43,7 +43,7 @@ function ERC20_token(
   string _tokenName,
   string _tokenSymbol
 ) public {
-  totalSupply = _initialSupply * 10 ** uint256(decimals); // token總量
+  totalSupply = _initialSupply * 10 ** uint256(decimals); // token總量，後面乘上 10 ** uint256(decimals) 當作小數點
   balances[msg.sender] = totalSupply; // 設定合約token擁有者為合約部屬者
 
   name = _tokenName;     // token名稱
