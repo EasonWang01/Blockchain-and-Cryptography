@@ -3,8 +3,8 @@
 這邊我們會使用兩個工具
 
 ```
-Remix IDE(http://remix.ethereum.org)
-Mist     (https://github.com/ethereum/mist)
+Remix IDE  (http://remix.ethereum.org)
+Mist       (https://github.com/ethereum/mist)
 ```
 
 Remix IDE先前已經介紹過，這邊我們要來下載Mist，Mist是一個可以部署與執行智能合約的以太坊錢包。
