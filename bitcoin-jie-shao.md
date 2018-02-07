@@ -1,6 +1,6 @@
 # Bitcoin 介紹
 
-以下連結為比特幣的白皮書，寫了比特幣的核心原理與概念  
+比特幣的白皮書在2008年發行，包含了比特幣的核心原理與概念。  
 [https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)![](/assets/螢幕快照 2018-01-31 下午11.22.23.png)以下引言自：[https://bitcoin.org/en/developer-guide\#block-chain](https://bitcoin.org/en/developer-guide#block-chain)
 
 > The block chain provides Bitcoin’s public ledger, an ordered and timestamped record of transactions. This system is used to protect against double spending and modification of previous transaction records.
@@ -13,7 +13,7 @@
 
 比特幣的礦工們利用挖礦賺取比特幣，挖礦的過程等同於協助驗證交易與區塊，最後組成一個公開帳本`Bitcoin’s public ledger`
 
-人們用比特幣來進行交易與投資。
+人們用比特幣來進行交易。
 
 # 官方網站
 

@@ -2,7 +2,7 @@
 
 以太坊中可以建立私有鏈，私有鏈的資料與主鏈不相關，鏈上的資料都是獨立於主鏈的。
 
-這邊我們會自行建立一個創世區塊 \( Genesis block \)，並啟動幾個私有鏈節點互相連線，讓其區塊鏈資料進行同步。
+這邊我們會自行建立一個創世區塊（Genesis block），並啟動幾個私有鏈節點互相連線，讓其區塊鏈資料進行同步。
 
 1.新增帳號
 
@@ -78,7 +78,7 @@ geth --datadir ./ethPrivate_01 init ./ethPrivate_01/genesis.json
 geth --datadir ./ethPrivate_01 --nodiscover --networkid 15 --ipcpath ./.ipc/geth1.ipc --port 30304 console
 ```
 
-> 1.兩個節點要連線的關鍵點是genesis.json創世區塊要相同，以及networkid要相同。
+> 1.兩個節點要連線的關鍵點是genesis.json創世區塊要相同，以及networkid要相同（註一）。
 >
 > 2.每個節點監聽的 Port 要不同。
 >
@@ -161,6 +161,40 @@ eth.getBalance(eth.account[0])
 ```
 
 ![](/assets/9123.png)
+
+---
+
+註一：
+
+Network ID：用來識別不同網路的號碼
+
+以下為目前已被使用的ID
+
+```json
+0: Olympic; Ethereum public pre-release testnet
+
+1: Frontier; Homestead, Metropolis, the Ethereum public main network
+
+1: Classic; The (un)forked public Ethereum Classic main network, chain ID 61
+
+1: Expanse; An alternative Ethereum implementation, chain ID 2
+
+2: Morden; The public Ethereum testnet, now Ethereum Classic testnet
+
+3: Ropsten; The public cross-client Ethereum testnet
+
+4: Rinkeby: The public Geth Ethereum testnet
+
+42: Kovan; The public Parity Ethereum testnet
+
+77: Sokol; The public POA testnet
+
+99: POA; The public Proof of Authority Ethereum network
+
+7762959: Musicoin; The music blockchain
+```
+
+> https://ethereum.stackexchange.com/a/17101
 
 
 
