@@ -30,7 +30,9 @@
 
 [https://github.com/ethereum/pyethapp/\#installation-on-ubuntudebian](https://github.com/ethereum/pyethapp/#installation-on-ubuntudebian)
 
-然後
+安裝好以上基本需求後，可以開始安裝 raiden-network 程式
+
+> 因為目前還在Poc階段，所以是獨立的程式
 
 ```
 git clone https://github.com/raiden-network/raiden.git
