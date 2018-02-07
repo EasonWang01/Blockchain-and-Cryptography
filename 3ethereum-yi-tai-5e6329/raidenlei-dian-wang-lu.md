@@ -43,7 +43,7 @@ python setup.py develop
 
 #### 同步節點
 
-目前只能使用完全同步後的Ropsten測試網路來進行Raiden雷電網路的執行，輸入以下指令來進行節點同步。
+目前只能使用完全同步後的Ropsten測試網路來進行Raiden雷電網路的執行，輸入以下指令來進行Ropsten測試網路的節點同步。
 
 ```
 parity --chain ropsten --bootnodes \
@@ -65,19 +65,23 @@ a349691242576d552a2a56aaeae426c5303ded677ce455ba1acd9d@13.84.180.240:30303"
 raiden --keystore-path $HOME/Library/Application\ Support/io.parity.ethereum/keys/test
 ```
 
-Parity的Ropsten鏈Key 通常會存在以下路徑：
+> --keystore-path 用來指定要使用哪個keys目錄。
+>
+> 在Parity的Ropsten鏈中，帳號金鑰通常會存在以下路徑：
+>
+> ```
+> Windows: %UserProfile%\AppData\Roaming\Parity\keys\test
+> macOS: $HOME/Library/Application\ Support/io.parity.ethereum/keys/test
+> Linux: ~/.local/share/io.parity.ethereum/keys/test
+> ```
 
-```
-Windows: %UserProfile%\AppData\Roaming\Parity\keys\test
-macOS: $HOME/Library/Application\ Support/io.parity.ethereum/keys/test
-Linux: ~/.local/share/io.parity.ethereum/keys/test
-```
 
-之後會進入如下畫面
+
+啟動後會進入如下畫面
 
 ![](/assets/螢幕快照 2018-01-30 下午10.32.19.png)
 
-然後我們選擇一個在Parity創建的帳號：
+然後我們選擇一個先前在Parity創建的帳號：
 
 ![](/assets/螢幕快照 2018-01-30 下午10.32.48.png)
 
