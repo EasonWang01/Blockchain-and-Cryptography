@@ -1,4 +1,4 @@
-# 常用指令
+# 常用指令與函式
 
 #### 設定要讀取哪一個節點上的資料。
 
@@ -12,7 +12,7 @@ if (typeof web3 !== 'undefined') {
 }
 ```
 
-> 如果在程式是寫localhost為provider，但是在有安裝Metamask的瀏覽器打開此Dapp，則Chrome devtool的console輸入web3時會去讀取Metamask之RPC，但寫在程式中的web3.eth.accounts還是會去讀取localhost RPC。
+> 如果在程式是寫localhost為provider，但是在有安裝Metamask的瀏覽器打開此Dapp，在Chrome devtool的console輸入web3時會去讀取Metamask之RPC，但寫在程式中的web3.eth.accounts還是會去讀取localhost 的 RPC。
 
 也可以使用第三方提供的節點來取得資訊，例如[https://infura.io/](https://infura.io/)
 
@@ -41,20 +41,20 @@ web3.fromWei(1000000000000000000, "ether")
 
 從其他單位轉為Wei :
 
-```
+```js
 web3.toWei('1', 'ether');
 ```
 
 可用單位包含 :
 
 ```
-kwei/ada
-mwei/babbage
-gwei/shannon
+kwei / ada
+mwei / babbage
+gwei / shannon
 szabo
 finney
 ether
-kether/grand/einstein
+kether / grand / einstein
 mether
 gether
 tether
@@ -62,13 +62,13 @@ tether
 
 #### 查看帳號餘額
 
-```
+```js
 eth.getBalance(帳號)
 ```
 
 使用Ether表示：
 
-```
+```js
 web3.fromWei(eth.getBalance(帳號), "ether")
 ```
 
@@ -81,7 +81,7 @@ web3.eth.estimateGas({
 });
 ```
 
-> 也可使用Remix IDE的 Detail 按鈕點擊後下拉到 GASESTIMATES 部分查看，但可能會比較不準確。
+> 也可使用Remix IDE的 Detail 按鈕點擊後下拉到 `GAS ESTIMATES` 部分查看，但可能會比較不準確。
 
 [https://github.com/ethereum/wiki/wiki/JavaScript-API\#web3ethestimategas](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethestimategas)
 
@@ -93,11 +93,11 @@ Contract.合約Function(參數, {from: web3.eth.accounts[0], gas: 111700})
 
 > 如果合約Function有參數，則記得在最後面加上 `{from: 執行交易人地址, gas: gas使用量}`即可
 >
-> gas 參數指的是 gas Limit
+> 第二個 gas 參數指的是 `gas Limit`
 
 #### 發送交易
 
-```
+```js
 eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(0.05, "ether")})
 ```
 
@@ -115,17 +115,17 @@ web3.eth.sendTransaction({
 })
 ```
 
-> 與交易相關的還有nonce值，每次發送交易後該nonce值都會加一，如果該地址後面發出的交易nonce小於上一筆發出交易的nonce則無法成功發送。
+> 與交易相關的還有 nonce 值，每次發送交易後該 nonce 值都會加一，如果該地址後面發出的交易 nonce 小於其上一筆發出交易的nonce則無法成功發送。
 
 #### 取得目前鏈上的Gas Price
 
-```
+```js
 web3.eth.getGasPrice(function(err, result) {console.log(result)})
 ```
 
 #### 檢查連線
 
-```
+```js
 web3.isConnected()
 ```
 
@@ -141,13 +141,13 @@ if(!web3.isConnected()) {
 
 #### 讀取目前預設帳號
 
-```
+```js
 web3.eth.defaultAccount
 ```
 
-當我們使用Metamask時選擇不同帳號，`defaultAccount` 也會跟著更改。
+當我們使用Metamask時，選擇不同帳號，`defaultAccount` 也會跟著更改。
 
-會影響以下兩個Function執行時選擇的帳號。
+會影響以下兩個Function執行時預設選擇的帳號。
 
 ```js
 web3.eth.sendTransaction()
@@ -156,7 +156,7 @@ web3.eth.call()
 
 > 但也可以在Function 設定 `{ from: 帳號 }` 來修改
 
-如果要修改default account直接在後面加上 `= <帳號>`  即可
+如果要修改預設帳號直接輸入以下，並且在等號後面加上 `<帳號>`  即可
 
 ```
 web3.eth.defaultAccount = "0x76d87e6a4069e4a463ec6a1eb7b73738282906d5"
@@ -215,7 +215,7 @@ web3.eth.getTransactionCount(地址)
 
 #### 查看節點是否正在進行同步
 
-```
+```js
 web3.eth.getSyncing(function(error, result){ console.log(result) })
 ```
 

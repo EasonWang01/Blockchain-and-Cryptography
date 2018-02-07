@@ -55,7 +55,7 @@
         * [部署及執行合約](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/tokenhe-yue/shi-zuo/bu-shu-ji-zhi-xing-he-yue.md)
   * [Dapp](3ethereum-yi-tai-5e6329/dapp.md)
     * [Web3](3ethereum-yi-tai-5e6329/web3.md)
-      * [常用指令](3ethereum-yi-tai-5e6329/web3/chang-yong-zhi-ling.md)
+      * [常用指令與函式](3ethereum-yi-tai-5e6329/web3/chang-yong-zhi-ling.md)
     * [實作](3ethereum-yi-tai-5e6329/shi-zuo.md)
       * [實作第二部分](3ethereum-yi-tai-5e6329/shi-zuo/shi-zuo-di-er-bu-fen.md)
   * [Ethereum Swarm](3ethereum-yi-tai-5e6329/ethereum-swarm.md)
