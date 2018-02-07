@@ -32,7 +32,7 @@
 
 安裝好以上基本需求後，可以開始安裝 raiden-network 程式
 
-> 因為目前還在Poc階段，所以是獨立的程式
+> 因為目前還在PoC階段，所以是獨立的程式
 
 ```
 git clone https://github.com/raiden-network/raiden.git
