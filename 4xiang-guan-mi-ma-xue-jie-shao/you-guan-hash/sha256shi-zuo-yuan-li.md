@@ -18,18 +18,15 @@
 
 ### 第二步:
 
-寫出八個initial hash value\( 此為被預先定義之固定值 \)
+寫出八個 initial hash value（此為被預先定義之固定值）
 
-![](/assets/螢幕快照 2018-02-01 上午9.05.43.png)
+#### ![](/assets/螢幕快照 2018-02-01 上午9.05.43.png)
 
-```
-原理: 
+##### 原理：
 
+```js
 先取Math.sqrt(n)的小數，然後乘上2 ** 32，之後轉為16進位，然後取小數前面部分
-其中math.sqrt(n) n為最小的八個質數 
-
-範例: (Math.sqrt(2) % 1 * (2**32)).toString(16).substring(0,8)
-
+其中math.sqrt(n)，n為從0往上找到的最小八個質數。 
 
 H(0)
 1 = 6a09e667            
@@ -64,14 +61,16 @@ H(0)
 (Math.sqrt(19) % 1 * (2**32)).toString(16).substring(0,8)
 ```
 
+
+
 ### 第三步
 
 寫出 64 個固定 k 值
 
-![](/assets/螢幕快照 2018-02-01 上午9.07.07.png)
+![](/assets/螢幕快照 2018-02-01 上午9.07.07.png)**原理： **
 
-```
-原理: 用Math cube root的方法找首64個質數
+```js
+用Math cube root的方法找首64個質數
 
 (Math.cbrt(2) * (2**32)).toString(16).substring(1,9)
 "428a2f98"
@@ -82,6 +81,8 @@ H(0)
 (Math.cbrt(5) * (2**32)).toString(16).substring(1,9)
 "b5c0fbcf"
 ```
+
+
 
 ### 第四步:
 
@@ -148,12 +149,12 @@ data = (data).toString();
 let s = ""
 let s1 = ""
 
-//將字串轉為二進位ASCII
+// 將字串轉為二進位ASCII
 function ascii (a) { 
   let dd = "";
   for(let i = 0 ; i< a.length; i++) {
     let charAscII = a.charAt(i).charCodeAt(0).toString(2)
-    while(charAscII.length < 8) { //最前面的0都會被省略，所以手動加上
+    while(charAscII.length < 8) { // 最前面的0都會被省略，所以手動加上
       charAscII = 0 + charAscII
     }
     dd += charAscII; 
@@ -161,11 +162,11 @@ function ascii (a) {
   return dd
 }
 
-let msgLengthToBinary = ((ascii(data).length).toString(2).length); //計算訊息有幾個字元再轉為二進位數字的長度
-let BinarymsgLength = (ascii(data).length); //訊息的二進位的長度
+let msgLengthToBinary = ((ascii(data).length).toString(2).length); // 計算訊息有幾個字元再轉為二進位數字的長度
+let BinarymsgLength = (ascii(data).length); // 訊息的二進位的長度
 
-for(i = 0; i < 448 - 1 - BinarymsgLength; i++) {s += 0} //前面補448bit 0
-for(i = 0; i < 64 - msgLengthToBinary ; i++) {s1 += 0} //後面補64 bit 0
+for(i = 0; i < 448 - 1 - BinarymsgLength; i++) {s += 0} // 前面補448 bit 的 0
+for(i = 0; i < 64 - msgLengthToBinary ; i++) {s1 += 0} // 後面補64 bit 的 0
 
 let msgLength = ascii(data).length;
 let frontPad = ascii(data) + 1 + s + s1 + (ascii(data).length).toString(2);
@@ -325,20 +326,22 @@ Sha256.prototype._hash = function () {
   return H
 }
 
-//範例:
+// 執行:
 
 let hashString = new Sha256().digest('test','hex');
 
 console.log(hashString)
 ```
 
-使用Node.js的crypto模組進行驗證
+使用 Node.js 的 crypto 模組進行驗證，可以得到相同的雜湊值。
 
-```
+```js
 const crypto = require('crypto');
 let result = crypto.createHash('sha256').update('test').digest('hex')
 console.log(result)
 ```
+
+
 
 參考資料：
 
