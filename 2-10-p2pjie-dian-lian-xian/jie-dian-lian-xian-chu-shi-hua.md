@@ -10,7 +10,7 @@ Step 3: A 節點送出 verack 請求
 
 ![](/assets/螢幕快照 2017-12-18 下午11.08.24.png)
 
-節點會先送出一個[`version`message](https://bitcoin.org/en/developer-reference#version) 給目標連線的節點，而該請求被另一個節點接收到並接收後會回覆[`verack`message](https://bitcoin.org/en/developer-reference#verack)，這跟TCP的握手階段類似。
+節點會先送出一個[`version`](https://bitcoin.org/en/developer-reference#version) 訊息給目標連線的節點，而該請求被另一個節點接收到並接收後會回覆[`verack`](https://bitcoin.org/en/developer-reference#verack)，可發現與TCP的握手階段類似。
 
 > version message發送，寫於原始碼，如下圖![](/assets/ˊ啊6876.png)[https://github.com/bitcoin/bitcoin/blob/d3cb2b8acfce36d359262b4afd7e7235eff106b0/src/net.cpp\#L562](https://github.com/bitcoin/bitcoin/blob/d3cb2b8acfce36d359262b4afd7e7235eff106b0/src/net.cpp#L562)
 
@@ -154,7 +154,7 @@ const buffer = new Buffer('f9beb4d9706f6e670000000000000000080000002ddab80398a05
 
 ![](/assets/螢幕快照 2017-12-26 下午7.38.28.png)
 
-mempool的請求不帶有payload
+> mempool的請求不帶有payload
 
 ![](/assets/螢幕快照 2017-12-26 下午7.42.45.png)將上面程式的 Buffer 部分改為如下再次執行，即可模擬
 

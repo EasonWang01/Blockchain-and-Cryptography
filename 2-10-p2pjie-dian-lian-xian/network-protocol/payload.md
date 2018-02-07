@@ -2,7 +2,7 @@
 
 此為訊息的主體部分，大部分的節點訊息交換資料都會在這。
 
-> 可參考比特幣開發者官網
+> 可參考比特幣官網
 >
 > [https://bitcoin.org/en/developer-reference\#message-headers](https://bitcoin.org/en/developer-reference#data-messages)
 
@@ -22,7 +22,7 @@
 
 # 節點訊息傳送內容
 
-以下以Version訊息為範例 :
+以下將以Version訊息為範例 :
 
 > 在官方資料上節點分為 『 transmitting node \(發出方\) 』 與 『 receiving node（接收方）』，如果請求從本地發出則本地的節點即為transmitting node\(發出方\)角色，反之。
 
@@ -228,7 +228,7 @@ function double_sha256(payload) {
 
 ---
 
-> 我們看到的Hex 都屬於Little endian 也稱為 Small endian \( 附註1 \)
+> 在節點交換訊息中，看到的 Hex 排列方式都屬於 Little endian 也稱為 Small endian \( 附註1 \)
 >
 > ```
 > 如果有一個數字：70015 轉為16進位後為 1117F
@@ -242,7 +242,7 @@ function double_sha256(payload) {
 
 ![](/assets/螢幕快照 2017-12-15 下午4.16.07.png)
 
-比特幣封包內容均以 16進位的 Small Endian表示
+比特幣封包內容均以 16 進位的 Small Endian 表示
 
 > BigEndian 轉 SmallEndian可用此程式轉換：
 >
