@@ -8,13 +8,14 @@
 geth --dev --rpc --rpcport 8545 --datadir ./Ethtest_ERC20 --rpccorsdomain="*" --rpcapi="eth,net,web3,personal" console
 ```
 
-> 因為之後使用的Mist錢包需要具有相關RPC API權限，所以加上：--rpcapi="eth,net,web3,personal"
+> 因為之後使用的Mist錢包需要具有相關RPC API 權限，所以加上：--rpcapi="eth,net,web3,personal"
 
 這時裡面會有一個預設account，而我們再新增兩個帳號
 
+> 輸入兩次以下指令：
+
 ```
 personal.newAccount()
-// 輸入兩次
 ```
 
 ![](/assets/螢幕快照 2018-01-16 下午8.17.40.png)
