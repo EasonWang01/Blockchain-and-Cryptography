@@ -46,5 +46,20 @@ contract ERC20Interface {
 }
 ```
 
+#### 其他與Token相關的規範
+
+```
+ERC223
+https://github.com/ethereum/EIPs/issues/223
+
+ERC777
+https://github.com/ethereum/EIPs/issues/777
+
+ERC721
+https://github.com/ethereum/EIPs/issues/721
+```
+
+> 其中ERC223與ERC777均為了改善ERC20的相關缺點，而ERC721為`non-fungible` token，例如CryptoKitty網頁遊戲的智能合約及為此種Token。
+
 
 
