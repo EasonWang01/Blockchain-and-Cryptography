@@ -12,7 +12,7 @@
 >
 > [https://github.com/ethers-io/ethers.js/](https://github.com/ethers-io/ethers.js/)
 
-Web3許多Function都可以寫為異步或同步執行，但在Metamask中大部分Function都只允許異步執行。
+Web3 中的許多Function都可以寫為異步 \(Asynchronous\) 或同步 \(Synchronous\) 執行，但在Metamask中大部分Function都只允許使用異步的寫法來執行。
 
 > [https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#dizzy-all-async---think-of-metamask-as-a-light-client](https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md#dizzy-all-async---think-of-metamask-as-a-light-client)
 
