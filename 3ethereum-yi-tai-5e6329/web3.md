@@ -93,15 +93,15 @@ class App extends Component {
 export default App;
 ```
 
-即可看到網頁上讀取出帳號。
+儲存檔案後，即可看到網頁上讀取出帳號。
 
 接著我們回到Geth console，輸入如下新增帳號
 
 ```
-personal.newAccount
+personal.newAccount()
 ```
 
-轉帳100 Ether
+轉帳100 Ether，給這個帳號：
 
 ```
 eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(100, "ether")})
@@ -109,9 +109,9 @@ eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(10
 
 之後查看網頁 :
 
-> 因為我們使用的是 --dev 所以自動設定為Proof of Authority，所以產生交易後不需要手動挖礦即可生效
+> 因為我們使用的是 --dev 其設定為Proof of Authority，所以產生交易後不需要手動挖礦即可生效
 
-![](/assets/sdca.png)之後我們新增可以讀取區塊上資料之功能。
+![](/assets/sdca.png)再來我們新增可以讀取區塊上資料之功能。
 
 > 先讀取出目前區塊的高度後，再去讀出每個區塊的內容。
 
@@ -133,7 +133,7 @@ this.setState({ blocks });
 // 讀出特定地址之所有交易
 getTransactions(address) {
   let accountTransactions = [];
-  this.state.blocks.forEach(block => {
+  this.state.blocks.forEach(block => { // 遍歷每個區塊中的每筆交易
     block.transactions.forEach(transaction => {
       if (transaction.from === address || transaction.to === address) {
         accountTransactions.push(transaction);
