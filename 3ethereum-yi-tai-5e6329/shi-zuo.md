@@ -22,6 +22,7 @@ contract HonestClub {
     address public clubMaster;
     Member[] public members;
 
+    // 會員的資料內容  
     struct Member {
         string name;
         string email; 
@@ -96,13 +97,13 @@ cd honestClub
 
 再來安裝我們會用到第三方模組：
 
-> 除了web3以外其他均為UI相關模組
+> 在以下安裝的模組中，除了web3以外，其他均為UI相關模組
 
 ```
 npm install web3@0.20.4  semantic-ui-react@0.77.2 semantic-ui-css@2.2.14 react-pure-css-modal
 ```
 
-然後執行
+安裝後執行程式：
 
 ```
 npm start
@@ -112,7 +113,7 @@ npm start
 
 在連接上區塊鏈之前我們先把測試資料以及UI畫面寫好。
 
-新增一個`mockData` 資料夾在`/src` 路徑下，裡面新增一個`index.js`檔案，用來存放我們的前期測試資料，在index.js檔案填入如下。
+新增一個`mockData` 資料夾在`/src` 路徑下，裡面新增一個`index.js`檔案，用來存放我們的前期測試資料，在`index.js`檔案填入如下：
 
 ```js
 export default [{

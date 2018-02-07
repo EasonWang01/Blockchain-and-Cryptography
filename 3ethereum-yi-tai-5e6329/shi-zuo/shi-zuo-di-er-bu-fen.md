@@ -6,7 +6,7 @@
 
 ![](/assets/螢幕快照 2018-01-31 上午11.26.54.png)
 
-再來點擊Remix IDE上方的的Compile Tab然後按下Detail，並且複製下ABI，以及到Terminal中複製剛才合約部署的地址。
+再來點擊Remix IDE上方的 Compile Tab 然後按下 Details 按鈕，拉到下方並複製 ABI 內容，並且到Terminal中複製剛才合約部署的地址。
 
 ![](/assets/螢幕快照 2018-01-31 上午11.28.45.png)
 
@@ -44,7 +44,7 @@ componentWillMount() {
 
 ## 新增Web3相關Function
 
-新增會員
+新增會員：
 
 ```js
 addMember() {
@@ -66,7 +66,7 @@ addMember() {
 }
 ```
 
-升級會員
+升級會員：
 
 ```js
 upgradeMember() {
@@ -90,7 +90,7 @@ upgradeMember() {
 }
 ```
 
-讀取會員資料並轉換格式
+讀取會員資料並轉換格式：
 
 ```js
 let memberNum = Contract.how_many_members().toNumber();
@@ -109,7 +109,7 @@ for (let i = 0; i < memberNum; i++) {
 }
 ```
 
-設置簽到以及重置簽到
+設置簽到以及重置簽到：
 
 ```js
 signIn(id) {
@@ -133,7 +133,7 @@ resetSignIn() {
 }
 ```
 
-幫頁籤加上功能
+幫頁籤加上點擊換頁功能：
 
 > 每頁最多顯示十個會員，第一頁預設ID為: 0 ~ 9
 
@@ -145,7 +145,7 @@ handlePageClick = (e, { page }) => {
 }
 ```
 
-完整版App.js如下
+完整版 App.js 如下
 
 ```js
 import React, { Component } from 'react';
