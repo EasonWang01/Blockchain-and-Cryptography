@@ -1,3 +1,5 @@
+# 內建全域變數
+
 #### 1.幣別單位
 
 wei, finney, szabo, ether
@@ -26,7 +28,7 @@ function f(uint start, uint daysAfter) public {
 
 以下為預設存在之區塊鏈相關資訊的變數
 
-```
+```go
 block.blockhash(uint blockNumber) returns (bytes32):
 可以查詢最近256個區塊Hash
 
