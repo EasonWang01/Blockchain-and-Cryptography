@@ -70,6 +70,12 @@ npm install npm@4.6.1
 >
 > 之後使用：`yarn add <package>` 來安裝第三方套件
 
+#### 查看相關套件資訊與其歷史版本
+
+```
+npm view <套件名稱>
+```
+
 # 2.cURL
 
 功能為用來簡單發出request，除了macOS與Linix以外，Windows沒有此指令，Windows可以到以下網站下載，之後解壓縮後加入到環境變數中。
