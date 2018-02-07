@@ -83,7 +83,7 @@ var sr = [
 
 ![](/assets/螢幕快照 2018-01-07 下午5.10.24.png)
 
-然後寫成JS
+寫成JS
 
 ```js
 function rotl (x, n) {
