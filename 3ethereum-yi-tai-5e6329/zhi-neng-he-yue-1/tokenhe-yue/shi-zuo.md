@@ -20,15 +20,15 @@ personal.newAccount()
 
 ![](/assets/螢幕快照 2018-01-16 下午8.17.40.png)
 
-> 因為--dev會預先分配Ether給第一個帳號，這時我們轉帳一些Ether給第二個帳號，方便後面執行合約function消耗Gas時使用。
+> 在 --dev 模式中會預先分配一些 Ether 給第一個帳號，這時我們從第一個帳號轉帳一些 Ether 給第二個帳號，方便後面執行合約Function 消耗Gas 時使用。
 
-轉帳 \( 從帳號0到帳號1 \)
+轉帳： \( 從帳號0到帳號1 \)
 
 ```
 eth.sendTransaction({from: eth.accounts[0], to: eth.accounts[1], value: web3.toWei(10, "ether")})
 ```
 
-查詢餘額 \( 帳號1 \)
+查詢餘額： \( 帳號1 \)
 
 ```
 web3.fromWei(eth.getBalance(eth.accounts[1]))
@@ -94,11 +94,11 @@ pragma solidity ^0.4.19;      // 指定Compiler版本
 import "./ERC20_interface.sol";  //引入interface
 
 
-contract ERC20_token is ERC20_interface {   // 使用 is 繼承
+contract ERC20_token is ERC20_interface {   // 使用 is 繼承 ERC20_interface
 
-    uint256 constant private MAX_UINT256 = 2**256 - 1; //避免超過產生overflow
-    mapping (address => uint256) public balances;   // 查詢特定地址的餘額
-    mapping (address => mapping (address => uint256)) public allowed;  // 查詢特定地址可以給另一個地址的轉帳配額
+    uint256 constant private MAX_UINT256 = 2**256 - 1; // 避免超過uint256最大可能的值，產生overflow
+    mapping (address => uint256) public balances;   // 之後可使用 balances[地址] 查詢特定地址的餘額
+    mapping (address => mapping (address => uint256)) public allowed;  // 可用 allowed[地址][地址]，查詢特定地址可以給另一個地址的轉帳配額
 
     string public name;             // 幫合約取名稱
     uint8  public decimals = 18;    // 小數點，官方建議為18
