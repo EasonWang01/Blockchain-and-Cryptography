@@ -1,6 +1,6 @@
-# Geth
+# Geth （go-ethereum）
 
-為 Golang 寫成的 Ethereum 用戶端指令介面。
+Geth 為 Golang 寫成的 Ethereum 用戶端指令介面，為目前許多人所使用的節點程式。
 
 # 安裝
 
