@@ -8,17 +8,17 @@
 
 > 可參考官方style guide來撰寫：[http://solidity.readthedocs.io/en/develop/style-guide.html](http://solidity.readthedocs.io/en/develop/style-guide.html)
 
-#### 安裝Solidity Compiler:
+#### 安裝Solidity Compiler :
 
-如果使用Remix IDE網頁則不需要安裝。
+[http://solidity.readthedocs.io/en/latest/installing-solidity.html](https://www.gitbook.com/book/easonwang01/e/edit#)
 
-[http://solidity.readthedocs.io/en/latest/installing-solidity.html](http://solidity.readthedocs.io/en/latest/installing-solidity.html)
+> 如果使用Remix IDE網頁則不需要安裝。
 
 使用Node.js套件：[https://github.com/ethereum/solc-js](https://github.com/ethereum/solc-js)
 
 ```
-npm install solc -g
-solcjs
+安裝：npm install solc -g
+執行：solcjs --help
 ```
 
 # 合約撰寫
