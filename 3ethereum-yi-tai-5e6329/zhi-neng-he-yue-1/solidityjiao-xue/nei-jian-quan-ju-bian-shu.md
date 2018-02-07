@@ -79,7 +79,7 @@ tx.origin (address)
 
 為了避免EVM在執行時發生錯誤後直接消耗掉所有提供的Gas，以及一些不可預料的情況導致合約產生Bug，我們會使用以下方式來處理條件內容。
 
-```
+```go
 assert(bool condition):
 如果情況錯誤則拋出錯誤，通常用於判斷內部邏輯錯誤。
 
@@ -90,13 +90,13 @@ revert():
 用來主動拋出錯誤，並回復狀態。
 ```
 
-> assert\(\)拋錯時會消耗使用的Gas，但require\(\)與revert\(\)會退還Gas。
+> assert\(\) 拋錯時會消耗使用的Gas，但 require\(\) 與 revert\(\) 會退還Gas。
 >
 > 可參考：[http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require\#error-handling-assert-require-revert-and-exceptions](http://solidity.readthedocs.io/en/develop/control-structures.html?highlight=require#error-handling-assert-require-revert-and-exceptions)
 
 #### 數學與密碼學相關函式
 
-```
+```go
 addmod(uint x, uint y, uint k) returns (uint):
 計算 (x + y) % k 
 
@@ -117,12 +117,12 @@ ripemd160(...) returns (bytes20):
 
 ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address):
 從簽章復原回adddress
-可參考：https://ethereum.stackexchange.com/questions/1777/workflow-on-signing-a-string-with-private-key-followed-by-signature-verificatio
+// 可參考：https://ethereum.stackexchange.com/questions/1777/workflow-on-signing-a-string-with-private-key-followed-by-signature-verificatio
 ```
 
 #### 合約相關
 
-```
+```go
 this (current contract’s type):
 指向當前合約，例如: this.balance
 
@@ -131,8 +131,10 @@ selfdestruct(address recipient):
 
 suicide(address recipient):
 類似於selfdestruct，但selfdestruct為新版本才有，至於改名字原因可參考：
-https://github.com/ethereum/EIPs/blob/master/EIPS/eip-6.md
+// https://github.com/ethereum/EIPs/blob/master/EIPS/eip-6.md
 ```
+
+
 
 
 
