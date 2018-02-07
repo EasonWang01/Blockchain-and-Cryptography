@@ -6,7 +6,7 @@
 
 具有如下方法可以使用
 
-1.balance、transfer
+**1.balance、transfer**
 
 > balance可以取得地址的餘額
 >
@@ -14,27 +14,29 @@
 >
 > \(單位均為wei\)
 
-```
+```js
 address myAddress1 = 0xdf6d9ad96b630e06325ceb9f7e23a86695997421;
 address myAddress2 = 0xdf6d9ad96b630e06325ceb9f7e23a86695997422;
 
 if (myAddress1.balance < 10 && myAddress2.balance >= 10) myAddress1.transfer(10);
-// myAddress1.transfer(10); 意思為從合約傳送金額到myAddress1
 ```
 
-2.msg.sender
+> `myAddress1.transfer(10);` 意思為從合約傳送金額到 myAddress1
 
-預設為執行合約function的人之地址。
+**2.msg.sender**
 
-3.call
+預設為執行合約Function的人之地址。
 
-呼叫特定合約的function
+**3.call**
 
-```
+呼叫特定合約的Function
+
+```go
 address nameReg = 0x72ba7d8e73fe8eb666ea66babc8116a41bfb10e2;
 nameReg.call.gas(1000000).value(1 ether)("register", "MyName");
-// 可以加入要提供的Gas以及Ether
 ```
+
+> 可以加入要提供的Gas以及Ether
 
 #### 2.Key-value對應
 
@@ -49,11 +51,13 @@ struct Person {
 mapping (address => Person) person;
 ```
 
-`person` 為mapping類型，它的 key 是address 類型， value是Person 之struct類型
+`person` 為mapping類型，它的 key 是address 類型， value 是Person 之 struct 類型。
+
+> e.g. person\[地址\]
 
 #### 3.Struct
 
-```
+```go
 struct Campaign {
     address beneficiary;
     uint fundingGoal;
@@ -62,20 +66,21 @@ struct Campaign {
 }
 ```
 
-然後
+相關操作
 
-```
+```go
 mapping (uint => Campaign) campaigns;  // 建立一個key為uint類型，value對應到Campaign struct之鍵值結構campaigns。
 
-campaigns[campaignID] = Campaign(<address>, 100, 0, 0); // 使用Campaign(...)新增struct
+campaigns[campaignID] = Campaign(<address>, 100, 0, 0); // 使用Campaign(...參數)，新增struct
 
-Campaign storage c = campaigns[campaignID];  // 存取struct
-uint amount = c.amount;
+Campaign storage c = campaigns[campaignID];  // 把campaigns[campaignID] 讀取出的Campaign struct給變數c
+
+uint amount = c.amount; // 存取struct中的值
 ```
 
 #### 4.Enum
 
-```
+```java
 enum fruits{ Apple, Banana, Beef, Chicken}
 ```
 
@@ -124,7 +129,7 @@ function Test() constant returns (uint[]) {
 
 或是使用memory Array \(宣告長度為3的Array\)
 
-```
+```js
 uint[] memory values = new uint[](3);
 ```
 
@@ -144,7 +149,7 @@ uint[] memory values = new uint[](3);
 
 #### 7.Integer
 
-與其他程式語言用法相同，包含sign和unsign \( int / uint \)，範圍從8到256， e.g. `uint8, uint16, uint 32 ... uint256`
+與其他程式語言用法相同，包含 sign 和 unsign \( int / uint \)，範圍從8到256， e.g. `uint8, uint16, uint 32 ... uint256`
 
 > 目前 Ethereum 尚未支援浮點數運算
 
