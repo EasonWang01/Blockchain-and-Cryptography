@@ -15,7 +15,7 @@ contract ERC20_token is ERC20_interface { // 使用 is 繼承
 2.再來我們定義會用到的全域變數
 
 ```js
-//避免超過產生overflow
+//避免超過uint256最大可能值，產生overflow
 uint256 constant private MAX_UINT256 = 2 ** 256 - 1; 
 
 // 查詢特定地址的餘額，類似balances[address]
