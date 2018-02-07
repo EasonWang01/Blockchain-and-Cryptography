@@ -261,6 +261,8 @@ function double_sha256(payload) {
 > }
 > ```
 
+---
+
 附註1:
 
 Big-Endian與Small-Endian主要用來描述記憶體位置的擺放順序，名詞出現於 Swift 創作的著名小說
