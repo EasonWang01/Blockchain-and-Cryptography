@@ -32,15 +32,15 @@ yarn add web3
 
 為了快速的理解使用方式，我們先輸入以下指令
 
-> 我們使用的前端框架為React.js，而create-react-app這個模組可以快速地幫我們架構好一個網頁程式
->
-> [https://github.com/facebook/create-react-app](https://github.com/facebook/create-react-app)
-
 ```
 npm install -g create-react-app
 create-react-app my-dapp
 cd my-dapp
 ```
+
+> 我們使用的前端框架為React.js，而create-react-app這個模組可以快速地幫我們架構好一個網頁程式
+>
+> [https://github.com/facebook/create-react-app](https://github.com/facebook/create-react-app)
 
 安裝相關模組並啟動
 
