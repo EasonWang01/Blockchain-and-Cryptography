@@ -1,4 +1,6 @@
-# 4.nlockTime Address
+# 其他類型地址
+
+# 1.nlockTime Address
 
 在指定的時間後該地址才可進行交易，可參考以下BIP：
 
@@ -90,7 +92,7 @@ function numToBuffer(num) {
 
 ![](/assets/螢幕快照 2018-01-20 下午1.28.24.png)
 
-# 5.HD \(hierarchical deterministic\) wallet address
+# 2.HD \(hierarchical deterministic\) wallet address
 
 錢包有分為 _nondeterministic wallet 與 deterministic wallet。_
 
