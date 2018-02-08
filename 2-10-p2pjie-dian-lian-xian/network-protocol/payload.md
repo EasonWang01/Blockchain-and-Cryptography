@@ -1,4 +1,4 @@
-# Payload
+# 訊息 Payload
 
 此為訊息的主體部分，大部分的節點訊息交換資料都會在這。
 
@@ -265,7 +265,7 @@ function double_sha256(payload) {
 
 附註1:
 
-Big-Endian與Small-Endian主要用來描述記憶體位置的擺放順序，名詞出現於 Swift 創作的著名小說"_Gulliver's Travels" \(格列佛遊記\)_
+Big-Endian 與 Small-Endian 主要用來描述記憶體位置的擺放順序，名詞出現於 Swift 創作的著名小說 "_Gulliver's Travels" \(格列佛遊記 \)_
 
 _看到以下範例：_
 
@@ -275,10 +275,6 @@ _看到以下範例：_
 在 Big-Endian 為： 0x12 0x34 0x56 0x78
 在 Small-Endian 為： 0x78 0x56 0x34 0x12
 ```
-
-
-
-
 
 
 

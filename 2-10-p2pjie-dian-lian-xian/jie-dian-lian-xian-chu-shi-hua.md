@@ -1,4 +1,6 @@
-# 找到連線節點後會進行如下步驟:
+# 節點連線初始化
+
+### 找到連線節點後會進行如下步驟:
 
 # 1. version與 verack
 
@@ -10,7 +12,8 @@ Step 3: A 節點送出 verack 請求
 
 ![](/assets/螢幕快照 2017-12-18 下午11.08.24.png)
 
-節點會先送出一個[`version`](https://bitcoin.org/en/developer-reference#version) 訊息給目標連線的節點，而該請求被另一個節點接收到並接收後會回覆[`verack`](https://bitcoin.org/en/developer-reference#verack)，可發現與TCP的握手階段類似。
+節點會先送出一個[`version`](https://bitcoin.org/en/developer-reference#version) 訊息給目標連線的節點，而該請求被另一個節點接收到並接收後會回覆[`verack`](https://bitcoin.org/en/developer-reference#verack)  
+，可發現與TCP的握手階段類似。
 
 > version message發送，寫於原始碼，如下圖![](/assets/ˊ啊6876.png)[https://github.com/bitcoin/bitcoin/blob/d3cb2b8acfce36d359262b4afd7e7235eff106b0/src/net.cpp\#L562](https://github.com/bitcoin/bitcoin/blob/d3cb2b8acfce36d359262b4afd7e7235eff106b0/src/net.cpp#L562)
 
