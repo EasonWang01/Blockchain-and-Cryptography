@@ -74,6 +74,8 @@ GIthub頁面：[https://github.com/kovan-testnet](https://github.com/kovan-testn
 
 ## 名稱由來
 
+這些測試鏈的名稱均源自於地鐵站的站名 :
+
 ```
 Morden:  位於 London 的地鐵站  
 https://tfl.gov.uk/hub/stop/940GZZLUMDN/morden-underground-station
