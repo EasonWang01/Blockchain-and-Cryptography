@@ -44,7 +44,7 @@
     * [開發鏈](3ethereum-yi-tai-5e6329/geth/ce-shi-lian.md)
     * [Proof of Authority 與 Puppeth CLI](3ethereum-yi-tai-5e6329/geth/puppeth-cli.md)
   * [智能合約](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1.md)
-    * [solidity教學](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue.md)
+    * [Solidity](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue.md)
       * [型別](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue/xing-bie.md)
       * [內建全域變數](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue/nei-jian-quan-ju-bian-shu.md)
       * [繼承、虛擬合約、介面](3ethereum-yi-tai-5e6329/zhi-neng-he-yue-1/solidityjiao-xue/ji-cheng-3001-xu-ni-he-yue-3001-jie-mian.md)
