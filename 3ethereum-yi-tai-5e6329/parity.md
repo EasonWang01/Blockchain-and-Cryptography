@@ -93,7 +93,7 @@ Parity 預設UI Port為8180，而節點Port為30303，JSON-RPC Port為8545，我
 parity --ports-shift 2  --datadir="./parity_dir02"
 ```
 
-> --ports-shift 將會把（RPC, WebSockets, UI）等Port都自動往default的Port號碼往後加2
+> `--ports-shift 2` 將會把（RPC, WebSockets, UI）等Port都自動往default的Port號碼往後加2，也可以改為其他數字。
 >
 > 記得要加上--datadir 自訂資料夾位置，否則會出現`db/LOCK: Resource temporarily unavailable` 錯誤。
 
