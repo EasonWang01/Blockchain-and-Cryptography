@@ -1,8 +1,8 @@
-# 以太坊交易
+# Ethereum 交易
 
 在以太坊中的交易通常有以下幾種類型，一種是傳送給另一個持有私鑰的地址，另一種是執行合約的交易與傳送以太幣給合約地址的交易。
 
-我們可以用如下的Web3程式來簡單發出一筆交易。
+我們可以用如下的 Web3 程式來簡單發出一筆交易。
 
 ```js
 web3.eth.sendTransaction({
@@ -77,7 +77,7 @@ console.log(toHex('I got one banana'));
 
 > 或是可用線上工具：[http://string-functions.com/string-hex.aspx](http://string-functions.com/string-hex.aspx)
 
-然後我們使用Metamask進行轉帳 \( 也可自行選擇其他錢包轉帳 \)，在下圖中填上對方的地址與交易金額，並附上額外的文字。
+然後我們使用 Metamask 進行轉帳 \( 也可自行選擇其他錢包轉帳 \)，在下圖中填上對方的地址與交易金額，並附上額外的文字。
 
 ![](/assets/螢幕快照 2018-02-02 上午10.27.32.png)
 
@@ -109,11 +109,11 @@ console.log(toHex('I got one banana'));
 >
 > 如果Gas 給得不夠會顯示[intrinsic gas too low](https://ethereum.stackexchange.com/questions/1570/mist-what-does-intrinsic-gas-too-low-mean)
 
-4.之後更改發出交易時的Gas Limit
+4.之後更改發出交易時的 Gas Limit
 
 #### 查看交易
 
-成功交易後到Etherscan.io查看帶有Input Data的交易，即可看到下方Input Data出現剛才輸入的訊息。
+成功交易後到 Etherscan.io 查看帶有 Input Data 的交易，即可看到下方 Input Data 出現剛才輸入的訊息。
 
 ![](/assets/螢幕快照 2018-01-28 上午9.40.14.png)
 
