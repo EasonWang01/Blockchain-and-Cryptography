@@ -28,7 +28,7 @@ OP_RETURN <data>
 
 ![](/assets/kasd423423.png)
 
-最後我們用以下程式，把該字串從Hex轉為ASCII即可看到原始內容：
+最後我們用以下程式，把該字串從 Hex 轉為 ASCII 即可看到原始內容：
 
 ```js
 function hex_to_ASCII(hexx) {
@@ -44,11 +44,11 @@ hex_to_ASCII('4120636f6e74656e746564206d696e64206973206120636f6e74696e75616c2066
 
 #### 5.Pay-to-Script-Hash \(P2SH\)
 
-為一開始發展之多重簽名BIP-11的衍伸，其定義在BIP-16，因為在傳統的MultiSig需要放入多個Public Key，會造成 Script 過長，所以後來決定把具有多個Public Key之 Locking Script 做雜湊，產生一個20-byte 的 Redeem Script。
+為一開始發展之多重簽名 BIP-11 的衍伸，其定義在 BIP-16，因為在傳統的 MultiSig 需要放入多個 Public Key，會造成 Script 過長，所以後來決定把具有多個 Public Key 之 Locking Script 做雜湊，產生一個 20-byte 的 Redeem Script。
 
-```
-2 to 5 之 P2SH
+**2 to 5 之 P2SH script：**
 
+```go
 Redeem script: 
 2 <Public Key A> <Public Key B> <Public Key C> <Public Key D> <Public Key E> 5 OP_CHECKMULTISIG
 
@@ -65,7 +65,7 @@ Unlocking script:
 
 [https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki)
 
-中文為隔離見證，主要用意是要減少放入區塊內的交易大小，作法為把原本交易簽名（signature）從交易Script中移除。
+中文為隔離見證，主要用意是要減少放入區塊內的交易大小，作法為把原本交易簽名（signature）從交易 Script 中移除。
 
 每個Segwit的交易將會產生兩種ID : txid與wtxid。
 
@@ -82,13 +82,13 @@ wtxid:  [nVersion][marker][flag][txins][txouts][witness][nLockTime]
 >
 > witness為交易的txins之簽名
 
-之後一群交易的wtxid會另外組成一個Merkle Tree，並且將Merkle Root存在區塊的coinbase transaction。
+之後一群交易的 wtxid 會另外組成一個 Merkle Tree，並且將 Merkle Root 存在區塊的 coinbase transaction。
 
-分為以下兩種：Pay-to-Witness-Public-Key-Hash \(P2WPKH\) 與 Pay-to-Witness-Script-Hash \(P2WSH\)
+分為以下兩種：Pay-to-Witness-Public-Key-Hash \( P2WPKH \) 與 Pay-to-Witness-Script-Hash \( P2WSH \)
 
 #### P2WPKH
 
-> 版本號為 0 之 pay-to-witness-public-key-hash \(P2WPKH\)
+> 版本號為 0 之 pay-to-witness-public-key-hash \( P2WPKH \)
 
 ```
 witness:      <signature> <pubkey>

@@ -12,11 +12,11 @@
 
 > 如果是Windows作業系統，請將前面`./`省略，改為: `bitcoin-qt.exe -regtest`
 
-Bitcoin-qt 執行regtest Mode:![](/assets/螢幕快照 2017-12-26 下午3.53.17.png)
+Bitcoin-qt 執行 Regtest Mode:![](/assets/螢幕快照 2017-12-26 下午3.53.17.png)
 
 ## 使用Bitcoin-CLI
 
-我們也可以使用Bitcoin-CLI 來與`-regtest`模式下的節點互動 :
+我們也可以使用 Bitcoin-CLI 來與`-regtest`模式下的節點互動 :
 
 1.先執行Bitcoin server
 
@@ -63,7 +63,7 @@ Bitcoin-qt 執行regtest Mode:![](/assets/螢幕快照 2017-12-26 下午3.53.17.
 e.g.
 
 ```
-sudo rm -rf <Regtest資料夾路徑>
+sudo rm -rf < Regtest 資料夾路徑 >
 ```
 
 

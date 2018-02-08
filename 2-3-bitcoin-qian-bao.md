@@ -1,6 +1,6 @@
 # Bitcoin 錢包
 
-比特幣錢包種類包含有網頁版、桌面版、手機APP，還有適合開發者使用的Command Line介面錢包，紙本錢包、USB硬體錢包等等，但使用上之安全性需要讀者自行評估。
+比特幣錢包種類包含有網頁版、桌面版、手機APP，還有適合開發者使用的 Command Line 介面錢包，紙本錢包、USB硬體錢包等等，但使用上之安全性需要讀者自行評估。
 
 每個比特幣錢包裡面可以包含許多比特幣地址與對應的私鑰，以下我們將用官方的錢包來講解。
 
@@ -123,7 +123,7 @@ https://electrum.org/#home
 > 以下是幾篇關於SPV節點安全性的文章，探討用SPV節點在安全性方面的考量。  
 > [https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9](https://medium.com/@jonaldfyookball/why-every-bitcoin-user-should-understand-spv-security-520d1d45e0b9)
 >
-> https://jonasnick.github.io/blog/2015/02/12/privacy-in-bitcoinj/
+> [https://jonasnick.github.io/blog/2015/02/12/privacy-in-bitcoinj/](https://jonasnick.github.io/blog/2015/02/12/privacy-in-bitcoinj/)
 
 ### 錢包列表：
 
