@@ -1,8 +1,8 @@
-# SPV節點
+# SPV 節點交換訊息
 
 比特幣之區塊鏈大小較為龐大，如果下載所有資料後需要佔據大約 100GB 以上的硬碟儲存空間，所以後來發展出了一種方法，可以不用下載整個區塊鏈的節點，稱為 SPV節點 \( Simplified Payments Verification nodes \)。
 
-上一章節的節點資料交換為Full Node \(全節點\) 的資料交換方式，而這章節將講解可以有效節省空間的SPV Node，SPV Node只會下載區塊頭（ Block Header） 不需要像 Full node 一樣去下載每個區塊裡面的所有 transactions。
+上一章節的節點資料交換為Full Node \( 全節點 \) 的資料交換方式，而這章節將講解可以有效節省空間的SPV Node，SPV Node只會下載區塊頭（ Block Header） 不需要像 Full node 一樣去下載每個區塊裡面的所有 transactions。
 
 SPV節點使用Merkle Root驗證特定交易是否存在於區塊中，不用管其他不相關的交易，而在安全性考量下，SPV節點通常會有許多個連線的Full Node來確保傳過來的資料是正確的。
 
