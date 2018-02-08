@@ -1,14 +1,14 @@
 # Gas 計算方式
 
-在一開始時我們提到過交易手續費是使用Gas來計算：
+在一開始時我們提到過交易手續費是使用 Gas 來計算：
 
 ```
 交易手續費 Tx Fees = Gas Limit * Gas Price
 ```
 
-其中Gas Limit相當於最多允許用多少單位個Gas來執行這個交易或是合約，Gas Price為每單位Gas的價格。
+其中 Gas Limit 相當於最多允許用多少單位個Gas來執行這個交易或是合約，Gas Price 為每單位 Gas 的價格。
 
-接下來我們可以去查看Ethereum黃皮書上的交易手續費表
+接下來我們可以去查看 Ethereum 黃皮書上的交易手續費表
 
 > 在第24頁，附錄Appendix G. Fee Schedule
 >

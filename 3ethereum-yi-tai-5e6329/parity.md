@@ -2,7 +2,7 @@
 
 [https://www.parity.io/](https://www.gitbook.com/book/easonwang01/e/edit#)
 
-Parity為一個輕量級的節點，不用下載全部的區塊鏈資料到節點上，可以快速進行節點的同步，並且在啟動後會自動開啟一個前端網頁，可以查看目前節點狀態，同步後可以使用其 UI 介面發送交易與部屬、執行合約。
+Parity 為一個輕量級的節點，不用下載全部的區塊鏈資料到節點上，可以快速進行節點的同步，並且在啟動後會自動開啟一個前端網頁，可以查看目前節點狀態，同步後可以使用其 UI 介面發送交易與部屬、執行合約。
 
 安裝：[https://github.com/paritytech/parity/releases](https://github.com/paritytech/parity/releases)
 
@@ -72,7 +72,7 @@ npm install web3
 
 接著使用Node.js的command line：
 
-```
+```js
 $ node
 > Web3 = require("web3")
 > web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));

@@ -1,4 +1,4 @@
-# Ethereum私有鏈
+# Ethereum 私有鏈
 
 以太坊中可以建立私有鏈，私有鏈的資料與主鏈不相關，鏈上的資料都是獨立於主鏈的。
 
@@ -194,7 +194,7 @@ Network ID：用來識別不同網路的號碼
 7762959: Musicoin; The music blockchain
 ```
 
-> https://ethereum.stackexchange.com/a/17101
+> [https://ethereum.stackexchange.com/a/17101](https://ethereum.stackexchange.com/a/17101)
 
 
 

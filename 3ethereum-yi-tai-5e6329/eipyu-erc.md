@@ -1,4 +1,6 @@
-# EIP \( The Ethereum Improvement Proposal \)
+# EIP 與 ERC
+
+## EIP \( The Ethereum Improvement Proposal \)
 
 [https://github.com/ethereum/EIPs](https://github.com/ethereum/EIPs)
 
@@ -17,7 +19,7 @@
 
 > [https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1.md)
 
-# ERC
+## ERC \( _Ethereum _Request for Comments \)
 
 屬於EIP提案的一種類型，目前已經正式核可的ERC提案如下
 
