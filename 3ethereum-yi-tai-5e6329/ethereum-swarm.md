@@ -101,15 +101,13 @@ http://localhost:8500/bzz:/回傳之Hash/test.txt
 
 > 如果沒有加入檔案名稱在Hash後則會顯示找不到檔案
 
-
-
 ---
 
 註一：
 
-為一個可以將檔案上傳至分散式節點的工具，上傳後會回傳Hash，之後可以使用此Hash再次下載資料，不需要自己建立資料庫儲存檔案。
+IPFS為一個可以將檔案上傳至分散式節點的專案，上傳後會回傳Hash，之後可以使用此Hash再次下載資料，不需要自己建立資料庫儲存檔案。
 
-官方網站：https://ipfs.io/
+官方網站：[https://ipfs.io/](https://ipfs.io/)
 
-官方GIhtub : https://github.com/ipfs/ipfs 
+官方Github : [https://github.com/ipfs/ipfs](https://github.com/ipfs/ipfs)
 
