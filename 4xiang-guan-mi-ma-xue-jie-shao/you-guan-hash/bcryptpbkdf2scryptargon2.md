@@ -101,7 +101,7 @@ crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
 ```
 // 以下為計算Scrypt會需要使用的記憶體大小
 128 bytes × N × r
-128×16384×8 = 16,777,216 bytes = 16 MB
+128 × 16384 × 8 = 16,777,216 bytes = 16 MB
 ```
 
 > 而p的參數一般來說都會是1
