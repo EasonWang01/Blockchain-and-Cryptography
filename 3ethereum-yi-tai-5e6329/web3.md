@@ -1,10 +1,10 @@
 ## Web3
 
-官方Github : [https://github.com/ethereum/web3.js/](https://github.com/ethereum/web3.js/)
+官方 Github : [https://github.com/ethereum/web3.js/](https://github.com/ethereum/web3.js/)
 
 官方文件 : [https://web3js.readthedocs.io/en/1.0/web3.html](https://web3js.readthedocs.io/en/1.0/web3.html)
 
-在使用者端的程式中，例如網頁，為了讀取區塊鏈的資料必須使用一些方法來存取，Web3為一個可以存取Ethereum區塊鏈資料的第三方函式庫，使用之程式語言為Javascript，在Geth console中也可以直接使用。
+在使用者端的程式中，例如網頁，為了讀取區塊鏈的資料必須使用一些方法來存取，Web3 為一個可以存取 Ethereum 區塊鏈資料的第三方函式庫，使用之程式語言為 Javascript，在 Geth console 中也可以直接使用。
 
 > 類似專案:
 >
@@ -12,7 +12,7 @@
 >
 > [https://github.com/ethers-io/ethers.js/](https://github.com/ethers-io/ethers.js/)
 
-Web3 中的許多Function都可以寫為異步 \(Asynchronous\) 或同步 \(Synchronous\) 執行，但在Metamask中大部分Function都只允許使用異步的寫法來執行。
+Web3 中的許多Function都可以寫為異步 \( Asynchronous \) 或同步 \( Synchronous \) 執行，但在 Metamask 中大部分 Function 都只允許使用異步的寫法來執行。
 
 > [https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#dizzy-all-async---think-of-metamask-as-a-light-client](https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md#dizzy-all-async---think-of-metamask-as-a-light-client)
 

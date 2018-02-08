@@ -24,7 +24,7 @@
 
 以下將以Version訊息為範例 :
 
-> 在官方資料上節點分為 『 transmitting node \(發出方\) 』 與 『 receiving node（接收方）』，如果請求從本地發出則本地的節點即為transmitting node\(發出方\)角色，反之。
+> 在官方資料上節點分為 『 transmitting node \( 發出方 \) 』 與 『 receiving node（ 接收方 ）』，如果請求從本地發出則本地的節點即為transmitting node \( 發出方 \) 角色，反之。
 
 * **Protocol version:** 70005 \( 7f110100 \)
 
@@ -41,7 +41,10 @@
 * **Node Timestamp**: 1513492007
 
   ```
-  8 bytes， 此為unix的timestamp 但只取到秒數  parseInt\\(Date.now\\(\\).toString\\(\\).substring\\(0, 10\\)\\).toString\\('16'\\) 之後在後面補上0
+  8 bytes， 此為unix的timestamp 但只取到秒數   
+
+  範例：BigEndian_to_SmallEndian(parseInt(Date.now().toString().substring(0, 10)).toString('16')) + "00000000"
+  e.g. d2e27c5a00000000
   ```
 
 * **Receiving node's services**: 0100000000000000
@@ -112,14 +115,14 @@ const net = require('net');
 const crypto = require('crypto');
 
 const payload = {
-  Protocol_version: "7f110100", //70015
+  Protocol_version: "7f110100", // 70015
   Node_services: "0d00000000000000", // 0x000000000000000d
   Timestamp: BigEndian_to_SmallEndian(parseInt(Date.now().toString().substring(0, 10)).toString('16')) + "00000000",
 
   // Address as receiving node
   Node_services_rec: "0d00000000000000",// 0x000000000000000d
   Node_address_rec: "00000000000000000000ffff2e043c24", //::ffff:46.4.60.36
-  Node_port_rec: "208d", //8333
+  Node_port_rec: "208d", // 8333
 
   // Address as emitting node
   Node_services_emit: "0d00000000000000",// 0x000000000000000d
