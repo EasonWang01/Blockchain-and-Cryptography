@@ -1,4 +1,4 @@
-# 2-7 Bitcoin Script 與 OPCODE
+# Bitcoin Script 與 OPCODE
 
 比特幣使用 Script 腳本來執行相關的交易邏輯
 
@@ -106,8 +106,6 @@ Transaction {
 | Public Key Hash | 08 33 8e 1d 5e 26 db 3f ce 21 b0 11 79 5b 1c 3c 8a 5a 5d 07 |
 | OP\_EQUALVERIFY | 88 |
 | OP\_CHECKSIG | ac |
-
-
 
 我們可以看到上圖許多OP開頭之字樣，而其後對應的Hex碼都是查表而來
 
