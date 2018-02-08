@@ -1,12 +1,12 @@
-# 以太坊地址
+# Ethereum 地址
 
 以太坊中有兩種地址，分別為Externally owned account \( EOA \) 與 Contract address\( 合約地址 \)。
 
 Externally owned account \( EOA \) 地址為任何擁有私鑰之人即可用私鑰進行地址來進行發送交易與簽名等動作，而後者 Contract address \( 合約地址 \) 受到智能合約的程式邏輯所管控，也就是該合約部署後的地址。
 
-## Externally owned account \(EOA\)
+## Externally owned account \( EOA \)
 
-在Ethereum EOA地址產生過程中，一樣使用橢圓曲線產生公鑰與私鑰，採用secp256k1曲線。其中公鑰使用 uncompressed 模式。
+在Ethereum EOA 地址產生過程中，一樣使用橢圓曲線產生公鑰與私鑰，採用secp256k1曲線。其中公鑰使用 uncompressed 模式。
 
 之後把公鑰移除開頭第一個byte，進行SHA3 \( keccak-256 \)雜湊，會得到長度為64的Hex字串，最後取後面40個字，再加上`0x`，即為地址。
 
@@ -60,7 +60,7 @@ console.log(`0x${instance.getAddress().toString('hex')}`)
 
 [https://gist.github.com/lgn21st/1bd2db7eb30b55e17d07a8bc637c2f87](https://gist.github.com/lgn21st/1bd2db7eb30b55e17d07a8bc637c2f87)
 
-## Contract address\( 合約地址 \)
+## Contract address \( 合約地址 \)
 
 當我們部署智能合約後，每個合約會有一個相對應的地址，之後執行合約時都要指定要執行的合約地址。
 
@@ -107,7 +107,7 @@ getContract_Address("d7c86c344ecbd9f166b053a32cd6cd34dda1b8af", 2)
 
 ![](/assets/fefw24.png)看從上圖看到右下角之Remix IDE 部署後的合約地址與我們用程式計算出的地址相同。
 
-# 從keyFIle復原出私鑰
+# 從 keyFile 復原出私鑰
 
 當我們用如下方式將私鑰引入到Geth後，他會以一個檔案的型態保存，存在keystore資料夾中
 
