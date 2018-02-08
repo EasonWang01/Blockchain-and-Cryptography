@@ -1,6 +1,6 @@
-#### 
+# 其他類型交易
 
-#### 4.Data Output \(OP\_RETURN，可以填上自己想填的資料到交易上\)
+#### 1.Data Output \(OP\_RETURN，可以填上自己想填的資料到交易上\)
 
 為了可以在比特幣交易中加上額外的自訂訊息，後來發展出此種做法，最多可以帶 83 bytes 的資料 \( Bitcoin Core 0.12.0\)。
 
@@ -42,7 +42,7 @@ function hex_to_ASCII(hexx) {
 hex_to_ASCII('4120636f6e74656e746564206d696e64206973206120636f6e74696e75616c2066656173742e');
 ```
 
-#### 5.Pay-to-Script-Hash \(P2SH\)
+#### 2.Pay-to-Script-Hash \(P2SH\)
 
 為一開始發展之多重簽名 BIP-11 的衍伸，其定義在 BIP-16，因為在傳統的 MultiSig 需要放入多個 Public Key，會造成 Script 過長，所以後來決定把具有多個 Public Key 之 Locking Script 做雜湊，產生一個 20-byte 的 Redeem Script。
 
@@ -61,7 +61,7 @@ Unlocking script:
 
 可參考: [https://bitcoin.stackexchange.com/a/28092](https://bitcoin.stackexchange.com/a/28092)
 
-#### 6.Segregated Witness \( Segwit \)
+#### 3.Segregated Witness \( Segwit \)
 
 [https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki)
 
