@@ -1,6 +1,6 @@
 # Geth （go-ethereum）
 
-Geth 為 Golang 寫成的 Ethereum 用戶端指令介面，為目前許多人所使用的節點程式。
+Geth 為 Golang 寫成的 Ethereum 用戶端指令介面 \( go-ethereum \)，為目前許多人所使用的節點程式。
 
 # 安裝
 
@@ -77,7 +77,7 @@ curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
 
    attach      啟動JS的console，會連線到一個節點
 
-   bug         會自動開啟go-ethereum Github issue，快速回報Bug
+   bug         會自動開啟 go-ethereum 在 Github 的 issue 頁面，可快速回報Bug
 
    console     啟動節點時，同時啟動JS的console
 
@@ -130,9 +130,9 @@ geth.exe --fast --cache 1024
 #### --testnet、--rinkeby 、--dev
 
 ```
---testnet      連線到 Ropsten network，為 proof-of-work 測試網路
---rinkeby      連線到 Rinkeby network，為 proof-of-authority 測試網路
---dev          連線到私有鏈，方便開發者快速開發，並且預設好一個帳號並擁有一定數量之Ether，為 proof-of-authority 測試網路
+--testnet      連線到 Ropsten network，共識方式為 proof-of-work 
+--rinkeby      連線到 Rinkeby network，共識方式為 proof-of-authority 
+--dev          連線到私有鏈，方便開發者快速開發，並且預設好一個帳號並擁有一定數量之Ether，共識方式為 proof-of-authority 
 ```
 
 #### --syncmode
