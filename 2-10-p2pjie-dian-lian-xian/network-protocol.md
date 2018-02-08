@@ -1,4 +1,4 @@
-# 比特幣網路Protocol
+# Bitcoin Network Protocol
 
 比特幣在節點傳輸間的封包主要分為兩個部分，一個為 Message header 包含四個欄位，另一個即為Payload。
 

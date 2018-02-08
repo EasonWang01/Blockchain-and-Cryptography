@@ -1,6 +1,6 @@
 # Merkle Tree
 
-由一位[Ralph Merkle](https://en.wikipedia.org/wiki/Ralph_Merkle) 的外國人在1979年發佈，主要可以用來做訊息的快速驗證，可以想像是有一棵樹，樹上有許多葉子，每個葉子都有自己的ID，今天如果要驗證這棵樹的所有葉子是否和昨天是相同的，可以把所有葉子的ID都兩兩相加做雜湊，之後再繼續把雜湊跟其隔壁葉子的兩兩雜湊結果繼續做雜湊，直到產生最後一個 Root 雜湊，再把這兩天算出來的 Root 雜湊做比較即可。
+由一位 [Ralph Merkle](https://en.wikipedia.org/wiki/Ralph_Merkle) 的外國人在 1979 年發佈，主要可以用來做訊息的快速驗證。可以想像是有一棵樹，樹上有許多葉子，每個葉子都有自己的 ID，今天如果要驗證這棵樹的所有葉子是否和昨天是相同的，可以把所有葉子的 ID 都兩兩相加後做雜湊，之後再繼續把該雜湊值跟其隔壁葉子的兩兩雜湊結果繼續做雜湊，直到產生最後一個 Root 雜湊，再把這兩天算出來的 Root 雜湊做比較，即可確認這兩天在樹上的葉子是否完全相同。
 
 可參考如下介紹:
 
@@ -8,7 +8,7 @@
 
 [https://en.wikipedia.org/wiki/Merkle\_signature\_scheme](https://en.wikipedia.org/wiki/Merkle_signature_scheme)
 
-比特幣使用了Merkle Tree的結構，把區塊中的所有交易，兩兩做SHA256的Hash，最後產生一個Merkle Root，類似如下圖
+比特幣使用了 Merkle Tree 的結構，把區塊中的所有交易，兩兩做SHA256的Hash，最後產生一個Merkle Root，類似如下圖
 
 ![](/assets/Hash_Tree.svg.png)在比特幣中，會把區塊中每一筆交易的TXid用兩次sha256做加密
 

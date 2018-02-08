@@ -1,8 +1,8 @@
-# 2-8 Bitcoin 區塊
+# Bitcoin 區塊
 
-區塊鏈是由許多區塊所組成，每個區塊的資料結構都類似，而每個區塊會有一個Hash，類似於該區塊的識別ID。
+區塊鏈是由許多區塊所組成，每個區塊的資料結構都類似，而每個區塊會有一個 Hash，類似於該區塊的識別 ID。
 
-產生出的區塊數量可以用區塊長度來表示，也稱為區塊高度，每個區塊Hash都會是前一個區塊頭的特定雜湊值，所以前面區塊如果資料被更改自然會導致後面區塊的雜湊值不同，而可以輕易的驗證存在於區塊中的資料是否被竄改。
+產生出的區塊數量可以用區塊長度來表示，也稱為區塊高度，每個區塊 Hash 都會是前一個區塊頭的特定雜湊值，所以前面區塊如果資料被更改自然會導致後面區塊的雜湊值不同，而可以輕易的驗證存在於區塊中的資料是否被竄改。
 
 ## 以下表格為比特幣區塊的資料結構
 
@@ -109,5 +109,5 @@ Bitcoin 之 Genesis Block 創建原始碼
 
 Magic Nunber在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考：
 
-https://en.wikipedia.org/wiki/Magic\_number\_\(programming\)\#Format\_indicator
+[https://en.wikipedia.org/wiki/Magic\_number\_\(programming\)\#Format\_indicator](https://en.wikipedia.org/wiki/Magic_number_%28programming%29#Format_indicator)
 
