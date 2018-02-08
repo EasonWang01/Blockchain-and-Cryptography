@@ -59,6 +59,8 @@ Lightning Network specification \(BOLTs\)， BOLT 全名為： Basic of Lightnin
 
 [https://github.com/lightningnetwork/lightning-rfc](https://github.com/lightningnetwork/lightning-rfc)
 
+![](/assets/ks9.png)
+
 ## 實作
 
 我們將使用Lightning Network Daemon \( lnd \)，其已經實作相關比特幣閃電網路架構並且部署在testnet3上。
