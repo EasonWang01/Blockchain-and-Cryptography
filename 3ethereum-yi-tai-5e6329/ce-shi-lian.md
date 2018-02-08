@@ -40,7 +40,7 @@ geth --rinkeby
 parity --chain kovan
 ```
 
-> 如果無法sync，可以指定要sync的bootnode :
+> 如果無法sync，可以手動指定 bootnode :
 >
 > ```
 > --bootnodes enode://YOU_BOOT_NODE_ID_HERE@127.0.0.1:30303
