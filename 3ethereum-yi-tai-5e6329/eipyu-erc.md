@@ -52,8 +52,8 @@ function toChecksumAddress (address) {
   return ret
 }
 
-> toChecksumAddress('0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359')
-'0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359'
+toChecksumAddress('0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359')
+// '0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359'
 ```
 
 #### 3.ERC-162 與 ERC-181 \(ENS support for reverse resolution of Ethereum addresses\)
