@@ -2,7 +2,7 @@
 
 [https://www.parity.io/](https://www.gitbook.com/book/easonwang01/e/edit#)
 
-Parity為一個輕量級的節點，不用下載全部的區塊鏈資料到節點上，可以快速進行節點的同步，並且在啟動後會自動開啟一個前端網頁，可以查看目前節點狀態，同步後可以使用其UI介面發送交易與部屬、執行合約。
+Parity為一個輕量級的節點，不用下載全部的區塊鏈資料到節點上，可以快速進行節點的同步，並且在啟動後會自動開啟一個前端網頁，可以查看目前節點狀態，同步後可以使用其 UI 介面發送交易與部屬、執行合約。
 
 安裝：[https://github.com/paritytech/parity/releases](https://github.com/paritytech/parity/releases)
 
@@ -22,7 +22,7 @@ Linux: /usr/bin/parity
 
 > 將以上路徑加入環境變數即可直接在任何Terminal輸入Parity執行。
 
-區塊鏈資料與金鑰通常會存在以下路徑：
+區塊鏈資料與帳號金鑰通常會存在以下路徑：
 
 ```
 Windows: %UserProfile%\AppData\Roaming\Parity
@@ -38,7 +38,7 @@ Linux: ~/.local/share/io.parity.ethereum/
 
 Parity可以使用一個`config.toml`檔案來寫入相關設定，可用以下網站來快速的產生一個設定檔：
 
- [https://paritytech.github.io/parity-config-generator/](https://paritytech.github.io/parity-config-generator/。)
+[https://paritytech.github.io/parity-config-generator/](https://paritytech.github.io/parity-config-generator/。)
 
 啟動 Parity 後，預設會讀取以下路徑下的設定檔：
 
