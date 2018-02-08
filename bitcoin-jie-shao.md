@@ -19,13 +19,13 @@
 
 #### 1.Bitcoin.org
 
-主要講解比特幣用途以及使用方式。
+主要講解比特幣用途以及使用方式，可在該網站下載比特幣官方錢包。
 
 [https://bitcoin.org](https://www.gitbook.com/book/easonwang01/e/edit#)
 
 #### 2.Bitcoin core
 
-跟Bitcoin.org都屬於Bitcoin官方，但其為面向開發者。
+跟 Bitcoin.org 都屬於 Bitcoin 官方，但此網站的內容較為面向開發者。
 
 [https://bitcoincore.org/](https://bitcoincore.org/)
 
@@ -37,7 +37,7 @@ BIP是對未來需要改進的比特幣特點，所做的提案。
 
 可在此網站看到詳細內容：[https://github.com/bitcoin/bips](https://github.com/bitcoin/bips)
 
-![](/assets/螢幕快照 2017-11-19 下午1.13.48.png)其中又可分為Standard BIP、Informational BIP 以及 Process BIP，Standard BIP描述主要比特幣的核心標準相關的內容，而Informational BIP通常為一些指南與資訊，Process BIP 為一些正在進行或是提案中的改進建議。
+![](/assets/螢幕快照 2017-11-19 下午1.13.48.png)其中又可分為 Standard BIP、Informational BIP 以及 Process BIP，Standard BIP 描述主要比特幣的核心標準相關的內容，而Informational BIP 通常為一些指南與資訊，Process BIP 為一些正在進行或是提案中的改進建議。
 
 # 比特幣相關狀態查詢
 
@@ -56,7 +56,7 @@ BIP是對未來需要改進的比特幣特點，所做的提案。
 
 [https://blockchain.info/charts](https://blockchain.info/charts)
 
-最富有之比特幣地址
+比特幣地址餘額排名
 
 [https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html](https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html)
 
