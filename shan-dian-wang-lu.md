@@ -12,7 +12,7 @@
 
 其中有兩個名詞分別為RSMC與HTLC。
 
-RSMC（Recoverable Sequence Maturity Contract）定義了雙向小額支付通道的最基本工作方式。 \( Paper No.15\)
+RSMC（Recoverable Sequence Maturity Contract）定義了雙向小額支付通道的最基本工作方式。
 
 ```
 1.小明與小黃兩人共同產生一個 2-of-2 multisig 地址，並且進行預存的動作。
@@ -35,9 +35,9 @@ HTLC（Hashed Timelock Contract）進一步利用nLockTime實現了有條件的�
 
 
 運作方式一開始C太太會產生一個私密訊息R，並用雜湊函式把R做Hash，然後把Hash值跟Hash function傳送給A太太。
-之後使用 nTimelock 鎖定A太太的錢特定時間，在解鎖時刻到來之前，如果B太太能夠向A太太出示一個適當的R（稱為秘密），使得R的雜湊值等於事先約定的值H(R)，B太太就能獲得這鎖定的錢。但如果直到解鎖時刻過去B太太仍然未能提供一個正確的R，A太太被鎖地的錢將會歸還給A太太，所以B太太為了拿到錢也會開一個nTimelock 鎖定收據給C太太，讓C太太把R給他。
+之後使用 nTimelock 鎖定A太太的錢特定時間，在解鎖時刻到來之前，如果B太太能夠向A太太出示一個適當的R（稱為秘密），使得R的雜湊值等於事先約定的值H(R)，B太太就能獲得這鎖定的錢。但如果直到解鎖時刻過去B太太仍然未能提供一個正確的R，A太太被鎖定的錢將會歸還給A太太，所以B太太為了拿到錢也會開一個nTimelock 鎖定收據給C太太，讓C太太把R給他。
 
-所以流程為：
+流程為：
 C太太給Ａ太太，R被Hash過的值。
 A太太開給B太太nTimelock的收據。
 B太太再開給C太太nTimelock的收據。
@@ -46,7 +46,7 @@ B太太再把R給A拿到A太太的錢。
 而B太太也可以從中獲得手續費。
 
 （注意： 如果A太太跟B太太之間的Channel過期時間比B太太跟C太太之間短，則C太太，太晚給出R，A太太在時間到後拿回錢，但這時C太太又把R給了B太太然後拿到錢，
-  但B太太就沒辦法再把R給A太太拿錢了，所以通常越接近R傳送者的channel時間必須越短。）
+  但B太太就沒辦法再把R給A太太拿錢了，所以通常越接近 R 產生者的 channel 過期時間必須越短。）
 ```
 
 官方影片：[https://youtu.be/8zVzw912wPo](https://youtu.be/8zVzw912wPo)
