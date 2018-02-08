@@ -56,7 +56,7 @@ BIP是對未來需要改進的比特幣特點，所做的提案。
 
 [https://blockchain.info/charts](https://blockchain.info/charts)
 
-比特幣地址餘額排名
+比特幣地址之餘額排名
 
 [https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html](https://bitinfocharts.com/top-100-richest-bitcoin-addresses.html)
 

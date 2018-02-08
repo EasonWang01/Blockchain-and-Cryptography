@@ -6,10 +6,10 @@
 
 我們先到官方下載網址[https://bitcoin.org/en/download](https://bitcoin.org/en/download)
 
-1.選擇自己對應的平台安裝\(此安裝檔大小約為13.7MB\)  
+1.選擇自己對應的平台安裝 \( 此安裝檔大小約為13.7MB \)  
 ![](/assets/bitcoin-core-download.png)
 
-2.之後選擇一個擁有較大容量的硬碟安裝 \( 因為之後如果要成為Full Node 必須要足夠容量，但在本書範例中可以不用完全同步。 \)  
+2.之後選擇一個擁有較大容量的硬碟安裝 \( 因為之後如果要成為Full Node 必須要足夠容量，但在本書範例中可以不用完全同步  \)  
 ![](/assets/bitcoin-install01.png)
 
 3.安裝好後執行程式，即可看到它開始在與其他節點同步區塊鏈資料  
