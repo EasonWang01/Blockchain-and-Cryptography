@@ -4,7 +4,7 @@
 
 在現代許多協定均有使用到密碼學來進行加解密的動作，例如 : HTTPS、PGP、IPsec、SSL / TLS、SSH。
 
-本章節將介紹雜湊函式（Hash）、對稱式加密、非對稱式加密，並且會以 OpenSSL 與 Node.js 進行範例實作。
+本章節將介紹雜湊函式（ Hash ）、對稱式加密、非對稱式加密，並且會以 OpenSSL 與 Node.js 進行範例實作。
 
 ---
 

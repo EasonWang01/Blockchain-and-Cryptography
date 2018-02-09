@@ -1,4 +1,4 @@
-# AES 簡介
+# AES
 
 Advanced Encryption Standard，縮寫：AES，又稱Rijndael加密法，但嚴格來說AES和Rijndael加密法並不完全一樣，因為Rijndael加密法可以支援更大範圍的區塊長度，AES的區塊長度固定為128位元而Rijndael使用的區塊長度可以是128，192或256位元。AES用來替代原先的DES。
 
@@ -39,7 +39,7 @@ console.log(decrypted);
 
 # AES之區塊加密模式
 
-> 在cbc、ofb、cfb、ctr等區塊模式IV長度均為16bytes，gcm的IV則沒有一定要16bytes
+> 在CBC、OFB、CFB、CTR等區塊模式 IV 長度均為 16 bytes，GCM模式的 IV 則沒有一定要 16 bytes
 
 #### AES-256-CBC範例
 

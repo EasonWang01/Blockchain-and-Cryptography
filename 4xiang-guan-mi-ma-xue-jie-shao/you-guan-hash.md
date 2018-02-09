@@ -4,7 +4,7 @@ Hash function也可稱為**雜湊函式，可以**把一串任意長度大小的
 
 而任何相同的值經過hash後出來的值都會是相同的，所以就可以進一步做到訊息驗證。
 
-通常是一個單向函式，也就是無法從算出來的值反推回原本的值 \(除了已經被破解的Hash算法例外\)。
+通常是一個單向函式，也就是無法從算出來的值反推回原本的值 \( 除了已經被破解的Hash算法例外 \)。
 
 比較常見的包含MD5、SHA1、SHA2、SHA3與Ripemd系列等等，但目前MD5與SHA1已經被破解。
 
@@ -17,7 +17,7 @@ Hash function也可稱為**雜湊函式，可以**把一串任意長度大小的
 1.Salt
 
 ```
-Salt是指在雜湊函數中或是密碼上加入一串隨機的位元(random sequence of bytes)。
+Salt是指在雜湊函數中或是密碼上加入一串隨機的位元 ( random sequence of bytes )。
 所以密碼就會像是：salt字串 + password字串
 而任何人知道 password 字串並進行雜湊也無法符合 salt 加上 password 字串後的雜湊。
 如果每個使用者都有不同的salt，就沒有簡單的方法來辨識出使用者是否使用相同的password字串。
@@ -55,7 +55,7 @@ console.log(hash);
 
 ## SHA
 
-全名為Secure Hash Algorithm，從1995年發佈的SHA1、2001年發佈的SHA2、2015年正式發佈的SHA3，每一代都是上一代的改進版本，而SHA1的Hash值長度為160bits，到了SHA2與SHA3他們的長度可以是以下幾種，例如：224、256、384、512等等，所以我們才會常聽到例如SHA-256或是SHA-512等等的名詞。
+全名為 Secure Hash Algorithm，從1995年發佈的SHA1、2001年發佈的SHA2、2015年正式發佈的SHA3，每一代都是上一代的改進版本，而SHA1的Hash值長度為160bits，到了SHA2與SHA3他們的長度可以是以下幾種，例如：224、256、384、512等等，所以我們才會常聽到例如SHA-256或是SHA-512等等的名詞。
 
 SHA-256範例：
 
@@ -84,8 +84,6 @@ console.log(hash_512)
 let hash_224 = new SHA3.SHA3Hash(224).update('test').digest('hex'); // 224 bits
 console.log(hash_224)
 ```
-
-#### 
 
 ## Ripemd
 

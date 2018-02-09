@@ -1,13 +1,13 @@
 # RC系列
 
 ```
-RC2 為64-bit區塊加密(Block cipher)在1987發表。
+RC2 為64-bit區塊加密 (Block cipher) 在1987發表。
 
-RC4 為目前最廣為使用的串流加密(stream cipher)。
+RC4 為目前最廣為使用的串流加密 (stream cipher)。
 
-RC5 為 32/64/128-bit 區塊加密(block cipher) 於 1994年開發。
+RC5 為 32/64/128-bit 區塊加密 (block cipher) 於 1994年開發。
 
-RC6 為 128-bit 區塊加密(block cipher) 由 RC5 衍生而來。
+RC6 為 128-bit 區塊加密 (block cipher) 由 RC5 衍生而來。
 ```
 
 #### RC2
@@ -16,13 +16,13 @@ RC2  別名為 ARC2** 由 **[Ronald Rivest](https://en.wikipedia.org/wiki/Ron_Ri
 
 一開始他的演算法是保持保密的，直到1996年RC2 才被匿名的貼到[sci.crypt](https://en.wikipedia.org/wiki/Sci.crypt)論壇上。
 
-1998年 Ronald Rivest 才授權給[RFC](https://en.wikipedia.org/wiki/Request_for_Comments)公開\([RFC 2268](https://tools.ietf.org/html/2268)\)。
+1998年 Ronald Rivest 才授權給[RFC](https://en.wikipedia.org/wiki/Request_for_Comments)公開 \( [RFC 2268](https://tools.ietf.org/html/2268)\) 。
 
-RC2為64-bit 的區塊加密\(block cipher\) ，但其現在已知容易遭受 [related-key attack](https://en.wikipedia.org/wiki/Related-key_attack)之攻擊\(Kelsey et al., 1997\)
+RC2為64-bit 的區塊加密 \( block cipher \) ，但其現在已知容易遭受 [related-key attack](https://en.wikipedia.org/wiki/Related-key_attack)之攻擊 \( Kelsey et al., 1997 \)
 
 #### RC4
 
-RC4（來自Rivest Cipher 4的縮寫）是一種流加密算法\(stream cipher\)，一個字節一一地加解密，密鑰長度可變。
+RC4（ 來自Rivest Cipher 4的縮寫 ）是一種流加密算法 \( stream cipher \) ，一個字節一一地加解密，密鑰長度可變。
 
 RC4是常見在WIFI加密中的WEP採用的加密算法，也曾經是TLS可採用的算法之一。
 

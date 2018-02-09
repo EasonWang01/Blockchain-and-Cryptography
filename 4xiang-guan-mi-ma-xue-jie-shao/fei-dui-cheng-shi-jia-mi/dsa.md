@@ -1,6 +1,6 @@
-# DSA\(Digital Signature Algorithm\)
+# DSA \( Digital Signature Algorithm \)
 
-在1991年DSA 演算法被採納作為**Digital Signature Standard**\(**DSS\)**數位簽名標準之演算法。
+在1991年DSA 演算法被採納作為**Digital Signature Standard **\( **DSS \) **數位簽名標準之演算法。
 
 DSA 的安全性是基於整數有限域離散對數之難題。
 
@@ -8,8 +8,6 @@ DSA 的安全性是基於整數有限域離散對數之難題。
 假設在Fp域上，已知a,t，可快速計算 (a ** t) mod p
 但是假設已知a,b，欲求t ，則 a ** t = b mod p 則較難求解。
 ```
-
-#### 
 
 #### 參數選擇
 

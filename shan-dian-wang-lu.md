@@ -2,11 +2,11 @@
 
 ## 概念
 
-為了解決比特幣交易的高手續費與交易後確認時間過長的問題，決定把部分交易放在區塊鏈外執行，並於未來結算時才寫入區塊鏈中。
+為了解決比特幣交易的高手續費與交易後確認時間過長的問題，決定把部分交易放在區塊鏈外執行，並於未來交易結算時才寫入區塊鏈中。
 
 可參考此份論文：[https://lightning.network/lightning-network-paper.pdf。](https://lightning.network/lightning-network-paper.pdf。)
 
-在閃電網路中，雙方要進行交易之前會預存一些資金到一個multisignature地址，之後雙方開啟一個支付通道（Channel）後，會維護一份共同的帳本，每次雙方有小額交易後都更新帳本，並且讓舊的帳本失效。
+在閃電網路中，雙方要進行交易之前會預存一些資金到一個 multisignature 地址，之後雙方開啟一個支付通道（Channel）後，會維護一份共同的帳本，每次雙方有小額交易後都更新帳本，並且讓舊的帳本失效。
 
 > 可以想像是一個小鎮上有一個大水塔，Ａ太太跟B太太都提了一些水回家，之後兩人放自己的一些水到兩人的共用水盆，之後需要水時，兩人可以不必到大水塔提水，先從共用水盆提水，然後紀錄哪位太太提了多少水即可。
 
@@ -45,15 +45,15 @@ C太太給出R，拿到B太太的錢。
 B太太再把R給A拿到A太太的錢。
 而B太太也可以從中獲得手續費。
 
-（注意： 如果A太太跟B太太之間的Channel過期時間比B太太跟C太太之間短，則C太太，太晚給出R，A太太在時間到後拿回錢，但這時C太太又把R給了B太太然後拿到錢，
-  但B太太就沒辦法再把R給A太太拿錢了，所以通常越接近 R 產生者的 channel 過期時間必須越短。）
+（ 注意：如果A太太跟B太太之間的Channel過期時間比B太太跟C太太之間短，則C太太，太晚給出R，A太太在時間到後拿回錢，但這時C太太又把R給了B太太然後拿到錢，
+但B太太就沒辦法再把R給A太太拿錢了，所以通常越接近 R 產生者的 channel 過期時間必須越短。）
 ```
 
 官方影片：[https://youtu.be/8zVzw912wPo](https://youtu.be/8zVzw912wPo)
 
 ## 標準 \( specification \)
 
-Lightning Network specification \(BOLTs\)， BOLT 全名為： Basic of Lightning Technologies。
+Lightning Network specification \( BOLTs \)， BOLT 全名為： Basic of Lightning Technologies。
 
 有關閃電網路相關實作標準可參考：
 

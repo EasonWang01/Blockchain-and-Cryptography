@@ -4,7 +4,7 @@
 
 [https://github.com/ethersphere/swarm-guide/blob/master/contents/usage.rst](https://github.com/ethersphere/swarm-guide/blob/master/contents/usage.rst)
 
-類似於IPFS （註一） ，可以把檔案上傳到各地的節點，目標為分散式的檔案存儲，沒有中心Server。
+類似於IPFS （ 註一 ） ，可以把檔案上傳到各地的節點，目標為分散式的檔案存儲，沒有中心Server。
 
 Web3的bzz模組有其相關API可使用。
 

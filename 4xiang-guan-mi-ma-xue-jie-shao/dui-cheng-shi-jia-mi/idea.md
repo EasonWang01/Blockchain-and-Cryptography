@@ -1,8 +1,8 @@
 # IDEA
 
-https://en.wikipedia.org/wiki/International\_Data\_Encryption\_Algorithm
+[https://en.wikipedia.org/wiki/International\_Data\_Encryption\_Algorithm](https://en.wikipedia.org/wiki/International_Data_Encryption_Algorithm)
 
-國際資料加密演算法（英語：International Data Encryption Algorithm，縮寫為 IDEA），為電子郵件加密法**PGP所採用。**
+國際資料加密演算法（英語：International Data Encryption Algorithm，縮寫為 IDEA ），為電子郵件加密法**PGP所採用。**
 
 其密鑰長度為128位元，每個區塊為64位元。
 
