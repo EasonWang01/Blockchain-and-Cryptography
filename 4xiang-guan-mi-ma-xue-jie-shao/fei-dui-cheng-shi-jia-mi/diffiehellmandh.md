@@ -1,4 +1,4 @@
-# Diffie–Hellman\(DH\)
+# Diffie–Hellman \( DH \)
 
 由 Whitfield Diffie 與 Martin Hellman 兩人名字所組成。
 
