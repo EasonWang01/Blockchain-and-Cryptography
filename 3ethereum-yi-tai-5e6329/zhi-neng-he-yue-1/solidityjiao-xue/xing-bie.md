@@ -155,6 +155,18 @@ function pushStruct() public {
 
 [http://solidity.readthedocs.io/en/develop/types.html\#allocating-memory-arrays](http://solidity.readthedocs.io/en/develop/types.html#allocating-memory-arrays)
 
+移除Array元素
+
+```
+delete myStructs[2];
+```
+
+清空Array
+
+```
+myStructs.length = 0;
+```
+
 #### 6.Boolean
 
 與其他程式語言用法相同
