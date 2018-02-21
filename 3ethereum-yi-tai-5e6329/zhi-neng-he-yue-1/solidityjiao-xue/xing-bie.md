@@ -133,6 +133,28 @@ function Test() constant returns (uint[]) {
 uint[] memory values = new uint[](3);
 ```
 
+我們也可以在Array裡面放入Struct
+
+```js
+struct A_Struct {
+    uint field1;
+    uint field2;
+}
+
+A_Struct[] public myStructs;
+
+function pushStruct() public {
+    A_Struct memory m;
+    m.field1 = 1;
+    m.field2 = 2;
+    myStructs.push(m);
+    
+    // 或是直接使用 myStructs.push(1, 2);
+}
+```
+
+
+
 [http://solidity.readthedocs.io/en/develop/types.html\#allocating-memory-arrays](http://solidity.readthedocs.io/en/develop/types.html#allocating-memory-arrays)
 
 #### 6.Boolean
