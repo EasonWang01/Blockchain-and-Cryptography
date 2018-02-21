@@ -127,7 +127,7 @@ function Test() constant returns (uint[]) {
 }
 ```
 
-或是使用memory Array \(宣告長度為3的Array\)
+或是使用memory Array \( 宣告長度為 3 的 Array \)
 
 ```js
 uint[] memory values = new uint[](3);
@@ -148,12 +148,10 @@ function pushStruct() public {
     m.field1 = 1;
     m.field2 = 2;
     myStructs.push(m);
-    
+
     // 或是直接使用 myStructs.push(1, 2);
 }
 ```
-
-
 
 [http://solidity.readthedocs.io/en/develop/types.html\#allocating-memory-arrays](http://solidity.readthedocs.io/en/develop/types.html#allocating-memory-arrays)
 
