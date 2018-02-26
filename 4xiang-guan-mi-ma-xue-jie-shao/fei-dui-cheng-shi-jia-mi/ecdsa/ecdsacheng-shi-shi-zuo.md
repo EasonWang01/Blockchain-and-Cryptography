@@ -201,7 +201,7 @@ if (result) {
 > pubhex = bob.getPublicKey().toString('hex')
 > ```
 
-完成範例
+完整範例
 
 ```js
 // 使用Node.js的ECDH來產生公鑰與私鑰
