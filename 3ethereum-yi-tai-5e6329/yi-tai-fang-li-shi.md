@@ -34,7 +34,7 @@ Ethereum舉辦一個 bounty 項目，獎勵所有找出以太坊Bug的開發者
 
 #### 2015年4月
 
-DEVgrants 項目發表，這個項目將對所有在以太坊平台和基於以太坊的項目所做的貢獻提供資金。這一項目旨在獎勵和扶持開發者們所做的努力。
+DEVgrants 項目發表，這個項目將對所有在以太坊平台和基於以太坊的項目所做的貢獻提供資金，獎勵相關開發者等。
 
 [https://blog.ethereum.org/2015/04/07/devgrants-help/](https://blog.ethereum.org/2015/04/07/devgrants-help/)
 
