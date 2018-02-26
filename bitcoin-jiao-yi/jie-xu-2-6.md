@@ -1,6 +1,6 @@
 # 其他類型交易
 
-#### 1.Data Output \( OP\_RETURN，可以填上自己想填的資料到交易上 \) 
+#### 1.Data Output \( OP\_RETURN，可以填上自己想填的資料到交易上 \)
 
 為了可以在比特幣交易中加上額外的自訂訊息，後來發展出此種做法，最多可以帶 83 bytes 的資料 \( Bitcoin Core 0.12.0\)。
 
@@ -123,14 +123,13 @@ BIP141, BIP143, BIP144, BIP145
 ---
 
 註1 : lock\_time   [https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)  
-以unix timestamp表示，類似於`1511321691`如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交易加入區塊
+以Unix timestamp表示，類似於`1511321691`如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交易加入區塊
 
 ![](/assets/09isd.png)
 
 > [https://en.bitcoin.it/wiki/Protocol\_documentation\#tx](https://en.bitcoin.it/wiki/Protocol_documentation#tx)
 
-註2 : 交易手續費，約為1000 satoshis每 KB，每個交易通常至少含有500 bytes。  
-[https://bitcoinfees.earn.com/](https://bitcoinfees.earn.com/)
+註2 : 交易手續費，以交易大小來計算，每 KB 約為 1000 satoshis，每個交易通常至少含有500 bytes。
 
 > [https://bitcoinfees.earn.com/](https://bitcoinfees.earn.com/)  
 >  \(此網站可看到目前推薦的手續費與尚未確認的交易所含的手續費\)  
