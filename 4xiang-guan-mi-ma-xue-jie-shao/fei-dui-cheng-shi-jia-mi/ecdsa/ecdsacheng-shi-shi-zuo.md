@@ -2,7 +2,7 @@
 
 #### 原理：
 
-因為以下程式涉及比較多大數運算，但Javascript因為沒有內建BIg-integer之處理，但Python有內建BIg-integer，不會導致數字較大時精度跑掉，所以以下範例以Python來展示 \( version 2.7.14 \)。
+因為以下程式涉及比較多大數運算，但Javascript因為沒有內建Big-integer之處理，但Python有內建Big-integer，不會導致數字較大時精度跑掉，所以以下範例以Python來展示 \( version 2.7.14 \)。
 
 > 以下程式為無使用ECDSA相關第三方套件之範例
 
