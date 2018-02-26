@@ -136,7 +136,7 @@ web3.eth.defaultAccount = eth.accounts[0];
 
 ![](/assets/812d.png)
 
-> 因為我們現在使用的是--dev的開發用私有鏈，預設為POA\(Proof of Authority\)，並且會自動產生區塊，所以產生交易後不必自行輸入`miner.start(1)`來挖礦。
+> 因為我們現在使用的是 --dev 的開發用私有鏈，預設為POA （Proof of Authority），並且會自動產生區塊，所以產生交易後不必自行輸入`miner.start(1)`來挖礦。
 
 # 使用Geth部屬
 
