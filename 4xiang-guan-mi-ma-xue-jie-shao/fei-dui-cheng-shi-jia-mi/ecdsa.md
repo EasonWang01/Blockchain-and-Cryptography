@@ -65,7 +65,9 @@ ANSSI FRP256V1 (2011).
 
 > 參考至：
 >
-> [https://safecurves.cr.https://bitcointalk.org/index.php?topic=289795.msg3183975\#msg3183975yp.to/](https://safecurves.cr.yp.to/)
+> [https://safecurves.cr.yp.to/](https://safecurves.cr.yp.to/)
+>
+> [https://bitcointalk.org/index.php?topic=289795.msg3183975\#msg3183975](https://safecurves.cr.yp.to/)
 >
 > [http://www.secg.org/sec2-v2.pdf](http://www.secg.org/sec2-v2.pdf)
 

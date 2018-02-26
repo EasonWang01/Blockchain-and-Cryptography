@@ -38,13 +38,14 @@
   8 bytes ，0x01 為 Full node
   ```
 
-* **Node Timestamp**: 1513492007
+* **Node Timestamp**:  E.g. `d2e27c5a00000000`
 
   ```
-  8 bytes， 此為unix的timestamp 但只取到秒數   
+  8 bytes， 此為unix的timestamp 但只取到秒數，例如: parseInt(Date.now().toString().substring(0, 10))
+
+  之後我們還要將其轉換為十六進位，並且轉為Small Endian。
 
   範例：BigEndian_to_SmallEndian(parseInt(Date.now().toString().substring(0, 10)).toString('16')) + "00000000"
-  e.g. d2e27c5a00000000
   ```
 
 * **Receiving node's services**: 0100000000000000
