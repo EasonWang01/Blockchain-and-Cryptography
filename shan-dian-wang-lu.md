@@ -73,8 +73,10 @@ Lightning Network specification \( BOLTs \)， BOLT 全名為： Basic of Lightn
 
 我們要先clone該專案，並且進入專案中的Docker資料夾。
 
+> 為了避免未來版本更動造成程式無法執行，以下 Github 連結為筆者 Fork 原 lightningnetwork 專案之程式，保持讀者與本書具有相同專案版本。
+
 ```
-git clone https://github.com/lightningnetwork/lnd.git
+git clone https://github.com/blockchain-tutorial-by-yicheng/lnd.git
 cd lnd/docker
 ```
 
