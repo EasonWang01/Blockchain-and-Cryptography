@@ -12,7 +12,7 @@ RC6 為 128-bit 區塊加密 (block cipher) 由 RC5 衍生而來。
 
 #### RC2
 
-RC2  別名為 ARC2** 由 **[Ronald Rivest](https://en.wikipedia.org/wiki/Ron_Rivest)在1987年開發。 "RC" 意思為 "Ron's Code" 或是 "Rivest Cipher"
+RC2  別名為 ARC2** 由 **[Ronald Rivest](https://en.wikipedia.org/wiki/Ron_Rivest)在1987年開發。 RC 意思為 Ron's Code 或是 Rivest Cipher。
 
 一開始他的演算法是保持保密的，直到1996年RC2 才被匿名的貼到[sci.crypt](https://en.wikipedia.org/wiki/Sci.crypt)論壇上。
 
@@ -54,7 +54,7 @@ console.log(decrypted);
 
 RC5 的區塊大小可以是32、 64 或是 128 bits 而 key 的大小可以是 \(0 到 2040 bits\)
 
-實作方法可參考:[http://www.engr.uconn.edu/~zshi/course/cse268f2004/rc5.pdf](http://www.engr.uconn.edu/~zshi/course/cse268f2004/rc5.pdf)
+實作方法可參考 : [http://www.engr.uconn.edu/~zshi/course/cse268f2004/rc5.pdf](http://www.engr.uconn.edu/~zshi/course/cse268f2004/rc5.pdf)
 
 1.
 
@@ -85,7 +85,7 @@ RC5 的區塊大小可以是32、 64 或是 128 bits 而 key 的大小可以是 
 
 #### RC6
 
-RC6 其區塊大小為 128 bits 而其 key 的大小可為 128, 192, 256 bits 至 2040-bits。
+RC6 其區塊大小為 128 bits 而其 key 的大小可為 128, 192, 256 bits 至 2040 bits。
 
 RC6 非常類似於 RC5
 
@@ -93,7 +93,7 @@ RC6 非常類似於 RC5
 
 其中與RC類似，使用w/r/b表示
 
-> The user supplies a key of b bytes, where 0  b  255. From this key, 2r + 4 words \(w bits each\) are derived and stored in the array S\[0;:::; 2r + 3\]. This array is used in both encryption and decryption.
+> The user supplies a key of b bytes, where 0 &lt; b &lt; 255. From this key, 2r + 4 words \(w bits each\) are derived and stored in the array `S[0, ..., 2r + 3]`This array is used in both encryption and decryption.
 
 ```
 RC6-32/16/16 :
