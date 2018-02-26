@@ -83,7 +83,7 @@ console.log(decrypt(encrypt("test")))
 
 > 需要加上cipher.getAuthTag\(\); 與 decipher.setAuthTag\(\);
 
-目前AuthTag與_additional authenticated data_\(AAD\)在node.js只支援GCM模式，cipher.setAAD需要在update\(\)之前使用，而cipher.getAuthTag\(\)必須要在[`cipher.final()`](https://nodejs.org/api/crypto.html#crypto_cipher_final_outputencoding)執行後才能使用。
+目前 AuthTag 與 Additional Authenticated Data \( AAD \) 在 Node.js 只有 GCM 模式支援，cipher.setAAD需要在 update\(\) 之前使用，而 cipher.getAuthTag\(\) 必須要在[`cipher.final()`](https://nodejs.org/api/crypto.html#crypto_cipher_final_outputencoding)執行後才能使用。
 
 ```js
 const crypto = require('crypto');
