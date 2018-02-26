@@ -88,7 +88,7 @@ H（AB）~= SHA256(SHA256(HA + HB))
 
 # 挖礦
 
-> Mining   = Securing the network = verify computation
+> Mining   = Securing the network = Verify computation
 
 當一個新的區塊被`挖掘`出來，每個區塊裡包含著被礦工從交易池中挑選出來的交易。我們把包含在區塊內且被添加到區塊鏈上的交易稱為`確認交易`，交易經過確認之後，新的擁有者才能夠花費他在交易中得到的比特幣。
 
