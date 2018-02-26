@@ -19,9 +19,9 @@
 > 每個十六進位字元具有 0.5 bytes
 
 ```
-私鑰(Private key):   32 bytes
-公鑰(Public key):    65 bytes
-公鑰雜湊(Public key hash):  20 bytes
+私鑰 (Private key):   32 bytes
+公鑰 (Public key):    65 bytes
+公鑰雜湊 (Public key hash):  20 bytes
 ```
 
 ### 地址開頭字母
@@ -43,9 +43,9 @@
 
 3.SegWit Address (P2WSH) 隔離見證地址，開頭為3
 
-4.Time Locked Address 運用OP_CHECKLOCKTIMEVERIFY (OP_HODL)來創建的地址，開頭為3
+4.Time Locked Address 運用OP_CHECKLOCKTIMEVERIFY (OP_HODL) 來創建的地址，開頭為3
 
-5.HD (hierarchical deterministic )產生出xPub和xPrv，之後再產生地址
+5.HD (hierarchical deterministic) 產生出xPub和xPrv，之後再產生地址
 ```
 
 比特幣地址有以下性質
@@ -68,7 +68,7 @@
 > 有些第三方套件在使用橢圓曲線產生的 256 bits 的 public key 時已經在開頭加上了 `0x04` 但有些不會加。
 >
 > 以下為使用openssl產生secp256k1公鑰的範例 :
-
+>
 > ```bash
 > openssl ecparam -name secp256k1 -genkey >  priv.pem
 > openssl ec -in priv.pem -pubout -outform DER|tail -c 65|xxd -p -c 65
@@ -313,9 +313,20 @@ function hex2ASCII(_hex) {
 * ##### P2WPKH
 * ##### P2WSH
 
-隔離見證地址，開頭為3，但也有可能看到`bc1q` 開頭的地址可參考BIP-173
+隔離見證地址，開頭為3，但也有可能看到`bc1q` 與`tb1q`開頭的地址，可參考 BIP-173
 
-> 只能接受壓縮版本的公鑰
+https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki
+
+> 此種地址產生時，只能接受壓縮版本的公鑰。
+
+E.g.
+
+```
+Mainnet P2WPKH: bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4
+Testnet P2WPKH: tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx
+Mainnet P2WSH: bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3
+Testnet P2WSH: tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7
+```
 
 #### 使用Bitcoind產生地址
 
