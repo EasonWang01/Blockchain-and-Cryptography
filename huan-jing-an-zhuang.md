@@ -20,12 +20,16 @@ npm install <套件名稱> -g
 
 設定以下環境變數：
 
-`NODE_PATH` ， 安裝全域包後給 `js`檔案`require` 使用  
+`NODE_PATH` ， 安裝全域包後給 `js`檔案`require` 使用
+
+  
 Windows：
 
 ```
 NODE_PATH C:\Program Files\nodejs\node_modules
 ```
+
+![](/assets/環境變數.png)
 
 macOS：
 
@@ -33,9 +37,7 @@ macOS：
 export NODE_PATH=/usr/local/lib/node_modules
 ```
 
-如果不知道路徑是什麼可以先試著安裝 `-g` 模組，然後看一下他印出來的安裝路徑。
-
-![](/assets/環境變數.png)
+> 如果不知道路徑是什麼可以先試著安裝 `-g` 模組，然後看一下他印出來的安裝路徑。
 
 #### 切換Node.js版本
 
