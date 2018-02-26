@@ -10,7 +10,9 @@
 
 比特幣可以說是近年加密貨幣與區塊鏈技術應用發展的開頭，後起的區塊鏈技術參考了許多比特幣本身的核心原理。在本書接下來的章節中會先說明比特幣是如何運作，過程中會將會一步一步講解區塊鏈的相關概念，並且介紹如何申請一個自己的比特幣地址與錢包，進行購買比特幣與轉帳等動作。
 
-> Bitcoin is an innovative payment network and a new kind of money.   源自比特幣官網 [https://bitcoin.org/en/](https://bitcoin.org/en/)
+> Bitcoin is an innovative payment network and a new kind of money.   
+>
+> 源自比特幣官網 [https://bitcoin.org/en/](https://bitcoin.org/en/)
 
 我們時常從新聞報導或朋友閒聊間聽到：今天比特幣價格又飆漲或下跌了、某位玩家又投資了新的礦機或礦場等等，但大家可能會想的第一個問題可能是：在電腦上的數字貨幣真的夠安全嗎？
 
