@@ -61,7 +61,7 @@ ANSSI FRP256V1 (2011).
 >
 > 而選擇此曲線的原因討論可參考: [https://bitcointalk.org/index.php?topic=289795.msg3183975\#msg3183975](https://bitcointalk.org/index.php?topic=289795.msg3183975#msg3183975)
 
-![](/assets/4534.png)
+![](/assets/ks.png)
 
 > 參考至：
 >
