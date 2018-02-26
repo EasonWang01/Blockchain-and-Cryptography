@@ -110,7 +110,7 @@ scriptSig:    (empty)
 scriptPubKey: 0 <32-byte-hash>
 ```
 
-.交易範例：[http://n.bitcoin.ninja/checktx?txid=78457666f82c28aa37b74b506745a7c7684dc7842a52a457b09f09446721e11c](http://n.bitcoin.ninja/checktx?txid=78457666f82c28aa37b74b506745a7c7684dc7842a52a457b09f09446721e11c)
+交易範例：[http://n.bitcoin.ninja/checktx?txid=78457666f82c28aa37b74b506745a7c7684dc7842a52a457b09f09446721e11c](http://n.bitcoin.ninja/checktx?txid=78457666f82c28aa37b74b506745a7c7684dc7842a52a457b09f09446721e11c)
 
 ![](/assets/螢幕快照 2018-01-20 下午11.03.32.png)
 
@@ -129,7 +129,8 @@ BIP141, BIP143, BIP144, BIP145
 
 > [https://en.bitcoin.it/wiki/Protocol\_documentation\#tx](https://en.bitcoin.it/wiki/Protocol_documentation#tx)
 
-註2 : 交易手續費，以交易大小來計算，每 KB 約為 1000 satoshis，每個交易通常至少含有500 bytes。
+註2 : 交易手續費，以交易大小來計算，每 KB 約為 1000 satoshis  
+，每個交易通常至少含有500 bytes。
 
 > [https://bitcoinfees.earn.com/](https://bitcoinfees.earn.com/)  
 >  \(此網站可看到目前推薦的手續費與尚未確認的交易所含的手續費\)  

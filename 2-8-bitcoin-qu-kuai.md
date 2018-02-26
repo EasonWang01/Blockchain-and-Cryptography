@@ -95,7 +95,7 @@ https://blockexplorer.com/api/status?q=getBlockCount
 
 Bitcoin 之 Genesis Block 創建原始碼
 
-> ![](/assets/2444.png)[https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp\#L123](https://www.gitbook.com/book/easonwang01/e/edit#)
+> ![](/assets/2444.png)https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp\#L123
 
 ---
 
