@@ -49,6 +49,8 @@ B太太再把R給A拿到A太太的錢。
 但B太太就沒辦法再把R給A太太拿錢了，所以通常越接近 R 產生者的 channel 過期時間必須越短。）
 ```
 
+![](/assets/螢幕快照 2018-02-26 下午8.56.58.png)
+
 官方影片：[https://youtu.be/8zVzw912wPo](https://youtu.be/8zVzw912wPo)
 
 ## 標準 \( specification \)
