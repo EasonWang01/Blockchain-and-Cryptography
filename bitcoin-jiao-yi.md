@@ -468,7 +468,7 @@ OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> 
 可以有 N 把 Public Key 被記錄在上面，而 Unlocking script 解鎖時至少要有 M 把 Private Key 產生的 Signature 才能執行交易，而 M  會小於或等於 N。
 
 ```
-Ｍ-of-N Multi-Signature
+M-of-N Multi-Signature
 ```
 
 其 Locking script 類似如下
