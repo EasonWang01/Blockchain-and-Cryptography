@@ -91,8 +91,6 @@ web3.eth.estimateGas({
 Contract.合約Function(參數, {from: web3.eth.accounts[0], gas: 111700})
 ```
 
-> 如果合約Function有參數，則記得在最後面加上 `{from: 執行交易人地址, gas: gas使用量}`即可
->
 > 第二個 gas 參數指的是 `gas Limit`
 
 #### 發送交易
