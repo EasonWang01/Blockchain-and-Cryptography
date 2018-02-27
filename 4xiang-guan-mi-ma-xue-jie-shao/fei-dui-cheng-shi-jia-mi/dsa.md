@@ -129,7 +129,7 @@ const publicKey = fs.readFileSync('./dsa_publickey.pem');
 let sign = crypto.createSign('dsaWithSHA1');
 sign.update('apple');
 
-// 注意 這裡是用私鑰 簽名，如果用公鑰會出現錯誤
+// 注意 這裡是用私鑰簽名，如果用公鑰會出現錯誤
 let res = sign.sign(privateKey, 'hex');
 
 let verify = crypto.createVerify('dsaWithSHA1');
