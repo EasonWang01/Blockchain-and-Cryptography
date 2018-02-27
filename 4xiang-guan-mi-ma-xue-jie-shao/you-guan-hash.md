@@ -1,6 +1,6 @@
 # 有關Hash
 
-Hash function也可稱為**雜湊函式，可以**把一串任意長度大小的字串或數字，轉換一串為固定大小的值。
+Hash function也可稱為**雜湊函式，**可以把一串任意長度大小的字串或數字，轉換一串為固定大小的值。
 
 而任何相同的值經過hash後出來的值都會是相同的，所以就可以進一步做到訊息驗證。
 
@@ -12,7 +12,7 @@ Hash function也可稱為**雜湊函式，可以**把一串任意長度大小的
 
 [bcrypt](https://www.gitbook.com/book/easonwang01/e/edit#)、[PBKDF2](https://www.gitbook.com/book/easonwang01/e/edit#)、[scrypt](https://www.gitbook.com/book/easonwang01/e/edit#)、[Argon2](https://www.gitbook.com/book/easonwang01/e/edit#)等等。
 
-雜湊函式被設計成能夠非常快速，讓整個加密程序不至於被拖慢，但這樣攻擊者可以非常快速的用任意的字串來進行雜湊並比較輸出結果，所以在雜湊中會加入一些方法來解決此問題。
+雜湊函式被設計成能夠非常快速，讓整個加密程序不至於被拖慢，但這樣攻擊者可以非常快速的用任意的字串來進行雜湊並比對輸出結果，所以在雜湊中會加入一些方法來解決此問題。
 
 1.Salt
 
