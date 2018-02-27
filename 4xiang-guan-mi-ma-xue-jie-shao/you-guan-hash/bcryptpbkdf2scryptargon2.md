@@ -173,6 +173,9 @@ argon2.hash('password', options).then(hash => {
 ```js
 const argon2 = require('argon2');
 
+/*
+agron2.verify()的第一個參數填入剛才產生的雜湊值，第二個參數填入雜湊時輸入的密碼
+*/
 argon2.verify('$argon2d$v=19$m=8192,t=4,p=2$Qt1HCzlwg260X7LNpzqtCg$u+zNJnC2s7gs6vJ6rzlR6usRIKJdvqGGKjALr47txg0', 'password').then(match => {
     if (match) {
       console.log('match!')
