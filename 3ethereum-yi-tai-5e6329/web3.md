@@ -626,20 +626,16 @@ export default withStyles(styles)(App);
 
 [https://github.com/EasonWang01/Transaction-Dapp.git](https://github.com/EasonWang01/Transaction-Dapp.git)
 
-
-
-
-
 ---
 
-如果要使用Metamask可以如下判斷，並提供Web3 Provider。
+在 React.js 中如果要使用 Metamask 可以如下判斷，來提供 Web3 Provider。
 
 ```js
 import Web3 from 'web3';
 let web3 = window.web3;
 let web3js;
 
-componentWillMount() {
+componentDidMount() {
   if (typeof web3 !== 'undefined') {
     // Use Mist/MetaMask's provider
     web3js = new Web3(web3.currentProvider);
