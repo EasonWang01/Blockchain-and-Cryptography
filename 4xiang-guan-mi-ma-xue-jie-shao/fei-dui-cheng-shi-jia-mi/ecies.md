@@ -29,7 +29,7 @@
 
 5. 把第二步驟的值取後32位當macKey
 
-6. 把iv, encryptionKey, 訊息一起使用AES-256-CBC加密，產生ciphertext。
+6. 把 iv, encryptionKey 一起使用 AES-256-CBC 加密，產生ciphertext。
 ```
 
 #### 解密步驟:
@@ -41,7 +41,7 @@
 
 3. 驗證加密時算出的MAC值是否與解密時算的MAC值符合
 
-4. 傳入:iv、encryptionKey、ciphertext，使用AES-256-CBC解密
+4. 傳入iv、encryptionKey、ciphertext，使用AES-256-CBC解密
 ```
 
 #### 程式範例:
