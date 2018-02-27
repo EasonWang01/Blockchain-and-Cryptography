@@ -626,3 +626,30 @@ export default withStyles(styles)(App);
 
 [https://github.com/EasonWang01/Transaction-Dapp.git](https://github.com/EasonWang01/Transaction-Dapp.git)
 
+
+
+
+
+---
+
+如果要使用Metamask可以如下判斷，並提供Web3 Provider。
+
+```js
+import Web3 from 'web3';
+let web3 = window.web3;
+let web3js;
+
+componentWillMount() {
+  if (typeof web3 !== 'undefined') {
+    // Use Mist/MetaMask's provider
+    web3js = new Web3(web3.currentProvider);
+  } else {
+    console.log('No MetaMask detected')
+    // fallback - Use local node 
+    web3js = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+  }
+}
+```
+
+
+
