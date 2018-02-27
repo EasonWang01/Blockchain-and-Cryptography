@@ -39,7 +39,7 @@ macOS :
 
 ## 讓Ethereum wallet \(Mist\) 讀取合約
 
-我們在Remix IDE點選compiler然後選擇ERC20\_token \( 剛才合約檔案名稱 \)，最後按下Details按鈕。
+我們在Remix IDE點選compile然後選擇ERC20\_token \( 剛才合約檔案名稱 \)，最後按下Details按鈕。
 
 #### ![](/assets/螢幕快照 2018-01-16 下午10.29.47.png)
 
