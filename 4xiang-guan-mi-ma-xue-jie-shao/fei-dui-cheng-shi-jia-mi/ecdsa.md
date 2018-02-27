@@ -96,7 +96,7 @@ ANSSI FRP256V1 (2011).
 2.計算P
 
 ```
-P = k * G(x,y)
+P = k * G(x, y)
 G(x, y) 為之前挑選的基點(Base point)
 ```
 
