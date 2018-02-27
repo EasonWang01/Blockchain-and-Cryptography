@@ -14,7 +14,7 @@ RSA密鑰一般是 1024 bits 或 2048 bits。
 
 第一步: 隨便找兩個質數a與b
 
-> 質數表[http://www.baike.com/wiki/质数表](http://www.baike.com/wiki/质数表)
+> 質數表 https://zh.wikipedia.org/wiki/%E8%B3%AA%E6%95%B8%E5%88%97%E8%A1%A8
 
 ```
 這裡假設a為23，而b為29
