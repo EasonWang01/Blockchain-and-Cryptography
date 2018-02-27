@@ -68,7 +68,7 @@ function te() {
 65,66,67
 ```
 
-而要加密的明文之輸入數字過大也會產生解密後和輸入數字不同之情況 \( 因涉及Big Integer \) 
+而要加密的明文之輸入數字過大也會產生解密後和輸入數字不同之情況 \( 因涉及Big Integer \)
 
 > 建議將密文以單字為單位轉為ASCII然後個別存入陣列轉換
 
@@ -84,10 +84,10 @@ function te() {
 
 > 這裡因為數字是Big Integer所以算的時候不可直接用...\*\*...% ...，需要用相關Big Integer模組不然會產生計算錯誤
 >
-> 而python內建Big Integer但Javascript沒有，所以直接用Javascript計算出來的數字會錯誤。
+> 而Python內建Big Integer但Javascript沒有，所以直接用Javascript計算出來的數字會錯誤。
 
 ```
-如果已經安裝好python打開Terminal輸入python，進入命令列，然後輸入：
+如果已經安裝好Python，打開Terminal輸入Python，進入命令列，然後輸入：
 
 (65 ** 19 ) % 667
 ```
