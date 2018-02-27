@@ -106,7 +106,7 @@ crypto.pbkdf2('secret', 'salt', 100000, 64, 'sha512', (err, derivedKey) => {
 
 > 而p的參數一般來說都會是1
 
-我們這邊使用第三方模組
+接著，我們使用node-scrypt模組來進行實際操作。
 
 > [https://github.com/barrysteyn/node-scrypt](https://github.com/barrysteyn/node-scrypt)
 
