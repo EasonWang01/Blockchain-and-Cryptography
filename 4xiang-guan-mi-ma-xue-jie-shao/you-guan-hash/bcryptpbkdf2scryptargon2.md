@@ -51,7 +51,7 @@ bcrypt.compare(myPlaintextPassword, "$2a$10$8QT.28zoo.jyFB2yvDURL.IM6gL4YJHGsr1P
    console.log(res)
 });
 
-// compare中填入要比對的密碼與剛才產生出的Hash
+// 在bcrypt.compare()中的填入要比對的密碼與剛才產生出的Hash
 ```
 
 # PBKDF2
