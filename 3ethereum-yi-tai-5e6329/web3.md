@@ -635,7 +635,7 @@ import Web3 from 'web3';
 let web3 = window.web3;
 let web3js;
 
-componentDidMount() {
+componentWillMount() {
   if (typeof web3 !== 'undefined') {
     // Use Mist/MetaMask's provider
     web3js = new Web3(web3.currentProvider);
