@@ -191,7 +191,9 @@ cat decrypt.txt
 
 # Node.js之Encrypt與Decrypt
 
-這邊我們使用第三方模組『 node-rsa 』[https://github.com/rzcoder/node-rsa](https://github.com/rzcoder/node-rsa)
+這邊我們使用第三方模組『 node-rsa 』
+
+[https://github.com/rzcoder/node-rsa](https://github.com/rzcoder/node-rsa)
 
 安裝：
 
