@@ -60,7 +60,7 @@ ANSSI FRP256V1 (2011).
 範例:
 
 > 以下為 SEC2 推薦之 secp256k1 之曲線參數，亦為比特幣私鑰與公鑰所使用的曲線，算出來後其開頭可能為 02 或 04 ，後面接上 x 座標與 y 座標，其中 02 開頭為 Compress Key \( 只包含 x 座標並且前面開頭為02 \) ，因為有了 x 座標就可以代數進去方程式求得 y 座標，用以減少金鑰長度。
-
+>
 > 而選擇此曲線的原因討論可參考: [https://bitcointalk.org/index.php?topic=289795.msg3183975\#msg3183975](https://bitcointalk.org/index.php?topic=289795.msg3183975#msg3183975)
 
 ![](/assets/ks.png)
@@ -75,9 +75,9 @@ ANSSI FRP256V1 (2011).
 
 # ECDSA
 
-為DSA結合ECC橢圓曲線的簽名驗證演算法。ECDSA運作時會先把明文經過Hash，例如使用SHA系列，先對明文進行Hash。
+為DSA結合ECC橢圓曲線的簽名驗證演算法。ECDSA運作時會先把明文經過Hash，例如使用SHA系列，將明文進行Hash。
 
-而該Hash過的字串之二進位會再被切成長度與橢圓曲線級數之二進位相同長度字串。
+而該 Hash 過的字串轉為二進位後，會再被切成與該橢圓曲線級數之二進位相同長度之字串。
 
 #### 簽章步驟
 
