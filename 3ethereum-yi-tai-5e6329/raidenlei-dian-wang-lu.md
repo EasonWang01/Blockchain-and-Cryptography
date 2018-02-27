@@ -75,8 +75,6 @@ raiden --keystore-path $HOME/Library/Application\ Support/io.parity.ethereum/key
 > Linux: ~/.local/share/io.parity.ethereum/keys/test
 > ```
 
-
-
 啟動後會進入如下畫面
 
 ![](/assets/螢幕快照 2018-01-30 下午10.32.19.png)
@@ -218,7 +216,7 @@ PATCH /api/1/channels/填上Channel地址
 
 #### 呼叫Settle
 
-在關閉Channel後，經過一個timeout時間，可以呼要以下指令，將雙方最後的餘額發回雙方地址中。
+在關閉Channel後，經過一個timeout時間，可以呼叫以下指令，將雙方最後的餘額發回雙方地址中。
 
 ```
 PATCH /api/1/channels/填入channel地址
