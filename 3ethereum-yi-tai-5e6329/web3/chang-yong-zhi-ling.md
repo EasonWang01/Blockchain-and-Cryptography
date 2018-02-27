@@ -14,7 +14,7 @@ if (typeof web3 !== 'undefined') {
 
 > 如果在程式是寫localhost為provider，但是在有安裝Metamask的瀏覽器打開此Dapp，在Chrome devtool的console輸入web3時會去讀取Metamask之RPC，但寫在程式中的web3.eth.accounts還是會去讀取本地節點的 RPC。
 
-也可以使用第三方提供的節點來取得資訊，例如[https://infura.io/](https://infura.io/)
+也可以使用第三方提供的節點來取得資訊，例如 [https://infura.io/](https://infura.io/)
 
 ![](/assets/螢幕快照 2018-01-28 下午4.01.29.png)
 
