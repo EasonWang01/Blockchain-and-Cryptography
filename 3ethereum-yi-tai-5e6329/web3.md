@@ -628,7 +628,9 @@ export default withStyles(styles)(App);
 
 ---
 
-在 React.js 中如果要使用 Metamask 可以如下判斷，來提供 Web3 Provider。
+附錄 :
+
+1.在 React.js 中如果要使用 Metamask 可以如下判斷，來提供 Web3 Provider。
 
 ```js
 import Web3 from 'web3';
@@ -647,5 +649,7 @@ componentWillMount() {
 }
 ```
 
+2.如果使用 Metamask，需要把 Synchronize Function 都改為 Asynchronous Function
 
+https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#dizzy-all-async---think-of-metamask-as-a-light-client
 
