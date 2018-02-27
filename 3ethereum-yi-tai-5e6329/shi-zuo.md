@@ -86,7 +86,7 @@ contract HonestClub {
 >
 > [http://solidity.readthedocs.io/en/develop/units-and-global-variables.html\#block-and-transaction-properties](http://solidity.readthedocs.io/en/develop/units-and-global-variables.html#block-and-transaction-properties)
 >
-> 2.我們使用while來遍歷陣列並且進行修改會員的動作，但如果陣列長度過長會很耗費Gas，而目前因為還沒開放將Memory Array直接賦予運算後的值給Storage陣列，所以要注意陣列長度避免耗費過多Gas。
+> 2.我們使用 `while`來遍歷陣列並且進行修改會員的動作，但如果陣列長度過長會很耗費Gas，而目前因為還沒開放將Memory Array直接賦予運算後的值給Storage陣列，所以要注意陣列長度避免耗費過多Gas。
 
 我們一樣使用`create-react-app` 快速建立一個Web模板。
 
