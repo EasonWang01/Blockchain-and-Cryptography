@@ -19,7 +19,7 @@ Hash function也可稱為**雜湊函式，**可以把一串任意長度大小的
 ```
 Salt是指在雜湊函數中或是密碼上加入一串隨機的位元 ( random sequence of bytes )。
 所以密碼就會像是：salt字串 + password字串
-而任何人知道 password 字串並進行雜湊也無法符合 salt 加上 password 字串後的雜湊。
+而任何人知道 password 字串並進行雜湊後的雜湊值，將不會與加入salt後的值相同。
 如果每個使用者都有不同的salt，就沒有簡單的方法來辨識出使用者是否使用相同的password字串。
 ```
 
