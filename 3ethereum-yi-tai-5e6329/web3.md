@@ -630,7 +630,9 @@ export default withStyles(styles)(App);
 
 #### 附錄 :
 
-1.在 React.js 中如果要使用 Metamask 可以如下判斷，來提供 Web3 Provider。
+#### 1.
+
+在 React.js 中如果要使用 Metamask 可以如下判斷，來提供 Web3 Provider。
 
 ```js
 import Web3 from 'web3';
@@ -649,11 +651,31 @@ componentWillMount() {
 }
 ```
 
-2.如果使用 Metamask，需要把 Synchronize Function 都改為 Asynchronous Function
+#### 2.
+
+如果使用 Metamask，需要把 Synchronize Function 都改為 Asynchronous Function
+
+E.g.
+
+假如Contract有個`host Function` 來單純讀取值
+
+```js
+Contract.host
+```
+
+改為Asynchronous
+
+```js
+Contract.host((err, result) => {
+  if(!err) return result
+})
+```
 
 [https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#dizzy-all-async---think-of-metamask-as-a-light-client](https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md#dizzy-all-async---think-of-metamask-as-a-light-client)
 
-3.可用以下方式監聽Metamask上的帳號更改
+#### 3.
+
+可用以下方式監聽Metamask上的帳號更改
 
 ```js
 componentWillMount() {
