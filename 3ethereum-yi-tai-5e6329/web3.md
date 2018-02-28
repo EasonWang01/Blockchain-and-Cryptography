@@ -651,5 +651,24 @@ componentWillMount() {
 
 2.如果使用 Metamask，需要把 Synchronize Function 都改為 Asynchronous Function
 
-https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#dizzy-all-async---think-of-metamask-as-a-light-client
+[https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#dizzy-all-async---think-of-metamask-as-a-light-client](https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md#dizzy-all-async---think-of-metamask-as-a-light-client)
+
+3.可用以下方式監聽Metamask上的帳號更改
+
+```js
+componentWillMount() {
+  const context = this;
+  this.setState({ defaultAccount: web3.eth.defaultAccount });
+  const accountInterval = setInterval(function () {
+    if (web3.eth.defaultAccount !== context.state.defaultAccount) {
+      context.setState({ defaultAccount: web3.eth.defaultAccount })
+      console.log(`Account change to ${web3.eth.defaultAccount}!`)
+    }
+  }, 100);
+}
+```
+
+
+
+
 
