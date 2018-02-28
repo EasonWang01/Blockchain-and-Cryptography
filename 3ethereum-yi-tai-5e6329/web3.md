@@ -628,7 +628,7 @@ export default withStyles(styles)(App);
 
 ---
 
-附錄 :
+#### 附錄 :
 
 1.在 React.js 中如果要使用 Metamask 可以如下判斷，來提供 Web3 Provider。
 
@@ -667,8 +667,6 @@ componentWillMount() {
   }, 100);
 }
 ```
-
-
 
 
 
