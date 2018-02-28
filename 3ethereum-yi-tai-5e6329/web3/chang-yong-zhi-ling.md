@@ -261,19 +261,25 @@ web3.version.getNetwork((err, netId) => {
 
 ### 對訊息簽名
 
+用途 :
+
+https://medium.com/metamask/the-new-secure-way-to-sign-data-in-your-browser-6af9dd2a1527
+
+用法 :
+
 ```
 web3.eth.sign
 或是
 web3.personal.sign
 ```
 
-https://ethereum.stackexchange.com/questions/25601/what-is-the-difference-between-web3-eth-sign-web3-eth-accounts-sign-web3-eth-p
+[https://ethereum.stackexchange.com/questions/25601/what-is-the-difference-between-web3-eth-sign-web3-eth-accounts-sign-web3-eth-p](https://ethereum.stackexchange.com/questions/25601/what-is-the-difference-between-web3-eth-sign-web3-eth-accounts-sign-web3-eth-p)
 
 驗證方式 :
 
-https://ethereum.stackexchange.com/questions/15364/ecrecover-from-geth-and-web3-eth-sign
+[https://ethereum.stackexchange.com/questions/15364/ecrecover-from-geth-and-web3-eth-sign](https://ethereum.stackexchange.com/questions/15364/ecrecover-from-geth-and-web3-eth-sign)
 
-http://ethfans.org/posts/353
+[http://ethfans.org/posts/353](http://ethfans.org/posts/353)
 
-https://github.com/ethereum/web3.js/issues/392
+[https://github.com/ethereum/web3.js/issues/392](https://github.com/ethereum/web3.js/issues/392)
 
