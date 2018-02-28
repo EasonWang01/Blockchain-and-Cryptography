@@ -256,8 +256,24 @@ web3.version.getNetwork((err, netId) => {
 ```
 
 > [https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#construction\_worker-network-check](https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md#construction_worker-network-check)
-
+>
 > 使用 Metamask 更換網路時會自動重新整理頁面。
 
+### 對訊息簽名
 
+```
+web3.eth.sign
+或是
+web3.personal.sign
+```
+
+https://ethereum.stackexchange.com/questions/25601/what-is-the-difference-between-web3-eth-sign-web3-eth-accounts-sign-web3-eth-p
+
+驗證方式 :
+
+https://ethereum.stackexchange.com/questions/15364/ecrecover-from-geth-and-web3-eth-sign
+
+http://ethfans.org/posts/353
+
+https://github.com/ethereum/web3.js/issues/392
 
