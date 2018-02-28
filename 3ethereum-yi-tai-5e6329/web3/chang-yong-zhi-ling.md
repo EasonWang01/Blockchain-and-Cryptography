@@ -257,5 +257,7 @@ web3.version.getNetwork((err, netId) => {
 
 > [https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md\#construction\_worker-network-check](https://github.com/MetaMask/faq/blob/master/DEVELOPERS.md#construction_worker-network-check)
 
+> 使用 Metamask 更換網路時會自動重新整理頁面。
+
 
 
