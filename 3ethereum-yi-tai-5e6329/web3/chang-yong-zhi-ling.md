@@ -263,7 +263,7 @@ web3.version.getNetwork((err, netId) => {
 
 用途 :
 
-https://medium.com/metamask/the-new-secure-way-to-sign-data-in-your-browser-6af9dd2a1527
+[https://medium.com/metamask/the-new-secure-way-to-sign-data-in-your-browser-6af9dd2a1527](https://medium.com/metamask/the-new-secure-way-to-sign-data-in-your-browser-6af9dd2a1527)
 
 用法 :
 
@@ -282,4 +282,51 @@ web3.personal.sign
 [http://ethfans.org/posts/353](http://ethfans.org/posts/353)
 
 [https://github.com/ethereum/web3.js/issues/392](https://github.com/ethereum/web3.js/issues/392)
+
+目前推薦方法 :
+
+```js
+// A JS library for recovering signatures:
+const sigUtil = require('eth-sig-util')
+const msgParams = [
+  {
+    type: 'string',      // Any valid solidity type
+    name: 'Message',     // Any string label you want
+    value: 'Hi, Alice!'  // The value to sign
+ },
+ {   
+   type: 'uint32',
+      name: 'A number',
+      value: '1337'
+  }
+]   
+// Get the current account:
+web3.eth.getAccounts(function (err, accounts) {
+  if (!accounts) return
+  signMsg(msgParams, accounts[0])
+})
+function signMsg(msgParams, from) {
+  web3.currentProvider.sendAsync({
+    method: 'eth_signTypedData',
+    params: [msgParams, from],
+    from: from,
+  }, function (err, result) {
+    if (err) return console.error(err)
+    if (result.error) {
+      return console.error(result.error.message)
+    }
+    const recovered = sigUtil.recoverTypedSignature({
+      data: msgParams,
+      sig: result.result 
+    })
+    if (recovered === from ) {
+      alert('Recovered signer: ' + from)
+    } else {
+      alert('Failed to verify signer, got: ' + result)
+    }
+  })
+}
+```
+
+https://medium.com/metamask/scaling-web3-with-signtypeddata-91d6efc8b290
 
