@@ -76,12 +76,17 @@ https://github.com/libbitcoin/libbitcoin-server
 
 ### Thin client
 
-比較輕量的用戶端，只會下載區塊頭與部分區塊鏈上的資料，也稱為SPV節點。
+比較輕量的用戶端，不會在節點上保存所有區塊鏈資料，有常見的SPV模式與Prune模式。
+
+#### Prune
+
+> Block pruning allows Bitcoin Core to delete the raw block and undo data once it's been validated and used to build the databases.
+>
+> Prune 模式將會在驗證區塊與交易資料結束後將部分資料刪除。
 
 1.Bitcoin-Core
 
-Bitcoin-Core也可以當作輕量級用戶端，  
-啟動節點時加上 prune 。
+Bitcoin-Core也可以當作輕量級用戶端，啟動節點時加上 prune 。
 
 ```
 prune=<N>
@@ -89,25 +94,29 @@ prune=<N>
 例如：./bitcoind -prune=560
 ```
 
-N是分配給raw block 與 undo data的MiB 大小\( 附註1 \)。
+N是分配給 raw block 與 undo data \( 附註1 \) 的 MiB \( 附註2 \) 大小。
 
 只有在節點上未進行任何同步時才可輸入，如果先前執行時沒有輸入`prune=<N>`，則之後無法用此方法同步。
 
 > 可參考 : [https://github.com/bitcoin/bitcoin/blob/v0.12.0/doc/release-notes.md\#wallet-pruning](https://github.com/bitcoin/bitcoin/blob/v0.12.0/doc/release-notes.md#wallet-pruning)
 
-2.bitcoinj
+#### SPV
+
+SPV節點只會下載區塊頭與部分區塊鏈資料，可參考後續SPV節點章節有詳細介紹。
+
+1.bitcoinj
 
 ```
 https://bitcoinj.github.io/
 ```
 
-3.picocoin
+2.picocoin
 
 ```
 https://github.com/jgarzik/picocoin/
 ```
 
-4.Electrum
+3.Electrum
 
 [https://bitzuma.com/posts/a-beginners-guide-to-the-electrum-bitcoin-wallet/](https://www.gitbook.com/book/easonwang01/e/edit#)
 
@@ -138,7 +147,11 @@ https://electrum.org/#home
 
 附註 :
 
-1.Mib \( Mebibyte \)
+1.Undo Data
+
+https://bitcoin.stackexchange.com/questions/70982/whats-raw-undo-data-for?rq=1
+
+2.Mib \( Mebibyte \)
 
 [https://zh.wikipedia.org/wiki/Mebibyte](https://zh.wikipedia.org/wiki/Mebibyte)
 
