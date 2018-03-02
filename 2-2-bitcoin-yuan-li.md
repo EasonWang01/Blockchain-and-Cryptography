@@ -131,12 +131,6 @@ bitcoind
 bitcoin-cli getblockchaininfo
 ```
 
-> Linux與macOS需要加上執行路徑
->
-> ```
-> ./bitcoin-cli getblockchaininfo
-> ```
-
 ## Linux, macOS
 
 先到以下官網：
