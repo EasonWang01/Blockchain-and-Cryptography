@@ -80,17 +80,17 @@ https://github.com/libbitcoin/libbitcoin-server
 
 1.Bitcoin-Core
 
-Bitcoin-Core也可以當作輕量級用戶端，加上以下指令跑較輕量的client大約只需2GB的儲存空間，啟動節點時加上以下指令。
-
-> N是分配給raw block 與 undo data的MiB 大小\( 附註1 \)。
->
-> 記得只有在節點上未進行任何同步時才可輸入，如果先前執行時沒有輸入`prune=<N>`，則之後無法用此方法同步。
+Bitcoin-Core也可以當作輕量級用戶端，啟動節點時加上 prune 。
 
 ```
 prune=<N>
 
 例如：./bitcoind -prune=560
 ```
+
+N是分配給raw block 與 undo data的MiB 大小\( 附註1 \)。
+
+記得只有在節點上未進行任何同步時才可輸入，如果先前執行時沒有輸入`prune=<N>`，則之後無法用此方法同步。
 
 > 可參考 : [https://github.com/bitcoin/bitcoin/blob/v0.12.0/doc/release-notes.md\#wallet-pruning](https://github.com/bitcoin/bitcoin/blob/v0.12.0/doc/release-notes.md#wallet-pruning)
 
