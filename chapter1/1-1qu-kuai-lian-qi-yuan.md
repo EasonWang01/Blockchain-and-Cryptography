@@ -2,13 +2,13 @@
 
 #### 1982年
 
-Leslie Lamport、Robert Shostak 與 Marshall Pease 提出了拜占庭問題。
+Leslie Lamport、Robert Shostak 與 Marshall Pease 提出了拜占庭問題，探討原始訊息可能被修改的前提下的一致性問題。
 
 ![](/assets/拜占庭將軍論文封面.png)
 
 #### 1982-1983年
 
-David Chaum提出Ecash密碼學網路支付系統並基於非對稱式加密法 RSA 與 DSA 提出了 Blind signature，具有不可追蹤的特性。
+David Chaum 提出 Ecash 密碼學網路支付系統並基於非對稱式加密法 RSA 與 DSA 提出了 Blind signature，具有不可追蹤的特性。
 
 #### 1989年
 
