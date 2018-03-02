@@ -32,9 +32,13 @@ Scott Vanstone提出橢圓曲線數位簽章演算法（Elliptic Curve Digital S
 
 利用橢圓曲線的離散特性使他的密碼安全性比先前產生密鑰的方式更加安全，並且被廣泛採用在現今的加密系統中
 
-> ECC: [https://en.wikipedia.org/wiki/Elliptic-curve\_cryptography](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography)
+> ECC:
 >
-> ECDSA: [https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
+> [https://en.wikipedia.org/wiki/Elliptic-curve\_cryptography](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography)
+>
+> ECDSA: 
+>
+> [https://en.wikipedia.org/wiki/Elliptic\_Curve\_Digital\_Signature\_Algorithm](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
 
 #### 1997年
 
