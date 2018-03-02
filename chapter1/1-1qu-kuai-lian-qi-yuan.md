@@ -2,7 +2,7 @@
 
 #### 1982年
 
-Leslie Lamport、Robert Shostak 與 Marshall Pease 提出了拜占庭問題，探討原始訊息可能被修改的前提下的一致性問題。
+Leslie Lamport、Robert Shostak 與 Marshall Pease 提出了拜占庭問題，探討原始訊息傳達時可能被修改的前提下，多個決策者之間達成共識的一致性問題。
 
 ![](/assets/拜占庭將軍論文封面.png)
 
