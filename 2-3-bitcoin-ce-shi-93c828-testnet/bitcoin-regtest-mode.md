@@ -63,7 +63,7 @@ Bitcoin-qt 執行 Regtest Mode:![](/assets/螢幕快照 2017-12-26 下午3.53.17
 e.g.
 
 ```
-sudo rm -rf < Regtest 資料夾路徑 >
+sudo rm -rf <Regtest 資料夾路徑>
 ```
 
 
