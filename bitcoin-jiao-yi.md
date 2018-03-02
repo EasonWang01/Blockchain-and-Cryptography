@@ -19,7 +19,7 @@ const keyPair = bitcoin.ECPair.fromWIF(privateKey);
 const txb = new bitcoin.TransactionBuilder()
 
 txb.addInput('aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31', 0)
-//addInput第一個參數為上一個unspend 的來源TXid
+// addInput第一個參數為上一個unspend 的來源TXid
 // 第二個參數為當次該unspend在TXid的output中之index，假設一筆交易有兩個output則他們index則分別為0和1，從0開始往上加1。
 
 txb.addOutput('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)
