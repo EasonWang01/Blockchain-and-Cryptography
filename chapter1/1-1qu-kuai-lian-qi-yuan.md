@@ -42,7 +42,7 @@ Scott Vanstone提出橢圓曲線數位簽章演算法（Elliptic Curve Digital S
 
 #### 1997年
 
-Adam Back 提出了 Hashcash（雜湊現金），Hashcash是一個 Proof Of Work \( Pow \) 系統，靠著電腦運算量來證明其訊息可靠度，被用在阻擋垃圾電子郵件與 denial-of-service attacks \( DOS \)，而後來也被比特幣使用於挖礦相關演算法，最早的想法是Cynthia Dwork 與 Moni Naor 在1992年於 《 Pricing via Processing or Combatting Junk Mail 》 所提出。
+Adam Back 提出了 Hashcash（雜湊現金），Hashcash是一個 Proof Of Work \( PoW \) 系統，靠著電腦運算量來證明其訊息可靠度，被用在阻擋垃圾電子郵件與 denial-of-service attacks \( DOS \)，而後來也被比特幣使用於挖礦相關演算法，最早的想法是Cynthia Dwork 與 Moni Naor 在1992年於 《 Pricing via Processing or Combatting Junk Mail 》 所提出。
 
 Adam Back於2002年正式發表Hashcash論文
 
