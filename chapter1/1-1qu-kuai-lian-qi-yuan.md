@@ -1,6 +1,8 @@
 # 區塊鏈起源
 
-#### 
+#### 1982年
+
+Leslie Lamport、Robert Shostak 與 Marshall Pease 提出了拜占庭問題。
 
 ![](/assets/拜占庭將軍論文封面.png)
 
