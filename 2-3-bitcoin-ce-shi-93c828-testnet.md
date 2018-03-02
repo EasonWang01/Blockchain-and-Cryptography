@@ -6,11 +6,10 @@
 上一章節我們所開啟的Bitcoin-QT錢包也可以與Testnet做連線，輸入以下指令：
 
 ```
-<...Path>/bitcoin-qt.exe -testnet -datadir="可指定要存放鏈資料的資料夾"
+<...Path>/bitcoin-qt -testnet -datadir="可指定要存放鏈資料的資料夾"
 ```
 
-> Windows 在前面加上start  
-> ![](/assets/testnet-qt.png)
+![](/assets/sl.png)
 
 看到Bitcoin icon顯示為綠色，代表目前連線到Testnet。
 
