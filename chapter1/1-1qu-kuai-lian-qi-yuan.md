@@ -50,9 +50,9 @@ Adam Back於2002年正式發表Hashcash論文
 
 #### **1998年**
 
-Wei Dai 提出了一個匿名的分散式電子現金系統名為 : B-money，引入工作量證明機制，強調點對點交易和不可竄改特性。不過在B-money中，並未採用Adam Back提出的Hashcash演算法。Wei Dai的許多設計之後被比特幣區塊鏈所採用。
+Wei Dai 提出了一個匿名的分散式電子現金系統名為 : B-money。
 
-http://www.weidai.com/bmoney.txt
+[http://www.weidai.com/bmoney.txt](http://www.weidai.com/bmoney.txt)
 
 同年，NickSzabo發表了Bit Gold。
 
