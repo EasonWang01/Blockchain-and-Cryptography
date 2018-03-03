@@ -116,7 +116,7 @@ Vitalik Buterin在美國佛羅里達州邁阿密舉行的北美比特幣會議�
 
 #### 2014年4月
 
-Dr.Gavin Wood 與 Vitalik Buterin合作，並發表了以太坊黃皮書，介紹關於以太坊相關 Protocol。
+Gavin Wood 與 Vitalik Buterin合作，並發表了以太坊黃皮書，介紹關於以太坊相關 Protocol。
 
 [https://ethereum.github.io/yellowpaper/paper.pdf](https://ethereum.github.io/yellowpaper/paper.pdf)
 

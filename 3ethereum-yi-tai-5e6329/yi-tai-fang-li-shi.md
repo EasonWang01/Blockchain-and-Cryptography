@@ -66,7 +66,7 @@ Microsoft Azure也宣布他們雲端平台將與Ethereum合作
 
 一個使用Ethereum合約並主張概念為『 完全由電腦程式碼控制運作之類似公司的實體 』，名為：The DAO，該專案募資了約一億六千八百萬美金，為史上最大的群眾募資項目。
 
-之後同年六月，將近3.6 百萬個 Ether \( 約五千萬美金 \) 遭駭，隨後以太坊投票後宣布執行 hard fork 出 ETH，並將原本的命名為ETC \( Ethereum Classic \)，而新的Fork名為ETH
+之後同年六月，將近3.6 百萬個 Ether \( 約五千萬美金 \) 遭駭，隨後以太坊投票後宣布執行 hard fork 出 ETH，並將原本的命名為ETC \( Ethereum Classic \)，而新的Fork名為ETH。
 
 > [https://www.coindesk.com/understanding-dao-hack-journalists/](https://www.coindesk.com/understanding-dao-hack-journalists/)
 
