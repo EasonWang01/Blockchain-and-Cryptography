@@ -1,6 +1,6 @@
 # Bitcoin 錢包
 
-比特幣錢包種類包含有網頁版、桌面版、手機APP，還有適合開發者使用的 Command Line 介面錢包，紙本錢包、USB硬體錢包等等，但使用上之安全性需要讀者自行評估。
+比特幣錢包種類包含有網頁版、桌面版、手機APP、USB硬體錢包以及適合開發者使用的 Command Line 介面錢包等等，但錢包的選擇與使用上之安全性需要讀者自行評估。
 
 每個比特幣錢包裡面可以包含許多比特幣地址與對應的私鑰，以下我們將用官方的錢包來講解。
 
@@ -149,7 +149,7 @@ https://electrum.org/#home
 
 1.Undo Data
 
-https://bitcoin.stackexchange.com/questions/70982/whats-raw-undo-data-for?rq=1
+[https://bitcoin.stackexchange.com/questions/70982/whats-raw-undo-data-for?rq=1](https://bitcoin.stackexchange.com/questions/70982/whats-raw-undo-data-for?rq=1)
 
 2.Mib \( Mebibyte \)
 
