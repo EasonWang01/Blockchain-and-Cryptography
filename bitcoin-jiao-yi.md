@@ -41,7 +41,7 @@ console.log(txb.build().toHex());
 
 > 此時交易尚未被廣播，在上圖中的最下方Hex字串即為可以用來廣播的交易訊息。
 
-或是也可以產生2 to 2 的交易\(兩個輸入的地址與兩個輸出的地址\)
+產生2 to 2 的交易 \( 兩個輸入的地址與兩個輸出的地址 \)
 
 ```js
 const bitcoin = require("bitcoinjs-lib");
