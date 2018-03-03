@@ -33,7 +33,7 @@ BIP是對未來需要改進的比特幣特點，所做的提案。
 
 > BIP stands for Bitcoin Improvement Proposal. A BIP is a design document providing information to the Bitcoin community, or describing a new feature for Bitcoin or its processes or environment. The BIP should provide a concise technical specification of the feature and a rationale for the feature.
 
-可在此網站看到詳細內容：[https://github.com/bitcoin/bips](https://github.com/bitcoin/bips)
+可在此處看到詳細內容：[https://github.com/bitcoin/bips](https://github.com/bitcoin/bips)
 
 ![](/assets/螢幕快照 2017-11-19 下午1.13.48.png)其中又可分為 Standard BIP、Informational BIP 以及 Process BIP，Standard BIP 描述主要比特幣的核心標準相關的內容，而Informational BIP 通常為一些指南與資訊，Process BIP 為一些正在進行或是提案中的改進建議。
 
