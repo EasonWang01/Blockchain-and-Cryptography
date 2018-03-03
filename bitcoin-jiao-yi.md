@@ -236,7 +236,7 @@ priority = sum(input_value_in_base_units * input_age) / size_in_bytes
 
 9.對於每一個交易輸入，在區塊鏈和目前等待納入的交易池中尋找引用的輸出交易。如果缺少對應的輸出交易，該交易將成為一個孤立的交易。
 
-10.對於每一個輸入，如果引用的輸出交易是一個coinbase輸出，該輸入必須至少獲得COINBASE_MATURITY (100區塊以上的確認)。 
+10.對於每一個輸入，如果引用的輸出交易是一個coinbase輸出，該輸入必須至少獲得COINBASE_MATURITY ( 100 個區塊以上的確認)。 
 
 11.對於每一個輸入，引用的輸出是必須存在的，並且沒有被花費(UTXO)。 
 
