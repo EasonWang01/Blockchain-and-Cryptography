@@ -148,7 +148,7 @@ curl https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-osx64.tar.gz \
 tar -xzf ./bitcoin-0.15.1.tar.gz
 ```
 
-之後一樣 `cd`到下載的資料夾目錄下的 `bin` 資料夾。
+之後一樣 `cd`到解壓縮後資料夾目錄下的 `bin` 資料夾。
 
 1.執行Bitcoin節點Server
 
