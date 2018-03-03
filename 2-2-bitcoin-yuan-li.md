@@ -174,7 +174,7 @@ tar -xzf ./bitcoin-0.15.1.tar.gz
 ./bitcoind -connect=0 -nolisten
 ```
 
-> 啟動節點時也可輸入`./bitcoind -h` 查看相關可用標誌。
+> 啟動節點時也可輸入`./bitcoind -h` 查看相關可用引數。
 >
 > 例如可以指定存放資料之資料夾：`./bitcoind -datadir="./chaindata"`
 >
