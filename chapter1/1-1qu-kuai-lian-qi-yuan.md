@@ -118,9 +118,11 @@ Vitalik Buterin在美國佛羅里達州邁阿密舉行的北美比特幣會議�
 
 與Vitalik 合作的 Gavin Wood發表了以太坊黃皮書，定義了Ethereum 相關 Protocol。
 
-#### 2014年6月
+#### 2014年7月
 
-Ethereum以42天公開的Ethereum預售活動對第一批以太幣進行了分配，換算後大約收入31,591比特幣，當時價值 18,439,086 美元，售出共60,102,216以太幣。
+Ethereum 以群眾募資的方式販售以太幣，起始價格為每 BTC 兌換 2000 ETH ，換算後大約收入31,591比特幣，當時價值 18,439,086 美元，售出共60,102,216以太幣。
+
+https://blog.ethereum.org/2014/07/22/launching-the-ether-sale/
 
 ### 近期
 
