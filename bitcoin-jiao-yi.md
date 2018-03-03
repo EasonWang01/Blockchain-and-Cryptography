@@ -421,7 +421,7 @@ Input一定會對應到一個Output，每個Output都會有一個Locking script 
 
 此為最常見的交易類型。
 
-其Locking script 如下圖 \( 有關Locking script 將於後續 Bitcoin script 章節介紹\)，Locking scrip通常會出現在交易的Output裡面，所以也稱為Output script。另外也稱為scriptPubKey。
+其Locking script 如下圖 \( 有關Locking script 將於後續 Bitcoin script 章節介紹\)，Locking script 通常會出現在交易的Output裡面，所以也稱為Output script。另外也稱為scriptPubKey。
 
 > 因為交易是產生一筆Input去解鎖上一個還沒花費的Output，而Output會被Locking script鎖住
 
