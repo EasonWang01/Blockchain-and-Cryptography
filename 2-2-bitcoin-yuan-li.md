@@ -116,7 +116,7 @@ macOS：
 
 我們也可以從Terminal 執行bitcoin 指令
 
-1.開啟terminal然後用進入到`daemon`路徑下  
+1.開啟terminal然後進入到`daemon`路徑下  
 ![](/assets/bitcoin-qt15.png)
 
 2.然後我們要先執行bitcoind \( 即為Bitcoin 的節點 Server \)
