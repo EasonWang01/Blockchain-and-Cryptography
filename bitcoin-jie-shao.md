@@ -23,7 +23,7 @@
 
 #### 2.Bitcoin core
 
-跟 Bitcoin.org 都屬於 Bitcoin 官方，但此網站的內容較為面向開發者。
+Bitcoin Core為比特幣的官方核心軟體，而 bitcoincore.org 網站跟 bitcoin.org 都屬於 Bitcoin 官方，但此網站的內容較為面向開發者。
 
 [https://bitcoincore.org/](https://bitcoincore.org/)
 
