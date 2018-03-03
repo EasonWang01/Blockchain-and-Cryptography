@@ -228,7 +228,7 @@ priority = sum(input_value_in_base_units * input_age) / size_in_bytes
 5.沒有Hash等於0，N等於-1的輸入（hash = 0,n = -1 為 coinbase transaction，只會發生在挖到區塊時獎勵給礦工的那筆交易）。 
 
 6.nLockTime(指定在交易發生前的鎖定時間)是小於或等於INT_MAX(31 bits)，
-  交易大小bytes >= 100，sig opcount <= 2(關於signature的opcode執行不可多於兩個)。 
+  交易大小bytes >= 100，sig opcount <= 2( 意思為 signature 的 opcode 執行不可多於兩個)。 
 
 7.解鎖腳本（scriptSig）只能夠將數字壓入棧中，並且鎖定腳本（scriptPubkey）必須要符合isStandard的格式 （參考下面交易類型部分）。 
 
