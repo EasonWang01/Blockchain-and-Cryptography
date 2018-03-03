@@ -99,8 +99,6 @@ bitcoin-qt -datadir=./BitcoinData
 
 ![](/assets/bitcoin-qt14.png)
 
-
-
 # 從 終端機 Terminal  執行 bitcoin 相關指令
 
 ## Windows:
@@ -128,7 +126,7 @@ bitcoin-cli getblockchaininfo
 
 [https://bitcoin.org/bin/](https://bitcoin.org/bin/)
 
-選擇版本後，下載 [tar.gz](https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-osx64.tar.gz) 格式的安裝檔，有分兩種，一種是要自己編譯的，另一種是編譯好的，裡面包含`bin`資料夾，以下範例為編譯好的連結：
+選擇版本後，下載 [tar.gz](https://bitcoin.org/bin/bitcoin-core-0.15.1/bitcoin-0.15.1-osx64.tar.gz) 格式的安裝檔，有分兩種，一種是要自己編譯的，另一種是編譯好的，裡面包含`bin`資料夾，以下範例為使用指令下載編譯好的檔案：
 
 Linux
 
