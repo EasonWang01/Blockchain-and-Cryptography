@@ -2,11 +2,11 @@
 
 #### 2013年底
 
-Vitalik Buterin 公開介紹了以太坊 並發表了白皮書。
+Vitalik Buterin 公開介紹了以太坊，並發表了白皮書。
 
 #### 2014年1月
 
-Ethereum正式發表，並稱此為 『 Cryptocurrency 2.0 』
+Ethereum 正式發表，並稱此為 『 Cryptocurrency 2.0 』
 
 [https://www.youtube.com/watch?v=lNMvIzexLQc](https://www.youtube.com/watch?v=lNMvIzexLQc)
 
