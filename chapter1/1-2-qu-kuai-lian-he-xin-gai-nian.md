@@ -140,7 +140,7 @@ H（AB）~= SHA256(SHA256(HA + HB))
 
 Bitcoin Core 資料儲存部分
 
-https://en.bitcoin.it/wiki/Bitcoin\_Core\_0.11\_\(ch\_2\):\_Data\_Storage
+[https://en.bitcoin.it/wiki/Bitcoin\_Core\_0.11\_\(ch\_2\):\_Data\_Storage](https://en.bitcoin.it/wiki/Bitcoin_Core_0.11_%28ch_2%29:_Data_Storage)
 
 #### 加密貨幣Market State圖表
 
@@ -150,7 +150,7 @@ https://en.bitcoin.it/wiki/Bitcoin\_Core\_0.11\_\(ch\_2\):\_Data\_Storage
 
 # 共識機制介紹
 
-在區塊鏈中因為沒有中心的機構來處理哪些是合法與正確的交易區塊，為了讓各個節點可以進行同步，並且達成共識，以下為三個常見的共識方法。
+在區塊鏈中因為沒有中心的機構來處理哪些是合法與正確的交易區塊，為了讓各個節點可以進行同步，並且達成共識，以下為三個常見的共識方法 :
 
 PoW（Proof of Work）
 
