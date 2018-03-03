@@ -324,7 +324,7 @@ priority = sum(input_value_in_base_units * input_age) / size_in_bytes
 
 可以看到其中 value 欄位即為該地址的餘額，單位為satoshi
 
-> 0.00000001 bitcoin 為一個 satoshi，此也為bitcoin的最小單位 所以此處 0.00000001 \* 3009040 即為0.0300904BTC  
+> 0.00000001 bitcoin 為一個 satoshi，此也為bitcoin的最小單位 所以此處 0.00000001 \* 3009040 即為0.0300904 BTC  
 > ![](/assets/交易餘額.png)
 
 # 交易的Input一定會對應到一個Output
