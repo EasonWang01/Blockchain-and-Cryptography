@@ -72,6 +72,10 @@ Linux
 ~/.bitcoin/
 ```
 
+> ```
+> 參考:https://en.bitcoin.it/wiki/Data_directory
+> ```
+
 而我們也可以自己設定要存放的資料夾位置，要這麼做的話，我們必須用命令列來啟動Bitcoin Core程式，並且在指令上輸入我們要用的資料夾。
 
 步驟如下 :
@@ -95,20 +99,7 @@ bitcoin-qt -datadir=./BitcoinData
 
 ![](/assets/bitcoin-qt14.png)
 
-不同作業系統存放區塊鏈資料的資料夾路徑可參考以下：
 
-```
-Windows：
-C:\Users\YourUserName\Appdata\Roaming\Bitcoin
-
-Linux：
-~/.bitcoin/
-
-macOS：
-~/Library/Application\ Support/Bitcoin/
-
-參考:https://en.bitcoin.it/wiki/Data_directory
-```
 
 # 從 終端機 Terminal  執行 bitcoin 相關指令
 
