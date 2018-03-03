@@ -448,19 +448,19 @@ OP_DUP OP_HASH160 <Public Key Hash(比特幣地址在base58編碼前的樣子)> 
 鎖定腳本 \( Locking script \)
 
 ```
-<Public Key A> OP_CHECKSIG
+<Public Key> OP_CHECKSIG
 ```
 
 解鎖腳本\( Unlocking script \)
 
 ```
-<Signature from Private Key A>
+<Signature>
 ```
 
 兩者組合後的交易完整腳本如下：
 
 ```
-<Signature from Private Key A> <Public Key A> OP_CHECKSIG
+<Signature> <Public Key> OP_CHECKSIG
 ```
 
 #### 3.Multi-Signature \(MultiSig，多重簽章交易，需要多個私鑰簽名才可完成簽發\)
