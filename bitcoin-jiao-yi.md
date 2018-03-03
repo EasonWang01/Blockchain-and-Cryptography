@@ -62,7 +62,7 @@ txb.addOutput('1JtK9CQw1syfWj1WtFMWomrYdV3W2tWBF9', 170000)
 // (in)(200000 + 300000) - (out)(180000 + 170000) = 礦工手續費為：150000
 
 txb.sign(1, bob) // Bob 簽發他第二個input
-txb.sign(0, alice) // Alice 簽發他第一次input
+txb.sign(0, alice) // Alice 簽發他第一個input
 
 console.log(txb.build().toHex())
 ```
