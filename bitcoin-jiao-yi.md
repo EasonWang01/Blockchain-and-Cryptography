@@ -195,7 +195,7 @@ console.log(txb.build().toHex());
 
 即為
 
-priority = sum(input_value_in_base_units * input_age)/size_in_bytes
+priority = sum(input_value_in_base_units * input_age) / size_in_bytes
 ```
 
 > 交易池為交易在被節點接收到並且成功驗證，但還沒被納入區塊中的交易所存放的地方。
