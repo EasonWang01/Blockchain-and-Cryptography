@@ -60,7 +60,7 @@ Wei Dai 提出了一個匿名的分散式電子現金系統名為 : B-money。
 
 #### **2005年**
 
-Hal Finney 依據 Nick Szabo 的 `theory of collectibles`提出可重複使用的工作量證明機制（Reusable Proof of Work，RPOW），已經為一個電子現金系統的雛形，可視為加密貨幣的前輩。
+Hal Finney 依據 Nick Szabo 的 `theory of collectibles`提出可重複使用的工作量證明機制（Reusable Proof of Work，RPOW），RPOW 軟體已經為一個電子現金系統的雛形，可視為加密貨幣的前輩。
 
 [http://nakamotoinstitute.org/finney/rpow/](http://nakamotoinstitute.org/finney/rpow/)
 
