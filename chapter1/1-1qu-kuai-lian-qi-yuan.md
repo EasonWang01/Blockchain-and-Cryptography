@@ -98,7 +98,7 @@ Hal Finney 依據 Nick Szabo 的 `theory of collectibles`提出可重複使用�
 
 #### 2011年2月9日
 
-比特幣每顆價格首次價格超越1美元![](/assets/首次超越1.png)
+比特幣每顆價格首次價格超越1美元。![](/assets/首次超越1.png)
 
 #### 2013年10月
 
@@ -116,7 +116,7 @@ Vitalik Buterin在美國佛羅里達州邁阿密舉行的北美比特幣會議�
 
 #### 2014年4月
 
-與Vitalik 合作的 Gavin Wood發表了以太坊黃皮書，作為Ethereum虛擬機的技術說明。
+與Vitalik 合作的 Gavin Wood發表了以太坊黃皮書，定義了Ethereum 相關 Protocol。
 
 #### 2014年6月
 
