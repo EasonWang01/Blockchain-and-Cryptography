@@ -71,7 +71,7 @@ BIP是對未來需要改進的比特幣特點，所做的提案。
 0.01       BTC   比特分（Bitcent，cBTC）
 0.001      BTC   毫比特（Milli-Bitcoins，mBTC）
 0.000001   BTC   微比特（Micro-Bitcoins，μBTC）
-0.00000001 BTC   satoshi 為一個為比特幣最小單位
+0.00000001 BTC   satoshi 為比特幣最小單位
 ```
 
 
