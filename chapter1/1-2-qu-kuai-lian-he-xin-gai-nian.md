@@ -138,6 +138,10 @@ H（AB）~= SHA256(SHA256(HA + HB))
 
 #### ![](/assets/bitcoin-data-schema.png)
 
+Bitcoin Core 資料儲存部分
+
+https://en.bitcoin.it/wiki/Bitcoin\_Core\_0.11\_\(ch\_2\):\_Data\_Storage
+
 #### 加密貨幣Market State圖表
 
 列了許多市面上可見的加密貨幣，但採用了另一種方式將之呈現
