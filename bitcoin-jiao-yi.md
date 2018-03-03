@@ -335,7 +335,7 @@ priority = sum(input_value_in_base_units * input_age) / size_in_bytes
 
 Input一定會對應到一個Output，每個Output都會有一個Locking script \( 鎖定腳本 ） 以及每個Input也會有一個 Unlocking script \( 解鎖腳本 \) 用來解鎖Unspend output，解鎖後才可由 Unspend output 傳比特幣給下一個地址變為新地址的 Unspend output。
 
-一筆交易主要包含兩部份：Input 和 Output，Output 有 Locking script 去鎖著 UTXO 不被花費，想要花費的人就需要創建一個 Input，用裡面的 Locking script 去解鎖 Unlocking script，例如今天想要花自己的錢就必須自己去創建一個Input然後用自己的私鑰簽發交易。
+一筆交易主要包含兩部份：Input 和 Output，Output 有 Locking script 去鎖著 UTXO 不被花費，想要花費的人就需要創建一個 Input，用裡面的 Unlocking script  去解鎖 Locking script，例如今天想要花自己的錢就必須自己去創建一個 Input 然後用自己的私鑰簽發交易。
 
 ![](/assets/en-transaction-propagation.svg)
 
