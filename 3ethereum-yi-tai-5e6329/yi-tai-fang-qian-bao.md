@@ -44,7 +44,7 @@ Mist 是一個用 [electron](https://github.com/atom/electron) 框架寫成之�
 
 [https://www.myetherwallet.com/](https://www.gitbook.com/book/easonwang01/e/edit#)
 
-打開瀏覽器網頁就能直接使用，也可以離線產生交易訊息，以及可以引入`.keystore`檔案。
+打開瀏覽器網頁就能直接使用，可以離線產生交易訊息，以及可以引入`.keystore`檔案。
 
 並且可以利用其註冊ENS : [https://www.myetherwallet.com/\#ens](https://www.myetherwallet.com/#ens)
 
