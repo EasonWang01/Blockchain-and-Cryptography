@@ -50,6 +50,8 @@ contract computer {
 }
 ```
 
+https://gist.github.com/449830ce41cee011172b7893ba8e188b
+
 #### memory、storage、stack
 
 > storage耗費最多Gas，memory耗費較少，stack免費。
