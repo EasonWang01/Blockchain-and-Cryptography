@@ -115,7 +115,7 @@ web3.eth.sendTransaction({
 
 > 與交易相關的還有 nonce 值，每次發送交易後該 nonce 值都會加一，如果該地址後面發出的交易 nonce 小於其上一筆發出交易的nonce則無法成功發送。
 
-https://github.com/ethereum/wiki/wiki/JavaScript-API\#web3ethsendtransaction
+[https://github.com/ethereum/wiki/wiki/JavaScript-API\#web3ethsendtransaction](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethsendtransaction)
 
 #### 取得目前鏈上的Gas Price
 
@@ -147,7 +147,7 @@ web3.eth.defaultAccount
 
 當我們使用Metamask時，選擇不同帳號，`defaultAccount` 也會跟著更改。
 
-會影響以下兩個Function執行時預設選擇的帳號。
+defaultAccount 會影響以下兩個Function執行時預設選擇的帳號。
 
 ```js
 web3.eth.sendTransaction()
