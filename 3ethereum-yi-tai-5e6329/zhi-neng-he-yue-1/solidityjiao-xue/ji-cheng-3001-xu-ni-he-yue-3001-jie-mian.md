@@ -22,7 +22,7 @@ contract superman is man {
 
 #### 2.虛擬合約（Abstract Contracts）
 
-類似於繼承，不過在被繼承的contract 中不會實作邏輯內容，到了繼承其合約的主合約才會實作。
+類似於繼承，不過在原先的 contract 中不會實作邏輯內容，直到被繼承後，才會於繼承的合約上實作。
 
 ```js
 contract bird {
