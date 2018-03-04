@@ -92,7 +92,7 @@ macOS :
 
 ## 從合約提款
 
-合約的部屬者可以使用withdraw function來進行從合約轉帳Ether到自己帳戶。
+合約的部屬者可以使用 withdraw function 從合約轉帳 Ether 到自己帳戶。
 
 ![](/assets/螢幕快照 2018-01-17 下午8.27.57.png)轉帳後可以看到合約的金額少了5 Ether
 
