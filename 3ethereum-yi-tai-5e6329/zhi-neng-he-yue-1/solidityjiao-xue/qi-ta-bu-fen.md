@@ -26,21 +26,27 @@ Constant: 可讀取，但不可修改，不會加在function上，只加在變�
 ```
 contract calculate {
     function add (int a, int b) returns (int) {
-        return a + b
+        return a + b;
     }
 }
 ```
 
-假設其地址為 `0xfEDDF8DB160Dcb85f793bfEe734352760C4AB96a`
+假設其地址為 `0xe499b54b1bd00C604F4353210400737081D72390`
 
-之後呼叫其contract
+部屬computer合約後，執行`twoAdd3` 函式
 
 ```go
+// 寫上欲呼叫的函式介面
+contract calculate {
+  function add (int a, int b) external view returns (int);
+}
+
+// 主合約
 contract computer {
-    calculate calc = new calculate(0xfEDDF8DB160Dcb85f793bfEe734352760C4AB96a);
-      function 2Add3() constant returns (int) {} {
-        calc.add(2, 3);
-    }
+  calculate calc = calculate(0xe499b54b1bd00C604F4353210400737081D72390);
+  function twoAdd3() constant public returns (int){
+    return calc.add(2, 3);
+  }
 }
 ```
 
