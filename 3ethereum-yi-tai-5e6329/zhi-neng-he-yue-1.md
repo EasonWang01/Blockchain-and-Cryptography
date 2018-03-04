@@ -124,7 +124,7 @@ contract SimpleStorage {
 
 之後輸入`SimpleStorage.get()` 及可執行
 
-![](/assets/1jd.png)但剛才get\(\)因為是直接讀取常數出來，不需要寫入資料到區塊鏈，但如果我們要在使用set\(\)，將會需要寫入區塊鏈，並且耗費Gas，所以執行前我要先設定defaultAccount。
+![](/assets/1jd.png)但剛才 get\(\) 因為是直接讀取常數出來，不需要寫入資料到區塊鏈，但如果我們要在使用set\(\)，將會需要寫入區塊鏈，並且耗費Gas，所以執行前我們要先設定 defaultAccount。
 
 > 否則會出現Error: invalid address 錯誤
 
