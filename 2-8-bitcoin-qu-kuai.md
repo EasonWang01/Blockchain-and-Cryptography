@@ -86,7 +86,7 @@ https://blockexplorer.com/api/status?q=getBlockCount
 
 ## 創世區塊\(Genesis Block\)
 
-區塊鏈在一開始創建時，所產生的第一個區塊。
+創世區塊為區塊鏈在一開始創建時，所產生的第一個區塊。
 
 比特幣的創世區塊：  
 [https://blockchain.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f](https://blockchain.info/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f)
