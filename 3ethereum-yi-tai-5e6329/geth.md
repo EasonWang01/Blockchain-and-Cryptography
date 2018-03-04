@@ -73,7 +73,7 @@ curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
 [https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options](https://www.gitbook.com/book/easonwang01/e/edit#)
 
 ```
-   account     管理帳號，可用包含list, new, update, import
+   account     管理帳號，可用指令包含list, new, update, import
 
    attach      啟動JS的console，會連線到一個節點
 
@@ -101,7 +101,7 @@ curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
 
    makedag     產生 ethash mining DAG (測試使用)
 
-   monitor     顯示與監控相關節點資訊可參考：
+   monitor     顯示與監控相關節點資訊，可參考：
                https://github.com/ethereum/go-ethereum/wiki/Metrics-and-Monitoring
 
    removedb    移除節點區塊鏈資料
