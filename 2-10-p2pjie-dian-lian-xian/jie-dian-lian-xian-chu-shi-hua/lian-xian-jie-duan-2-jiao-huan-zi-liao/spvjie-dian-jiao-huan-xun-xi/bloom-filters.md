@@ -41,7 +41,7 @@ Bloom Filter 很早之前即開始使用在各種場景，1970年由 Burton Howa
 
 假設今天 w 值要來確認他有沒有在Bloom filter中，他也是一樣會先經過三個hash function，然後查看產生出的 hash 對應到 Array 的三個位置的值是否為1，如果均為1即可假定 w 在先前已經加入過這個Bloom Filter裡面。
 
-另一個情況是如果 w 不在Bloom filter裡面，但是剛好三個對應的位置的值均為1，也就是先前這三處已經被其他的值更改為1，則會產生剛才所說的False Positive \( 註1 \)。
+另一個情況是如果 w 不在Bloom filter裡面，但是剛好三個對應的位置的值均為1，也就是先前這三處已經被其他的值分別更改為1，則會產生剛才所說的False Positive \( 註1 \)。
 
 程式範例:
 
