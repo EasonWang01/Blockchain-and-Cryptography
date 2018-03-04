@@ -67,7 +67,7 @@
 
 > 有些第三方套件在使用橢圓曲線產生的 256 bits 的 public key 時已經在開頭加上了 `0x04` 但有些不會加。
 >
-> 以下為使用openssl產生secp256k1公鑰的範例 :
+> 以下為使用 openssl 產生 secp256k1 私鑰與公鑰的範例 :
 >
 > ```bash
 > openssl ecparam -name secp256k1 -genkey >  priv.pem
