@@ -99,8 +99,6 @@ function connectPeer(host, buffer1) {
 }
 ```
 
-> 封包詳細內容解析將於後面章節詳細描述
-
 # 2. getaddr與addr
 
 getaddr用來發送請求給其他節點，addr為該節點返回其所擁有的鄰居地址。
