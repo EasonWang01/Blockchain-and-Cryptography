@@ -338,8 +338,7 @@ Testnet P2WSH: tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7
 ./bitcoind -connect=0 -nolisten -walletprematurewitness  -datadir="./chaindata"
 ```
 
-2.產生地址  
- \( 使用原先的 P2PKH 或 P2SH 地址來產生 \)
+2.產生地址\( 使用原先的 P2PKH 或 P2SH 地址來產生 \)
 
 ```
 ./bitcoin-cli -datadir="./chaindata" addwitnessaddress 1j9x23hbbLDfpExMMHBTQ3CfQ52mqLqLU
