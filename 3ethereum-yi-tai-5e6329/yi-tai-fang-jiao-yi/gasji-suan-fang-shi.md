@@ -62,7 +62,7 @@
 
 2.計算幾個zero byte與non-zero bytes
 
-兩個兩個一組來看，總共出有13個non-zero bytes，所以我們196 - 13 = 183。
+兩個兩個一組來看，總共看出有13個non-zero bytes，所以我們196 - 13 = 183。
 
 > 每個zero byte 需要花費 4 gas
 >
