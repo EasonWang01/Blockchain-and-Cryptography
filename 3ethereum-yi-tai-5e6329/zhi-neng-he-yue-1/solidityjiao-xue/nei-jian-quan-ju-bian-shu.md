@@ -26,14 +26,14 @@ function f(uint start, uint daysAfter) public {
 
 #### 3.區塊鏈相關資訊
 
-以下為預設存在之區塊鏈相關資訊的變數
+以下為預設存在之區塊鏈相關資訊的變數，最後面小括號內為回傳值的型別。
 
 ```go
 block.blockhash(uint blockNumber) returns (bytes32)
 可以查詢最近256個區塊Hash
 
 block.coinbase (address)
-回傳挖到該區塊的礦工地址
+回傳挖到當前區塊的礦工地址
 
 block.difficulty (uint)
 回傳區塊難度
