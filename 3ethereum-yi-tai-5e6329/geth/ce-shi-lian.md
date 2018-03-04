@@ -2,7 +2,7 @@
 
 # Geth --dev
 
-在Geth 中的 `--dev` 指令可以方便讓開發人員進行測試的指令，使用後會創建一個預設帳號，裡面已經擁有Ether，此鏈為PoA\(Proof of Authority\)，所以沒有miner.start\(\)相關指令，而 dev 鏈發生交易後會自動加入區塊。
+在Geth 中的 `--dev` 指令可以方便讓開發人員進行測試，使用後會創建一個預設帳號，裡面已經擁有Ether，此鏈為PoA\(Proof of Authority\)，所以沒有miner.start\(\)相關指令，而 dev 鏈發生交易後會自動加入區塊。
 
 我們輸入以下指令來啟動節點：
 
