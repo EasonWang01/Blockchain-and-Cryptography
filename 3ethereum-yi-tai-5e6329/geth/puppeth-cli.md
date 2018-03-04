@@ -6,7 +6,7 @@ Geth 在 1.6 版本後新增了一個可以用互動式指令創建區塊鏈的�
 
 PoA \(Proof of Authority\)在Parity的客戶端軟體也有實作，但和 go-ethereum兩者實作的方式稍微不同，有關 go-ethereum 版本的實作可參考：[https://github.com/ethereum/EIPs/issues/225](https://github.com/ethereum/EIPs/issues/225)
 
-> go-ethereum版本其為Clique proof-of-authority consensus protocol
+> go-ethereum 版本的 PoA 為 Clique proof-of-authority consensus protocol
 >
 > 原始碼：[https://github.com/ethereum/go-ethereum/blob/master/consensus/clique/clique.go](https://github.com/ethereum/go-ethereum/blob/master/consensus/clique/clique.go)
 
@@ -127,7 +127,7 @@ personal.unlockAccount(eth.accounts[0])
 eth.sendTransaction({from: eth.accounts[0], to: "0xdf6d9ad96b630e06325ceb9f7e23a86695997421", value: web3.toWei(0.05777, "ether")})
 ```
 
-> 因為我們在創世區塊有預先分配Ether給第一個節點的帳號
+> 因為我們在創世區塊有預先分配 Ether 給第一個節點的帳號，所以有餘額可以進行轉帳。
 
 14.
 
