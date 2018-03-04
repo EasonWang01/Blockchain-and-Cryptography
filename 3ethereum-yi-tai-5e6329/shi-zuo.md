@@ -12,7 +12,8 @@ geth --dev --rpc --rpcport 8545 --datadir ./eth_Dapp --rpccorsdomain="*"  consol
 
 我們這次來做一個會員管理系統，其中包含會員新增，會員簽到，會員移除與會員升級等功能。
 
-一樣在Remix IDE中填入以下程式，此為我們這次的會員管理系統合約：
+一樣在Remix IDE中填入以下程式，此為我們這次的會員管理系統合約  
+：
 
 ```go
 pragma solidity ^0.4.19;
@@ -86,7 +87,7 @@ contract HonestClub {
 >
 > [http://solidity.readthedocs.io/en/develop/units-and-global-variables.html\#block-and-transaction-properties](http://solidity.readthedocs.io/en/develop/units-and-global-variables.html#block-and-transaction-properties)
 >
-> 2.我們使用 `while`來遍歷陣列並且進行修改會員的動作，但如果陣列長度過長會很耗費Gas，而目前因為還沒開放將Memory Array直接賦予運算後的值給Storage陣列，所以要注意陣列長度避免耗費過多Gas。
+> 2.我們使用 `while`來遍歷陣列並且進行修改會員的動作，但如果陣列長度過長會很耗費Gas，而目前因為還沒開放將Memory Array 運算後的值，賦予給Storage陣列，所以要注意陣列長度避免耗費過多Gas。
 
 我們一樣使用`create-react-app` 快速建立一個Web模板。
 
