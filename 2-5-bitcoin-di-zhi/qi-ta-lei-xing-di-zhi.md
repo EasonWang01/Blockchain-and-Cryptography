@@ -207,7 +207,7 @@ console.log('-----------------')
 Extended key 之 82 byte structure 其結合元素包含以下
 
 ```
-4 byte: version bytes (mainnet: 0x0488B21E public, 0x0488ADE4 private; testnet: 0x043587CF public, 0x04358394 private)
+4 byte: version bytes (mainnet public: 0x0488B21E, mainnet private: 0x0488ADE4, testnet public: 0x043587CF, testnet private: 0x04358394)
 1 byte: depth: 0x00 for master nodes, 0x01 for level-1 derived keys, ....
 4 bytes: the fingerprint of the parent's key (0x00000000 if master key)
 4 bytes: child number. This is ser32(i) for i in xi = xpar/i, with xi the key being serialized. (0x00000000 if master key)
