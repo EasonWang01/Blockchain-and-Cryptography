@@ -40,7 +40,7 @@ eth.sendTransaction({from: eth.coinbase, to:eth.accounts[1], value: web3.toWei(0
 npm install -g ganache-cli
 ```
 
-> 在以前的安裝方式為如下，但現在ethereumjs-testrpc已經整合到ganach裡面
+> 以前的安裝方式為如下，但現在ethereumjs-testrpc已經整合到 ganache 裡面
 >
 > ```
 > npm install -g ethereumjs-testrpc
