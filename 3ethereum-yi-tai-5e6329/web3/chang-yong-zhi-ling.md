@@ -168,6 +168,16 @@ web3.eth.coinbase
 
 > `web3.eth.coinbase`方法只可讀取，無法在後面加上`=` 進行修改
 
+#### 解鎖帳號
+
+使用密碼將帳號解鎖，之後才能進行相關操作。
+
+```
+personal.unlockAccount(address, passphrase, duration)
+```
+
+https://github.com/ethereum/go-ethereum/wiki/Management-APIs\#personal\_unlockaccount
+
 #### 取得特定區塊之資料
 
 ```js
@@ -328,5 +338,5 @@ function signMsg(msgParams, from) {
 }
 ```
 
-https://medium.com/metamask/scaling-web3-with-signtypeddata-91d6efc8b290
+[https://medium.com/metamask/scaling-web3-with-signtypeddata-91d6efc8b290](https://medium.com/metamask/scaling-web3-with-signtypeddata-91d6efc8b290)
 
