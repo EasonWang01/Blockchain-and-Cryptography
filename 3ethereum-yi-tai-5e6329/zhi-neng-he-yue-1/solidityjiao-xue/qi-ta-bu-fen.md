@@ -36,9 +36,9 @@ contract calculate {
 部屬computer合約後，執行`twoAdd3` 函式
 
 ```go
-// 寫上欲呼叫的函式介面
+// 寫上呼叫函式的介面
 contract calculate {
-  function add (int a, int b) external view returns (int);
+    function add (int a, int b) external view returns (int);
 }
 
 // 主合約
@@ -50,7 +50,7 @@ contract computer {
 }
 ```
 
-https://gist.github.com/449830ce41cee011172b7893ba8e188b
+[https://gist.github.com/449830ce41cee011172b7893ba8e188b](https://gist.github.com/449830ce41cee011172b7893ba8e188b)
 
 #### memory、storage、stack
 
