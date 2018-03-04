@@ -214,7 +214,7 @@ Extended key 之 82 byte structure 其結合元素包含以下
 32 bytes: the chain code
 33 bytes: the public key or private key data (serP(K) for public keys, 0x00 || ser256(k) for private keys)
 
-4 bytes: 最後再把上面做checksum，然後加在字串最後。
+4 bytes: 最後再把上面做 checksum 取前 4 個 bytes，然後加在字串最後。
 ```
 
 > [https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki\#serialization-format](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#serialization-format)
