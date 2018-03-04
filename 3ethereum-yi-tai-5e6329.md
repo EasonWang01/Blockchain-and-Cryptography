@@ -6,6 +6,8 @@
 
 以太坊黃皮書：[https://ethereum.github.io/yellowpaper/paper.pdf](https://ethereum.github.io/yellowpaper/paper.pdf)
 
+以太坊由 Vitalik Buterin 所發表，目的是作為一個區塊鏈平台，讓大家可以在上面撰寫智能合約並運行。以太坊也與比特幣一樣有交易與挖礦機制，而下面我們將先來介紹有關以太坊中的交易手續費，而在後續 Etherum交易章節將會更詳細敘述交易相關內容。 
+
 ## 交易手續費
 
 以太坊的交易手續費包含兩個類型：轉帳以太幣的手續費與執行智能合約的手續費，手續費是以Gas來計算，Gas所花費的其實就是以太幣，但使用Gas來當作計算手續費的單位，Gas無法用來交易買賣，其計算方式為 :
