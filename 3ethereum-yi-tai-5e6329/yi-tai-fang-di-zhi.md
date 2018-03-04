@@ -146,14 +146,15 @@ const keyth = require('keythereum');
 const fs = require('fs');
 
 let password = '';
+
 // 讀取keyFile檔案
 key = fs.readFileSync('./keyfile.062746081Z--feddf8db160dcb85f793bfee734352760c4ab96e'); 
 parsed_key = JSON.parse(key.toString());
 
+// 還原出私鑰
 const privateKey = keyth.recover(password, parsed_key);
 
 console.log(privateKey.toString('hex'));
-// 還原出私鑰
 ```
 
 # ICAP \( Inter exchange Client Address Protocol \)
