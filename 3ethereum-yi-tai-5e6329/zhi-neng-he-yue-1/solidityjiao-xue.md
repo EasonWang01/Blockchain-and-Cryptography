@@ -164,7 +164,7 @@ const event = ContractInstance.事件名稱({}, {fromBlock: 0, toBlock: 'latest'
 // 其中第一個參數 {} 作用類似Filter可參考: https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethfilter
 ```
 
-之後存取時裡面會有一個`args` 的key其value及為我們當時傳入Event的參數。
+之後存取時裡面會有一個`args` 的 key 其 value 為我們當時傳入Event的參數。
 
 [http://solidity.readthedocs.io/en/develop/contracts.html\#events](http://solidity.readthedocs.io/en/develop/contracts.html#events)
 
