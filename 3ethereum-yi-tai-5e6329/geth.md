@@ -132,7 +132,7 @@ geth.exe --fast --cache 1024
 ```
 --testnet      連線到 Ropsten network，共識方式為 proof-of-work 
 --rinkeby      連線到 Rinkeby network，共識方式為 proof-of-authority 
---dev          連線到私有鏈，方便開發者快速開發，並且預設好一個帳號並擁有一定數量之Ether，共識方式為 proof-of-authority
+--dev          連線到私有鏈，方便開發者快速開發，並且預設好一個帳號其擁有一定數量之Ether，共識方式為 proof-of-authority
 ```
 
 #### --syncmode
