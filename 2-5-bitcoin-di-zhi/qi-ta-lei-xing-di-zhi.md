@@ -110,6 +110,8 @@ function numToBuffer(num) {
 
 先產生一個128 bits 的隨機Entropy，然後把他與預先定義的字典表對應產生12個對應單字，根據[BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) 從12個隨機單字產生了512 bit 的 Master seed，之後繼續往下階層式的產生出許多地址。
 
+\( 也可以直接把 128、256或 512 bits的隨機Entropy 當作 Seed，並且進行 HMAC-SHA512 雜湊。\)
+
 > ```
 > Mnemonic code for generating deterministic keys :
 > https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
@@ -130,7 +132,7 @@ function numToBuffer(num) {
 ```
 
 > 之後會產生跟上層一樣的512bits的key，同樣的，前後256bits分別為 child private key 與 child chain code。
-
+>
 > 由於HMAC-SHA512是Hash function，過程是不可逆的，所以我們不會知道parent是什麼，以及也不會知道自己鄰近的其他child是什麼
 
 下面為一個概念範例 \( 我們會用到十六進位轉二進位，所以需下載『 big-integer-converter 』模組 \)
