@@ -37,7 +37,9 @@ contractAddress.call(bytes4(keccak256("functionName(args)")))
 
 > 可以加入要提供的 Gas 以及 Ether
 
-https://vomtom.at/address-call-vs-delegatecall-vs-libraries/
+https://ethereum.stackexchange.com/a/8281/30691
+
+[https://vomtom.at/address-call-vs-delegatecall-vs-libraries/](https://vomtom.at/address-call-vs-delegatecall-vs-libraries/)
 
 #### 2.Key-value對應
 
