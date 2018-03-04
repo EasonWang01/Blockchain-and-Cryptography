@@ -154,7 +154,7 @@ web3.eth.defaultAccount = eth.accounts[0];
 
 ![](/assets/dsc09.png)
 
-然後我們點選上方的contract，然後拉到下面點選watch contract
+開啟後我們點選上方的contract，然後拉到下面點選watch contract
 
 ![](/assets/9ja.png)
 
