@@ -110,7 +110,7 @@ function numToBuffer(num) {
 
 先產生一個128 bits 的隨機Entropy，然後把他與預先定義的字典表對應產生12個對應單字，根據[BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) 從12個隨機單字產生了512 bit 的 Master seed，之後繼續往下階層式的產生出許多地址。
 
-\( 也可以直接把 128、256或 512 bits的隨機Entropy 當作 Seed，並且進行 HMAC-SHA512 雜湊。\)
+\( 也可以把一開始的 128、256或 512 bits的隨機 Entropy 當作 Seed，並且直接進行 HMAC-SHA512 雜湊，不涉及到 Mnemonic 。\)
 
 > ```
 > Mnemonic code for generating deterministic keys :
