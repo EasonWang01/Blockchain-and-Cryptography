@@ -25,7 +25,7 @@ personal.newAccount()
 接著轉帳
 
 ```
-eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(0.05, "ether")})
+eth.sendTransaction({from: eth.coinbase, to:eth.accounts[1], value: web3.toWei(0.05, "ether")})
 ```
 
 之後不用挖礦及會自動生效
