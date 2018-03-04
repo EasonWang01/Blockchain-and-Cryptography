@@ -34,7 +34,7 @@
 
 ### 地址種類
 
-比特幣主鏈上常見的地址具有以下種類：
+比特幣主鏈上常見的地址包含以下種類：
 
 ```
 1.Pay to Public Key Hash (P2PKH) 單一簽名地址，開頭為1
@@ -315,7 +315,7 @@ function hex2ASCII(_hex) {
 
 隔離見證地址，開頭為3，但也有可能看到`bc1q` 與`tb1q`開頭的地址，可參考 BIP-173
 
-https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki
+[https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki)
 
 > 此種地址產生時，只能接受壓縮版本的公鑰。
 
