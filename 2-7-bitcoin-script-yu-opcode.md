@@ -14,7 +14,7 @@
 
 Script 會從左邊開始執行 :
 
-&lt;A Signature&gt; 為一個經過私鑰簽名的字串，其先推入堆棧內，在來往右邊一步，把 &lt;A Public Key&gt; 也推入。
+&lt;A Signature&gt; 為一個經過私鑰簽名的字串，其先推入堆棧內，再來往右邊一步，把 &lt;A Public Key&gt; 也推入。
 
 ![](/assets/89.png)
 
