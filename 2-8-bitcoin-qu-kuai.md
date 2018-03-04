@@ -107,7 +107,7 @@ Bitcoin 之 Genesis Block 創建原始碼
 
 [https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/chainparams.cpp\#L115](https://www.gitbook.com/book/easonwang01/e/edit#)
 
-Magic Nunber在電腦科學裡面用到許多數字來代表他現在的版本或ID，可參考：
+Magic Nunber在電腦科學中以獨特的數值用來識別 Protocol 、版本號與 ID 等等，可參考：
 
-[https://en.wikipedia.org/wiki/Magic\_number\_\(programming\)\#Format\_indicator](https://en.wikipedia.org/wiki/Magic_number_%28programming%29#Format_indicator)
+[https://en.wikipedia.org/wiki/Magic\_number\_\(programming\)](https://en.wikipedia.org/wiki/Magic_number_%28programming%29#Format_indicator)
 
