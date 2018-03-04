@@ -7,7 +7,7 @@ function buyTicket(uint amount) payable {
 }
 ```
 
-包含payable的function才可以接受Ether
+只有包含 payable 的 function 才可以接受 Ether。
 
 #### View, Pure, Constant
 
