@@ -56,7 +56,8 @@ ganache-cli
 
 > ganache也有圖形化介面程式可下載[http://truffleframework.com/ganache/](http://truffleframework.com/ganache/)
 
-TestRPC 提供一個快速的測試環境，啟動時會自動創建十組帳號且裡面都有一定量的 Ether 可以做測試、每次有交易後會自動挖礦，但是鏈的資料是暫存在記憶體而不是在檔案中，所以 TestRPC 關掉之後，所有區塊鏈的資料都會消失。
+TestRPC  
+ 提供一個快速的測試環境，啟動時會自動創建十組帳號且裡面都有一定量的 Ether 可以做測試、每次有交易後會自動挖礦，但是鏈的資料是暫存在記憶體而不是在檔案中，所以 TestRPC 關掉之後，所有區塊鏈的資料都會消失。
 
 ![](/assets/0921.png)
 
