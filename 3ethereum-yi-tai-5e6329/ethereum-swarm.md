@@ -58,7 +58,7 @@ geth --datadir="./swarm_test" --ipcpath="~/Library/Ethereum/geth.ipc"
 curl -H "Content-Type: text/plain" --data-binary "every 60 seconds a minute passes" http://localhost:8500/bzz:/
 ```
 
-其會產生一串Hash
+執行後會產生一串Hash
 
 我們一樣使用`curl`試著去讀取他，即可看到剛才的字串
 
