@@ -88,7 +88,7 @@ macOS :
 
 ![](/assets/螢幕快照 2018-01-17 下午8.25.04.png)
 
-> 因為Buy price為5，所以一單位Ether可以購買到五個token，後面的18位零為小數。
+> 因為Buy price為5，所以一單位Ether可以購買到五個token，後面的18個零為小數。
 
 ## 從合約提款
 
