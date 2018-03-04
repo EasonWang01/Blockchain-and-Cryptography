@@ -124,15 +124,13 @@ Homestead版本開始提供了圖形化的乙太坊錢包，並且也表示乙�
 
 * 加入returndata opcode
 
-
+---
 
 參考資料:
 
-http://ethdocs.org/en/latest/introduction/history-of-ethereum.html
+[http://ethdocs.org/en/latest/introduction/history-of-ethereum.html](http://ethdocs.org/en/latest/introduction/history-of-ethereum.html)
 
-https://en.wikipedia.org/wiki/Ethereum
+[https://en.wikipedia.org/wiki/Ethereum](https://en.wikipedia.org/wiki/Ethereum)
 
-https://cryptodaily.co.uk/the-history-of-ethereum/
-
-
+[https://cryptodaily.co.uk/the-history-of-ethereum/](https://cryptodaily.co.uk/the-history-of-ethereum/)
 
