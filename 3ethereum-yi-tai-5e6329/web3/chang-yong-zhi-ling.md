@@ -200,8 +200,10 @@ web3.eth.getBlock(區塊號碼)
 取得區塊內包含的交易數目
 
 ```
-web3.eth.getBlockTransactionCount(區塊號碼或Hash)
+web3.eth.getBlockTransactionCount(區塊高度或區塊Hash)
 ```
+
+https://github.com/ethereum/wiki/wiki/JavaScript-API\#web3ethgetblocktransactioncount
 
 #### 取得交易的內容
 
