@@ -100,7 +100,7 @@ C++語言的實作
 
 #### 4.pyethereum
 
-python語言的實作
+Python語言的實作
 
 [https://github.com/ethereum/pyethereum](https://github.com/ethereum/pyethereum)
 
