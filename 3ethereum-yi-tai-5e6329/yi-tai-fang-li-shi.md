@@ -6,7 +6,7 @@ Vitalik Buterin 公開介紹了以太坊，並發表了白皮書。
 
 #### 2014年1月
 
-Ethereum 正式發表，並稱此為 『 Cryptocurrency 2.0 』
+Ethereum 正式發表，並稱此為 『 Cryptocurrency 2.0 』。
 
 [https://www.youtube.com/watch?v=lNMvIzexLQc](https://www.youtube.com/watch?v=lNMvIzexLQc)
 
@@ -56,9 +56,9 @@ Ethereum Frontier啟動
 
 #### 2015年11月
 
-第二次的開發者大會『 DEVCON-1 』 在倫敦舉辦，這五天的會議包含了超過一百名的演講者與400名的與會者
+第二次的開發者大會『 DEVCON-1 』 在倫敦舉辦，這五天的會議包含了超過一百名的演講者與400名的與會者。
 
-Microsoft Azure也宣布他們雲端平台將與Ethereum合作
+Microsoft Azure也宣布他們雲端平台將與Ethereum合作。
 
 [https://www.youtube.com/playlist?list=PLJqWcTqh\_zKHQUFX4IaVjWjfT2tbS4NVk](https://www.youtube.com/playlist?list=PLJqWcTqh_zKHQUFX4IaVjWjfT2tbS4NVk)
 
