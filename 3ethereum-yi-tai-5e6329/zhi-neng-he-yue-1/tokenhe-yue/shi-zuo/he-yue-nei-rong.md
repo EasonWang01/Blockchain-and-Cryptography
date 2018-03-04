@@ -31,7 +31,7 @@ uint256 public buyPrice;    // 一單位Ether可以換多少token
 uint private weiToEther = 10 ** 18; // 把單位從wei轉為Ether，因為msg.value預設是以wei為單位，轉為Ether比較方便我們去看。
 ```
 
-3.接著寫出此合約的建構子 \( 合約部署即會執行一次 \)，以及共用的Modifyer。
+3.接著寫出此合約的建構子 \( 合約部署即會執行一次 \)，以及共用的Modifier。
 
 > 之後我們要部署合約時會需要輸入四個參數：\_initialSupply、\_buyPrice、\_tokenName、\_tokenSymbol。
 
