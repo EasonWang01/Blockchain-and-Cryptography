@@ -89,7 +89,7 @@ curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}'
 
    export      輸出區塊鏈資料到檔案，例如： geth export <filename>
 
-   import      引入檔案資料回到區塊鏈，例如： geth import <filename>
+   import      引入區塊鏈檔案到節點中，例如： geth import <filename>
 
    init        初始化一個新的 genesis block
 
