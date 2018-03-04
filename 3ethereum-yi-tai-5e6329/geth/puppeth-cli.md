@@ -169,7 +169,7 @@ WARN [01-13|10:51:37] Block sealing failed  err=unauthorized
 clique.propose("0xdf6d9ad96b630e06325ceb9f7e23a86695997421", true)
 ```
 
-> 必須要在Etherbase本身是認證帳號的情況下才可以使用此指令，授權其他帳號加入認證帳號
+> 必須要在Etherbase本身是認證帳號的情況下才可以使用此指令，授權其他帳號加入認證帳號。
 
 其他節點也可以正常打包區塊了。
 
