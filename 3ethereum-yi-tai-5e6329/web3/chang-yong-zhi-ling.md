@@ -115,6 +115,8 @@ web3.eth.sendTransaction({
 
 > 與交易相關的還有 nonce 值，每次發送交易後該 nonce 值都會加一，如果該地址後面發出的交易 nonce 小於其上一筆發出交易的nonce則無法成功發送。
 
+https://github.com/ethereum/wiki/wiki/JavaScript-API\#web3ethsendtransaction
+
 #### 取得目前鏈上的Gas Price
 
 ```js
