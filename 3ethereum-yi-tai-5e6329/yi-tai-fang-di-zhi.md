@@ -227,7 +227,7 @@ npm install ethereumjs-icap
 const ICAP = require('ethereumjs-icap');
 
 // 以下地址第一個因為大於155 bits，所以只能編碼為Basic的ICAP，第三個參數要為True ( 告知轉為Basic格式，如果沒加會產生inValid錯誤 ) 。
-// 第二個參數是顯示時是否以space delimited顯示，e.g. XE A9 DD
+// 第二個參數代表顯示時是否以space delimited顯示，e.g. XE A9 DD
 console.log(ICAP.fromAddress('0x1e44c6c75BCEB565AD4A58750f4BC3571365D8C7', false, true));
 console.log(ICAP.fromAddress('0x0844c6c75BCEB565AD4A58750f4BC3571365D8C7')); // 在此地址中將第一個hex改為0，第二個hex改為 < 9，即可滿足bit限制，轉為Direct格式
 console.log(ICAP.fromAddress('0x00c5496aee77c1ba1f0854206a26dda82a81d6d8'));
