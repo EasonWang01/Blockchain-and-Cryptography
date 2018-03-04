@@ -38,7 +38,7 @@ window.Contract = Contract;
 
 ```js
 componentWillMount() {
-  web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545')); //指定為RPC server的位置
+  web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545')); //指定RPC server的位置
 }
 ```
 
