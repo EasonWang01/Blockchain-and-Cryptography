@@ -74,7 +74,7 @@ curl -H "Content-Type: text/plain" --data-binary "every 60 seconds a minute pass
 
 #### 上傳檔案
 
-可以輸入以下指令上傳檔案
+可以輸入以下指令上傳檔案
 
 ```
 ./swarm up 檔案路徑
