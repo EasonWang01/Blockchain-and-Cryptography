@@ -32,9 +32,9 @@ eth.sendTransaction({from: eth.coinbase, to:eth.accounts[1], value: web3.toWei(0
 
 ![](/assets/螢幕快照 2018-01-12 上午8.54.52.png)
 
-## Testrpc
+## TestRPC
 
-使用以下指令安裝，其不屬於Geth 的一部分，不過其功能也可以快速的幫我們產生一個開發環境使用的鏈。
+使用以下指令安裝，此模組不屬於Geth 的一部分，不過其功能可以快速的幫我們產生一個開發環境使用的鏈。
 
 ```
 npm install -g ganache-cli
