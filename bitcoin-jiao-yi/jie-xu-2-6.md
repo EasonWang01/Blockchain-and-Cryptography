@@ -65,8 +65,6 @@ Unlocking script:
 
 中文為隔離見證，主要用意是要減少放入區塊內的交易大小，作法為把原本交易簽名（signature）從交易 Script 中移除。
 
-與Segwit相關的 BIP 包含 [BIP141](https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki)、[BIP143](https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki)、[BIP144](https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki)、[BIP145](https://github.com/bitcoin/bips/blob/master/bip-0145.mediawiki)等等。
-
 每個Segwit的交易將會產生兩種ID : txid與wtxid。
 
 ```
@@ -123,7 +121,7 @@ BIP141, BIP143, BIP144, BIP145
 ---
 
 註1 : lock\_time   [https://en.bitcoin.it/wiki/Timelock](https://en.bitcoin.it/wiki/Timelock)  
-以Unix timestamp表示，類似於`1511321691`如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交易加入區塊
+以Unix timestamp表示，類似於`1511321691`。在該時間之前交易不會被納入區塊，但如果填入該欄位的值小於五億，則會把該數字視為區塊高度，意思為在該區塊高度之前不能將交易加入區塊。
 
 ![](/assets/09isd.png)
 
