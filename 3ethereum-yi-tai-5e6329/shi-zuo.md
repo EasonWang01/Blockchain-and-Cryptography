@@ -12,7 +12,7 @@ geth --dev --rpc --rpcport 8545 --datadir ./eth_Dapp --rpccorsdomain="*"  consol
 
 我們這次來做一個會員管理系統，其中包含會員新增，會員簽到，會員移除與會員升級等功能。
 
-一樣在Remix IDE中填入以下程式：
+一樣在Remix IDE中填入以下程式，此為我們這次的會員管理系統合約：
 
 ```go
 pragma solidity ^0.4.19;
