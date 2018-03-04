@@ -4,7 +4,7 @@
 
 wei, finney, szabo, ether
 
-可以直接使用，例如以下：
+可以直接使用，例如：
 
 ```js
 if(msg.value != 1 ether) throw;
