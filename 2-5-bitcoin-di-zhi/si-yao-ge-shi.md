@@ -8,7 +8,7 @@
 0x1 到 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4140
 ```
 
-# WIF\(Wallet import format\)
+# WIF（Wallet import format）
 
 一般私鑰跟WIF格式私鑰可以互相轉換，其優點在於WIF格式的私鑰長度較短，並且加入了checksum機制。
 
