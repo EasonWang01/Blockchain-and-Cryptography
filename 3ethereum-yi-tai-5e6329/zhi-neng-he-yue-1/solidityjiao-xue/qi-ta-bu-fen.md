@@ -95,13 +95,13 @@ function() {
 
 #### Getter function
 
-一般讀取資料可以直接把變數寫為public即可
+一般讀取資料可以直接把變數寫為 constant  public 即可
 
 ```
-uint[] public a;
+uint constant public c = 12;   
 ```
 
-如果想寫成function 記得要加上view或是pure關鍵字，告訴節點這是單純讀取固定資料的function，不然在例如Remix IDE之類不會直接顯示值出來。
+如果想寫成 function 記得要加上 view 或是 pure 關鍵字，告訴節點這是單純讀取固定資料的 function，不然 Remix IDE 不會直接顯示值出來。
 
 ```js
 function showString() public pure returns(string) {
