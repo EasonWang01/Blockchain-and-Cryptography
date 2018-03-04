@@ -104,7 +104,7 @@ personal.newAccount()
 轉帳100 Ether，給這個帳號：
 
 ```
-eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(100, "ether")})
+eth.sendTransaction({from: eth.coinbase, to: eth.accounts[1], value: web3.toWei(100, "ether")})
 ```
 
 之後查看網頁 :
