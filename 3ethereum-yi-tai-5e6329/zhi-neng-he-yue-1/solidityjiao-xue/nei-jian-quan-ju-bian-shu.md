@@ -70,7 +70,7 @@ tx.gasprice (uint)
 
 tx.origin (address)
 回傳原始發送交易的人之地址，不建議使用。假設用户從合約A調用合約B，此時合約A的tx.origin 和 msg.sender 都是用戶。
-但是合約B :tx.origin 是用戶，但msg.sender為合約A.
+但是合約B: tx.origin 是用戶，而 msg.sender 卻為合約A.
 ```
 
 > msg來源可以是合約或是用戶，如果一個合約被另一個合約調用則msg則會指向調用該合約的合約。
@@ -116,7 +116,7 @@ ripemd160(...) returns (bytes20):
 計算 RIPEMD-160 hash
 
 ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address):
-從簽章復原回adddress
+從簽章復原回address
 // 可參考：https://ethereum.stackexchange.com/questions/1777/workflow-on-signing-a-string-with-private-key-followed-by-signature-verificatio
 ```
 
