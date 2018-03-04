@@ -47,7 +47,7 @@ geth --dev --rpc --rpcport 8545 --datadir ./Ethtest --rpccorsdomain="*"  console
 
 > 這邊記得使用http的網址，因為如果是使用https網址將無法連到本地端http protocol的Geth
 
-然後在Remix網頁右上角選擇到Run的Tab，之後下拉選單選擇Web3 Provider，再來輸入框記得填寫與本地Geth啟動相同之的HTTP RPC PORT
+然後在Remix網頁右上角選擇到Run的Tab，之後下拉選單選擇Web3 Provider，再來輸入框記得填寫與本地 Geth 啟動時相同之的HTTP RPC PORT
 
 ![](/assets/34534543.png)
 
