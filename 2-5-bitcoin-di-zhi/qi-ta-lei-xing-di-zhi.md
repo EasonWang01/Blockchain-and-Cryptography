@@ -581,6 +581,8 @@ child key 可分為 Hardened 與 non-Hardened
 
 # 查看地址的相關資料與交易紀錄
 
+我們可以使用第三方網站的API服務，於 rawaddr 後方填上欲查詢的地址 :
+
 [https://blockchain.info/rawaddr/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to](https://blockchain.info/rawaddr/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to)
 
 ```js
