@@ -25,7 +25,7 @@ if (myAddress1.balance < 10 && myAddress2.balance >= 10) myAddress1.transfer(10)
 
 **2.msg.sender**
 
-預設為執行合約Function的人之地址。
+預設為執行合約 Function 人的地址。
 
 **3.call**
 
