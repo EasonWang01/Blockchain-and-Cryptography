@@ -10,8 +10,8 @@
 | :--- | :--- | :--- |
 | Magic No. \(註1\) | 值通常為 0xD9B4BEF9 | 4 bytes |
 | Blocksize \(區塊大小\) | 顯示此區塊的大小 | 4 bytes |
-| Blockheader\(區塊頭\) | 區塊頭，包含六個部分 | 80 bytes |
-| Transaction counter\(交易數量\) | 記錄此區塊包含了幾筆交易 | 1 - 9 bytes |
+| Blockheader \(區塊頭\) | 區塊頭，包含六個部分 | 80 bytes |
+| Transaction counter \(交易數量\) | 記錄此區塊包含了幾筆交易 | 1 - 9 bytes |
 | Transactions | 以Txid表示的交易紀錄列表 | 不一定 |
 
 我們可以使用以下網站查詢區塊內容：
@@ -95,7 +95,7 @@ https://blockexplorer.com/api/status?q=getBlockCount
 
 Bitcoin 之 Genesis Block 創建原始碼
 
-> ![](/assets/2444.png)https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp\#L123
+> ![](/assets/2444.png)[https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp\#L123](https://github.com/bitcoin/bitcoin/blob/3955c3940eff83518c186facfec6f50545b5aab5/src/chainparams.cpp#L123)
 
 ---
 
