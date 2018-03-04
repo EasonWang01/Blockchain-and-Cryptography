@@ -154,7 +154,7 @@ eth.sendTransaction({from: eth.accounts[0], to: "0x0bc1d752dfe1e2595017738b5a944
 miner.start(1)
 ```
 
-交易納入區塊後可以輸入以下指令即可看到目前帳戶餘額。
+交易納入區塊後可以輸入以下指令，即可看到目前帳戶餘額。
 
 ```
 eth.getBalance(eth.account[0])
