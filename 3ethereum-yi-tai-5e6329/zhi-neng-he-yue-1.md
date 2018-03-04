@@ -55,7 +55,7 @@ geth --dev --rpc --rpcport 8545 --datadir ./Ethtest --rpccorsdomain="*"  console
 
 之後Remix連線到本地節點後即可看到Remix顯示本地節點的帳號資料。
 
-![](/assets/92831.png)之後我們在左側程式部分改為如下
+![](/assets/92831.png)之後我們將左側程式部分改為如下
 
 ```js
 pragma solidity ^0.4.19;
