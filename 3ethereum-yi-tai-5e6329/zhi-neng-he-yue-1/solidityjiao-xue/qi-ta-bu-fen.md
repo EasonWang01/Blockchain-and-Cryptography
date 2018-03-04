@@ -56,7 +56,7 @@ contract computer {
 
 > storage耗費最多Gas，memory耗費較少，stack免費。
 
-Function參數預設均為memory，使用storage如下用法
+Function參數預設均為memory，而 storage 的用法如下 :
 
 ```go
 uint[] abc = [1, 2, 3];
