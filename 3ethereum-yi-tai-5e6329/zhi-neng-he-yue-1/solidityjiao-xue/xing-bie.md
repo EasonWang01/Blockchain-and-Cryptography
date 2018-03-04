@@ -37,6 +37,8 @@ contractAddress.call(bytes4(keccak256("functionName(args)")))
 
 > 可以加入要提供的 Gas 以及 Ether
 
+https://vomtom.at/address-call-vs-delegatecall-vs-libraries/
+
 #### 2.Key-value對應
 
 使用mapping 可產生一個類似Key-value對應的結構
