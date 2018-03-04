@@ -53,7 +53,7 @@ mapping (address => Person) person;
 
 `person` 為mapping類型，它的 key 是address 類型， value 是Person 之 struct 類型。
 
-> e.g. person\[地址\]
+> 使用方法為 : e.g. person\[地址\]
 
 #### 3.Struct
 
