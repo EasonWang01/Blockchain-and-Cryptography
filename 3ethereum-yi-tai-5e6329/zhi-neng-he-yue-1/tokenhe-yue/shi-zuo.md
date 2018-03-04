@@ -115,7 +115,7 @@ contract ERC20_token is ERC20_interface {   // 使用 is 繼承 ERC20_interface
         string _tokenSymbol
     ) public {
         totalSupply = _initialSupply * 10 ** uint256(decimals); // token總量
-        balances[msg.sender] = totalSupply;                    // 設定合約token擁有者為合約部屬者      
+        balances[msg.sender] = totalSupply;                    // 將所有Token先全部分配給合約部屬者      
 
         name = _tokenName;                                   // token名稱
         symbol = _tokenSymbol;                               // token 標誌
