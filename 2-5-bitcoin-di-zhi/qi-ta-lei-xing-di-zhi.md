@@ -94,9 +94,11 @@ function numToBuffer(num) {
 
 # 2.HD \(hierarchical deterministic\) wallet address
 
-錢包有分為 _nondeterministic wallet 與 deterministic wallet。_
+錢包有分為 nondeterministic wallet 與 deterministic wallet。
 
 其中deterministic wallet的地址都是從同一個Seed所產生出來，所以如果其中一個產生的金鑰遺失了可以再從Seed產生一次。
+
+https://en.bitcoin.it/wiki/Deterministic\_wallet
 
 參考下圖:
 
