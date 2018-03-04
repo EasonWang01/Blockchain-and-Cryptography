@@ -56,7 +56,7 @@ parity --chain kovan
 
 查看區塊鏈狀態：[https://ropsten.etherscan.io/](https://ropsten.etherscan.io/)
 
-GIthub頁面：[https://github.com/ethereum/ropsten](https://github.com/ethereum/ropsten)
+Github頁面：[https://github.com/ethereum/ropsten](https://github.com/ethereum/ropsten)
 
 取得測試幣：[http://faucet.ropsten.be:3001/](http://faucet.ropsten.be:3001/)
 
@@ -64,7 +64,7 @@ GIthub頁面：[https://github.com/ethereum/ropsten](https://github.com/ethereum
 
 查看區塊鏈狀態：[https://kovan.etherscan.io/](https://kovan.etherscan.io/)
 
-GIthub頁面：[https://github.com/kovan-testnet](https://github.com/kovan-testnet)
+Github頁面：[https://github.com/kovan-testnet](https://github.com/kovan-testnet)
 
 取得測試幣：[https://github.com/kovan-testnet/faucet](https://github.com/kovan-testnet/faucet)
 
