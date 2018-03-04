@@ -98,7 +98,7 @@ function() {
 一般讀取資料可以直接把變數寫為 constant  public 即可
 
 ```
-uint constant public c = 12;   
+uint constant public c = 12;
 ```
 
 如果想寫成 function 記得要加上 view 或是 pure 關鍵字，告訴節點這是單純讀取固定資料的 function，不然 Remix IDE 不會直接顯示值出來。
@@ -119,9 +119,8 @@ function showString() public pure returns(string) {
 
 ```js
 function transferOwnership(address newOwner) public onlyOwner {
-  require(newOwner != address(0));
-  OwnershipTransferred(owner, newOwner);
-  owner = newOwner;
+    require(newOwner != address(0));
+    owner = newOwner;
 }
 ```
 
@@ -131,15 +130,15 @@ function transferOwnership(address newOwner) public onlyOwner {
 
 ```go
 struct NormalStruct {
-  uint a;
-  uint b;
-  uint c;
+    uint a;
+    uint b;
+    uint c;
 }
 
 struct MiniStruct {
-  uint32 a;
-  uint32 b;
-  uint c;
+    uint32 a;
+    uint32 b;
+    uint c;
 }
 
 // `MiniStruct` 可使用較少Gas
@@ -171,7 +170,7 @@ function hextoASCII(_hex) {
 }
 ```
 
-> 有關要使用string 還是 byte 可參考:
+> 有關要使用string 或是 byte 可參考:
 >
 > [https://ethereum.stackexchange.com/questions/11556/use-string-type-or-bytes32](https://ethereum.stackexchange.com/questions/11556/use-string-type-or-bytes32)
 
