@@ -109,7 +109,7 @@ eth.sendTransaction({from: eth.coinbase, to: eth.accounts[1], value: web3.toWei(
 
 之後查看網頁 :
 
-> 因為我們使用的是 Geth --dev ，所以產生交易後不需要手動挖礦即可生效。
+> 因為我們網頁連線的節點是 Geth --dev ，所以產生交易後不需要手動挖礦即可生效。
 
 ![](/assets/sdca.png)再來我們新增可以讀取區塊上資料之功能。
 
