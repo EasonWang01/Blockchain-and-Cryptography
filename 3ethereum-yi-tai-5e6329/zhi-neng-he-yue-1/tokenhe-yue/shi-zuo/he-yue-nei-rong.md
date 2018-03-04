@@ -44,7 +44,7 @@ function ERC20_token(
   string _tokenSymbol
 ) public {
   totalSupply = _initialSupply * 10 ** uint256(decimals); // token總量，後面乘上 10 ** uint256(decimals) 當作小數點
-  balances[msg.sender] = totalSupply; // 設定合約token擁有者為合約部屬者
+  balances[msg.sender] = totalSupply; // 將所有 Token 先全部分配給合約部屬者
 
   name = _tokenName;     // token名稱
   symbol = _tokenSymbol; // token 標誌
@@ -76,7 +76,7 @@ function transfer(address _to, uint256 _value) public returns(bool success) {
   return true;
 }
 
-// 從某一人地址轉給另一人地址，需要其轉帳配額有被同意，可想像為小明(msg.sender)用爸爸的副卡(_from)轉帳給別人(_to)
+// 從某一人地址轉給另一人地址，需要其轉帳配額有被同意，可想像為小明(msg.sender)用爸爸的副卡(_from) 進行消費 (_to)
 function transferFrom(address _from, address _to, uint256 _value) public returns(bool success) {
   uint256 allowance = allowed[_from][msg.sender];
   require(balances[_from] >= _value && allowance >= _value);
