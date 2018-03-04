@@ -96,7 +96,7 @@ Contract.合約Function(參數, {from: web3.eth.accounts[0], gas: 111700})
 #### 發送交易
 
 ```js
-eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(0.05, "ether")})
+eth.sendTransaction({from: eth.coinbase, to: eth.accounts[1], value: web3.toWei(0.05, "ether")})
 ```
 
 > 可以設定gas Limit 與 gas Price ： `{gas: ..., gasPrice: ...}`
@@ -176,7 +176,7 @@ web3.eth.coinbase
 personal.unlockAccount(address, passphrase, duration)
 ```
 
-https://github.com/ethereum/go-ethereum/wiki/Management-APIs\#personal\_unlockaccount
+[https://github.com/ethereum/go-ethereum/wiki/Management-APIs\#personal\_unlockaccount](https://github.com/ethereum/go-ethereum/wiki/Management-APIs#personal_unlockaccount)
 
 #### 取得特定區塊之資料
 
