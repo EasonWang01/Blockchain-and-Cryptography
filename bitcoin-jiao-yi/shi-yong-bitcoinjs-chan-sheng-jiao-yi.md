@@ -11,9 +11,9 @@ BitcoinJS為一個MIT License之開放原始碼比特幣相關第三方套件，
 > 為了避免未來版本更動造成程式無法執行，以下 Github 連結為筆者 Fork 原 bitcoinjs-lib 專案之程式，保持讀者與本書具有相同專案版本。
 
 ```js
-1. git clone https://github.com/blockchain-tutorial-by-yicheng/bitcoinjs-lib.git bitcoin_practice
+1. git clone https://github.com/blockchain-tutorial-by-yicheng/bitcoinjs-lib
 
-2. cd bitcoin_practice  然後輸入 npm install
+2. cd bitcoinjs-lib  然後輸入 npm install
 
 3. cd test/integration
 
