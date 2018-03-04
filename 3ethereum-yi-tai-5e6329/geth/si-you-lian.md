@@ -98,7 +98,7 @@ admin.nodeInfo
 
 ![](/assets/900.png)在另外一個節點輸入`admin.addPeer` 指令，如下：
 
-> 括號內填入剛才上面複製的enode URL括號內填入
+> 括號內填入剛才上面複製的 enode URL
 
 ```
 admin.addPeer("enode://d86c9070b332da1f35690310f15dd728e1d65f749e61e00f1da412a86b483c6a536cbb19e64ef3fd43781d5802dbe3d05c83a882c342d2505fb6686514323326@[::]:30304?discport=0")
