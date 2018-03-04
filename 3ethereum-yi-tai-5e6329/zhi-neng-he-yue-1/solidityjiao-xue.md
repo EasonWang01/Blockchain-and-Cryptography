@@ -125,7 +125,7 @@ function transferOwnership(address newOwner) onlyOwner {
 
 #### 4.Events
 
-可以用來當特定事件發生時產生log，用來通知外界。
+可以在特定事件發生時產生log，用來通知外界。
 
 ```
 event NewOffer(address sender_, uint amount); // Event
