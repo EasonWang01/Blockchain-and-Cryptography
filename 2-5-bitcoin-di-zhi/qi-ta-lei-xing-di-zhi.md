@@ -426,7 +426,6 @@ if (parent_xkey.slice(0, 4) === 'xprv') {
     // 使用父 private_key 計算derive 出的 下一層 child private key 與 child public key
     k = il.add(new BigInteger([0].concat(hexToDecimalArray(private_key)))).mod(ecparams.getN());
     child_privatekey = bytesToHex(k.toByteArrayUnsigned());
-    // pubkey = coinjs.newPubkey(key);
     // 從私鑰產生公鑰
     const ecdh = crypto.createECDH('secp256k1');
     const Uncompress_publickey = ecdh.setPrivateKey(Buffer.from(hexToDecimalArray(child_privatekey))).getPublicKey('hex')
@@ -441,7 +440,7 @@ if (parent_xkey.slice(0, 4) === 'xprv') {
     var x_decimalBytes = EllipticCurve.integerToBytes(x, 32);// toByteArrayUnsigned 與 integerToBytes 類似
     var y_decimalBytes = EllipticCurve.integerToBytes(y, 32);
 
-    //     轉為壓縮公鑰
+    // 轉為壓縮公鑰
     var publicKeyBytesCompressed = x_decimalBytes
     if (y_decimalBytes[y_decimalBytes.length - 1] % 2 === 0) {
         publicKeyBytesCompressed.unshift(0x02)
