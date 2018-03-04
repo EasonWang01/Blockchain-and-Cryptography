@@ -50,7 +50,7 @@ https://blockchain.info/rawblock/輸入block hash
 | :--- | :--- | :--- | :--- |
 | Version \(版本\) | 目前版本 | 版本更新時 | 4 |
 | hashPrevBlock\(前一個區塊的Hash\) | 可用來識別他的父區塊 | 新區塊產生時 | 32 |
-| hashMerkleRoot\(參考下一章節Merkel tree\) | 用來快速驗證區塊內的交易 | 新的交易被納入時 | 32 |
+| hashMerkleRoot\(參考下一章節Merkle tree\) | 用來快速驗證區塊內的交易 | 新的交易被納入時 | 32 |
 | Time\(時間戳記\) | 從 1970-01-01T00:00 UTC開始計算到現在之時間 | 每秒 | 4 |
 | Bits\(目標難度\) | 挖出下一個區塊的難度目標 | 每個區塊被挖出時更新 | 4 |
 | Nonce\(隨機值\) | 一個32-bit的數字，用於挖礦時納入計算 | 嘗試計算新區塊時，每次會嘗試不同Nonce | 4 |
