@@ -98,7 +98,7 @@ function numToBuffer(num) {
 
 其中deterministic wallet的地址都是從同一個Seed所產生出來，所以如果其中一個產生的金鑰遺失了可以再從Seed產生一次。
 
-https://en.bitcoin.it/wiki/Deterministic\_wallet
+[https://en.bitcoin.it/wiki/Deterministic\_wallet](https://en.bitcoin.it/wiki/Deterministic_wallet)
 
 參考下圖:
 
@@ -131,11 +131,9 @@ https://en.bitcoin.it/wiki/Deterministic\_wallet
 
 > 之後會產生跟上層一樣的512bits的key，同樣的，前後256bits分別為 child private key 與 child chain code。
 
-圖片來源:[https://github.com/bitcoinbook/bitcoinbook](https://github.com/bitcoinbook/bitcoinbook)
-
 > 由於HMAC-SHA512是Hash function，過程是不可逆的，所以我們不會知道parent是什麼，以及也不會知道自己鄰近的其他child是什麼
 
-下面我們會用到十六進位轉二進位，所以需下載『 big-integer-converter 』模組
+下面為一個概念範例 \( 我們會用到十六進位轉二進位，所以需下載『 big-integer-converter 』模組 \)
 
 ```
 npm install big-integer-converter
