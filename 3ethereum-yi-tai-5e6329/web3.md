@@ -307,7 +307,7 @@ export default withStyles(styles)(App);
 
 更改後可以看到目前畫面如下![](/assets/kopwe9.png)
 
-> 更改App.css中的.App-header即可更換為自己喜好之上方背景圖片。
+> 更改App.css中的.App-header即可更換上方背景圖片。
 >
 > ```css
 > .App-header {
