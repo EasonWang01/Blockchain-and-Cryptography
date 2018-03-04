@@ -142,7 +142,7 @@ web3.eth.defaultAccount = eth.accounts[0];
 
 > 剛才我們是用Remix 網頁版 IDE部屬合約，然後用Geth讀取合約之ABI來執行合約，但我們也可以用Geth來部屬合約。
 
-點選Detail後將會顯示合約相關資訊，然後拉到`WEB3DEPLOY`部分，將其複製並填入`var x` 參數後，貼到Geth console中。
+點選Detail後將會顯示合約相關資訊，然後拉到`WEB3DEPLOY`部分，將其複製並填入開頭`var x` 的值後，貼到Geth console中。
 
 # ![](/assets/912d.png)
 
