@@ -32,11 +32,10 @@ if (myAddress1.balance < 10 && myAddress2.balance >= 10) myAddress1.transfer(10)
 呼叫特定合約的Function
 
 ```go
-address nameReg = 0x72ba7d8e73fe8eb666ea66babc8116a41bfb10e2;
-nameReg.call.gas(1000000).value(1 ether)("register", "MyName");
+contractAddress.call(bytes4(keccak256("functionName(args)")))
 ```
 
-> 可以加入要提供的Gas以及Ether
+> 可以加入要提供的 Gas 以及 Ether
 
 #### 2.Key-value對應
 

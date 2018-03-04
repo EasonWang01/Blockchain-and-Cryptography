@@ -43,10 +43,10 @@ contract calculate {
 
 // 主合約
 contract computer {
-  calculate calc = calculate(0xe499b54b1bd00C604F4353210400737081D72390);
-  function twoAdd3() constant public returns (int){
-    return calc.add(2, 3);
-  }
+    calculate calc = calculate(0xe499b54b1bd00C604F4353210400737081D72390);
+        function twoAdd3() constant public returns (int){
+        return calc.add(2, 3);
+    }
 }
 ```
 
