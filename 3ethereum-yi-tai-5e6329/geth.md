@@ -154,6 +154,8 @@ Fast Sync: 同步所有 block headers 與 block bodies。在同步到 current bl
 Light Sync: 只取得目前的區塊狀態，要驗證資料時必須傳送資料給其他節點。
 ```
 
+https://ethereum.stackexchange.com/a/11300/30691
+
 #### --rpc、--ws、--ipc
 
 --rpc
