@@ -63,7 +63,7 @@ let key_ = "11110011"; // 密鑰
 
 # Stream Ciphers 與 Block Ciphers
 
-對稱式加密可以使用Stream Ciphers或是Block Ciphers將明文預先進行分段後再進行演算法加密來提高安全性。
+對稱式加密可以使用Stream Ciphers或是Block Ciphers將明文預先進行分段後再進行演算法加密來提高安全性，以及對於不同加密需求時可以使用不同模式 \( 例如當明文長度大於 AES 的 128 bits 限制時，可以用區塊加密將其切割 \)。
 
 > 可以在Node.js使用  crypto.getCiphers\(\) 來查看可用之加密方法。
 
