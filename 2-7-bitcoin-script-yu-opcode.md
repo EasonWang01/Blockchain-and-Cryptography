@@ -44,7 +44,7 @@ A Signature
 
 再來的兩個script分別為&lt;A Key Hash&gt; \(也就是Public Key Hash\)  與 OP\_EQUAL
 
-我們先把&lt;A Key Hash&gt; 推入堆棧
+我們先把&lt;Public Key Hash&gt; 推入堆棧
 
 ```
 Public Key Hash
