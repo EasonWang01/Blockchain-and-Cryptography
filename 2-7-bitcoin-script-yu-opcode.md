@@ -47,7 +47,7 @@ A Signature
 我們先把&lt;Public Key Hash&gt; 推入堆棧
 
 ```
-Public Key Hash
+A Key Hash (Public Key Hash)
 Public Key Hash
 Public Key
 A Signature
