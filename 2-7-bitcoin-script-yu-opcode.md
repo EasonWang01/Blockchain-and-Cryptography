@@ -66,9 +66,9 @@ A Signature
 
 最後，剩下OP\_CHECKSIG
 
-這個會使用非對稱加密演算法，來確認這個Public Key能不能配對上這個用私鑰簽發出的Signature，如果成功就會返回 True。
+將使用非對稱加密演算法，來確認這個Public Key能不能配對上這個用私鑰簽發出的Signature，如果成功就會返回 True。
 
-所以最後堆棧內只剩下 True，代表這筆交易的Script成功執行，所以就可以正常地發出交易了。
+當最後堆棧內只剩下 True，代表這筆交易的Script成功執行，所以就可以正常地發出交易了。
 
 > 有關其他 OPCODE 的功能可以參考以下連結 :
 >
