@@ -55,7 +55,7 @@ A Signature
 
 然後OP\_EQUAL 會比較目前堆棧上的前兩個值是否相同，若相同返回 True 繼續，並且把剛才兩個比較的值消除
 
-所以現在堆棧內長這樣
+這裡假設A Key Hash 與剛算出的 Public Key Hash 相同，兩者經過 OP\_EQUAL 消除後，現在堆棧內長這樣 :
 
 ```
 Public Key
