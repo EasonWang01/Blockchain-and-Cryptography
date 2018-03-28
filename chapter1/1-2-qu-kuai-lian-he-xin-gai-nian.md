@@ -144,7 +144,7 @@ Bitcoin Core 資料儲存部分
 
 #### 加密貨幣Market State圖表
 
-列了許多市面上可見的加密貨幣，但採用了另一種方式將之呈現
+列了許多市面上常見的加密貨幣，但採用了另一種方式將之呈現
 
 [http://cryptomaps.org/](http://cryptomaps.org/)![](/assets/bitcoin-market-圖表.png)
 
