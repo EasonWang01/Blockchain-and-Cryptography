@@ -113,6 +113,8 @@ function numToBuffer(num) {
 \( 也可以把一開始的 128、256或 512 bits的隨機 Entropy 當作 Seed，並且直接進行 HMAC-SHA512 雜湊，不涉及到 Mnemonic 。\)
 
 > ```
+> Mnemonic code 為一群隨機單字所組成的字串，利用Mnemonic code 來產生 deterministic Key 的過程定義於BIP39。
+>
 > Mnemonic code for generating deterministic keys :
 > https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
 > ```
