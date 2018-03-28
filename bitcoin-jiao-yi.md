@@ -277,6 +277,8 @@ priority = sum(input_value_in_base_units * input_age) / size_in_bytes
 > Freshly-mined coins cannot be spent for 100 blocks.
 >
 > 寫在如下原始碼中[https://github.com/bitcoin/bitcoin/blob/1d9d314573ee48f6f51107265f1cf1fa9e36c998/src/consensus/consensus.h\#L14](https://github.com/bitcoin/bitcoin/blob/1d9d314573ee48f6f51107265f1cf1fa9e36c998/src/consensus/consensus.h#L14)
+>
+> ![](/assets/dsv.png)
 
 3.以下網站可用來計算在特定的hashrate運算比例與確認數下可能被成功 hack \( double spend \) 的機率
 
