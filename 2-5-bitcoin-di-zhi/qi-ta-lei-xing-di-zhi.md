@@ -425,7 +425,7 @@ const ecparams = ec.getSECCurveByName("secp256k1");
 const curve = ecparams.getCurve();
 
 if (parent_xkey.slice(0, 4) === 'xprv') {
-    // 使用父 private_key 計算derive 出的 下一層 child private key 與 child public key
+    // 使用父 private_key 計算下一層 child private key 與 child public key
     k = il.add(new BigInteger([0].concat(hexToDecimalArray(private_key)))).mod(ecparams.getN());
     child_privatekey = bytesToHex(k.toByteArrayUnsigned());
     // 從私鑰產生公鑰
