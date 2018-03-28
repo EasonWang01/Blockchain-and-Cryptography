@@ -409,6 +409,10 @@ Input一定會對應到一個Output，每個Output都會有一個Locking script 
 
 發出交易時需要包含一定量的手續費，用來給予礦工，挖到新區塊的礦工將收到該區塊內所有交易的手續費，通常越高的手續費會越早被加入區塊，也就代表可以越早被驗證交易。
 
+可在以下網站看到目前推薦的手續費與尚未確認的交易中所含的手續費 :
+
+> [https://bitcoinfees.earn.com/](https://bitcoinfees.earn.com/)
+
 以下為比特幣官方錢包用來估算手續費的程式碼：
 
 [https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/wallet/fees.cpp](https://github.com/bitcoin/bitcoin/blob/3c098a8aa0780009c11b66b1a5d488a928629ebf/src/wallet/fees.cpp)

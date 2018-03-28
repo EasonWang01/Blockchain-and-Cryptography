@@ -127,13 +127,6 @@ BIP141, BIP143, BIP144, BIP145
 
 > [https://en.bitcoin.it/wiki/Protocol\_documentation\#tx](https://en.bitcoin.it/wiki/Protocol_documentation#tx)
 
-註2 : 交易手續費，以交易大小來計算，每 KB 約為 1000 satoshis  
-，每個交易通常至少含有500 bytes。
-
-> [https://bitcoinfees.earn.com/](https://bitcoinfees.earn.com/)  
->  \(此網站可看到目前推薦的手續費與尚未確認的交易所含的手續費\)  
->  注意 : 網站上是以 bytes 為單位
-
 其他參考資料：  
 [https://github.com/OutCast3k/coinbin/blob/217897285e51cbc33bdba3ec275aa3386ebf70b2/js/coin.js\#L793](https://github.com/OutCast3k/coinbin/blob/217897285e51cbc33bdba3ec275aa3386ebf70b2/js/coin.js#L793)  
 [https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction.js](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/src/transaction.js)  
