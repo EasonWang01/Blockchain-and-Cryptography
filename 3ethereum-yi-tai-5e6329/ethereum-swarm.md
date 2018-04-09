@@ -50,8 +50,6 @@ geth --datadir="./swarm_test" --ipcpath="~/Library/Ethereum/geth.ipc"
 cd go-ethereum/build/bin
 ```
 
-
-
 啟動swarm
 
 ```
@@ -60,7 +58,7 @@ cd go-ethereum/build/bin
 
 ![](/assets/螢幕快照 2018-01-28 下午11.32.06.png)
 
-接著我們來試著存入一筆文字，開啟另一個Terminal然後輸入以下
+接著我們來試著存入一筆文字，開啟另一個 Terminal 然後輸入以下
 
 ```
 curl -H "Content-Type: text/plain" --data-binary "every 60 seconds a minute passes" http://localhost:8500/bzz:/
