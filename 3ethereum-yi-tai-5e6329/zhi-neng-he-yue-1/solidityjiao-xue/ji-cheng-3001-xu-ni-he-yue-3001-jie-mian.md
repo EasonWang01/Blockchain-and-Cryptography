@@ -40,11 +40,11 @@ contract Flybird is bird {
 類似於虛擬合約，但其強制不可以於被繼承合約實作任何邏輯，到了繼承其合約的主合約才可實作。
 
 ```js
-interface runningMan {
+interface swimming {
   function swim() returns (string);
 }
 
-contract superman is swim {
+contract superman is swimming {
   function swim() returns (string) {
     return "I'm swimming";
   }

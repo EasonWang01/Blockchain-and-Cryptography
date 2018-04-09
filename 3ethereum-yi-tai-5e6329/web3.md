@@ -49,6 +49,12 @@ npm install web3@0.20.4
 npm start
 ```
 
+接著要執行 Geth，開啟另一個 Terminal 並輸入以下指令：
+
+```
+geth --dev --rpc --rpccorsdomain="*"
+```
+
 接著我們把App.js改為如下
 
 ```js
