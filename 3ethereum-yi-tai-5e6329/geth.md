@@ -54,7 +54,7 @@ geth console
 
 Ethereum JSON-RPC 文件： [https://github.com/ethereum/wiki/wiki/JSON-RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC)
 
-JSON-RPC，為一個輕量級無狀態的RPC Protocol，通常為一個會回覆JSON格式的Server，試著啟動Geth之後輸入以下
+JSON-RP C，為一個輕量級無狀態的RPC Protocol，通常為一個會回覆JSON格式的Server，試著啟動Geth \`geth --rpc\`之後輸入以下
 
 ```
 curl --data '{"method":"web3_clientVersion","params":[],"id":1,"jsonrpc":"2.0"}' \
@@ -154,7 +154,7 @@ Fast Sync: 同步所有 block headers 與 block bodies。在同步到 current bl
 Light Sync: 只取得目前的區塊狀態，要驗證資料時必須傳送資料給其他節點。
 ```
 
-https://ethereum.stackexchange.com/a/11300/30691
+[https://ethereum.stackexchange.com/a/11300/30691](https://ethereum.stackexchange.com/a/11300/30691)
 
 #### --rpc、--ws、--ipc
 

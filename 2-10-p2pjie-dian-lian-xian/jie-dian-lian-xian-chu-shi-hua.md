@@ -2,7 +2,7 @@
 
 ### 找到連線節點後會進行如下步驟:
 
-# 1. version與 verack
+# 1. version 與 verack
 
 ```
 Step 1: A 節點送出 verison 請求
@@ -97,6 +97,14 @@ function connectPeer(host, buffer1) {
     connectPeer(hostList[try_host_No].address, buffer1);
   })
 }
+```
+
+#### verack
+
+將上面程式的 Buffer 部分改為如下再次執行，即可模擬 verack。
+
+```js
+const buffer = new Buffer(`f9beb4d976657261636b000000000000000000005df6e0e2`.replace(/\s+/g,""), 'hex');
 ```
 
 # 2. getaddr與addr
