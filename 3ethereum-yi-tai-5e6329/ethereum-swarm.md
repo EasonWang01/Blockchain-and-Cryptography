@@ -29,14 +29,14 @@ make all
 我們先新增一個帳號
 
 ```
-./geth account new --datadir="./swarm_test" 
+geth account new --datadir="./swarm_test"
 ```
 
-> 如果已經有帳號，可以輸入 `./geth account list --datadir="./swarm_test"`查看帳號
+> 如果已經有帳號，可以輸入 `geth account list --datadir="./swarm_test"`查看帳號
 
 ![](/assets/螢幕快照 2018-01-28 下午11.28.57.png)
 
-接著開啟另一個Terminal啟動geth
+接著啟動geth
 
 ```
 geth --datadir="./swarm_test" --ipcpath="~/Library/Ethereum/geth.ipc"
@@ -44,10 +44,18 @@ geth --datadir="./swarm_test" --ipcpath="~/Library/Ethereum/geth.ipc"
 
 > 也可以不指定datadir與ipcpath
 
-然後啟動swarm
+開啟另一個Terminal，並進入到相同路徑下
 
 ```
-./swarm --bzzaccount 填入剛才帳號
+cd go-ethereum/build/bin
+```
+
+
+
+啟動swarm
+
+```
+./swarm --bzzaccount 填入剛才帳號 --datadir="./swarm_test"
 ```
 
 ![](/assets/螢幕快照 2018-01-28 下午11.32.06.png)
@@ -88,6 +96,8 @@ curl -H "Content-Type: text/plain" --data-binary "every 60 seconds a minute pass
 > mkdir testdir
 > echo "test" >> ./testdir/test.txt
 > ```
+
+然後輸入
 
 ```
 ./swarm --recursive up ./testdir
