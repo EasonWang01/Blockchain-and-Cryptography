@@ -8,6 +8,7 @@
 
 ```js
 contract man {
+  address owner; 
   function man() { owner = msg.sender; } // 建構子，和contract同名，一開始即會執行
 }
 
