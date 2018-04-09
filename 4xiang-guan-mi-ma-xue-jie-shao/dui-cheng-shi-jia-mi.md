@@ -71,7 +71,7 @@ let key_ = "11110011"; // 密鑰
 
 Stream Ciphers \( 資料流加密 \) 並不會將明文切分為區段，而是一次加密一個資料流的位元或是位元組。常見的作法是將 較短的加密鑰匙延展成為無限長、近似亂碼的一長串金鑰串流 \( keystream \)，再將金鑰串流和原始資料 （ plaintext ）經過XOR運算後，產生密文資料 （ cipher text ）。
 
-但Stream Ciphers在目前較少被使用。使用Stream Cipher 之加密演算法例如： A5/1、RC4
+Stream Ciphers 被用在視訊串流或行動通訊等領域。使用Stream Cipher 之加密演算法例如： A5/1、RC4
 
 由於它可以用硬體來實作，在以前CPU運作速度不夠快的時代比較流行。
 
