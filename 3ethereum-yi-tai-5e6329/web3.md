@@ -52,7 +52,7 @@ npm start
 接著要執行 Geth，開啟另一個 Terminal 並輸入以下指令：
 
 ```
-geth --dev --rpc --rpccorsdomain="*"
+geth --dev --rpc --rpccorsdomain="*" console
 ```
 
 接著我們把App.js改為如下
