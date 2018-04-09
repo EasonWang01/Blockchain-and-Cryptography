@@ -29,10 +29,10 @@ make all
 我們先新增一個帳號
 
 ```
-./geth account new
+./geth account new --datadir="./swarm_test" 
 ```
 
-> 如果已經有帳號，可以輸入 `./geth account list` 查看帳號
+> 如果已經有帳號，可以輸入 `./geth account list --datadir="./swarm_test"`查看帳號
 
 ![](/assets/螢幕快照 2018-01-28 下午11.28.57.png)
 
