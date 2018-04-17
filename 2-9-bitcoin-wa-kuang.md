@@ -54,7 +54,7 @@ target =0x0000000000000003A30C00000000000000000000000000000000000000000000
 (前面補0，讓 Target 為 256 bits)
 ```
 
-> 比特幣的最高的目標值，也是最簡單的難度 \( difficulty 1 \) 為以下，用其計算的難度稱為 \( bdiff \)：
+> 比特幣的最高的目標值 \( difficulty 1 \) ，用其計算的難度稱為 \( bdiff \)：
 >
 > ```
 > 0x00ffff * 2 ** (8 * (0x1d - 3)) = 0x00000000ffff0000000000000000000000000000000000000000000000000000
@@ -69,7 +69,7 @@ target =0x0000000000000003A30C00000000000000000000000000000000000000000000
 > 而目前難度計算方式為：目標最高值 / 當前目標值
 >
 > ```
-> difficulty = difficulty_1_target(最簡單的難度) / current_target
+> difficulty = difficulty_1_target / current_target
 > ```
 
 [https://en.bitcoin.it/wiki/Difficulty](https://en.bitcoin.it/wiki/Difficulty)
