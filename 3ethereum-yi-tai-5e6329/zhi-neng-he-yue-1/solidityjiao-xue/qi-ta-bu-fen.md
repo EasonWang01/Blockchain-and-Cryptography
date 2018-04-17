@@ -74,7 +74,7 @@ function test(uint[] storage _abc) internal {
 state variables 預設為 storage
 function arguments 預設為 memory 
 local variables 例如 struct, array , mapping type 預設為 storage
-local variables 與 value type (除了 array, struct, mapping) 存在於 stack
+local variables 的型別 (除了 array, struct, mapping) 存在於 stack
 ```
 
 [http://solidity.readthedocs.io/en/latest/frequently-asked-questions.html\#what-is-the-memory-keyword-what-does-it-do](http://solidity.readthedocs.io/en/latest/frequently-asked-questions.html#what-is-the-memory-keyword-what-does-it-do)
