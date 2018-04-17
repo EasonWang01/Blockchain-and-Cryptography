@@ -56,7 +56,7 @@ Locking script:
 OP_HASH160 <20-bytes Redeem script> OP_EQUAL
 
 Unlocking script:
-<Public Key B> <Public Key C>  <20-bytes Redeem script>
+<Signature A> <Signature B> <20-bytes Redeem script>
 ```
 
 可參考: [https://bitcoin.stackexchange.com/a/28092](https://bitcoin.stackexchange.com/a/28092)
