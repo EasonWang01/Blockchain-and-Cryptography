@@ -6,7 +6,7 @@
 
 以太坊黃皮書：[https://ethereum.github.io/yellowpaper/paper.pdf](https://ethereum.github.io/yellowpaper/paper.pdf)
 
-以太坊由 Vitalik Buterin 所發表，目的是作為一個區塊鏈平台，讓大家可以在上面撰寫智能合約並運行。以太坊也與比特幣一樣有交易與挖礦機制，而下面我們將先來介紹有關以太坊中的交易手續費，而在後續 Etherum交易章節將會更詳細敘述交易相關內容。
+以太坊由 Vitalik Buterin 所發表，目的是作為一個區塊鏈平台，讓大家可以在上面撰寫智能合約並運行。以太坊也與比特幣一樣有交易與挖礦機制，而下面我們將先來介紹有關以太坊中的交易手續費，而在後續 Ethereum交易章節將會更詳細敘述交易相關內容。
 
 ## 交易手續費
 
