@@ -84,7 +84,7 @@ contract ERC20_interface {
 
 > 此即為在ERC20所定義之需要實作的介面。
 
-然後開啟另一個ERC20\_token.sol檔案，新增如下程式碼 :
+然後開啟另一個 `ERC20_token.sol` 檔案，新增如下程式碼 :
 
 > 合約說明均寫在註解內
 
