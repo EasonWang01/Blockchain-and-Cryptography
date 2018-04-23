@@ -13,6 +13,8 @@ Remix IDE先前已經介紹過，這邊我們要來下載Mist，Mist是一個可
 
 我們剛才已經啟動一個私有鏈節點，這時我們可以直接開啟Mist，會自動連線到該私有鏈節點，如果沒有連線到私有鏈的話可以用如下方式啟動，幫他指定要連線的RPC server位置。
 
+> 如果是要讓Remix IDE 與 Metamask連線並部署合約必須使用 `https` 的 Remix IDE
+
 macOS :
 
 ```
