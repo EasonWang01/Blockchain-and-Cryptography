@@ -14,7 +14,7 @@
 
 我們回到剛才網頁程式中，開一個資料夾名為Contract，放在src路徑下，裡面新增index.js。
 
-/src/Contract/index.js 內容：
+`/src/Contract/index.js` 內容：
 
 ```js
 export default {
