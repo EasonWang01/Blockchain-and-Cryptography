@@ -113,7 +113,7 @@ function setPrice(uint _price) public onlyOwner {
 // 購買Token，payable代表此Function可以接受Ether
 function buy() public payable {
   uint amount;
-  amount = (msg.value / weiToEther) * buyPrice * 10 ** uint256(decimals); // 購買多少token
+  amount = msg.value * buyPrice * 10 ** uint256(decimals) / weiToEther; // 購買多少token
   require(balances[owner] >= amount); // 檢查還有沒有足夠token可以賣
   balances[msg.sender] += amount; // 增加購買者token
   balances[owner] -= amount; // 減少擁有者token

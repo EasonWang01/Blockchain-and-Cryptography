@@ -176,7 +176,7 @@ contract ERC20_token is ERC20_interface {   // 使用 is 繼承 ERC20_interface
     // 購買token
     function buy() public payable {
         uint amount;
-        amount = (msg.value / weiToEther) * buyPrice * 10 ** uint256(decimals);    // 購買多少token
+        amount = msg.value * buyPrice * 10 ** uint256(decimals) / weiToEther;    // 購買多少token
         require(balances[owner] >= amount);              // 檢查還有沒有足夠token可以賣
         balances[msg.sender] += amount;                  // 增加購買者token   
         balances[owner] -= amount;                        // 減少擁有者token
