@@ -14,6 +14,17 @@ if (typeof web3 !== 'undefined') {
 
 > 如果在程式是寫localhost為provider，但是在有安裝Metamask的瀏覽器打開此Dapp，在Chrome devtool的console輸入web3時會去讀取Metamask之RPC，但寫在程式中的web3.eth.accounts還是會去讀取本地節點的 RPC。
 
+如果產生web3 not defined等錯誤可參考如下
+
+> https://ethereum.stackexchange.com/questions/39410/provider-not-set-or-invalid-in-metamask?utm\_medium=organic&utm\_source=google\_rich\_qa&utm\_campaign=google\_rich\_qa
+
+```js
+import Web3 from 'web3';
+var web3 = window.web3;
+var web3 = new Web3(web3.currentProvider);
+const Contract = new web3.eth.Contract(Token.ABI, Token.address);
+```
+
 也可以使用第三方提供的節點來取得資訊，例如 [https://infura.io/](https://infura.io/)
 
 ![](/assets/螢幕快照 2018-01-28 下午4.01.29.png)
@@ -203,7 +214,7 @@ web3.eth.getBlock(區塊號碼)
 web3.eth.getBlockTransactionCount(區塊高度或區塊Hash)
 ```
 
-https://github.com/ethereum/wiki/wiki/JavaScript-API\#web3ethgetblocktransactioncount
+[https://github.com/ethereum/wiki/wiki/JavaScript-API\#web3ethgetblocktransactioncount](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethgetblocktransactioncount)
 
 #### 取得交易的內容
 
