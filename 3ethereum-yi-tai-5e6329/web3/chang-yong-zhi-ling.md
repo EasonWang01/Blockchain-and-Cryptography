@@ -104,6 +104,17 @@ Contract.合約Function(參數, {from: web3.eth.accounts[0], gas: 111700})
 
 > 第二個 gas 參數指的是 `gas Limit`
 
+#### 執行 Payable Function
+
+```js
+Contract.buy({
+  from: "some address",
+  value: web3.toWei('0.1', 'ether')
+  },function(e, r){
+    if(!e) console.log(r)
+})
+```
+
 #### 發送交易
 
 ```js
