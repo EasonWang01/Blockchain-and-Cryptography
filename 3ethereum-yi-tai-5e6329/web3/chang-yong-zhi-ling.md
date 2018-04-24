@@ -14,9 +14,9 @@ if (typeof web3 !== 'undefined') {
 
 > 如果在程式是寫localhost為provider，但是在有安裝Metamask的瀏覽器打開此Dapp，在Chrome devtool的console輸入web3時會去讀取Metamask之RPC，但寫在程式中的web3.eth.accounts還是會去讀取本地節點的 RPC。
 
-如果產生web3 not defined等錯誤可參考如下
+如果想讀取Metamask，但產生web3 not defined等錯誤可參考如下
 
-> https://ethereum.stackexchange.com/questions/39410/provider-not-set-or-invalid-in-metamask?utm\_medium=organic&utm\_source=google\_rich\_qa&utm\_campaign=google\_rich\_qa
+> [https://ethereum.stackexchange.com/questions/39410/provider-not-set-or-invalid-in-metamask?utm\_medium=organic&utm\_source=google\_rich\_qa&utm\_campaign=google\_rich\_qa](https://ethereum.stackexchange.com/questions/39410/provider-not-set-or-invalid-in-metamask?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 
 ```js
 import Web3 from 'web3';
