@@ -22,7 +22,7 @@ if (typeof web3 !== 'undefined') {
 import Web3 from 'web3';
 var web3 = window.web3;
 var web3 = new Web3(web3.currentProvider);
-const Contract = new web3.eth.Contract(Token.ABI, Token.address);
+const Contract = new web3.eth.contract(Token.ABI).at(Token.address);
 ```
 
 也可以使用第三方提供的節點來取得資訊，例如 [https://infura.io/](https://infura.io/)
