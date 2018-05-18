@@ -104,6 +104,16 @@ Contract.合約Function(參數, {from: web3.eth.accounts[0], gas: 111700})
 
 > 第二個 gas 參數指的是 `gas Limit`
 
+#### 轉換回傳值
+
+時常回傳過來的值會需要使用`r.c[0]`
+
+其為Big integer模組的結構，可用以下來解析。
+
+```
+web3.toDecimal(r)
+```
+
 #### 執行 Payable Function
 
 ```js
