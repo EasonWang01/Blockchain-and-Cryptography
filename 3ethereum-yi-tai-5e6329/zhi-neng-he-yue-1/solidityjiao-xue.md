@@ -166,6 +166,24 @@ const event = ContractInstance.事件名稱({}, {fromBlock: 0, toBlock: 'latest'
 
 之後存取時裡面會有一個`args` 的 key 其 value 為我們當時傳入Event的參數。
 
+
+
+但如果要在Node.js中監聽事件，以上的方法執行程式後會中斷離開程式。
+
+可以使用PasteEvent方法持續執行，並監聽
+
+> 只有web3 1.0.0以上才可使用
+
+```js
+const eventHandler = Contract.getPastEvents('Transfer',(error, event) => {
+  if (error) {
+    throw error
+  }
+  console.log('Event:');
+  console.log(event);
+});
+```
+
 [http://solidity.readthedocs.io/en/develop/contracts.html\#events](http://solidity.readthedocs.io/en/develop/contracts.html#events)
 
 [https://ethereum.stackexchange.com/questions/16313/how-can-i-view-event-logs-for-an-ethereum-contract](https://ethereum.stackexchange.com/questions/16313/how-can-i-view-event-logs-for-an-ethereum-contract)
