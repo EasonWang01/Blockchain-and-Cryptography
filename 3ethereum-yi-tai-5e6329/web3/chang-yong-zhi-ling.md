@@ -376,3 +376,44 @@ function signMsg(msgParams, from) {
 
 [https://medium.com/metamask/scaling-web3-with-signtypeddata-91d6efc8b290](https://medium.com/metamask/scaling-web3-with-signtypeddata-91d6efc8b290)
 
+# 宣告Web3
+
+因為時常在沒有Metamask的網站上執行合約相關函式會用錯誤，但又想要讓客戶可以看到畫面，以下為建議地宣告方式。
+
+```js
+import Token from '../../Contract/Lottery/interface.js'
+import Web3 from 'web3';
+var web3 = window.web3;
+if (typeof web3 !== 'undefined') {
+  var web3 = new Web3(web3.currentProvider);
+  var Contract = web3.eth.contract(Token.ABI).at(Token.Address);
+  window.Contract = Contract;
+} else {
+  var web3 = { eth: { accounts: [] } }
+  // alert('Please install Metamask plugin first.')
+  // window.location.href = 'https://metamask.io/';
+}
+```
+
+使用時記得加上`try catch`
+
+```js
+    try {
+      Contract.buy({
+        from: web3.eth.accounts[0],
+        value: parseFloat(this.state.depositAmount) * 10 ** 18,
+        gas: 511700,
+        gasPrice: 5100000000
+      }, (e, r) => {
+        console.log(e);
+        if (!e) {
+          alert('Success deposit');
+        }
+      })
+    } catch (err) {
+
+    }
+```
+
+
+
