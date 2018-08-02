@@ -79,10 +79,10 @@ npm install sha3@1.2.0
 const SHA3 = require('sha3');
 
 let hash_512 = new SHA3.SHA3Hash().update('test').digest('hex'); //預設為512bits
-console.log(hash_512)
+console.log(hash_512);
 
 let hash_224 = new SHA3.SHA3Hash(224).update('test').digest('hex'); // 224 bits
-console.log(hash_224)
+console.log(hash_224);
 ```
 
 ## Ripemd
